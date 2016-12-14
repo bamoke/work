@@ -1,51 +1,303 @@
 @charset "utf-8";
 /* CSS Document */
 /* reset */
-html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;}
-header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
-table{border-collapse:collapse;border-spacing:0;}
-caption,th{text-align:left;font-weight:normal;}
-html,body,fieldset,img,iframe,abbr{border:0;}
-i,cite,em,var,address,dfn{font-style:normal;}
-[hidefocus],summary{outline:0;}
-li{list-style:none;}
-h1,h2,h3,h4,h5,h6,small{font-size:100%;}
-sup,sub{font-size:83%;}
-pre,code,kbd,samp{font-family:inherit;}
-q:before,q:after{content:none;}
-textarea{overflow:auto;resize:none;}
-label,summary{cursor:default;}
-a,button{cursor:pointer;}
-h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}
-del,ins,u,s,a,a:hover{text-decoration:none;}
-body,textarea,input,button,select,keygen,legend{font:12px/1.14 "Microsoft YaHei",\5fae\8f6f\96c5\9ed1,arial,\5b8b\4f53;color:#333;outline:0;}
-body{background:#f8f8f8;}
-a,a:hover{color:#333;}
+html, body, h1, h2, h3, h4, h5, h6, div, dl, dt, dd, ul, ol, li, p, blockquote, pre, hr, figure, table, caption, th, td, form, fieldset, legend, input, button, textarea, menu {
+    margin: 0;
+    padding: 0;
+}
+
+header, footer, section, article, aside, nav, hgroup, address, figure, figcaption, menu, details {
+    display: block;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption, th {
+    text-align: left;
+    font-weight: normal;
+}
+
+html, body, fieldset, img, iframe, abbr {
+    border: 0;
+}
+
+i, cite, em, var, address, dfn {
+    font-style: normal;
+}
+
+[hidefocus], summary {
+    outline: 0;
+}
+
+li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6, small {
+    font-size: 100%;
+}
+
+sup, sub {
+    font-size: 83%;
+}
+
+pre, code, kbd, samp {
+    font-family: inherit;
+}
+
+q:before, q:after {
+    content: none;
+}
+
+textarea {
+    overflow: auto;
+    resize: none;
+}
+
+label, summary {
+    cursor: default;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6, em, strong, b {
+    font-weight: bold;
+}
+
+del, ins, u, s, a, a:hover {
+    text-decoration: none;
+}
+
+body, textarea, input, button, select, keygen, legend {
+    font: 12px/1.2 "Microsoft YaHei", \5fae\8f6f\96c5\9ed1, arial, \5b8b\4f53;
+    color: #333;
+    outline: 0;
+}
+
+body {
+    background: #f8f8f8;
+    font-size: 14px;
+}
+
+a {
+    color: #333;
+}
+a:hover {color:#ea0000;}
 
 /* function */
-.f-cb:after,.f-cbli li:after{display:block;clear:both;visibility:hidden;height:0;overflow:hidden;content:".";}
-.f-cb,.f-cbli li{zoom:1;}
-.f-ib{display:inline-block;*display:inline;*zoom:1;}
-.f-dn{display:none;}
-.f-db{display:block;}
-.f-fl{float:left;}
-.f-fr{float:right;}
-.f-pr{position:relative;}
-.f-prz{position:relative;zoom:1;}
-.f-oh{overflow:hidden;}
-.f-toe{overflow:hidden;word-wrap:normal;white-space:nowrap;text-overflow:ellipsis;}
+.f-cb:after, .f-cbli li:after {
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    content: ".";
+}
+
+.f-cb, .f-cbli li {
+    zoom: 1;
+}
+
+.f-ib {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+.f-dn {
+    display: none;
+}
+
+.f-db {
+    display: block;
+}
+
+.f-fl {
+    float: left;
+}
+
+.f-fr {
+    float: right;
+}
+
+.f-pr {
+    position: relative;
+}
+
+.f-prz {
+    position: relative;
+    zoom: 1;
+}
+
+.f-oh {
+    overflow: hidden;
+}
+
+.f-toe {
+    overflow: hidden;
+    word-wrap: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.f-mr-t-10 {margin-top:10px;}
+.f-mr-t-16 {margin-top:16px;}
 
 /*  grid */
-.g-hd {margin-bottom:10px;height:80px;background-color:#fff;border-bottom:5px solid #eee;}
-.g-bd,.g-m-w {margin:0 auto;width:960px;}
-.g-ft {}
-.g-mn {float:left;width:710px;}
-.g-sd {float:right;width:240px;}
+.w-main {
+    width: 960px;
+}
+
+.g-hd {
+    margin-bottom: 10px;
+    height: 80px;
+    background-color: #fff;
+    border-bottom: 5px solid #eee;
+}
+
+.g-m-w {
+    margin: 0 auto;
+    width: 960px;
+}
+
+.g-bd {
+    margin: 0 auto;
+    padding:10px;
+    width: 940px;
+    background-color: #fff;
+    box-shadow:0 0 3px rgba(0,0,0,.2);
+}
+
+.g-ft {
+    margin-top:30px;
+    height:100px;
+    background-color:#ddd;
+}
+
+.g-mn {
+    float: left;
+    width: 680px;
+}
+
+.g-sd {
+    float: right;
+    padding-left:10px;
+    width: 240px;
+    background: #fff;
+}
 
 /**module**/
-.m-nav {float:right;margin-top:30px;}
-.m-nav li {float:left;margin-left:15px;height:30px;line-height:30px;font-size:14px;}
+.m-nav {
+    float: right;
+    margin-top: 30px;
+}
 
-/***unit**/
-.u-logo {float:left;margin-top:10px;width:300px;height:70px;background:url(images/shimadzu_logo.gif) no-repeat left center;}
+.m-nav li {
+    float: left;
+    margin-left: 15px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.m-login .form-itm .ipt-text {
+    width: 168px;
+}
+
+.m-login .form-itm {
+    padding: 10px 0 0;
+    line-height: 30px;
+}
+
+.m-login .lab {
+    float: left;
+    width: 40px;
+}
+
+.m-login .ipt {
+    float: right;
+    width: 180px;
+    text-align: right;
+}
+
+.m-login .btn {
+
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border: 0;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.m-login .btn:hover {
+    background-color: #222;
+}
+
+.m-ls-img .ls {margin-top:10px;padding-bottom:10px;border-bottom:1px solid #ddd;}
+.m-ls-img .ls:after {content:"";display:block;clear:both;visibility:hidden;}
+.m-ls-img .img {float: left;margin-right:20px;overflow:hidden;}
+.m-ls-img .img img {width:100%;}
+.m-ls-img .text .title {line-height:1.5;font-size:16px;color:#222;}
+.m-ls-img .text .desc {margin-top:10px;color:#999;}
+.m-ls-img .text .ft {margin-top:10px;color:#999;text-align: right;}
+
+    /***unit**/
+.u-logo {
+    float: left;
+    margin-top: 10px;
+    width: 300px;
+    height: 70px;
+    background: url(images/shimadzu_logo.gif) no-repeat left center;
+}
+
+.u-ipt {
+    padding: 5px;
+    height: 17px;
+    border: 1px solid #D9D9D9;
+    border-top-color: #c0c0c0;
+    line-height: 17px;
+    font-size: 14px;
+    color: #777;
+    background: #fff;
+}
+
+.u-bar-1 {
+    height: 34px;
+    line-height: 34px;
+    border-bottom: 2px solid #eee;
+}
+
+.u-bar-1 .caption {
+    position: relative;
+    margin-bottom: 2px;
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    border-bottom: 2px solid #ea0000;
+    font-size: 16px;
+    color: #333;
+}
+.u-bar-2 {
+    padding:0 10px;
+    height: 34px;
+    line-height: 34px;
+    background-color:#ddd;
+    border-bottom:1px solid #fff;
+}
+
+.u-bar-2 .caption {
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    font-size: 16px;
+    color: #222;
+}
 

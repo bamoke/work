@@ -1,3 +1,12 @@
 @charset "utf-8";
 /* CSS Document */
+#index-part-2 .m-ls-img .img {width:330px;}
+.index-yywj-box {width:100%;overflow:hidden;}
+.index-yywj-list {float:left;margin-right:-20px;}
+.index-yywj-list li {float:left;margin:10px 20px 10px 0;width:330px;}
+.index-yywj-list li>a {display:block;}
+.index-yywj-list li>a .title {height:34px;line-height:34px;font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.index-yywj-list li .imgbox {width:100%;overflow:hidden;}
+.index-yywj-list li .imgbox img {transition:transform .3s;}
+.index-yywj-list li .imgbox img:hover {transform:scale(1.2);}
 

@@ -1,16 +1,30 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width"/>
-<title>岛津中国-事业部代理商网站</title>
-<link href="css/base.css" rel="stylesheet" type="text/css" />
-<link href="css/index.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>岛津中国-事业部代理商网站</title>
+    <link href="css/base.css" rel="stylesheet" type="text/css"/>
+    <link href="css/index.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery1.7.js" type="text/javascript"></script>
+    <script src="js/jquery.SuperSlide.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#index-banner").slide({mainCell: "ul", autoPlay: true, effect: "leftLoop"});
+
+            /***part-1手风琴消息***/
+            $("#index-slide-news").find(".js-bar").click(function () {
+                $(this).parent().siblings().find(".js-content").slideUp();
+                $(this).siblings(".js-content").slideDown();
+            })
+        })
+    </script>
 </head>
 
 <body>
 <div class="g-hd">
-	<div class="g-m-w f-cb">
+    <div class="g-m-w f-cb">
         <div class="u-logo"></div>
         <ul class="m-nav">
             <li><a href="">综合咨询</a></li>
@@ -27,41 +41,77 @@
 
 <!---主体-->
 <div id="part-1" class="f-mr-t-16">
-	<div class="g-bd f-cb">
-    	<div class="g-mn">
-        	<div id="index-banner">
-            	<ul>
-                	<li><a href=""><img src="images/index-banner-01.jpg" style="width: 100%" height="460" /></a></li>
+    <div class="g-bd f-cb">
+        <div class="g-mn">
+            <div id="index-banner">
+                <div class="btn">
+                    <a href="javascript:void(0)" class="prev">上一个</a>
+                    <a href="javascript:void(0)" class="next">下一个</a>
+                </div>
+                <ul>
+                    <li>
+                        <a href="">
+                            <img src="images/index-banner-01.jpg" style="width: 100%" height="460"/>
+                            <p class="title">岛津积极参与《国际药代会议暨第四届中国生物分析论坛年会》</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
         <div class="g-sd">
-        	<div class="m-login">
-                <div class="u-bar-1"><span class="caption">用户登陆</span> </div>
-            	<form name="" action="" method="post">
-                	<div class="form-itm f-cb">
-                    	<label class="lab">账号</label>
-                        <div class="ipt"><input type="text" name="" placeholder="请输入用户名或邮箱" class="u-ipt ipt-text"></div>
+            <div class="m-login">
+                <div class="u-bar-1"><span class="caption">用户登陆</span></div>
+                <form name="" action="" method="post">
+                    <div class="form-itm f-cb">
+                        <label class="lab">账号</label>
+                        <div class="ipt"><input type="text" name="" placeholder="请输入用户名或邮箱" class="u-ipt ipt-text">
+                        </div>
                     </div>
-                	<div class="form-itm f-cb">
-                    	<label class="lab">密码</label>
-                        <div class="ipt"><input type="password" name="" placeholder="请输入登录密码" class="u-ipt ipt-text"></div>
+                    <div class="form-itm f-cb">
+                        <label class="lab">密码</label>
+                        <div class="ipt"><input type="password" name="" placeholder="请输入登录密码" class="u-ipt ipt-text">
+                        </div>
                     </div>
-                    <div class="form-itm"><input type="submit" value="登录" class="btn" /></div>                    
+                    <div class="form-itm"><input type="submit" value="登录" class="btn"/></div>
                 </form>
             </div>
 
             <div id="index-slide-news" class="f-mr-t-10">
-                <div class="news-itm">
-                    <div class="u-bar-2"><span class="caption">公司新闻</span> </div>
-                </div>
-                <div class="news-itm">
-                    <div class="u-bar-2"><span class="caption">岛津内部活动</span> </div>
-                </div>
-                <div class="news-itm">
-                    <div class="u-bar-2"><span class="caption">代理商活动</span> </div>
-                    <div class="news-list" style="height:190px;background-color:#555;">
 
+                <!--图文混排消息列表-->
+                <div class="news-itm">
+                    <div class="u-bar-2 js-bar"><span class="caption">公司新闻</span></div>
+                    <div class="news-list js-content" style="display: block">
+                        <div class="img-text">
+                            <a href=""><img src="images/index-img-01.jpg">岛津专属定制分析系统ProFinder能帮您做些啥？</a>
+                            <a href=""><img src="images/index-img-01.jpg">岛津专属定制分析系统ProFinder能帮您做些啥？</a>
+                            <a href=""><img src="images/index-img-01.jpg">岛津专属定制分析系统ProFinder能帮您做些啥？</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--纯文字消息列表-->
+                <div class="news-itm">
+                    <div class="u-bar-2 js-bar"><span class="caption">岛津内部活动</span></div>
+                    <div class="news-list js-content" style="display: none">
+                        <ul class="text-list">
+                            <li><a href="">岛津单克隆抗体分析法“nSMOL法“有效性验证论文受关注</a></li>
+                            <li><a href="">新药创制高层学术研讨会上岛津新技术获赞</a></li>
+                            <li><a href="">岛津创新技术在全国原子光谱大会上获专家肯定</a></li>
+                            <li><a href="">新药创制高层学术研讨会上岛津新技术获赞</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--图文混排消息列表-->
+                <div class="news-itm">
+                    <div class="u-bar-2 js-bar"><span class="caption">代理商活动</span></div>
+                    <div class="news-list js-content" style="display: none">
+                        <div class="img-text">
+                            <a href=""><img src="images/index-img-01.jpg">岛津专属定制分析系统ProFinder能帮您做些啥？</a>
+                            <a href=""><img src="images/index-img-01.jpg">岛津专属定制分析系统ProFinder能帮您做些啥？</a>
+                            <a href=""><img src="images/index-img-01.jpg">岛津专属定制分析系统ProFinder能帮您做些啥？</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -73,28 +123,37 @@
 <div id="index-part-2" class="f-mr-t-16">
     <div class="g-bd f-cb">
         <div class="g-mn">
-            <div class="u-bar-1"><span class="caption">最新消息</span> </div>
+            <div class="u-bar-1"><span class="caption">最新消息</span></div>
             <ul class="m-ls-img">
                 <li class="ls">
-                    <div class="img"><a href="" target="_blank"><img src="images/news-img-01.jpg"></a> </div>
+                    <div class="img"><a href="" target="_blank"><img src="images/news-img-01.jpg"></a></div>
                     <div class="text">
-                        <div class="title"><a href="">岛津应用：基于方法自动切换系统的柑橘类初级和次级代谢产物的 LC/MS/MS分析</a> </div>
+                        <div class="title"><a href="">岛津应用：基于方法自动切换系统的柑橘类初级和次级代谢产物的 LC/MS/MS分析</a></div>
                         <p class="desc">生产生物燃料或生物制药的工业发酵需要常规监测介质条件， 如 pH、溶解气体、碳源（葡萄糖）和氮源（谷氨酰胺）等，从而优化及控制发酵过程</p>
                         <p class="ft"><span>发布时间：2016-12-10</span></p>
                     </div>
                 </li>
                 <li class="ls">
-                    <div class="img"><a href="" target="_blank"><img src="images/news-img-02.jpg"></a> </div>
+                    <div class="img"><a href="" target="_blank"><img src="images/news-img-02.jpg"></a></div>
                     <div class="text">
-                        <div class="title"><a href="">岛津专属定制分析系统ProFinder能帮您做些啥？</a> </div>
-                        <p class="desc">已连续成功举办七年并在中科院系统及在京科研单位已享有一定知名度的“岛津杯北京市科学家羽毛球友谊赛”在北京羽丰军健羽毛球馆成功举办。本届比赛中共进行了135场比赛，其中包括24支队伍参加的团体比赛，规模空前碳源（葡萄糖）和氮源（谷氨酰胺）等，从而优化及控制发酵过程</p>
+                        <div class="title"><a href="">岛津专属定制分析系统ProFinder能帮您做些啥？</a></div>
+                        <p class="desc">
+                            已连续成功举办七年并在中科院系统及在京科研单位已享有一定知名度的“岛津杯北京市科学家羽毛球友谊赛”在北京羽丰军健羽毛球馆成功举办。本届比赛中共进行了135场比赛，其中包括24支队伍参加的团体比赛，规模空前碳源（葡萄糖）和氮源（谷氨酰胺）等，从而优化及控制发酵过程</p>
                         <p class="ft"><span>发布时间：2016-12-08</span></p>
                     </div>
                 </li>
             </ul>
         </div>
         <div class="g-sd">
-            <div class="u-bar-1"><span class="caption">相关介绍</span> </div>
+            <div class="u-bar-1"><span class="caption">相关介绍</span></div>
+            <div class="index-img-text">
+                <a href="" class="img"><img src="images/about.jpg"></a>
+                <p class="text">创始人岛津源藏开始脉脉相传，以开拓精神不断向科学技术挑战的发展史。这一点可以从岛津自创业以来开发出的大量的科学仪器中得到证实</p>
+            </div>
+            <div class="index-img-text">
+                <a href="" class="img"><img src="images/about.jpg"></a>
+                <p class="text">科学技术执著追求的历史，也可以说是从创始人岛津源藏开始脉脉相传史。这一点可以从岛津自创业以来开发出的大量的科学仪器中得到证实</p>
+            </div>
         </div>
     </div>
 </div>
@@ -103,12 +162,12 @@
 <div id="index-part-3" class="f-mr-t-16">
     <div class="g-bd f-cb">
         <div class="g-mn">
-            <div class="u-bar-1"><span class="caption">应用文集</span> </div>
+            <div class="u-bar-1"><span class="caption">应用文集</span></div>
             <div class="index-yywj-box">
                 <ul class="index-yywj-list">
                     <li>
                         <a href="">
-                            <div class="imgbox"> <img src="images/news-img-03.jpg"></div>
+                            <div class="imgbox"><img src="images/news-img-03.jpg"></div>
                             <p class="title">岛津在第64届美国质谱年会上发布LC-MS/MS新产品</p>
                         </a>
                     </li>
@@ -134,7 +193,17 @@
             </div>
         </div>
         <div class="g-sd">
-            <div class="u-bar-1"><span class="caption">法律法规</span> </div>
+            <div class="u-bar-1"><span class="caption">法律法规</span></div>
+            <div class="index-flfg">
+                <a class="itm">
+                    <span href="" class="img"><img src="images/flfg-01.jpg"></span>
+                    <span class="title"><span>公司外部法律法规</span></span>
+                </a>
+                <a class="itm">
+                    <span href="" class="img"><img src="images/flfg-02.jpg"></span>
+                    <p class="title"><span>公司内部运营法规</span></p>
+                </a>
+            </div>
         </div>
     </div>
 </div>
@@ -142,7 +211,12 @@
 <!--foot-->
 <div class="g-ft">
     <div class="g-m-w">
-
+        <ul class="u-ft-link">
+            <li><a href="">岛津中国官网</a></li>
+            <li><a href="">关于我们</a></li>
+            <li><a href="">联系我们</a></li>
+        </ul>
+        <p class="u-copyright">岛津中国版权所有<br>copyright&copy2016 Shimadzu Corporation. All rights reserved.</p>
     </div>
 </div>
 </body>

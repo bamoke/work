@@ -14,9 +14,13 @@
     font-size: 14px;
     border-bottom: 2px solid #ddd;
 }
-.m-sub-nav-top a:hover {color:#222;border-color:#333;}
 
-.m-sub-nav-top .cur,.m-sub-nav-top .cur:hover {
+.m-sub-nav-top a:hover {
+    color: #222;
+    border-color: #333;
+}
+
+.m-sub-nav-top .cur, .m-sub-nav-top .cur:hover {
     border-color: #df020f;
     color: #df020f;
 }
@@ -55,7 +59,7 @@
 
 .m-course-list td {
     border-bottom: 1px solid #ddd;
-    background-color:#f4f4f4;
+    background-color: #f4f4f4;
 }
 
 .m-course-list img {
@@ -76,12 +80,80 @@
     background-color: #ccc;
     font-size: 12px;
     color: #333;
-    transition:all .3s;
+    transition: all .3s;
 }
 
 .m-course-list .viewmore:hover {
     background-color: #df020f;
     color: #fff;
 }
-.m-course-list tr:nth-child(2n+1)>td {background-color:#f7f7f7;}
-.m-course-list tr:hover>td {background-color:#efefef;}
+
+.m-course-list tr:nth-child(2n+1) > td {
+    background-color: #f7f7f7;
+}
+
+.m-course-list tr:hover > td {
+    background-color: #efefef;
+}
+
+.course-detail {
+    margin: 0 20px;
+}
+
+.course-detail .top-info {
+    padding-top: 20px;
+}
+
+.course-detail .thumb {
+    float: left;
+    margin-right: 20px;
+    width: 300px;
+}
+
+.course-detail .thumb img {
+    max-width: 300px;
+}
+
+.course-detail .title {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #222;
+    font-weight: 300;
+}
+
+.course-detail .g-mn {
+    width: 640px;
+}
+
+.course-detail .desc {
+    line-height: 1.5;
+}
+
+.course-detail .main-content {
+    margin-top: 10px;
+}
+
+.course-detail .introduce {
+    padding: 10px 0 30px;
+    line-height: 1.5;
+}
+
+.course-detail .enroll-btn {
+    margin-top: 20px;
+    display: inline-block;
+    width: 120px;
+    height: 34px;
+    line-height: 34px;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+}
+.course-detail .enroll-btn:hover {background-color:#333;}
+
+.enroll-form .btn {margin-right:20px;width:140px;}
+.enroll-form .ipt {display:inline-block;}
+.enroll-form .ipt-text {
+    width: 300px;
+}
+.enroll-form .submit {width:200px;}
+.enroll-form .cancel {background-color:#999;}

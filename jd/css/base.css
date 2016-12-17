@@ -166,8 +166,13 @@ a:hover {
     margin-top: 16px;
 }
 
-.f-text-center {text-align:center;}
-.f-text-right {text-align:right;}
+.f-text-center {
+    text-align: center;
+}
+
+.f-text-right {
+    text-align: right;
+}
 
 /*  grid */
 .w-main {
@@ -319,7 +324,9 @@ a:hover {
 }
 
 .m-location {
+    margin-bottom:20px;
     padding: 10px;
+    border-bottom:2px solid #ddd;
 }
 
 .m-location, .m-location a {
@@ -343,8 +350,6 @@ a:hover {
     white-space: nowrap;
     background: url(images/download-1.png) no-repeat left center;
 }
-
-
 
 /*.m-download-ls-1 li:before {
 
@@ -423,6 +428,18 @@ a:hover {
     color: #222;
 }
 
+.u-cat-name {
+    position: relative;
+    padding-left: 55px;
+    width: 165px;
+    height: 50px;
+    line-height: 50px;
+    background: #000 url(images/ls.png) no-repeat 16px center;
+    color: #fff;
+    font-size: 16px;
+
+}
+
 /******/
 #main-page > .g-bd {
     min-height: 500px;
@@ -478,20 +495,29 @@ a:hover {
     line-height: 40px;
     font-size: 18px;
     background-color: #eee;
-    color:#333;
+    color: #333;
 }
 
-.m-main-form .form-itm {padding:10px 0;}
-.m-main-form .form-itm:after {content:"";display: block;clear:both;visibility:hidden;}
+.m-main-form .form-itm {
+    padding: 10px 0;
+}
+
+.m-main-form .form-itm:after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+}
+
 .m-main-form .lab {
-display: inline-block;
-    margin-right:20px;
-    width:120px;
+    display: inline-block;
+    margin-right: 20px;
+    width: 120px;
     text-align: right;
 }
 
 .m-main-form .ipt {
-display: inline-block;
+    display: inline-block;
 }
 
 .m-main-form .btn {
@@ -508,4 +534,133 @@ display: inline-block;
     /*word-spacing: 5px;*/
     letter-spacing: 15px;
 }
-.m-main-form .ipt-text {padding:5px;height:17px;line-height:17px;font-size:14px;}
+
+.m-main-form .ipt-text {
+    padding: 5px;
+    height: 17px;
+    line-height: 17px;
+    font-size: 14px;
+}
+
+.m-sub-nav {
+    width: 210px;
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+
+.m-sub-nav a {
+    display: block;
+    padding: 0 20px;
+    height: 34px;
+    line-height: 34px;
+    color: #fff;
+
+}
+
+.m-sub-nav > li > a {
+    border-bottom: 1px solid #222;
+}
+
+.m-sub-nav .parent {
+    border-bottom: 1px solid #111;
+}
+
+.m-sub-nav .parent:after {
+    float: right;
+    margin-top: 9px;
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(images/down.png) no-repeat center;
+    vertical-align: middle;
+}
+
+.m-sub-nav .parent:hover {
+    background-color: #333;
+}
+
+.m-sub-nav a:hover {
+    background-color: #222;
+}
+
+.m-sub-nav .child {
+    background-color: #242424;
+}
+
+.m-sub-nav .child > li > a {
+    padding-left: 40px;
+    border-bottom: 1px solid #111;
+    background-image: url(images/left-1.png);
+    background-repeat:no-repeat;
+    background-position:15px center;
+}
+.m-sub-nav .cur,.m-sub-nav .child > li > .cur:hover,.m-sub-nav .cur:hover {background-color:#df020f;}
+
+.m-sub-nav .child > li > a:hover {
+    background-color: #1c1c1c;
+}
+
+.m-article li {
+    position:relative;
+    margin-bottom:10px;
+    padding:0 0 10px 70px;
+    border-bottom:1px solid #ddd;
+}
+.m-article li:after {
+    content:"";
+    clear:both;
+    visibility:hidden;
+    display:block;
+}
+.m-article .thumb {
+    float:left;
+    display:inline-block;
+    margin-right:20px;
+    width:200px;
+    overflow:hidden;
+}
+.m-article .thumb img {width:200px;transition:transform .3s;}
+.m-article .thumb img:hover {transform:scale(1.2);}
+.m-article .time {
+    position:absolute;
+    left:0;
+    top:0;
+    width:60px;
+    height:70px;
+    overflow:hidden;
+    background-color:#999;
+    color:#fff;
+    text-align:center;
+    border-bottom-left-radius:30px;
+    border-bottom-right-radius:30px;
+}
+.m-article .time .date {
+    display: block;
+    padding-top:5px;
+    height:30px;
+    line-height:30px;
+    font-size:18px;
+}
+.m-article .time .year {color:#ccc;}
+.m-article .title {display:block;margin-bottom:10px;font-size:18px;}
+.m-article .desc {color:#999;line-height:1.5;}
+.m-article .viewMore {display: inline-block;margin-top:5px;}
+
+.m-article-detail .top-info {
+    margin-bottom:20px;
+    padding-bottom:10px;
+    border-bottom:1px solid #ddd;
+    text-align:center;
+    color:#999;
+}
+.m-article-detail .top-info span {margin-right:10px;}
+.m-article-detail .title {
+    margin-bottom:10px;
+    font-size:22px;
+    color:#222;
+    text-align:center;
+}
+.m-article-detail .content {line-height:1.5;}
+.m-article-detail img {max-width:100%;}

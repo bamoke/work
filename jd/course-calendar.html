@@ -5,9 +5,85 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width"/>
     <title>岛津中国-事业部代理商网站</title>
+
+    <link href="css/fullcalendar.css" rel="stylesheet" type="text/css">
+
     <link href="css/base.css" rel="stylesheet" type="text/css"/>
     <link href="css/course.css" rel="stylesheet" type="text/css"/>
+
     <script src="js/jquery1.7.js" type="text/javascript"></script>
+    <script src="js/fullcalendar.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(function(){
+            var dayDate = new Date();
+            var d = $.fullCalendar.formatDate(dayDate,"dddd");
+            var m = $.fullCalendar.formatDate(dayDate,"yyyy年MM月dd日");
+            var lunarDate = lunar(dayDate);
+            $(".alm_date").html(m + "&nbsp;" + d);
+            $(".today_date").html(dayDate.getDate())
+            $("#alm_cnD").html("农历"+ lunarDate.lMonth + "月" + lunarDate.lDate);
+            $("#alm_cnY").html(lunarDate.gzYear+"年&nbsp;"+lunarDate.gzMonth+"月&nbsp;"+lunarDate.gzDate+"日");
+            $("#alm_cnA").html("【"+lunarDate.animal+"年】");
+            var fes = lunarDate.festival();
+            if(fes.length>0){
+                $(".alm_lunar_date").html($.trim(lunarDate.festival()[0].desc));
+                $(".alm_lunar_date").show();
+            }else{
+                $(".alm_lunar_date").hide();
+            }
+
+        });
+        $(document).ready(function() {
+
+            var date = new Date();
+            var d = date.getDate();
+            var m = date.getMonth();
+            var y = date.getFullYear();
+
+            $('#calendar-widget').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+//                    right: 'month,basicWeek,basicDay'
+                    right: 'month'
+//                    right: 'month,agendaWeek,agendaDay'
+                },
+                monthNamesShort:['一月','二月','三月','四月','5月','六月','七月','八月','九月','十月','十一月','十二月'],
+                monthNames:['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'],
+                editable: true,
+                events: [
+
+                    /*
+                     * ************这里添加日程课程*************
+                     * start :以当日为基准，往前一天则 new Date第三个参数为 d-1;往后一天 d+1,两天 d+2,以此类推；
+                     * url : 这里PHP动态输出 链接地址；
+                     * */
+
+                    {
+                        title: '海外销售部培训课程',
+                        start: new Date(y, m, 1),
+                        url:"course-detail.html"
+                    },
+
+                    {
+                        title: '市场部精英培训课程',
+                        start: new Date(y, m, d-1),
+                        url:"course-detail.html"
+                    },
+                    {
+                        title: '财务部精英培训课程',
+                        start: new Date(y, m, d+1),
+                        url:"course-detail.html"
+                    }
+                    /****************日程安排结束*****************/
+                ]
+
+            });
+
+        });
+
+    </script>
 </head>
 
 <body>
@@ -37,8 +113,7 @@
             <a href="">工程师培训</a>
         </div>
 
-        <div class="course-calendar">
-        </div>
+        <div id="calendar-widget" class="course-calendar"></div>
 
     </div>
 </div>

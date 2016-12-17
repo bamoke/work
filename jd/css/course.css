@@ -150,10 +150,20 @@
 }
 .course-detail .enroll-btn:hover {background-color:#333;}
 
-.enroll-form .btn {margin-right:20px;width:140px;}
+.enroll-form .btn {margin-right:20px;width:100px;}
 .enroll-form .ipt {display:inline-block;}
 .enroll-form .ipt-text {
     width: 300px;
 }
-.enroll-form .submit {width:200px;}
+.enroll-form .submit {width:192px;}
 .enroll-form .cancel {background-color:#999;}
+.enroll-form textarea {padding:5px;width:300px;height:60px;resize:none;font-size:14px;}
+.enroll-form .radio-lab {margin-right:10px;}
+.enroll-form .radio-lab input {margin-right:5px;}
+
+/********** calendar reset ***********/
+.fc-header-title {font-size:18px;color:#222;}
+
+.fc-ltr .fc-event-hori.fc-event-end, .fc-rtl .fc-event-hori.fc-event-start {border-radius:0;}
+.fc-event {padding:5px;background-color:#222;color:#fff;}
+.fc-event:hover {background-color:#df020f;color:#fff;}

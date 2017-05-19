@@ -1,0 +1,21 @@
+<div class="mainTopBar">
+    <h3 class="curPage">{$curPageName}</h3>
+    <a href="{:U('add')}">添加角色</a>
+</div>
+<div class="mainTableBox">
+    <table cellspacing="0" cellpadding="0" border="0" class="mainTable">
+        <tr>
+        <th>Id</th>
+        <th>角色名称</th>
+        <th>操作</th>
+        </tr>
+        <volist name="list" id="role">
+            <tr>
+                <td>{$role.id}</td>
+                <td>{$role.name}</td>
+                <td class="operationBox"><a href="{:U('edit')}">修改</a><span class="fg">|</span><a href="{:U('delete')}">删除</a> </td>
+            </tr>
+        </volist>
+
+    </table>
+</div>

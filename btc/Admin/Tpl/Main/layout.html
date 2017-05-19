@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{$Think.const.APP_NAME}-后台管理</title>
+    <css href="__TMPL_STATIC__/css/base.css"/>
+</head>
+<body>
+<include file="Main/head"/>
+<div id="mainContentBox">
+    <include file="Main/menu"/>
+    <div id="bigSide">
+        <div id="locationBar">首页 &gt;{$curPageName}</div>
+        {__REPLACE__}
+        <div class="footIntroduce"><p>Powered by 云服务组joy.wang</p></div>
+    </div>
+</div>
+</body>
+</html>
+<script src="__PUBLIC__/Js/require.min.js" data-main="__TMPL_STATIC__/js/{$pageVariable['curJsModule']}.js?v={$Think.const.STATIC_DEBUG}"></script>

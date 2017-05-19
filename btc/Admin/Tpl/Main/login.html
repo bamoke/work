@@ -1,0 +1,31 @@
+{__NOLAYOUT__}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{$Think.const.APP_NAME}-用户登录</title>
+    <css href="__TMPL_STATIC__/css/base.css"/>
+    <css href="__TMPL_STATIC__/css/login.css"/>
+</head>
+
+<body>
+<div class="loginPage">
+
+    <div class="loginFormBox">
+    	<div class="bar">{$Think.const.APP_NAME}</div>
+    	<div class="leftInfo">
+        	<div class="icon"></div><span class="text"></span>
+        </div>
+        <form name="loginForm" action="{:U('User/login')}" class="form">
+        	<h3 class="title">管理员登录</h3>
+            <div class="row"><i class="icon u"></i><input type="text" name="username" class="t" maxlength="40" placeholder="用户名" /></div>
+            <div class="row"><i class="icon pw"></i><input type="password" name="password" class="t" maxlength="20" placeholder="密码"  /></div>
+            <div class="row"><input type="text" class="t" value="" name="verify" placeholder="请输入下面的验证码"><img class="verifyImg" src="{:U('User/create_verify')}" /> </div>
+            <div class="errorTips"><i></i><span class="tipsTxtBox">用户名或密码错误！</span></div>
+            <input type="submit" value="立即登录" class="" />
+        </form>
+    </div>
+</div>
+</body>
+</html>
+<script src="__PUBLIC__/Js/require.min.js" data-main="__TMPL_STATIC__/js/login.js?v={$Think.const.STATIC_DEBUG}"></script>

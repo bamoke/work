@@ -1,15 +1,19 @@
 @charset "utf-8";
 /***reset***/
-html{  -webkit-text-size-adjust: 100%;  }
+@font-face{
+    font-family: 'Perpetua';
+    src : url('../fonts/Perpetua.ttf');
+}
+html{  -webkit-text-size-adjust: 100%; }
 html,body {
     margin:0;
-    padding:0;
-    height:100%;
+	padding:0;
+	min-height: 100%;
 }
 body {
     line-height: 1.6;
     font-size:.25rem;
-	font-family: Perpetua,"Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Perpetua","Helvetica Neue", "Helvetica", Arial, sans-serif;
 }
 h1,h2,h3,h4,h5,h6,ul,p,ol,form,input {margin:0;padding:0;}
 li {list-style:none;}

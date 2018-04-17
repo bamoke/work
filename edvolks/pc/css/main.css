@@ -232,7 +232,7 @@ height:100%;
 	font-weight: 100;
 }
 /**studio-body**/
-#studio-body {
+#studio-body .g-hd {
 	/* background:url(images/studio-bg.jpg) repeat-x center top; */
 	background: #505050;
 }

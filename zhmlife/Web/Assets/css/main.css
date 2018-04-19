@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+#index-banner {
+	width:100%;
+	height:400px;
+	overflow: hidden;
+	background-color:#222;
+}
+#index-banner .bg {
+	width:100%;
+	height:100%;
+	background-repeat: no-repeat;
+	/* background-size:cover; */
+}
+.swiper-item {width:100%;}

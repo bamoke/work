@@ -1,483 +1,619 @@
-[ 2018-04-20T00:12:19+08:00 ] ::1 /zhmlife/index.php
+[ 2018-04-20T23:37:02+08:00 ] ::1 /zhmlife/index.php/Article/index.html
 INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000790s ]
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002269s ]
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001117s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001190s ]
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001752s ]
+ERR: 非法操作:Article
+
+[ 2018-04-20T23:37:03+08:00 ] ::1 /zhmlife/index.php/Article/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000539s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000792s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+ERR: 非法操作:Article
+
+[ 2018-04-20T23:37:34+08:00 ] ::1 /zhmlife/index.php/Web/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000845s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001381s ]
+ERR: 非法操作:Web
+
+[ 2018-04-20T23:37:44+08:00 ] ::1 /zhmlife/index.php/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000562s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000819s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000875s ]
+ERR: 非法操作:Article
+
+[ 2018-04-20T23:38:54+08:00 ] ::1 /zhmlife/index.php/Article/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000843s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000886s ]
+ERR: 非法操作:Article
+
+[ 2018-04-20T23:39:02+08:00 ] ::1 /zhmlife/index.php/Test/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000831s ]
+ERR: 非法操作:Test
+
+[ 2018-04-20T23:39:08+08:00 ] ::1 /zhmlife/index.php/Article/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000930s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000850s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000896s ]
+ERR: 非法操作:Article
+
+[ 2018-04-20T23:39:17+08:00 ] ::1 /zhmlife/index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000828s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000869s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000237s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000298s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\b8ae351b8d38ce8aa2e4550efff5399e.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015774s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015825s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000733s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000771s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001565s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001632s ]
+
+[ 2018-04-20T23:39:23+08:00 ] ::1 /zhmlife/index.php/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000514s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004404s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004528s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000232s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000293s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\b8ae351b8d38ce8aa2e4550efff5399e.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017166s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017386s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002062s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002159s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001171s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001243s ]
+
+[ 2018-04-20T23:39:27+08:00 ] ::1 /zhmlife/index.php/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000569s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000805s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000848s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000210s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000256s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\b8ae351b8d38ce8aa2e4550efff5399e.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014959s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015013s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000731s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000973s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001034s ]
+
+[ 2018-04-20T23:40:07+08:00 ] ::1 /zhmlife/index.php/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000992s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000839s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000893s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000427s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000529s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\b8ae351b8d38ce8aa2e4550efff5399e.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.082513s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.082586s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001064s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001136s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001467s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001565s ]
+
+[ 2018-04-20T23:40:08+08:00 ] ::1 /zhmlife/index.php/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000510s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002203s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000240s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000292s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\b8ae351b8d38ce8aa2e4550efff5399e.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012367s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012416s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000628s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000929s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001006s ]
+
+[ 2018-04-20T23:40:09+08:00 ] ::1 /zhmlife/index.php/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000816s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000288s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000375s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\b8ae351b8d38ce8aa2e4550efff5399e.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014857s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014908s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000666s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000705s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000869s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000923s ]
+
+[ 2018-04-20T23:40:11+08:00 ] ::1 /zhmlife/index.php/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000510s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000861s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000926s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000243s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000296s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\b8ae351b8d38ce8aa2e4550efff5399e.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015975s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016023s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000615s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000650s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000845s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000896s ]
+
+[ 2018-04-20T23:40:17+08:00 ] ::1 /zhmlife/index.php/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000740s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000784s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000233s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000286s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\b8ae351b8d38ce8aa2e4550efff5399e.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015792s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015848s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000605s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000895s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000957s ]
+
+[ 2018-04-20T23:40:18+08:00 ] ::1 /zhmlife/index.php/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000754s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000872s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000931s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000214s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000270s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\b8ae351b8d38ce8aa2e4550efff5399e.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014209s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014257s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000669s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000841s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000892s ]
+
+[ 2018-04-20T23:40:18+08:00 ] ::1 /zhmlife/index.php/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000771s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000234s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000289s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\b8ae351b8d38ce8aa2e4550efff5399e.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016894s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016948s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000628s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000904s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000958s ]
+
+[ 2018-04-20T23:40:18+08:00 ] ::1 /zhmlife/index.php/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000960s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001029s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000247s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000298s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\b8ae351b8d38ce8aa2e4550efff5399e.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012416s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012460s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000587s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000621s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000893s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000963s ]
+
+[ 2018-04-20T23:41:24+08:00 ] ::1 /zhmlife/index.php/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000912s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000979s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001040s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000776s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000823s ]
+
+[ 2018-04-20T23:41:33+08:00 ] ::1 /zhmlife/index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000534s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001187s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001298s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000214s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000262s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012184s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012234s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000621s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000892s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000942s ]
+
+[ 2018-04-20T23:41:34+08:00 ] ::1 /zhmlife/index.php/Article/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000847s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000780s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000850s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000079s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006038s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006149s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000677s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000717s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000819s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000861s ]
+
+[ 2018-04-20T23:43:50+08:00 ] ::1 /zhmlife/index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000573s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000803s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000847s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000240s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000294s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014415s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014461s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000733s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001020s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001087s ]
+
+[ 2018-04-20T23:43:52+08:00 ] ::1 /zhmlife/index.php/Article/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000490s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000890s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000973s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000110s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\abe5913d34799c094eb3eb247f853c54.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010604s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010684s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000684s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000718s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000856s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000907s ]
+
+[ 2018-04-20T23:49:27+08:00 ] ::1 /zhmlife/index.php/Article/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000827s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001426s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000115s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\abe5913d34799c094eb3eb247f853c54.php 第 10 行.
+NOTIC: [8] Undefined index: cate D:\work\zhmlife\Runtime\Cache\Web\abe5913d34799c094eb3eb247f853c54.php 第 39 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044066s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044135s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000939s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000996s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000862s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000907s ]
+
+[ 2018-04-20T23:49:30+08:00 ] ::1 /zhmlife/index.php/Article/index/cate/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000623s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000771s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000821s ]
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
 INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000143s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011998s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.012075s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000118s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\abe5913d34799c094eb3eb247f853c54.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011707s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011784s ]
 INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000802s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000860s ]
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000596s ]
 INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001162s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001228s ]
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000727s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000765s ]
 
-[ 2018-04-20T00:13:21+08:00 ] ::1 /zhmlife/index.php
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003234s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.003455s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000092s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005955s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.006012s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000475s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000519s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000731s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000791s ]
-
-[ 2018-04-20T01:17:23+08:00 ] ::1 /zhmlife/index.php
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000792s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001049s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001127s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000116s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008136s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.008190s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000595s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000633s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000779s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000819s ]
-
-[ 2018-04-20T01:18:05+08:00 ] ::1 /zhmlife/index.php
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000745s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000791s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000093s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006306s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.006345s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000524s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000560s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000729s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000766s ]
-
-[ 2018-04-20T01:23:33+08:00 ] ::1 /zhmlife/index.php
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000791s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001105s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001177s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000143s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010799s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.010871s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000941s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.001002s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001170s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001235s ]
-
-[ 2018-04-20T01:23:57+08:00 ] ::1 /zhmlife/index.php
+[ 2018-04-20T23:49:33+08:00 ] ::1 /zhmlife/index.php/Article/index/cate/1.html
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000085s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000533s ]
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000802s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000854s ]
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001921s ]
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000227s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017127s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.017219s ]
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000113s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\abe5913d34799c094eb3eb247f853c54.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007805s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007851s ]
 INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001267s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.001371s ]
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000677s ]
 INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001844s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001955s ]
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002342s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002650s ]
 
-[ 2018-04-20T01:24:17+08:00 ] ::1 /zhmlife/index.php
+[ 2018-04-20T23:49:34+08:00 ] ::1 /zhmlife/index.php/Article/index/cate/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000795s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000308s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\abe5913d34799c094eb3eb247f853c54.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009474s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009525s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000649s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000953s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000996s ]
+
+[ 2018-04-20T23:49:36+08:00 ] ::1 /zhmlife/index.php/Index/index.html
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000545s ]
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000672s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000717s ]
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000773s ]
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000091s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005676s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.005720s ]
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000202s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000255s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 10 行.
+NOTIC: [8] Undefined index: cate D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 39 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032904s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032955s ]
 INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000511s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000549s ]
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000610s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000664s ]
 INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000627s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000667s ]
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000846s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000899s ]
 
-[ 2018-04-20T01:25:17+08:00 ] ::1 /zhmlife/index.php
+[ 2018-04-20T23:49:37+08:00 ] ::1 /zhmlife/index.php/Article/index/cate/1.html
 INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001951s ]
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000752s ]
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001010s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001149s ]
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000807s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000887s ]
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000092s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005848s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.005897s ]
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000248s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000485s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\abe5913d34799c094eb3eb247f853c54.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010148s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010211s ]
 INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000472s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000509s ]
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000621s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000658s ]
 INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000643s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000682s ]
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000867s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000909s ]
 
-[ 2018-04-20T01:25:39+08:00 ] ::1 /zhmlife/index.php
+[ 2018-04-20T23:49:44+08:00 ] ::1 /zhmlife/index.php/Article/index/cate/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000732s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000948s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001071s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000114s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\abe5913d34799c094eb3eb247f853c54.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008449s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008502s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000666s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000723s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000774s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000815s ]
+
+[ 2018-04-20T23:49:46+08:00 ] ::1 /zhmlife/index.php/Article/index/cate/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000840s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000831s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000928s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\abe5913d34799c094eb3eb247f853c54.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008321s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008386s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000631s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000777s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000817s ]
+
+[ 2018-04-20T23:53:15+08:00 ] ::1 /zhmlife/index.php/Article/index/cate/3.html
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000749s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000893s ]
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001267s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001360s ]
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001632s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001821s ]
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000153s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009900s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.009976s ]
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000197s ]
+NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\abe5913d34799c094eb3eb247f853c54.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016064s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016166s ]
 INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000878s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000943s ]
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001284s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001359s ]
 INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001189s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001258s ]
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001397s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001478s ]
 
-[ 2018-04-20T01:27:18+08:00 ] ::1 /zhmlife/index.php
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000522s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000767s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000100s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008840s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.008881s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000580s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000613s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000779s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000819s ]
-
-[ 2018-04-20T01:27:36+08:00 ] ::1 /zhmlife/index.php
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000738s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000782s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008505s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.008549s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000539s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000572s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000768s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000807s ]
-
-[ 2018-04-20T01:28:04+08:00 ] ::1 /zhmlife/index.php
+[ 2018-04-20T23:57:40+08:00 ] ::1 /zhmlife/index.php/Index/index.html
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000766s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000812s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000092s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007839s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.007880s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000522s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000555s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000701s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000739s ]
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000796s ]
 
-[ 2018-04-20T01:30:53+08:00 ] ::1 /zhmlife/index.php
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000851s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001091s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001177s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000145s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009220s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.009287s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000849s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000904s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001214s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001289s ]
-
-[ 2018-04-20T01:32:17+08:00 ] ::1 /zhmlife/index.php
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000561s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000812s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000087s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005715s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.005757s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000511s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000560s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000705s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000742s ]
-
-[ 2018-04-20T01:32:41+08:00 ] ::1 /zhmlife/index.php
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000538s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000715s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000765s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005982s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.006037s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000525s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000560s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000704s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000744s ]
-
-[ 2018-04-20T01:33:12+08:00 ] ::1 /zhmlife/index.php
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000883s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001063s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001148s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000106s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006264s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.006317s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000486s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000527s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000642s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000693s ]
-
-[ 2018-04-20T01:33:34+08:00 ] ::1 /zhmlife/index.php
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000717s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000765s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007578s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.007653s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000520s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000553s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000706s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000744s ]
-
-[ 2018-04-20T01:33:54+08:00 ] ::1 /zhmlife/index.php
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000520s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000728s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000777s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000090s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005761s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.005801s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000560s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000592s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000766s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000804s ]
-
-[ 2018-04-20T01:34:34+08:00 ] ::1 /zhmlife/index.php
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000526s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000746s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000825s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000093s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005820s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.005883s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000460s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000496s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000641s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000679s ]
-
-[ 2018-04-20T01:34:50+08:00 ] ::1 /zhmlife/index.php
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000761s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000098s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005996s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.006043s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000495s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000533s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002594s ]
-INFO: [ app_end ] --END-- [ RunTime:0.002754s ]
-
-[ 2018-04-20T01:35:53+08:00 ] ::1 /zhmlife/index.php
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000095s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000987s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001060s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000200s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010307s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.010377s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000875s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000932s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001133s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001200s ]
-
-[ 2018-04-20T01:37:45+08:00 ] ::1 /zhmlife/index.php
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000535s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000740s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000782s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000089s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 8 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005851s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.005891s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000544s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000587s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000734s ]
-INFO: [ app_end ] --END-- [ RunTime:0.000771s ]
-
-[ 2018-04-20T01:50:01+08:00 ] ::1 /zhmlife/index.php
+[ 2018-04-20T23:59:13+08:00 ] ::1 /zhmlife/index.php/Index/index.html
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000548s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000769s ]
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000848s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000914s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000198s ]
-NOTIC: [8] Undefined variable: pageTitle D:\work\zhmlife\Runtime\Cache\Web\167d83ab026d548ee3a8c8391570e6ef.php 第 9 行.
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010558s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.010658s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000912s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000979s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001379s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001476s ]
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001130s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001200s ]
+
+[ 2018-04-20T23:59:38+08:00 ] ::1 /zhmlife/index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000549s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000748s ]
+
+[ 2018-04-20T23:59:41+08:00 ] ::1 /zhmlife/index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000818s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000850s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000895s ]
+
+[ 2018-04-20T23:59:50+08:00 ] ::1 /zhmlife/index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000731s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000774s ]
 

@@ -12,7 +12,7 @@ if(version_compare(PHP_VERSION,'5.3.0','<')) die('require PHP > 5.3.0 !');
 define("APP_DEBUG",true);
 
 //定义应用名称,3.2可以不用定义
-// define("APP_NAME","珠港澳网");
+define("APP_NAME","珠港澳网");
 
 //定义应用目录
 // define("APP_PATH","/zhmlife");
@@ -20,11 +20,11 @@ define("APP_DEBUG",true);
 //设置是否生成目录安全文件
 define("BUILD_DIR_SECURE",false);
 
-//生成模块并绑定,默认生成Home模块； (另有$_GET['m']方法绑定)
+//生成模块并绑定,默认生成Home模块(绑定后路由中不出现模块名称)； (另有$_GET['m']方法绑定)
 define("BIND_MODULE","Web");
 
-//生成控制器并绑定，默认生成Index控制器； (另有$_GET['c']方法绑定)
-define("BIND_CONTROLLER","Index");
+//生成控制器并绑定，默认生成Index控制器（绑定后只能访问此控制器）； (另有$_GET['c']方法绑定)
+// define("BIND_CONTROLLER","Index");
 
 // 定义应用状态模式
 

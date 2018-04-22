@@ -1,0 +1,30 @@
+<div class="g-wrap m-hd">
+        <div class="w-main g-row-bt">
+            <h1 class="u-logo">
+                <a href="{:U('index')}}"></a>
+            </h1>
+            <div class="m-top-search">
+                <form action="">
+                    <div class="input-wrap">
+                        <input type="text" name="keyword" maxlength="50" placeholder="请输入关键字">
+                        <input type="submit" value="搜索">
+                    </div>
+                </form>
+                <div class="tags">
+                    <span>热门搜索：</span><a href="">好玩</a><a href="">折扣</a><a href="">酒店</a><a href="">美食</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="g-wrap m-nav">
+        <div class="w-main">
+            <a href="{:U('Index/index')}" class="<notempty name='isIndex'>active</notempty>">
+                首页</a><a href="{:U('Article/index?cate=1')}" class="<eq name='Think.get.cate' value='1'>active</eq>">
+                旅游</a><a href="{:U('Article/index?cate=2')}" class="<eq name='Think.get.cate' value='2'>active</eq>">
+                美食</a><a href="{:U('Article/index?cate=3')}" class="<eq name='Think.get.cate' value='3'>active</eq>">
+                购物</a><a href="{:U('Article/index?cate=4')}" class="<eq name='Think.get.cate' value='4'>active</eq>">
+                酒店</a><a href="{:U('Article/index?cate=5')}" class="<eq name='Think.get.cate' value='5'>active</eq>">
+                生活</a><a href="{:U('Article/index?cate=6')}" class="<eq name='Think.get.cate' value='6'>active</eq>">
+                时尚</a>
+        </div>
+    </div>

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="format-detection" content="telephone=no" />
     <meta http-equiv="Cache" content="no-cache">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1">
     <meta name="keywords" content="Macao, Macau, Architecture, Interior Design, Design Firm, the EdVolks, the Volks, Eddie Ieong, Manuel Lam, Harvard, Architect, Macau Architecture Firm, Macao Interior Design Firm">
     <meta name="description" content="">
     <link href="css/global.css" rel="stylesheet" />
@@ -23,6 +24,7 @@
                 <span class="fg">|</span>
                 <a href="index-cn.html">中</a>
             </div> -->
+            <div id="navigation-btn" class="s-bg-dark"></div>
             <ul class="m-nav">
                 <li>
                     <a href="news.html">NEWS</a>
@@ -94,7 +96,7 @@
 
 
     <div class="g-ft">
-        <div class="w-main footer-style-3">
+        <div class="w-main footer-style-3 s-line-dark">
             <span class="copyright">&copy; All images and materials in this website are copyright protected and are the property of the EdVolks Architecture
                 Design Ltd.</span>
         </div>
@@ -104,3 +106,9 @@
 </body>
 
 </html>
+<script src="./js/zepto.min.js"></script>
+<script>
+    $("#navigation-btn").click(function(){
+        $(".m-nav").toggle();
+    });
+</script>

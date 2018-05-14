@@ -156,11 +156,11 @@ class ContentController extends AuthController
             }
 
             //图片上传
-            if($_FILES['img']['tmp_name']){
+            if($_FILES['thumb']['tmp_name']){
                 //图片处理
                 $upload_conf=array(
                     'maxSize' => 3145728,
-                    'rootPath' => __ROOT__.'/Uploads/',
+                    'rootPath' => ROOT.'/Uploads/',
                     'savePath' => 'thumb/',
                     'saveName' => md5(time().I("session.uid")),
                     'exts' => array('jpg', 'gif', 'png', 'jpeg'),
@@ -168,20 +168,21 @@ class ContentController extends AuthController
                     'subName' => date("Ym",time())
                 );
                 $upload = new \Think\Upload($upload_conf);
-                $uploadResult = $upload->uploadOne($_FILES['img']);
+                $uploadResult = $upload->uploadOne($_FILES['thumb']);
                 if(!$uploadResult){
                     $backData['status'] = 0;
                     $backData['msg'] = $upload->getError();
                     return $this->ajaxReturn($backData);
                 }
             }else {
-                if($page_type == 'banner'){
+                if($type == 'banner'){
                     $backData['status'] = 0;
                     $backData['msg'] = "必须上传图片";
                     return $this->ajaxReturn($backData);
                 }
             }
-            $model->img = $uploadResult['savename'];
+            
+            $model->thumb = $uploadResult['savename'];
             if($model->add()){
                 $backData['status'] = 1;
                 $backData['msg'] = "保存成功";

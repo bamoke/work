@@ -30,49 +30,54 @@ $typeArr = array('single'=>'单页面','news'=>'文章列表');
             <div class="form-group">
                 <label class="col-xs-2 control-label">首页导航:</label>
                 <div class="col-xs-3">
-                    <label class="radio-inline"><input name="is_nav" type="radio" value="0" <neq name="info['is_nav']" value="1">checked</neq> >否</label>
-                    <label class="radio-inline"><input name="is_nav" type="radio" value="1" <eq name="info['is_nav']" value="1">checked</eq> >是</label>
+                    <label class="radio-inline">
+                        <input name="is_nav" type="radio" value="0" <neq name="info['is_nav']" value="1">checked</neq> >否</label>
+                    <label class="radio-inline">
+                        <input name="is_nav" type="radio" value="1" <eq name="info['is_nav']" value="1">checked</eq> >是</label>
                 </div>
                 <div class="col-xs-3 js-tips"></div>
             </div>
             <empty name="Think.get.id">
-            <div class="form-group">
-                <label class="col-xs-2 control-label">栏目类型:</label>
-                <div class="col-xs-3">
-                    <select name="type" id="" class="form-control" >
-                        <option value="">请选择</option>
-                        <option value="single" <eq name="info['type']" value="single">selected</eq> >单页面</option>
-                        <!-- <option value="pic" <eq name="info['type']" value="pic">selected</eq> >图片</option> -->
-                        <option value="news" <eq name="info['type']" value="news">selected</eq> >文章列表</option>
-                        <!-- <option value="product" <eq name="info['type']" value="product">selected</eq> >产品</option> -->
-                    </select>
-                </div>
-                <div class="col-xs-3 js-tips"></div>
-            </div>
-            <else/>
-            <div class="form-group">
+                <div class="form-group">
                     <label class="col-xs-2 control-label">栏目类型:</label>
                     <div class="col-xs-3">
-                        <input class="form-control" readonly type="text" name="type" value="{$typeArr[$info['type']]}" >
+                        <select name="type" id="" class="form-control">
+                            <option value="">请选择</option>
+                            <option value="single" <eq name="info['type']" value="single">selected</eq> >单页面</option>
+                            <!-- <option value="pic" <eq name="info['type']" value="pic">selected</eq> >图片</option> -->
+                            <option value="news" <eq name="info['type']" value="news">selected</eq> >文章列表</option>
+                            <!-- <option value="product" <eq name="info['type']" value="product">selected</eq> >产品</option> -->
+                        </select>
+                    </div>
+                    <div class="col-xs-3 js-tips"></div>
+                </div>
+                <else/>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label">栏目类型:</label>
+                    <div class="col-xs-3">
+                        <input class="form-control" readonly type="text" name="type" value="{$typeArr[$info['type']]}">
                     </div>
                     <div class="col-xs-3 js-tips"></div>
                 </div>
             </empty>
             <div class="form-group">
                 <label class="col-xs-2 control-label">栏目关键词:</label>
-                <div class="col-xs-6">
+                <div class="col-xs-4">
                     <input class="form-control" type="text" name="keyword" value="{$info['keyword']}" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-xs-2 control-label">栏目描述:</label>
-                <div class="col-xs-6">
+                <div class="col-xs-4">
                     <textarea class="form-control" type="text" name="description">{$info['description']}</textarea>
                 </div>
                 <div class="col-xs-3 js-tips"></div>
             </div>
             <div class="form-group">
-                <div class="col-xs-3 col-xs-offset-2">
+                <div class="col-xs-1 col-xs-offset-2">
+                    <a href="javascript:window.history.back()" class="btn-block btn btn-default" type="button" >返回</a>
+                </div>
+                <div class="col-xs-3">
                     <button class="btn-block btn btn-info" type="submit">提交</button>
                 </div>
             </div>

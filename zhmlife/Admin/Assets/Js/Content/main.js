@@ -27,6 +27,12 @@ require(['../Common/init'],function(){
             });
         }
 
+        $.validator.setDefaults({
+            errorElement:"div",
+            errorPlacement: function(error, element) {
+                error.appendTo(element.closest('.form-group').find('.js-tips'));
+            }
+        });
 
         /***上传缩略图**/
         var $curUpload = $("#js-thumb-upload-panel"),
@@ -51,12 +57,18 @@ require(['../Common/init'],function(){
             $curUpload.find(".js-old-thumb").val('');
         })
 
-        /****表单验证***/
+
+        var isLoaded = true;
+        var $singleForm = $('form[name="single-form"]'),
+            $newsForm = $('form[name="news-form"]');
+            $bannerForm = $('form[name="banner-form"]');
+
+        /****表单提交***/
         $.validator.setDefaults({
             submitHandler: function(form) {
                 //debugger;
                 var formData = new FormData(form);
-                $.ajax({
+                var ajaxOpt = {
                     url:form.action,
                     type:'post',
                     data:formData,
@@ -68,25 +80,15 @@ require(['../Common/init'],function(){
                         if(res.status){
                             window.location=res.jump;
                         }
-                    },
-                    complete:function(){isLoaded = true;},
-                    beforeSend:function(){
-                        if(isLoaded){
-                            isLoaded = false;
-
-                        }else {
-                            return false;
-                        }
                     }
-                });
+                }
+                bs.main_ajax(ajaxOpt,isLoaded);
                 return false;
             }
         });
 
-        var isLoaded = true;
-        var $singleForm = $('form[name="single-form"]'),
-            $newsForm = $('form[name="news-form"]');
-            $bannerForm = $('form[name="banner-form"]');
+
+        /****表单验证***/
         $singleForm.validate({
   /*          rules:{
                 content:'required'
@@ -100,12 +102,12 @@ require(['../Common/init'],function(){
         $newsForm.validate({
             rules:{
                 title:'required',
-                description:'required'
+                // description:'required'
 
             },
             messages:{
                 title:'新闻标题不能为空',
-                description:'"新闻描述不能为空'
+                // description:'"新闻描述不能为空'
             }
         });
 

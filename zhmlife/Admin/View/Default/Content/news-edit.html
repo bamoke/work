@@ -1,8 +1,8 @@
 <div class="panel">
     <div class="panel-body">
-        <div  class="u-page-title"><span class="caption">新闻编辑</span> </div>
+        <div  class="u-page-title"><span class="caption">文章修改</span> </div>
         <form name="news-form" class="form form-horizontal" action="{:U('update',array('id'=>$data['id']))}">
-            <input type="hidden" name="page_type" value="{$Think.get.page_type}">
+            <input type="hidden" name="type" value="{$Think.get.type}">
             <input type="hidden" name="cid" value="{$Think.get.cid}">
             <div class="form-group">
                 <label class="control-label col-xs-1">新闻标题:</label>
@@ -11,10 +11,37 @@
                 </div>
             </div>
             <div class="form-group">
+                <label class="control-label col-xs-1"><span class="text-danger">*</span>封面:</label>
+                <div class="col-xs-3">
+                    <div class="m-thumbnail-upload" id="js-thumb-upload-panel">
+                        <empty name="data['thumb']">
+                            <a href="javascript:" class="add-btn js-add-btn"></a>
+                            <div class="thumb-box hidden"><img class="thumb" style=""><span class="del-btn">删除</span> </div>
+                            <else/>
+                            <a href="javascript:" class="add-btn js-add-btn hidden"></a>
+                            <div class="thumb-box">
+                                <img class="thumb" src="__UPLOAD__/thumb/{$data['thumb']}">
+                                <span class="del-btn">删除</span>
+                            </div>
+                            <input type="hidden" class="js-old-thumb" name="old_img" value="{$data['thumb']}">
+                        </empty>
+                        <input type="file" name="thumb" class="js-file-input" style="opacity: 0" >
+                    </div>
+                </div>
+                <div class="col-xs-3 tips"></div>
+            </div>
+            <div class="form-group">
                 <label class="control-label col-xs-1">是否推荐:</label>
                 <div class="col-xs-8">
                     <label class="checkbox-inline"><input type="radio" name="recommend" value="1" <if condition="$data['recommend'] eq 1">checked</if> />是</label>
                     <label class="checkbox-inline"><input type="radio" name="recommend" value="0" <if condition="$data['recommend'] eq 0">checked</if> />否</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-1">显示状态:</label>
+                <div class="col-xs-8">
+                    <label class="checkbox-inline"><input type="radio" name="status" value="1" <if condition="$data['status'] eq 1">checked</if> />显示</label>
+                    <label class="checkbox-inline"><input type="radio" name="status" value="0" <if condition="$data['status'] eq 0">checked</if> />隐藏</label>
                 </div>
             </div>
             <div class="form-group">

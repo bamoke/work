@@ -74,8 +74,8 @@ define(["jq"],function(){
         * */
        tips: function (text, type, t, f) {
            var time = 1000,
-               cb = function () {
-               };
+                type= type || 'default',
+               cb = function () {};
            if (arguments[2] !== undefined) {
                if (typeof arguments[2] == 'number') {
                    time = arguments[2];

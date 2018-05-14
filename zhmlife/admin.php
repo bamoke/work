@@ -30,5 +30,7 @@ define("BIND_MODULE","Admin");
 //define('APP_STATUS','online');
 //define('APP_STATUS','home');
 
+define('ROOT',dirname(__FILE__));
+
 //引入PHP框架文件
 require("../ThinkPHP/ThinkPHP.php");

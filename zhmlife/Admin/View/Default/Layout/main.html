@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="renderer" content="webkit">
     <title>{$pageName}</title>
-    <link href="__MODULE_ASSET__/Style/font-awesome.min.css" rel="stylesheet">
-    <link href="__MODULE_ASSET__/Plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="__MODULE_ASSET__/Style/default.css" rel="stylesheet">
-    <link href="__MODULE_ASSET__/Plugins/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="__ADMIN_ASSET__/Style/font-awesome.min.css" rel="stylesheet">
+    <link href="__ADMIN_ASSET__/Plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__ADMIN_ASSET__/Style/default.css" rel="stylesheet">
+    <link href="__ADMIN_ASSET__/Plugins/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     {//JavaScript Setting}
     <present name="output['script']">
         <assign name="script" value="$output['script']"/>
         <else/>
         <assign name="script" value="Common/init"/>
     </present>
-    <script type="text/javascript" src="__MODULE_ASSET__/Plugins/require/require.js" data-main="__MODULE_ASSET__/Js/{$script}"></script>
+    <script type="text/javascript" src="__ADMIN_ASSET__/Plugins/require/require.js" data-main="__ADMIN_ASSET__/Js/{$script}"></script>
     <script>
     const rootDir = '/zhmlife/Admin';
     </script>

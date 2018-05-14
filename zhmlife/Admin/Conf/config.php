@@ -5,8 +5,4 @@ return array(
 	'LAYOUT_NAME'		=>"Layout/main",
 	"DEFAULT_THEME"    =>"Default",
 	'TMPL_LAYOUT_ITEM' => '{__CONTENT__}',
-	"TMPL_PARSE_STRING"	=>array(
-		"__MODULE_ASSET__"=>__ROOT__."/".MODULE_NAME."/Assets"
-	),
-
 );

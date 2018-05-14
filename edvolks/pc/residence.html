@@ -16,15 +16,16 @@
 </head>
 
 <body id="residence-body" class="dark-style">
-    <div class="g-hd ">
-        <div class="w-main f-cb">
+    <div class="g-hd" id="js-head">
+        <div class="w-main head-top f-cb">
             <a class="u-logo" href="index.html"><h1>The EdVolks Architecture Design Ltd.</h1></a>
 <!--             <div class="u-language">
                 <a href="index.html">ENG</a>
                 <span class="fg">|</span>
                 <a href="index-cn.html">中</a>
             </div> -->
-            <div id="navigation-btn"></div>
+            <div id="" class="navigation-btn btn-dark"></div>
+            <div class="nav-masker"></div>
             <ul class="m-nav">
                 <li>
                     <a href="news.html">NEWS</a>
@@ -54,6 +55,17 @@
                 <p><img src="images/residence-img-03.jpg" alt=""></p>
                 
             </div>
+            <div class="residence-foot">
+                <div class="left-info">- PROJECT DESCRIPTION : coming soon -</div>
+                <div class="right-info">
+                    <p><span>Category</span><span>Residential</span></p>
+                    <p><span>Area</span><span>2500 ft2</span></p>
+                    <p><span>Location</span><span>Nam Van, Macao</span></p>
+                    <p><span>Status</span><span>Completed in 2018</span></p>
+                    <p><span>Partners in Charge </span><span>Manuel Lam</span></p>
+                    <p><span>Team</span><span>Scarlett Li, Lai</span></p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -70,8 +82,4 @@
 
 </html>
 <script src="./js/zepto.min.js"></script>
-<script>
-    $("#navigation-btn").click(function(){
-        $(".m-nav").toggle();
-    });
-</script>
+<script src="./js/main.js"></script>

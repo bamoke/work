@@ -1,0 +1,51 @@
+<div class="panel">
+    <div class="panel-body">
+        <empty name="output['list']">
+            {$emptyHtml}
+            <else/>
+            <table class="table table-bordered" border="0" cellpadding="0" cellspacing="0">
+                <thead>
+                <tr>
+                    <th width="200">邮箱</th>
+                    <th width="200">手机</th>
+                    <th>注册时间</th>
+                    <th>最近登录</th>
+                    <th>资金余额</th>
+                    <th>累计收益</th>
+                    <th>状态</th>
+                    <!--<th width="80">操作</th>-->
+                </tr>
+                </thead>
+                <tbody>
+                <foreach name="output['list']" item="vo">
+                    <tr>
+                        <td>{$vo.username}</td>
+                        <td>{$vo.mobile}</td>
+                        <td>{:date("Y-m-d H:i:s",$vo['reg_time'])}</td>
+                        <td>{$vo.login_time}</td>
+                        <td>{$vo.capital}</td>
+                        <td>{$vo.gains}</td>
+                        <?php if ($vo['status'] == 1){?>
+                        <td class="text-success"><i class="icon icon-ok-circle"></i>正常</td>
+                        <?php }else {?>
+                        <td class="text-warning"><i class="icon icon-remove-circle"></i>禁用</td>
+                        <?php }?>
+
+                        <!--<td class="operation-box">-->
+                            <!--<a href="{:U('detail','id='.$vo['id'])}" class="edit">查看</a>-->
+                        <!--</td>-->
+                    </tr>
+                </foreach>
+
+                </tbody>
+            </table>
+        </empty>
+
+    </div>
+    <div class="panel-footer">
+        <div class="m-pagination">
+            {$output['paging']}
+        </div>
+    </div>
+</div>
+

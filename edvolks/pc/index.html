@@ -10,14 +10,14 @@
     <meta name="description" content="">
     <link href="css/global.css" rel="stylesheet" />
     <link rel="stylesheet" href="./css/swiper.min.css">
-    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/main.css?v=1" rel="stylesheet" />
     <title>The EdVolks Architecture Design Ltd.</title>
 
 </head>
 
 <body class="">
-    <div class="g-index-hd">
-        <div class="w-main f-cb">
+    <div class="g-index-hd" id="js-head">
+        <div class="w-main head-top f-cb">
             <a class="u-logo" href="index.html">
                 <h1>The EdVolks Architecture Design Ltd.</h1>
             </a>
@@ -26,7 +26,8 @@
                 <span class="fg">|</span>
                 <a href="index-cn.html">中</a>
             </div> -->
-            <div id="navigation-btn" class="s-bg-white"></div>
+            <div id="" class="navigation-btn btn-white"></div>
+            <div class="nav-masker"></div>
             <ul class="m-nav s-text-light">
                 <li>
                     <a href="news.html">NEWS</a>
@@ -52,7 +53,7 @@
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div id="slide-bg-1" class="slide-item-bg" style="background-image:url(images/index-banner-1.jpg)"></div>
+                    <div id="slide-bg-1" class="slide-item-bg"></div>
                     <div class="index-banner-text index-banner-news-text">
                         <div class="w-main">
                             <div class="type">/ NEWS /</div>
@@ -90,6 +91,30 @@
                         </div>
                     </div>
                 </div>
+                <div class="swiper-slide">
+                    <div id="slide-bg-3" class="slide-item-bg" style="background-image:url(images/index-banner-4.jpg)"></div>
+                    <div class="index-banner-text">
+                        <div class="w-main index-banner-single-text">
+                            <div class="text-box">
+                                <span>Residental 2018 </span>
+                                <span>Private Residence,  Taipa, Macao</span>
+                            </div>
+                            <a href="residence-1.html" class="u-index-more-btn">more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div id="slide-bg-3" class="slide-item-bg" style="background-image:url(images/index-banner-5.jpg)"></div>
+                    <div class="index-banner-text">
+                        <div class="w-main index-banner-single-text">
+                            <div class="text-box">
+                                <span>Residental 2018 </span>
+                                <span>Private Residence,  Taipa, Macao</span>
+                            </div>
+                            <a href="residence-2.html" class="u-index-more-btn">more</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- Add Pagination -->
 
@@ -110,6 +135,7 @@
 </html>
 <script src="./js/swiper.min.js"></script>
 <script src="./js/zepto.min.js"></script>
+<script src="./js/main.js"></script>
 <script>
     var swiper = new Swiper('.swiper-container', {
         // autoplay:5000,
@@ -128,7 +154,5 @@
         },
 
     });
-    $("#navigation-btn").click(function(){
-        $(".m-nav").toggle();
-    });
+
 </script>

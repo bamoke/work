@@ -10,21 +10,24 @@
     <meta name="description" content="">
     <link href="css/global.css" rel="stylesheet" />
     <link rel="stylesheet" href="./css/swiper.min.css">
-    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/main.css?v=1" rel="stylesheet" />
     <title>the EdVolks Design Team has been selected to represent Macao participating 2018 Venice Architecture Biennale</title>
 
 </head>
 
 <body id="project-body" class="dark-style">
-    <div class="g-hd ">
-        <div class="w-main f-cb">
-            <a class="u-logo" href="index.html"><h1>The EdVolks Architecture Design Ltd.</h1></a>
-<!--             <div class="u-language">
+    <div class="g-hd" id="js-head">
+        <div class="w-main head-top f-cb">
+            <a class="u-logo" href="index.html">
+                <h1>The EdVolks Architecture Design Ltd.</h1>
+            </a>
+            <!--             <div class="u-language">
                 <a href="index.html">ENG</a>
                 <span class="fg">|</span>
                 <a href="index-cn.html">中</a>
             </div> -->
-            <div id="navigation-btn" class="s-bg-dark"></div>
+            <div id="" class="navigation-btn btn-dark"></div>
+            <div class="nav-masker"></div>
             <ul class="m-nav">
                 <li>
                     <a href="news.html">NEWS</a>
@@ -49,14 +52,111 @@
     <div class="g-bd">
         <div class="w-main">
             <div class="project-content main-content-wrap f-cb">
-                <img class="item" src="images/project-img-01.jpg" alt="boutique hotel">
-                <img class="item" src="images/project-img-02.jpg" alt="private residence">
-                <img class="item" src="images/project-img-03.jpg" alt="cafe Macao 2017">
-                <img class="item" src="images/project-img-04.jpg" alt="private residence Macao 2018">
-                <img class="item" src="images/project-img-05.jpg" alt="house China 2016">
-                <img class="item" src="images/project-img-06.jpg" alt="offiece Macao 2017">
-                <img class="item" src="images/project-img-07.jpg" alt="private residence Macao 2017">
-                <img class="item" src="images/project-img-08.jpg" alt="office China 2018-ongoing">
+                <div class="item">
+                    <a href="residence.html">
+                        <div class="img-box">
+                            <img src="images/project-img-01.jpg" alt="boutique hotel">
+                        </div>
+                        <div class="text-box s-blue-1">
+                            BOUTIQUE
+                            <br>HOTEL
+                            <br>Macao
+                            <br>2018 - ongoing
+                        </div>
+                    </a>
+                </div>
+
+                <div class="item">
+                    <a href="residence.html">
+                        <div class="img-box">
+                            <img src="images/project-img-02.jpg" alt="">
+                        </div>
+                        <div class="text-box s-gray-2">
+                            Private
+                            <br>residence
+                            <br>Macao
+                            <br>2018
+                        </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="residence-2.html">
+                        <div class="text-box s-gray-1">
+                            CAFE
+                            <br>Macao
+                            <br>2017
+                        </div>
+                        <div class="img-box">
+                            <img src="images/project-img-03.jpg" alt="">
+                        </div>
+
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="residence-1.html">
+                        <div class="text-box s-blue-2">
+                            Private
+                            <br>residence
+                            <br>Macao
+                            <br>2018
+                        </div>
+                        <div class="img-box">
+                            <img src="images/project-img-04.jpg" alt="">
+                        </div>
+
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="residence-2.html">
+                        <div class="img-box">
+                            <img src="images/project-img-05.jpg" alt="">
+                        </div>
+                        <div class="text-box s-gray-2">
+                            house
+                            <br>China
+                            <br>2016 - ongoing
+                        </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="residence-2.html">
+                        <div class="img-box">
+                            <img src="images/project-img-06.jpg" alt="">
+                        </div>
+                        <div class="text-box s-gray-1">
+                            office
+                            <br>Macao
+                            <br>2018
+                        </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="residence-2.html">
+                        <div class="text-box s-blue-1">
+                            Private
+                            <br>residence
+                            <br>Macao
+                            <br>2018
+                        </div>
+                        <div class="img-box">
+                            <img src="images/project-img-07.jpg" alt="">
+                        </div>
+
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="residence-2.html">
+                        <div class="text-box s-blue-2">
+                            office
+                            <br>China
+                            <br>2018 - ongoing
+                        </div>
+                        <div class="img-box">
+                            <img src="images/project-img-08.jpg" alt="">
+                        </div>
+                    </a>
+                </div>
+
             </div>
         </div>
     </div>
@@ -74,8 +174,4 @@
 
 </html>
 <script src="./js/zepto.min.js"></script>
-<script>
-    $("#navigation-btn").click(function(){
-        $(".m-nav").toggle();
-    });
-</script>
+<script src="./js/main.js"></script>

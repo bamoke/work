@@ -10,21 +10,22 @@
     <meta name="description" content="">
     <link href="css/global.css" rel="stylesheet" />
     <link rel="stylesheet" href="./css/swiper.min.css">
-    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/main.css?v=1" rel="stylesheet" />
     <title>The EdVolks Architecture Design Ltd.</title>
 
 </head>
 
 <body id="careers-body">
-    <div class="g-hd ">
-        <div class="w-main f-cb">
+    <div class="g-hd" id="js-head">
+        <div class="w-main head-top f-cb">
             <a class="u-logo" href="index.html"><h1>The EdVolks Architecture Design Ltd.</h1></a>
 <!--             <div class="u-language">
                 <a href="index.html">ENG</a>
                 <span class="fg">|</span>
                 <a href="index-cn.html">中</a>
             </div> -->
-            <div id="navigation-btn" class="s-bg-white"></div>
+            <div id="" class="navigation-btn btn-white"></div>
+            <div class="nav-masker"></div>
             <ul class="m-nav s-text-light">
                 <li>
                     <a href="news.html">NEWS</a>
@@ -90,8 +91,4 @@
 
 </html>
 <script src="./js/zepto.min.js"></script>
-<script>
-    $("#navigation-btn").click(function(){
-        $(".m-nav").toggle();
-    });
-</script>
+<script src="./js/main.js"></script>

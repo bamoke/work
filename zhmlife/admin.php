@@ -26,9 +26,7 @@ define("BIND_MODULE","Admin");
 //生成控制器并绑定，默认生成Index控制器； (另有$_GET['c']方法绑定)
 // define("BIND_CONTROLLER","Index");
 
-// 定义应用目录
-//define("ROOT","");
-define("ROOT","/zhmlife");
+// 定义应用状态
 //define('APP_STATUS','online');
 //define('APP_STATUS','home');
 

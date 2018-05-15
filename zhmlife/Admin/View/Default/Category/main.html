@@ -21,7 +21,7 @@ $typeArr = array('single'=>'单页面','news'=>'文章列表');
                     <select name="pid" id="js-change" class="form-control">
                         <option value="0">一级栏目</option>
                         <foreach name="cate" item="vo">
-                            <option value="{$vo['id']}">{$vo['title']}</option>
+                            <option value="{$vo['id']}" <eq name="info['pid']" value="$vo['id']">selected</eq> >{$vo['title']}</option>
                         </foreach>
                     </select>
                 </div>
@@ -55,7 +55,8 @@ $typeArr = array('single'=>'单页面','news'=>'文章列表');
                 <div class="form-group">
                     <label class="col-xs-2 control-label">栏目类型:</label>
                     <div class="col-xs-3">
-                        <input class="form-control" readonly type="text" name="type" value="{$typeArr[$info['type']]}">
+                        <input class="form-control" readonly type="text" value="{$typeArr[$info['type']]}">
+                        <input type="hidden" name="type" value="{$info['type']}">
                     </div>
                     <div class="col-xs-3 js-tips"></div>
                 </div>

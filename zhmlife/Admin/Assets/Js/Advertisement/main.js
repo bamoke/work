@@ -3,29 +3,16 @@
  */
 require.config({
     "paths":{
-        'ueditor':rootDir+"/Assets/Plugins/ueditor433/ueditor.all.min",
-        'ueditor_conf':rootDir+"/Assets/Plugins/ueditor433/ueditor.config",
-        "ZeroClipboard":rootDir+"/Assets/Plugins/ueditor433/third-party/zeroclipboard/ZeroClipboard.min",
         "jqvalidate":"../Unit/jquery.validate.min"
     },
     "shim":{
-        "ueditor":{exports:"UE"},
         "jqvalidate":{deps:["jq"]}
     }
 });
 
 require(['../Common/init'],function(){
-    require(["base","ueditor","ZeroClipboard","ueditor_conf","jqvalidate"],function(bs,UE,ZeroClipboard){
+    require(["base","jqvalidate"],function(bs){
 
-        /***编辑器配置***/
-        if(document.getElementById("editorContainer")){
-            window['ZeroClipboard'] = ZeroClipboard;
-            var ue = UE.getEditor('editorContainer',{
-                initialFrameHeight:200,
-                maximumWords:2000,
-                toolbars:[['bold', 'italic', 'underline', 'fontborder','justifyleft', 'justifycenter', 'justifyright', 'justifyjustify','simpleupload']]
-            });
-        }
 
         $.validator.setDefaults({
             errorElement:"div",
@@ -59,9 +46,7 @@ require(['../Common/init'],function(){
 
 
         var isLoaded = true;
-        var $singleForm = $('form[name="single-form"]'),
-            $newsForm = $('form[name="news-form"]');
-            $bannerForm = $('form[name="banner-form"]');
+        var $adForm = $('form[name="advertisement-form"]');
 
         /****表单提交***/
         $.validator.setDefaults({
@@ -80,7 +65,6 @@ require(['../Common/init'],function(){
                             bs.tips(res.msg,'success',function(){window.location = res.jump});
                         }else {
                             bs.tips(res.msg,'warning');
-
                         }
                     }
                 }
@@ -91,41 +75,23 @@ require(['../Common/init'],function(){
 
 
         /****表单验证***/
-        $singleForm.validate({
-  /*          rules:{
-                content:'required'
-            },
-            messages:{
-                content:'"内容详情不能为空'
-            }*/
-        });
-
-        /*888*/
-        $newsForm.validate({
+        $adForm.validate({
             rules:{
+                position_key:"required",
                 title:'required',
-                // description:'required'
-
-            },
-            messages:{
-                title:'新闻标题不能为空',
-                // description:'"新闻描述不能为空'
-            }
-        });
-
-        /*888*/
-        $bannerForm.validate({
-            rules:{
                 img:'required',
+                url:"url"
 
             },
             messages:{
-                title:'必须上传文件'
+                position_key:"请选择广告展示位置",
+                title:'请填写广告名称',
+                img:'必须上传文件',
+                url:"地址格式不正确,必须以http或https开头的完整地址"
             }
         });
 
         $('.js-table-list').find('.js-del-one').click(function(){
-
             var url = $(this).data('url'),that =this;
             if(window.confirm("确认删除？")){
                 $.get(url,function(){

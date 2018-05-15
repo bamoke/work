@@ -1,23 +1,33 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <div class="panel-title">添加Banner</div>
+        <div class="panel-title">添加广告</div>
     </div>
     <div class="panel-body">
         <div class="alert alert-info">
-            <p>首页Banner尺寸，高度必须为400px,宽度至少1440px，建议1920px.</p>
-            <p>其他Banner尺寸，高度必须为300px,宽度795px</p>
+            <p>首页首页底部-尺寸，宽度建议1920px.高度建议100-200px</p>
+            <p>侧边栏人气排行-尺寸，宽度建议375px,高度不限</p>
+            <p>侧边栏每周热搜-尺寸，宽度建议375px,高度不限</p>
+            <p>详细页为你推荐-尺寸，宽度建议795px,高度不限</p>
         </div>
-        <form name="banner-form" class="form form-horizontal" action="{:U('save')}" role="form">
+        <form name="advertisement-form" class="form form-horizontal" action="{:U('save')}" role="form">
             <div class="form-group">
                 <label class="control-label col-xs-1">展示位置:</label>
                 <div class="col-xs-2">
                     <select name="position_key" class="form-control">
-                        <option value="0">首页</option>
-                        <foreach name="cate" item="pt">
-                            <option value="{$pt['id']}">{$pt['title']}</option>
+                        <option value="">请选择广告位置</option>
+                        <foreach name="position" item="pt">
+                            <option value="{$pt['id']}">{$pt['name']}</option>
                         </foreach>
                     </select>
                 </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-1">广告标题:</label>
+                <div class="col-xs-4">
+                    <input type="text" name="title" class="form-control" value="">
+                </div>
+                <div class="col-xs-3 js-tips"></div>
             </div>
             <div class="form-group">
                 <label class="control-label col-xs-1">上传图片:</label>
@@ -35,9 +45,12 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-xs-1">排序:</label>
-                <div class="col-xs-1">
-                    <input type="number" name="sort" class="form-control" value="0">
+                <label class="control-label col-xs-1">展示状态:</label>
+                <div class="col-xs-4">
+                    <label class="radio-inline">
+                        <input type="radio" name="status" value="1" checked>展示</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="status" value="0" id="">隐藏</label>
                 </div>
             </div>
             <div class="form-group">

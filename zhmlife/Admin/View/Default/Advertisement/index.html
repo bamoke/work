@@ -1,7 +1,7 @@
 <div class="panel panel-default">
 
     <div class="panel-heading">
-        <a href="{:U('add')}" class="btn btn-info">添加Banner</a>
+        <a href="{:U('add')}" class="btn btn-info">添加广告</a>
     </div>
 
     <div class="panel-body">
@@ -10,8 +10,9 @@
             <thead>
                 <tr>
                     <th>缩略图</th>
-                    <th>展示位置</th>
-                    <th width="400">链接地址</th>
+                    <th width="200">广告名称</th>
+                    <th width="200">展示位置</th>
+                    <th width="300">链接地址</th>
                     <th width="80">显示</th>
                     <th width="120">操作</th>
                 </tr>
@@ -20,9 +21,10 @@
                 <foreach name="info" item="list">
                     <tr>
                         <td>
-                            <img class="u-banner-thumb" src="__UPLOAD__/banner/{$list['img']}">
+                            <img class="u-banner-thumb" src="__UPLOAD__/ad/{$list['img']}">
                         </td>
-                        <td>{$cate[$list['position_key']]}</td>
+                        <td>{$list['title']}</td>
+                        <td>{$position[$list['position_key']]['name']}</td>
                         <td>{$list['url']}</td>
                         <td>
                             <if condition="$list['status'] eq 1">

@@ -41,10 +41,11 @@ class CategoryController extends AuthController
                     $result = $model->add();
                 }
                 if($result !== false){
-                    if(I('post.type') == 'single'){
+                    if(I('post.type') == 'single' && empty($_POST['id'])){
                         $inserData = array(
                             "cid"   =>$result,
-                            "title" =>I("post.title")
+                            "title" =>I("post.title"),
+                            "pid"   =>I("post.pid")
                         );
                         $addPage = M("Single")->data($inserData)->add();
                     }

@@ -950,7 +950,7 @@ body {
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
 }
-
+/* .m-thumbnail-upload {margin-left:-15px;} */
 .m-thumbnail-upload .add-btn {
     display: inline-block;
     width: 80px;
@@ -1005,4 +1005,4 @@ body {
 .m-side-nav .level-1 > .caption {font-weight:bold;font-size:14px;color:#333;}
 .u-page-title {margin-bottom:20px;padding:10px 20px;background-color:#ddd;}
 .u-page-title .caption {margin-right:30px;font-size:16px;font-weight:bold;}
-.u-banner-thumb {height:60px;}
+.u-banner-thumb {max-width:300px;height:60px;}

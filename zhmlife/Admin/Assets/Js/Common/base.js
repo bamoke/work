@@ -109,7 +109,7 @@ define(["jq"],function(){
                o.appendTo("body");
            }
            setTimeout(function () {
-               $("#common-tips").fadeOut(cb)
+               $("#common-tips").fadeOut(200,cb)
            }, time);
            return null;
 

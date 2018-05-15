@@ -9,13 +9,18 @@
 namespace Admin\Controller;
 use Admin\Common\Controller\AuthController;
 
-class BannerController extends AuthController
+class AdvertisementController extends AuthController
 {
+    protected $positionArr = array(
+        1=>array("id"=>1,"name"=>"首页底部","size"=>"宽度建议1920px,高度不限"),
+        2=>array("id"=>2,"name"=>"侧边栏人气排行","size"=>"宽度建议375px,高度不限"),
+        3=>array("id"=>3,"name"=>"侧边栏每周热搜","size"=>"宽度建议375px,高度不限"),
+        4=>array("id"=>4,"name"=>"详细页为你推荐","size"=>"宽度建议795px,高度不限")
+    );
 
     public function index(){
-        $model = M("Banner");
-        // $cate = M('Content_cate')->field('id,title')->where('status = 1 and is_nav = 1')->select();
-        $cate = $this->_get_banner_position();
+        $model = M("Advertisement");
+        // $cate = $this->_get_banner_position();
         $count = $model->count();
         $Page = new \Think\Page($count,15);
         $Page->setConfig("next","下一页");
@@ -23,14 +28,14 @@ class BannerController extends AuthController
         $show = $Page->show();
         $data = $model
             ->where("1=1")
-            ->order('sort,id desc')
-            ->limit($Page->firstRow.','.$Page->listRows) 
+            ->order('id desc')
+            ->limit($Page->firstRow.','.$Page->listRows)
             ->select();
 
         $output['script'] = CONTROLLER_NAME."/main";    
         $this->assign('pagination',$show);
         $this->assign('info',$data);
-        $this->assign('cate',$cate);
+        $this->assign('position',$this->positionArr);
         $this->assign('output',$output);
 
         $this->display();
@@ -45,14 +50,13 @@ class BannerController extends AuthController
      * @param string 页面类型，对应模型
     ***/
     function edit($id){
-        $model = M("Banner");
-        $cate = M('Content_cate')->field('id,title')->where('status = 1 and is_nav = 1')->select();
+        $model = M("Advertisement");
         $where = array('id'=>$id);
         $data = $model->where($where)->find();
 
         $output['script'] = CONTROLLER_NAME."/main";
         $this->assign('data',$data);
-        $this->assign('cate',$cate);
+        $this->assign('position',$this->positionArr);
         $this->assign('output',$output);
         $this->display();
     }
@@ -64,9 +68,8 @@ class BannerController extends AuthController
      ***/
     function add(){
         $output['script'] = CONTROLLER_NAME."/main";
-        $cate = M('Content_cate')->field('id,title')->where('status = 1 and is_nav = 1')->select();
         $this->assign('output',$output);
-        $this->assign('cate',$cate);
+        $this->assign('position',$this->positionArr);
         $this->display();
     }
 
@@ -80,8 +83,7 @@ class BannerController extends AuthController
         if(IS_POST){
             $id= I("post.id");
             $backData =array();
-            $page_type = I('post.type');
-            $model = M("Banner");
+            $model = M("Advertisement");
             $info = $model->field('img')->where("id=$id")->find();
             
             $create = $model->create($_POST);
@@ -89,7 +91,7 @@ class BannerController extends AuthController
                 $upload_conf=array(
                     'maxSize' => 3145728,
                     'rootPath' => ROOT.'/Uploads/',
-                    'savePath' => 'banner/',
+                    'savePath' => 'ad/',
                     'saveName' => md5(time().I("session.uid")),
                     'exts' => array('jpg', 'gif', 'png', 'jpeg'),
                     'autoSub' => false,
@@ -148,7 +150,7 @@ class BannerController extends AuthController
      ***/
     public function save(){
         if(IS_POST){
-            $model = M("Banner");
+            $model = M("Advertisement");
             $result = $model->create();
             $backData = array();
             if(!$result) {
@@ -163,7 +165,7 @@ class BannerController extends AuthController
                 $upload_conf=array(
                     'maxSize' => 3145728,
                     'rootPath' => ROOT.'/Uploads/',
-                    'savePath' => 'banner/',
+                    'savePath' => 'ad/',
                     'saveName' => md5(time().I("session.uid")),
                     'exts' => array('jpg', 'gif', 'png', 'jpeg'),
                     'autoSub' => false,
@@ -202,14 +204,14 @@ class BannerController extends AuthController
      * @param string
     ***/
     public function del($id){
-        $model = M("Banner");
+        $model = M("Advertisement");
         $info = $model->field('img')->where('id = '.$id)->find();
         $resutl = $model->where('id = '.$id)->delete();
         if($resutl){
             $backData['status'] = 1;
             $backData['msg'] = "删除成功";
             if(isset($info['img']) &&  $info['img']!= ''){
-                $file = ROOT."/Uploads/banner/".$info['img'];
+                $file = ROOT."/Uploads/ad/".$info['img'];
                 unlink($file);
             }
         }else {

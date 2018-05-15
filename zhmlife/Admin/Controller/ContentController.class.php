@@ -19,7 +19,8 @@ class ContentController extends AuthController
         $this->assign('cateHtml',$cateHtml);
         $this->assign('output',$output);
 
-        if($cid == null){
+        
+        if(!$cid){
             $this->display();
         }else {
             $this->manager($cid);
@@ -231,6 +232,7 @@ class ContentController extends AuthController
         switch ($cateInfo['type']){
             case 'single':
                 $data = $dataModel->where("cid=".$cid)->fetchSql(false)->find();
+                var_dump($data);
                 if(!$data){
                     $data= array(
                         "title"=>$cateInfo['title'],

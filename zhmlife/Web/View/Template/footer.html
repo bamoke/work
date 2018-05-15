@@ -2,11 +2,10 @@
     <div class="w-main">
         <div class="left-box">
             <div class="link">
-                <a href="{:U('Single/index')}" target="_blank">关于我们</a>
-                <span class="fg">|</span>
-                <a href="{:U('Single/index')}" target="_blank">联系我们</a>
-                <span class="fg">|</span>
-                <a href="{:U('Single/index')}" target="_blank">隐私协议</a>
+                <foreach name="otherPage" item="vo">
+                    <a href="{:U('Single/index',array('cid'=>$vo['pid'],'id'=>$vo['id']))}" target="_blank">{$vo['title']}</a>
+                    <span class="fg">|</span>
+                </foreach>
             </div>
             <p class="copyright">©2018 珠港澳网 All rights reserved 粤ICP备17077518号-1</p>
             <div class="link">

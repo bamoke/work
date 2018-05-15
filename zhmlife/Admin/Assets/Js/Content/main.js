@@ -80,6 +80,7 @@ require(['../Common/init'],function(){
                             bs.tips(res.msg,'success',function(){window.location = res.jump});
                         }else {
                             bs.tips(res.msg,'warning');
+
                         }
                     }
                 }

@@ -137,7 +137,7 @@ a:hover {color:#cf034d;}
 	text-align:center;
 	border-top:2px solid #eee;
 }
-.m-paging a {
+.m-paging a,.m-paging span {
 	display:inline-block;
 	margin-right:10px;
 	padding:0 20px;
@@ -150,7 +150,7 @@ a:hover {color:#cf034d;}
 .m-paging a:hover {
 	background-color:#eee;
 }
-.m-paging .cur,.m-paging .cur:hover {background-color:#e94480;color:#fff;border-color:#e94480;}
+.m-paging .current,.m-paging .current:hover {background-color:#e94480;color:#fff;border-color:#e94480;}
 .m-bar-center {
 	text-align: center;
 }

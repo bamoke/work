@@ -16,12 +16,16 @@
 <body>
     <!-- header -->
     <include file="Template/header" />
-{:var_dump($hot)}
     <!-- banner -->
     <div id="index-banner" class="swiper-container">
         <div class="swiper-wrapper">
             <foreach name="banner" item="vo">
-                <div class="swiper-slide" style="background-image:url(__UPLOAD__/banner/{$vo['img']})"></div>
+                <if condition="$vo['url'] neq ''">
+                    <a href="{$vo['url']}" target="_blank" class="swiper-slide" style="background-image:url(__UPLOAD__/banner/{$vo['img']})"></a>
+                    <else/>
+                    <div class="swiper-slide" style="background-image:url(__UPLOAD__/banner/{$vo['img']})"></div>
+                </if>
+
             </foreach>
         </div>
         <div class="swiper-pagination"></div>
@@ -33,51 +37,23 @@
                 <h2 class="title">每日推荐</h2>
             </div>
             <ul class="m-pic-list">
-                <li class="item">
-                    <div class="img-box">
-                        <a href="{:U('Article/detail')}" target="_blank">
-                            <img src="__UPLOAD__/images/pro-img-01.jpg" alt="【邊間最好食】Top7 人氣鹹蛋魚皮！新加坡過江龍">
-                        </a>
-                    </div>
-                    <a href="{:U('Article/detail')}" target="_blank" class="title" title="人氣鹹蛋魚皮！新加坡過江龍">【邊間最好食】Top7 人氣鹹蛋魚皮！新加坡過江龍</a>
-                    <div class="f-cb foot-info">
-                        <a href="{:U('Article/index')}" class="f-fl category">旅游</a>
-                        <div class="f-fr u-statistics">
-                            <span class="view">1244</span>
-                            <span class="time">03/12</span>
+                <foreach name="recommend" item="list">
+                    <li class="item">
+                        <div class="img-box">
+                            <a href="{:U('Article/detail')}" target="_blank">
+                                <img src="__UPLOAD__/thumb/{$list['thumb']}" alt="{$list['title']}">
+                            </a>
                         </div>
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="img-box">
-                        <a href="{:U('Article/detail')}" target="_blank">
-                            <img src="__UPLOAD__/images/pro-img-02.jpg" alt="人氣鹹蛋魚皮！新加坡過江龍">
-                        </a>
-                    </div>
-                    <a href="{:U('Article/detail')}" target="_blank" class="title" title="人氣鹹蛋魚皮！新加坡過江龍">【邊間最好食】Top7 人氣鹹蛋魚皮！新加坡過江龍</a>
-                    <div class="f-cb foot-info">
-                        <a href="{:U('Article/index')}" class="f-fl category">旅游</a>
-                        <div class="f-fr u-statistics">
-                            <span class="view">1244</span>
-                            <span class="time">03/12</span>
+                        <a href="{:U('Article/detail',array('cid'=>$list['cid'],'id'=>$list['id']))}" target="_blank" class="title" title="{$list['title']}">{$list['title']}</a>
+                        <div class="f-cb foot-info">
+                            <a href="{:U('Article/index',array('cid'=>$list['cid']))}" class="f-fl category">{$list['catename']}</a>
+                            <div class="f-fr u-statistics">
+                                <span class="view">{$list['click']}</span>
+                                <span class="time">{$list['time']}</span>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="img-box">
-                        <a href="{:U('Article/detail')}" target="_blank">
-                            <img src="__UPLOAD__/images/pro-img-03.jpg" alt="人氣鹹蛋魚皮！新加坡過江龍">
-                        </a>
-                    </div>
-                    <a href="{:U('Article/detail')}" target="_blank" class="title" title="人氣鹹蛋魚皮！新加坡過江龍">【邊間最好食】Top7 人氣鹹蛋魚皮！新加坡過江龍</a>
-                    <div class="f-cb foot-info">
-                        <a href="{:U('Article/index')}" class="f-fl category">旅游</a>
-                        <div class="f-fr u-statistics">
-                            <span class="view">1244</span>
-                            <span class="time">03/12</span>
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                </foreach>
             </ul>
         </div>
     </div>
@@ -90,279 +66,49 @@
                     <h2 class="title">最新发布</h2>
                 </div>
                 <ul class="m-pic-list">
+                    <foreach name="mainlist" item="list">
                     <li class="item">
                         <div class="img-box">
-                            <a href="{:U('Article/detail')}" target="_blank">
-                                <img src="__UPLOAD__/images/pro-img-01.jpg" alt="【邊間最好食】Top7 人氣鹹蛋魚皮！新加坡過江龍">
+                            <a href="{:U('Article/detail',array('cid'=>$list['cid'],'id'=>$list['id']))}" target="_blank">
+                                <img src="__UPLOAD__/thumb/{$list['thumb']}" alt="{$list['title']}">
                             </a>
                         </div>
-                        <a href="{:U('Article/detail')}" target="_blank" class="title" title="人氣鹹蛋魚皮！新加坡過江龍">【邊間最好食】Top7 人氣鹹蛋魚皮！新加坡過江龍</a>
+                        <a href="{:U('Article/detail',array('cid'=>$list['cid'],'id'=>$list['id']))}" target="_blank" class="title">{$list['title']}</a>
                         <div class="f-cb foot-info">
-                            <a href="{:U('Article/index')}" class="f-fl category">旅游</a>
+                            <a href="{:U('Article/index',array('cid'=>$list['cid']))}" class="f-fl category">{$list['catename']}</a>
                             <div class="f-fr u-statistics">
-                                <span class="view">1244</span>
-                                <span class="time">03/12</span>
+                                <span class="view">{$list['click']}</span>
+                                <span class="time">{$list['time']}</span>
                             </div>
                         </div>
                     </li>
-                    <li class="item">
-                        <div class="img-box">
-                            <a href="{:U('Article/detail')}" target="_blank">
-                                <img src="__UPLOAD__/images/pro-img-02.jpg" alt="人氣鹹蛋魚皮！新加坡過江龍">
-                            </a>
-                        </div>
-                        <a href="{:U('Article/detail')}" target="_blank" class="title" title="人氣鹹蛋魚皮！新加坡過江龍">【邊間最好食】Top7 人氣鹹蛋魚皮！新加坡過江龍</a>
-                        <div class="f-cb foot-info">
-                            <a href="{:U('Article/index')}" class="f-fl category">旅游</a>
-                            <div class="f-fr u-statistics">
-                                <span class="view">1244</span>
-                                <span class="time">03/12</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="img-box">
-                            <a href="{:U('Article/detail')}" target="_blank">
-                                <img src="__UPLOAD__/images/pro-img-03.jpg" alt="人氣鹹蛋魚皮！新加坡過江龍">
-                            </a>
-                        </div>
-                        <a href="{:U('Article/detail')}" target="_blank" class="title" title="人氣鹹蛋魚皮！新加坡過江龍">【邊間最好食】Top7 人氣鹹蛋魚皮！新加坡過江龍</a>
-                        <div class="f-cb foot-info">
-                            <a href="{:U('Article/index')}" class="f-fl category">旅游</a>
-                            <div class="f-fr u-statistics">
-                                <span class="view">1244</span>
-                                <span class="time">03/12</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="img-box">
-                            <a href="{:U('Article/detail')}" target="_blank">
-                                <img src="__UPLOAD__/images/pro-img-03.jpg" alt="人氣鹹蛋魚皮！新加坡過江龍">
-                            </a>
-                        </div>
-                        <a href="{:U('Article/detail')}" target="_blank" class="title" title="人氣鹹蛋魚皮！新加坡過江龍">【邊間最好食】Top7 人氣鹹蛋魚皮！新加坡過江龍</a>
-                        <div class="f-cb foot-info">
-                            <a href="{:U('Article/index')}" class="f-fl category">旅游</a>
-                            <div class="f-fr u-statistics">
-                                <span class="view">1244</span>
-                                <span class="time">03/12</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="img-box">
-                            <a href="{:U('Article/detail')}" target="_blank">
-                                <img src="__UPLOAD__/images/pro-img-03.jpg" alt="人氣鹹蛋魚皮！新加坡過江龍">
-                            </a>
-                        </div>
-                        <a href="{:U('Article/detail')}" target="_blank" class="title" title="人氣鹹蛋魚皮！新加坡過江龍">【邊間最好食】Top7 人氣鹹蛋魚皮！新加坡過江龍</a>
-                        <div class="f-cb foot-info">
-                            <a href="{:U('Article/index')}" class="f-fl category">旅游</a>
-                            <div class="f-fr u-statistics">
-                                <span class="view">1244</span>
-                                <span class="time">03/12</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="img-box">
-                            <a href="{:U('Article/detail')}" target="_blank">
-                                <img src="__UPLOAD__/images/pro-img-03.jpg" alt="人氣鹹蛋魚皮！新加坡過江龍">
-                            </a>
-                        </div>
-                        <a href="{:U('Article/detail')}" target="_blank" class="title" title="人氣鹹蛋魚皮！新加坡過江龍">【邊間最好食】Top7 人氣鹹蛋魚皮！新加坡過江龍</a>
-                        <div class="f-cb foot-info">
-                            <a href="{:U('Article/index')}" class="f-fl category">旅游</a>
-                            <div class="f-fr u-statistics">
-                                <span class="view">1244</span>
-                                <span class="time">03/12</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="img-box">
-                            <a href="{:U('Article/detail')}" target="_blank">
-                                <img src="__UPLOAD__/images/pro-img-03.jpg" alt="人氣鹹蛋魚皮！新加坡過江龍">
-                            </a>
-                        </div>
-                        <a href="{:U('Article/detail')}" target="_blank" class="title" title="人氣鹹蛋魚皮！新加坡過江龍">【邊間最好食】Top7 人氣鹹蛋魚皮！新加坡過江龍</a>
-                        <div class="f-cb foot-info">
-                            <a href="{:U('Article/index')}" class="f-fl category">旅游</a>
-                            <div class="f-fr u-statistics">
-                                <span class="view">1244</span>
-                                <span class="time">03/12</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="img-box">
-                            <a href="{:U('Article/detail')}" target="_blank">
-                                <img src="__UPLOAD__/images/pro-img-03.jpg" alt="人氣鹹蛋魚皮！新加坡過江龍">
-                            </a>
-                        </div>
-                        <a href="{:U('Article/detail')}" target="_blank" class="title" title="人氣鹹蛋魚皮！新加坡過江龍">【邊間最好食】Top7 人氣鹹蛋魚皮！新加坡過江龍</a>
-                        <div class="f-cb foot-info">
-                            <a href="{:U('Article/index')}" class="f-fl category">旅游</a>
-                            <div class="f-fr u-statistics">
-                                <span class="view">1244</span>
-                                <span class="time">03/12</span>
-                            </div>
-                        </div>
-                    </li>
+                    </foreach>
                 </ul>
             </div>
             <div class="g-s-side f-fr">
-                <div class="g-column-wrap">
-                    <div class="m-bar-default">
-                        <h2 class="title">人气排行</h2>
-                    </div>
-                    <ul class="m-imgtext m-imgtext-sm">
-                        <li class="item">
-                            <a href="" class="img-box">
-                                <img src="__UPLOAD__/images/s-pro-img-01.jpg" alt="">
-                            </a>
-                            <div class="text-box">
-                                <a class="title" href="">帶着媽媽去旅行！嚴選4間媽媽必冧性價比極高大阪住宿</a>
-                                <div class="u-statistics">
-                                    <span class="view">1244</span>
-                                    <span class="time">03/12</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <a href="" class="img-box">
-                                <img src="__UPLOAD__/images/s-pro-img-02.jpg" alt="">
-                            </a>
-                            <div class="text-box">
-                                <a class="title" href="">明明五官没变，为什么倪妮能完成去“土气”逆袭之路？</a>
-                                <div class="u-statistics">
-                                    <span class="view">1244</span>
-                                    <span class="time">03/12</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <a href="" class="img-box">
-                                <img src="__UPLOAD__/images/s-pro-img-03.jpg" alt="">
-                            </a>
-                            <div class="text-box">
-                                <a class="title" href="">和景甜拍拖的直男张继科连口红都分不清</a>
-                                <div class="u-statistics">
-                                    <span class="view">1244</span>
-                                    <span class="time">03/12</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <a href="" class="img-box">
-                                <img src="__UPLOAD__/images/s-pro-img-04.jpg" alt="">
-                            </a>
-                            <div class="text-box">
-                                <a class="title" href="">40岁的女性夏季怎么穿才减龄又时尚，刘涛、袁泉都爱这样穿</a>
-                                <div class="u-statistics">
-                                    <span class="view">1244</span>
-                                    <span class="time">03/12</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <a href="" class="img-box">
-                                <img src="__UPLOAD__/images/s-pro-img-04.jpg" alt="">
-                            </a>
-                            <div class="text-box">
-                                <a class="title" href="">40岁的女性夏季怎么穿才减龄又时尚，刘涛、袁泉都爱这样穿</a>
-                                <div class="u-statistics">
-                                    <span class="view">1244</span>
-                                    <span class="time">03/12</span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="u-ad">
-                    <a href="" target="_blank">
-                        <img src="__UPLOAD__/images/ad-sm-01.jpg" alt="" width="100%" height="230">
-                    </a>
-                </div>
-                <div class="g-column-wrap">
-                    <div class="m-bar-default">
-                        <h2 class="title">人气排行</h2>
-                    </div>
-                    <ul class="m-imgtext m-imgtext-sm">
-                        <li class="item">
-                            <a href="" class="img-box">
-                                <img src="__UPLOAD__/images/s-pro-img-01.jpg" alt="">
-                            </a>
-                            <div class="text-box">
-                                <a class="title" href="">帶着媽媽去旅行！嚴選4間媽媽必冧性價比極高大阪住宿</a>
-                                <div class="u-statistics">
-                                    <span class="view">1244</span>
-                                    <span class="time">03/12</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <a href="" class="img-box">
-                                <img src="__UPLOAD__/images/s-pro-img-02.jpg" alt="">
-                            </a>
-                            <div class="text-box">
-                                <a class="title" href="">明明五官没变，为什么倪妮能完成去“土气”逆袭之路？</a>
-                                <div class="u-statistics">
-                                    <span class="view">1244</span>
-                                    <span class="time">03/12</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <a href="" class="img-box">
-                                <img src="__UPLOAD__/images/s-pro-img-03.jpg" alt="">
-                            </a>
-                            <div class="text-box">
-                                <a class="title" href="">和景甜拍拖的直男张继科连口红都分不清</a>
-                                <div class="u-statistics">
-                                    <span class="view">1244</span>
-                                    <span class="time">03/12</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <a href="" class="img-box">
-                                <img src="__UPLOAD__/images/s-pro-img-04.jpg" alt="">
-                            </a>
-                            <div class="text-box">
-                                <a class="title" href="">40岁的女性夏季怎么穿才减龄又时尚，刘涛、袁泉都爱这样穿</a>
-                                <div class="u-statistics">
-                                    <span class="view">1244</span>
-                                    <span class="time">03/12</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <a href="" class="img-box">
-                                <img src="__UPLOAD__/images/s-pro-img-04.jpg" alt="">
-                            </a>
-                            <div class="text-box">
-                                <a class="title" href="">40岁的女性夏季怎么穿才减龄又时尚，刘涛、袁泉都爱这样穿</a>
-                                <div class="u-statistics">
-                                    <span class="view">1244</span>
-                                    <span class="time">03/12</span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                    <include file="Template/smallside" />
             </div>
         </div>
     </div>
     <!-- footer ad -->
+
     <div class="g-wrap">
         <div class="w-main">
-            <div class="u-ad-ft">
-                <a href="" target="_blank">
-                    <img src="__UPLOAD__/images/big-ad-img.png">
-                </a>
-            </div>
+            <foreach name="adlist" item="ad">
+                <if condition="$ad['position_key'] eq 1">
+                    <div class="u-ad-ft">
+                            <if condition="$ad['url'] neq ''">
+                                    <a href="{$ad['url']}" target="_blank">
+                                            <img src="__UPLOAD__/ad/{$ad['img']}" width="100%">
+                                    </a>
+                                <else/>
+                                <img src="__UPLOAD__/ad/{$ad['img']}" width="100%">
+                            </if>
+                    </div>
+                </if>
+
+            </foreach>
+
         </div>
     </div>
 

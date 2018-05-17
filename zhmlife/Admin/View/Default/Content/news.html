@@ -2,50 +2,61 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-xs-2">
-                <include file="Content/side-nav"/>
+                <include file="Content/side-nav" />
             </div>
             <div class="col-xs-10">
-                <div  class="u-page-title">
+                <div class="u-page-title">
                     <span class="caption">{$pageTitle}</span>
                     <a href="{:U('add',array('cid'=>$_GET['cid'],'type'=>$pageType))}" class="btn btn-info">添加文章</a>
                 </div>
                 <table class="table js-table-list">
                     <thead>
-                    <tr>
-                        <th >标题</th>
-                        <th width="80">状态</th>
-                        <th width="80">是否推荐</th>
-                        <th width="80">访问量</th>
-                        <th width="200">发布时间</th>
-                        <th width="120">操作</th>
-                    </tr>
+                        <tr>
+                            <th>标题</th>
+                            <th width="80">状态</th>
+                            <th width="80">是否推荐</th>
+                            <th width="80">其他设置</th>
+                            <th width="80">访问量</th>
+                            <th width="200">发布时间</th>
+                            <th width="120">操作</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <foreach name="data" item="list">
-                        <tr>
-                            <td>{$list['title']}</td>
-                            <td>
-                                <if condition="$list['status'] eq 1">
-                                    <span class="text-success">正常</span>
-                                    <else/>
-                                    隐藏
-                                </if>
-                            </td>
-                            <td>
-                                <if condition="$list['recommend'] eq 1">
-                                    <span class="text-danger">推荐</span>
-                                    <else/>
-                                    否
-                                </if>
-                            </td>
-                            <td width="80">{$list['click']}</td>
-                            <td>{$list['create_time']}</td>
-                            <td class="operation-box">
-                                <a href="{:U('edit',array('id'=>$list['id'],'type'=>$pageType,'cid'=>$list['cid']))}" >修改</a>
-                                <a href="javascript:" data-url="{:U('del',array('id'=>$list['id'],'type'=>$pageType))}" class="js-del-one">删除</a>
-                            </td>
-                        </tr>
-                    </foreach>
+                        <foreach name="data" item="list">
+                            <tr>
+                                <td>{$list['title']}</td>
+                                <td>
+                                    <if condition="$list['status'] eq 1">
+                                        <span class="text-success">正常</span>
+                                        <else/> 隐藏
+                                    </if>
+                                </td>
+                                <td>
+                                    <if condition="$list['recommend'] eq 1">
+                                        <span class="text-danger">推荐</span>
+                                        <else/> 否
+                                    </if>
+                                </td>
+                                <td>
+                                    <switch name="list['otherset']">
+                                        <case value="1">
+                                            <span class="text-warning">人气</span>
+                                        </case>
+                                        <case value="2">
+                                            <span class="text-danger">热搜</span>
+                                        </case>
+                                        <default/>无
+                                    </switch>
+
+                                </td>
+                                <td width="80">{$list['click']}</td>
+                                <td>{$list['create_time']}</td>
+                                <td class="operation-box">
+                                    <a href="{:U('edit',array('id'=>$list['id'],'type'=>$pageType,'cid'=>$list['cid']))}">修改</a>
+                                    <a href="javascript:" data-url="{:U('del',array('id'=>$list['id'],'type'=>$pageType))}" class="js-del-one">删除</a>
+                                </td>
+                            </tr>
+                        </foreach>
 
                     </tbody>
                 </table>

@@ -247,9 +247,8 @@ class ContentController extends AuthController
                 $Page->setConfig("prev","上一页");
                 $show = $Page->show();
                 $data = $dataModel
-                    ->order('recommend desc,id asc')
                     ->where("cid=".$cid)
-                    ->order('recommend desc,id asc')
+                    ->order('recommend desc,id desc')
                     ->limit($Page->firstRow.','.$Page->listRows)
                     ->select();
                 $this->assign('pageTitle',$cateInfo['title']);

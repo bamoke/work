@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <title>{$pageTitle}</title>
+    <meta name="keywords" content="{$info['keywords']}">
+    <meta name="description" content="{$info['description']}">
+    <title>{$info['title']}</title>
     <link rel="stylesheet" href="__PUBLIC__/Js/plugins/swiper/css/swiper.min.css">
     <link rel="stylesheet" href="__WEB_ASSET__/css/global.css">
     <link rel="stylesheet" href="__WEB_ASSET__/css/main.css">
@@ -17,243 +17,70 @@
     <!-- header -->
     <include file="Template/header" />
 
-    <!-- banner -->
-    <div class="w-main f-cb">
-        <div class="g-b-side f-fl">
-
-        </div>
-        <div class="g-s-side f-lr"></div>
-    </div>
 
     <!-- main content -->
     <div class="w-main f-cb">
         <div class="g-b-side f-fl">
             <div class="m-crumb">
-                <a href="http://www.163.com/">珠港澳网首页</a> &gt;
-                <a href="http://news.163.com/">旅游</a> &gt; 正文
+                <a href="{:U('index')}">首页</a> &gt;
+                <a href="{:U('Article/index',array('cid'=>$info['cid']))}">{$info['catename']}</a> &gt; 正文
             </div>
             <div class="m-article-detail">
-                <div class="title">帶着媽媽去旅行！嚴選4間媽媽必冧性價比極高大阪住宿</div>
-                <div class="u-statistics statistics">
-                    <span>来源：人民网</span>
-                    <span class="view">2883</span>
-                    <span class="time">2018-04-15</span>
+                <h1 class="title">{$info['title']}</h1>
+                <div class="other-info g-row-bt">
+                        <div class="u-statistics statistics">
+                                <notempty name="info['origin']">
+                                        <span>来源：{$info['origin']}</span>
+                                </notempty>
+                                <span class="view">{$info['click']}</span>
+                                <span class="time">{$info['time']}</span>
+                            </div>
+                        <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+                        <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
                 </div>
-                <div class="content">
-                    <p class="one-p">　　东京新青年</p>
-                    <p class="one-p">　　没有人比我们更了解日本</p>
-                    <p class="one-p">　　每次在纠结吃什么的时候，国内的小伙伴总是给出友情提示：吃拉面啊</p>
 
-                    <p class="one-p">　　因为在他们眼里，拉面都是这样的：</p>
-                    <p class="one-p">
-                        <img src="//inews.gtimg.com/newsapp_match/0/3344155049/0" class="content-picture">
-                    </p>
-                    <p class="one-p">　　或者这样的：</p>
-
-                    <p class="one-p">　　吃起来的感觉是这样的：</p>
-
-                    <p class="one-p">　　亲，除了日剧跑以外，或许你还需要了解一下日漫吃。。。。。</p>
-                    <p class="one-p">　　好啦，虽然也不是说日本拉面很难吃，但美味的豚骨浓汤的背后，可是动辄700到1000大卡的热量啊喂！</p>
-
-                    <p class="one-p">　　这对于美少女来说简直是热量炸弹好么！所以，在日本，吃拉面的更多的是男性或者学生，还会加面。。。。</p>
-                    <p class="one-p">　　这样的话，拉面店不就流失掉好多美女顾客了么？求生欲也是很强的拉面店们纷纷推出了“无面”拉面，利用豆腐、蔬菜或者肉片来代替拉面。</p>
-
-                    <p class="one-p">　　虽然是期间限定，但是标榜“健康”、“低糖质”等关键词的“无面”拉面依然掀起了热潮，甚至成为了个别店铺销量第一的产品，深受想要减肥的樱花妹子们的喜爱。</p>
-                    <p class="one-p">　　像一风堂推出的豆腐拉面，用低热量的豆腐代替拉面，汤底还是一风堂家的招牌两款“白丸”和“红丸”，以及胡麻辛辣味。</p>
-                    <p class="one-p">　　一风堂选用的是比较嫩，口感接近豆腐花的豆腐，汤勺轻舀就会碎开，很多吃过的人说感觉像是吃了固体的高汤。</p>
-
-
-
-                    <p class="one-p">　　对于只想要喝汤，又不想摄入太多卡路里的妹子来说是福利，不过，对于男生来说就。。。。老板，加两份面。</p>
-                    <p class="one-p">　　另一家推出“无面”拉面的店是舍铃，也是资深拉面爱好者必打卡的拉面店之一。它家推出的就比较简单粗暴了，用肉代替面，人家卖“つけ麵”，它卖“つけ肉”。</p>
-
-                    <p class="one-p">　　端上来的画风是这样的。。。。</p>
-                    <p class="one-p">
-                        <img src="//inews.gtimg.com/newsapp_match/0/3344155054/0" class="content-picture">
-                    </p>
-
-                    <p class="one-p">　　舍铃选用的是西班牙猪的五花肉，脂肪少，口感柔软，肉汁丰富。再加上它家的招牌鱼贝浓汤，一碗满满的肉真是肉食动物的大爱。</p>
-                    <p class="one-p">
-                        <img src="//inews.gtimg.com/newsapp_match/0/3344155056/0" class="content-picture">
-                    </p>
-                    <p class="one-p">　　除了拉面店，寿司店里一般也会配分量小的拉面，蔵寿司是日本比较有名的回转寿司店，它家也赶了这个热潮推出了蔬菜拉面——七种鱼贝拉面（无面）。</p>
-
-                    <p class="one-p">　　标榜用七种鱼贝熬出的汤底，搭配胡萝卜、白菜、高丽菜等蔬菜，取代面条，糖质比有面的版本低了88%，成为了健康取向人群的新宠。</p>
-                    <p class="one-p">
-                        <img src="//inews.gtimg.com/newsapp_match/0/3344155058/0" class="content-picture">
-                    </p>
-                    <p class="one-p">　　同样推出三种口味：酱油、味噌和豚骨，将蔬菜代替面条，降低碳水化合物的摄取。然后。。。。放开吃寿司吧~~</p>
-
-
-
-                    <p class="one-p">　　夏天快到了，到底是选择吃还是选择瘦，妹子们心里都有那点啥数吧，小编只能帮到这里了。</p>
-                </div>
+               <div class="content">
+                   {$info['content']}
+               </div>
                 <div class="end">
                     <span>完</span>
                 </div>
+            </div>
+            <div class="u-recommend-ad">
+                    <foreach name="adlist" item="ad">
+                            <if condition="$ad['position_key'] eq 4">
+                                <div class="u-ad-ft">
+                                        <if condition="$ad['url'] neq ''">
+                                                <a href="{$ad['url']}" target="_blank">
+                                                        <img src="__UPLOAD__/ad/{$ad['img']}" width="100%">
+                                                </a>
+                                            <else/>
+                                            <img src="__UPLOAD__/ad/{$ad['img']}" width="100%">
+                                        </if>
+                                </div>
+                            </if>
+            
+                    </foreach>
             </div>
             <div class="m-footer-recommend">
                 <div class="m-bar-default">
                     <div class="title">为你推荐</div>
                 </div>
                 <ul class="m-pic-row">
-                    <li class="item">
-                        <a href="">
-                            <img src="__UPLOAD__/images/s-pro-img-02.jpg" alt="">
-                            <span class="title">帶着媽媽去旅行！嚴選4間媽媽必冧性價比極高大阪住宿</span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="">
-                            <img src="__UPLOAD__/images/s-pro-img-03.jpg" alt="">
-                            <span class="title">帶着媽媽去旅行！嚴選4間媽媽必冧性價比極高大阪住宿</span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="">
-                            <img src="__UPLOAD__/images/s-pro-img-04.jpg" alt="">
-                            <span class="title">帶着媽媽去旅行！嚴選4間媽媽必冧性價比極高大阪住宿</span>
-                        </a>
-                    </li>
+                    <foreach name="recommend" item="vo">
+                        <li class="item">
+                            <a href="{:U('Article/detail',array('cid'=>$vo['cid'],'id'=>$vo['id']))}">
+                                <img src="__UPLOAD__/thumb/{$vo['thumb']}" alt="{$vo['title']}">
+                                <span class="title">{$vo['title']}</span>
+                            </a>
+                        </li>
+                    </foreach>
+
                 </ul>
             </div>
         </div>
         <div class="g-s-side f-fr">
-            <div class="m-bar-border-top">
-                <h2 class="title">每周热搜</h2>
-            </div>
-            <ul class="m-imgtext m-imgtext-sm">
-                <li class="item">
-                    <a href="" class="img-box">
-                        <img src="__UPLOAD__/images/s-pro-img-01.jpg" alt="">
-                    </a>
-                    <div class="text-box">
-                        <a class="title" href="">帶着媽媽去旅行！嚴選4間媽媽必冧性價比極高大阪住宿</a>
-                        <div class="u-statistics">
-                            <span class="view">1244</span>
-                            <span class="time">03/12</span>
-                        </div>
-                    </div>
-                </li>
-                <li class="item">
-                    <a href="" class="img-box">
-                        <img src="__UPLOAD__/images/s-pro-img-02.jpg" alt="">
-                    </a>
-                    <div class="text-box">
-                        <a class="title" href="">明明五官没变，为什么倪妮能完成去“土气”逆袭之路？</a>
-                        <div class="u-statistics">
-                            <span class="view">1244</span>
-                            <span class="time">03/12</span>
-                        </div>
-                    </div>
-                </li>
-                <li class="item">
-                    <a href="" class="img-box">
-                        <img src="__UPLOAD__/images/s-pro-img-03.jpg" alt="">
-                    </a>
-                    <div class="text-box">
-                        <a class="title" href="">和景甜拍拖的直男张继科连口红都分不清</a>
-                        <div class="u-statistics">
-                            <span class="view">1244</span>
-                            <span class="time">03/12</span>
-                        </div>
-                    </div>
-                </li>
-                <li class="item">
-                    <a href="" class="img-box">
-                        <img src="__UPLOAD__/images/s-pro-img-04.jpg" alt="">
-                    </a>
-                    <div class="text-box">
-                        <a class="title" href="">40岁的女性夏季怎么穿才减龄又时尚，刘涛、袁泉都爱这样穿</a>
-                        <div class="u-statistics">
-                            <span class="view">1244</span>
-                            <span class="time">03/12</span>
-                        </div>
-                    </div>
-                </li>
-                <li class="item">
-                    <a href="" class="img-box">
-                        <img src="__UPLOAD__/images/s-pro-img-04.jpg" alt="">
-                    </a>
-                    <div class="text-box">
-                        <a class="title" href="">40岁的女性夏季怎么穿才减龄又时尚，刘涛、袁泉都爱这样穿</a>
-                        <div class="u-statistics">
-                            <span class="view">1244</span>
-                            <span class="time">03/12</span>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <div class="u-ad">
-                <a href="" target="_blank">
-                    <img src="__UPLOAD__/images/ad-sm-01.jpg" alt="" width="100%" height="230">
-                </a>
-            </div>
-            <div class="m-bar-border-top">
-                <h2 class="title">人气点击</h2>
-            </div>
-            <ul class="m-imgtext m-imgtext-sm">
-                <li class="item">
-                    <a href="" class="img-box">
-                        <img src="__UPLOAD__/images/s-pro-img-01.jpg" alt="">
-                    </a>
-                    <div class="text-box">
-                        <a class="title" href="">帶着媽媽去旅行！嚴選4間媽媽必冧性價比極高大阪住宿</a>
-                        <div class="u-statistics">
-                            <span class="view">1244</span>
-                            <span class="time">03/12</span>
-                        </div>
-                    </div>
-                </li>
-                <li class="item">
-                    <a href="" class="img-box">
-                        <img src="__UPLOAD__/images/s-pro-img-02.jpg" alt="">
-                    </a>
-                    <div class="text-box">
-                        <a class="title" href="">明明五官没变，为什么倪妮能完成去“土气”逆袭之路？</a>
-                        <div class="u-statistics">
-                            <span class="view">1244</span>
-                            <span class="time">03/12</span>
-                        </div>
-                    </div>
-                </li>
-                <li class="item">
-                    <a href="" class="img-box">
-                        <img src="__UPLOAD__/images/s-pro-img-03.jpg" alt="">
-                    </a>
-                    <div class="text-box">
-                        <a class="title" href="">和景甜拍拖的直男张继科连口红都分不清</a>
-                        <div class="u-statistics">
-                            <span class="view">1244</span>
-                            <span class="time">03/12</span>
-                        </div>
-                    </div>
-                </li>
-                <li class="item">
-                    <a href="" class="img-box">
-                        <img src="__UPLOAD__/images/s-pro-img-04.jpg" alt="">
-                    </a>
-                    <div class="text-box">
-                        <a class="title" href="">40岁的女性夏季怎么穿才减龄又时尚，刘涛、袁泉都爱这样穿</a>
-                        <div class="u-statistics">
-                            <span class="view">1244</span>
-                            <span class="time">03/12</span>
-                        </div>
-                    </div>
-                </li>
-                <li class="item">
-                    <a href="" class="img-box">
-                        <img src="__UPLOAD__/images/s-pro-img-04.jpg" alt="">
-                    </a>
-                    <div class="text-box">
-                        <a class="title" href="">40岁的女性夏季怎么穿才减龄又时尚，刘涛、袁泉都爱这样穿</a>
-                        <div class="u-statistics">
-                            <span class="view">1244</span>
-                            <span class="time">03/12</span>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+            <include file="Template/smallside"/>
         </div>
     </div>
 

@@ -17,13 +17,6 @@
     <!-- header -->
     <include file="Template/header" />
 
-    <!-- banner -->
-    <div class="w-main f-cb">
-        <div class="g-b-side f-fl">
-
-        </div>
-        <div class="g-s-side f-lr"></div>
-    </div>
 
     <!-- main content -->
     <div class="w-main f-cb">
@@ -50,7 +43,7 @@
                                     <img src="__UPLOAD__/thumb/{$vo['thumb']}" alt="{$vo['title']}">
                                 </a>
                                 <div class="text-box">
-                                    <a class="title" href="{:U('detail')}">{$vo['title']}</a>
+                                    <a class="title" href="{:U('detail',array('cid'=>$vo['cid'],'id'=>$vo['id']))}">{$vo['title']}</a>
                                     <p class="desc">{$vo['description']}</p>
                                     <div class="u-statistics">
                                         <span class="view">{$vo['click']}</span>

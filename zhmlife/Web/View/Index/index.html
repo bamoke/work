@@ -40,7 +40,7 @@
                 <foreach name="recommend" item="list">
                     <li class="item">
                         <div class="img-box">
-                            <a href="{:U('Article/detail')}" target="_blank">
+                            <a href="{:U('Article/detail',array('cid'=>$list['cid'],'id'=>$list['id']))}" target="_blank">
                                 <img src="__UPLOAD__/thumb/{$list['thumb']}" alt="{$list['title']}">
                             </a>
                         </div>

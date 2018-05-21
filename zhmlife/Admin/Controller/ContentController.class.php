@@ -180,6 +180,7 @@ class ContentController extends AuthController
             }
             
             $model->thumb = $uploadResult['savename'];
+            $model->init_click = mt_rand(200,500);
             if($model->add()){
                 $backData['status'] = 1;
                 $backData['msg'] = "保存成功";
@@ -220,7 +221,7 @@ class ContentController extends AuthController
 
 
     /***
-     * Protected
+     * Protected VIEW
      * 针对不同栏目类型，选择对应的模板
      * @param int cateID
     ***/
@@ -232,7 +233,6 @@ class ContentController extends AuthController
         switch ($cateInfo['type']){
             case 'single':
                 $data = $dataModel->where("cid=".$cid)->fetchSql(false)->find();
-                var_dump($data);
                 if(!$data){
                     $data= array(
                         "title"=>$cateInfo['title'],

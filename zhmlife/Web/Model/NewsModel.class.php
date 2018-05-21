@@ -2,7 +2,7 @@
 namespace Web\Model;
 use Think\Model;
 class NewsModel extends Model {
-    public $listField = "id,title,thumb,DATE_FORMAT(create_time,'%m-%d') as time,click";
+    public $listField = "id,cid,title,thumb,DATE_FORMAT(create_time,'%m-%d') as time,(init_click + click) as click";
 
     //推荐
     public function getRecommend($cid=null,$num=3){

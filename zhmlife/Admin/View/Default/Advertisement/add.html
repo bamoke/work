@@ -11,7 +11,7 @@
         </div>
         <form name="advertisement-form" class="form form-horizontal" action="{:U('save')}" role="form">
             <div class="form-group">
-                <label class="control-label col-xs-1">展示位置:</label>
+                <label class="control-label col-xs-1"><span class="text-danger">*</span>展示位置:</label>
                 <div class="col-xs-2">
                     <select name="position_key" class="form-control">
                         <option value="">请选择广告位置</option>
@@ -23,7 +23,7 @@
                 <div class="col-xs-3 js-tips"></div>
             </div>
             <div class="form-group">
-                <label class="control-label col-xs-1">广告标题:</label>
+                <label class="control-label col-xs-1"><span class="text-danger">*</span>广告标题:</label>
                 <div class="col-xs-4">
                     <input type="text" name="title" class="form-control" value="">
                 </div>
@@ -54,9 +54,9 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-xs-1">链接地址:</label>
+                <label class="control-label col-xs-1"><span class="text-danger">*</span>链接地址:</label>
                 <div class="col-xs-4">
-                    <input type="text" name="url" class="form-control" value="">
+                    <input type="text" name="url" class="form-control" value="" placeholder="完整地址，以http或https开头">
                 </div>
                 <div class="col-xs-3 js-tips"></div>
             </div>

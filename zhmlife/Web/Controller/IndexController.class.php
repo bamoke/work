@@ -4,7 +4,7 @@ use Web\Common\WebController;
 class IndexController extends WebController {
     public function index(){
         $newsModel = D("News");
-        $newsListField ="N.id,N.title,N.cid,N.thumb,DATE_FORMAT(N.create_time,'%m-%d') as time,N.click,C.title as catename";
+        $newsListField ="N.id,N.title,N.cid,N.thumb,DATE_FORMAT(N.create_time,'%m-%d') as time,(N.init_click + N.click) as click,C.title as catename";
         $bannerList = M("Banner")->where("position_key=0 and status=1")->order("sort,id desc")->limit(5)->select();
         $recommendList = M("News")
         ->alias("N")

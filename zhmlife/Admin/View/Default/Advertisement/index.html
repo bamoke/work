@@ -9,10 +9,10 @@
         <table class="table js-table-list">
             <thead>
                 <tr>
-                    <th>缩略图</th>
+                    <th width="200">缩略图</th>
                     <th width="200">广告名称</th>
                     <th width="200">展示位置</th>
-                    <th width="300">链接地址</th>
+                    <th >链接地址</th>
                     <th width="80">显示</th>
                     <th width="120">操作</th>
                 </tr>
@@ -25,7 +25,7 @@
                         </td>
                         <td>{$list['title']}</td>
                         <td>{$position[$list['position_key']]['name']}</td>
-                        <td>{$list['url']}</td>
+                        <td><div style="width:100%;word-break: break-all;word-wrap: break-word;">{$list['url']}</div></td>
                         <td>
                             <if condition="$list['status'] eq 1">
                                 <span class="text-success">正常</span>

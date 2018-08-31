@@ -1,0 +1,71 @@
+
+        <div class="g-column-wrap">
+            <div class="m-bar-default">
+                <h2 class="title">人气排行</h2>
+            </div>
+            <ul class="m-imgtext m-imgtext-sm">
+                <foreach name='hot' item="list">
+                <li class="item">
+                    <a href="{:U('Article/detail',array('cid'=>$list['cid'],'id'=>$list['id']))}" target="_blank" class="img-box">
+                        <img src="__UPLOAD__/thumb/{$list['thumb']}" alt="{$list['title']}">
+                    </a>
+                    <div class="text-box">
+                        <a class="title" href="{:U('Article/detail',array('cid'=>$list['cid'],'id'=>$list['id']))}" target="_blank">{$list['title']}</a>
+                        <div class="u-statistics">
+                            <span class="view">{$list['click']}</span>
+                            <span class="time">{$list['time']}</span>
+                        </div>
+                    </div>
+                </li>
+                </foreach>
+            </ul>
+        </div>
+        <foreach name="adlist" item="ad">
+                <if condition="$ad['position_key'] eq 2">
+                    <div class="u-ad">
+                        <if condition="$ad['url'] neq ''">
+                                <a href="{$ad['url']}" target="_blank">
+                                        <img src="__UPLOAD__/ad/{$ad['img']}" width="100%">
+                                </a>
+                            <else/>
+                            <img src="__UPLOAD__/ad/{$ad['img']}" width="100%">
+                        </if>
+
+                    </div>
+                </if>
+        </foreach>
+        <div class="g-column-wrap">
+            <div class="m-bar-default">
+                <h2 class="title">每周热搜</h2>
+            </div>
+            <ul class="m-imgtext m-imgtext-sm">
+                    <foreach name='hotsearch' item="list">
+                        <li class="item">
+                            <a href="{:U('Article/detail',array('cid'=>$list['cid'],'id'=>$list['id']))}" target="_blank" class="img-box">
+                                <img src="__UPLOAD__/thumb/{$list['thumb']}" alt="{$list['title']}">
+                            </a>
+                            <div class="text-box">
+                                <a class="title" href="{:U('Article/detail',array('cid'=>$list['cid'],'id'=>$list['id']))}" target="_blank">{$list['title']}</a>
+                                <div class="u-statistics">
+                                    <span class="view">{$list['click']}</span>
+                                    <span class="time">{$list['time']}</span>
+                                </div>
+                            </div>
+                        </li>
+                    </foreach>
+            </ul>  
+        </div>
+        <foreach name="adlist" item="ad">
+                <if condition="$ad['position_key'] eq 3">
+                    <div class="u-ad">
+                        <if condition="$ad['url'] neq ''">
+                                <a href="{$ad['url']}" target="_blank">
+                                        <img src="__UPLOAD__/ad/{$ad['img']}" width="100%">
+                                </a>
+                            <else/>
+                            <img src="__UPLOAD__/ad/{$ad['img']}" width="100%">
+                        </if>
+
+                    </div>
+                </if>
+        </foreach>

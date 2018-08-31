@@ -144,7 +144,7 @@ class ContentController extends AuthController
         if(IS_POST){
             $tableName = ucfirst($type);
             $model = M($tableName);
-            $result = $model->create();
+            $result = $model->create($_POST);
             $backData = array();
             if(!$result) {
                 $backData['status'] = 0;

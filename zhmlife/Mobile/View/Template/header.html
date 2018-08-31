@@ -1,0 +1,12 @@
+<div class="m-top-bar">
+        <h2 class="name">{$baseInfo['site_name']}</h2>
+</div>
+<div class="m-nav">
+    <div class="nav-container">
+            <a href="{:U('Index/index')}" class="<notempty name='isIndex'>active</notempty>">首页
+                <foreach name="nav" item="vo">
+            </a><a href="{$vo['url']}" class="{$vo['isActive'] ? 'active':''}">{$vo['title']}
+                </foreach>
+            </a>
+    </div>
+</div>

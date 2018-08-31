@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="{$cateinfo['keyword']}">
+    <meta name="description" content="{$cateinfo['description']}">
+    <title>{$cateinfo['title']}</title>
+    <link rel="stylesheet" href="__PUBLIC__/Js/plugins/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="__MOBILE_ASSET__/css/global.css">
+    <link rel="stylesheet" href="__MOBILE_ASSET__/css/main.css">
+    <style type="text/css">
+    .hide {display: none;}
+    </style>
+</head>
+
+<body>
+    
+    <!-- header -->
+    <div id="js-body">
+    <include file="Template/header" />
+
+    <assign name="curCid" value="$Think.get.cid"/>
+    <div id="column-banner" class="swiper-container">
+            <div class="swiper-wrapper">
+                <foreach name="banner" item="vo">
+                <div class="swiper-slide" style="background-image:url(__UPLOAD__/banner/{$vo['img']})">
+                    <a href="{$vo['url']}" class="title">{$vo['title']}</a>
+                </div>
+                </foreach>
+            </div>
+            <div class="swiper-button-prev swiper-button-black"></div>
+            <div class="swiper-button-next swiper-button-black"></div>
+    </div>
+    <div class="hide" v-bind:style="{display:showPage}">
+    <!-- main content -->
+    <div class="w-main f-cb">
+            <ul class="m-pic-list">
+
+              
+                            <li  v-for="(item,index ) in newsList" :key="item.id" class="big-item" v-if="index%4==3">
+                                    <a v-bind:href="urlBase+item.id">
+                                        <div class="img-box">
+                                                <img v-bind:src="thumbBase + item.thumb" v-bind:alt="item.title">
+                                        </div>
+                                            <h3 class="title">{{item.title}}</h3>
+                                            <div class="g-row-bt foot-info">
+                                                <div class="">
+                                                    <span class="view">点击:{{item.click}}</span>
+                                                </div>
+                                                <div class="time">{{item.time}}</div>
+                                            </div>
+
+                                    </a>
+                            </li>
+                            <li class="item" v-else>
+                                    <a v-bind:href="urlBase+item.id">
+                                        <div class="lf">
+                                            <h3 class="title">{{item.title}}</h3>
+                                            <div class="g-row-bt foot-info">
+                                                <div class="">
+                                                    <span class="view">点击:{{item.click}}</span>
+                                                </div>
+                                                <div class="time">{{item.time}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="img-box">
+                                            <img v-bind:src="thumbBase + item.thumb" v-bind:alt="item.title">
+                                        </div>
+                                    </a>
+                            </li>
+
+
+
+                </ul>
+
+
+    </div>
+
+    <div class="m-ft-loading-box">
+            <div class="item btn" v-show="hasMore && !moreLoading" id="js-load-more-btn" v-on:click="loadeMore">加载更多</div>
+            <div class="item tips" v-bind:class="{hide:hasMore}" id="js-no-more">没有更多了</div>
+            <div class="item loading" v-show="moreLoading">加载中……</div>
+    </div>
+
+</div>
+
+
+</div>
+</body>
+</html>
+<script src="__MOBILE_ASSET__/js/flexible.js"></script>
+<script src="__PUBLIC__/Js/plugins/swiper/swiper.min.js"></script>
+<script src="__PUBLIC__/Js/plugins/vue/axios.min.js"></script>
+<script src="__PUBLIC__/Js/plugins/vue/vue.min.js"></script>
+<script>
+    var swiper = new Swiper('#column-banner', {
+        autoplay: 5000,
+        speed: 1000,
+        prevButton: '.swiper-button-prev',
+        nextButton: '.swiper-button-next',
+    });
+    var isLoaded = false;
+    var curCid = {$Think.get.cid};
+    var curPage = {$Think.get.page|default='1'};
+    var initList = {:json_encode($mainlist)};
+    var hasMore = {$hasMore};
+    var thumbBase = "__UPLOAD__/thumb/";
+    var urlBase = "{:U('Article/detail',array('cid'=>$curCid))}".replace(".html","/id/");
+    var myAxios = axios.create({
+        // baseURL: 'http://localhost:802/zhmlife/mobile.php/Article/getlist/cid/'+curCid
+        baseURL: '/mobile.php/Article/getlist/cid/'+curCid
+    });
+    myAxios.interceptors.request.use(function (config) {
+                    // 在发送请求之前做些什么
+                    if(!isLoaded) return config;
+                    // return config;
+                }, function (error) {
+                    // 对请求错误做些什么
+                    return Promise.reject(error);
+    });
+    // console.log("start"+new Date().getMilliseconds())
+    var Vue = new Vue({
+        el:"#js-body",
+        data:{
+            newsList:initList,
+            hasMore:hasMore,
+            moreLoading:false,
+            showPage:"none"
+        },
+        methods:{
+            loadeMore:function(){
+                var _that = this;
+                var oldList = this.newsList;
+                this.moreLoading = true;
+                myAxios.get("/page/"+ (curPage+1)).then(function(response){
+                    var data = response.data;
+                    curPage++;
+                    _that.newsList = oldList.concat(data.list)
+                    _that.hasMore = data.hasMore;
+                    _that.moreLoading = false;
+                })
+            }
+        },
+        mounted:function(){
+            this.showPage = "block";
+            // console.log("end"+new Date().getMilliseconds())
+        }
+
+    });
+
+</script>

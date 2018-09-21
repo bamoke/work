@@ -76,6 +76,23 @@
                 </div>
                 <div class="col-xs-3 js-tips"></div>
             </div>
+            <div class="form-group"><label class="control-label col-xs-2">缩略图:</label>
+                <div class="col-xs-3">
+                    <div class="m-thumbnail-upload" id="js-thumb-upload-panel">
+                        <?php if(empty($data['thumb'])): ?><a href="javascript:" class="add-btn js-add-btn"><i class="glyphicon glyphicon-plus-sign"></i></a>
+                            <div class="thumb-box hidden"><img class="thumb" style=""><span class="del-btn">删除</span> </div>
+                            <?php else: ?>
+                            <a href="javascript:" class="add-btn js-add-btn hidden"><i class="glyphicon glyphicon-plus-sign"></i></a>
+                            <div class="thumb-box">
+                                <img class="thumb" src="/zlc/Uploads/thumb/<?php echo ($data['thumb']); ?>">
+                                <span class="del-btn">删除</span>
+                            </div>
+                            <input type="hidden" class="js-old-thumb" name="old_img" value="<?php echo ($data['thumb']); ?>"><?php endif; ?>
+                        <input type="file" name="thumb" class="js-file-input" style="opacity: 0">
+                    </div>
+                </div>
+                <div class="col-xs-3 tips"></div>
+            </div>
             <div class="form-group">
                 <label class="control-label col-xs-2">召开时间:</label>
                 <div class="col-xs-6">
@@ -89,20 +106,31 @@
                     <input type="text" name="place" class="form-control" value="<?php echo ($data["place"]); ?>" placeholder="">
                 </div>
             </div>
+
+            <div class="form-group">
+                <label class="control-label col-xs-2">展会描述:</label>
+                <div class="col-xs-6">
+                    <textarea name="description" class="form-control"><?php echo ($data['description']); ?></textarea>
+                </div>
+            </div>
             <div class="form-group">
                 <label class="control-label col-xs-2">是否推荐:</label>
                 <div class="col-xs-6">
                     <label class="radio-inline">
-                        <input type="radio" name="recommend" value="1" <?php if(($data['recommend']) == "1"): ?>checked<?php endif; ?> />是</label>
+                        <input type="radio" name="recommend" value="1" <?php if(($data['recommend']) == "1"): ?>checked<?php endif; ?>
+                        />是</label>
                     <label class="radio-inline">
-                        <input type="radio" name="recommend" value="0" <?php if(($data['recommend']) == "0"): ?>checked<?php endif; ?>  />否</label>
+                        <input type="radio" name="recommend" value="0" <?php if(($data['recommend']) == "0"): ?>checked<?php endif; ?>
+                        />否</label>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-xs-2">显示状态:</label>
                 <div class="col-xs-8">
-                    <label class="radio-inline"><input type="radio" name="status" value="1" <?php if($data['status'] == 1): ?>checked<?php endif; ?> />显示</label>
-                    <label class="radio-inline"><input type="radio" name="status" value="0" <?php if($data['status'] == 0): ?>checked<?php endif; ?> />隐藏</label>
+                    <label class="radio-inline"><input type="radio" name="status" value="1" <?php if($data['status'] == 1): ?>checked<?php endif; ?>
+                        />显示</label>
+                    <label class="radio-inline"><input type="radio" name="status" value="0" <?php if($data['status'] == 0): ?>checked<?php endif; ?>
+                        />隐藏</label>
                 </div>
             </div>
 

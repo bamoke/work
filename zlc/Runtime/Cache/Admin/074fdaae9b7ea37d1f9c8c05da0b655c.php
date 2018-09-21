@@ -91,7 +91,7 @@
                         <td><?php echo ($list['create_time']); ?></td>
                         <td class="operation-box">
                             <a href="<?php echo U('index',array('pid'=>$_GET['pid'],'id'=>$list['id'],'actype'=>'edit','cid'=>$list['cid']));?>">修改</a>
-                            <a href="javascript:" data-url="<?php echo U('del',array('id'=>$list['id'],'type'=>$pageType));?>" class="js-del-one">删除</a>
+                            <!-- <a href="javascript:" data-url="<?php echo U('del',array('id'=>$list['id'],'type'=>$pageType));?>" class="js-del-one">删除</a> -->
                         </td>
                     </tr><?php endforeach; endif; ?>
 

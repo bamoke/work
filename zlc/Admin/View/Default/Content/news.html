@@ -35,7 +35,7 @@
                         <td>{$list['create_time']}</td>
                         <td class="operation-box">
                             <a href="{:U('index',array('pid'=>$_GET['pid'],'id'=>$list['id'],'actype'=>'edit','cid'=>$list['cid']))}">修改</a>
-                            <a href="javascript:" data-url="{:U('del',array('id'=>$list['id'],'type'=>$pageType))}" class="js-del-one">删除</a>
+                            <!-- <a href="javascript:" data-url="{:U('del',array('id'=>$list['id'],'type'=>$pageType))}" class="js-del-one">删除</a> -->
                         </td>
                     </tr>
                 </foreach>

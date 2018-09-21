@@ -1,62 +1,8 @@
-<!DOCTYPE html>
-<html lang="zh-cmn-Hans">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="keywords" content="{$info['keywords']}">
-    <meta name="description" content="">
-    <title>{$info['title']}</title>
-    <link rel="stylesheet" href="__PUBLIC__/Js/plugins/swiper/css/swiper.min.css">
-    <link rel="stylesheet" href="__WEB_ASSET__/css/global.css">
-    <link rel="stylesheet" href="__WEB_ASSET__/css/main.css">
-</head>
-
-<body>
-    <!-- header -->
-    <include file="Template/header" />
-
-    <!-- banner -->
-    <div class="g-wrap" id="single-banner">
-        <div class="w-main f-cb">
-
+<div class="single-main-content">
+        <div class="bar">
+            <h2 class="title">{$info['title']}</h2>
+        </div>
+        <div class="content">
+            {$info['content']}
         </div>
     </div>
-
-    <div class="g-wrap">
-        <div class="w-main">
-            <!--             <div class="m-crumb">
-                <a href="http://www.163.com/">珠港澳网首页</a> &gt; 关于我们
-            </div> -->
-        </div>
-    </div>
-    <!-- main content -->
-    <div class="w-main f-cb">
-        <div class="single-main-content">
-            <div class="bar">
-                <h2 class="title">{$info['title']}</h2>
-            </div>
-            <div class="content">
-                {$info['content']}
-            </div>
-        </div>
-        <div class="single-s-side">
-            <div class="m-side-nav">
-                <foreach name="cateList" item="vo">
-                    <a href="{:U('index',array('cid'=>$vo['pid'],'id'=>$vo['id']))}" <eq name="curId" value="$vo['id']">class="active"</eq> >{$vo['title']}</a>
-                </foreach>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-    <!-- footer -->
-    <include file="Template/footer" />
-</body>
-
-</html>

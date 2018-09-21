@@ -3,18 +3,16 @@
                 <foreach name="data" item="vo">
                     <li class="item">
                         <if condition="$vo['thumb']">
-                            <a href="{:U('detail',array('pid'=>$_GET['pid'],'cid'=>$vo['cid'],'id'=>$vo['id']))}" class="img-box">
+                            <a href="{:U('detail',array('cid'=>$vo['cid'],'id'=>$vo['id']))}" class="img-box">
                                 <img src="__UPLOAD__/thumb/{$vo['thumb']}" alt="{$vo['title']}">
                             </a>
                         </if>
             
                         <div class="text-box">
-                            <a class="title" href="{:U('detail',array('pid'=>$_GET['pid'],'cid'=>$vo['cid'],'id'=>$vo['id']))}">{$vo['title']}</a>
+                            <a class="title" href="{:U('detail',array('cid'=>$vo['cid'],'id'=>$vo['id']))}">{$vo['title']}</a>
                             <p class="desc">{$vo['description']}</p>
-                            <div class="u-statistics">
-                                <span class="util"><span class="glyphicon glyphicon-eye-open"></span>{$vo['click']}</span>
-                                <span class="util"><span class="glyphicon glyphicon-time"></span>{$vo['date']}</span>
-                            </div>
+                            <p class=""><span class="glyphicon glyphicon-time"></span>{$vo['times']}</p>
+                            <p class=""><span class="glyphicon glyphicon-map-marker"></span>{$vo['place']}</p>
                         </div>
                     </li>
                 </foreach>

@@ -78,7 +78,7 @@
   <div class="m-banner-wrap">
     <div class="container">
       <div class="banner column-banner">
-          <?php if(!empty($banner['img'])): ?><img src="/zlc/Uploads/banner/<?php echo ($banner["img"]); ?>" alt=""><?php endif; ?>  
+          <img src="/zlc/Uploads/banner/<?php echo ($banner["img"]); ?>" alt="">
       </div>
     </div>
   </div>
@@ -99,33 +99,31 @@
             当前位置：<a href="/">首页</a><span class="fg">&gt;</span><?php echo ($pageName); ?><span class="fg">&gt;</span><?php echo ($curCateName); ?>
           </div>
         </div>
-        <div class="m-content-wrap"><?php if(!empty($data)): ?><ul class="m-imgtext m-imgtext-big">
-                <?php if(is_array($data)): foreach($data as $key=>$vo): ?><li class="item">
-                        <?php if($vo['thumb']): ?><a href="<?php echo U('detail',array('pid'=>$_GET['pid'],'cid'=>$vo['cid'],'id'=>$vo['id']));?>" class="img-box">
-                                <img src="/zlc/Uploads/thumb/<?php echo ($vo['thumb']); ?>" alt="<?php echo ($vo['title']); ?>">
-                            </a><?php endif; ?>
-            
-                        <div class="text-box">
-                            <a class="title" href="<?php echo U('detail',array('pid'=>$_GET['pid'],'cid'=>$vo['cid'],'id'=>$vo['id']));?>"><?php echo ($vo['title']); ?></a>
-                            <p class="desc"><?php echo ($vo['description']); ?></p>
-                            <div class="u-statistics">
-                                <span class="util"><span class="glyphicon glyphicon-eye-open"></span><?php echo ($vo['click']); ?></span>
-                                <span class="util"><span class="glyphicon glyphicon-time"></span><?php echo ($vo['date']); ?></span>
-                            </div>
-                        </div>
-                    </li><?php endforeach; endif; ?>
-            
-            </ul>
-            
-            <div class="m-pagination">
-                <?php echo ($page); ?>
-            </div>
-    <?php else: ?>
-    <div class="m-empty">
-        <img src="/zlc/Web/Assets/images/null-page-draw.png">
-        <div class="tips">暂无相关记录！</div>
-    </div><?php endif; ?>
-</div>
+        <div class="m-content-wrap"><div class="m-article-detail">
+        <h1 class="title"><?php echo ($info['title']); ?></h1>
+        <div class="other-info clearfix">
+                <div class="u-statistics statistics">
+                        <?php if(!empty($info['origin'])): ?><span>来源：<?php echo ($info['origin']); ?></span><?php endif; ?>
+                        <span class="view">点击:<?php echo ($info['click']); ?></span>
+                        <span class="time">发布日期:<?php echo ($info['date']); ?></span>
+                    </div>
+                <div class="bdsharebuttonbox pull-right hidden-xs"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+                <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+        </div>
+        <?php if(!empty($info['video'])): ?><div class="m-video-box" style="margin-top:24px;padding:12px;background:#232323;">
+                    <video width="100%" preload="auto" controls="controls" id="js-my-video">
+                        <source src="<?php echo ($info['video']); ?>" type="video/ogg">
+                        <source src="<?php echo ($info['video']); ?>" type="video/mp4">
+                      Your browser does not support the video tag.
+                      </video>
+            </div><?php endif; ?>
+       <div class="content">
+           <?php echo ($info['content']); ?>
+       </div>
+        <div class="end">
+            <span>END</span>
+        </div>
+    </div></div>
       </div>
     </div>
 

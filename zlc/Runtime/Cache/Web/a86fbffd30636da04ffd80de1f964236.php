@@ -78,7 +78,7 @@
   <div class="m-banner-wrap">
     <div class="container">
       <div class="banner column-banner">
-          <?php if(!empty($banner['img'])): ?><img src="/zlc/Uploads/banner/<?php echo ($banner["img"]); ?>" alt=""><?php endif; ?>  
+          <img src="/zlc/Uploads/banner/<?php echo ($banner["img"]); ?>" alt="">
       </div>
     </div>
   </div>
@@ -101,17 +101,15 @@
         </div>
         <div class="m-content-wrap"><?php if(!empty($data)): ?><ul class="m-imgtext m-imgtext-big">
                 <?php if(is_array($data)): foreach($data as $key=>$vo): ?><li class="item">
-                        <?php if($vo['thumb']): ?><a href="<?php echo U('detail',array('pid'=>$_GET['pid'],'cid'=>$vo['cid'],'id'=>$vo['id']));?>" class="img-box">
+                        <?php if($vo['thumb']): ?><a href="<?php echo U('detail',array('cid'=>$vo['cid'],'id'=>$vo['id']));?>" class="img-box">
                                 <img src="/zlc/Uploads/thumb/<?php echo ($vo['thumb']); ?>" alt="<?php echo ($vo['title']); ?>">
                             </a><?php endif; ?>
             
                         <div class="text-box">
-                            <a class="title" href="<?php echo U('detail',array('pid'=>$_GET['pid'],'cid'=>$vo['cid'],'id'=>$vo['id']));?>"><?php echo ($vo['title']); ?></a>
+                            <a class="title" href="<?php echo U('detail',array('cid'=>$vo['cid'],'id'=>$vo['id']));?>"><?php echo ($vo['title']); ?></a>
                             <p class="desc"><?php echo ($vo['description']); ?></p>
-                            <div class="u-statistics">
-                                <span class="util"><span class="glyphicon glyphicon-eye-open"></span><?php echo ($vo['click']); ?></span>
-                                <span class="util"><span class="glyphicon glyphicon-time"></span><?php echo ($vo['date']); ?></span>
-                            </div>
+                            <p class=""><span class="glyphicon glyphicon-time"></span><?php echo ($vo['times']); ?></p>
+                            <p class=""><span class="glyphicon glyphicon-map-marker"></span><?php echo ($vo['place']); ?></p>
                         </div>
                     </li><?php endforeach; endif; ?>
             

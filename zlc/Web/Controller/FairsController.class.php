@@ -2,25 +2,25 @@
 namespace Web\Controller;
 use Web\Common\WebController;
 use Web\Common\BasePage;
-class ArticleController extends WebController {
+class FairsController extends WebController {
 
     public function index($pid,$cid=null){
         //cate
         $BasePage = new BasePage();
         $curCateInfo = $BasePage->index($pid,$cid);
         //
-        $newsModel = D("News");
-        $listField = "id,cid,title,thumb,description,DATE_FORMAT(create_time,'%m-%d') as date,(init_click + click) as click";
+        $mainModel = D("Fairs");
+        $listField = "id,cid,title,times,place,thumb,description";
         $conditon = array(
             "cid" =>$curCateInfo['id'],
             "status"    =>1
         );
-        $count = $newsModel->where($conditon)->count();
+        $count = $mainModel->where($conditon)->count();
         $Page = new \Think\Page($count,15);
         $Page->setConfig("next","下一页");
         $Page->setConfig("prev","上一页");
         $show = $Page->show();
-        $mainList = $newsModel
+        $mainList = $mainModel
         ->field($listField)
         ->where($conditon)
         ->limit($Page->firstRow.",".$Page->listRows)
@@ -32,17 +32,17 @@ class ArticleController extends WebController {
         $this->display();
     }
     public function detail($cid,$id){
-        //cate
-        $curPid = M("ContentCate")->where("id=$cid")->getField("pid");
-        $BasePage = new BasePage();
-        $curCateInfo = $BasePage->index($curPid,$cid);
-
         $update = M()->execute('update __NEWS__ set click = click+1 where id='.$id);
         $info=M("News")
-        ->field("*,date(create_time) as date,(init_click + click) as click")
-        ->where("id=$id")
+        ->alias("N")
+        ->field("N.*,DATE(N.create_time) as time,(N.init_click + N.click) as click,C.title as catename")
+        ->join("__CONTENT_CATE__ as C on C.id=N.cid")
+        ->where("N.id=$id")
         ->find();
+        $recommendList = M("News")->field("id,cid,thumb,title")->where("status=1 and recommend=1")->order("id desc")->limit(3)->select();
+        $this->_mainassign($cid);
         $this->assign("info",$info);
+        $this->assign("recommend",$recommendList);
         $this->display();
     }
 

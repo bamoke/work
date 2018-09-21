@@ -346,7 +346,6 @@ class ContentController extends AuthController
             case 'custom':
             $controllerName = ucfirst($cateInfo["controller_name"]);
             $actionName = $cateInfo["action_name"];
-            var_dump($controllerName);
             A($controllerName)->$actionName();
             $this->display($controllerName."/".$actionName);
             break;

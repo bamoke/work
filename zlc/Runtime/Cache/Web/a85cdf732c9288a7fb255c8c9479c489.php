@@ -63,7 +63,7 @@
 							</div>
 					</div>
 				</div>
-				<ul class="list clearfix hidden-xs">
+				<ul id="js-nav-list" class="list clearfix hidden-xs">
 					<li class="<?php if($isIndex): ?>active<?php endif; ?>"><a href="<?php echo U('Index/index');?>" class="">首页</a><span class="bar"></span></li>
 					<?php if(is_array($nav)): foreach($nav as $key=>$list): ?><li class="<?php if($list[isActive]): ?>active<?php endif; ?>"><a href="<?php echo ($list['url']); ?>" class=""><?php echo ($list['title']); ?></a><span class="bar"></span></li><?php endforeach; endif; ?>
 				</ul>

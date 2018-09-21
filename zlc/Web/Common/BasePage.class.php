@@ -1,8 +1,9 @@
 <?php
-namespace Web\Controller;
-use Web\Common\WebController;
-class ContentController extends WebController {
+namespace Web\Common;
+use Think\Controller;
+class BasePage extends Controller {
   public function index($pid,$cid=null){
+   
     $parentInfo = M("ContentCate")->field("id,type,title")->where("id=$pid")->find();
     // ==
     $childCate = M("ContentCate")
@@ -10,7 +11,7 @@ class ContentController extends WebController {
     ->where(array('pid'=>$pid,'status'=>1))
     ->order("sort,id")
     ->select();
-    $banner = M("Banner")->where(array("position_key"=>$pid,"status"=>1))->find();
+    $banner = M("Banner")->where(array("position_key"=>$pid,"status"=>1))->order("id desc")->select();
 
 
     // 获取当前子类信息
@@ -31,15 +32,29 @@ class ContentController extends WebController {
       }else {
           $className = '';
       }
-      $url = U("index",array("pid"=>$pid,"cid"=>$v['id']));
+      $routeParam = array('pid'=>$pid,"cid"=>$v["id"]); 
+      switch ($v['type']){
+        case "custom":
+        $url = U(ucfirst($v['controller_name'])."/".$v['action_name'],$routeParam); 
+        break;
+        case "single":
+        $url = U('Single/index',$routeParam);
+        break;
+        case "news":
+        $url = U("Article/index",$routeParam);
+        break;
+        case "download":
+        $url = U("Download/index",$routeParam);
+        break;
+      }
       $childNavHtml .= '<li><a href="'. $url .'" class="'.$className.'">'. $v['title'] .'</a></li>';
     }
 
-    $this->assign("banner",$banner);
+    $this->assign("banner",$banner[0]);
     $this->assign("pageName",$parentInfo['title']);
     $this->assign("curCateName",$curCateInfo['title']);
     $this->assign("childNavHtml",$childNavHtml);
-    $this->_showTpl($curCateInfo);
+    return $curCateInfo;
   }
 
 

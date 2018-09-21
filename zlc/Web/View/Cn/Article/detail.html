@@ -1,115 +1,29 @@
-<!DOCTYPE html>
-<html lang="zh-cmn-Hans">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="keywords" content="{$info['keywords']}">
-    <meta name="description" content="{$info['description']}">
-    <title>{$info['title']}</title>
-    <link rel="stylesheet" href="__PUBLIC__/Js/plugins/swiper/css/swiper.min.css">
-    <link rel="stylesheet" href="__WEB_ASSET__/css/global.css">
-    <link rel="stylesheet" href="__WEB_ASSET__/css/main.css">
-</head>
-
-<body>
-    <!-- header -->
-    <include file="Template/header" />
-
-
-    <!-- main content -->
-    <div class="w-main f-cb">
-        <div class="g-b-side f-fl">
-            <div class="m-crumb">
-                <a href="{:U('index')}">首页</a> &gt;
-                <a href="{:U('Article/index',array('cid'=>$info['cid']))}">{$info['catename']}</a> &gt; 正文
-            </div>
-            <div class="m-article-detail">
-                <h1 class="title">{$info['title']}</h1>
-                <div class="other-info g-row-bt">
-                        <div class="u-statistics statistics">
-                                <notempty name="info['origin']">
-                                        <span>来源：{$info['origin']}</span>
-                                </notempty>
-                                <span class="view">{$info['click']}</span>
-                                <span class="time">{$info['time']}</span>
-                            </div>
-                        <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
-                        <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-                </div>
-                <notempty name="info['video']">
-                    <div class="m-video-box" style="margin-top:24px;padding:12px;background:#232323;">
-                            <video width="100%" preload="auto" controls="controls" id="js-my-video">
-                                <source src="{$info['video']}" type="video/ogg">
-                                <source src="{$info['video']}" type="video/mp4">
-                              Your browser does not support the video tag.
-                              </video>
+<div class="m-article-detail">
+        <h1 class="title">{$info['title']}</h1>
+        <div class="other-info clearfix">
+                <div class="u-statistics statistics">
+                        <notempty name="info['origin']">
+                                <span>来源：{$info['origin']}</span>
+                        </notempty>
+                        <span class="view">点击:{$info['click']}</span>
+                        <span class="time">发布日期:{$info['date']}</span>
                     </div>
-                </notempty>
-               <div class="content">
-                   {$info['content']}
-               </div>
-                <div class="end">
-                    <span>完</span>
-                </div>
-            </div>
-            <div class="u-recommend-ad">
-                    <foreach name="adlist" item="ad">
-                            <if condition="$ad['position_key'] eq 4">
-                                <div class="u-ad-ft">
-                                        <if condition="$ad['url'] neq ''">
-                                                <a href="{$ad['url']}" target="_blank">
-                                                        <img src="__UPLOAD__/ad/{$ad['img']}" width="100%">
-                                                </a>
-                                            <else/>
-                                            <img src="__UPLOAD__/ad/{$ad['img']}" width="100%">
-                                        </if>
-                                </div>
-                            </if>
-            
-                    </foreach>
-            </div>
-            <div class="m-footer-recommend">
-                <div class="m-bar-default">
-                    <div class="title">为你推荐</div>
-                </div>
-                <ul class="m-pic-row">
-                    <foreach name="recommend" item="vo">
-                        <li class="item">
-                            <a href="{:U('Article/detail',array('cid'=>$vo['cid'],'id'=>$vo['id']))}">
-                                <img src="__UPLOAD__/thumb/{$vo['thumb']}" alt="{$vo['title']}">
-                                <span class="title">{$vo['title']}</span>
-                            </a>
-                        </li>
-                    </foreach>
-
-                </ul>
-            </div>
+                <div class="bdsharebuttonbox pull-right hidden-xs"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+                <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
         </div>
-        <div class="g-s-side f-fr">
-            <include file="Template/smallside"/>
+        <notempty name="info['video']">
+            <div class="m-video-box" style="margin-top:24px;padding:12px;background:#232323;">
+                    <video width="100%" preload="auto" controls="controls" id="js-my-video">
+                        <source src="{$info['video']}" type="video/ogg">
+                        <source src="{$info['video']}" type="video/mp4">
+                      Your browser does not support the video tag.
+                      </video>
+            </div>
+        </notempty>
+       <div class="content">
+           {$info['content']}
+       </div>
+        <div class="end">
+            <span>END</span>
         </div>
     </div>
-
-
-
-
-
-
-    <!-- footer -->
-    <include file="Template/footer" />
-</body>
-
-</html>
-<script src="__PUBLIC__/Js/plugins/swiper/swiper.min.js"></script>
-<script>
-    var swiper = new Swiper('#column-banner', {
-        autoplay: 5000,
-        speed: 1000,
-        prevButton: '.swiper-button-prev',
-        nextButton: '.swiper-button-next',
-    });
-    var myVid = document.getElementById("js-my-video");
-    myVid.currentTime=1;
-</script>

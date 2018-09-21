@@ -6,22 +6,23 @@ class WebController extends Controller{
 
         $baseInfo = M("SiteConfig")->where("id=1")->find();
         $otherPage = M("Single")->field("id,title,pid")->where("pid=7 and status=1")->select();
-        $navList = M("ContentCate")->field("id,type,title")->where("is_nav=1 and status=1")->order("sort,id")->select();
+        $navList = M("ContentCate")->field("id,type,controller_name,action_name,title")->where("is_nav=1 and status=1")->order("sort,id")->select();
         //set url;
         $nav =array();
         foreach ($navList as $key=>$val){
+            $routeParam = array('pid'=>$val['id']); 
             switch ($val['type']){
                 case "custom":
-                $url = ''; 
+                $url = U(ucfirst($val['controller_name'])."/".$val['action_name'],$routeParam); 
                 break;
                 case "single":
-                $url = U('Single/index',array('pid'=>$val['id']));
+                $url = U('Single/index',$routeParam);
                 break;
                 case "news":
-                $url = U("Article/index",array("pid"=>$val['id']));
+                $url = U("Article/index",$routeParam);
                 break;
                 case "download":
-                $url = U("Download/index");
+                $url = U("Download/index",$routeParam);
                 break;
             }
             $isActive = false;
@@ -30,7 +31,7 @@ class WebController extends Controller{
             }
             // var_dump($nav);
             $nav[] = array(
-                "url"       =>U("Content/index",array("pid"=>$val['id'])),
+                "url"       =>$url,
                 "title"     =>$val['title'],
                 "isActive"  =>$isActive
             );

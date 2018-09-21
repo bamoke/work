@@ -78,7 +78,7 @@
   <div class="m-banner-wrap">
     <div class="container">
       <div class="banner column-banner">
-          <?php if(!empty($banner['img'])): ?><img src="/zlc/Uploads/banner/<?php echo ($banner["img"]); ?>" alt=""><?php endif; ?>  
+          <img src="/zlc/Uploads/banner/<?php echo ($banner["img"]); ?>" alt="">
       </div>
     </div>
   </div>
@@ -99,33 +99,14 @@
             当前位置：<a href="/">首页</a><span class="fg">&gt;</span><?php echo ($pageName); ?><span class="fg">&gt;</span><?php echo ($curCateName); ?>
           </div>
         </div>
-        <div class="m-content-wrap"><?php if(!empty($data)): ?><ul class="m-imgtext m-imgtext-big">
-                <?php if(is_array($data)): foreach($data as $key=>$vo): ?><li class="item">
-                        <?php if($vo['thumb']): ?><a href="<?php echo U('detail',array('pid'=>$_GET['pid'],'cid'=>$vo['cid'],'id'=>$vo['id']));?>" class="img-box">
-                                <img src="/zlc/Uploads/thumb/<?php echo ($vo['thumb']); ?>" alt="<?php echo ($vo['title']); ?>">
-                            </a><?php endif; ?>
-            
-                        <div class="text-box">
-                            <a class="title" href="<?php echo U('detail',array('pid'=>$_GET['pid'],'cid'=>$vo['cid'],'id'=>$vo['id']));?>"><?php echo ($vo['title']); ?></a>
-                            <p class="desc"><?php echo ($vo['description']); ?></p>
-                            <div class="u-statistics">
-                                <span class="util"><span class="glyphicon glyphicon-eye-open"></span><?php echo ($vo['click']); ?></span>
-                                <span class="util"><span class="glyphicon glyphicon-time"></span><?php echo ($vo['date']); ?></span>
-                            </div>
-                        </div>
-                    </li><?php endforeach; endif; ?>
-            
-            </ul>
-            
-            <div class="m-pagination">
-                <?php echo ($page); ?>
-            </div>
-    <?php else: ?>
-    <div class="m-empty">
-        <img src="/zlc/Web/Assets/images/null-page-draw.png">
-        <div class="tips">暂无相关记录！</div>
-    </div><?php endif; ?>
-</div>
+        <div class="m-content-wrap"><div class="single-main-content">
+        <div class="bar">
+            <h2 class="title"><?php echo ($info['title']); ?></h2>
+        </div>
+        <div class="content">
+            <?php echo ($info['content']); ?>
+        </div>
+    </div></div>
       </div>
     </div>
 

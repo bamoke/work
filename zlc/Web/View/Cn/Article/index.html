@@ -1,0 +1,22 @@
+<ul class="m-imgtext m-imgtext-big">
+        <foreach name="data" item="vo">
+                <li class="item">
+                        <a href="{:U('detail',array('cid'=>$vo['cid'],'id'=>$vo['id']))}" class="img-box">
+                            <img src="__UPLOAD__/thumb/{$vo['thumb']}" alt="{$vo['title']}">
+                        </a>
+                        <div class="text-box">
+                            <a class="title" href="{:U('detail',array('cid'=>$vo['cid'],'id'=>$vo['id']))}">{$vo['title']}</a>
+                            <p class="desc">{$vo['description']}</p>
+                            <div class="u-statistics">
+                                <span class="view">{$vo['click']}</span>
+                                <span class="time">{$vo['time']}</span>
+                            </div>
+                        </div>
+                    </li>
+        </foreach>
+
+    </ul>
+
+    <div class="m-paging">
+        {$page}
+    </div>

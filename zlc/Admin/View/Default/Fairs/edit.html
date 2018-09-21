@@ -1,0 +1,63 @@
+<div class="panel">
+    <div class="panel-body">
+        <div class="u-page-title">
+            <span class="caption">编辑展会</span>
+        </div>
+        <form name="fairs-form" class="form form-horizontal" action="{:U('update',array('pid'=>$_GET['pid'],'id'=>$_GET['id']))}">
+            <input type="hidden" name="cid" value="{$data.cid}">
+            <div class="form-group">
+                <label class="control-label col-xs-2">
+                    <span class="text-danger">*</span>展会名称:</label>
+                <div class="col-xs-6">
+                    <input type="text" name="title" class="form-control" value="{$data.title}" placeholder="建议20个字符以内">
+                </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">召开时间:</label>
+                <div class="col-xs-6">
+                    <input type="text" name="times" class="form-control" value="{$data.times}">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-xs-2">召开地点:</label>
+                <div class="col-xs-6">
+                    <input type="text" name="place" class="form-control" value="{$data.place}" placeholder="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">是否推荐:</label>
+                <div class="col-xs-6">
+                    <label class="radio-inline">
+                        <input type="radio" name="recommend" value="1" <eq name="data['recommend']" value="1">checked</eq> />是</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="recommend" value="0" <eq name="data['recommend']" value="0">checked</eq>  />否</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">显示状态:</label>
+                <div class="col-xs-8">
+                    <label class="radio-inline"><input type="radio" name="status" value="1" <if condition="$data['status'] eq 1">checked</if> />显示</label>
+                    <label class="radio-inline"><input type="radio" name="status" value="0" <if condition="$data['status'] eq 0">checked</if> />隐藏</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-xs-2">内容详情:</label>
+                <div class="col-xs-6">
+                    <script id="editorContainer" name="content">{$data['content']}</script>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-2 col-xs-offset-2">
+                    <button type="button" class="form-control btn-default" onclick="window.history.back()">返回列表</button>
+                </div>
+                <div class="col-xs-4">
+                    <button type="submit" class="form-control btn-info">提交</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

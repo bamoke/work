@@ -1,0 +1,56 @@
+<div class="m-top-bar">
+	<div class="container">
+		<div class="language">
+			<a href="/cn.php" class="cur">中文</a>
+			<a href="/en.php" class="">English</a>
+			<a href="javascript:" class="">Espanol</a>
+		</div>
+	</div>
+</div>
+<!---header-->
+<div class="m-header">
+	<div class="container">
+		<div class="hidden-xs row top">
+			<div class="col-sm-6">
+				<img src="__WEB_ASSET__/images/back2.png" alt="" style="max-width:100%;">
+			</div>
+			<div class="col-sm-6 right-info">
+				<div class="account-box">
+					<img src="__WEB_ASSET__/images/login.png" alt="" class="login-img">
+					<div class="login-box">
+						<a href="{:U('Main/login')}">登录</a><span class="fg">|</span><a href="{:U('Main/regist')}">注册</a>
+					</div>
+					<!-- <a href="{:U('Home/index')}" class="user-name">Bamoke2163.com</a> -->
+				</div>
+				<div class="m-top-search">
+					<div class="input-group">
+						<input type="text" name="keyword" value="" class="form-control" placeholder="请输入关键字">
+						<span class="input-group-addon">
+							<span class="glyphicon glyphicon-search"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="m-nav">
+				<div id="nav-switch-btn" class="visible-xs-block">
+					<div class="content-wrap">
+							<div class=""><img src="__WEB_ASSET__/images/back2.png" alt="" height="48" style="max-width:100%;"></div>
+							<div>
+								<a class="state-close js-state-close"></a>
+								<a class="state-open js-state-close" style="display: none;"></a>
+							</div>
+					</div>
+				</div>
+				<ul class="list clearfix hidden-xs">
+					<li class="<if condition='$isIndex'>active</if>"><a href="{:U('Index/index')}" class="">首页</a><span class="bar"></span></li>
+					<foreach name="nav" item="list">
+						<li class="<if condition='$list[isActive]'>active</if>"><a href="{$list['url']}" class="">{$list['title']}</a><span class="bar"></span></li>
+					</foreach>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,6 @@
+[ 2018-09-17T01:12:04+08:00 ] ::1 /zlc/cn.php/Article/index/cid/1.html
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zlc.b_advertisement' doesn't exist
+
+[ 2018-09-17T16:09:24+08:00 ] ::1 /zlc/cn.php/Article/detail/id/6/cid/17.html
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zlc.b_advertisement' doesn't exist
+

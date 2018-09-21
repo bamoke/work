@@ -1,0 +1,59 @@
+[ 2018-09-20T00:55:02+08:00 ] ::1 /zlc/admin.php/Banner/save.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000748s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001260s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0474s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0472s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0473s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0462s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0472s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `b_banner` (`position_key`,`sort`,`title`,`url`,`img`) VALUES ('0','0','','','1eb694a022ea2ec2763ec16711600e29.jpg') [ RunTime:0.0484s ]
+
+[ 2018-09-20T01:45:42+08:00 ] ::1 /zlc/admin.php/Banner/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002528s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0491s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0501s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0490s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0485s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0495s ]
+SQL: SELECT `img` FROM `b_banner` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0490s ]
+SQL: UPDATE `b_banner` SET `id`='3',`position_key`='0',`sort`='2',`status`='1',`title`='',`url`='' WHERE ( id=3 ) [ RunTime:0.0592s ]
+
+[ 2018-09-20T12:29:08+08:00 ] ::1 /zlc/admin.php/Category/save_cate/actype/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000784s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001290s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0462s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0464s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0462s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0454s ]
+SQL: INSERT INTO `b_content_cate` (`title`,`en_title`,`pid`,`is_nav`,`type`,`controller_name`,`action_name`) VALUES ('求购','','4','0','custom','Business','index') [ RunTime:0.0482s ]
+
+[ 2018-09-20T12:29:38+08:00 ] ::1 /zlc/admin.php/Category/save_cate/actype/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000780s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001300s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0482s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0482s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0481s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0477s ]
+SQL: INSERT INTO `b_content_cate` (`title`,`en_title`,`pid`,`is_nav`,`type`,`controller_name`,`action_name`) VALUES ('供应','','4','0','custom','Business','index') [ RunTime:0.0494s ]
+
+[ 2018-09-20T12:30:03+08:00 ] ::1 /zlc/admin.php/Category/save_cate/actype/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002108s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002713s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0462s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0458s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0463s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0450s ]
+SQL: INSERT INTO `b_content_cate` (`title`,`en_title`,`pid`,`is_nav`,`type`,`controller_name`,`action_name`) VALUES ('项目','','4','0','custom','Business','index') [ RunTime:0.0481s ]
+

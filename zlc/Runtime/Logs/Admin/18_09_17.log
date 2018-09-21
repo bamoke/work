@@ -1,0 +1,90 @@
+[ 2018-09-17T02:45:26+08:00 ] ::1 /zlc/admin.php/Main/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001311s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002771s ]
+SQL: SHOW COLUMNS FROM `b_user` [ RunTime:0.0451s ]
+SQL: SELECT * FROM `b_user` WHERE `username` = 'admin' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0450s ]
+NOTIC: [8] Undefined index: uid D:\work\zlc\Admin\Controller\MainController.class.php 第 73 行.
+NOTIC: [8] Undefined index: issuper D:\work\zlc\Admin\Controller\MainController.class.php 第 76 行.
+
+[ 2018-09-17T02:47:29+08:00 ] ::1 /zlc/admin.php/Banner/save.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001157s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0462s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0461s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0465s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0452s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0454s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `b_banner` (`position_key`,`sort`,`title`,`url`,`img`) VALUES ('0','0','','','bfc3e36434f2a5da96194da2a8f159d6.jpg') [ RunTime:0.0478s ]
+
+[ 2018-09-17T13:04:43+08:00 ] ::1 /zlc/admin.php/Content/update/pid/1/id/2.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000861s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001363s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0514s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0515s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0505s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0502s ]
+SQL: SELECT `id`,`title`,`type`,`controller_name`,`action_name` FROM `b_content_cate` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0515s ]
+SQL: SHOW COLUMNS FROM `b_news` [ RunTime:0.0510s ]
+SQL: SELECT `thumb` FROM `b_news` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0501s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: UPDATE `b_news` SET `cid`='16',`title`='习近平出席金砖国家工商论坛并发表重要讲话 习近平出席金砖国家工商论谈',`video`='',`recommend`='1',`otherset`='1',`status`='1',`origin`='45',`keywords`='45',`description`='7月23日上午，由习近平总书记发表重要讲话7月23日上午，由习近平总书记发表重要讲话7月23日上午，由习近平总书记发',`content`='<p>45</p>',`thumb`='15371606830.jpg' WHERE ( id=2 ) [ RunTime:0.0538s ]
+
+[ 2018-09-17T13:26:57+08:00 ] ::1 /zlc/admin.php/Content/update/pid/1/id/2.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000610s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001095s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0494s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0490s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0496s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0486s ]
+SQL: SELECT `id`,`title`,`type`,`controller_name`,`action_name` FROM `b_content_cate` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0485s ]
+SQL: SHOW COLUMNS FROM `b_news` [ RunTime:0.0499s ]
+SQL: SELECT `thumb` FROM `b_news` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0499s ]
+SQL: UPDATE `b_news` SET `cid`='16',`title`='习近平出席金砖国家工商论坛并发表重要讲话',`video`='',`recommend`='1',`otherset`='1',`status`='1',`origin`='45',`keywords`='45',`description`='7月23日上午，由习近平总书记发表重要讲话7月23日上午，由习近平总书记发表重要讲话7月23日上午，由习近平总书记发',`content`='<p>45</p>' WHERE ( id=2 ) [ RunTime:0.0514s ]
+
+[ 2018-09-17T15:29:45+08:00 ] ::1 /zlc/admin.php/Content/save/pid/1.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000768s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001262s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0484s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0482s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0478s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0473s ]
+SQL: SELECT `id`,`title`,`type`,`controller_name`,`action_name` FROM `b_content_cate` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0478s ]
+SQL: SHOW COLUMNS FROM `b_news` [ RunTime:0.0476s ]
+SQL: INSERT INTO `b_news` (`cid`,`title`,`video`,`status`,`origin`,`keywords`,`description`,`content`,`init_click`) VALUES ('17','中国国际贸易促进委员会珠海市分会2016年度部门决算公开','','1','','','','<p>中国国际贸易促进委员会珠海市分会2016年度部门决算公开</p><p><br/></p>','454') [ RunTime:0.0517s ]
+
+[ 2018-09-17T15:30:37+08:00 ] ::1 /zlc/admin.php/Content/save/pid/1.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000708s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001166s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0489s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0495s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0492s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0483s ]
+SQL: SELECT `id`,`title`,`type`,`controller_name`,`action_name` FROM `b_content_cate` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0499s ]
+SQL: SHOW COLUMNS FROM `b_news` [ RunTime:0.0497s ]
+SQL: INSERT INTO `b_news` (`cid`,`title`,`video`,`status`,`origin`,`keywords`,`description`,`content`,`init_click`) VALUES ('17','关于缴交2018年度会费的通知','','1','','','','<p>关于缴交2018年度会费的通知</p><p><br/></p>','243') [ RunTime:0.0521s ]
+
+[ 2018-09-17T15:31:35+08:00 ] ::1 /zlc/admin.php/Content/save/pid/1.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002158s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002643s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0462s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0462s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0469s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0460s ]
+SQL: SELECT `id`,`title`,`type`,`controller_name`,`action_name` FROM `b_content_cate` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0465s ]
+SQL: SHOW COLUMNS FROM `b_news` [ RunTime:0.0465s ]
+SQL: INSERT INTO `b_news` (`cid`,`title`,`video`,`status`,`origin`,`keywords`,`description`,`content`,`init_click`) VALUES ('17','中国国际贸易促进委员会珠海市分会2018年度预算','','1','','','','<p>中国国际贸易促进委员会珠海市分会2018年度预算</p><p><br/></p>','328') [ RunTime:0.0492s ]
+

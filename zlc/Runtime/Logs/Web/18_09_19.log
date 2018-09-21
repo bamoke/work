@@ -1,0 +1,6 @@
+[ 2018-09-19T00:39:21+08:00 ] ::1 /zlc/cn.php/Article/detail/id/10.html
+ERR: 参数错误或者未定义:cid
+
+[ 2018-09-19T02:09:40+08:00 ] ::1 /zlc/cn.php/Fairs/detail/id/3/cid/20.html
+ERR: 无法加载控制器:Fairs
+

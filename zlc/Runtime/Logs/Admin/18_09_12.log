@@ -1,0 +1,84 @@
+[ 2018-09-12T11:13:12+08:00 ] ::1 /zlc/admin.php/Main/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001906s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003016s ]
+ERR: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)
+
+[ 2018-09-12T11:15:02+08:00 ] ::1 /zlc/admin.php/Main/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000784s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001312s ]
+SQL: SHOW COLUMNS FROM `b_user` [ RunTime:0.0421s ]
+SQL: SELECT * FROM `b_user` WHERE `username` = 'admin' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0580s ]
+NOTIC: [8] Undefined index: uid D:\work\zlc\Admin\Controller\MainController.class.php 第 73 行.
+NOTIC: [8] Undefined index: issuper D:\work\zlc\Admin\Controller\MainController.class.php 第 76 行.
+
+[ 2018-09-12T12:35:59+08:00 ] ::1 /zlc/admin.php/Category/save_cate.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000753s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002787s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0482s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0473s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 144 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0471s ]
+SQL: UPDATE `b_content_cate` SET `title`='新闻中心',`is_nav`='1',`type`='news',`keyword`='珠海旅游指南,珠海美食,吃喝玩乐，视频，酒店',`description`='珠海旅游指南,珠海美食,吃喝玩乐，视频，酒店' WHERE `id` = 1 [ RunTime:0.0501s ]
+
+[ 2018-09-12T12:52:49+08:00 ] ::1 /zlc/admin.php/Category/save_cate.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000867s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001382s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0482s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0484s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 144 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0481s ]
+SQL: UPDATE `b_content_cate` SET `title`='中拉合作',`is_nav`='1',`type`='news',`keyword`='',`description`='' WHERE `id` = 2 [ RunTime:0.0494s ]
+
+[ 2018-09-12T12:53:17+08:00 ] ::1 /zlc/admin.php/Category/save_cate.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000823s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001305s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0451s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0455s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 144 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0449s ]
+SQL: UPDATE `b_content_cate` SET `title`='拉美动态',`is_nav`='1',`type`='news',`keyword`='',`description`='' WHERE `id` = 3 [ RunTime:0.0466s ]
+
+[ 2018-09-12T12:53:51+08:00 ] ::1 /zlc/admin.php/Category/save_cate.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000867s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001519s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0485s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0482s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 144 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0481s ]
+SQL: UPDATE `b_content_cate` SET `title`='企业商机',`is_nav`='1',`type`='news',`keyword`='',`description`='' WHERE `id` = 4 [ RunTime:0.0513s ]
+
+[ 2018-09-12T12:54:25+08:00 ] ::1 /zlc/admin.php/Category/save_cate.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002690s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003259s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0481s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0481s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 144 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0482s ]
+SQL: UPDATE `b_content_cate` SET `title`='关于我们',`is_nav`='1',`type`='news',`keyword`='',`description`='' WHERE `id` = 5 [ RunTime:0.0491s ]
+
+[ 2018-09-12T12:55:29+08:00 ] ::1 /zlc/admin.php/Category/save_cate.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001185s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0480s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0482s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 144 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0473s ]
+SQL: UPDATE `b_content_cate` SET `title`='下载中心',`is_nav`='1',`type`='news',`keyword`='',`description`='' WHERE `id` = 6 [ RunTime:0.0502s ]
+
+[ 2018-09-12T16:02:28+08:00 ] ::1 /zlc/admin.php/Main/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003893s ]
+SQL: SHOW COLUMNS FROM `b_user` [ RunTime:0.0492s ]
+SQL: SELECT * FROM `b_user` WHERE `username` = 'admin' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0490s ]
+NOTIC: [8] Undefined index: uid D:\work\zlc\Admin\Controller\MainController.class.php 第 73 行.
+NOTIC: [8] Undefined index: issuper D:\work\zlc\Admin\Controller\MainController.class.php 第 76 行.
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+  <meta name="author" content="中拉网" />
+  <title>中拉合作网-{$pageName}</title>
+  <meta name="keywords" content="中拉网" />
+  <meta name="description" content="中拉网" />
+  <link href="__PUBLIC__/Js/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+  <link href="__PUBLIC__/Js/swiper/css/swiper.min.css" rel="stylesheet" />
+  <link href="__WEB_ASSET__/css/base.css" rel="stylesheet" />
+  <link href="__WEB_ASSET__/css/index.css" rel="stylesheet" />
+  <script type="text/javascript" src="__PUBLIC__/Js/jquery/jquery-1.10.1.min.js"></script>
+</head>
+
+<body>
+  <include file="Template/header" />
+
+
+  <!--banner-->
+  <div class="m-banner-wrap">
+    <div class="container">
+      <div class="banner index-banner">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <foreach name="banner" item="item">
+              <div class="swiper-slide">
+                <img src="__UPLOAD__/banner/{$item.img}" alt="">
+              </div>
+            </foreach>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <div id="sideBar" class="m-side-nav">
+          <h3 class="parentCateName">{$pageName}<br><span class="small">PRODUCTS</span></h3>
+          <ul class="cateList">{$childNavHtml}</ul>
+        </div>
+      </div>
+      <div class="col-sm-9" id="bigContentBox">
+        <div class="contentTopBar clearfix">
+          <h4 class="pageName">{$curCateName}</h4>
+          <div class="location hidden-xs">
+            当前位置：<a href="/">首页</a><span class="fg">&gt;</span>{$pageName}<span class="fg">&gt;</span>{$curCateName}
+          </div>
+        </div>
+        <div class="m-content-wrap">{__CONTENT__}</div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- footer -->
+  <include file="Template/footer" />
+
+</body>
+
+</html>
+<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/swiper/swiper.min.js"></script>
+<script type="text/javascript">
+  var mySwiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+    autoplay: 5000,
+    speed: 1000,
+  })
+</script>

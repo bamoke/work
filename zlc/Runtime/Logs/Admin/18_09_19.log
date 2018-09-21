@@ -1,0 +1,133 @@
+[ 2018-09-19T00:48:14+08:00 ] ::1 /zlc/admin.php/Content/save/pid/2.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000898s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001605s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0491s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0483s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0486s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0485s ]
+SQL: SELECT `id`,`title`,`type`,`controller_name`,`action_name` FROM `b_content_cate` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0485s ]
+SQL: SHOW COLUMNS FROM `b_news` [ RunTime:0.0487s ]
+SQL: INSERT INTO `b_news` (`cid`,`title`,`video`,`status`,`origin`,`keywords`,`description`,`content`,`init_click`) VALUES ('19','阿根廷政界和媒体高度关注中国向阿打开豆油市场大门','','1','驻阿根廷经商参处','','一艘载着29000吨豆油的货船已从中粮集团位于阿根廷的Timbues港口出发驶向中国，这意味着阿根廷豆油在时隔三年后将重新进入中国市场','<p>&nbsp;阿根廷《商业纪事报》、《号角报》8月29日报道，一艘载着29000吨豆油的货船已从中粮集团位于阿根廷的Timbues港口出发驶向中国，这意味着阿根廷豆油在时隔三年后将重新进入中国市场。重新开放后第一批出口中国的阿根廷豆油将达9万吨。分析指出，至2019年3月，出口量累计将达12万吨。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2017年，美国宣布对阿根廷生物柴油出口征收高额关税，而中国则决定重新对阿开放豆油市场。因此，阿根廷政府对此高度重视。阿农业部长Etchevehere通过推特表示，“这对阿农业来说是巨大收获，也是阿中双边关系深化的成果。我们正在收复不断增长的中国市场，这将有助于增加我们高附加值产品的出口。”马克里总统也通过推特发布了这一消息。</p><p><br/></p>','257') [ RunTime:0.0523s ]
+
+[ 2018-09-19T00:49:16+08:00 ] ::1 /zlc/admin.php/Content/update/pid/2/id/10.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001839s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002691s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0451s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0451s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0445s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0435s ]
+SQL: SELECT `id`,`title`,`type`,`controller_name`,`action_name` FROM `b_content_cate` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0452s ]
+SQL: SHOW COLUMNS FROM `b_news` [ RunTime:0.0449s ]
+SQL: SELECT `thumb` FROM `b_news` WHERE ( id=10 ) LIMIT 1   [ RunTime:0.0450s ]
+SQL: UPDATE `b_news` SET `cid`='19',`title`='横琴中拉经贸合作园开园',`video`='',`recommend`='1',`status`='1',`origin`='',`keywords`='',`description`='11月10日上午，横琴中拉经贸合作园隆重开园。作为珠海服务中拉合作项目落地的新载体，横琴中拉经贸合作园整合法律服务、政策研究、金融合作、跨境商品交易等服务',`content`='<p>11月10日上午，横琴中拉经贸合作园隆重开园。作为珠海服务中拉合作项目落地的新载体，横琴中拉经贸合作园整合法律服务、政策研究、金融合作、跨境商品交易等服务，重点打造“三中心三平台”，将为拉美和加勒比海地区投资者提供精准专业的服务。多个拉美国家省州市政府代表团、拉美和加勒比国家驻华使节出席了开园仪式。</p><p>　　珠海市委常委、副市长祝青桥在致辞中表示，随着“一带一路”建设深入推进，中拉合作迎来新的发展契机。横琴中拉经贸合作园在中拉国际博览会开幕当日揭牌，这是珠海贯彻落实国家和广东省工作部署、推动构建开放型经济新体制和横琴自贸试验区建设对外开放门户枢纽的重大举措，将为中拉经贸合作搭建新平台，创造新机遇。</p><p>　　三中心三平台</p><p>　　打开合作新局面</p><p>　　记者了解到，为了推动形成全面开放新格局，珠海将以横琴中拉经贸合作园为载体，推动一批中拉合作项目落地，进一步提升与拉美国家的经贸合作水平，形成对外开放、跨境合作新亮点。</p><p>　　横琴中拉经贸合作园位于横琴自贸片区核心地段，占地8.7万平方米，计容面积约24.4万平方米，共有9栋主体建筑以及独具特色的岭南风情街，集研发办公楼、高级公寓、公共技术服务平台、展示体验中心等软硬件设施展示体验中心、一站式服务中心等配套服务设施于一体，并配置了高速互联网平台、信息化大堂、健康中心、机器人停车等智能化配套服务。</p><p>　　作为落实国家战略的重点特色项目，园区将有效利用横琴自贸片区通关、人才、金融、财税创新等系列政策、区位和开放优势，着力打造“三中心、三平台”即：中拉休闲旅游文化交流推广中心、中拉企业法律服务中心、中拉政策研究与创新中心，中拉商品国际交易平台、中拉跨境电商合作平台、中拉金融合作服务平台。</p><p>　　目前，中拉经贸合作园已与巴拿马科隆自贸区、中国墨西哥商会、国家电力投资集团海外公司、中国电建集团市政规划设计研究院有限公司、中冶国际投资发展有限公司等14家企业签署了战略合作协议，并且吸引了众创空间、中电建海外投资、国电投海外投资等众多项目。</p><p>　　横琴出台专项措施</p><p>　　力促中拉经贸合作</p><p>　　在中拉经贸产业园开园不久前，横琴自贸片区已出台并施行《横琴新区促进中拉经贸合作的若干措施（试行）》，从投资贸易便利、财税资金扶持、平台服务保障等方面全面扶持拉美企业在横琴发展。</p><p>　　横琴将在拉美设立联络处，接收在横琴设立“外商投资准入特别管理措施（负面清单）”之外的名称登记和商事登记申请，并解答当地投资者查询，通过与横琴签署合作协议的中资银行拉美分支机构，为拉美企业投资横琴提供导办服务及跨境金融服务。</p><p>　　针对首次落户横琴、从事以拉美经贸为主的电商企业，且在横琴营业收入超过10亿元人民币的，横琴当年可给予一次性最高200万元人民币专项奖励。</p><p>　　另外，依据该文件，横琴中拉经贸合作园将从商品交易到产业落地，为拉美企业提供精准高效、贴心便捷的专业服务，全方位满足拉美企业在投资环境、商务配套、服务设施等方面的需求。</p><p>　　横琴新区管委会主任杨川介绍，横琴具备辐射葡语系、西语系国家市场的优势和基础，设立中拉经贸合作园，目的就是为中国和拉美及加勒比国家的合作提供全方位的支持，让横琴自贸片区成为连接中国市场与拉美国家的“桥梁”、成为广东与拉美国家市场经贸合作的“窗口”和“纽带”。</p><p><br/></p>' WHERE ( id=10 ) [ RunTime:0.0491s ]
+
+[ 2018-09-19T00:52:33+08:00 ] ::1 /zlc/admin.php/Content/save/pid/2.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000739s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001353s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0472s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0474s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0477s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0464s ]
+SQL: SELECT `id`,`title`,`type`,`controller_name`,`action_name` FROM `b_content_cate` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0475s ]
+SQL: SHOW COLUMNS FROM `b_news` [ RunTime:0.0477s ]
+SQL: INSERT INTO `b_news` (`cid`,`title`,`video`,`status`,`origin`,`keywords`,`description`,`content`,`init_click`) VALUES ('19','厄瓜多尔出口和投资促进局与上海市代表团签署合作协议','','1','','','1月29日，厄出口和投资促进局与上海市代表团签署合作协议，双方承诺将促进中厄两国经贸发展，并建立出口商品信息交流机制','<p>厄瓜多尔《商报》1月31日报道，1月29日，厄出口和投资促进局与上海市代表团签署合作协议，双方承诺将促进中厄两国经贸发展，并建立出口商品信息交流机制。去年，厄瓜多尔向中国出口的主要商品为大虾、香蕉和鱼粉等。该协议的签署有利于厄瓜多尔向中国市场出口更多商品。</p>','336') [ RunTime:0.0500s ]
+
+[ 2018-09-19T00:57:16+08:00 ] ::1 /zlc/admin.php/Content/save/pid/2.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001402s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0492s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0490s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0488s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0485s ]
+SQL: SELECT `id`,`title`,`type`,`controller_name`,`action_name` FROM `b_content_cate` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0497s ]
+SQL: SHOW COLUMNS FROM `b_news` [ RunTime:0.0496s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `b_news` (`cid`,`title`,`video`,`status`,`origin`,`keywords`,`description`,`content`,`thumb`,`init_click`) VALUES ('19','智利外交部长访华并会见商务部长钟山','','1','商务部新闻办公室','','9月13日，钟山部长会见智利外交部长安普埃罗一行，就加强中智经贸关系交换了意见。','<p>正在中国访问的智利外长安普埃罗13日在中国商务部与钟山部长举行会谈，双方分析了中美贸易战形势和中智经贸关系的机遇和挑战，特别讨论了中智自贸协定升级生效的时间，期望通过提升海关程序便利化以及货物贸易和服务贸易自由化，深化两国之间的经济联系。会上还提及今年“智利周”将与11月1日至7日在北京和上海举行，恰逢11月5日至10日在上海举办的中国国际进口博览会，钟山和安普埃罗讨论了智利参展的情况。</p>','15372898360.jpg','271') [ RunTime:0.0518s ]
+
+[ 2018-09-19T00:57:27+08:00 ] ::1 /zlc/admin.php/Content/update/pid/2/id/13.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002284s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0473s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0472s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0466s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0464s ]
+SQL: SELECT `id`,`title`,`type`,`controller_name`,`action_name` FROM `b_content_cate` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0476s ]
+SQL: SHOW COLUMNS FROM `b_news` [ RunTime:0.0468s ]
+SQL: SELECT `thumb` FROM `b_news` WHERE ( id=13 ) LIMIT 1   [ RunTime:0.0473s ]
+SQL: UPDATE `b_news` SET `cid`='19',`title`='智利外交部长访华并会见商务部长钟山',`video`='',`recommend`='1',`status`='1',`origin`='商务部新闻办公室',`keywords`='',`description`='9月13日，钟山部长会见智利外交部长安普埃罗一行，就加强中智经贸关系交换了意见。',`content`='<p>正在中国访问的智利外长安普埃罗13日在中国商务部与钟山部长举行会谈，双方分析了中美贸易战形势和中智经贸关系的机遇和挑战，特别讨论了中智自贸协定升级生效的时间，期望通过提升海关程序便利化以及货物贸易和服务贸易自由化，深化两国之间的经济联系。会上还提及今年“智利周”将与11月1日至7日在北京和上海举行，恰逢11月5日至10日在上海举办的中国国际进口博览会，钟山和安普埃罗讨论了智利参展的情况。</p>' WHERE ( id=13 ) [ RunTime:0.0482s ]
+
+[ 2018-09-19T00:57:39+08:00 ] ::1 /zlc/admin.php/Content/update/pid/2/id/10.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001185s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0471s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0473s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0477s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0473s ]
+SQL: SELECT `id`,`title`,`type`,`controller_name`,`action_name` FROM `b_content_cate` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0477s ]
+SQL: SHOW COLUMNS FROM `b_news` [ RunTime:0.0481s ]
+SQL: SELECT `thumb` FROM `b_news` WHERE ( id=10 ) LIMIT 1   [ RunTime:0.0471s ]
+SQL: UPDATE `b_news` SET `cid`='19',`title`='横琴中拉经贸合作园开园',`video`='',`recommend`='0',`status`='1',`origin`='',`keywords`='',`description`='11月10日上午，横琴中拉经贸合作园隆重开园。作为珠海服务中拉合作项目落地的新载体，横琴中拉经贸合作园整合法律服务、政策研究、金融合作、跨境商品交易等服务',`content`='<p>11月10日上午，横琴中拉经贸合作园隆重开园。作为珠海服务中拉合作项目落地的新载体，横琴中拉经贸合作园整合法律服务、政策研究、金融合作、跨境商品交易等服务，重点打造“三中心三平台”，将为拉美和加勒比海地区投资者提供精准专业的服务。多个拉美国家省州市政府代表团、拉美和加勒比国家驻华使节出席了开园仪式。</p><p>　　珠海市委常委、副市长祝青桥在致辞中表示，随着“一带一路”建设深入推进，中拉合作迎来新的发展契机。横琴中拉经贸合作园在中拉国际博览会开幕当日揭牌，这是珠海贯彻落实国家和广东省工作部署、推动构建开放型经济新体制和横琴自贸试验区建设对外开放门户枢纽的重大举措，将为中拉经贸合作搭建新平台，创造新机遇。</p><p>　　三中心三平台</p><p>　　打开合作新局面</p><p>　　记者了解到，为了推动形成全面开放新格局，珠海将以横琴中拉经贸合作园为载体，推动一批中拉合作项目落地，进一步提升与拉美国家的经贸合作水平，形成对外开放、跨境合作新亮点。</p><p>　　横琴中拉经贸合作园位于横琴自贸片区核心地段，占地8.7万平方米，计容面积约24.4万平方米，共有9栋主体建筑以及独具特色的岭南风情街，集研发办公楼、高级公寓、公共技术服务平台、展示体验中心等软硬件设施展示体验中心、一站式服务中心等配套服务设施于一体，并配置了高速互联网平台、信息化大堂、健康中心、机器人停车等智能化配套服务。</p><p>　　作为落实国家战略的重点特色项目，园区将有效利用横琴自贸片区通关、人才、金融、财税创新等系列政策、区位和开放优势，着力打造“三中心、三平台”即：中拉休闲旅游文化交流推广中心、中拉企业法律服务中心、中拉政策研究与创新中心，中拉商品国际交易平台、中拉跨境电商合作平台、中拉金融合作服务平台。</p><p>　　目前，中拉经贸合作园已与巴拿马科隆自贸区、中国墨西哥商会、国家电力投资集团海外公司、中国电建集团市政规划设计研究院有限公司、中冶国际投资发展有限公司等14家企业签署了战略合作协议，并且吸引了众创空间、中电建海外投资、国电投海外投资等众多项目。</p><p>　　横琴出台专项措施</p><p>　　力促中拉经贸合作</p><p>　　在中拉经贸产业园开园不久前，横琴自贸片区已出台并施行《横琴新区促进中拉经贸合作的若干措施（试行）》，从投资贸易便利、财税资金扶持、平台服务保障等方面全面扶持拉美企业在横琴发展。</p><p>　　横琴将在拉美设立联络处，接收在横琴设立“外商投资准入特别管理措施（负面清单）”之外的名称登记和商事登记申请，并解答当地投资者查询，通过与横琴签署合作协议的中资银行拉美分支机构，为拉美企业投资横琴提供导办服务及跨境金融服务。</p><p>　　针对首次落户横琴、从事以拉美经贸为主的电商企业，且在横琴营业收入超过10亿元人民币的，横琴当年可给予一次性最高200万元人民币专项奖励。</p><p>　　另外，依据该文件，横琴中拉经贸合作园将从商品交易到产业落地，为拉美企业提供精准高效、贴心便捷的专业服务，全方位满足拉美企业在投资环境、商务配套、服务设施等方面的需求。</p><p>　　横琴新区管委会主任杨川介绍，横琴具备辐射葡语系、西语系国家市场的优势和基础，设立中拉经贸合作园，目的就是为中国和拉美及加勒比国家的合作提供全方位的支持，让横琴自贸片区成为连接中国市场与拉美国家的“桥梁”、成为广东与拉美国家市场经贸合作的“窗口”和“纽带”。</p><p><br/></p>' WHERE ( id=10 ) [ RunTime:0.0516s ]
+
+[ 2018-09-19T01:51:01+08:00 ] ::1 /zlc/admin.php/Content/update/pid/1/id/2.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001155s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0491s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0493s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0486s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0485s ]
+SQL: SELECT `id`,`title`,`type`,`controller_name`,`action_name` FROM `b_content_cate` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0493s ]
+SQL: SHOW COLUMNS FROM `b_news` [ RunTime:0.0494s ]
+SQL: SELECT `thumb` FROM `b_news` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0490s ]
+SQL: UPDATE `b_news` SET `cid`='16',`title`='中国贸促会副会长尹宗华会见委内瑞拉对外贸易和国际投资部长优玛娜•柯特奇',`video`='',`recommend`='1',`otherset`='1',`status`='1',`origin`='45',`keywords`='45',`description`='尹宗华副会长表示，委内瑞拉是中国重要的经贸合作伙伴，中国贸促会愿继续致力于推动中委两国经贸关系全面发展，在“一带一路”框架下进一步创新合作方式，拓宽合作领域。',`content`='<p>&nbsp; &nbsp; &nbsp; &nbsp; 8月29日，中国贸促会副会长尹宗华在京会见委内瑞拉对外贸易和国际投资部长优玛娜·柯特奇。</p><p><br/></p><p>&nbsp; &nbsp; &nbsp; &nbsp;尹宗华副会长表示，委内瑞拉是中国重要的经贸合作伙伴，中国贸促会愿继续致力于推动中委两国经贸关系全面发展，在“一带一路”框架下进一步创新合作方式，拓宽合作领域。欢迎委方积极参加中拉企业家高峰会等活动，希望委方积极推进中委企业家理事会委方委员会建设，构建双方更加紧密的合作关系。</p><p><br/></p><p><br/></p><p>&nbsp; &nbsp; &nbsp; &nbsp;优玛娜•柯特奇部长表示，近期委内瑞拉颁布了一系列经济复苏新政，希望吸引更多中资企业赴委投资。委方愿积极参与“一带一路”建设，用好各类合作机制推动两国经贸关系发展。</p><p><br/></p>' WHERE ( id=2 ) [ RunTime:0.0538s ]
+
+[ 2018-09-19T01:52:50+08:00 ] ::1 /zlc/admin.php/Content/update/pid/1/id/2.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000753s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001300s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0491s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0494s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0493s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0485s ]
+SQL: SELECT `id`,`title`,`type`,`controller_name`,`action_name` FROM `b_content_cate` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0494s ]
+SQL: SHOW COLUMNS FROM `b_news` [ RunTime:0.0488s ]
+SQL: SELECT `thumb` FROM `b_news` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0483s ]
+SQL: UPDATE `b_news` SET `cid`='16',`title`='贸促会副会长尹宗华会见委内瑞拉对外贸易和国际投资部长优玛娜•柯特奇',`video`='',`recommend`='1',`otherset`='1',`status`='1',`origin`='中国贸促会',`keywords`='45',`description`='尹宗华副会长表示，委内瑞拉是中国重要的经贸合作伙伴，中国贸促会愿继续致力于推动中委两国经贸关系全面发展，在“一带一路”框架下进一步创新合作方式，拓宽合作领域。',`content`='<p>&nbsp; &nbsp; &nbsp; &nbsp; 8月29日，中国贸促会副会长尹宗华在京会见委内瑞拉对外贸易和国际投资部长优玛娜·柯特奇。</p><p><br/></p><p>&nbsp; &nbsp; &nbsp; &nbsp;尹宗华副会长表示，委内瑞拉是中国重要的经贸合作伙伴，中国贸促会愿继续致力于推动中委两国经贸关系全面发展，在“一带一路”框架下进一步创新合作方式，拓宽合作领域。欢迎委方积极参加中拉企业家高峰会等活动，希望委方积极推进中委企业家理事会委方委员会建设，构建双方更加紧密的合作关系。</p><p><br/></p><p><br/></p><p>&nbsp; &nbsp; &nbsp; &nbsp;优玛娜•柯特奇部长表示，近期委内瑞拉颁布了一系列经济复苏新政，希望吸引更多中资企业赴委投资。委方愿积极参与“一带一路”建设，用好各类合作机制推动两国经贸关系发展。</p><p><br/></p>' WHERE ( id=2 ) [ RunTime:0.0654s ]
+
+[ 2018-09-19T11:40:59+08:00 ] ::1 /zlc/admin.php/Category/save_cate/actype/edit.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001200s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0494s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0490s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0488s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0485s ]
+SQL: UPDATE `b_content_cate` SET `title`='企业商机',`en_title`='Business',`pid`='0',`is_nav`='1',`type`='custom',`controller_name`='Business',`action_name`='index' WHERE `id` = 4 [ RunTime:0.0503s ]
+
+[ 2018-09-19T14:05:57+08:00 ] ::1 /zlc/admin.php/Sys/save_conf.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001265s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0491s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0482s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0495s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0480s ]
+SQL: SHOW COLUMNS FROM `b_site_config` [ RunTime:0.0493s ]
+SQL: UPDATE `b_site_config` SET `site_name`='中拉合作网',`keywords`='中拉合作网',`description`='中拉合作网',`addr`='广东省珠海市香洲区红山路288号国际科技大厦14层A座',`tel`='+86-756-8890118',`fax`='+86-756-8280888',`zipcode`='519000',`email`='zhh@ccpit.org',`qq`='800822202',`weibo`='',`icp`='粤ICP备16012962号-3' WHERE ( id=1 ) [ RunTime:0.0499s ]
+

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+	<meta name="author" content="中拉网" />
+	<title>中拉合作网</title>
+	<meta name="keywords" content="中拉网" />
+	<meta name="description" content="中拉网" />
+	<link href="__PUBLIC__/Js/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<link href="__PUBLIC__/Js/swiper/css/swiper.min.css" rel="stylesheet" />
+	<link href="__WEB_ASSET__/css/base.css" rel="stylesheet" />
+	<link href="__WEB_ASSET__/css/index.css" rel="stylesheet" />
+	<script type="text/javascript" src="__PUBLIC__/Js/jquery/jquery-1.10.1.min.js"></script>
+</head>
+
+<body>
+	<include file="Template/header" />
+
+
+	<!--banner-->
+	<div class="m-banner-wrap">
+		<div class="container">
+			<div class="banner index-banner">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<foreach name="banner" item="item">
+							<div class="swiper-slide">
+								<img src="__UPLOAD__/banner/{$item.img}" alt="">
+							</div>
+						</foreach>
+					</div>
+				</div>
+				
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+	</div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-xs-12">
+				<div class="index-column-wrap">
+					<div class="title-bar">
+						<span class="caption">贸促新闻</span><span class="small-title">PUBLIC INFORMATION</span>
+						<a href="{:U('Article/index',array('pid'=>1,'cid'=>16))}" class="view-more">更多&gt;</a>
+					</div>
+
+					<div class="content-wrap">
+						<div class="index-img-news">
+							<div class="row item">
+								<div class="col-xs-12 col-sm-6 img-box">
+									<a href="{:U('Article/detail',array('id'=>$mcxwInfo['id']))}"><img src="__UPLOAD__/thumb/{$mcxwInfo['thumb']}"></a>
+								</div>
+								<div class="col-xs-12 col-sm-6 text-info">
+									<div class="top clearfix">
+										<div class="date-box">
+											{:explode("-",$mcxwInfo['date'])[1]}-{:explode("-",$mcxwInfo['date'])[2]}
+											<span class="year">{:explode("-",$mcxwInfo['date'])[0]}</span>
+										</div>
+										<span class="title">{$mcxwInfo['title']}</span>
+									</div>
+									<div class="description">{$mcxwInfo['description']}</div>
+									<div><a href="{:U('Article/detail',array('pid'=>1,'cid'=>$mcxwInfo['cid'],'id'=>$mcxwInfo['id']))}">查看详情&gt;&gt;</a></div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<div class="index-column-wrap">
+					<div class="title-bar">
+						<span class="caption">信息公开</span><span class="small-title">PUBLIC INFORMATION</span>
+						<a href="{:U('Article/index',array('pid'=>1,'cid'=>17))}" class="view-more">更多&gt;</a>
+					</div>
+
+					<div class="content-wrap">
+						<div class="index-text-news">
+							<volist name="xxgkList" id="news">
+								<div class="item">
+									<div class="title"><a href="{:U('Article/detail',array('pid'=>1,'id'=>$news['id'],'cid'=>$news['cid']))}" target="_blank">{$news['title']}</a></div>
+								</div>
+							</volist>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!---part-2-->
+		<div class="row">
+			<div class="col-sm-8 col-xs-12">
+				<div class="index-column-wrap">
+					<div class="title-bar">
+						<span class="caption">经贸信息</span><span class="small-title">PUBLIC INFORMATION</span>
+						<a href="{:U('Article/index',array('pid'=>1,'cid'=>19))}" class="view-more">更多&gt;</a>
+					</div>
+
+					<div class="content-wrap">
+						<div class="index-img-news">
+							<div class="row item">
+								<div class="col-xs-12 col-sm-6 img-box">
+									<a href="{:U('Article/detail',array('pid'=>2,'cid'=>19,'id'=>$jmxxList[0]['id']))}"><img src="__UPLOAD__/thumb/{$jmxxList[0]['thumb']}"></a>
+								</div>
+								<div class="col-xs-12 col-sm-6 text-info">
+									<div class="top clearfix">
+										<div class="date-box">
+											{:explode("-",$mcxwInfo['date'])[1]}-{:explode("-",$mcxwInfo['date'])[2]}
+											<span class="year">{:explode("-",$mcxwInfo['date'])[0]}</span>
+										</div>
+										<span class="title"><a href="{:U('Article/detail',array('pid'=>2,'cid'=>19,'id'=>$jmxxList[0]['id']))}">{$jmxxList[0]['title']}</a></span>
+									</div>
+									<div class="description">{$jmxxList[0]['description']}</div>
+									<div><a href="{:U('Article/detail',array('pid'=>2,'cid'=>19,'id'=>$jmxxList[0]['id']))}">查看详情&gt;&gt;</a></div>
+								</div>
+							</div>
+						</div>
+						<div class="jmxx-news">
+							<volist name="jmxxList" id="v" offset="1">
+								<div class="item">
+									<div class="date-box">
+										<p class="day">{:explode("-",$mcxwInfo['date'])[2]}</p>
+										<p class="month">{:explode("-",$mcxwInfo['date'])[1]}月</p>
+									</div>
+									<div class="link">
+										<a href="{:U('Article/detail',array('pid'=>2,'id'=>$v['id'],'cid'=>$v['cid']))}" target="_blank">{$v['title']}</a>
+									</div>
+								</div>
+							</volist>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<div class="index-column-wrap">
+					<div class="title-bar">
+						<span class="caption">政务公开</span><span class="small-title">PUBLIC INFORMATION</span>
+					</div>
+
+					<div class="content-wrap zwgk-content">
+						<div class="cate">
+							<a class="" href="{:U('Single/index',array('pid'=>11,'id'=>4,'cid'=>12))}">
+								<span class="glyphicon glyphicon-briefcase"></span><span class="name">业务职能</span>
+							</a><a class="" href="{:U('Single/index',array('pid'=>11,'id'=>5,'cid'=>13))}">
+								<span class="glyphicon glyphicon-home"></span><span class="name">机构设置</span>
+							</a><a class="" href="{:U('Single/index',array('pid'=>11,'id'=>6,'cid'=>14))}">
+								<span class="glyphicon glyphicon-user"></span><span class="name">领导介绍</span>
+							</a><a class="" href="{:U('Article/index',array('pid'=>11,'cid'=>15))}">
+								<span class="glyphicon glyphicon-list-alt"></span><span class="name">财政公开</span>
+							</a>
+						</div>
+						<div class="link-select clearfix">
+							<div class="dropdown">
+								<button type="button" class="btn btn-block dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">相关政府机构
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="http://www.zhuhai.gov.cn" target="_blank">珠海市政府网</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="http://www.zhsswj.gov.cn/" target="_blank">珠海市商务局</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="http://www.zhfao.gov.cn/" target="_blank">珠海市外事局</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="http://www.zhciq.gov.cn/" target="_blank">珠海出入境检验检疫局</a>
+									</li>
+								</ul>
+							</div>
+							<div class="dropdown">
+								<button type="button" class="btn btn-block dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown">经贸数据查询
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu2">
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" target="_blank" href="http://wmsw.mofcom.gov.cn/wmsw/">进出口税费</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" target="_blank" href="http://hd.chinatax.gov.cn/fagui/action/InitChukou.do">出口退税率</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="index-column-wrap">
+					<div class="title-bar">
+						<span class="caption">贸易预警</span><span class="small-title">PUBLIC INFORMATION</span>
+						<a href="{:U('Article/index',array('pid'=>3,'cid'=>23))}" class="view-more">更多&gt;</a>
+					</div>
+
+					<div class="content-wrap">
+						<div class="index-text-news">
+							<volist name="jmyjList" id="news">
+								<div class="item">
+									<div class="title">
+										<a href="{:U('Article/detail',array('pid'=>3,'id'=>$news['id'],'cid'=>$news['cid']))}" target="_blank">{$news['title']}</a>
+									</div>
+									<!-- <span class="time">{$news['date']}</span> -->
+								</div>
+							</volist>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!---part-3-->
+		<div class="row">
+			<div class="col-sm-4 col-xs-12">
+				<div class="index-column-wrap">
+					<div class="title-bar">
+						<span class="caption">重点展会</span><span class="small-title">PUBLIC INFORMATION</span>
+						<a href="{:U('Article/index',array('pid'=>3,'cid'=>20))}" class="view-more">&gt;更多</a>
+					</div>
+
+					<div class="content-wrap">
+						<div class="index-fairs">
+							<volist name="fairsList" id="v">
+								<a class="item" href="{:U('Fairs/detail',array('pid'=>3,'id'=>$v['id'],'cid'=>$v['cid']))}">
+									<div class="title">{$v['title']}</div>
+									<div class="other">
+										<p class=""><span class="glyphicon glyphicon-time"></span>{$v['times']}</p>
+										<p class=""><span class="glyphicon glyphicon-map-marker"></span>{$v['place']}</p>
+									</div>
+								</a>
+							</volist>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-8 col-xs-12">
+				<div class="index-column-wrap">
+					<div class="title-bar">
+						<span class="caption">企业商机</span><span class="small-title">PUBLIC INFORMATION</span>
+						<a href="{:U('Content/index',array('pid'=>4))}" class="view-more">&gt;更多</a>
+					</div>
+
+					<div class="content-wrap">
+						<div class="index-business">
+							<volist name="businessList" id="v">
+								<div class="item">
+									<div class="row">
+										<div class="title col-sm-10">
+											<span class="type">{$businessTypeArr[$v['type']]}</span>
+											<a href="{:U('')}">{$v['title']}</a></div>
+										<div class="time col-sm-2 hidden-xs">{$v[date]}</div>
+									</div>
+								</div>
+							</volist>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="m-footer-brand">
+			<div class="clearfix">
+				<a class="item" href="" target="_blank">
+					<img src="__UPLOAD__/brand/zgmch.jpg" alt="中国国际贸易促进委员会">
+				</a>
+				<a class="item" href="" target="_blank">
+					<img src="__UPLOAD__/brand/zggjsh.jpg" alt="中国国际商会">
+				</a>
+				<a class="item" href="" target="_blank">
+					<img src="__UPLOAD__/brand/zlgtlt.jpg" alt="中国-拉共体论坛">
+				</a>
+				<a class="item" href="" target="_blank">
+					<img src="__UPLOAD__/brand/zghg.jpg" alt="中国海关总署">
+				</a>
+				<a class="item" href="" target="_blank">
+					<img src="__UPLOAD__/brand/zhswyb.jpg" alt="珠海商务预报">
+				</a>
+				<a class="item" href="" target="_blank">
+					<img src="__UPLOAD__/brand/zhwstzxh.jpg" alt="珠海外商投资企业协会">
+				</a>
+				<a class="item" href="" target="_blank">
+					<img src="__UPLOAD__/brand/zhhg.jpg" alt="珠海海关">
+				</a>
+				<a class="item" href="" target="_blank">
+					<img src="__UPLOAD__/brand/jrhz.jpg" alt="今日会展">
+				</a>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- footer -->
+	<include file="Template/footer" />
+
+</body>
+
+</html>
+<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/swiper/swiper.min.js"></script>
+<script type="text/javascript">
+	var mySwiper = new Swiper('.swiper-container', {
+		pagination: '.swiper-pagination',
+		paginationClickable: true,
+		autoplay: 5000,
+		speed: 1000,
+	})
+</script>

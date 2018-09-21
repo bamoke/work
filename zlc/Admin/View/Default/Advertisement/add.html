@@ -1,0 +1,75 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title">添加广告</div>
+    </div>
+    <div class="panel-body">
+        <div class="alert alert-info">
+            <p>首页首页底部-尺寸，宽度建议1920px.高度建议100-200px</p>
+            <p>侧边栏人气排行-尺寸，宽度建议375px,高度不限</p>
+            <p>侧边栏每周热搜-尺寸，宽度建议375px,高度不限</p>
+            <p>详细页为你推荐-尺寸，宽度建议795px,高度不限</p>
+        </div>
+        <form name="advertisement-form" class="form form-horizontal" action="{:U('save')}" role="form">
+            <div class="form-group">
+                <label class="control-label col-xs-1"><span class="text-danger">*</span>展示位置:</label>
+                <div class="col-xs-2">
+                    <select name="position_key" class="form-control">
+                        <option value="">请选择广告位置</option>
+                        <foreach name="position" item="pt">
+                            <option value="{$pt['id']}">{$pt['name']}</option>
+                        </foreach>
+                    </select>
+                </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-1"><span class="text-danger">*</span>广告标题:</label>
+                <div class="col-xs-4">
+                    <input type="text" name="title" class="form-control" value="">
+                </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-1">上传图片:</label>
+                <div class="col-xs-8">
+                    <div class="col-xs-2">
+                        <div class="m-thumbnail-upload" id="js-thumb-upload-panel">
+                            <a href="javascript:" class="add-btn js-add-btn"></a>
+                            <div class="thumb-box hidden">
+                                <img class="thumb" style="">
+                                <span class="del-btn">删除</span>
+                            </div>
+                            <input type="file" name="img" class="js-file-input" style="display: none;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-1">展示状态:</label>
+                <div class="col-xs-4">
+                    <label class="radio-inline">
+                        <input type="radio" name="status" value="1" checked>展示</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="status" value="0" id="">隐藏</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-1"><span class="text-danger">*</span>链接地址:</label>
+                <div class="col-xs-4">
+                    <input type="text" name="url" class="form-control" value="" placeholder="完整地址，以http或https开头">
+                </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-xs-2 col-xs-offset-1">
+                    <button type="button" class="form-control btn-default" onclick="window.history.back()">返回列表</button>
+                </div>
+                <div class="col-xs-2">
+                    <button type="submit" class="form-control btn-info">提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

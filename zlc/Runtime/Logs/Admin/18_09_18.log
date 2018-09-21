@@ -1,0 +1,62 @@
+[ 2018-09-18T00:10:23+08:00 ] ::1 /zlc/admin.php/Content/save/pid/3.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001031s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0486s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0479s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0488s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0472s ]
+SQL: SELECT `id`,`title`,`type`,`controller_name`,`action_name` FROM `b_content_cate` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0483s ]
+SQL: SHOW COLUMNS FROM `b_news` [ RunTime:0.0486s ]
+SQL: INSERT INTO `b_news` (`cid`,`title`,`video`,`status`,`origin`,`keywords`,`description`,`content`,`init_click`) VALUES ('23','哥伦比亚对华U型和L型钢材作出反倾销肯定性终裁','','1','中国贸易救济信息网','','','<p>哥伦比亚对华U型和L型钢材作出反倾销肯定性终裁</p>','289') [ RunTime:0.0500s ]
+
+[ 2018-09-18T00:11:37+08:00 ] ::1 /zlc/admin.php/Content/save/pid/3.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000721s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001196s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0481s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0477s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0485s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0483s ]
+SQL: SELECT `id`,`title`,`type`,`controller_name`,`action_name` FROM `b_content_cate` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0487s ]
+SQL: SHOW COLUMNS FROM `b_news` [ RunTime:0.0480s ]
+SQL: INSERT INTO `b_news` (`cid`,`title`,`video`,`status`,`origin`,`keywords`,`description`,`content`,`init_click`) VALUES ('23','阿根廷对华微波炉发起反倾销日落合并情势变迁复审立案调查','','1','中国贸易救济信息网','','','<p>2018年9月4日，阿根廷生产部在阿根廷《官方公报》发布2018年第&nbsp;348号决议，应阿根廷终端电子制造协会（AFARTE）提交的申请，对原产于中国的机械或数码微波炉（带有或不带有烧烤功能，容量不超过37升，西班牙语：hornos de microondas mecánicos y digitalescon o sin grill de capacidad inferior o igual a TREINTA Y SIETE LITROS (37 l)&nbsp;）发起第三次反倾销日落复审立案调查。由于国内外的微波炉生产行业中可能存在的变化，应阿根廷国家贸易便利化局建议，启动情势变迁复审立案调查。涉案产品的南共市海关编码为8516.50.00。本调查结束前，2013年9月5日第491号决议所确定的反倾销措施继续有效。</p><p><br/></p><p>2001年6月8日阿根廷前贸易处作出第106号决议，应该国企业BGH SOCIEDAD ANONIMA、PHILCOUSHUAIA SOCIEDAD ANONIMA和NEW SAN S.A.申请，对原产于中国的机械或数码微波炉启动反倾销立案调查。2002年12月16日，阿根廷生产部发布2002年第103号决议，对涉案产品作出反倾销终裁，确定涉案产品的最低出口FOB价，即容量不超过37升的机械微波炉为74.40美元/台，不超过24升的数码微波炉为96.26美元/台，不低于24升且不超过37升的数码微波炉为118.56美元/台。对实际出口价格低于以上价格的涉案产品征收差价作为反倾销税，有效期为3年。2005年12月19日，阿根廷经济生产部发布2005年第22号决议，应该国企业NEWSAN S.A.、RADIOVICTORIA FUEGUINA SOCIEDAD ANONIMA和BGH SOCIEDAD ANONIMA申请，对原产于中国的涉案产品启动第一次反倾销立案调查。</p><p>2007年3月7日，阿根廷经济生产部发布2007年第98号决议，结束本次日落复审调查，维持原审终裁结果，继续对原产于中国的机械或数码微波炉以其实际出口价与最低限价差价作为反倾销税，有效期为五年。2012年3月8日，阿根廷经济与公共财政部发布2012年第50号决议，应阿根廷终端电子制造协会申请，对原产于中国的涉案产品启动第二次反倾销日落复审。2013年9月9日，阿根廷经济与公共财政部发布2013年第491号决议，决定维持原审终裁结果，继续对原产于中国的涉案产品征收反倾销税</p><p><br/></p>','234') [ RunTime:0.0517s ]
+
+[ 2018-09-18T00:19:25+08:00 ] ::1 /zlc/admin.php/Content/save/pid/3.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002111s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0488s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0484s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0487s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0473s ]
+SQL: SELECT `id`,`title`,`type`,`controller_name`,`action_name` FROM `b_content_cate` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0484s ]
+SQL: SHOW COLUMNS FROM `b_news` [ RunTime:0.0480s ]
+SQL: INSERT INTO `b_news` (`cid`,`title`,`video`,`status`,`origin`,`keywords`,`description`,`content`,`init_click`) VALUES ('23','欧亚经济联盟对华无缝钢管启动反倾销立案调查','','1','中国贸易救济信息网','','','<p>2018年9月4日，欧亚经济委员会发布公告，对原产于或进口自中国的热变形无缝钢管（俄语：горячедеформированная&nbsp;бесшовная труба）产品启动反倾销立案调查。涉案产品税号为730449 100 0、7304 49 930 1、730449 930 9、7304 49 950 1、730449 950 9和7304 49 990 0。本决议自官方公报发布之日起生效。</p><p><br/></p><p>利益相关方应于本公告发布之日起25日内进行应诉登记，45日内申请听证会，60日内以书面形式提交本案评述意见以及相关信息。</p><p><br/></p>','238') [ RunTime:0.0504s ]
+
+[ 2018-09-18T23:26:48+08:00 ] ::1 /zlc/admin.php/Main/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000699s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001177s ]
+SQL: SHOW COLUMNS FROM `b_user` [ RunTime:0.0490s ]
+SQL: SELECT * FROM `b_user` WHERE `username` = 'admin' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0487s ]
+NOTIC: [8] Undefined index: uid D:\work\zlc\Admin\Controller\MainController.class.php 第 73 行.
+NOTIC: [8] Undefined index: issuper D:\work\zlc\Admin\Controller\MainController.class.php 第 76 行.
+
+[ 2018-09-18T23:30:06+08:00 ] ::1 /zlc/admin.php/Content/save/pid/2.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001305s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0472s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0470s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0471s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0466s ]
+SQL: SELECT `id`,`title`,`type`,`controller_name`,`action_name` FROM `b_content_cate` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0475s ]
+SQL: SHOW COLUMNS FROM `b_news` [ RunTime:0.0473s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `b_news` (`cid`,`title`,`video`,`status`,`origin`,`keywords`,`description`,`content`,`thumb`,`init_click`) VALUES ('19','横琴中拉经贸合作园开园','','1','','','11月10日上午，横琴中拉经贸合作园隆重开园。作为珠海服务中拉合作项目落地的新载体，横琴中拉经贸合作园整合法律服务、政策研究、金融合作、跨境商品交易等服务','<p>11月10日上午，横琴中拉经贸合作园隆重开园。作为珠海服务中拉合作项目落地的新载体，横琴中拉经贸合作园整合法律服务、政策研究、金融合作、跨境商品交易等服务，重点打造“三中心三平台”，将为拉美和加勒比海地区投资者提供精准专业的服务。多个拉美国家省州市政府代表团、拉美和加勒比国家驻华使节出席了开园仪式。</p><p>　　珠海市委常委、副市长祝青桥在致辞中表示，随着“一带一路”建设深入推进，中拉合作迎来新的发展契机。横琴中拉经贸合作园在中拉国际博览会开幕当日揭牌，这是珠海贯彻落实国家和广东省工作部署、推动构建开放型经济新体制和横琴自贸试验区建设对外开放门户枢纽的重大举措，将为中拉经贸合作搭建新平台，创造新机遇。</p><p>　　三中心三平台</p><p>　　打开合作新局面</p><p>　　记者了解到，为了推动形成全面开放新格局，珠海将以横琴中拉经贸合作园为载体，推动一批中拉合作项目落地，进一步提升与拉美国家的经贸合作水平，形成对外开放、跨境合作新亮点。</p><p>　　横琴中拉经贸合作园位于横琴自贸片区核心地段，占地8.7万平方米，计容面积约24.4万平方米，共有9栋主体建筑以及独具特色的岭南风情街，集研发办公楼、高级公寓、公共技术服务平台、展示体验中心等软硬件设施展示体验中心、一站式服务中心等配套服务设施于一体，并配置了高速互联网平台、信息化大堂、健康中心、机器人停车等智能化配套服务。</p><p>　　作为落实国家战略的重点特色项目，园区将有效利用横琴自贸片区通关、人才、金融、财税创新等系列政策、区位和开放优势，着力打造“三中心、三平台”即：中拉休闲旅游文化交流推广中心、中拉企业法律服务中心、中拉政策研究与创新中心，中拉商品国际交易平台、中拉跨境电商合作平台、中拉金融合作服务平台。</p><p>　　目前，中拉经贸合作园已与巴拿马科隆自贸区、中国墨西哥商会、国家电力投资集团海外公司、中国电建集团市政规划设计研究院有限公司、中冶国际投资发展有限公司等14家企业签署了战略合作协议，并且吸引了众创空间、中电建海外投资、国电投海外投资等众多项目。</p><p>　　横琴出台专项措施</p><p>　　力促中拉经贸合作</p><p>　　在中拉经贸产业园开园不久前，横琴自贸片区已出台并施行《横琴新区促进中拉经贸合作的若干措施（试行）》，从投资贸易便利、财税资金扶持、平台服务保障等方面全面扶持拉美企业在横琴发展。</p><p>　　横琴将在拉美设立联络处，接收在横琴设立“外商投资准入特别管理措施（负面清单）”之外的名称登记和商事登记申请，并解答当地投资者查询，通过与横琴签署合作协议的中资银行拉美分支机构，为拉美企业投资横琴提供导办服务及跨境金融服务。</p><p>　　针对首次落户横琴、从事以拉美经贸为主的电商企业，且在横琴营业收入超过10亿元人民币的，横琴当年可给予一次性最高200万元人民币专项奖励。</p><p>　　另外，依据该文件，横琴中拉经贸合作园将从商品交易到产业落地，为拉美企业提供精准高效、贴心便捷的专业服务，全方位满足拉美企业在投资环境、商务配套、服务设施等方面的需求。</p><p>　　横琴新区管委会主任杨川介绍，横琴具备辐射葡语系、西语系国家市场的优势和基础，设立中拉经贸合作园，目的就是为中国和拉美及加勒比国家的合作提供全方位的支持，让横琴自贸片区成为连接中国市场与拉美国家的“桥梁”、成为广东与拉美国家市场经贸合作的“窗口”和“纽带”。</p><p><br/></p>','15372846060.jpg','409') [ RunTime:0.0516s ]
+

@@ -1,0 +1,57 @@
+[ 2018-09-16T15:24:43+08:00 ] ::1 /zlc/admin.php/Main/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001326s ]
+SQL: SHOW COLUMNS FROM `b_user` [ RunTime:0.0492s ]
+SQL: SELECT * FROM `b_user` WHERE `username` = 'admin' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0485s ]
+NOTIC: [8] Undefined index: uid D:\work\zlc\Admin\Controller\MainController.class.php 第 73 行.
+NOTIC: [8] Undefined index: issuper D:\work\zlc\Admin\Controller\MainController.class.php 第 76 行.
+
+[ 2018-09-16T15:50:30+08:00 ] ::1 /zlc/admin.php/Category/save_cate/actype/edit.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000686s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001151s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0491s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0493s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0488s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0484s ]
+SQL: UPDATE `b_content_cate` SET `title`='关于我们',`en_title`='',`pid`='0',`is_nav`='1',`type`='' WHERE `id` = 11 [ RunTime:0.0504s ]
+
+[ 2018-09-16T17:45:01+08:00 ] ::1 /zlc/admin.php/Banner/save.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001016s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001714s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0440s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0443s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0455s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0439s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0443s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `b_banner` (`position_key`,`sort`,`title`,`url`,`img`) VALUES ('1','0','','','dd2660bb0bc09f64038ceb2a10de487d.jpg') [ RunTime:0.0498s ]
+
+[ 2018-09-16T17:45:29+08:00 ] ::1 /zlc/admin.php/Banner/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000859s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001378s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0472s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0475s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0472s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0467s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0472s ]
+SQL: SELECT `img` FROM `b_banner` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0457s ]
+
+[ 2018-09-16T21:04:46+08:00 ] ::1 /zlc/admin.php/Sys/save_conf.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001147s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0470s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0471s ]
+NOTIC: [8] Use of undefined constant MODULE_ASSET - assumed 'MODULE_ASSET' D:\work\zlc\Admin\Common\Controller\AuthController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `b_content_cate` [ RunTime:0.0472s ]
+SQL: SELECT `id`,`title` FROM `b_content_cate` WHERE `pid` = 0 AND `status` = 1 ORDER BY sort,id  [ RunTime:0.0462s ]
+SQL: SHOW COLUMNS FROM `b_site_config` [ RunTime:0.0461s ]
+SQL: UPDATE `b_site_config` SET `site_name`='中拉合作网',`keywords`='中拉合作网',`description`='中拉合作网',`tel`='0756-6666999',`email`='service@zhmlife.com',`qq`='800822202',`weibo`='',`icp`='粤ICP备16012962号-3' WHERE ( id=1 ) [ RunTime:0.0558s ]
+

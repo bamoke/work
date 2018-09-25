@@ -78,7 +78,7 @@
   <div class="m-banner-wrap">
     <div class="container">
       <div class="banner column-banner">
-          <img src="/zlc/Uploads/banner/<?php echo ($banner["img"]); ?>" alt="">
+          <?php if(!empty($banner['img'])): ?><img src="/zlc/Uploads/banner/<?php echo ($banner["img"]); ?>" alt=""><?php endif; ?>  
       </div>
     </div>
   </div>

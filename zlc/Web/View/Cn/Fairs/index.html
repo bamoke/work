@@ -9,7 +9,7 @@
                         </if>
             
                         <div class="text-box">
-                            <a class="title" href="{:U('detail',array('cid'=>$vo['cid'],'id'=>$vo['id']))}">{$vo['title']}</a>
+                            <a class="title" href="{:U('detail',array('pid'=>$curPid,'cid'=>$vo['cid'],'id'=>$vo['id']))}">{$vo['title']}</a>
                             <p class="desc">{$vo['description']}</p>
                             <p class=""><span class="glyphicon glyphicon-time"></span>{$vo['times']}</p>
                             <p class=""><span class="glyphicon glyphicon-map-marker"></span>{$vo['place']}</p>

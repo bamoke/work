@@ -373,6 +373,14 @@ li {
 	font-size:20px;
 	color:#ccc;
 }
+.m-business-list .item {
+	padding:12px;
+	border-bottom:1px solid #ddd;
+}
+.m-business-list .item .title {
+	font-size:16px;
+	color:#232323;
+}
 .column-banner {
 	padding-bottom:20px;
 }

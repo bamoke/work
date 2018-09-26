@@ -54,6 +54,7 @@ class BasePage extends Controller {
     $this->assign("pageName",$parentInfo['title']);
     $this->assign("curCateName",$curCateInfo['title']);
     $this->assign("childNavHtml",$childNavHtml);
+    $this->assign("curPid",$pid);
     return $curCateInfo;
   }
 

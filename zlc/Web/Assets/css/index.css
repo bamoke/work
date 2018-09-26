@@ -19,7 +19,7 @@
 	border-bottom:4px solid #00a0e9;
 }
 .index-column-wrap .title-bar .small-title {
-	color:#9c9c9c;
+	color:#aaa;
 	font-size:14px;
 }
 .index-column-wrap .title-bar .view-more{
@@ -69,7 +69,7 @@
 	font-size:14px;
 	font-weight: 100;
 }
-.index-img-news .description {margin:20px 0;color:#ababab;}
+.index-img-news .description {margin:20px 0;color:#9e9e9e;}
 .index-text-news .item {
 	padding:20px 0;
 	border-bottom:1px solid #ddd;

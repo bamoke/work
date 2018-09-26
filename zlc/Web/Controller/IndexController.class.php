@@ -44,9 +44,11 @@ class IndexController extends WebController {
 
         // 商机
         $businessList = M("Business")
-        ->field("id,title,type,date(FROM_UNIXTIME(create_time)) as date")
-        ->where("status=1")
-        ->order("id desc")
+        ->alias("B")
+        ->field("B.id,B.title,B.cid,date(FROM_UNIXTIME(B.create_time)) as date,C.title as catename")
+        ->join("__CONTENT_CATE__ as C on C.id=B.cid")
+        ->where("B.status=1")
+        ->order("B.id desc")
         ->limit(5)
         ->select();
         //advertisement

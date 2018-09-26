@@ -78,7 +78,7 @@
   <div class="m-banner-wrap">
     <div class="container">
       <div class="banner column-banner">
-          <img src="/zlc/Uploads/banner/<?php echo ($banner["img"]); ?>" alt="">
+          <?php if(!empty($banner['img'])): ?><img src="/zlc/Uploads/banner/<?php echo ($banner["img"]); ?>" alt=""><?php endif; ?>  
       </div>
     </div>
   </div>
@@ -106,7 +106,7 @@
                             </a><?php endif; ?>
             
                         <div class="text-box">
-                            <a class="title" href="<?php echo U('detail',array('cid'=>$vo['cid'],'id'=>$vo['id']));?>"><?php echo ($vo['title']); ?></a>
+                            <a class="title" href="<?php echo U('detail',array('pid'=>$curPid,'cid'=>$vo['cid'],'id'=>$vo['id']));?>"><?php echo ($vo['title']); ?></a>
                             <p class="desc"><?php echo ($vo['description']); ?></p>
                             <p class=""><span class="glyphicon glyphicon-time"></span><?php echo ($vo['times']); ?></p>
                             <p class=""><span class="glyphicon glyphicon-map-marker"></span><?php echo ($vo['place']); ?></p>

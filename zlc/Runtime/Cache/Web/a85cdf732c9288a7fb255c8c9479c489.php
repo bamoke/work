@@ -97,7 +97,7 @@
 			<div class="col-sm-8 col-xs-12">
 				<div class="index-column-wrap">
 					<div class="title-bar">
-						<span class="caption">贸促新闻</span><span class="small-title">PUBLIC INFORMATION</span>
+						<span class="caption">贸促新闻</span><span class="small-title">CCPIT NEWS</span>
 						<a href="<?php echo U('Article/index',array('pid'=>1,'cid'=>16));?>" class="view-more">更多&gt;</a>
 					</div>
 
@@ -105,7 +105,7 @@
 						<div class="index-img-news">
 							<div class="row item">
 								<div class="col-xs-12 col-sm-6 img-box">
-									<a href="<?php echo U('Article/detail',array('id'=>$mcxwInfo['id']));?>"><img src="/zlc/Uploads/thumb/<?php echo ($mcxwInfo['thumb']); ?>"></a>
+									<a href="<?php echo U('Article/detail',array('pid'=>1,'cid'=>16,'id'=>$mcxwInfo['id']));?>" target="_blank"><img src="/zlc/Uploads/thumb/<?php echo ($mcxwInfo['thumb']); ?>"></a>
 								</div>
 								<div class="col-xs-12 col-sm-6 text-info">
 									<div class="top clearfix">
@@ -113,10 +113,10 @@
 											<?php echo explode("-",$mcxwInfo['date'])[1];?>-<?php echo explode("-",$mcxwInfo['date'])[2];?>
 											<span class="year"><?php echo explode("-",$mcxwInfo['date'])[0];?></span>
 										</div>
-										<span class="title"><?php echo ($mcxwInfo['title']); ?></span>
+										<span class="title"><a href="<?php echo U('Article/detail',array('pid'=>1,'cid'=>16,'id'=>$mcxwInfo['id']));?>" target="_blank"><?php echo ($mcxwInfo['title']); ?></a></span>
 									</div>
 									<div class="description"><?php echo ($mcxwInfo['description']); ?></div>
-									<div><a href="<?php echo U('Article/detail',array('pid'=>1,'cid'=>$mcxwInfo['cid'],'id'=>$mcxwInfo['id']));?>">查看详情&gt;&gt;</a></div>
+									<div><a href="<?php echo U('Article/detail',array('pid'=>1,'cid'=>$mcxwInfo['cid'],'id'=>$mcxwInfo['id']));?>" target="_blank">查看详情&gt;&gt;</a></div>
 								</div>
 							</div>
 						</div>
@@ -146,8 +146,8 @@
 			<div class="col-sm-8 col-xs-12">
 				<div class="index-column-wrap">
 					<div class="title-bar">
-						<span class="caption">经贸信息</span><span class="small-title">PUBLIC INFORMATION</span>
-						<a href="<?php echo U('Article/index',array('pid'=>1,'cid'=>19));?>" class="view-more">更多&gt;</a>
+						<span class="caption">经贸信息</span><span class="small-title"><?php echo strtoupper('economy and trade');?></span>
+						<a href="<?php echo U('Article/index',array('pid'=>2,'cid'=>19));?>" class="view-more">更多&gt;</a>
 					</div>
 
 					<div class="content-wrap">
@@ -241,7 +241,7 @@
 				</div>
 				<div class="index-column-wrap">
 					<div class="title-bar">
-						<span class="caption">贸易预警</span><span class="small-title">PUBLIC INFORMATION</span>
+						<span class="caption">贸易预警</span><span class="small-title">TRADE ALERT</span>
 						<a href="<?php echo U('Article/index',array('pid'=>3,'cid'=>23));?>" class="view-more">更多&gt;</a>
 					</div>
 
@@ -264,13 +264,13 @@
 			<div class="col-sm-4 col-xs-12">
 				<div class="index-column-wrap">
 					<div class="title-bar">
-						<span class="caption">重点展会</span><span class="small-title">PUBLIC INFORMATION</span>
-						<a href="<?php echo U('Article/index',array('pid'=>3,'cid'=>20));?>" class="view-more">&gt;更多</a>
+						<span class="caption">重点展会</span><span class="small-title">EXHIBITION INFORMATION</span>
+						<a href="<?php echo U('Fairs/index',array('pid'=>2,'cid'=>20));?>" class="view-more">&gt;更多</a>
 					</div>
 
 					<div class="content-wrap">
 						<div class="index-fairs">
-							<?php if(is_array($fairsList)): $i = 0; $__LIST__ = $fairsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><a class="item" href="<?php echo U('Fairs/detail',array('pid'=>3,'id'=>$v['id'],'cid'=>$v['cid']));?>">
+							<?php if(is_array($fairsList)): $i = 0; $__LIST__ = $fairsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><a class="item" href="<?php echo U('Fairs/detail',array('pid'=>2,'id'=>$v['id'],'cid'=>$v['cid']));?>">
 									<div class="title"><?php echo ($v['title']); ?></div>
 									<div class="other">
 										<p class=""><span class="glyphicon glyphicon-time"></span><?php echo ($v['times']); ?></p>
@@ -286,8 +286,8 @@
 			<div class="col-sm-8 col-xs-12">
 				<div class="index-column-wrap">
 					<div class="title-bar">
-						<span class="caption">企业商机</span><span class="small-title">PUBLIC INFORMATION</span>
-						<a href="<?php echo U('Content/index',array('pid'=>4));?>" class="view-more">&gt;更多</a>
+						<span class="caption">企业商机</span><span class="small-title">BUSINESS</span>
+						<a href="<?php echo U('Business/index',array('pid'=>4));?>" class="view-more">&gt;更多</a>
 					</div>
 
 					<div class="content-wrap">
@@ -295,8 +295,8 @@
 							<?php if(is_array($businessList)): $i = 0; $__LIST__ = $businessList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><div class="item">
 									<div class="row">
 										<div class="title col-sm-10">
-											<span class="type"><?php echo ($businessTypeArr[$v['type']]); ?></span>
-											<a href="<?php echo U('');?>"><?php echo ($v['title']); ?></a></div>
+											<span class="type"><?php echo ($v['catename']); ?></span>
+											<a href="<?php echo U('Business/index',array('pid'=>4,'cid'=>$v['cid'],'id'=>$v['id']));?>"><?php echo ($v['title']); ?></a></div>
 										<div class="time col-sm-2 hidden-xs"><?php echo ($v[date]); ?></div>
 									</div>
 								</div><?php endforeach; endif; else: echo "" ;endif; ?>
@@ -307,28 +307,28 @@
 		</div>
 		<div class="m-footer-brand">
 			<div class="clearfix">
-				<a class="item" href="" target="_blank">
+				<a class="item" href="http://www.ccpit.org/" target="_blank">
 					<img src="/zlc/Uploads/brand/zgmch.jpg" alt="中国国际贸易促进委员会">
 				</a>
-				<a class="item" href="" target="_blank">
+				<a class="item" href="http://www.ccoic.cn/" target="_blank">
 					<img src="/zlc/Uploads/brand/zggjsh.jpg" alt="中国国际商会">
 				</a>
-				<a class="item" href="" target="_blank">
+				<a class="item" href="http://www.chinacelacforum.org" target="_blank">
 					<img src="/zlc/Uploads/brand/zlgtlt.jpg" alt="中国-拉共体论坛">
 				</a>
-				<a class="item" href="" target="_blank">
+				<a class="item" href="http://www.customs.gov.cn" target="_blank">
 					<img src="/zlc/Uploads/brand/zghg.jpg" alt="中国海关总署">
 				</a>
-				<a class="item" href="" target="_blank">
+				<a class="item" href="http://cif.mofcom.gov.cn/site/html/zhuhai/" target="_blank">
 					<img src="/zlc/Uploads/brand/zhswyb.jpg" alt="珠海商务预报">
 				</a>
-				<a class="item" href="" target="_blank">
+				<a class="item" href="http://www.zhaefi.org/" target="_blank">
 					<img src="/zlc/Uploads/brand/zhwstzxh.jpg" alt="珠海外商投资企业协会">
 				</a>
-				<a class="item" href="" target="_blank">
+				<a class="item" href="http://gongbei.customs.gov.cn/" target="_blank">
 					<img src="/zlc/Uploads/brand/zhhg.jpg" alt="珠海海关">
 				</a>
-				<a class="item" href="" target="_blank">
+				<a class="item" href="http://www.expo-today.com/" target="_blank">
 					<img src="/zlc/Uploads/brand/jrhz.jpg" alt="今日会展">
 				</a>
 			</div>

@@ -1,20 +1,21 @@
 <div class="panel">
     <div class="panel-body">
         <div class="u-page-title">
-            <span class="caption">添加展会</span>
+            <span class="caption">添加文章</span>
         </div>
-        <form name="fairs-form" class="form form-horizontal" action="{:U('save',array('navid'=>$_GET['navid']))}">
+        <form name="news-form" class="form form-horizontal" action="{:U('save',array('navid'=>$_GET['navid']))}">
             <input type="hidden" name="cid" value="{$Think.get.cid}">
             <div class="form-group">
                 <label class="control-label col-xs-2">
-                    <span class="text-danger">*</span>展会名称:</label>
-                <div class="col-xs-6">
-                    <input type="text" name="title" class="form-control" value="" placeholder="建议20个字符以内">
+                    <span class="text-danger">*</span>文章标题:</label>
+                <div class="col-xs-4">
+                    <input type="text" name="title" class="form-control" value="" placeholder="建议12个字符以内">
                 </div>
                 <div class="col-xs-3 js-tips"></div>
             </div>
             <div class="form-group">
-                <label class="control-label col-xs-2">缩略图:</label>
+                <label class="control-label col-xs-2">
+                    <span class="text-danger">*</span>封面:</label>
                 <div class="col-xs-3">
                     <div class="m-thumbnail-upload" id="js-thumb-upload-panel">
                         <a href="javascript:" class="add-btn js-add-btn"><i class="glyphicon glyphicon-plus-sign"></i></a>
@@ -29,22 +30,9 @@
                 <div class="col-xs-3 tips"></div>
             </div>
             <div class="form-group">
-                <label class="control-label col-xs-2">召开时间:</label>
-                <div class="col-xs-6">
-                    <input type="text" name="times" class="form-control" value="">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="control-label col-xs-2">召开地点:</label>
-                <div class="col-xs-6">
-                    <input type="text" name="place" class="form-control" value="" placeholder="">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-xs-2">展会描述:</label>
-                <div class="col-xs-6">
-                    <textarea name="description" class="form-control">{$data['description']}</textarea>
+                <label class="control-label col-xs-2">视频地址:</label>
+                <div class="col-xs-4">
+                    <textarea name="video" class="form-control"></textarea>
                 </div>
             </div>
             <div class="form-group">
@@ -57,6 +45,15 @@
                 </div>
             </div>
             <div class="form-group">
+                <label class="control-label col-xs-2">其他设置:</label>
+                <div class="col-xs-7">
+                    <label class="radio-inline">
+                        <input type="radio" name="otherset" value="1" />人气</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="otherset" value="2" />热搜</label>
+                </div>
+            </div>
+            <div class="form-group">
                 <label class="control-label col-xs-2">显示状态:</label>
                 <div class="col-xs-7">
                     <label class="radio-inline">
@@ -65,7 +62,25 @@
                         <input type="radio" name="status" value="0" />隐藏</label>
                 </div>
             </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">来源:</label>
+                <div class="col-xs-4">
+                    <input type="text" name="origin" class="form-control" value="">
+                </div>
+            </div>
 
+            <div class="form-group">
+                <label class="control-label col-xs-2">关键词:</label>
+                <div class="col-xs-6">
+                    <input type="text" name="keywords" class="form-control" value="" placeholder="关键词用','隔开">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">文章描述:</label>
+                <div class="col-xs-6">
+                    <textarea name="description" class="form-control"></textarea>
+                </div>
+            </div>
             <div class="form-group">
                 <label class="control-label col-xs-2">内容详情:</label>
                 <div class="col-xs-6">

@@ -7,9 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="renderer" content="webkit|ie-comp|ie-stand" />
   <meta name="author" content="中拉网" />
-  <title>中拉合作网-{$pageName}</title>
-  <meta name="keywords" content="中拉网" />
-  <meta name="description" content="中拉网" />
+  <title>{$siteTitle|default=$baseInfo['site_name'].'-'.$pageName}</title>
+  <meta name="keywords" content="{$siteKeywords|default=$baseInfo['keywords']}" />
+  <meta name="description" content="{$siteDescription|default=$baseInfo['description']}" />
   <link href="__PUBLIC__/Js/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
   <link href="__PUBLIC__/Js/swiper/css/swiper.min.css" rel="stylesheet" />
   <link href="__WEB_ASSET__/css/base.css" rel="stylesheet" />
@@ -37,7 +37,7 @@
     <div class="row">
       <div class="col-sm-3">
         <div id="sideBar" class="m-side-nav">
-          <h3 class="parentCateName">{$pageName}<br><span class="small">PRODUCTS</span></h3>
+          <h3 class="parentCateName">{$parentName}<br><span class="small">{:strtoupper($parentEnName)}</span></h3>
           <ul class="cateList">{$childNavHtml}</ul>
         </div>
       </div>

@@ -7,9 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="renderer" content="webkit|ie-comp|ie-stand" />
   <meta name="author" content="中拉网" />
-  <title>中拉合作网-<?php echo ($pageName); ?></title>
-  <meta name="keywords" content="中拉网" />
-  <meta name="description" content="中拉网" />
+  <title><?php echo ((isset($siteTitle) && ($siteTitle !== ""))?($siteTitle):$baseInfo['site_name'].'-'.$pageName); ?></title>
+  <meta name="keywords" content="<?php echo ((isset($siteKeywords) && ($siteKeywords !== ""))?($siteKeywords):$baseInfo['keywords']); ?>" />
+  <meta name="description" content="<?php echo ((isset($siteDescription) && ($siteDescription !== ""))?($siteDescription):$baseInfo['description']); ?>" />
   <link href="/zlc/Public/Js/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
   <link href="/zlc/Public/Js/swiper/css/swiper.min.css" rel="stylesheet" />
   <link href="/zlc/Web/Assets/css/base.css" rel="stylesheet" />
@@ -88,7 +88,7 @@
     <div class="row">
       <div class="col-sm-3">
         <div id="sideBar" class="m-side-nav">
-          <h3 class="parentCateName"><?php echo ($pageName); ?><br><span class="small">PRODUCTS</span></h3>
+          <h3 class="parentCateName"><?php echo ($parentName); ?><br><span class="small"><?php echo strtoupper($parentEnName);?></span></h3>
           <ul class="cateList"><?php echo ($childNavHtml); ?></ul>
         </div>
       </div>
@@ -100,9 +100,7 @@
           </div>
         </div>
         <div class="m-content-wrap"><div class="single-main-content">
-        <div class="bar">
-            <h2 class="title"><?php echo ($info['title']); ?></h2>
-        </div>
+
         <div class="content">
             <?php echo ($info['content']); ?>
         </div>

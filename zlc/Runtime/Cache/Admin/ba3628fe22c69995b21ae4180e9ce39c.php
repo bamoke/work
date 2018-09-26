@@ -66,7 +66,7 @@
         <div class="u-page-title">
             <span class="caption">编辑展会</span>
         </div>
-        <form name="fairs-form" class="form form-horizontal" action="<?php echo U('update',array('pid'=>$_GET['pid'],'id'=>$_GET['id']));?>">
+        <form name="fairs-form" class="form form-horizontal" action="<?php echo U('update',array('navid'=>$_GET['navid'],'id'=>$_GET['id']));?>">
             <input type="hidden" name="cid" value="<?php echo ($data["cid"]); ?>">
             <div class="form-group">
                 <label class="control-label col-xs-2">

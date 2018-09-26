@@ -66,8 +66,8 @@
         <div class="u-page-title">
             <span class="caption">添加展会</span>
         </div>
-        <form name="fairs-form" class="form form-horizontal" action="<?php echo U('save',array('pid'=>$_GET['pid']));?>">
-            <input type="hidden" name="cid" value="<?php echo ($cid); ?>">
+        <form name="fairs-form" class="form form-horizontal" action="<?php echo U('save',array('navid'=>$_GET['navid']));?>">
+            <input type="hidden" name="cid" value="<?php echo ($_GET['cid']); ?>">
             <div class="form-group">
                 <label class="control-label col-xs-2">
                     <span class="text-danger">*</span>展会名称:</label>

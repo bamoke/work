@@ -7,7 +7,7 @@ class SingleController extends WebController {
                 //cate
         $BasePage = new BasePage();
         $curCateInfo = $BasePage->index($pid,$cid);
-        $info = M("Single")->where(array("id"=>$curCateInfo['id']))->find();
+        $info = M("Single")->where(array("cid"=>$curCateInfo['id']))->find();
         $this->assign("info",$info);
         $this->display();
     }

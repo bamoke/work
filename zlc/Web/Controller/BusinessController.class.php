@@ -37,6 +37,7 @@ class BusinessController extends WebController {
         $BasePage = new BasePage();
         $curCateInfo = $BasePage->index($pid,$cid);
         $info=M("Business")
+        ->field("*,FROM_UNIXTIME(create_time) as date")
         ->where("id=$id")
         ->find();
         $this->assign("info",$info);

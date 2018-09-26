@@ -1,10 +1,11 @@
 <notempty name="data">
-        <ul class="m-imgtext" style="min-height:300px;">
+        <ul class="m-download-list">
                 <foreach name="data" item="vo">
                     <li class="item">
                         <div class="text-box">
-                            <a class="title" href="{:U('detail',array('pid'=>$curPid,'cid'=>$vo['cid'],'id'=>$vo['id']))}" target="_blank">{$vo['title']}</a>
-                            <div class="u-statistics"><span class="glyphicon glyphicon-time"></span>{$vo['date']}</div>
+                            <a class="title" href="{:U('detail',array('pid'=>$curPid,'cid'=>$vo['cid'],'id'=>$vo['id']))}">{$vo['title']}</a>
+                            <p class=""><span class="glyphicon glyphicon-time"></span>{$vo['times']}</p>
+                            <p class=""><span class="glyphicon glyphicon-map-marker"></span>{$vo['place']}</p>
                         </div>
                     </li>
                 </foreach>

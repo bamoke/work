@@ -65,7 +65,7 @@
     <div class="panel-body">
         <div class="u-page-title">
             <span class="caption">展会列表</span>
-            <a href="<?php echo U('index',array('pid'=>$_GET['pid'],'cid'=>$_GET['cid'],'actype'=>'add'));?>" class="btn btn-info">添加展会</a>
+            <a href="<?php echo U('add',array('navid'=>$_GET['navid'],'cid'=>$_GET['cid']));?>" class="btn btn-info">添加展会</a>
         </div>
         <table class="table js-table-list">
             <thead>
@@ -90,8 +90,8 @@
                         </td>
                         <td><?php echo ($list['create_time']); ?></td>
                         <td class="operation-box">
-                            <a href="<?php echo U('index',array('pid'=>$_GET['pid'],'id'=>$list['id'],'actype'=>'edit','cid'=>$list['cid']));?>">修改</a>
-                            <!-- <a href="javascript:" data-url="<?php echo U('del',array('id'=>$list['id'],'type'=>$pageType));?>" class="js-del-one">删除</a> -->
+                            <a href="<?php echo U('edit',array('navid'=>$_GET['navid'],'id'=>$list['id'],'cid'=>$list['cid']));?>">修改</a>
+                            <a href="javascript:" data-url="<?php echo U('del',array('id'=>$list['id'],'type'=>$pageType));?>" class="js-del-one">删除</a>
                         </td>
                     </tr><?php endforeach; endif; ?>
 

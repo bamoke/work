@@ -2,49 +2,50 @@
 namespace Admin\Controller;
 use Admin\Common\Controller\AuthController;
 
-class FairsController extends AuthController {
-  public function index ($cid = null){
+class BusinessController extends AuthController {
+  public function index ($cid){
     $curModel = M("Business");
-    $count = $curModel->count();
+    $condition = array(
+      "cid" =>$cid
+    );
+    $count = $curModel->where($condition)->count();
     $Page = new \Think\Page($count,15);
     $Page->setConfig("next","下一页");
     $Page->setConfig("prev","上一页");
     $show = $Page->show();
     $data = $curModel
         ->where($condition)
-        ->order('recommend desc,id desc')
+        ->field("id,cid,title,FROM_UNIXTIME(create_time) as datetime,status")
+        ->order('id desc')
         ->limit($Page->firstRow.','.$Page->listRows)
         ->select();
     $this->assign('page',$show);
     $this->assign('data',$data);
+    $this->display();
   }
 
 
-  public function edit($id){
-    $data = M("fairs")->where(array("id"=>$id))->find();
+  public function detail($id){
+    $data = M("Business")->field("*,FROM_UNIXTIME(create_time) as date")->where(array("id"=>$id))->find();
     $this->assign("data",$data);
+    $output['script'] = CONTROLLER_NAME."/main";
+    $this->assign('output',$output);
+    $this->display();
   }
 
 
-  public function do_update($id){
-    $model = M("Fairs");
-    $result = $model->create($_POST);
-    $backData = array();
-    if(!$result) {
-        $backData['status'] = 0;
-        $backData['msg'] = $model->getError();
-        return $backData;
-    }
-    $updateResult = $model->where(array("id"=>$id))->save();
+  public function verify($id,$status){
+    $model = M("Business");
+    $updateResult = $model->where(array("id"=>$id))->data("status=$status")->save();
     if($updateResult !== false) {
       $backData['status'] = 1;
       $backData['msg'] = "操作成功";
-      return $backData;
+      $backData['jump'] = U("index",array("navid"=>I('get.navid'),"cid"=>I('get.cid')));
+    }else {
+      $backData['status'] = 0;
+      $backData['msg'] = $model->getError();
     }
-    $backData['status'] = 0;
-    $backData['msg'] = $model->getError();
-    return $backData;
-
+    $this->ajaxReturn($backData);
   }
 
 }

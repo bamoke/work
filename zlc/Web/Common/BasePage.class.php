@@ -4,7 +4,7 @@ use Think\Controller;
 class BasePage extends Controller {
   public function index($pid,$cid=null){
    
-    $parentInfo = M("ContentCate")->field("id,type,title")->where("id=$pid")->find();
+    $parentInfo = M("ContentCate")->field("id,type,title,en_title")->where("id=$pid")->find();
     // ==
     $childCate = M("ContentCate")
     ->field("id,pid,title,type,controller_name,action_name")
@@ -51,6 +51,8 @@ class BasePage extends Controller {
     }
 
     $this->assign("banner",$banner[0]);
+    $this->assign("parentName",$parentInfo['title']);
+    $this->assign("parentEnName",$parentInfo['en_title']);
     $this->assign("pageName",$parentInfo['title']);
     $this->assign("curCateName",$curCateInfo['title']);
     $this->assign("childNavHtml",$childNavHtml);

@@ -83,22 +83,107 @@ class AuthController extends Controller
      * 创建内容管理菜单
      */
     private function _conten_nav(){
-        $conditon = array(
-            "pid"       =>0,
-            "status"    =>1
-        );
         
-        $contentNav = M("ContentCate")->field("id,title")->where($conditon)->order("sort,id")->select();
+        // 1.2 筛选出每个导航下的第一个子类，若有子类，通过第一个子类确定URL
+        // navid
+        $allCate = M("ContentCate")->field("id,pid,title,type,controller_name,action_name")->where(array('status'=>1))->order("sort,id")->select();
+        $navCate = array();
+        foreach ($allCate as $k=>$v){
+            if($v['pid'] == 0){
+                $newCate = array(
+                    "id"    =>$v['id'],
+                    "title" =>$v['title']
+                );
+                foreach($allCate as $key=>$val){
+
+                    if($val['pid'] == $v['id']) {
+                        $routeParam = array("navid"=>$v['id'],"cid"=>$val['id']);
+                        switch($val['type']){
+                            case "news":
+                            $url = U("News/index",$routeParam);
+                            break;
+                            case "single":
+                            $url = U("Single/index",$routeParam);
+                            break;
+                            case "download":
+                            $url = U("Download/index",$routeParam);
+                            break;
+                            case "custom":
+                            $url = U(ucfirst($val['controller_name'])."/".$val['action_name'],$routeParam);
+                            break;                            
+                        }
+                        $newCate['url'] = $url;
+                        break;
+                    }
+                }
+                $navCate[] = $newCate;
+            }
+        }
+        // 1.3 渲染html
         $html = "<li class='parent'><a href='javascript:'>内容管理<i class='glyphicon glyphicon-arrow-down'></i></a><ul class='child'>";
-        foreach($contentNav as $k=>$v){
+        foreach($navCate as $k=>$v){
             $className = '';
-            if(strtolower(CONTROLLER_NAME) == 'content' && $_GET['pid'] == $v['id']){
+            if($_GET['navid'] == $v['id']){
                 $className = "cur";
             }
-            $html .= '<li class="'.$className.'"><a href="'.U("Content/index/pid/".$v['id']).'">'.$v['title'].'</a><i class="arrow"></i>  </li>';
+            $html .= '<li class="'.$className.'"><a href="'.$v['url'].'">'.$v['title'].'</a><i class="arrow"></i>  </li>';
         }
         $html .= '</ul></li>';
         $this->assign("contentNav",$html);
+
+        // 1.4 如果是内容管理模块,生产头部子导航信息
+        if(isset($_GET['navid']) && isset($_GET['cid'])){
+            $navid = I("get.navid");
+            $curCid = I("get.cid");
+            $childCate = array();
+            foreach($allCate as $key=>$val){
+                if($val['id'] == $navid) {
+                    $bigTitle = $val['title'];
+                }
+                if($val['pid'] == $navid) {
+                    $routeParam = array("navid"=>$navid,"cid"=>$val['id']);
+                    switch($val['type']){
+                        case "news":
+                        $url = U("News/index",$routeParam);
+                        break;
+                        case "single":
+                        $url = U("Single/index",$routeParam);
+                        break;
+                        case "download":
+                        $url = U("Download/index",$routeParam);
+                        break;
+                        case "custom":
+                        $url = U(ucfirst($val['controller_name'])."/".$val['action_name'],$routeParam);
+                        break;                            
+                    }
+                    $newCate['url'] = $url;
+                    $childCate[] = array(
+                        "id"    =>$val['id'],
+                        "title" =>$val['title'],
+                        "url"   =>$url
+                    );
+                    continue;
+                }
+            }
+
+            $childNavHtml = '';
+            foreach($childCate as $k=>$v){
+                // set class name
+                if($curCid == $v["id"]) {
+                    $className = 'cur';
+                    $pageName = $v["title"];
+                }else {
+                    $className = '';
+                }
+                $childNavHtml .= '<li class="'.$className.'"><a href="'. $v['url'] .'">'. $v['title'] .'</a></li>';
+            }
+      
+            $mainTop = array(
+                "bigTitle"      =>$bigTitle,
+                "childMenu"     =>$childNavHtml
+            );
+            $this->assign("mainTop",$mainTop);
+        }
     }
 
     /*

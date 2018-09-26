@@ -24,7 +24,7 @@ class ArticleController extends WebController {
         ->field($listField)
         ->where($conditon)
         ->limit($Page->firstRow.",".$Page->listRows)
-        ->order("id desc")
+        ->order("recommend desc,id desc")
         ->select();
 
         $this->assign("data",$mainList);
@@ -43,6 +43,9 @@ class ArticleController extends WebController {
         ->where("id=$id")
         ->find();
         $this->assign("info",$info);
+        $this->assign("siteKeywords",$info['title']);
+        $this->assign("siteDescription",$info['description']);
+        $this->assign("siteTitle",$info['title']);
         $this->display();
     }
 

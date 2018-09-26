@@ -1,0 +1,38 @@
+<div class="panel" id="page-business">
+    <div class="panel-body">
+        <div class="u-page-title">
+            <span class="caption">商机详情</span>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <h2 class="">{$data['title']}</h2>
+                <div class="base-info">
+                    <div class="item">审核状态:
+                        <if condition="$data['status'] eq 0">
+                            <span>待审核</span>
+                            <elseif condition="$data['status'] eq 1" />
+                            <span class="text-success">通过</span>
+                            <else/>
+                            <span class="text-danger">未通过</span>
+                        </if>
+                    </div>
+                    <div class="item">联系电话：{$data['phone']}</div>
+                    <div class="item">Email：{$data['email']}</div>
+                    <div class="item">联系人：{$data['person']}</div>
+                    <div class="item">发布时间：{$data['date']}</div>
+                </div>
+                <div class="content">
+                    <div class="bar">商机描述</div>
+                    <div>{$data['content']}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3"><button class="btn btn-block" onclick="javascript:window.history.back()">返回</button></div>
+                    <if condition="$data['status'] eq 0">
+                        <div class="col-sm-3"><button class="js-verify-btn btn btn-block btn-success" data-url="{:U('verify',array('navid'=>$_GET['navid'],'cid'=>$data['cid'],id=>$data['id'],'status'=>1))}">通过</button></div>
+                        <div class="col-sm-3"><button class="js-verify-btn btn btn-block btn-danger" data-url="{:U('verify',array('navid'=>$_GET['navid'],'cid'=>$data['cid'],id=>$data['id'],'status'=>2))}">不通过</button></div>
+                    </if>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

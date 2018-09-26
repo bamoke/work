@@ -2,15 +2,15 @@
 namespace Web\Controller;
 use Web\Common\WebController;
 use Web\Common\BasePage;
-class FairsController extends WebController {
+class DownloadController extends WebController {
 
     public function index($pid,$cid=null){
         //cate
         $BasePage = new BasePage();
         $curCateInfo = $BasePage->index($pid,$cid);
         //
-        $mainModel = D("Fairs");
-        $listField = "id,cid,title,times,place,thumb,description";
+        $mainModel = D("Download");
+        $listField = "*,date(create_time) as date";
         $conditon = array(
             "cid" =>$curCateInfo['id'],
             "status"    =>1
@@ -31,21 +31,7 @@ class FairsController extends WebController {
         $this->assign("page",$show);
         $this->display();
     }
-    public function detail($cid,$id){
-        $pid= I("get.pid");
-        //cate
-        $BasePage = new BasePage();
-        $curCateInfo = $BasePage->index($pid,$cid);
 
-        $info=M("Fairs")
-        ->where("id=$id")
-        ->find();
-        $this->assign("info",$info);
-        $this->assign("siteKeywords",$info['title']);
-        $this->assign("siteDescription",$info['description']);
-        $this->assign("siteTitle",$info['title']);
-        $this->display();
-    }
 
 
 }

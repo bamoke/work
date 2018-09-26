@@ -1061,3 +1061,26 @@ body {
 .m-cate-tree .child .item:hover {
     background:#fff;
 }
+
+/***/
+#page-business .base-info {
+    margin:20px 0;
+    padding:10px 20px;
+    border:1px solid #ddd;
+}
+#page-business .base-info .item {
+    padding:10px;
+    font-size:14px;
+    border-bottom:1px solid #ddd;
+}
+#page-business .base-info .item:last-child {border:none;}
+#page-business .content {
+    padding-bottom:40px;
+}
+#page-business .content .bar {
+    margin-bottom:20px;
+    padding:10px 0;
+    font-size:16px;
+    font-weight: bold;
+    border-bottom:2px solid #ddd;
+}

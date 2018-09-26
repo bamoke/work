@@ -5,7 +5,6 @@ class WebController extends Controller{
     public function _initialize(){
 
         $baseInfo = M("SiteConfig")->where("id=1")->find();
-        $otherPage = M("Single")->field("id,title,pid")->where("pid=7 and status=1")->select();
         $navList = M("ContentCate")->field("id,type,controller_name,action_name,title")->where("is_nav=1 and status=1")->order("sort,id")->select();
         //set url;
         $nav =array();

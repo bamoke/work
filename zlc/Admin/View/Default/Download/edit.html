@@ -1,0 +1,37 @@
+<div class="panel">
+    <div class="panel-body">
+        <div  class="u-page-title"><span class="caption">修改下载</span> </div>
+        <form name="download-form" class="form form-horizontal" action="{:U('update',array('navid'=>$_GET['navid'],'id'=>$data['id']))}">
+            <input type="hidden" name="cid" value="{$data['cid']}">
+            <div class="form-group">
+                <label class="control-label col-xs-1">名称:</label>
+                <div class="col-xs-8">
+                    <input type="text" name="title" class="form-control" value="{$data['title']}">
+                </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">
+                    <span class="text-danger">*</span>附件:</label>
+                <div class="col-xs-4">
+                    <input class="form-control" type="file" name="file" id="file" value="{$data['file']}">
+                    <span class="help-block">附件大小：2M以内</span>
+                </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-1">显示状态:</label>
+                <div class="col-xs-8">
+                    <label class="radio-inline"><input type="radio" name="status" value="1" <if condition="$data['status'] eq 1">checked</if> />显示</label>
+                    <label class="radio-inline"><input type="radio" name="status" value="0" <if condition="$data['status'] eq 0">checked</if> />隐藏</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-2 col-xs-offset-1"><button type="button" class="form-control btn-default" onclick="window.history.back()">返回列表</button></div>
+                <div class="col-xs-4"><button type="submit" class="form-control btn-info">提交</button></div>
+
+            </div>
+        </form>
+    </div>
+</div>

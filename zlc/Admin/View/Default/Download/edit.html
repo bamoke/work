@@ -11,11 +11,12 @@
                 <div class="col-xs-3 js-tips"></div>
             </div>
             <div class="form-group">
-                <label class="control-label col-xs-2">
+                <label class="control-label col-xs-1">
                     <span class="text-danger">*</span>附件:</label>
                 <div class="col-xs-4">
-                    <input class="form-control" type="file" name="file" id="file" value="{$data['file']}">
-                    <span class="help-block">附件大小：2M以内</span>
+                    <input type="hidden" id="iseditform" value="1">
+                    <input class="form-control" type="file" name="file" id="file" value="">
+                    <span class="help-block">已上传文件:{$data['filename']}</span>
                 </div>
                 <div class="col-xs-3 js-tips"></div>
             </div>

@@ -216,6 +216,7 @@ li {
 	color:#fff;
 	background-color:rgba(0,0,0,.2);
 }
+.m-top-search .form-control::placeholder {color:#fff;}
 .m-top-search .input-group-addon {
 	border-radius:0;
 	color:#fff;
@@ -433,6 +434,28 @@ li {
 	height: 40px;
 	line-height: 40px;
 }
+.m-country-list {
+	padding:20px 0;
+}
+.m-country-list .item {
+	float: left;
+	display: block;
+	width:20%;
+	text-align: center;
+	transition: all .3s;
+}
+.m-country-list .item:hover {
+	opacity: .7;
+}
+.m-country-list .item .img-box {
+	display: inline-block;
+	width:120px;
+	height:90px;
+	overflow: hidden;
+	border:1px solid #ddd;
+}
+.m-country-list .item .img {max-width: 100%;}
+.m-country-list .item p {padding:10px 0;}
 
 /***/
 #bigContentBox .content {padding:20px;min-height:400px;line-height:200%;background-color:#FFF;}
@@ -502,6 +525,8 @@ li {
 	.m-banner-wrap .column-banner img {
 		height: 180px;
 	}
+	.m-country-list .item {width:50%;}
+
 }
 
 

@@ -40,7 +40,7 @@ class IndexController extends WebController {
         ->select();
 
         // 展会信息
-        $fairsList = M("fairs")->field("id,cid,title,place,times")->where("status=1")->order("id desc")->select();
+        $fairsList = M("fairs")->field("id,cid,title,place,times")->where("status=1 and recommend=1")->order("id desc")->limit(2)->select();
 
         // 商机
         $businessList = M("Business")

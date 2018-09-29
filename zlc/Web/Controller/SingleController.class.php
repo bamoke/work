@@ -11,5 +11,10 @@ class SingleController extends WebController {
         $this->assign("info",$info);
         $this->display();
     }
+    
+    public function country(){
+        
+        $this->display();
+    }
 
 }

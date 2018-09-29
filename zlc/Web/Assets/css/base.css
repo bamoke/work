@@ -457,6 +457,14 @@ li {
 .m-country-list .item .img {max-width: 100%;}
 .m-country-list .item p {padding:10px 0;}
 
+.m-download-list .item {
+	padding:20px 0;
+	border-bottom:1px solid #ddd;
+}
+.m-download-list .tab-head {padding:20px 0;background-color:#f4f4f4;font-weight: bold;}
+.m-download-list .file-type {padding-left:12px;}
+.m-download-list .item .file-type {color:#0089df;}
+.m-download-list .item .title {display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
 /***/
 #bigContentBox .content {padding:20px;min-height:400px;line-height:200%;background-color:#FFF;}
 #bigContentBox .contentTopBar {padding-top:20px;border-bottom:2px solid #ddd;background-color:#FFF;}
@@ -511,6 +519,7 @@ li {
 .fairs-detail .other {	padding:20px;background-color:#dfe8ee;font-size:16px;}
 .fairs-detail .thumb {text-align: center;}
 .fairs-detail .thumb img{max-width: 100%;}
+
 
 /**media*/
 @media (max-width: 768px){

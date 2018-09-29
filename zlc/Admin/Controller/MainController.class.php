@@ -70,7 +70,7 @@ class MainController extends Controller
                 ->where(array("username"=>I("post.username"),"password"=>md5(I("post.password"))))
                 ->find();
             if($user){
-                session("uid",intval($user['uid']));
+                session("uid",intval($user['id']));
                 session("username",I("post.username"));
                 session("realname",$user['realname']);
                 session("issuper",$user['issuper']);

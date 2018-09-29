@@ -21,28 +21,7 @@ require(['../Common/init'],function(){
             }
         });
         
-        /***上传缩略图**/
-        var $curUpload = $("#js-thumb-upload-panel"),
-            $thumb = $curUpload.find('.thumb');
-        $curUpload.find(".add-btn").click(function(){
-            $curUpload.find(".js-file-input").click();
-        });
-
-        $curUpload.find(".js-file-input").change(function(){
-            var file = this.files[0];
-            var reader = new FileReader(file);
-            reader.readAsDataURL(file);
-            reader.onload=function(){
-                $thumb.prop('src',this.result).parent().removeClass('hidden');
-                $curUpload.find(".add-btn").addClass('hidden')
-            }
-        })
-        $curUpload.find('.del-btn').click(function(){
-            $(this).siblings('.thumb').prop('src','').parent().addClass('hidden');
-            $curUpload.find(".add-btn").removeClass('hidden');
-            $curUpload.find(".js-file-input").val('');
-            $curUpload.find(".js-old-thumb").val('');
-        })
+ 
         var isLoaded = true;
         var $downloadForm = $('form[name="download-form"]')
 
@@ -78,7 +57,11 @@ require(['../Common/init'],function(){
         $downloadForm.validate({
             rules:{
                 title:'required',
-                file:"required"
+                file:{
+                    required:function(){
+                       return $("#iseditform").val() == 0
+                    }
+                }
                 // description:'required'
 
             },

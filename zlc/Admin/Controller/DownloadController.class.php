@@ -56,6 +56,7 @@ class DownloadController extends AuthController
      * @param string 页面类型，对应模型
      ***/
     function add($cid){
+        var_dump(ROOT);
         $output['script'] = CONTROLLER_NAME."/main";
         $this->assign('output',$output);
         $this->display();
@@ -71,7 +72,7 @@ class DownloadController extends AuthController
         if(IS_POST){
             $backData = array();
             $model = D("Download");
-            $info = $model->field('file')->where("id=$id")->find();
+            $info = $model->field('filename')->where("id=$id")->find();
             
             $create = $model->create($_POST);
             if(!$create) {
@@ -85,7 +86,7 @@ class DownloadController extends AuthController
                 'maxSize' => 3145728,
                 'rootPath' => ROOT.'/Uploads/',
                 'savePath' => 'download/',
-                'saveName' => '',
+                'saveName' => date("YmdHis",time()).session('uid'),
                 'exts' => array('jpg', 'gif', 'png', 'jpeg','zip','pdf','rar','xlsx','docx'),
                 'autoSub' => false,
                 'subName' => date("Ym",time())
@@ -100,9 +101,10 @@ class DownloadController extends AuthController
                     $backData['msg'] = $upload->getError();
                     return $this->ajaxReturn($backData);
                 }else {
-                    $model->file = $uploadResult['savename'];
+                    $model->filename = $uploadResult['savename'];
+                    $model->filetype = strtoupper($uploadResult['ext']);
                     //删除旧文件
-                    unlink($upload_conf['rootPath'].$upload_conf['savePath'].$info['file']);
+                    unlink($upload_conf['rootPath'].$upload_conf['savePath'].$info['filename']);
                 }
 
             }
@@ -144,13 +146,14 @@ class DownloadController extends AuthController
 
             //附件
             if($_FILES['file']['tmp_name']){
+                
                 //图片处理
                 $upload_conf=array(
                     'maxSize' => 3145728,
                     'rootPath' => ROOT.'/Uploads/',
                     'savePath' => 'download/',
-                    'saveName' => '',
-                    'exts' => array('jpg', 'gif', 'png', 'jpeg','zip','pdf','rar','xlsx','docx'),
+                    'saveName' => date("YmdHis",time()).session('uid'),
+                    'exts' => array('jpg', 'gif', 'png', 'jpeg','zip','pdf','rar','xlsx','doc','docx'),
                     'autoSub' => false,
                     'subName' => date("Ym",time())
                 );
@@ -161,7 +164,8 @@ class DownloadController extends AuthController
                     $backData['msg'] = $upload->getError();
                     return $this->ajaxReturn($backData);
                 }else {
-                    $model->thumb = $uploadResult['savename'];
+                    $model->filename = $uploadResult['savename'];
+                    $model->filetype = strtoupper($uploadResult['ext']);
                 }
             }
             // $model->init_click = mt_rand(200,500);
@@ -186,13 +190,13 @@ class DownloadController extends AuthController
     public function del($id){
         $tabelName = "Download";
         $model = M($tabelName);
-        $info = $model->field('id,title,file')->where('id = '.$id)->find();
+        $info = $model->field('id,title,filename')->where('id = '.$id)->find();
         $resutl = $model->where('id = '.$id)->delete();
         if($resutl){
             $backData['status'] = 1;
             $backData['msg'] = "删除成功";
-            if(isset($info['file']) &&  $info['file']!= ''){
-                $file = ROOT."/Uploads/download/".$info['file'];
+            if(isset($info['filename']) &&  $info['filename']!= ''){
+                $file = ROOT."/Uploads/download/".$info['filename'];
                 unlink($file);
             }
         }else {

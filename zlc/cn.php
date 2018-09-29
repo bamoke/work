@@ -28,7 +28,7 @@ define("BIND_MODULE","Web");
 
 // 定义应用目录
 //define("ROOT","");
-define("ROOT","/zhmlife");
+define("ROOT","/zlc");
 //define('APP_STATUS','server');
 define('APP_STATUS','local');
 define("DEFAULT_THEME_NAME","Cn");//定义对应的模板主题

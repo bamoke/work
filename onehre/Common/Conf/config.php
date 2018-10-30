@@ -21,6 +21,8 @@ return array(
 	"DATA_EDU_NAME" => array("大专", "本科", "硕士", "博士", "其他"),
 	"DATA_SEX_NAME" => array("请选择", "男", "女"),
 	"DATA_WAGE_NAME" => array("面议", "3k以下", "3k-5k", "5k-10k", "10k-15k", "15k-25k", "25k-50k", "50k以上"),
-	"DATA_COM_SIZE_NAME" => array("50人以下","50-150人","150-500人","500-1000人","1000-2000人","2000人以上")
+	"DATA_COM_SIZE_NAME" => array("50人以下","50-150人","150-500人","500-1000人","1000-2000人","2000人以上"),
+	// OSS
+	"OSS_BASE_URL"	=>"https://onehre.oss-cn-shenzhen.aliyuncs.com"
 
 );

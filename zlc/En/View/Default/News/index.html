@@ -1,0 +1,32 @@
+<notempty name="data">
+        <ul class="m-imgtext m-imgtext-big">
+                <foreach name="data" item="vo">
+                    <li class="item">
+                        <if condition="$vo['thumb']">
+                            <a href="{:U('detail',array('pid'=>$_GET['pid'],'cid'=>$vo['cid'],'id'=>$vo['id']))}" class="img-box">
+                                <img src="__UPLOAD__/thumb/{$vo['thumb']}" alt="{$vo['title']}">
+                            </a>
+                        </if>
+            
+                        <div class="text-box">
+                            <a class="title" href="{:U('detail',array('pid'=>$_GET['pid'],'cid'=>$vo['cid'],'id'=>$vo['id']))}">{$vo['title']}</a>
+                            <p class="desc">{$vo['description']}</p>
+                            <div class="u-statistics">
+                                <span class="util"><span class="glyphicon glyphicon-eye-open"></span>{$vo['click']}</span>
+                                <span class="util"><span class="glyphicon glyphicon-time"></span>{$vo['date']}</span>
+                            </div>
+                        </div>
+                    </li>
+                </foreach>
+            
+            </ul>
+            
+            <div class="m-pagination">
+                {$page}
+            </div>
+    <else/>
+    <div class="m-empty">
+        <img src="__WEB_ASSET__/images/null-page-draw.png">
+        <div class="tips">NO DATA</div>
+    </div>
+</notempty>

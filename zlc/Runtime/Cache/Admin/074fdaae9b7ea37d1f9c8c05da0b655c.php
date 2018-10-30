@@ -35,7 +35,7 @@
         </li>-->
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="/zlc/Uploads/avatars/avatar.jpg" class="avatar">
+                <img src="/zlc/Uploads/avatars/default-avatar.png" class="avatar">
                 <?php echo (session('realname')); ?>
                 <b class="caret"></b>
             </a>

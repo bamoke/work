@@ -1,0 +1,62 @@
+#footer {margin-top:0;}
+.m-login-wrap {
+	padding:40px 0;
+	background-color:#00a0e9;
+}
+.m-login-box {
+	margin:0 auto;
+	padding:40px 20px;
+	width:600px;
+	background-color:rgba(255,255,255,.8);
+	box-shadow: 0 1px 2px rgba(0,0,0,.5);
+}
+.m-login-box .other {color:#999;}
+.m-member-nav {
+	border:1px solid #ddd;
+}
+#member-wrap {
+	padding-top:20px;
+	padding-bottom:20px;
+}
+.m-member-nav .nav-list {
+	padding: 0 20px;
+}
+.m-member-nav .nav-list li {
+	padding:12px 0;
+	border-bottom:1px solid #ddd;
+	font-size:16px;
+}
+.m-member-nav .nav-list li:last-child {border-bottom:none;}
+.m-member-nav .nav-list .cur {color:#00a0e9;}
+.member-main-content {
+	/* padding:12px; */
+	/* border:1px solid #ddd; */
+}
+.m-user-base {
+	margin-bottom:20px;
+	padding:12px;
+	border:1px solid #ddd;
+}
+.member-main-content .bar {
+	font-size:16px;
+	padding-top:4px;
+	border-bottom:2px solid #ddd;
+}
+.member-main-content .bar .caption {
+	position: relative;
+	display: inline-block;
+	margin-bottom:-2px;
+	height:40px;
+	line-height: 40px;
+	border-bottom:2px solid #00a0e9;
+	color:#121212;
+}
+.wel-info {color:#9c9c9c;}
+.business-list {color:#9c9c9c;}
+.m-business-form,.member-reset-wrap {
+	padding:40px 0;
+}
+@media (max-width: 768px){
+	.m-login-box {width:100%;}
+
+}

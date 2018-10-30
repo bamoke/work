@@ -55,28 +55,35 @@ textarea {
 }
 
 #header .avatar {
-    width: 40px;
-    height: 40px;
-    border: 2px solid #fff;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #fff;
 }
-
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:focus, 
+.navbar-inverse .navbar-nav > .active > a:hover {
+    background-color:#00a2d4;
+}
+.navbar-inverse .navbar-nav > li > a:focus, 
+.navbar-inverse .navbar-nav > li > a:hover {
+    background-color:#000;
+}
 .navbar-header {
     padding-top: 0;
 }
 
 .navbar-header > .navbar-text {
-    margin: 0;
-    padding-top: 28px;
     color: #fff;
     font-size: 16px;
+    line-height:1;
 }
 
 .navbar-nav > li > a {
-    margin-right: 20px;
+/*     margin-right: 20px;
     padding: 0;
     min-width: 50px;
     height: 58px;
-    line-height: 58px;
+    line-height: 58px; */
     color: #fff !important;
 }
 

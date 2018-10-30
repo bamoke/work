@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+	<meta name="author" content="中拉网" />
+	<title>{$baseInfo['site_name']}</title>
+	<meta name="keywords" content="{$baseInfo['keywords']}" />
+	<meta name="description" content="{$baseInfo['description']}" />
+	<link href="__PUBLIC__/Js/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<link href="__PUBLIC__/Js/swiper/css/swiper.min.css" rel="stylesheet" />
+	<link href="__WEB_ASSET__/css/base.css" rel="stylesheet" />
+	<link href="__WEB_ASSET__/css/index.css" rel="stylesheet" />
+</head>
+
+<body>
+	<include file="Template/header" />
+
+
+	<!--banner-->
+	<div class="m-banner-wrap">
+		<div class="container">
+			<div class="banner index-banner">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<foreach name="banner" item="item">
+							<div class="swiper-slide">
+								<empty name="item.url">
+									<img src="__UPLOAD__/banner/{$item.img}" alt="{$item.title}">
+									<else/>
+									<a href="{$item.url}" target="_blank"><img src="__UPLOAD__/banner/{$item.img}" alt="{$item.title}"></a>
+								</empty>
+							</div>
+						</foreach>
+					</div>
+				</div>
+
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+	</div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-xs-12">
+				<div class="index-column-wrap">
+					<div class="title-bar">
+						<span class="caption">TOP STORIES</span>
+						<a href="{:U('News/index',array('navid'=>1,'cid'=>8))}" class="view-more">more&gt;</a>
+					</div>
+
+					<div class="content-wrap">
+						<div class="index-img-news">
+							<volist name="topStories" id="top">
+								<div class="row item">
+									<div class="col-xs-12 col-sm-6 img-box">
+										<a href="{:U('News/detail',array('navid'=>1,'cid'=>8,'id'=>$top['id']))}" target="_blank"><img src="__UPLOAD__/thumb/{$top['thumb']}"></a>
+									</div>
+									<div class="col-xs-12 col-sm-6 text-info">
+										<div class="top clearfix">
+
+											<span class="title"><a href="{:U('News/detail',array('navid'=>1,'cid'=>8,'id'=>$top['id']))}" target="_blank">{$top['title']}</a></span>
+										</div>
+										<div class="description">{$top['description']}</div>
+										<div><a href="{:U('News/detail',array('navid'=>1,'cid'=>$top['cid'],'id'=>$top['id']))}" target="_blank" style="font-size:12px;">VIEW
+												MORE&gt;&gt;</a></div>
+									</div>
+								</div>
+							</volist>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="index-column-wrap">
+					<div class="title-bar">
+						<span class="caption">ECONOMY AND TRADE</span>
+						<a href="{:U('News/index',array('nav'=>1,'cid'=>9))}" class="view-more">more&gt;</a>
+					</div>
+
+					<div class="content-wrap">
+						<div class="jmxx-news">
+							<volist name="jmxxList" id="v">
+								<div class="item">
+									<div class="date-box">
+										<p class="day">{:explode("-",$v['date'])[2]}</p>
+										<p class="month">{:explode("-",$v['date'])[1]}</p>
+									</div>
+									<div class="link">
+										<a href="{:U('News/detail',array('navid'=>2,'id'=>$v['id'],'cid'=>$v['cid']))}" target="_blank">{$v['title']}</a>
+									</div>
+								</div>
+							</volist>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<div class="index-column-wrap">
+					<div class="title-bar">
+						<span class="caption">CHINA BUSINESS</span>
+						<a href="{:U('News/index',array('navid'=>2))}" class="view-more">more&gt;</a>
+					</div>
+
+					<div class="content-wrap">
+						<div class="index-text-news">
+							<volist name="chinabusiness" id="news">
+								<div class="item">
+									<div class="title"><a href="{:U('News/detail',array('pid'=>1,'id'=>$news['id'],'cid'=>$news['cid']))}" target="_blank">{$news['title']}</a></div>
+								</div>
+							</volist>
+						</div>
+					</div>
+				</div>
+
+				<div class="index-column-wrap">
+					<div class="title-bar">
+						<span class="caption">EXHIBITION</span><span class="small-title"></span>
+						<a href="{:U('Fairs/index',array('navid'=>1,'cid'=>10))}" class="view-more">&gt;more</a>
+					</div>
+
+					<div class="content-wrap">
+						<div class="index-fairs">
+							<volist name="fairsList" id="v">
+								<a class="item" href="{:U('Fairs/detail',array('navid'=>2,'id'=>$v['id'],'cid'=>$v['cid']))}" target="_blank">
+									<div class="title">{$v['title']}</div>
+									<div class="other">
+										<p class=""><span class="glyphicon glyphicon-time"></span>{$v['times']}</p>
+										<p class=""><span class="glyphicon glyphicon-map-marker"></span>{$v['place']}</p>
+									</div>
+								</a>
+							</volist>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+	</div>
+
+	<!-- footer -->
+	<include file="Template/footer" />
+
+</body>
+
+</html>
+<script type="text/javascript" src="__PUBLIC__/Js/jquery/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/swiper/swiper.min.js"></script>
+<script type="text/javascript" src="__WEB_ASSET__/js/main.js"></script>

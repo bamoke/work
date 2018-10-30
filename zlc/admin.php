@@ -27,7 +27,7 @@ define("BIND_MODULE","Admin");
 // define("BIND_CONTROLLER","Index");
 
 // 定义应用状态
-//define('APP_STATUS','server');
+// define('APP_STATUS','server');
 define('APP_STATUS','local');
 
 define('ROOT',dirname(__FILE__));

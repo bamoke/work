@@ -1,0 +1,86 @@
+<div class="panel">
+    <div class="panel-body">
+        <div class="u-page-title">
+            <span class="caption">添加展会</span>
+        </div>
+        <form name="fairs-form" class="form form-horizontal" action="{:U('save',array('navid'=>$_GET['navid']))}">
+            <input type="hidden" name="cid" value="{$Think.get.cid}">
+            <div class="form-group">
+                <label class="control-label col-xs-2">
+                    <span class="text-danger">*</span>展会名称:</label>
+                <div class="col-xs-6">
+                    <input type="text" name="title" class="form-control" value="" placeholder="建议20个字符以内">
+                </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">缩略图:</label>
+                <div class="col-xs-3">
+                    <div class="m-thumbnail-upload" id="js-thumb-upload-panel">
+                        <a href="javascript:" class="add-btn js-add-btn"><i class="glyphicon glyphicon-plus-sign"></i></a>
+                        <div class="thumb-box hidden">
+                            <img class="thumb" style="">
+                            <span class="del-btn">删除</span>
+                        </div>
+                        <input type="file" name="thumb" class="js-file-input" style="display: none;">
+                    </div>
+                    <span>建议尺寸360px×200px</span>
+                </div>
+                <div class="col-xs-3 tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">召开时间:</label>
+                <div class="col-xs-6">
+                    <input type="text" name="times" class="form-control" value="">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-xs-2">召开地点:</label>
+                <div class="col-xs-6">
+                    <input type="text" name="place" class="form-control" value="" placeholder="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">展会描述:</label>
+                <div class="col-xs-6">
+                    <textarea name="description" class="form-control">{$data['description']}</textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">是否推荐:</label>
+                <div class="col-xs-7">
+                    <label class="radio-inline">
+                        <input type="radio" name="recommend" value="1" />是</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="recommend" value="0" />否</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">显示状态:</label>
+                <div class="col-xs-7">
+                    <label class="radio-inline">
+                        <input type="radio" name="status" value="1" checked />显示</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="status" value="0" />隐藏</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-xs-2">内容详情:</label>
+                <div class="col-xs-6">
+                    <script id="editorContainer" name="content"></script>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-2 col-xs-offset-2">
+                    <button type="button" class="form-control btn-default" onclick="window.history.back()">返回列表</button>
+                </div>
+                <div class="col-xs-4">
+                    <button type="submit" class="form-control btn-info">提交</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

@@ -7,12 +7,11 @@
                 <thead>
                 <tr>
                     <th width="200">邮箱</th>
-                    <th width="200">手机</th>
                     <th>注册时间</th>
-                    <th>最近登录</th>
-                    <th>资金余额</th>
-                    <th>累计收益</th>
-                    <th>状态</th>
+                    <th>所属公司</th>
+                    <th>联系人</th>
+                    <th>联系电话</th>
+                    <!-- <th>状态</th> -->
                     <!--<th width="80">操作</th>-->
                 </tr>
                 </thead>
@@ -20,15 +19,14 @@
                 <foreach name="output['list']" item="vo">
                     <tr>
                         <td>{$vo.username}</td>
-                        <td>{$vo.mobile}</td>
                         <td>{:date("Y-m-d H:i:s",$vo['reg_time'])}</td>
-                        <td>{$vo.login_time}</td>
-                        <td>{$vo.capital}</td>
-                        <td>{$vo.gains}</td>
+                        <td>{$vo.company}</td>
+                        <td>{$vo.contact}</td>
+                        <td>{$vo.phone}</td>
                         <?php if ($vo['status'] == 1){?>
-                        <td class="text-success"><i class="icon icon-ok-circle"></i>正常</td>
+                        <!-- <td class="text-success"><i class="icon icon-ok-circle"></i>正常</td> -->
                         <?php }else {?>
-                        <td class="text-warning"><i class="icon icon-remove-circle"></i>禁用</td>
+                        <!-- <td class="text-warning"><i class="icon icon-remove-circle"></i>禁用</td> -->
                         <?php }?>
 
                         <!--<td class="operation-box">-->

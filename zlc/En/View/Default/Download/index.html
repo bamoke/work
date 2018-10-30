@@ -1,0 +1,32 @@
+<notempty name="data">
+
+    <ul class="m-download-list" style="min-height:300px;">
+        <li class="tab-head">
+            <div class="row hidden-xs">
+                <div class="col-sm-2"><span class="file-type">Format</span></div>
+                <div class="col-sm-7">Title</div>
+                <div class="col-sm-2 ">Time</div>
+                <div class="col-sm-1">Download</div>
+            </div>
+        </li>
+        <foreach name="data" item="vo">
+            <li class="item">
+                <div class="row">
+                    <div class="col-sm-2 hidden-xs"><span class="file-type">{$vo['filetype']}</span></div>
+                    <div class="col-xs-10 col-sm-7"><a class="title" href="__UPLOAD__/download/{$vo['filename']}">{$vo['title']}</a></div>
+                    <div class="col-sm-2 hidden-xs"><span>{$vo['date']}</span></div>
+                    <div class="col-xs-2 col-sm-1"><a href="__UPLOAD__/download/{$vo['filename']}"><span class="glyphicon glyphicon-save"></span></a></div>
+                </div>
+            </li>
+        </foreach>
+    </ul>
+
+    <div class="m-pagination">
+        {$page}
+    </div>
+    <else/>
+    <div class="m-empty">
+        <img src="__WEB_ASSET__/images/null-page-draw.png">
+        <div class="tips">NO DATA</div>
+    </div>
+</notempty>

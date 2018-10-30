@@ -99,7 +99,7 @@
 .zwgk-content .cate {margin-top:20px;}
 .zwgk-content .cate a {
 	display: inline-block;
-	padding:20px 0;
+	padding:22px 0;
 	box-sizing: border-box;
 	width:50%;
 	color:#fff;
@@ -118,7 +118,7 @@
 
 /****/
 .link-select {
-	padding-top:9px;
+	padding-top:15px;
 }
 .link-select .dropdown {
 	float: left;

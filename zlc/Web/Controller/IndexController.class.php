@@ -28,7 +28,7 @@ class IndexController extends WebController {
         ->field("id,cid,title,description,date(create_time) as date,thumb")
         ->where("cid=19 and status=1")
         ->order("recommend desc,id desc")
-        ->limit(4)
+        ->limit(5)
         ->select();
 
         // 经贸预警
@@ -62,6 +62,28 @@ class IndexController extends WebController {
         $this->assign("fairsList",$fairsList);
         $this->assign("businessList",$businessList);
         $this->assign("businessTypeArr",array("1"=>"求购","2"=>"供应","3"=>"项目"));
+        $this->display();
+    }
+
+    public function search($keyword){
+        layout(false);
+        $condition = "N.title like '%".$keyword."%'";
+        $count = M("News")->alias("N")->where($condition)->count();
+        $Page = new \Think\Page($count,15);
+        $Page->setConfig("next","下一页");
+        $Page->setConfig("prev","上一页");
+        $show = $Page->show();
+        $result = M("News")
+        ->alias("N")
+        ->field("N.id,N.cid,N.title,N.thumb,N.description,DATE_FORMAT(N.create_time,'%m-%d') as date,(N.init_click + N.click) as click")
+        ->where($condition)
+        ->limit($Page->firstRow.",".$Page->listRows)
+        ->order("id desc")
+        ->fetchSql(false)
+        ->select();
+        $this->assign("data",$result);
+        $this->assign("page",$show);
+        $this->assign("count",$count);
         $this->display();
     }
     public function test(){

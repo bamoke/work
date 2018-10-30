@@ -4,9 +4,9 @@
     </div>
     <div class="panel-body">
         <div class="alert alert-info">
-            <p>首页Banner尺寸，高度必须为400px,宽度至少1440px，建议1920px.</p>
-            <p>其他Banner尺寸，高度必须为300px,宽度795px</p>
-            <p>每个栏目最多显示五张Banner图</p>
+            <p>首页Banner尺寸，高度必须为380px,宽度1200px.</p>
+            <!-- <p>其他Banner尺寸，高度必须为300px,宽度795px</p> -->
+            <p>首页最多显示五张Banner图</p>
         </div>
         <form name="banner-form" class="form form-horizontal" action="{:U('save')}" role="form">
             <div class="form-group">
@@ -15,7 +15,7 @@
                     <select name="position_key" class="form-control">
                         <option value="0">首页</option>
                         <foreach name="cate" item="pt">
-                            <option value="{$pt['id']}">{$pt['title']}</option>
+                            <!-- <option value="{$pt['id']}">{$pt['title']}</option> -->
                         </foreach>
                     </select>
                 </div>
@@ -43,7 +43,7 @@
             <div class="form-group">
                     <label class="control-label col-xs-1">标题:</label>
                     <div class="col-xs-4">
-                        <input type="text" name="title" class="form-control" value="" placeholder="首页可不填写，其他栏目建议填写；15个字符以内">
+                        <input type="text" name="title" class="form-control" value="" placeholder="15个字符以内">
                     </div>
                     <div class="col-xs-3 js-tips"></div>
             </div>

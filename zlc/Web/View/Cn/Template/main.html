@@ -12,8 +12,8 @@
   <meta name="description" content="{$siteDescription|default=$baseInfo['description']}" />
   <link href="__PUBLIC__/Js/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
   <link href="__PUBLIC__/Js/swiper/css/swiper.min.css" rel="stylesheet" />
-  <link href="__WEB_ASSET__/css/base.css" rel="stylesheet" />
-  <link href="__WEB_ASSET__/css/index.css" rel="stylesheet" />
+  <link href="__WEB_ASSET__/css/base.css?t={:date('ymd',time())}" rel="stylesheet" />
+  <link href="__WEB_ASSET__/css/index.css?t={:date('ymd',time())}" rel="stylesheet" />
   <script type="text/javascript" src="__PUBLIC__/Js/jquery/jquery-1.10.1.min.js"></script>
 </head>
 
@@ -61,12 +61,6 @@
 </body>
 
 </html>
-<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/Js/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/Js/swiper/swiper.min.js"></script>
-<script type="text/javascript">
-  $("#nav-switch-btn").click(function(){
-    var $navList = $("#js-nav-list")
-    $navList.toggleClass("hidden-xs");
-  })
-</script>
+<script type="text/javascript" src="__WEB_ASSET__/js/main.js"></script>

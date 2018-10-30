@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+  <meta name="author" content="中拉网" />
+  <title>{$baseInfo['site_name']}-会员中心</title>
+  <meta name="keywords" content="{$baseInfo['keywords']}" />
+  <meta name="description" content="{$baseInfo['description']}" />
+  <link href="__PUBLIC__/Js/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+  <link href="__WEB_ASSET__/css/base.css" rel="stylesheet" />
+  <link href="__WEB_ASSET__/css/member.css" rel="stylesheet" />
+</head>
+
+<body>
+  <include file="Template/header" />
+
+
+
+  <div class="container" id="member-wrap">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="m-member-nav">
+          <ul class="nav-list">
+            <li><a href="{:U('index')}" <eq name="Think.ACTION_NAME" value="index">class="cur"</eq> >会员中心</a></li>
+            <li><a href="{:U('business')}" <eq name="Think.ACTION_NAME" value="business">class="cur"</eq> >已发布</a></li>
+            <li><a href="{:U('business_add')}" <eq name="Think.ACTION_NAME" value="business_add">class="cur"</eq> >我要发布</a></li>
+            <li><a href="{:U('reset')}" <eq name="Think.ACTION_NAME" value="reset">class="cur"</eq> >修改密码</a></li>
+            <li><a href="{:U('logout')}">注销退出</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-9">
+        {__CONTENT__}
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- footer -->
+  <include file="Template/footer" />
+
+</body>
+
+</html>
+<script type="text/javascript" src="__PUBLIC__/Js/jquery/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/swiper/swiper.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/jquery/jquery.form.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/jquery/jquery.validate.min.js"></script>
+<script type="text/javascript" src="__WEB_ASSET__/js/main.js"></script>
+<script type="text/javascript" src="__WEB_ASSET__/js/home.js"></script>

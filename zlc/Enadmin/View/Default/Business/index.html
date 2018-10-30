@@ -1,0 +1,39 @@
+<div class="panel">
+    <div class="panel-body">
+        <div class="u-page-title">
+            <span class="caption">商机列表</span>
+        </div>
+        <table class="table js-table-list">
+            <thead>
+                <tr>
+                    <th>标题</th>
+                    <th width="80">审核状态</th>
+                    <th width="200">发布时间</th>
+                    <th width="120">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <foreach name="data" item="list">
+                    <tr>
+                        <td>{$list['title']}</td>
+                        <td>
+                            <if condition="$list['status'] eq 0">
+                                <span>待审核</span>
+                                <elseif condition="$list['status'] eq 1"/>
+                                    <span class="text-success">通过</span>
+                                    <else/>
+                                    <span class="text-danger">未通过</span>
+                            </if>
+                        </td>
+                        <td>{$list['datetime']}</td>
+                        <td class="operation-box">
+                            <a href="{:U('detail',array('navid'=>$_GET['navid'],'id'=>$list['id'],'cid'=>$list['cid']))}">详情</a>
+                        </td>
+                    </tr>
+                </foreach>
+
+            </tbody>
+        </table>
+        <div class="m-pagination">{$page}</div>
+    </div>
+</div>

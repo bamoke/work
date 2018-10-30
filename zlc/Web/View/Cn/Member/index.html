@@ -1,0 +1,62 @@
+<div class="m-user-base">
+  <div class="wel-info">
+    <h4>
+      <?php
+                $h = date("H");
+                $msg = '';
+                if($h < 5){
+                $msg = "夜深了注意休息";
+                }elseif ($h < 8){
+                $msg = "早上好";
+                }elseif ($h < 11){
+                $msg = "上午好";
+                }elseif ($h < 13){
+                $msg = "中午好";
+                }elseif ($h < 18){
+                $msg = "下午好";
+                }elseif ($h < 24){
+                $msg = "晚上好";
+                }
+                echo $msg;
+            ?> ！
+      <span class="text-info">{:$_SESSION['webusername']}</span>
+    </h4>
+    <p>注册日期:{$account['regdate']}</p>
+    <!-- <p>登录IP:{$account['login_ip']}</p> -->
+  </div>
+</div>
+<div class="member-main-content">
+  <div class="bar">
+    <span class="caption">已发布商机</span>
+  </div>
+  <div class="business-list">
+    <empty name="business">
+      {$emptyHtml}
+      <else/>
+      <table width="100%" class="table m-table-wrap" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <th align="left">标题</th>
+          <th class="hidden-xs" align="left">审核状态</th>
+          <th align="right"><span class="pull-right">发布日期</span></th>
+        </tr>
+        <foreach name="business" item="list">
+          <tr>
+            <td class="name"><a href="{:U('business_detail',array('id'=>$list['id']))}">{$list['title']}</a>
+              </td>
+            <td class="hidden-xs">
+              <IF condition="$list['status'] eq 1">
+                <span class="text-success">已通过</span>
+                <ELSEIF condition="$list['status'] eq 2" />
+                <span class="text-danger">未通过</span>
+                <else/>
+                <span class="text-info">审核中</span>
+              </IF>
+            </td>
+            <td align="right" class="">{$list['date']}</td>
+          </tr>
+        </foreach>
+
+      </table>
+    </empty>
+  </div>
+</div>

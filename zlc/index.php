@@ -28,9 +28,9 @@ define("BIND_MODULE","Web");
 
 // 定义应用目录
 //define("ROOT","");
-define("ROOT","/");
-define('APP_STATUS','server');
-// define('APP_STATUS','local');
+// define("ROOT","/");
+// define('APP_STATUS','server');
+define('APP_STATUS','local');
 define("DEFAULT_THEME_NAME","Cn");//定义对应的模板主题
 
 //引入PHP框架文件

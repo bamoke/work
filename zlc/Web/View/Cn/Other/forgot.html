@@ -1,0 +1,195 @@
+{__NOLAYOUT__}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="icon" href="/logo.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/logo.ico" type="image/x-icon"/>
+    <title>{$siteConfig['site_name']}-找回密码</title>
+    <link href="{$Think.const.MODULE_ASSET}css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="__PUBLIC__/Js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="{$Think.const.MODULE_ASSET}js/account.js"></script>
+    <style type="text/css">
+        .g-account {
+            padding: 50px 0;
+        }
+
+        .g-account .bar {
+            margin-bottom: 20px;
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #ddd;
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .m-form-box {
+            width: 480px;
+        }
+
+        .m-form-box .form-group {
+            margin: 0 0 20px;
+        }
+
+        .m-form-box div[for] {
+            padding-left: 80px;
+            color: #ff6417;
+        }
+
+        .m-form-box .row {
+            height: 40px;
+            overflow: hidden;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .m-form-box .row:after {
+            content: "";
+            display: block;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .m-form-box .row .caption, .m-form-box .row input {
+            display: inline-block;
+            float: left;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .m-form-box .row .caption {
+            width: 80px;
+            text-indent: 1em;
+            background: #e8e8e8;
+            border-right: 1px solid #ddd;
+        }
+
+        .m-form-box .row input[type='text'], .m-form-box .row input[type='password'] {
+            padding-left: 10px;
+            width: 200px;
+            border: 0;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .m-form-box .row .code-btn {
+            float: right;
+            padding: 0 10px;
+            height: 40px;
+            line-height: 100%;
+            background-color: #0066cc;
+            color: #fff;
+            border: 0;
+            -webkit-transition: all .3s;
+            outline: none;
+        }
+
+        .m-form-box .row .disable {
+            background-color: #999;
+            color: #fff;
+        }
+
+        .submit-btn {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            background-color: #ff6417;
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+            border: 0;
+            border-radius: 4px;
+            -webkit-transition: all .3s;
+            outline: none;
+        }
+
+        .submit-btn:hover, .m-form-box .row .code-btn:hover {
+            opacity: .8;
+        }
+
+        .m-form-box .other {
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .m-form-box .other a {
+            margin-left: 10px;
+            color: #333;
+        }
+
+        .m-form-box .other a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+
+</head>
+<body>
+<div class="wrapper">
+    <div id="header">
+        <div class="topBar">
+            <div class="loginBox k1120 clearfix">
+                <a href="{:U('Account/register')}">注册</a><span class="fg">|</span><a href="{:U('Account/login')}">登录</a>
+            </div>
+        </div>
+
+        <div class="k1120 clearfix">
+            <a href="{:U('Index/index')}" id="logo"><img src="{$Think.const.MODULE_ASSET}images/logo_new.jpg?v=3"> </a>
+        </div>
+    </div>
+    <div class="pageMain">
+        <div class="g-account k1120 clearfix">
+            <h2 class="bar">找回密码</h2>
+
+            <div class="m-form-box f-fl">
+                <form id="forgotForm" name="forgot-form" action="{:U('Account/doreset')}">
+                    <div class="form-group">
+                        <div class="row">
+                            <label class="caption">用户名</label>
+                            <input type="text" name="username" maxlength="12" placeholder="请输入用户名">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <label class="caption">新密码</label>
+                            <input type="password" id="password" name="password" maxlength="20" placeholder="请输入密码">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <label class="caption">确认密码</label>
+                            <input type="password" name="password2" maxlength="20" placeholder="请确认密码">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <label class="caption">短信验证码</label>
+                            <input type="text" name="code" maxlength="6" placeholder="将发验证码到您注册时的手机">
+                            <button type="button" data-url="{:U('Account/get_rest_mobile_code')}" class="code-btn js-forgot-code-btn">获取验证码</button>
+                        </div>
+                    </div>
+                    <button class="submit-btn">提交</button>
+                </form>
+                <div class="other">
+                    <div>还没有有账号？请点击这里<a href="{:U('Account/register')}">注册</a></div>
+                </div>
+            </div>
+            <div class="f-fr"><img src="{$Think.const.MODULE_ASSET}images/login.jpg"></div>
+        </div>
+    </div>
+    <include file="Layout/footer"/>
+</div>
+
+</body>
+</html>
+

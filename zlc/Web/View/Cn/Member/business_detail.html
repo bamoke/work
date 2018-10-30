@@ -1,0 +1,47 @@
+<div class="member-main-content">
+  <div class="bar">
+    <span class="caption">商机详情</span>
+  </div>
+  <div class="m-business-detail">
+    <h4 class="title">{$info['title']}</h4>
+
+    <div class="business-base-info">
+      <div class="row">
+        <div class="col-sm-6">
+          联系电话:{$info['phone']}
+        </div>
+        <div class="col-sm-6">
+          Email：{$info['email']}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          联系人:{$info['person']}
+        </div>
+        <div class="col-sm-6">
+          发布时间:{$info['date']}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          审核状态:
+          <IF condition="$info['status'] eq 1">
+            <span class="text-success">已通过</span>
+            <ELSEIF condition="$info['status'] eq 2" />
+            <span class="text-danger">未通过</span>
+            <else/>
+            <span class="text-info">审核中</span>
+          </IF>
+        </div>
+      </div>
+    </div>
+
+    <div class="business-content-bar">
+      <span class="caption">商机描述</span>
+    </div>
+    <div class="content">
+      {$info['content']}
+    </div>
+  </div>
+
+</div>

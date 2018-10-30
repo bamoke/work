@@ -1,0 +1,27 @@
+<div class="m-article-detail">
+        <h1 class="title">{$info['title']}</h1>
+        <div class="other-info clearfix">
+                <div class="u-statistics statistics">
+                        <notempty name="info['origin']">
+                                <span>from:{$info['origin']}</span>
+                        </notempty>
+                        <span class="view">click:{$info['click']}</span>
+                        <span class="time">time:{$info['date']}</span>
+                    </div>
+        </div>
+        <notempty name="info['video']">
+            <div class="m-video-box" style="margin-top:24px;padding:12px;background:#232323;">
+                    <video width="100%" preload="auto" controls="controls" id="js-my-video">
+                        <source src="{$info['video']}" type="video/ogg">
+                        <source src="{$info['video']}" type="video/mp4">
+                      Your browser does not support the video tag.
+                      </video>
+            </div>
+        </notempty>
+       <div class="content">
+           {$info['content']}
+       </div>
+        <div class="end">
+            <span>END</span>
+        </div>
+    </div>

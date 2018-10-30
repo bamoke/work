@@ -1,0 +1,121 @@
+<assign name="info" value="$output['info']" />
+<?php
+$typeArr = array('single'=>'单页面','news'=>'文章列表',"download"=>"下载","custom"=>"自定义","product"=>"产品","pic"=>"图片");
+?>
+<div class="panel">
+    <div class="panel-body">
+        <form class="form-horizontal" id="cateForm" action="{:U('save_cate',array('actype'=>$actype))}">
+            <notempty name="Think.get.id">
+                <input type="hidden" name="id" value="{$Think.get.id}">
+            </notempty>
+            <notempty name="Think.get.id">
+                <input type="hidden" name="id" value="{$Think.get.id}">
+            </notempty>
+            <div class="form-group">
+                <label class="col-xs-2 control-label">栏目名称:</label>
+                <div class="col-xs-4">
+                    <input class="form-control" type="text" name="title" placeholder="请输入栏目名称" value="{$info['title']}">
+                </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-2 control-label">栏目英文名称:</label>
+                <div class="col-xs-4">
+                    <input class="form-control" type="text" name="en_title" placeholder="请输入栏目名称" value="{$info['en_title']}">
+                </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-2 control-label">所属栏目:</label>
+                <div class="col-xs-4">
+
+                    <select name="pid" id="js-change" class="form-control">
+                        <option value="0">一级栏目</option>
+                        <foreach name="cate" item="vo">
+                            <option value="{$vo['id']}" <eq name="info['pid']" value="$vo['id']">selected
+                                </eq> >{$vo['title']}
+                            </option>
+                        </foreach>
+                    </select>
+                </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-2 control-label">首页导航:</label>
+                <div class="col-xs-4">
+                    <label class="radio-inline">
+                        <input name="is_nav" type="radio" value="0" <neq name="info['is_nav']" value="1">checked</neq> >否</label>
+                    <label class="radio-inline">
+                        <input name="is_nav" type="radio" value="1" <eq name="info['is_nav']" value="1">checked</eq> >是</label>
+                </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div>
+            <eq name="actype" value="add">
+                <div class="form-group">
+                    <label class="col-xs-2 control-label">栏目类型:</label>
+                    <div class="col-xs-4">
+                        <select name="type" id="js-column-type" class="form-control">
+                            <option value="">请选择</option>
+                            <option value="single" <eq name="info['type']" value="single">selected
+            </eq> >单页面
+            </option>
+            <option value="news" <eq name="info['type']" value="news">selected
+                </eq> >文章列表
+            </option>
+            <option value="download" <eq name="info['type']" value="download">selected
+                </eq> >下载
+            </option>
+            <option value="custom" <eq name="info['type']" value="custom">selected
+                </eq> >自定义
+            </option>
+            <!-- <option value="product" <eq name="info['type']" value="product">selected</eq> >产品</option> -->
+            </select>
+            </div>
+            <div class="col-xs-3 js-tips"></div>
+            </div>
+            <else/>
+            <div class="form-group">
+                <label class="col-xs-2 control-label">栏目类型:</label>
+                <div class="col-xs-4">
+                    <input class="form-control" readonly type="text" value="{$typeArr[$info['type']]}">
+                    <input type="hidden" id="js-column-type" name="type" value="{$info['type']}">
+                </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div>
+            </eq>
+            <div class="form-group <neq name='info[type]' value='custom'>hidden</neq>" id="js-router-set">
+                <label class="col-xs-2 control-label">路由设置:</label>
+                <div class="col-xs-2">
+                    <input class="form-control" type="text" placeholder="控制器名称" name="controller_name" value="{$info['controller_name']}" <neq name='info["type"]' value='custom'>disabled</neq> >
+                </div>
+                <div class="col-xs-2">
+                    <input class="form-control" type="text" placeholder="方法名称" name="action_name" value="{$info['action_name']}" <neq name='info["type"]' value='custom'>disabled</neq> >
+                </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div>
+            <!--            <div class="form-group">
+                <label class="col-xs-2 control-label">栏目关键词:</label>
+                <div class="col-xs-4">
+                    <input class="form-control" type="text" name="keyword" value="{$info['keyword']}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-2 control-label">栏目描述:</label>
+                <div class="col-xs-4">
+                    <textarea class="form-control" type="text" name="description">{$info['description']}</textarea>
+                </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div> -->
+            <div class="form-group">
+                <div class="col-xs-2 col-xs-offset-2">
+                    <a href="javascript:window.history.back()" class="btn-block btn btn-default" type="button">返回</a>
+                </div>
+                <div class="col-xs-2">
+                    <button class="btn-block btn btn-info" type="submit">提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

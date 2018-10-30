@@ -1,0 +1,22 @@
+<notempty name="data">
+        <ul class="m-imgtext" style="min-height:300px;">
+                <foreach name="data" item="vo">
+                    <li class="item">
+                        <div class="text-box">
+                            <a class="title" href="{:U('detail',array('pid'=>$curPid,'cid'=>$vo['cid'],'id'=>$vo['id']))}" target="_blank">{$vo['title']}</a>
+                            <div class="u-statistics"><span class="glyphicon glyphicon-time"></span>{$vo['date']}</div>
+                        </div>
+                    </li>
+                </foreach>
+            
+            </ul>
+            
+            <div class="m-pagination">
+                {$page}
+            </div>
+    <else/>
+    <div class="m-empty">
+        <img src="__WEB_ASSET__/images/null-page-draw.png">
+        <div class="tips">暂无相关记录！</div>
+    </div>
+</notempty>

@@ -73,7 +73,7 @@ class AccountController extends Controller {
         // 1.2 insert
         $memberData = array(
             "phone"         => $phone,
-            "password"      => md5($password."xzh"),
+            "password"      => md5($password."onehre"),
             "reg_time"      => time()
         );
         
@@ -115,7 +115,7 @@ class AccountController extends Controller {
         }
         $memberModel = M("Member");
         $phone  = I("post.phone");
-        $password = md5(I("post.password")."xzh");
+        $password = md5(I("post.password")."onehre");
         $condition = array(
             "phone"     => $phone
         );
@@ -312,9 +312,9 @@ class AccountController extends Controller {
      * 获取用户账号信息
     */
     public function getMemberId(){
-        $openid = $this->getopenid();
+        $accessToken = $_SERVER["HTTP_X_ACCESS_TOKEN"];
         $memberId = null;
-        $memberInfo = M("Member")->field("id")->where(array("openid"=>$openid))->find();
+        $memberInfo = M("Member")->field("id")->where(array("token"=>$accessToken))->find();
         if($memberInfo){
             $memberId = $memberInfo['id'];
         }

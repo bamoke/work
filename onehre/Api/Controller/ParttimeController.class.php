@@ -53,12 +53,25 @@ class ParttimeController extends Controller {
 
     $jobId = I("get.id/d");
     $mainInfo = M("Parttime")->where("id=$jobId")->fetchSql(false)->find();
+    $isMember = 0;
+    $applyed = 0;
+    if(!empty($_SERVER["HTTP_X_ACCESS_TOKEN"])){
+      $Account = A("Account");
+      $uid =$Account->getMemberId();
+      $condition = array(
+        "pt_id" =>$jobId,
+        "uid" =>$uid
+      );
+      $isMember = M("ParttimeMember")->where($condition)->count();
+      $applyed = M("ParttimeApply")->where($condition)->count();
+    }
     $backData = array(
         "code"      =>200,
         "msg"       =>"ok",
         "data"    => array(
           "mainInfo"    =>$mainInfo,
-          "isMember"=>0
+          "isMember"=>$isMember,
+          "applyed" =>$applyed
         )
     );
     $this->ajaxReturn($backData);

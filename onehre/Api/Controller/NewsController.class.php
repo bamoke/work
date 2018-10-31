@@ -103,6 +103,7 @@ class NewsController extends Controller {
     );
     $newsId = I("get.id/d");
     $mainInfo = M("News")
+    ->field("*,date(create_time) as date")
     ->where($condition)
     ->fetchSql(false)
     ->find();
@@ -112,7 +113,9 @@ class NewsController extends Controller {
     $backData = array(
         "code"      =>200,
         "msg"       =>"ok",
-        "mainInfo"    => $mainInfo
+        "data"  =>array(
+          "info"  =>$mainInfo
+        )
     );
     $this->ajaxReturn($backData);
   }

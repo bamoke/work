@@ -17,7 +17,7 @@ namespace Api\Common\Controller;
 use Think\Controller;
 class BaseController extends Controller
 {
-    protected $uid;
+    public $uid;
     protected function _initialize(){
         $this->_checklogin();
         $this->uid = $this->fetchUid();

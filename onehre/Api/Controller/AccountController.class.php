@@ -155,13 +155,14 @@ class AccountController extends Controller {
 
         $model = M();
         $model->startTrans();
-        // update session
+        // update session' token
         $accessToken = $this->createSessionId();
         $sessionData = array(
             "token" =>$accessToken
         );
         $updateSession = M("Mysession")->where(array("uid"=>$memberInfo['id']))->data($sessionData)->fetchSql(false)->save();
-        // update member
+        
+        // update member set error time to zero
         $memberData = array(
             "error_time"    => 0,
             "error_limit"   => null
@@ -180,7 +181,7 @@ class AccountController extends Controller {
         $backData = array(
             "code" =>200,
             "msg"  =>'登录成功',
-            "info"  => array(
+            "data"  => array(
                 "token" => $accessToken,
                 "user" => array(
                     "uid"   => $memberInfo["id"],
@@ -352,8 +353,8 @@ class AccountController extends Controller {
         $curTime = time();
         if($codeInfo && $curTime - $codeInfo['send_time'] < 60){
             $backData = array(
-                "errorCode"     =>13002,
-                "errorMsg"      =>"发送过于频繁"
+                "code"     =>13002,
+                "msg"      =>"发送过于频繁"
             );
             $this->ajaxReturn($backData);
         }
@@ -366,7 +367,7 @@ class AccountController extends Controller {
         $accessKeyId = "LTAINblZBk0NW7B2";
         $accessKeySecret = "2dwoD97kbxNQxhWVI20acjOxpXv0PZ";
         $params["PhoneNumbers"] = $phone;
-        $params["SignName"] = "校招汇";
+        $params["SignName"] = "ONEHRE";
         $params["TemplateCode"] = "SMS_143300246";
         $params['TemplateParam'] = Array (
             "code" => $code

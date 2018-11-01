@@ -3,7 +3,7 @@
  * @Author: joy.wangxiangyin 
  * @Date: 2018-08-29 21:58:49 
  * @Last Modified by: joy.wangxiangyin
- * @Last Modified time: 2018-09-03 01:05:49
+ * @Last Modified time: 2018-11-01 01:48:54
  */
 
  namespace Api\Controller;
@@ -14,11 +14,13 @@
     $condition = array(
       "uid" => $this->uid
     );
-    $resumeInfo = M("Resume")->field("id,completion,attachment,default_set")->where($condition)->find();
+    $resumeInfo = M("Resume")->field("id,completion")->where($condition)->fetchSql(false)->find();
     $backData = array(
       "code"    => 200,
       "msg"     => "ok",
-      "info"    =>$resumeInfo
+      "data"    =>array(
+        "info"    =>$resumeInfo
+      )
     );
     $this->ajaxReturn($backData);
   }
@@ -53,7 +55,9 @@
       $backData = array(
         "code"  => 200,
         "msg"   => "ok",
-        "info"  => $insertData
+        "data"  =>array(
+          "info"  => $insertData
+        )
       );
     }else {
       $backData = array(
@@ -74,11 +78,13 @@
       );  
       $this->ajaxReturn($backData);      
     }
-    $resumeId = I("get.id");
+    $resumeId = I("get.id/d");
     $condition = array(
       "rid"   =>$resumeId
     );
-    $base = M("Resume")->field("id,realname,sex,birth,edu,experince,phone,email")->where("id=$resumeId")->find();
+
+    $base = M("Resume")->field("id,realname,sex,birth,edu,experince,phone,email")->where("id=$resumeId")->fetchSql(false)->find();
+
     $introduce = M("Resume")->where("id=$resumeId")->getField("introduce");
     $workExp = M("ResumeWork")->where($condition)->select();
     $edu = M("ResumeEdu")->where($condition)->select();
@@ -93,7 +99,7 @@
     $backData = array(
       "code"  => 200,
       "msg"   => "ok",
-      "info"  => array(
+      "data"  => array(
         "base"  =>$base,
         "work"   =>$workExp,
         "edu"   =>$edu,
@@ -128,7 +134,9 @@
     $backData = array(
       "code"    =>200,
       "msg"     => "ok",
-      "info"    => $result
+      "data" =>array(
+        "info"    => $result
+      )
     );
     $this->ajaxReturn($backData);
   }

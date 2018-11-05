@@ -25,7 +25,7 @@ class CourseController extends Controller {
         "code"      =>200,
         "msg"       =>"ok",
         "data"      => array(
-          "banner"  =>"/common/images/banner1.png",
+          "banner"  =>C("OSS_BASE_URL")."/images/banner1.png",
           "list"  =>$list,
           "page"  =>$page,
           "total" =>$total,

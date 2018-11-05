@@ -43,6 +43,13 @@ class BaseController extends Controller
             );
             $this->ajaxReturn($backData);          
         }
+        if(!$res['phone']) {
+            $backData = array(
+                "code"  => 11001,
+                "msg"   => "请登录后再操作"
+            );
+            $this->ajaxReturn($backData);           
+        }
         
     }
 

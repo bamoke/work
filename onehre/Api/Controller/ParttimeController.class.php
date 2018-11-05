@@ -30,7 +30,7 @@ class ParttimeController extends Controller {
       "code"      =>200,
       "msg"       =>"ok",
       "data"      => array(
-        "banner"  =>"/common/images/banner-jz.jpg",
+        "banner"  =>C("OSS_BASE_URL")."/images/banner-jz.jpg",
         "list"  =>$list,
         "page"  =>$page,
         "total" =>$total,

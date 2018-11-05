@@ -70,7 +70,9 @@ class AccountController extends Controller {
             return $this->ajaxReturn($backData);            
         }
 
-        // 1.2 insert
+        // 1.2 update
+        $accessToken = $_SERVER['HTTP_X_ACCESS_TOKEN'];
+        $sessionInfo = M("Mysession")->where(array('token'=>$accessToken))->find();
         $memberData = array(
             "phone"         => $phone,
             "password"      => md5($password."onehre"),
@@ -79,18 +81,18 @@ class AccountController extends Controller {
         
         $model = M();
         $model->startTrans();
-        $insertMemberId = M("Member")->data($memberData)->add();
+        $updateMember = M("Member")->data($memberData)->where(array('id'=>$sessionInfo['uid']))->save();
         $sessionData = array(
-            "uid"           => $insertMemberId,
+            "phone"         =>$phone,
             "token"         => $this->createSessionId(),
             "expires_time"  => time() + (3600 * 24 * 7)
         );
-        $insertSession = M("Mysession")->data($sessionData)->add();
-        if(!$insertMemberId || !$insertSession) {
+        $updateSession = M("Mysession")->data($sessionData)->where(array('id'=>$sessionInfo['id']))->save();
+        if(!$updateMember || !$updateSession) {
             $model->rollback();
             $backData = array(
                 "code" =>13002,
-                "msg"  =>'登录失败'
+                "msg"  =>'注册失败'
             );
             $this->ajaxReturn($backData); 
         }
@@ -210,8 +212,9 @@ class AccountController extends Controller {
             return $this->ajaxReturn($backData);
         }
         // 1. 登录微信服务器，
-        $APP_ID = "wx20e37dd9f2ca7886";
-        $APP_SECRET = "65ea53b18f617a7d5bd36a5366253b9c";
+        $APP_ID = "wx7260e692d37ca36e";
+        $APP_SECRET = "262fd2cfe6cbbe038a633905daf23317";
+        // $APP_SECRET = "65ea53b18f617a7d5bd36a5366253b9c";//待修改
         $code = I('get.code');
         $Http = new \Org\Net\Http();
         $url = 'https://api.weixin.qq.com/sns/jscode2session?appid='.$APP_ID.'&secret='.$APP_SECRET.'&js_code='.$code.'&grant_type=authorization_code';
@@ -231,7 +234,7 @@ class AccountController extends Controller {
         $sessionkey = $result['session_key'];
         $accessToken = $this->createSessionId();
         $sessionModel = M("Mysession");
-        $sessionInfo = $sessionModel->where(array("openid"=>$openid))->find();
+        $sessionInfo = $sessionModel->where(array("openid"=>$openid))->fetchSql(false)->find();
         if($sessionInfo){
             $updateData = array(
                 "token" =>$accessToken,
@@ -259,18 +262,19 @@ class AccountController extends Controller {
             }
 
         }else {
+
             $model = M();
             $model->startTrans();
             // 1.3 创建用户
             $memberModel = M("Member");
             $insertMemberData = array(
-                "openid"    =>$openid,
-                "reg_time"  =>time()
+                "openid"    =>$openid
             );
-            $insertMember = $memberModel->fetchSql(false)->add($insertMemberData);
+            $insertMember = $memberModel->fetchSql(false)->fetchSql(false)->add($insertMemberData);
             
             //1.4 创建session
             $insertSessionData = array(
+                "uid"           =>$insertMember,
                 "token"         =>$accessToken,
                 "openid"        =>$openid,
                 "sessionkey"    =>$sessionkey
@@ -295,7 +299,7 @@ class AccountController extends Controller {
                 $model->rollback();
                 $backData = array(
                     "code" =>13002,
-                    "msg"  =>'登录失败'
+                    "msg"  =>'微信登录失败'
                 );
             }
         }

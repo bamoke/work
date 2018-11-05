@@ -55,11 +55,9 @@ class CourseController extends Controller {
       if(!empty($_SERVER["HTTP_X_ACCESS_TOKEN"])){
         $Account = A("Account");
         $uid =$Account->getMemberId();
-        $isEnroll = M("Member")
-        ->alias("M")
-        ->join("__COURSE_ENROLL__ as C on C.phone = M.phone")
-        ->where("M.id=$uid")
-        ->fetchSql(true)
+        $isEnroll = M("CourseEnroll")
+        ->where(array("uid"=>$uid,"course_id"=>$courseId))
+        ->fetchSql(false)
         ->count();
       }
       $backData = array(
@@ -74,51 +72,8 @@ class CourseController extends Controller {
       $this->ajaxReturn($backData);
     }
 
-    // 课程预约
-    public function do_enroll(){
-      if(!IS_POST) {
-        $backData = array(
-          "code"  => 10001,
-          "msg"   => "非法请求"
-        );  
-        $this->ajaxReturn($backData);  
-      }
-      $enrollModel = M("CourseEnroll");
-      $condition = array(
-        "course_id" =>I("post.course_id"),
-        "phone"     =>I("post.phone")
-      );
-      $isExist = $enrollModel->where($condition)->find();
-      if($isExist) {
-        $backData = array(
-          "code"  => 13001,
-          "msg"   => "不能重复预约"
-        );  
-        $this->ajaxReturn($backData);         
-      }
 
-      $result = M("CourseEnroll")->create($_POST);
-      if(!$result){
-        $backData = array(
-          "code"  => 13002,
-          "msg"   => "服务器错误"
-        );  
-        $this->ajaxReturn($backData);       
-      }
-      $insertResult = $enrollModel->add();
-      if(!$insertResult) {
-        $backData = array(
-          "code"  => 13003,
-          "msg"   => "保存数据出错"
-        );  
-        $this->ajaxReturn($backData);           
-      }
-      $backData = array(
-        "code"  => 200,
-        "msg"   => "success"
-      );  
-      $this->ajaxReturn($backData);   
-    }
+
 
 
     /********************** */

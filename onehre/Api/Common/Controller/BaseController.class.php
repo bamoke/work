@@ -3,7 +3,7 @@
  * @Author: joy.wangxiangyin 
  * @Date: 2018-08-27 13:59:40 
  * @Last Modified by: joy.wangxiangyin
- * @Last Modified time: 2018-08-27 15:16:17
+ * @Last Modified time: 2018-11-03 00:25:47
  * 200 success
  * 10* access error 01 invalid request ;02 params error
  * 11*  login error
@@ -44,6 +44,10 @@ class BaseController extends Controller
             $this->ajaxReturn($backData);          
         }
         
+    }
+
+    protected function fetchAccount(){
+        return M("Member")->field("id,openid,phone,status")->where(array('id'=>$this->uid))->find();
     }
 
     protected function fetchUid (){

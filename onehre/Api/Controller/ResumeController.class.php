@@ -286,5 +286,23 @@
   }
 
 
+  /**
+   * 获取用户简历id
+   */
+  public function getresumeid(){
+    $condition = array(
+      "uid" =>$this->uid
+    );
+    $resumeId = M("Resume")->where($condition)->getField("id");
+    $backData = array(
+      "code"  => 200,
+      "msg"   => "ok",
+      "data"  =>array(
+        "resumeid"  =>$resumeId
+      )
+    );  
+    $this->ajaxReturn($backData);  
+  }
+
 
  }

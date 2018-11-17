@@ -10,7 +10,15 @@ namespace Admin\Controller;
 use Admin\Common\Auth;
 // use Think\Controller;
 class SurveyLogController extends Auth {
-  public function index(){
+
+  public function vlist(){
+    
+  }
+
+  /**
+   * 统计信息
+   */
+  public function statistics(){
     if(empty($_GET['sid'])) {
       $backData = array(
         'code'      => 10001,
@@ -19,22 +27,54 @@ class SurveyLogController extends Auth {
       $this->ajaxReturn($backData);
     }
 
-    
-    $list = $mainModel
-    ->field("id,title,date(create_time) as date,status")
-    ->where($where)
-    ->page($page,$pageSize)
-    ->order("id desc")
+    $surveyId = I("get.sid");
+/*     $logsInfo = M("SurveyLogs")->where(array('survey_id'=>$surveyId))->find();
+    $selectedOptArr = explode(",",$logsInfo['content']); */
+
+    $questionCondition = array(
+      "s_id"  =>$surveyId
+    );
+    $questionList = M("SurveyQuestion")
+    ->where($questionCondition)
+    ->order("sort,id")
     ->fetchSql(false)
     ->select();
-    $total = $mainModel->where($where)->count();
+    
+    // 选取问题下的选择项
+    $newQuestionList = array();
+    if(count($questionList)){
+      foreach($questionList as $key=>$val){
+        $questionIdArr[] = $val['id']; 
+        if($val['type'] == 3) {
+          $fillTotal = M('SurveyFill')->where(array('question_id'=>$val['id']))->count();
+          $newQuestionList[$key]['fill']['hasMore'] = $fillTotal > 10;
+          $newQuestionList[$key]['fill']['list'] = M('SurveyFill')->where(array('question_id'=>$val['id']))->page(1,10)->select();
+        }
+      }
+
+      $optionList = array();
+      $questionIdStr = implode(",",$questionIdArr);
+      $optionList = M("SurveyAnswer")->where(array('question_id'=>array('in',$questionIdStr)))->order("sort,id")->select();
+      if(count($optionList)){
+        
+        foreach($questionList as $key=>$val){
+          $option = array();
+          foreach($optionList as $k=>$v) {
+            if($v['question_id'] == $val['id']){
+              array_push($option,$v);
+            }
+          }
+          $newQuestionList[$key]['opt'] = $option;
+          $newQuestionList[$key]['question'] = $val;
+        }
+        $questionList = $newQuestionList;
+      }
+    }
     $backData = array(
       'code'      => 200,
       "msg"       => "ok",
-      'info'      => array(
-          "list"  =>$list,
-          "total" =>intval($total),
-          "pageSize"  =>$pageSize
+      'data'      => array(
+          "list"  =>$questionList
       )
     );
     $this->ajaxReturn($backData);
@@ -42,99 +82,38 @@ class SurveyLogController extends Auth {
 
 
 
-  // 编辑
-  public function edit(){
-    if(empty($_GET['id'])) {
+  /**
+   * 加载更多填空记录
+   * @params number questionid
+   * @params number page
+   * @return array
+   */
+  public function loadmorefill(){
+    if(empty($_GET['questionid']) || empty($_GET['page'])) {
       $backData = array(
         'code'      => 10001,
-        "msg"       => "非法请求"    
+        "msg"       => "参数错误",
       );
       $this->ajaxReturn($backData);
     }
-    $id = I("get.id");
-    $info = M("Survey")->where(array('id'=>$id))->fetchSql(false)->find();
-    if($info) {
-      $backData = array(
-        'code'      => 200,
-        "msg"       => "success",
-        "info"      =>$info
-      );
-    }else {
-      $backData = array(
-        'code'      => 13001,
-        "msg"       => "数据获取异常"    
-      );
-    }
+    $page = I("get.page/d");
+    $fillMode = M("SurveyFill");
+    $fillCondition = array("question_id"=>$questionId);
+    $fillTotal = $fillMode->where($fillCondition)->count();
+    $fillList = $fillMode->where($fillCondition)->page($page,10)->select();
+    $backData = array(
+      'code'      => 200,
+      "msg"       => "参数错误",
+      "data"      =>array(
+        "list"  =>$fillList,
+        "hasMore"=>$fillTotal > $page*10,
+        "page"  =>$page
+      )
+    );
     $this->ajaxReturn($backData);
+
   }
-
-
-  public function save(){
-    if(!IS_POST){
-      $backData = array(
-        'code'      => 10001,
-        "msg"       => "非法请求"    
-      );
-      $this->ajaxReturn($backData);
-    }
-    $mainModel = M("Survey");
-    $postData = $mainModel->create($this->requestData);
-    if(!$postData) {
-      $backData = array(
-        'code'      => 13001,
-        "msg"       => "数据创建错误"    
-      );
-      $this->ajaxReturn($backData);   
-    }
-
-    if(isset($mainModel->id) && !is_null($mainModel->id)){
-      $id = (int)$mainModel->id;
-      $result = $mainModel->where(array("id"=>$id))->save();
-    }else {
-      $result = $mainModel->fetchSql(false)->add();
-      $id = $result;
-    }
-    if($result !== false){
-      // $info = $mainModel->where(array("id"=>$id))->find();
-      $backData = array(
-        'code'      => 200,
-        "msg"       => "ok",
-        "info"      => "success"
-      );
-    }else {
-      $backData = array(
-        'code'      => 13002,
-        "msg"       => "服务器错误",        
-      );     
-    }
-    $this->ajaxReturn($backData);
-  }
-  
-  
-  public function delone(){
-    if(empty($_GET["id"])){
-      $backData = array(
-        'code'      => 10001,
-        "msg"       => "非法请求"    
-      );
-      $this->ajaxReturn($backData);     
-    }
-    $id = I("get.id");
-    $del = M("Survey")->where(array("id"=>$id))->fetchSql(false)->save(array('is_deleted'=>1));
-    if($del !== false) {
-      $backData = array(
-        'code'      => 200,
-        "msg"       => "ok"    
-      );
-    }else {
-      $backData = array(
-        'code'      => 13001,
-        "msg"       => "操作失败"    
-      );
-    }
-    $this->ajaxReturn($backData);
-  }
-
+ 
 
 
 

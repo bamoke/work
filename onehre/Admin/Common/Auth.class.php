@@ -12,7 +12,8 @@
  */
 
 namespace Admin\Common;
-class Auth
+use Think\Controller;
+class Auth extends Controller
 {
 
     /**
@@ -23,7 +24,7 @@ class Auth
     protected $sessionModel;
     public $requestData;
     public $uid;
-    public function __construct(){
+    public function _initialize(){
         header("Access-Control-Allow-Origin: *");
         header('Access-Control-Allow-Methods:POST,GET'); 
         header("Access-Control-Allow-Headers:Content-type,accept,X-URL-PATH,x-access-token");

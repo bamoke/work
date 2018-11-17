@@ -9,14 +9,27 @@
  * 201 user does not exist
  * 202 validate code error
  */
-
 namespace Admin\Controller;
-class MainController
+use Think\Controller;
+class MainController extends Controller
 {
-    public function __construct(){
+
+    public $requestData;
+    public function _initialize(){
         header("Access-Control-Allow-Origin: *");
-        header('Access-Control-Allow-Methods:POST,GET'); 
-        header("Access-Control-Allow-Headers:Content-type,accept,X-URL-PATH,x-access-token");
+        header('Access-Control-Allow-Methods:POST,GET,OPTIONS'); 
+        header("Access-Control-Allow-Headers:Content-Type,accept,X-URL-PATH,x-access-token");
+        if($_SERVER['REQUEST_METHOD'] != "OPTIONS") {
+            if($_SERVER['REQUEST_METHOD'] == "POST") {
+                $this->requestData = json_decode(file_get_contents("php://input"),true);
+            }elseif($_SERVER['REQUEST_METHOD'] == "GET") {
+                $this->requestData = $_GET;
+            }
+        }else {
+            header("HTTP/1.0 204 Not Content");
+            // exit;
+        }
+
     }
     public function logout(){
         session(null);
@@ -49,7 +62,18 @@ class MainController
      * @return json
      * */
     public function login(){
-        $postData = json_decode(file_get_contents("php://input"),true);
+
+        if(!IS_POST){
+            $backData = array(
+                "code"  =>10001,
+                "msg"   =>"非法操作"
+            );
+            $this->ajaxReturn($backData);
+        }
+
+        $postData = $this->requestData;
+
+        // $postData = json_decode(file_get_contents("php://input"),true);
         $where = array(
             "username"  =>$postData['userName']
         );
@@ -117,11 +141,5 @@ class MainController
         $this->ajaxReturn($backData); 
     }
 
-    protected function ajaxReturn($data){
-        if(is_array($data)){
-            exit(json_encode($data));
-        }else {
-            exit($data);
-        }
-    }
+
 }

@@ -27,7 +27,5 @@ define("BIND_MODULE","Admin");
 //生成控制器并绑定，默认生成Index控制器； (另有$_GET['c']方法绑定)
 //define("BIND_CONTROLLER","Index");
 
-//
-
 //引入PHP框架文件
 require("../ThinkPHP/ThinkPHP.php");

@@ -42,7 +42,7 @@ class SurveyController extends Auth {
 
 
 
-  // 编辑
+  // 编辑基本信息
   public function edit(){
     if(empty($_GET['id'])) {
       $backData = array(

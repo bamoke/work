@@ -7,9 +7,9 @@
  * @Last Modified time: 2018-10-11 23:42:10
  */
 namespace Admin\Controller;
-use Admin\Common\Auth;
-// use Think\Controller;
-class ParttimeController extends Auth {
+// use Admin\Common\Auth;
+use Think\Controller;
+class ParttimeController extends Controller {
   public function vlist(){
     $pageSize = 15;
     $mainModel = M("Parttime");

@@ -88,45 +88,7 @@ use Admin\Common\Auth;
     }
 
 
-  /**
-   * 班级成员
-   */
-  public function member(){
-    if(empty($_GET["courseid"])){
-      $backData = array(
-        "code"  => 10002,
-        "msg"   => "访问参数错误"
-      );  
-      $this->ajaxReturn($backData); 
-    }
-    $courseId = I("get.courseid");
-    $page = I("get.p/d",1);
-    $pageSize=20;
-    $condition = array(
-      "course_id"  =>$courseId
-    );
-    if(!empty($_GET['keywords'])){
-      $condition["realname"] = array("like","%".I('get.keywords')."%");
-    }
-    $total = M("CourseMember")->where($condition)->count();
-    $list = M("CourseMember")
-    ->where($condition)
-    ->page($page,$pageSize)
-    ->select();
- 
-    $backData = array(
-        "code"      =>200,
-        "msg"       =>"ok",
-        "data"      => array(
-          "list"  =>$list,
-          "page"  =>$page,
-          "total" =>$total,
-          "pageSize"=>$pageSize,
-          "hasMore" => $total >($page*$pageSize) 
-        )
-    );
-    $this->ajaxReturn($backData);
-  }
+
 
   /**
    * 笔记

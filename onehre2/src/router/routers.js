@@ -147,23 +147,35 @@ export default [
         component: () => import('@/view/course/edit')
       },
       {
-        path: '/class',
+        path: '/class/:courseid',
         name: 'class_manager',
         meta: {
           title: '班级管理',
           hideInMenu:true
         },
-        component: () => import('@/view/class/index')
+        component: () => import('@/view/class/templete'),
+        children:[
+          {
+            path: 'home',
+            name: 'class_manager',
+            meta: {
+              title: '班级管理',
+              hideInMenu:true
+            },
+            component: () => import('@/view/class/index'),
+          },
+          {
+            path: 'member',
+            name: 'class_member',
+            meta: {
+              title: '班级成员',
+              hideInMenu:true
+            },
+            component: () => import('@/view/class/member')
+          }
+        ]
       },
-      {
-        path: '/class',
-        name: 'class_member',
-        meta: {
-          title: '班级成员',
-          hideInMenu:true
-        },
-        component: () => import('@/view/class/member')
-      }
+ 
     ]
   },
   {

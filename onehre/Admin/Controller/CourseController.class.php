@@ -31,6 +31,8 @@ use Admin\Common\Auth;
       $this->ajaxReturn($backData);
     }
 
+
+
     // 讲师列表
     public function teacher(){
       $pageSize = 50;

@@ -145,6 +145,24 @@ export default [
           hideInMenu: true
         },
         component: () => import('@/view/course/edit')
+      },
+      {
+        path: '/class',
+        name: 'class_manager',
+        meta: {
+          title: '班级管理',
+          hideInMenu:true
+        },
+        component: () => import('@/view/class/index')
+      },
+      {
+        path: '/class',
+        name: 'class_member',
+        meta: {
+          title: '班级成员',
+          hideInMenu:true
+        },
+        component: () => import('@/view/class/member')
       }
     ]
   },
@@ -275,15 +293,7 @@ export default [
     ]
   },
   /**====== */
-  {
-    path: '/class',
-    name: 'class_manage',
-    meta: {
-      title: '班级管理',
-      icon: 'android-people'
-    },
-    component: Main
-  },
+
   {
     path: '/survey',
     name: 'survey',
@@ -330,7 +340,17 @@ export default [
           hideInMenu: true
         },
         component: () => import('@/view/survey/detail')
-      }      
+      },
+      {
+        path: 'logdetail/:id',
+        notCache: true,
+        name: 'survey_log_detail',
+        meta: {
+          title: '问卷记录详情',
+          hideInMenu: true
+        },
+        component: () => import('@/view/survey/logdetail')
+      }       
     ]
   },
 

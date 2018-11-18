@@ -11,8 +11,81 @@ use Admin\Common\Auth;
 // use Think\Controller;
 class SurveyLogController extends Auth {
 
+  /**
+   * 记录
+   */
   public function vlist(){
-    
+    if(empty($_GET['sid'])) {
+      $backData = array(
+        'code'      => 10001,
+        "msg"       => "非法请求"    
+      );
+      $this->ajaxReturn($backData);
+    }
+    $page = I("get.page/d",1);
+    $pageSize = 20;
+    $logsCondition = array(
+      "survey_id" =>I("get.sid")
+    );
+    $total = M("SurveyLogs")->where($logsCondition)->count();
+    $logsList = M("SurveyLogs")->where($logsCondition)->page($page,$pageSize)->select();
+    $backData = array(
+      'code'      => 200,
+      "msg"       => "success",
+      "data"      =>array(
+        "list"    =>$logsList,
+        "hasMore" =>$total > $page*$pageSize,
+        "total"   =>$total,
+        "page"    =>$page
+      )    
+    );
+    $this->ajaxReturn($backData);
+  }
+
+  /**
+   * 记录详情
+   */
+  public function logdetail(){
+    if(empty($_GET['id'])) {
+      $backData = array(
+        'code'      => 10001,
+        "msg"       => "非法请求"    
+      );
+      $this->ajaxReturn($backData);
+    }
+    $logId = I("get.id");
+    $logInfo = M("SurveyLogs")->where(array('id'=>$logId))->find();
+    $surveyInfo = M("Survey")->field("title")->where(array("id"=>$logInfo['survey_id']))->find();
+    $questionList = M("SurveyQuestion")->where(array('s_id'=>$logInfo['survey_id']))->select();
+    $selectedList = M("SurveyAnswer")
+    ->where(array("id"=>array('in',$logInfo["content"])))
+    ->select();
+    $mainList = array();
+
+    foreach($questionList as $key=>$question) {
+      $mainList[$key]['question'] = $question;
+      $mainList[$key]['fill'] = array();
+      $mainList[$key]['selected'] = array();
+      if($question['type'] == 3) {
+        $mainList[$key]['fill'] = M("SurveyFill")->where(array('question_id'=>$question['id']))->find();
+      }else {
+        foreach($selectedList as $k=>$opt) {
+          if($opt['question_id'] == $question['id']) {
+            $mainList[$key]['selected'][]=$opt;
+          }
+        }
+      }
+    }
+    $backData = array(
+      'code'      => 200,
+      "msg"       => "success",
+      "data"      =>array(
+        "list"    =>$mainList,
+        "surveyInfo"  =>$surveyInfo,
+        "logInfo" =>$logInfo
+      )   
+    );
+    $this->ajaxReturn($backData);
   }
 
   /**

@@ -127,8 +127,11 @@
           </div>
         </TabPane>
         <!--logs-->
-        <TabPane name='apply' label="详细记录" icon="android-clipboard" wx:if="surveyInfo.is_released == 1">
-          <Table :columns="applyColumn" :data="apply"></Table>
+        <TabPane name='logs' label="详细记录" icon="android-clipboard" wx:if="surveyInfo.is_released == 1">
+          <Table :columns="logsColumn" :data="logs"></Table>
+          <div class="m-paging-wrap">
+            <Page :total="logsTotal" :current="logsPage" :page-size="20" @on-change="changeLogsPage" v-show="logsTotal > 20"></Page>
+          </div>
         </TabPane>
     </Tabs>
   </Card>
@@ -228,38 +231,25 @@ export default {
       optionSubmiting:false,
       questionSubmiting:false,
       fillPage:1,
-      apply: [],
-      applyColumn: [
+      logs: [],
+      logsHasmore:false,
+      logsPage:1,
+      logsTotal:0,
+      logsColumn: [
         {
-          title: "姓名",
-          key: "realname"
+          type: 'index',
+          width:60,
+          align: 'center'
         },
         {
-          title: "手机",
-          key: "phone"
-        },
-        {
-          title: "邮箱",
-          key: "email"
-        },
-        {
-          title: "投递时间",
+          title: "时间",
           key: "create_time"
-        },
-        {
-          title: "状态",
-          key: "status",
-          render: (h, params) => {
-            const curStatusName = params.row.statusName;
-            const curStatusClass = params.row.statusClass;
-            return h("span", { class: curStatusClass }, curStatusName);
-          }
         },
         {
           title: "操作",
           key: "handle",
           render: (h, params) => {
-            return h("Button", "审核");
+            return h("Button", {on:{click:()=>this.showlogsDetail(params)}},"查看详情");
           }
         }
       ],
@@ -271,13 +261,16 @@ export default {
       this.curTab = name;
       const curSurveyId = this.curId;
       let apiUrl;
-      if (name == "apply" && this.apply.length === 0) {
-        apiUrl = "/ParttimeApply/vlist";
-        getTableList(apiUrl, { ptid: parttimeId }).then(res => {
+      if (name == "logs" && this.logs.length === 0) {
+        apiUrl = "/SurveyLog/vlist";
+        getTableList(apiUrl, { sid: curSurveyId }).then(res => {
           if (!res) return;
-          this.apply = res.data.list;
+          this.logs = res.data.list
+          this.logsHasmore = res.data.hasMore
+          this.logsPage = res.data.page
+          this.logsTotal = parseInt(res.data.total)
         });
-      }else if(name == "statistics" && this.apply.length === 0){
+      }else if(name == "statistics" && this.statistics.length === 0){
         getDataOne("/SurveyLog/statistics", { sid: curSurveyId }).then(res => {
             if (res.code == 200) {
               // this.questionList.splice(0, 0, ...res.data.list)
@@ -381,10 +374,18 @@ export default {
         $questionId = this.statistics[questionIndex].question.id
         getTableList(apiUrl, { questionid: questionId,page:this.fillPage+1 }).then(data => {
           if (!data) return;
-          this.statistics[questionIndex].fill.list.push(data.list);
+          this.statistics[questionIndex].fill.list.push(...data.list);
           this.statistics[questionIndex].fill.hasMore = data.hasMore
         });
+    },
+    changeLogsPage(){
+
+    },
+    showlogsDetail(params){
+      const id = params.row.id
+      this.$router.push({ name: "survey_log_detail", params: { id } })
     }
+
   },
   computed: {
 

@@ -1,10 +1,10 @@
 <template>
     <div class="m-member-list">
         <Row type="flex" justify="space-between" style="margin-bottom:20px;">
-          <Col span=16>
-            <Input @on-click="handleSearch" v-model="keywords" icon="ios-search" placeholder="请输入姓名" style="width: 200px"></Input>
-          </Col>
-          <Col span="6" style="text-align:right;"><Button type="primary" icon="ios-plus-outline" @click="handleAdd">添加学员</Button></Col>
+          <i-col span=16>
+            <Input @on-click="handleSearch" v-model="keywords" icon="ios-search" placeholder="请输入姓名" style="width: 400px"/>
+          </i-col>
+          <i-col span="6" style="text-align:right;"><Button type="primary" icon="ios-plus-outline" @click="handleAdd">添加学员</Button></i-col>
         </Row>
         <Table border :columns="_customColumns" :data="list" :loading="formLoading"></Table>
         <div class="m-paging-wrap">
@@ -39,7 +39,7 @@
               <div slot="footer" style="margin-left:80px;">
 
               </div>
-            </Modal>
+        </Modal>
     </div>
 </template>
 <style>

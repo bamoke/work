@@ -3,22 +3,22 @@
       <router-link :to="{name:'class_member'}" class="item">
         <span class="caption">班级成员</span>
       </router-link>
-      <router-link :to="{name:'class_member'}" class="item">
+      <router-link :to="{name:'class_notes'}" class="item">
         <span class="caption">课程笔记</span>
       </router-link>
-      <router-link :to="{name:'class_member'}" class="item">
+      <router-link :to="{name:'class_tests'}" class="item">
         <span class="caption">作业考试</span>
       </router-link>
-      <router-link :to="{name:'class_member'}" class="item">
+      <router-link :to="{name:'class_discuss'}" class="item">
         <span class="caption">讨论组</span>
       </router-link>
-      <router-link :to="{name:'class_member'}" class="item">
+      <router-link :to="{name:'class_remark'}" class="item">
         <span class="caption">课程点评</span>
       </router-link>
-      <router-link :to="{name:'class_member'}" class="item">
+      <router-link :to="{name:'class_survey'}" class="item">
         <span class="caption">问卷调查</span>
       </router-link>
-      <router-link :to="{name:'class_member'}" class="item">
+      <router-link :to="{name:'class_dynamic'}" class="item">
         <span class="caption">班级动态</span>
       </router-link>
     </div>
@@ -44,7 +44,7 @@ export default {
     }
   },
   mounted () {
-    console.log(this.$route.params)
+    // console.log(this.$route.params)
   }
 }
 </script>

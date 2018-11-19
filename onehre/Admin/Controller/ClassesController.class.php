@@ -22,7 +22,7 @@ use Admin\Common\Auth;
         $this->ajaxReturn($backData);     
       }
       $courseId = I("get.courseid");
-      $page = I("get.p/d",1);
+      $page = I("get.page/d",1);
       $pageSize=20;
       $condition = array(
         "CD.course_id"  =>$courseId
@@ -35,6 +35,7 @@ use Admin\Common\Auth;
       ->where($condition)
       ->page($page,$pageSize)
       ->fetchSql(false)
+      ->order('id desc')
       ->select();
       $backData = array(
         'code'      => 200,
@@ -43,6 +44,7 @@ use Admin\Common\Auth;
             "list"  =>$list,
             "total" =>intval($total),
             "page"  =>$page,
+            "pageSize"  =>$pageSize,
             "hasMore" =>$total > $page*$pageSize
         )
       );
@@ -96,36 +98,81 @@ use Admin\Common\Auth;
   public function notes(){
     if(empty($_GET["courseid"])){
       $backData = array(
-        "code"  => 10002,
-        "msg"   => "访问参数错误"
-      );  
-      $this->ajaxReturn($backData); 
+        'code'      => 13000,
+        "msg"       => "非法请求"    
+      );
+      $this->ajaxReturn($backData);     
     }
     $courseId = I("get.courseid");
-    $page = I("get.p/d",1);
-    $pageSize=8;
+    $page = I("get.page/d",1);
+    $pageSize=20;
     $condition = array(
-      "course_id"  =>$courseId,
-      "uid"         =>$this->uid
+      "CN.course_id"  =>$courseId
     );
-    $total = M("CourseNotes")->where($condition)->count();
-    $list = M("CourseNotes")
+    $total = M("CourseNotes")->alias("CN")->where($condition)->count();
+    $list = M("CourseDynamic")
+    ->alias("CN")
+    ->field("CN.*,CM.realname as membername")
+    ->join("__COURSE_MEMBER__ as CM on CN.member_id= CM.id")
     ->where($condition)
     ->page($page,$pageSize)
+    ->fetchSql(false)
+    ->order('id desc')
     ->select();
- 
     $backData = array(
-        "code"      =>200,
-        "msg"       =>"ok",
-        "data"      => array(
+      'code'      => 200,
+      "msg"       => "ok",
+      'data'      => array(
           "list"  =>$list,
+          "total" =>intval($total),
           "page"  =>$page,
-          "total" =>$total,
-          "hasMore" => $total - ($page*$pageSize) > 0
-        )
+          "pageSize"  =>$pageSize,
+          "hasMore" =>$total > $page*$pageSize
+      )
     );
     $this->ajaxReturn($backData);
   }
+
+  /**
+  * 点评记录
+  */
+ public function remark(){
+   if(empty($_GET["courseid"])){
+     $backData = array(
+       'code'      => 13000,
+       "msg"       => "非法请求"    
+     );
+     $this->ajaxReturn($backData);     
+   }
+   $courseId = I("get.courseid");
+   $page = I("get.page/d",1);
+   $pageSize=20;
+   $condition = array(
+     "CG.course_id"  =>$courseId
+   );
+   $total = M("CourseGrade")->alias("CG")->where($condition)->count();
+   $list = M("CourseGrade")
+   ->alias("CG")
+   ->field("CG.*,CM.realname as membername")
+   ->join("__COURSE_MEMBER__ as CM on CG.member_id= CM.id")
+   ->where($condition)
+   ->page($page,$pageSize)
+   ->fetchSql(false)
+   ->order('id desc')
+   ->select();
+   $backData = array(
+     'code'      => 200,
+     "msg"       => "ok",
+     'data'      => array(
+         "list"  =>$list,
+         "total" =>intval($total),
+         "page"  =>$page,
+         "pageSize"  =>$pageSize,
+         "hasMore" =>$total > $page*$pageSize
+     )
+   );
+   $this->ajaxReturn($backData);
+ }
 
 
 

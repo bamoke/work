@@ -172,6 +172,69 @@ export default [
               hideInMenu:true
             },
             component: () => import('@/view/class/member')
+          },
+          {
+            path: 'notes',
+            name: 'class_notes',
+            meta: {
+              title: '课程笔记',
+              hideInMenu:true
+            },
+            component: () => import('@/view/class/notes')
+          },
+          {
+            path: 'remark',
+            name: 'class_remark',
+            meta: {
+              title: '课程点评',
+              hideInMenu:true
+            },
+            component: () => import('@/view/class/remark')
+          },
+          {
+            path: 'dynamic',
+            name: 'class_dynamic',
+            meta: {
+              title: '班级动态',
+              hideInMenu:true
+            },
+            component: () => import('@/view/class/dynamic')
+          },
+          {
+            path: 'tests',
+            name: 'class_tests',
+            meta: {
+              title: '作业考试',
+              hideInMenu:true
+            },
+            component: () => import('@/view/tests/index')
+          },
+          {
+            path: 'discuss',
+            name: 'class_discuss',
+            meta: {
+              title: '讨论组',
+              hideInMenu:true
+            },
+            component: () => import('@/view/discuss/index')
+          },
+          {
+            path: 'discuss_detail',
+            name: 'class_discuss_detail',
+            meta: {
+              title: '讨论组',
+              hideInMenu:true
+            },
+            component: () => import('@/view/discuss/detail')
+          },
+          {
+            path: 'survey',
+            name: 'class_survey',
+            meta: {
+              title: '调查问卷',
+              hideInMenu:true
+            },
+            component: () => import('@/view/survey/list')
           }
         ]
       },

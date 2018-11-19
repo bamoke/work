@@ -6,10 +6,10 @@ class HomeworkController extends BaseController {
   /**
    * 获取在当前课程（班级）下的学员信息
    */
-  protected function fetchMemberId($courseId){
+  protected function fetchMemberInfo($courseId){
     $memberId = null;
     $condition = array(
-      "coourse_id"=>$courseId,
+      "course_id"=>$courseId,
       "uid"   =>$this->uid
     );
     $courseMember = M("CourseMember")

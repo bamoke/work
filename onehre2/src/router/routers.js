@@ -222,10 +222,30 @@ export default [
             path: 'discuss_detail',
             name: 'class_discuss_detail',
             meta: {
-              title: '讨论组',
+              title: '讨论组详情',
               hideInMenu:true
             },
-            component: () => import('@/view/discuss/detail')
+            component: () => import('@/view/discuss/detail'),
+            children:[
+              {
+                path: 'member',
+                name: 'class_discuss_detail_member',
+                meta: {
+                  title: '讨论组成员',
+                  hideInMenu:true
+                },
+                component: () => import('@/view/discuss/member'),
+              },
+              {
+                path: 'node',
+                name: 'class_discuss_detail_node',
+                meta: {
+                  title: '讨论分栏',
+                  hideInMenu:true
+                },
+                component: () => import('@/view/discuss/node'),
+              }
+            ]
           },
           {
             path: 'survey',

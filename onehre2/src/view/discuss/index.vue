@@ -205,7 +205,9 @@ export default {
       this.showModal = true;
     },
     handleView(params) {
-      console.log(params);
+      this.$router.push({
+        name:'class_discuss_detail_node'
+      })
     },
     handleDelete(params) {
       const discussId = params.row.id;

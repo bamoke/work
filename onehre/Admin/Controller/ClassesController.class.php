@@ -110,7 +110,7 @@ use Admin\Common\Auth;
       "CN.course_id"  =>$courseId
     );
     $total = M("CourseNotes")->alias("CN")->where($condition)->count();
-    $list = M("CourseDynamic")
+    $list = M("CourseNotes")
     ->alias("CN")
     ->field("CN.*,CM.realname as membername")
     ->join("__COURSE_MEMBER__ as CM on CN.member_id= CM.id")

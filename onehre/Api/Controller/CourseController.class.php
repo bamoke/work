@@ -35,6 +35,9 @@ class CourseController extends Controller {
       $this->ajaxReturn($backData);  
     }
 
+    /**
+     * 课程详情
+     */
     public function detail(){
       if(empty($_GET["id"])){
         $backData = array(
@@ -52,19 +55,38 @@ class CourseController extends Controller {
       $teacherInfo = M("Teacher")->field("id,fullname as name,avatar,introduce")->where(array("id"=>$courseInfo['teacher_id']))->fetchSql(false)->find();
 
       $isEnroll = 0;//是否已经有预约记录
+      $isMember = 0;//是否已经是班级成员
       if(!empty($_SERVER["HTTP_X_ACCESS_TOKEN"])){
         $Account = A("Account");
-        $uid =$Account->getMemberId();
-        $isEnroll = M("CourseEnroll")
-        ->where(array("uid"=>$uid,"course_id"=>$courseId))
-        ->fetchSql(false)
-        ->count();
+        $sessionInfo = $Account->getSessionInfo();
+        $uid =$sessionInfo['uid'];
+        if($uid) {
+          $isEnroll = M("CourseEnroll")
+          ->where(array("uid"=>$uid,"course_id"=>$courseId))
+          ->fetchSql(false)
+          ->count();
+
+          $memberWhere = array(
+            'uid'=>$uid,
+            "phone"=>$sessionInfo['phone'],
+            "_logic"=>"OR"
+          );
+          $memberWhere2 = array(
+            "course_id" =>$courseId,
+            "_complex" =>$memberWhere
+          );
+          $isMember = M("CourseMember")
+          ->where($memberWhere2)
+          ->fetchSql(false)
+          ->count();
+        }
       }
       $backData = array(
           "code"      =>200,
           "msg"       =>"ok",
           "data"    => array(
             "isEnroll"  =>$isEnroll,
+            "isMember"  =>$isMember,
             "courseInfo"  =>$courseInfo,
             "teacherInfo" =>$teacherInfo
           )

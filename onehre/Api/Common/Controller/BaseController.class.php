@@ -18,9 +18,12 @@ use Think\Controller;
 class BaseController extends Controller
 {
     public $uid;
+    public $sessionInfo;
     protected function _initialize(){
         $this->_checklogin();
-        $this->uid = $this->fetchUid();
+        $sessionInfo = $this->fetchSessionInfo();
+        $this->uid = $sessionInfo['uid'];
+        $this->sessionInfo = $sessionInfo;
     }
 
     protected function _checklogin(){
@@ -57,9 +60,10 @@ class BaseController extends Controller
         return M("Member")->field("id,openid,phone,status")->where(array('id'=>$this->uid))->find();
     }
 
-    protected function fetchUid (){
+    protected function fetchSessionInfo (){
         $token = $_SERVER["HTTP_X_ACCESS_TOKEN"];
-        $sessionResult = M("Mysession")->field("uid")->where(array("token"=>$token))->find();
-        return $sessionResult["uid"];
+        $sessionResult = M("Mysession")->where(array("token"=>$token))->find();
+        return $sessionResult;
     }
+
 }

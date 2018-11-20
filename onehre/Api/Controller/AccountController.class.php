@@ -8,9 +8,6 @@ class AccountController extends Controller {
         return $session_id;
     }
 
-    function test (){
-        echo "s";
-    }
     
     /** 
      * member regist
@@ -314,7 +311,7 @@ class AccountController extends Controller {
     }
 
     /**
-     * 获取用户账号信息
+     * 获取用户ID
     */
     public function getMemberId(){
         $accessToken = $_SERVER["HTTP_X_ACCESS_TOKEN"];
@@ -324,6 +321,14 @@ class AccountController extends Controller {
             $memberId = $memberInfo['id'];
         }
         return (int)$memberId;
+    }
+    /**
+     * 获取用户SESSION信息
+     */
+    public function getSessionInfo(){
+        $accessToken = $_SERVER["HTTP_X_ACCESS_TOKEN"];
+        $sessionInfo = M("Mysession")->where(array("token"=>$accessToken))->find();
+        return $sessionInfo;
     }
 
     

@@ -10,19 +10,25 @@ class MyclassController extends BaseController {
    * @page
    */
   public function index(){
+    $sessionInfo = $this->sessionInfo;
     $page = I("get.p/d",1);
     $pageSize = 20;
     $condition = array(
-      "CM.status"  =>1,
-      "CM.uid"    =>$this->uid
+      "CM.uid"     =>$this->uid,
+      "CM.phone"   =>$sessionInfo['phone'],
+      "_logic"  =>"OR"
     );
-    $total = M("CourseMember")->alias("CM")->where($condition)->count();
+    $conditionMap = array(
+      "_complex"  =>$condition,
+      "CM.status"    =>1
+    );
+    $total = M("CourseMember")->alias("CM")->where($conditionMap)->count();
 
     $list = M("CourseMember")
     ->alias("CM")
     ->field("CM.*,CR.title as course_name")
     ->join("__COURSE__ as CR on CR.id=CM.course_id")
-    ->where($condition)
+    ->where($conditionMap)
     ->page($page,$pageSize)
     ->fetchSql(false)
     ->select();
@@ -55,15 +61,24 @@ class MyclassController extends BaseController {
       );  
       $this->ajaxReturn($backData); 
     }
+    $sessionInfo = $this->sessionInfo;
     $courseId = I("get.courseid");
     // 检查是否是本班成员
-    $memberInfo = M("CourseMember")->where(array('course_id'=>$courseId,'uid'=>$this->uid))->find();
+    $memberInfo = M("CourseMember")->where(array('course_id'=>$courseId,'phone'=>$sessionInfo['phone']))->find();
     if(!$memberInfo) {
       $backData = array(
         "code"  => 14001,
         "msg"   => "不是本班成员"
       );  
       $this->ajaxReturn($backData);  
+    }
+    // 绑定用户ID
+    if(!$memberInfo['uid']) {
+      $updateMember = M("CourseMember")->where(array('id'=>$memberInfo['id']))->data(array('uid'=>$this->uid))->save();
+    }
+    // 更新签到
+    if($memberInfo['is_signin']==0){
+      $updateMember = M("CourseMember")->where(array('id'=>$memberInfo['id']))->data(array('is_signin'=>1))->fetchSql(false)->save();
     }
     $page = I("get.p/d",1);
     $pageSize=20;
@@ -97,7 +112,7 @@ class MyclassController extends BaseController {
     /**
    * 班级动态获取
    */
-  public function vlist(){
+  public function dynamic(){
     if(empty($_GET["courseid"])){
       $backData = array(
         "code"  => 10002,
@@ -181,11 +196,12 @@ class MyclassController extends BaseController {
       $this->ajaxReturn($backData); 
     }
     $courseId = I("get.courseid");
+    $memberInfo = M("CourseMember")->where(array('uid'=>$this->uid))->find();
     $page = I("get.p/d",1);
     $pageSize=8;
     $condition = array(
-      "course_id"  =>$courseId,
-      "uid"         =>$this->uid
+      "course_id"   =>$courseId,
+      "member_id"   =>$memberInfo['id']
     );
     $total = M("CourseNotes")->where($condition)->count();
     $list = M("CourseNotes")
@@ -214,9 +230,10 @@ class MyclassController extends BaseController {
       );  
       $this->ajaxReturn($backData); 
     }
+    $memberInfo = M("CourseMember")->where(array('uid'=>$this->uid))->find();
     $insertData = array(
       "course_id" =>I("post.courseid"),
-      "uid"       =>$this->uid,
+      "member_id"       =>$memberInfo['id'],
       "content"   =>I("post.content")
     );
     $insertResult = M("CourseNotes")->data($insertData)->fetchSql(false)->add();
@@ -252,13 +269,14 @@ class MyclassController extends BaseController {
       $this->ajaxReturn($backData); 
     }
     $courseId = I("get.courseid");
+    $memberInfo = M("CourseMember")->where(array('uid'=>$this->uid))->find();
     $courseCondition = array(
       "id"  =>$courseId
     );
     $courseInfo = M("Course")->field("title")->where($courseCondition)->find();
     $gradeCondition = array(
       "course_id" =>$courseId,
-      "uid"       =>$this->uid
+      "member_id"       =>$memberInfo['id']
     );
     $gradeInfo = M("CourseGrade")->where($gradeCondition)->find();
     $backData = array(
@@ -280,10 +298,13 @@ class MyclassController extends BaseController {
       );  
       $this->ajaxReturn($backData); 
     }
+    $memberInfo = M("CourseMember")->where(array('uid'=>$this->uid))->find();
     $insertData = array(
       "course_id" =>I("post.courseid"),
-      "uid"       =>$this->uid,
+      "uid"       =>$memberInfo['id'],
       "grade"     =>I("post.grade/d"),
+      "teacher_grade" =>I("post.teacher_grade/d"),
+      "course_grade" =>I("post.course_grade/d"),
       "comment"   =>I("post.comment")
     );
     $insertResult = M("CourseGrade")->data($insertData)->fetchSql(false)->add();

@@ -73,10 +73,12 @@ class HomeworkController extends BaseController {
       $this->ajaxReturn($backData); 
     }
     $testId = I("get.testid");
+    $testInfo = M("Test")->field("course_id,title")->where(array("id"=>$testId))->fetchSql(false)->find();
+    $memberInfo = $this->fetchMemberInfo($testInfo['course_id']);
     // 检查是否已完成
     $logsCondition = array(
       "test_id" =>$testId,
-      "uid"       =>$this->uid
+      "member_id"       =>$memberInfo['id']
     );
     $isComplete = M("TestLogs")->where($logsCondition)->count();
     $backData = array(
@@ -102,9 +104,11 @@ class HomeworkController extends BaseController {
     $testId = I("get.testid");
     
   // 检查是否已完成
+    $testInfo = M("Test")->field("course_id,title")->where(array("id"=>$testId))->fetchSql(false)->find();
+    $memberInfo = $this->fetchMemberInfo($testInfo['course_id']);
     $logsCondition = array(
       "test_id" =>$testId,
-      "uid"       =>$this->uid
+      "member_id"       =>$memberInfo['id']
     );
     $isComplete = M("TestLogs")->where($logsCondition)->count();
     if($isComplete) {
@@ -165,14 +169,15 @@ class HomeworkController extends BaseController {
     $list = M("TestLogs")
     ->alias("TL")
     ->field("TL.*,CM.realname as membername")
-    ->join("__COURSE_MEMBER__ as CM on TL.uid=CM.uid")
+    ->join("__COURSE_MEMBER__ as CM on TL.member_id=CM.id")
     ->where()
     ->where($condition)
     ->limit(10)
     ->order("score desc")
     ->select();
     
-    $myRecod = M("TestLogs")->where(array('test_id'=>$testId,"uid"=>$this->uid))->find();
+    $memberInfo = $this->fetchMemberInfo($courseId);
+    $myRecod = M("TestLogs")->where(array('test_id'=>$testId,"member_id"=>$memberInfo['id']))->find();
 
     $backData = array(
         "code"      =>200,
@@ -199,11 +204,11 @@ class HomeworkController extends BaseController {
       $this->ajaxReturn($backData); 
     }
     $testId = I("post.testid");
-    $testInfo = M("Test")->field("course_id,title")->where(array("id"=>$testId))->find();
-    $memberInfo = M("CourseMember")->field("id,realname")->where(array('course_id'=>$testInfo['course_id'],"uid"=>$this->uid))->find();
+    $testInfo = M("Test")->field("course_id,title")->where(array("id"=>$testId))->fetchSql(false)->find();
+    $memberInfo = $this->fetchMemberInfo($testInfo['course_id']);
     $insertLogData = array(
       "test_id" =>$testId,
-      "uid"     =>$this->uid,
+      "member_id"     =>$memberInfo["id"],
       "score"   =>I("post.score"),
       "question_total"  =>I("post.total"),
       "error_total"     =>I("post.error"),

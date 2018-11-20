@@ -4,23 +4,28 @@ use Api\Common\Controller\BaseController;
 class DiscussController extends BaseController {
 
   /**
-   * 获取当前课程的成员ID
+   * 获取当前讨论组的成员信息
+   * params type    1:课程；2：项目
+   * params objId   课程ID或项目ID
    */
-  protected function fetchMemberId($courseId){
-    $memberId = null;
-    $condition = array(
-      "coourse_id"=>$courseId,
-      "uid"   =>$this->uid,
-      "status"  =>1
-    );
-    $courseMember = M("CourseMember")
-    ->field("id")
+  protected function fetchMemberInfo($type,$objId){
+    $sessionInfo = $this->sessionInfo;
+    $condition = array();
+    $tableName = "";
+    if($type == 1){
+      $condition['phone'] = $sessionInfo['phone'];
+      $condition['course_id'] = $objId;
+      $tableName = 'CourseMember';
+    }else {
+      $condition['uid'] =$this->uid;
+      $condition['pt_id'] =$objId;
+      $tableName = 'CourseMember';
+    }
+    $memberInfo = M($tableName)
     ->where($condition)
     ->find();
-    if($courseMember) {
-      $memberId = $courseMember['id'];
-    }
-    return $memberId;
+
+    return $memberInfo;
   }
   /**
    * News list
@@ -37,17 +42,20 @@ class DiscussController extends BaseController {
     }
     $objId = I("get.obj_id");
     $discussType = I("get.type");
+    $memberInfo = $this->fetchMemberInfo($discussType,$objId);
+    $memberId = $memberInfo['id'];
+    
     $page = I("get.p/d",1);
     $pageSize = 20;
     $condition = array(
-      "DM.uid"    =>$this->uid,
+      "DM.member_id"    =>$memberId,
       "DC.obj_id"     =>$objId,
       "DC.type"   =>$discussType
     );
 
     $list = M("DiscussMember")
     ->alias("DM")
-    ->field("DM.uid,DC.id,DC.title as discuss_name,DC.stage")
+    ->field("DM.member_id,DC.id,DC.title as discuss_name,DC.stage")
     ->join("__DISCUSS__ as DC on DC.id=DM.dc_id")
     ->where($condition)
     ->page($page,$pageSize)
@@ -80,19 +88,22 @@ class DiscussController extends BaseController {
       $this->ajaxReturn($backData); 
     }
     $discussId = I("get.id");
+    $discussInfo = M("Discuss")->field("title,stage,type")->where("id=$discussId")->find();
+    $memberInfo = $this->fetchMemberInfo($discussInfo['type'],$discussInfo['obj_id']);
+    $memberId = $memberInfo['id'];
+
     $memberCondition = array(
       "dc_id" =>$discussId,
-      "uid"   =>$this->uid
+      "member_id"   =>$memberId
     );
-    $memberInfo = M("DiscussMember")->where($memberCondition)->find();
-    if(!$memberInfo) {
+    $dicMemberInfo = M("DiscussMember")->where($memberCondition)->find();
+    if(!$dicMemberInfo) {
       $backData = array(
         "code"  => 14001,
         "msg"   => "不是讨论组成员"
       );  
       $this->ajaxReturn($backData);  
     }
-    $discussInfo = M("Discuss")->field("title,stage,type")->where("id=$discussId")->find();
 
     $nodesList = M("DiscussNode")->where(array("dc_id"=>$discussId))->select();
     $nodeIdArr = array();
@@ -111,7 +122,7 @@ class DiscussController extends BaseController {
       $contentList = M("DiscussContent")
       ->alias("DC")
       ->field("DC.*,CM.realname as membername")
-      ->join("__COURSE_MEMBER__ as CM on DC.uid=CM.uid")
+      ->join("__COURSE_MEMBER__ as CM on DC.member_id=CM.id")
       ->where($contentCondition)
       ->limit(10)
       ->fetchSql(false)
@@ -120,7 +131,7 @@ class DiscussController extends BaseController {
       $contentList = M("DiscussContent")
       ->alias("DC")
       ->field("DC.*,PM.realname")
-      ->join("__PARTTIME_MEMBER__ as PM on DC.uid=PM.uid")
+      ->join("__PARTTIME_MEMBER__ as PM on DC.member_id=PM.id")
       ->where($contentCondition)
       ->limit(10)
       ->select();
@@ -196,43 +207,6 @@ class DiscussController extends BaseController {
 
 
   /**
-   * 笔记
-   */
-  public function notes(){
-    if(empty($_GET["courseid"])){
-      $backData = array(
-        "code"  => 10002,
-        "msg"   => "访问参数错误"
-      );  
-      $this->ajaxReturn($backData); 
-    }
-    $courseId = I("get.courseid");
-    $page = I("get.p/d",1);
-    $pageSize=8;
-    $condition = array(
-      "course_id"  =>$courseId,
-      "uid"         =>$this->uid
-    );
-    $total = M("CourseNotes")->where($condition)->count();
-    $list = M("CourseNotes")
-    ->where($condition)
-    ->page($page,$pageSize)
-    ->select();
- 
-    $backData = array(
-        "code"      =>200,
-        "msg"       =>"ok",
-        "data"      => array(
-          "list"  =>$list,
-          "page"  =>$page,
-          "total" =>$total,
-          "hasMore" => $total - ($page*$pageSize) > 0
-        )
-    );
-    $this->ajaxReturn($backData);
-  }
-
-  /**
    * 讨论组内容详情
    */
   public function content(){
@@ -245,29 +219,30 @@ class DiscussController extends BaseController {
     }
     $contentId = I("get.contentid");
     $contentInfo = M("DiscussContent")->where("id=$contentId")->find();
+
+
+
+    // 通过讨论组的成员信息获得Discuss ID及ObjMember ID
+    $discussMember = M("DiscussMember")->where(array('id'=>$contentInfo['member_id']))->find();
+    
+    // 获取Discuss 信息
     $discussInfo = M("Discuss")
-    ->alias("D")
-    ->field("D.*")
-    ->join("__DISCUSS_NODE__ as DN on DN.dc_id=D.id")
-    ->where(array("DN.id"=>$contentInfo['node_id']))
+    ->field("*")
+    ->where(array("id"=>$discussMember['dc_id']))
     ->find();
+
     if($discussInfo['type'] == 1) {
       $commentJoinTable = "__COURSE_MEMBER__";
       $memberModelName = "CourseMember";
-      $memberCondition = array(
-        "course_id" =>$discussInfo['obj_id'],
-        "uid"       =>$this->uid
-      );
+
     }elseif($discussInfo['type'] == 2){
       $commentJoinTable = "__PARTTIME_MEMBER__";
       $memberModelName = "ParttimeMember";
-      $memberCondition = array(
-        "pt_id"     =>$discussInfo['obj_id'],
-        "uid"       =>$this->uid
-      );
+
     }
-    $memberInfo = M($memberModelName)->where($memberCondition)->find();
-    $contentInfo['member_name'] = $memberInfo['realname'];
+    $objMemberInfo = M($memberModelName)->where(array("id"=>$discussMember['member_id']))->fetchSql(false)->find();
+    $contentInfo['member_name'] = $objMemberInfo['realname'];
+
 
     // 获取评论列表
     $commentCondition = array(
@@ -277,7 +252,8 @@ class DiscussController extends BaseController {
     $commentList = M("DiscussComment")
     ->alias("DC")
     ->field("DC.*,MB.realname as membername")
-    ->join($commentJoinTable."  as MB on MB.uid=DC.uid")
+    ->join("__DISCUSS_MEMBER__ as DM on DC.member_id=DM.id")
+    ->join($commentJoinTable."  as MB on MB.id=DM.member_id")
     ->where($commentCondition)
     ->order("DC.id desc")
     ->limit(20)
@@ -307,7 +283,7 @@ class DiscussController extends BaseController {
       );  
       $this->ajaxReturn($backData); 
     }
-    // 通过contentID网上查找用户的名字
+    // 通过contentID往上查找用户的名字
     $contentId = I("post.contentid");
     $contentInfo = M("DiscussContent")->field("node_id")->where("id=$contentId")->find();
     $discussInfo = M("Discuss")
@@ -316,6 +292,7 @@ class DiscussController extends BaseController {
     ->join("__DISCUSS_NODE__ as DN on DN.dc_id=D.id")
     ->where(array("DN.id"=>$contentInfo['node_id']))
     ->find();
+    
     if($discussInfo['type'] == 1) {
       $memberModelName = "CourseMember";
       $memberCondition = array(
@@ -335,7 +312,7 @@ class DiscussController extends BaseController {
     $insertData = array(
       "content_id" =>$contentId,
       "content"       =>I("post.content"),
-      "uid"       =>$this->uid
+      "member_id"       =>$this->uid
     );
     $insertResult = M("DiscussComment")->data($insertData)->fetchSql(false)->add();
     if(!$insertResult) {

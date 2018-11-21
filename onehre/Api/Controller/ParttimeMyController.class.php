@@ -99,8 +99,12 @@ class ParttimeMyController extends BaseController {
     $parttimeId = I("get.id");
 
     // 检查是否是项目成员
-    $isMember = M("ParttimeMember")->where(array('pt_id'=>$parttimeId))->count();
-    if($isMember == 0) {
+    $memberCondition = array(
+      "pt_id" =>$parttimeId,
+      "uid"   =>$this->uid
+    );
+    $memberInfo = M("ParttimeMember")->where($memberCondition)->fetchSql(false)->find();
+    if(!$memberInfo) {
       $backData = array(
         "code"  => 14002,
         "msg"   => "不是项目成员"
@@ -113,14 +117,15 @@ class ParttimeMyController extends BaseController {
       "code"      =>200,
       "msg"       =>"ok",
       "data"      =>array(
-        "parttimeInfo"  =>$parttimeInfo
+        "parttimeInfo"  =>$parttimeInfo,
+        "memberInfo"    =>$memberInfo
       )
     );
     $this->ajaxReturn($backData);
   }
 
   /**
-   * 获取当前项目的discuss ID
+   * 获取当前项目的discuss
    */
   public function discuss(){
     if(empty($_GET["parttimeid"])){
@@ -135,12 +140,14 @@ class ParttimeMyController extends BaseController {
       "obj_id"  =>$parttimeId,
       "type"    =>2
     );
-    $discussId = M("Discuss")->where($condition)->getField("id");
+    $parttimeInfo = M("Parttime")->where("id=$parttimeId")->find();
+    $discussList = M("Discuss")->where($condition)->limit(20)->select();
     $backData = array(
       "code"      =>200,
       "msg"       =>"ok",
       "data"      =>array(
-        "discussid"  =>$discussId
+        "discuss"  =>$discussList,
+        "parttimeInfo"  =>$parttimeInfo
       )
     );
     $this->ajaxReturn($backData);
@@ -199,6 +206,7 @@ class ParttimeMyController extends BaseController {
       $this->ajaxReturn($backData); 
     }
     $parttimeId = I("get.parttimeid");
+    $parttimeInfo = M("Parttime")->field("id,status,stage,create_time")->where("id=$parttimeId")->find();
     $condition = array(
       "pt_id" =>$parttimeId
     );
@@ -213,7 +221,8 @@ class ParttimeMyController extends BaseController {
       "msg"       =>"ok",
       "data"      =>array(
         "memberInfo"  =>$memberInfo,
-        "progressInfo"  =>$progressList
+        "progressInfo"  =>$progressList,
+        "parttimeInfo"  =>$parttimeInfo
       )
     );
     $this->ajaxReturn($backData);
@@ -232,6 +241,37 @@ class ParttimeMyController extends BaseController {
     $status = I("get.status");
     $update = M("ParttimeProgress")->where("id=$progressId")->data(array("status"=>$status))->save();
     if(!$update) {
+      $backData = array(
+        "code"  => 13002,
+        "msg"   => "操作失败"
+      );  
+      $this->ajaxReturn($backData); 
+    }
+    $backData = array(
+      "code"  => 200,
+      "msg"   => "success"
+    );  
+    $this->ajaxReturn($backData); 
+  }
+
+  /**
+   * 项目完成
+   */
+  public function docomplete(){
+    if(empty($_GET['parttimeid'])){
+      $backData = array(
+        "code"  => 10002,
+        "msg"   => "访问参数错误"
+      );  
+      $this->ajaxReturn($backData);      
+    }
+    $parttimeId = I('get.parttimeid');
+    $updateData = array(
+      "stage" => 2,
+      "complete_time" =>date("Y-m-d H:i:s",time())
+    );
+    $updateResult = M("Parttime")->where(array('id'=>$parttimeId))->data($updateData)->fetchSql(false)->save();
+    if($updateResult === false){
       $backData = array(
         "code"  => 13002,
         "msg"   => "操作失败"

@@ -301,7 +301,7 @@ class MyclassController extends BaseController {
     $memberInfo = M("CourseMember")->where(array('uid'=>$this->uid))->find();
     $insertData = array(
       "course_id" =>I("post.courseid"),
-      "uid"       =>$memberInfo['id'],
+      "member_id"       =>$memberInfo['id'],
       "grade"     =>I("post.grade/d"),
       "teacher_grade" =>I("post.teacher_grade/d"),
       "course_grade" =>I("post.course_grade/d"),

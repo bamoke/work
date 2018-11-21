@@ -61,7 +61,7 @@ class SurveyController extends Controller {
     $Account = A("Account");
     $uid =$Account->getMemberId();
     // 检查是否已经参与过
-    $surveyLog = M("SurveyLogs")->where(array('id'=>$surveyId,'uid'=>$uid))->count();
+    $surveyLog = M("SurveyLogs")->where(array('survey_id'=>$surveyId,'uid'=>$uid))->fetchSql(false)->count();
     if($surveyLog) {
       $backData = array(
         "code"  => 14001,
@@ -70,7 +70,7 @@ class SurveyController extends Controller {
       $this->ajaxReturn($backData);  
     }
 
-    $surveyInfo = M("Survey")->field('id,title,description')->where("id=$surveyId")->fetchSql(false)->find();
+    $surveyInfo = M("Survey")->where("id=$surveyId")->fetchSql(false)->find();
     $questionList = M("SurveyQuestion")->where(array("s_id"=>$surveyId))->order('sort,id')->select();
     $questionIdArr = array();
     foreach ($questionList as $key=>$val) {
@@ -159,9 +159,12 @@ class SurveyController extends Controller {
       $insertSelection = M("SurveyLogs")->data($insertSelectionData)->add();
 
       // insert fill question
-      $insertFillData = M("SurveyFill")->addAll($fillQuestion);
+      $insertFillResult = true;
+      if(count($fillQuestion)) {
+        $insertFillResult = M("SurveyFill")->addAll($fillQuestion);
+      }
 
-      if($updateAnswer && $insertSelection && $insertFillData) {
+      if($updateAnswer && $insertSelection && $insertFillResult) {
         $backData = array(
           "code"      =>200,
           "msg"       =>"ok"
@@ -170,7 +173,7 @@ class SurveyController extends Controller {
         $this->ajaxReturn($backData);
       }else {
         $backData = array(
-          "code"      =>1301,
+          "code"      =>13001,
           "msg"       =>"数据保存错误",
         );
         $model->rollback();

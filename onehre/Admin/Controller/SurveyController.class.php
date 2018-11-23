@@ -20,6 +20,11 @@ class SurveyController extends Auth {
     if(!empty($_GET['keywords'])) {
       $where['title'] = array('like','%'.I("get.keywords").'%');
     }
+    if(!empty($_GET['courseid'])) {
+      $where['course_id'] = I("get.courseid");
+    }else {
+      $where['type'] = 1;
+    }
     $list = $mainModel
     ->field("id,title,date(create_time) as date,status,is_released")
     ->where($where)
@@ -87,7 +92,7 @@ class SurveyController extends Auth {
       $this->ajaxReturn($backData);   
     }
 
-    if(isset($mainModel->id) && !is_null($mainModel->id)){
+    if(isset($mainModel->id)){
       $id = (int)$mainModel->id;
       $result = $mainModel->where(array("id"=>$id))->save();
     }else {

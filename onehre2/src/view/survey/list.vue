@@ -66,21 +66,8 @@ export default {
                 },
                 "编辑"
               );
-              let releaseItem = h(
-                "Button",
-                {
-                  style: {
-                    marginRight: "12px",
-                    on: {
-                      click: () => {
-                        this.handleRelease(params);
-                      }
-                    }
-                  }
-                },
-                "发布"
-              );
-              tempArr.unshift(editItem, releaseItem);
+  
+              tempArr.unshift(editItem);
             }
             tempArr.push(
               h(
@@ -112,7 +99,11 @@ export default {
       this._toPage(queryData);
     },
     handleAdd() {
-      this.$router.push("add");
+      let queryData = {}
+      if(this.$route.params.courseid){
+        queryData.courseid = this.$route.params.courseid
+      }
+      this.$router.push({name:"survey_add",query:queryData});
     },
     handleEdit(params) {
       const id = params.row.id;

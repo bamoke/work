@@ -90,6 +90,7 @@ export default {
   methods: {
     handleEditorChanged(data) {},
     handleSubmit(name) {
+      console.log(this.formInfo)
       this.submitIng = true;
       this.$refs[name].validate(valid => {
         if (valid) {
@@ -113,6 +114,12 @@ export default {
       // return this.formInfo.stage > 0;
     }
   },
-  mounted() {}
+  mounted() {
+    if(this.$route.query.courseid) {
+      this.formInfo.type=2
+      this.formInfo.course_id=this.$route.query.courseid
+    }
+    
+  }
 };
 </script>

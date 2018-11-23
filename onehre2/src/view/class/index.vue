@@ -15,7 +15,7 @@
       <router-link :to="{name:'class_remark'}" class="item">
         <span class="caption">课程点评</span>
       </router-link>
-      <router-link :to="{name:'class_survey'}" class="item">
+      <router-link :to="{name:'class_survey',query:{courseid:courseId}}" class="item">
         <span class="caption">问卷调查</span>
       </router-link>
       <router-link :to="{name:'class_dynamic'}" class="item">
@@ -44,7 +44,7 @@ export default {
     }
   },
   mounted () {
-    // console.log(this.$route.params)
+    this.courseId = this.$route.params.courseid
   }
 }
 </script>

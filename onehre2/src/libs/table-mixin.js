@@ -17,8 +17,9 @@ const tableMixin = {
     },
     _fetchData(afterFunc) {
       const apiUrl = this.tableDataApi
+      var params = this.$route.params
       var queryData = this.$route.query
-      var data = queryData
+      var data = Object.assign(params, queryData)
       getTableList(apiUrl, data).then(res => {
         afterFunc(res)
       })

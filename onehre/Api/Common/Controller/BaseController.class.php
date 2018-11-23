@@ -42,22 +42,22 @@ class BaseController extends Controller
         if(!$res) {
             $backData = array(
                 "code"  => 11002,
-                "msg"   => "登陆态已过期，请重新登录"
+                "msg"   => "账号已在其他设备登录，请重新登录"
             );
             $this->ajaxReturn($backData);          
         }
-        if(!$res['phone']) {
+        if($res["expires_time"] <= time()) {
             $backData = array(
-                "code"  => 11001,
-                "msg"   => "请登录后再操作"
+                "code"  => 11002,
+                "msg"   => "状态已过期请重新登录"
             );
-            $this->ajaxReturn($backData);           
+            $this->ajaxReturn($backData);          
         }
         
     }
 
     protected function fetchAccount(){
-        return M("Member")->field("id,openid,phone,status")->where(array('id'=>$this->uid))->find();
+        return M("Member")->field("id,phone,status")->where(array('id'=>$this->uid))->find();
     }
 
     protected function fetchSessionInfo (){

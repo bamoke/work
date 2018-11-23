@@ -67,38 +67,42 @@ class AccountController extends Controller {
             return $this->ajaxReturn($backData);            
         }
 
-        // 1.2 update
-        $accessToken = $_SERVER['HTTP_X_ACCESS_TOKEN'];
-        $sessionInfo = M("Mysession")->where(array('token'=>$accessToken))->find();
-        $memberData = array(
-            "phone"         => $phone,
-            "password"      => md5($password."onehre"),
-            "reg_time"      => time()
-        );
-        
+ 
         $model = M();
         $model->startTrans();
-        $updateMember = M("Member")->data($memberData)->where(array('id'=>$sessionInfo['uid']))->save();
-        $sessionData = array(
-            "phone"         =>$phone,
-            "token"         => $this->createSessionId(),
-            "expires_time"  => time() + (3600 * 24 * 7)
+        // 1.3 创建用户
+        $memberModel = M("Member");
+        $insertMemberData = array(
+            "phone"       =>$phone,
+            "password"    =>md5(I("post.password")."onehre"),
+            "reg_time"    =>time()
         );
-        $updateSession = M("Mysession")->data($sessionData)->where(array('id'=>$sessionInfo['id']))->save();
-        if(!$updateMember || !$updateSession) {
+        $insertMember = $memberModel->fetchSql(false)->add($insertMemberData);
+
+        //1.4 创建session
+        $accessToken = $this->createSessionId();
+        $insertSessionData = array(
+            "uid"           =>$insertMember,
+            "phone"       =>$phone,
+            "token"         =>$accessToken
+        );
+        $insertSession = M("Mysession")->fetchSql(false)->add($insertSessionData);
+
+        // 1.5 数据提交;
+        if($insertSession && $insertMember){
+            $backData = array(
+                "code" =>200,
+                "msg"  =>'ok'
+            );
+            $model->commit();
+        }else {
             $model->rollback();
             $backData = array(
                 "code" =>13002,
                 "msg"  =>'注册失败'
             );
-            $this->ajaxReturn($backData); 
         }
 
-        $model->commit();
-        $backData = array(
-            "code" =>200,
-            "msg"  =>'注册成功'
-        );
         $this->ajaxReturn($backData); 
     }
     /**
@@ -157,7 +161,8 @@ class AccountController extends Controller {
         // update session' token
         $accessToken = $this->createSessionId();
         $sessionData = array(
-            "token" =>$accessToken
+            "token" =>$accessToken,
+            "expires_time"  =>time() + 3600*24
         );
         $updateSession = M("Mysession")->where(array("uid"=>$memberInfo['id']))->data($sessionData)->fetchSql(false)->save();
         

@@ -107,64 +107,49 @@ class DiscussController extends BaseController {
     }
 
     $nodesList = M("DiscussNode")->where(array("dc_id"=>$discussId))->select();
-    $nodeIdArr = array();
-    if(count($nodesList)) {
-      foreach($nodesList as $key=>$val){
-        array_push($nodeIdArr,$val['id']);
-      }
-    }
-
-    $nodeIdList = implode(",",$nodeIdArr);
-    $contentCondition = array(
-      "DC.node_id"=>array("in",$nodeIdList)
-    );
-
-    if($discussInfo['type'] ==  1){
-      $contentList = M("DiscussContent")
-      ->alias("DC")
-      ->field("DC.*,CM.realname as membername")
-      ->join("__DISCUSS_MEMBER__ as DM on DC.member_id = DM.id")
-      ->join("__COURSE_MEMBER__ as CM on DM.member_id=CM.id")
-      ->where($contentCondition)
-      ->limit(10)
-      ->fetchSql(false)
-      ->select();
-    }elseif($discussInfo['type'] ==  2){
-      $contentList = M("DiscussContent")
-      ->alias("DC")
-      ->field("DC.*,PM.realname as membername")
-      ->join("__DISCUSS_MEMBER__ as DM on DC.member_id = DM.id")     
-      ->join("__PARTTIME_MEMBER__ as PM on DM.member_id=PM.id")
-      ->where($contentCondition)
-      ->limit(10)
-      ->select();
-    }
-
     $nodes = array();
-    if(count($nodesList)) {
+    if(count($nodesList)){
       foreach ($nodesList as $key=>$val){
-        $nodeContentList = array();
-        if(count($contentList)) {
-          foreach($contentList as $k=>$v){
-            if($v['node_id'] == $val['id']) {
-              $nodeContentList[] = $v;
-            }
-          }
+        $contentCondition = array(
+          "DC.node_id"=>$val['id']
+        );
+        if($discussInfo['type'] ==  1){
+          $contentList = M("DiscussContent")
+          ->alias("DC")
+          ->field("DC.*,CM.realname as membername")
+          ->join("__DISCUSS_MEMBER__ as DM on DC.member_id = DM.id")
+          ->join("__COURSE_MEMBER__ as CM on DM.member_id=CM.id")
+          ->where($contentCondition)
+          ->limit(5)
+          ->fetchSql(false)
+          ->select();
+        }elseif($discussInfo['type'] ==  2){
+          $contentList = M("DiscussContent")
+          ->alias("DC")
+          ->field("DC.*,PM.realname as membername")
+          ->join("__DISCUSS_MEMBER__ as DM on DC.member_id = DM.id")     
+          ->join("__PARTTIME_MEMBER__ as PM on DM.member_id=PM.id")
+          ->where($contentCondition)
+          ->limit(5)
+          ->select();
         }
+
         $nodes[] = array(
           "id"=>$val['id'],
           "title"=>$val['title'],
-          "contentList" =>$nodeContentList
+          "contentList" =>$contentList
         );
       }
+
     }
+
 
     $backData = array(
         "code"      =>200,
         "msg"       =>"ok",
         "data"      => array(
           "discuss" =>$discussInfo,
-          "memberInfo"  =>$memberInfo,
+          "memberInfo"  =>$dicMemberInfo,
           "nodes"  =>$nodes
         )
     );
@@ -248,6 +233,7 @@ class DiscussController extends BaseController {
       $this->ajaxReturn($backData); 
     }
     $contentId = I("get.contentid");
+    $discussId = I("get.discussid");
     $contentInfo = M("DiscussContent")->where("id=$contentId")->find();
 
     // 通过讨论组的成员信息获得Discuss ID及ObjMember ID
@@ -320,15 +306,18 @@ class DiscussController extends BaseController {
     ->where(array("id"=>$discussId))
     ->find();
     
+    // 用户组来源信息（courseMember or parttimeMember）
     $memberInfo = $this->fetchMemberInfo($discussInfo['type'],$discussInfo['obj_id']);
     $memberId = $memberInfo['id'];
 
+    //获取当前用户的discuss Member info
+    $discussMemberInfo = M("DiscussMember")->where(array("dc_id"=>$discussId,'member_id'=>$memberId))->find();
     // 插入数据
     $insertData = array(
       "dc_id"     =>$discussId,
       "content_id" =>$contentId,
       "content"       =>I("post.content"),
-      "member_id"       =>$memberId
+      "member_id"       =>$discussMemberInfo['id']
     );
     $insertResult = M("DiscussComment")->data($insertData)->fetchSql(false)->add();
     if(!$insertResult) {
@@ -392,16 +381,28 @@ class DiscussController extends BaseController {
       );  
       $this->ajaxReturn($backData); 
     }
+    if(empty($_POST['discussid']) || empty($_POST['nodeid'])){
+      $backData = array(
+        "code"  => 10002,
+        "msg"   => "参数错误"
+      );  
+      $this->ajaxReturn($backData); 
+    }
     $discussId = I("post.discussid");
+    $nodeId = I("post.nodeid");
     $discussInfo = M("Discuss")->where(array("id"=>$discussId))->find();
+    // 用户组来源信息（courseMember or parttimeMember）
     $memberInfo = $this->fetchMemberInfo($discussInfo['type'],$discussInfo['obj_id']);
     $memberId = $memberInfo['id'];
+
+    //获取当前用户的discuss Member info
+    $discussMemberInfo = M("DiscussMember")->where(array("dc_id"=>$discussId,'member_id'=>$memberId))->find();
     $insertData = array(
-      "dc_id"     =>$discussId,
-      "node_id"   =>I("post.nodeid"),
-      "member_id"       =>$memberId,
-      "content"   =>I("post.content"),
-      "color"     =>I("post.color")
+      "dc_id"           =>$discussId,
+      "node_id"         =>I("post.nodeid"),
+      "member_id"       =>$discussMemberInfo['id'],
+      "content"         =>I("post.content"),
+      "color"           =>I("post.color")
     );
     $insertResult = M("DiscussContent")->data($insertData)->fetchSql(false)->add();
     if(!$insertResult) {

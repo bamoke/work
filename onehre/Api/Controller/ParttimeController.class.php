@@ -62,8 +62,10 @@ class ParttimeController extends Controller {
         "pt_id" =>$jobId,
         "uid" =>$uid
       );
-      $isMember = M("ParttimeMember")->where($condition)->count();
-      $applyed = M("ParttimeApply")->where($condition)->count();
+      if($uid) {
+        $isMember = M("ParttimeMember")->where($condition)->count();
+        $applyed = M("ParttimeApply")->where($condition)->count();
+      }
     }
     $backData = array(
         "code"      =>200,

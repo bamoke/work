@@ -292,3 +292,15 @@ export const closeCurPage = function (vm) {
   vm.$store.commit('setTagNavList', newTagNavList)
   vm.$router.go(-1)
 }
+
+/**
+ * 补充没有replace 功能
+ * by wang 2018-11-25
+ */
+export const routeReplace = (newRoute, vm) => {
+  const path = vm.$route.path
+  let tagNavList = vm.$store.state.app.tagNavList
+  let newTagNavList = tagNavList.filter(item => item.path !== path)
+  vm.$store.commit('setTagNavList', newTagNavList)
+  vm.$router.replace(newRoute)
+}

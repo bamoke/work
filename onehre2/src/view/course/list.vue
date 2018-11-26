@@ -37,7 +37,7 @@ export default {
         {
           title: '类型',
           key: 'type',
-          width: 100,
+          width: 80,
           render: (h, params) => {
             var txt, className
             if (params.row.type == 1) {
@@ -50,8 +50,8 @@ export default {
             return h('div', { class: className }, txt)
           }
         },
-        { title: '状态', key: 'status', width: 100 },
-        { title: '创建时间', key: 'create_time', width: 200, sortable: true },
+        { title: '显示状态', key: 'status', width: 100 },
+        { title: '创建时间', key: 'create_time', width: 180, sortable: true },
         {
           title: '操作',
           render: (h, params) => {
@@ -113,7 +113,7 @@ export default {
     //
     handleGoClass (params) {
       const courseId = params.row.id
-      this.$router.push({ name: 'class_manager', params: {courseid: courseId}})
+      this.$router.push({ name: 'class_home', params: {courseid: courseId}})
     },
 
     _finishedFetchData (res) {

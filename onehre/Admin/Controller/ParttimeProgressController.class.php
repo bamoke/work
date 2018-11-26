@@ -41,7 +41,8 @@ class ParttimeProgressController extends Auth {
     $this->ajaxReturn($backData);
   }
 
-  protected function _stage(){
+
+  protected function _projectstage(){
     return array(
       array('name'=>"未开始","class"=>""),
       array('name'=>"进行中","class"=>"s-text-info"),

@@ -46,9 +46,10 @@ class ParttimeApplyController extends Auth {
     }
 
     if(count($list)) {
+      $statusInfoArr = $this->statusInfo();
       foreach($list as $key=>$val){
-        $list[$key]['statusClass'] = $this->statusInfo[$val['status']]['className'];
-        $list[$key]['statusName'] = $this->statusInfo[$val['status']]['name'];
+        $list[$key]['statusClass'] = $statusInfoArr[$val['status']]['className'];
+        $list[$key]['statusName'] = $statusInfoArr[$val['status']]['name'];
       }
     }
     $backData = array(
@@ -57,7 +58,8 @@ class ParttimeApplyController extends Auth {
       'data'      => array(
           "list"  =>$list,
           "total" =>intval($total),
-          "pageSize"  =>$pageSize
+          "pageSize"  =>$pageSize,
+          "page"    =>$page
       )
     );
     $this->ajaxReturn($backData);
@@ -79,33 +81,69 @@ class ParttimeApplyController extends Auth {
       ),
       array(
         "name"=>"不通过",
-        "className"=>'s-text-light-grey'
+        "className"=>'s-text-error'
       )
     );
   } 
 
   // 申请审核
-  public function check(){
-    if(empty($_GET['id']) || empty($_GET['status'])) {
+  public function verify(){
+    if(empty($_GET['id']) || !isset($_GET['status'])) {
       $backData = array(
         'code'      => 10001,
         "msg"       => "非法请求"    
       );
       $this->ajaxReturn($backData);   
     }
+    if($_SERVER['REQUEST_METHOD'] != 'GET') return;
+    $applyId = I("get.id");
+    $status = I("get.status");
     $condition = array(
       "id"  =>I("get.id")
     );
     $updateData = array(
       "status"  =>I("get.status")
     );
-    $result = M("ParttimeApply")->where($condition)->save($updateData);
-    if($result !== false) {
+
+    // 开启事务
+    $model = M();
+    $model->startTrans();
+    $result = M("ParttimeApply")->where($condition)->fetchSql(false)->save($updateData);
+    $applyInfo = M("ParttimeApply")->where(array('id'=>$applyId))->find();
+
+    $userInfo = M('Resume')
+    ->field('realname,phone,uid,email')
+    ->where(array('id'=>$applyInfo['resume_id']))
+    ->find();
+    $insertMemberResult = true;
+    // 审核通过，将用户加入到项目成员中
+    if($status == 2) {
+      $insertMemberData = array(
+        "pt_id"     =>$applyInfo['pt_id'],
+        "uid"       =>$userInfo['uid'],
+        "realname"  =>$userInfo['realname'],
+        "phone"     =>$userInfo['phone']
+      );
+      $insertMemberResult = M("ParttimeMember")->data($insertMemberData)->add();
+    }
+    if($result !== false && $insertMemberResult ) {
+      $model->commit();
+      // 返回修改的投递记录
+      $statusInfoArr = $this->statusInfo();
+      $applyInfo['statusName'] = $statusInfoArr[$applyInfo['status']]['name'];
+      $applyInfo['statusClass'] = $statusInfoArr[$applyInfo['status']]['className'];
+      $applyInfo['realname'] = $userInfo['realname'];
+      $applyInfo['phone'] = $userInfo['phone'];
+      $applyInfo['email'] = $userInfo['email'];
       $backData = array(
         'code'      => 200,
-        "msg"       => "ok"    
+        "msg"       => "ok",
+        "data"      =>array(
+          "info"    =>$applyInfo
+        )    
       );
     }else {
+      $model->rollback();
       $backData = array(
         'code'      => 13001,
         "msg"       => "操作失败"    

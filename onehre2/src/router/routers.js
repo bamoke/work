@@ -157,7 +157,7 @@ export default [
         children:[
           {
             path: 'home',
-            name: 'class_manager',
+            name: 'class_home',
             meta: {
               title: '班级管理',
               hideInMenu:true
@@ -208,6 +208,24 @@ export default [
               hideInMenu:true
             },
             component: () => import('@/view/tests/index')
+          },
+          {
+            path: 'tests/question/:testsid',
+            name: 'tests_question',
+            meta: {
+              title: '题目管理',
+              hideInMenu:true
+            },
+            component: () => import('@/view/tests/question')
+          },
+          {
+            path: 'tests/logs/:testsid',
+            name: 'tests_logs',
+            meta: {
+              title: '测试记录',
+              hideInMenu:true
+            },
+            component: () => import('@/view/tests/logs')
           },
           {
             path: 'discuss',
@@ -319,6 +337,45 @@ export default [
     ]
   },
   {
+    path: '/outsource',
+    name: 'outsource_manage',
+    component: Main,
+    meta: {
+      title: '外包',
+      icon: 'android-contacts'
+    },
+    children: [
+      {
+        path: 'list',
+        name: 'outsource_list',
+        meta: {
+          title: '外包栏目',
+          icon: 'android-menu'
+        },
+        component: () => import('@/view/outsource/list')
+      },
+      {
+        path: 'add',
+        name: 'outsource_add',
+        meta: {
+          hideInMenu: true,
+          title: '添加文章',
+        },
+        component: () => import('@/view/outsource/add')
+      },
+      {
+        path: 'edit/:id',
+        notCache: true,
+        name: 'outsource_edit',
+        meta: {
+          title: '编辑文章',
+          hideInMenu: true
+        },
+        component: () => import('@/view/outsource/edit')
+      }
+    ]
+  },
+  {
     path: '/parttime',
     name: 'parttime_manage',
     meta: {
@@ -363,7 +420,59 @@ export default [
           title: '项目详情',
           hideInMenu: true
         },
-        component: () => import('@/view/parttime/detail')
+        component: () => import('@/view/parttime/detail'),
+        children:[
+          {
+            path: 'introduce',
+            notCache: true,
+            name: 'parttime_introduce',
+            meta: {
+              title: '项目介绍',
+              hideInMenu: true
+            },
+            component: () => import('@/view/parttime/introduce')
+          },
+          {
+            path: 'member',
+            notCache: true,
+            name: 'parttime_member',
+            meta: {
+              title: '项目成员',
+              hideInMenu: true
+            },
+            component: () => import('@/view/parttime/member')
+          },
+          {
+            path: 'progress',
+            notCache: true,
+            name: 'parttime_progress',
+            meta: {
+              title: '项目进度',
+              hideInMenu: true
+            },
+            component: () => import('@/view/parttime/progress')
+          },
+          {
+            path: 'discuss',
+            notCache: true,
+            name: 'parttime_discuss',
+            meta: {
+              title: '项目讨论',
+              hideInMenu: true
+            },
+            component: () => import('@/view/parttime/discuss')
+          },
+          {
+            path: 'apply',
+            notCache: true,
+            name: 'parttime_apply',
+            meta: {
+              title: '投递记录',
+              hideInMenu: true
+            },
+            component: () => import('@/view/parttime/apply')
+          }
+        ]
       },
       {
         path: 'resume',
@@ -449,71 +558,7 @@ export default [
     ]
   },
 
-  {
-    path: '/components',
-    name: 'components',
-    meta: {
-      icon: 'social-buffer',
-      title: '组件'
-    },
-    component: Main,
-    children: [
-      {
-        path: 'count_to_page',
-        name: 'count_to_page',
-        meta: {
-          icon: 'arrow-graph-up-right',
-          title: '数字渐变'
-        },
-        component: () => import('@/view/components/count-to/count-to.vue')
-      },
-      {
-        path: 'tables_page',
-        name: 'tables_page',
-        meta: {
-          icon: 'ios-grid-view',
-          title: '多功能表格'
-        },
-        component: () => import('@/view/components/tables/tables.vue')
-      },
-      {
-        path: 'split_pane_page',
-        name: 'split_pane_page',
-        meta: {
-          icon: 'pause',
-          title: '分割窗口'
-        },
-        component: () => import('@/view/components/split-pane/split-pane.vue')
-      },
-      {
-        path: 'markdown_page',
-        name: 'markdown_page',
-        meta: {
-          icon: 'social-markdown',
-          title: 'Markdown编辑器'
-        },
-        component: () => import('@/view/components/markdown/markdown.vue')
-      },
-      {
-        path: 'editor_page',
-        name: 'editor_page',
-        meta: {
-          icon: 'compose',
-          title: '富文本编辑器'
-        },
-        component: () => import('@/view/components/editor/editor.vue')
-      },
-      {
-        path: 'icons_page',
-        name: 'icons_page',
-        meta: {
-          icon: '_bear',
-          title: '自定义图标'
-        },
-        component: () => import('@/view/components/icons/icons.vue')
-      }
-    ]
-  },
+
   {
     path: '/update',
     name: 'update',
@@ -543,97 +588,8 @@ export default [
       }
     ]
   },
-  {
-    path: '/directive',
-    name: 'directive',
-    meta: {
-      hide: true
-    },
-    component: Main,
-    children: [
-      {
-        path: '/directive_page',
-        name: 'directive_page',
-        meta: {
-          icon: 'ios-navigate',
-          title: '指令'
-        },
-        component: () => import('@/view/directive/directive.vue')
-      }
-    ]
-  },
-  {
-    path: '/multilevel',
-    name: 'multilevel',
-    meta: {
-      icon: 'arrow-graph-up-right',
-      title: '多级菜单'
-    },
-    component: Main,
-    children: [
-      {
-        path: 'level_2_1',
-        name: 'level_2_1',
-        meta: {
-          icon: 'arrow-graph-up-right',
-          title: '二级-1'
-        },
-        component: () => import('@/view/multilevel/level-1.vue')
-      },
-      {
-        path: 'level_2_2',
-        name: 'level_2_2',
-        meta: {
-          access: ['super_admin'],
-          icon: 'arrow-graph-up-right',
-          title: '二级-2'
-        },
-        component: parentView,
-        children: [
-          {
-            path: 'level_2_2_1',
-            name: 'level_2_2_1',
-            meta: {
-              icon: 'arrow-graph-up-right',
-              title: '三级'
-            },
-            component: () => import('@/view/multilevel/level-2/level-2-1.vue')
-          }
-        ]
-      },
-      {
-        path: 'level_2_3',
-        name: 'level_2_3',
-        meta: {
-          icon: 'arrow-graph-up-right',
-          title: '二级-3'
-        },
-        component: parentView,
-        children: [
-          {
-            path: 'level_2_3_1',
-            name: 'level_2_3_1',
-            meta: {
-              access: ['super_admin'],
-              icon: 'arrow-graph-up-right',
-              title: '三级-1'
-            },
-            component: () => import('@/view/multilevel/level-2/level-2-1.vue')
-          },
-          {
-            path: 'level_2_3_2',
-            name: 'level_2_3_2',
-            meta: {
-              access: ['super_admin', 'admin'],
-              icon: 'arrow-graph-up-right',
-              title: '三级-2'
-            },
-            component: () => import('@/view/multilevel/level-2/level-2-1.vue')
-          }
-        ]
-      }
-    ]
-  },
+
+
   {
     path: '/401',
     name: 'error_401',

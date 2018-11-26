@@ -61,7 +61,8 @@ class ParttimeMyController extends BaseController {
   public function myparttime(){
 
     $condition = array(
-      "PM.uid" =>$this->uid
+      "PM.uid" =>$this->uid,
+      "PM.is_deleted" =>0
     );
     $page = I("get.p",1);
     $pageSize = 20;

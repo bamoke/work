@@ -19,9 +19,15 @@ class ParttimeMemberController extends Auth {
     }
     $ptid = I("get.ptid");
     $condition = array(
-      "pt_id" =>$ptid
+      "pt_id" =>$ptid,
+      "is_deleted"  =>0
     );
-    $list = M("ParttimeMember")->where($condition)->order('type desc,id')->limit(50)->fetchSql(false)->select();
+    $list = M("ParttimeMember")
+    ->where($condition)
+    ->order('type desc,id')
+    ->limit(50)
+    ->fetchSql(false)
+    ->select();
     if($list !== false){
       $backData = array(
         'code'      => 200,
@@ -83,6 +89,7 @@ class ParttimeMemberController extends Auth {
   }
 
   // delete one member
+  // 伪删除
   public function delone(){
     if(empty($_GET["id"])){
       $backData = array(
@@ -92,7 +99,7 @@ class ParttimeMemberController extends Auth {
       $this->ajaxReturn($backData);     
     }
     $id= I("get.id");
-    $result = M("ParttimeMember")->delete($id);
+    $result = M("ParttimeMember")->where(array('id'=>$id))->data(array("is_deleted"=>1))->save();
     if($result !== false) {
       $backData = array(
         'code'      => 200,

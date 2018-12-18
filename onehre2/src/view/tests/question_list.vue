@@ -1,0 +1,209 @@
+<template>
+  <Card>
+    <h3 slot="title">当前：【{{testInfo.title}}】</h3>
+    <div slot="extra" :style="{marginTop:'-6px'}" v-if="canEdit">
+      <Dropdown trigger="click" v-on:on-click="selectType">
+        <Button type="primary">添加题目
+          <Icon type="arrow-down-b"></Icon>
+        </Button>
+        <DropdownMenu slot="list">
+          <DropdownItem name="new">新建题目</DropdownItem>
+          <DropdownItem name="choose">题库选取</DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
+    </div>
+    <div class="m-question-list" v-if="questionList.length > 0">
+      <Row class="question-item" v-for="(item,index) in questionList" v-bind:key="item.id">
+        <i-col span="18">
+          <div class="question-title">
+            <span class="nu">【{{index+1}}】</span>
+            <span class="caption">{{item.ask}}</span>
+          </div>
+          <div class="answer-list">
+            <div class="answer-item" v-for="(answer,j) in item.answer" v-bind:key="answer.j">
+              <div class="type correct" v-if="isCorrect(index,j)">正确答案</div>
+              <div class="type error" v-else>错误答案</div>
+              <div>{{answer}}</div>
+            </div>
+          </div>
+        </i-col>
+        <i-col offset="2" span="4">
+          <div v-if="canEdit">
+            <Button @click="handleEdit(index)">编辑</Button>
+            <Button @click="handleDel(index)">删除</Button>
+          </div>
+        </i-col>
+      </Row>
+    </div>
+    <div class="m-empty" v-else>暂无数据</div>
+    <Modal
+      v-model="showQuestionLibModal"
+      title="选择题目"
+      width="760"
+      ok-text="确认选择"
+      @on-ok="confirmSelect"
+    >
+      <Table
+        border
+        ref="libQuestionTable"
+        :columns="libColumn"
+        :data="libQuestionList"
+        @on-selection-change="selectionChange"
+      ></Table>
+      <div class="m-pagation">
+        <Page
+          :total="libTotalInfo.total"
+          :current="libTotalInfo.page"
+          :page-size="libTotalInfo.pageSize"
+          @on-change="changePage"
+          v-show="libTotalInfo.total > libTotalInfo.pageSize*libTotalInfo.page"
+        ></Page>
+      </div>
+    </Modal>
+  </Card>
+</template>
+
+<script>
+import { saveData, getTableList, deleteDataOne, getDataOne } from "@/api/data";
+import { routeOpenSelf } from "@/libs/util";
+export default {
+  data() {
+    return {
+      testId: null,
+      testInfo: { is_released: "0" },
+      questionList: [],
+      questionAllId: [],
+      showQuestionLibModal: false,
+      libQuestionList: [],
+      libColumn: [
+        {
+          type: "selection",
+          width: 60,
+          align: "center"
+        },
+        {
+          title: "题目名称",
+          key: "ask"
+        }
+      ],
+      libTotalInfo: {
+        total: 0,
+        page: 1,
+        pageSize: 20
+      },
+      selectedLib: []
+    };
+  },
+  methods: {
+    selectType(name) {
+      if (name === "new") {
+        this.$router.push({ name: "test_question_add" });
+      } else {
+        this.showQuestionLib();
+      }
+    },
+    handleEdit(questionIndex){
+      const testId = this.testId
+      const curItem = this.questionList[questionIndex]
+      this.$router.push("test_question_edit",{params:})
+    },
+    handleDel(questionIndex){
+      const curItem = this.questionList[questionIndex]
+      console.log(questionIndex)
+    },
+    showQuestionLib() {
+      let curAllQuestionId = this.questionAllId.join(",");
+      this.showQuestionLibModal = true;
+      getTableList("/TestsQuestion/libquestion", {
+        hasid: curAllQuestionId
+      }).then(res => {
+        if (res) {
+          this.libQuestionList = res.data.list;
+          this.libTotalInfo = {
+            total: res.data.total,
+            page: res.data.page,
+            pageSize: res.data.pageSize
+          };
+        }
+      });
+    },
+    confirmSelect(e) {
+      if (this.selectedLib.length === 0) {
+        return;
+      }
+      let selectedId = this.selectedLib.map(item => {
+        return item.id;
+      });
+      saveData("/Tests/add_question", {
+        testid: this.testId,
+        newquestion: selectedId.join(",")
+      }).then(res => {
+        if (res) {
+          this.questionList.push(...this.selectedLib);
+          this.showQuestionLibModal = false;
+          this.questionAllId.push(...selectedId);
+        }
+      });
+    },
+    selectionChange(e) {
+      this.selectedLib = e;
+    },
+    handleSelectAll(status) {
+      this.$refs.libQuestionTable.selectAll(status);
+    },
+    changePage(page) {
+      console.log(page);
+    },
+    isCorrect(questionIndex, answerIndex) {
+      const correctArr = this.questionList[questionIndex].correct.split(",");
+      return correctArr.indexOf(answerIndex.toString()) >= 0;
+    }
+  },
+  computed: {
+    canEdit() {
+      return this.testInfo.is_released == 0;
+    }
+  },
+  mounted() {
+    const testId = this.$route.params.testid;
+    this.testId = testId;
+    getDataOne("/TestsQuestion/index", { testid: testId }).then(res => {
+      if (res) {
+        this.testInfo = res.data.testInfo;
+        this.questionList = res.data.questionList;
+        if (res.data.questionList.length > 0) {
+          let curAllId = res.data.questionList.map(item => {
+            return item.id;
+          });
+          this.questionAllId = curAllId;
+        }
+      }
+    });
+  }
+};
+</script>
+
+<style>
+.question-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+.answer-item {
+  display: flex;
+  padding: 5px 0;
+}
+.answer-item .type {
+  flex-shrink: 0;
+  flex-grow: 0;
+  padding: 0 5px;
+  font-size: 12px;
+}
+.answer-item .correct {
+  background: #19be6b;
+  color: #fff;
+}
+.answer-item .error {
+  background: #e6ebf1;
+  color: #ccc;
+}
+</style>

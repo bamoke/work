@@ -25,9 +25,10 @@ class AccountController extends Controller {
             );
             return $this->ajaxReturn($backData);
         }
+
         // 1. 登录微信服务器，
-        $APP_ID = "wx20e37dd9f2ca7886";
-        $APP_SECRET = "65ea53b18f617a7d5bd36a5366253b9c";
+        $APP_ID = "wxaa14c7aa5e3fd67a";
+        $APP_SECRET = "5ab41a47452cd6f224391a1d029bfd27";
         $code = I('get.code');
         $Http = new \Org\Net\Http();
         $url = 'https://api.weixin.qq.com/sns/jscode2session?appid='.$APP_ID.'&secret='.$APP_SECRET.'&js_code='.$code.'&grant_type=authorization_code';
@@ -82,12 +83,12 @@ class AccountController extends Controller {
             
             //1.4 创建session
             $insertSessionData = array(
+                "uid"           =>$insertMember,
                 "token"         =>$accessToken,
                 "openid"        =>$openid,
                 "sessionkey"    =>$sessionkey
             );
             $insertSession = $sessionModel->fetchSql(false)->add($insertSessionData);
-            // var_dump($insertSession);
             // 1.5 数据提交;
             if($insertSession && $insertMember){
                 $backData = array(

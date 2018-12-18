@@ -1,6 +1,6 @@
 <?php 
 /*
- * 作业考试
+ * 作业考试-题目管理
  * @Author: joy.wangxiangyin 
  * @Date: 2018-10-11 22:16:59 
  * @Last Modified by: joy.wangxiangyin
@@ -9,47 +9,38 @@
 namespace Admin\Controller;
 use Admin\Common\Auth;
 // use Think\Controller;
-class TestsController extends Auth {
-  public function vlist(){
-    if(empty($_GET['courseid'])) {
+class TestsQuestionController extends Auth {
+
+  public function index(){
+    if(empty($_GET['testid'])) {
       $backData = array(
         'code'      => 10001,
-        "msg"       => "参数错误"    
+        "msg"       => "非法请求"    
       );
-      $this->ajaxReturn($backData); 
+      $this->ajaxReturn($backData);
     }
-    $courseId = I("get.courseid");
-    $pageSize = 15;
-    $mainModel = M("Test");
-    $page = I("get.page/d",1);
-    $where = array(
-      "course_id"  =>$courseId
-    );
-    if(!empty($_GET['keywords'])) {
-      $where['title'] = array('like','%'.I("get.keywords").'%');
+    $testId = I("get.testid");
+    $testInfo = M("Test")->where(array('id'=>$testId))->find();
+    $questionList = array();
+    if($testInfo['question']) {
+      $list = M("TestQuestion")->where(array("id"=>array("in",$testInfo['question'])))->select();
     }
-
-    $list = $mainModel
-    ->field("id,title,date(create_time) as date,status,is_released")
-    ->where($where)
-    ->page($page,$pageSize)
-    ->order("id desc")
-    ->fetchSql(false)
-    ->select();
-
-    $total = $mainModel->where($where)->count();
+    if(count($list)) {
+      foreach($list as $key=>$val) {
+        $questionList[$key] = $val;
+        $questionList[$key]['answer'] = unserialize($val['answer']);
+      }
+    }
     $backData = array(
       'code'      => 200,
-      "msg"       => "ok",
-      'info'      => array(
-          "list"  =>$list,
-          "total" =>intval($total),
-          "pageSize"  =>$pageSize
-      )
+      "msg"       => "success",
+      "data"      =>array(
+        "testInfo"      =>$testInfo,
+        "questionList"  =>$questionList
+      )    
     );
     $this->ajaxReturn($backData);
   }
-
 
 
   // 编辑基本信息
@@ -62,12 +53,15 @@ class TestsController extends Auth {
       $this->ajaxReturn($backData);
     }
     $id = I("get.id");
-    $info = M("Survey")->where(array('id'=>$id))->fetchSql(false)->find();
+    $info = M("TestQuestion")->where(array('id'=>$id))->fetchSql(false)->find();
     if($info) {
+      $info['answer'] = unserialize($info['answer']);
       $backData = array(
         'code'      => 200,
         "msg"       => "success",
-        "info"      =>$info
+        "data"      =>array(
+          "info"  =>$info
+        )
       );
     }else {
       $backData = array(
@@ -146,39 +140,40 @@ class TestsController extends Auth {
   }
 
   /**
-   * 添加题目
+   * 题库
    */
-  public function add_question(){
-    if(IS_POST) {
-      $postData = $this->requestData;
-      $testId = $postData['testid'];
-      $condition = array(
-        "id"  =>$testId
-      );
-      $curModel = M("Test");
-      $testInfo = $curModel->where($condition)->find();
-      $curQuestionId = $testInfo['question'];
-      $newQuestionId = trim($curQuestionId.",".$postData['newquestion'],',');
-      $updateResult = $curModel->where($condition)->data(array('question'=>$newQuestionId))->save();
-      if(!$updateResult) {
-        $backData = array(
-          'code'      => 13001,
-          "msg"       => "操作失败"    
-        );
-        $this->ajaxReturn($backData);
-      }
-      $backData = array(
-        'code'      => 200,
-        "msg"       => "success"    
-      );
-      $this->ajaxReturn($backData);
+  public function libquestion(){
+    $page = I("get.page/d",1);
+    $pageSize = 20;
+    $condition = array(
+      'is_lib'  =>1
+    );
+    if(!empty($_GET['keywords'])) {
+      $condition['title'] = array('like',"%".I("get.keywords")."%");
     }
-  }
-
-  /**
-   * remove question
-   */
-  public function remove_question(){
+    if(!empty($_GET['hasid'])) {
+      $condition['id'] = array('notin',I("get.hasid"));
+    }
+    $questionList = array();
+    $total = M("TestQuestion")->where($condition)->fetchSql(false)->count();
+    $list = M("TestQuestion")->where($condition)->page($page,$pageSize)->select();
+    if(count($list)) {
+      foreach($list as $key=>$val) {
+        $questionList[$key] = $val;
+        $questionList[$key]['answer'] = unserialize($val['answer']);
+      }
+    }
+    $backData = array(
+      'code'      => 200,
+      "msg"       => "ok",
+      "data"      =>array(
+        "list"    =>$questionList,
+        "total"   =>intval($total),
+        "pageSize"  =>intval($pageSize),
+        "page"      =>intval($page)
+      )    
+    );
+    $this->ajaxReturn($backData);
 
   }
 

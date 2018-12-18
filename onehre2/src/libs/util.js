@@ -304,3 +304,5 @@ export const routeReplace = (newRoute, vm) => {
   vm.$store.commit('setTagNavList', newTagNavList)
   vm.$router.replace(newRoute)
 }
+
+

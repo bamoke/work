@@ -151,16 +151,16 @@ export default [
         name: 'class_manager',
         meta: {
           title: '班级管理',
-          hideInMenu:true
+          hideInMenu: true
         },
         component: () => import('@/view/class/templete'),
-        children:[
+        children: [
           {
             path: 'home',
             name: 'class_home',
             meta: {
               title: '班级管理',
-              hideInMenu:true
+              hideInMenu: true
             },
             component: () => import('@/view/class/index'),
           },
@@ -169,7 +169,7 @@ export default [
             name: 'class_member',
             meta: {
               title: '班级成员',
-              hideInMenu:true
+              hideInMenu: true
             },
             component: () => import('@/view/class/member')
           },
@@ -178,7 +178,7 @@ export default [
             name: 'class_notes',
             meta: {
               title: '课程笔记',
-              hideInMenu:true
+              hideInMenu: true
             },
             component: () => import('@/view/class/notes')
           },
@@ -187,7 +187,7 @@ export default [
             name: 'class_remark',
             meta: {
               title: '课程点评',
-              hideInMenu:true
+              hideInMenu: true
             },
             component: () => import('@/view/class/remark')
           },
@@ -196,7 +196,7 @@ export default [
             name: 'class_dynamic',
             meta: {
               title: '班级动态',
-              hideInMenu:true
+              hideInMenu: true
             },
             component: () => import('@/view/class/dynamic')
           },
@@ -205,80 +205,140 @@ export default [
             name: 'class_tests',
             meta: {
               title: '作业考试',
-              hideInMenu:true
+              hideInMenu: true
             },
             component: () => import('@/view/tests/index')
-          },
-          {
-            path: 'tests/question/:testsid',
-            name: 'tests_question',
-            meta: {
-              title: '题目管理',
-              hideInMenu:true
-            },
-            component: () => import('@/view/tests/question')
-          },
-          {
-            path: 'tests/logs/:testsid',
-            name: 'tests_logs',
-            meta: {
-              title: '测试记录',
-              hideInMenu:true
-            },
-            component: () => import('@/view/tests/logs')
           },
           {
             path: 'discuss',
             name: 'class_discuss',
             meta: {
               title: '讨论组',
-              hideInMenu:true
+              hideInMenu: true
             },
             component: () => import('@/view/discuss/index')
-          },
-          {
-            path: 'discuss_detail',
-            name: 'class_discuss_detail',
-            meta: {
-              title: '讨论组详情',
-              hideInMenu:true
-            },
-            component: () => import('@/view/discuss/detail'),
-            children:[
-              {
-                path: 'member',
-                name: 'class_discuss_detail_member',
-                meta: {
-                  title: '讨论组成员',
-                  hideInMenu:true
-                },
-                component: () => import('@/view/discuss/member'),
-              },
-              {
-                path: 'node',
-                name: 'class_discuss_detail_node',
-                meta: {
-                  title: '讨论分栏',
-                  hideInMenu:true
-                },
-                component: () => import('@/view/discuss/node'),
-              }
-            ]
           },
           {
             path: 'survey',
             name: 'class_survey',
             meta: {
               title: '调查问卷',
-              hideInMenu:true
+              hideInMenu: true
             },
             component: () => import('@/view/survey/list')
           }
         ]
       },
- 
+
     ]
   },
+  {
+    path: 'discuss_detail',
+    name: 'class_discuss_detail',
+    meta: {
+      title: '讨论组详情',
+      hideInMenu: true
+    },
+    component: () => import('@/view/discuss/detail'),
+    children: [
+      {
+        path: 'member',
+        name: 'class_discuss_detail_member',
+        meta: {
+          title: '讨论组成员',
+          hideInMenu: true
+        },
+        component: () => import('@/view/discuss/member'),
+      },
+      {
+        path: 'node',
+        name: 'class_discuss_detail_node',
+        meta: {
+          title: '讨论分栏',
+          hideInMenu: true
+        },
+        component: () => import('@/view/discuss/node'),
+      }
+    ]
+  },
+  {
+    path: '/tests',
+    name: 'tests',
+    component: Main,
+    meta: {
+      title: '作业考试',
+      icon: 'android-contacts',
+      hideInMenu: true
+    },
+    children: [
+      {
+        path: 'add',
+        name: 'test_add',
+        meta: {
+          title: '作业考试',
+          hideInMenu: true
+        },
+        component: () => import('@/view/tests/add')
+      },
+      {
+        path: 'edit/:testid',
+        name: 'test_edit',
+        meta: {
+          title: '作业考试',
+          hideInMenu: true
+        },
+        component: () => import('@/view/tests/edit')
+      },
+      {
+        path: 'question/:testid',
+        name: 'test_question',
+        meta: {
+          title: '题目管理',
+          hideInMenu: true
+        },
+        component: () => import('@/view/tests/question_home'),
+        children: [
+          {
+            path: 'list',
+            name: 'test_question_list',
+            meta: {
+              title: '添加题目',
+              hideInMenu: true
+            },
+            component: () => import('@/view/tests/question_list')
+          },
+          {
+            path: 'add',
+            name: 'test_question_add',
+            meta: {
+              title: '添加题目',
+              hideInMenu: true
+            },
+            component: () => import('@/view/tests/question_add')
+          },
+          {
+            path: 'edit/:questionid',
+            name: 'test_question_edit',
+            meta: {
+              title: '修改题目',
+              hideInMenu: true
+            },
+            component: () => import('@/view/tests/question_edit')
+          }
+        ]
+      },
+      {
+        path: 'logs/:testid',
+        name: 'test_logs',
+        meta: {
+          title: '测试记录',
+          hideInMenu: true
+        },
+        component: () => import('@/view/tests/logs')
+      },
+    ]
+  },
+
   {
     path: '/article',
     name: 'article_manage',
@@ -330,7 +390,7 @@ export default [
         name: 'article_comment',
         meta: {
           title: '文章评论',
-          icon:'android-textsms'
+          icon: 'android-textsms'
         },
         component: () => import('@/view/article/comment')
       }
@@ -391,16 +451,16 @@ export default [
           title: '项目列表',
           icon: 'android-menu'
         },
-        component: () => import('@/view/parttime/list'),       
+        component: () => import('@/view/parttime/list'),
       },
       {
         path: 'add',
         name: 'parttime_add',
         meta: {
           title: '添加项目',
-          hideInMenu:true
+          hideInMenu: true
         },
-        component: () => import('@/view/parttime/add'),       
+        component: () => import('@/view/parttime/add'),
       },
       {
         path: 'edit/:id',
@@ -421,7 +481,7 @@ export default [
           hideInMenu: true
         },
         component: () => import('@/view/parttime/detail'),
-        children:[
+        children: [
           {
             path: 'introduce',
             notCache: true,
@@ -490,7 +550,7 @@ export default [
         name: 'resume_detail',
         meta: {
           title: '简历详情',
-          hideInMenu:true
+          hideInMenu: true
         },
         component: () => import('@/view/resume/detail')
       },
@@ -506,7 +566,7 @@ export default [
       icon: 'android-document'
     },
     component: Main,
-    children:[
+    children: [
       {
         path: 'list',
         name: 'survey_list',
@@ -514,16 +574,16 @@ export default [
           title: '问卷列表',
           icon: 'android-menu'
         },
-        component: () => import('@/view/survey/list'),       
+        component: () => import('@/view/survey/list'),
       },
       {
         path: 'add',
         name: 'survey_add',
         meta: {
           title: '添加问卷',
-          hideInMenu:true
+          hideInMenu: true
         },
-        component: () => import('@/view/survey/add'),       
+        component: () => import('@/view/survey/add'),
       },
       {
         path: 'edit/:id',
@@ -554,7 +614,7 @@ export default [
           hideInMenu: true
         },
         component: () => import('@/view/survey/logdetail')
-      }       
+      }
     ]
   },
 

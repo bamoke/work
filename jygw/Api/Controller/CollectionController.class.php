@@ -12,26 +12,24 @@ class CollectionController extends BaseController {
     $pageSize = 20;
     $condition = array(
       "CO.status" =>1,
-      "CO.uid"    =>$this.uid
+      "CO.uid"    =>$this->uid
     );
     $total = M("Collection")->alias("CO")->where($condition)->count();
     $list = M("Collection")
-    ->field("CO.id,date(CO.create_time) as create_time,CARD.avatar,CARD.realname,CARD.partment,CARD.position,CARD.compnay")
+    ->field("CO.id,date(CO.create_time) as create_time,CARD.id as cardid,CARD.avatar,CARD.realname,CARD.partment,CARD.position,CARD.company")
     ->alias("CO")
     ->join("__CARD__ as CARD on CO.card_id = CARD.id")
     ->where($condition)
     ->page($page,$pageSize)
     ->fetchSql(false)
     ->select();
-    // var_dump($list);
-    // return;
     $backData = array(
       "code"      =>200,
       "msg"       =>"ok",
       "data"      => array(
         "list"  =>$list,
         "page"  =>$page,
-        "total" =>$total,
+        "total" =>intval($total),
         "hasMore" => $total - ($page*$pageSize) > 0
       )
     );
@@ -92,9 +90,10 @@ class CollectionController extends BaseController {
       $this->ajaxReturn($backData); 
     }
     $cardId = I("get.cardid/d");
+    $model = M("Collection");
     $condition = array(
       "uid"     =>$this->uid,
-      "job_id"  =>$jobId
+      "card_id"  =>$cardId
     );
     $result = $model->where($condition)->data(array("status"=>0))->save();
     if($result !== false){

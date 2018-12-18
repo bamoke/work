@@ -17,7 +17,7 @@
         </Button>
         <Table border :columns="_customColumns" :data="tableData" :loading="tableLoading"></Table>
         <div class="m-paging-wrap">
-          <Page :total="total" :current="curPage" :page-size="pageSize" @on-change="changePage" v-show="total > pageSize"></Page>
+          <Page :total="total" :current="curPage" :page-size="pageSize" @on-change="changePage" v-show="total > pageSize*curPage"></Page>
         </div>
     </Card>
   </div>
@@ -26,7 +26,7 @@
 <script>
 import { getTableList, deleteDataOne } from "@/api/data";
 import tableMixin from "@/libs/table-mixin";
-import {routeReplace} from '@/libs/util'
+import {routeOpenSelf} from '@/libs/util'
 export default {
   name: "",
   mixins: [tableMixin],
@@ -70,13 +70,13 @@ export default {
                 "Button",
                 {
                   style: { marginRight: "12px" },
-                  on: { click: () => this.handleToPage('tests_question',params) }
+                  on: { click: () => this.handleToPage('test_question_list',params) }
                 },
                 "题目设置"
               ),
               h(
                 "Button",
-                { on: { click: () => this.handleToPage('tests_logs',params) } },
+                { on: { click: () => this.handleToPage('test_logs',params) } },
                 "测试记录"
               )
             ];
@@ -108,7 +108,7 @@ export default {
       if (this.$route.params.courseid) {
         queryData.courseid = this.$route.params.courseid;
       }
-      this.$router.push({ name: "survey_add", query: queryData });
+      this.$router.push({ name: "test_add", query: queryData });
     },
     handleEdit(params) {
       const id = params.row.id;
@@ -121,8 +121,8 @@ export default {
     },
  
     handleToPage(routeName,params){
-      const testsId = params.row.id
-      routeReplace({name:routeName,params:{testsid:testsId}},this)
+      const testId = params.row.id
+      this.$router.push({name:routeName,params:{testid:testId}})
     },
     _finishedFetchData(res) {
       var queryData = this.$route.query;

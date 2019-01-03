@@ -4,6 +4,6 @@ import env from './env'
 // const PRO_URL = 'https://produce.com'
 // const DEV_URL = 'http://localhost:802/onehre/admin.php'
 const DEV_URL = 'http://www.onehre.com/admin.php'
-const PRO_URL = 'http://www.onehre.com/admin.php/'
+const PRO_URL = 'http://www.onehre.com/admin.php'
 
 export default env === 'development' ? DEV_URL : PRO_URL

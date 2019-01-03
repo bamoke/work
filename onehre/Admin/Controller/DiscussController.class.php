@@ -171,6 +171,29 @@ use Admin\Common\Auth;
     $this->ajaxReturn($backData);  
   }
 
+  /**
+   * 讨论组基本信息
+   */
+  public function baseinfo(){
+    if(empty($_GET['id'])) {
+      $backData = array(
+        "code"  => 10001,
+        "msg"   => "参数错误"
+      );  
+      $this->ajaxReturn($backData); 
+    }
+    $discussId = I('get.id');
+    $info = M("Discuss")->where(array("id"=>$discussId))->find();
+    $backData = array(
+      "code"  => 200,
+      "msg"   => "success",
+      "data"  =>array(
+        "info"  =>$info
+      )
+    );  
+    $this->ajaxReturn($backData);  
+  }
+
 
 
 

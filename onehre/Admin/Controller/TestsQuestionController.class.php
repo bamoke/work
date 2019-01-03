@@ -56,6 +56,10 @@ class TestsQuestionController extends Auth {
     $info = M("TestQuestion")->where(array('id'=>$id))->fetchSql(false)->find();
     if($info) {
       $info['answer'] = unserialize($info['answer']);
+      $info['correct'] = explode(",",$info['correct']);
+      foreach($info['correct'] as $key=>$val) {
+        $info['correct'][$key] = intval($val);
+      }
       $backData = array(
         'code'      => 200,
         "msg"       => "success",
@@ -81,9 +85,14 @@ class TestsQuestionController extends Auth {
       );
       $this->ajaxReturn($backData);
     }
-    $mainModel = M("Survey");
-    $postData = $mainModel->create($this->requestData);
-    if(!$postData) {
+    $mainModel = M("TestQuestion");
+    $saveData = $this->requestData;
+    $testId = $saveData['test_id'];
+    $saveData['correct'] = implode(",",$saveData['correct']);
+    $saveData['answer'] = serialize($saveData['answer']);
+
+    $createResult = $mainModel->create($saveData);
+    if(!$createResult) {
       $backData = array(
         'code'      => 13001,
         "msg"       => "数据创建错误"    
@@ -95,8 +104,25 @@ class TestsQuestionController extends Auth {
       $id = (int)$mainModel->id;
       $result = $mainModel->where(array("id"=>$id))->save();
     }else {
-      $result = $mainModel->fetchSql(false)->add();
-      $id = $result;
+      $model = M();
+      $model->startTrans();
+      $mainModel->test_id = null;
+      $insertResult = $mainModel->fetchSql(false)->add();
+      $id = $insertResult;
+      $testCondition = array(
+        "id"  =>$testId
+      );
+      $testInfo = M("Test")->field("question")->where($testCondition)->find();
+      $testQuestion = explode(",",$testInfo['question']);
+      array_push($testQuestion,$id);
+      $updateResult = M("Test")->where($testCondition)->data(array('question'=>implode(",",$testQuestion)))->save();
+      if($insertResult && $updateResult) {
+        $model->commit();
+        $result = true;
+      }else {
+        $model->rollback();
+        $result = false;
+      }
     }
     if($result !== false){
       // $info = $mainModel->where(array("id"=>$id))->find();
@@ -124,13 +150,30 @@ class TestsQuestionController extends Auth {
       $this->ajaxReturn($backData);     
     }
     $id = I("get.id");
-    $del = M("Survey")->where(array("id"=>$id))->fetchSql(false)->save(array('is_deleted'=>1));
-    if($del !== false) {
+    $model = M();
+    $model->startTrans();
+    $questionInfo = M("TestQuestion")->where(array('id'=>$id))->find();
+    $delQuestion = true;
+    if($questionInfo['is_lib'] == 0) {
+      $delQuestion = M("TestQuestion")->delete($id);
+    }
+    // test update
+    $testCondition = array(
+      "id"  =>$questionInfo['test_id']
+    );
+    $testInfo = M("Test")->where($testCondition)->find();
+    $testQUestion = explode(",",$testInfo['question']);
+    $index = array_search($id,$testQUestion);
+    array_splice($testQUestion,$index,1);
+    $updateTest = M("Test")->where($testCondition)->data(array('question'=>implode(",",$testQUestion)))->save();
+    if($updateTest !== false && $delQuestion !== false) {
+      $model->commit();
       $backData = array(
         'code'      => 200,
         "msg"       => "ok"    
       );
     }else {
+      $model->rollback();
       $backData = array(
         'code'      => 13001,
         "msg"       => "操作失败"    

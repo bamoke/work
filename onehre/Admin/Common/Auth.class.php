@@ -40,7 +40,7 @@ class Auth extends Controller
             $this->uid = M("AdminSession")->where(array('token'=>$this->accessToken))->getField('uid');
         }else {
             header("HTTP/1.0 204 Not Content");
-            // exit;
+            exit;
         }
     }
 

@@ -2,6 +2,9 @@
   <Card>
     <Tabs @on-click="switchTab" value="question">
         <TabPane name='question' label="题目管理" icon="android-desktop">
+          <div v-if="surveyInfo.is_released == 0">
+            <Button type="primary" icon="plus" @click="handleAddQuestion">添加问题</Button>
+          </div>
           <div class="m-question-list">
             <div class="item" v-for="(item,index) in questionList" :key="item.id">
               <div class="ask">
@@ -9,7 +12,7 @@
                   <span class="index-nu">{{index+1}}.</span>
                   {{item.question.ask}}
                 </div>
-                <div class="handle-box">
+                <div class="handle-box" v-if="surveyInfo.is_released == 0">
                   <Button v-if="item.question.type != 3" @click="handleOptionAdd(index)" icon="ios-plus">添加选项</Button>
                   <Button @click="handleQuestionEdit(index)" icon="ios-compose">编辑问题</Button>
                   <Button @click="handleQuestionDel(index)" icon="ios-trash">删除</Button>
@@ -21,7 +24,7 @@
                     <span class="index-nu">({{i+1}})</span>
                     <span>{{opt.content}}</span>
                   </div>
-                  <div class="handle-box">
+                  <div class="handle-box" v-if="surveyInfo.is_released == 0" >
                     <Button class="opt-btn" size="small" type="text" @click="handleOptionEdit(index,i)">编辑</Button>
                     <Poptip
                         confirm
@@ -39,7 +42,7 @@
           <Modal v-model="showQuestionModal" width="640">
               <p slot="header">
                   <Icon type="information-circled"></Icon>
-                  <span>编辑问题</span>
+                  <span>{{modalActName}}</span>
               </p>
               <div>
                 <Form ref="questionForm" :model="questionDetail" :label-width="80" :rules="questionFormRule">
@@ -95,8 +98,8 @@
             </Modal>
         </TabPane>
         <!--statistics-->
-        <TabPane name='statistics' label="结果统计" icon="android-time" wx:if="surveyInfo.is_released == 1">
-          <div class="m-question-list">
+        <TabPane name='statistics' label="结果统计" icon="android-time" >
+          <div class="m-question-list" v-if="surveyInfo.is_released == 1">
             <div class="item" v-for="(item,index) in statistics" :key="item.id">
               <div class="ask">
                 <div>
@@ -125,6 +128,7 @@
               </div>
             </div>
           </div>
+          <div v-else>还未发布</div>
         </TabPane>
         <!--logs-->
         <TabPane name='logs' label="详细记录" icon="android-clipboard" wx:if="surveyInfo.is_released == 1">
@@ -282,6 +286,11 @@ export default {
     viewFill(questionId){
       console.log(questionId)
     },
+    handleAddQuestion(){
+      this.showQuestionModal = true
+      this.modalActName = "添加问题"
+      this.questionDetail = {}
+    },
     handleQuestionEdit(index) {
       this.curUpdateQuestionIndex = index
       let curQuestion = this.questionList[index]['question']
@@ -321,16 +330,32 @@ export default {
         if (valid) {
           if(this.questionSubmiting) return
           this.questionSubmiting = true
-          saveData('/SurveyQuestion/update',this.questionDetail).then(res => {
-            console.log(res)
-            let index = this.curUpdateQuestionIndex
-            this.$Message.success("Success!")
-            this.questionSubmiting = false
-            this.showQuestionModal = false
-            this.questionList[index]['question'] = res.data.info
-          },reject=>{
-            this.questionSubmiting = true
-          })
+          let apiUrl = "";
+          if(this.modalActName == '添加问题') {
+            let postData = Object.assign({},this.questionDetail)
+            postData.s_id = this.curId
+            saveData('/SurveyQuestion/doadd',postData).then(res => {
+              if(res){
+                this.$Message.success("Success!")
+                this.questionSubmiting = false
+                this.showQuestionModal = false
+                this.questionList.unshift(res.data.info)
+              }
+            },reject=>{
+              this.questionSubmiting = true
+            })
+          }else {
+            saveData('/SurveyQuestion/update',this.questionDetail).then(res => {
+              console.log(res)
+              let index = this.curUpdateQuestionIndex
+              this.$Message.success("Success!")
+              this.questionSubmiting = false
+              this.showQuestionModal = false
+              this.questionList[index]['question'] = res.data.info
+            },reject=>{
+              this.questionSubmiting = true
+            })
+          }
         }
       })
     },

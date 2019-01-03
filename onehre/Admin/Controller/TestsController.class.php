@@ -23,7 +23,8 @@ class TestsController extends Auth {
     $mainModel = M("Test");
     $page = I("get.page/d",1);
     $where = array(
-      "course_id"  =>$courseId
+      "course_id"  =>$courseId,
+      "is_deleted"  =>0
     );
     if(!empty($_GET['keywords'])) {
       $where['title'] = array('like','%'.I("get.keywords").'%');
@@ -62,12 +63,12 @@ class TestsController extends Auth {
       $this->ajaxReturn($backData);
     }
     $id = I("get.id");
-    $info = M("Survey")->where(array('id'=>$id))->fetchSql(false)->find();
+    $info = M("Test")->where(array('id'=>$id))->fetchSql(false)->find();
     if($info) {
       $backData = array(
         'code'      => 200,
         "msg"       => "success",
-        "info"      =>$info
+        "data"      =>array("info"=>$info)
       );
     }else {
       $backData = array(
@@ -87,7 +88,7 @@ class TestsController extends Auth {
       );
       $this->ajaxReturn($backData);
     }
-    $mainModel = M("Survey");
+    $mainModel = M("Test");
     $postData = $mainModel->create($this->requestData);
     if(!$postData) {
       $backData = array(
@@ -130,7 +131,7 @@ class TestsController extends Auth {
       $this->ajaxReturn($backData);     
     }
     $id = I("get.id");
-    $del = M("Survey")->where(array("id"=>$id))->fetchSql(false)->save(array('is_deleted'=>1));
+    $del = M("Test")->where(array("id"=>$id))->fetchSql(false)->save(array('is_deleted'=>1));
     if($del !== false) {
       $backData = array(
         'code'      => 200,
@@ -146,42 +147,78 @@ class TestsController extends Auth {
   }
 
   /**
-   * 添加题目
+   * add question
    */
   public function add_question(){
-    if(IS_POST) {
-      $postData = $this->requestData;
-      $testId = $postData['testid'];
-      $condition = array(
-        "id"  =>$testId
-      );
-      $curModel = M("Test");
-      $testInfo = $curModel->where($condition)->find();
-      $curQuestionId = $testInfo['question'];
-      $newQuestionId = trim($curQuestionId.",".$postData['newquestion'],',');
-      $updateResult = $curModel->where($condition)->data(array('question'=>$newQuestionId))->save();
-      if(!$updateResult) {
-        $backData = array(
-          'code'      => 13001,
-          "msg"       => "操作失败"    
-        );
-        $this->ajaxReturn($backData);
-      }
+    $postData = $this->requestData;
+    $testId = intval($postData['testid']);
+    $newQuestion = json_decode($postData['newquestion'],true);
+    $testCondition = array(
+      "id"  =>$testId
+    );
+    $testInfo = M("Test")->where($testCondition)->find();
+    $testQuestion = explode(",",$testInfo['question']);
+    $newTestQuestion = array_merge($testQuestion,$newQuestion);
+    $updateData = array(
+      "question"  =>trim(implode(",",$newTestQuestion),",")
+    );
+    $updateResult = M("Test")->where($testCondition)->data($updateData)->fetchSql(false)->save();
+
+    if($updateResult !== false) {
       $backData = array(
         'code'      => 200,
-        "msg"       => "success"    
+        "msg"       => "ok"    
       );
-      $this->ajaxReturn($backData);
+    }else {
+      $backData = array(
+        'code'      => 13001,
+        "msg"       => "操作失败"    
+      );
     }
+    $this->ajaxReturn($backData);
   }
+
 
   /**
-   * remove question
+   * test logs
    */
-  public function remove_question(){
-
+  public function logs(){
+    if(empty($_GET['testid'])) {
+      $backData = array(
+        'code'      => 10001,
+        "msg"       => "非法请求"    
+      );
+      $this->ajaxReturn($backData); 
+    }
+    $page = I("get.p/d",1);
+    $pageSize = 50;
+    $testId = I("get.testid");
+    $condition = array(
+      "TL.test_id"  =>$testId
+    );
+    $testInfo = M("Test")->field("title,course_id")->where(array('id'=>$testId))->find();
+    $total = M("TestLogs")->alias("TL")->where($condition)->count();
+    $list = M("TestLogs")
+    ->alias("TL")
+    ->field("TL.*,CM.realname")
+    ->join("__COURSE_MEMBER__ as CM on CM.id= TL.member_id and CM.course_id=".$testInfo['course_id'])
+    ->where($condition)
+    ->page($page,$pageSize)
+    ->fetchSql(false)
+    ->select();
+    $backData = array(
+      'code'      => 200,
+      "msg"       => "ok",
+      'data'      => array(
+          "testInfo"  =>$testInfo,
+          "list"  =>$list,
+          "total" =>intval($total),
+          "pageSize"  =>$pageSize,
+          "page"    =>$page
+      )
+    );
+    $this->ajaxReturn($backData);
   }
-
 
 
 

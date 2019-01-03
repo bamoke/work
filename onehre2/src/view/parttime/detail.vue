@@ -1,7 +1,7 @@
 <template>
   <Card>
     <h3 class="" slot="title">当前项目：【{{baseInfo.title}}】</h3>
-    <Menu mode="horizontal" @on-select="selectTab" :active-name="curTab">
+    <Menu mode="horizontal" @on-select="selectTab" :active-name="curTab" style="margin-bottom:20px">
         <MenuItem name="parttime_introduce">
             <Icon type="ios-paper"></Icon>
             项目介绍

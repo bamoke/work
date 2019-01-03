@@ -87,6 +87,45 @@ class MycardController extends BaseController {
     $this->ajaxReturn($backData);  
   }
 
+  public function bind(){
+    $model = M("Card");
+    // 1.1 check phone
+    $phone = I("get.phone");
+    $phoneInfo = $model->where(array('phone'=>$phone))->find();
+    if(!$phoneInfo) {
+      $backData = array(
+        "code"  => 13001,
+        "msg"   => "没有此手机用户"
+      );  
+      $this->ajaxReturn($backData);  
+    } 
+    if($phoneInfo['uid']) {
+      $backData = array(
+        "code"  => 13002,
+        "msg"   => "此手机号已经被绑定"
+      );  
+      $this->ajaxReturn($backData);       
+    }
+    // 1.2 create data
+    $model->uid = $this->uid;
+    $condition = array(
+      "phone" =>$phone
+    );
+    $updateResult = $model->where($condition)->fetchSql(false)->save();
+    if(!$updateResult) {
+      $backData = array(
+        "code"  => 13003,
+        "msg"   => "保存失败请稍后再试"
+      );  
+      $this->ajaxReturn($backData);  
+    }
+    $backData = array(
+      "code"  => 200,
+      "msg"   => "success"
+    );  
+    $this->ajaxReturn($backData);  
+  }
+
   /**
    * update
    */

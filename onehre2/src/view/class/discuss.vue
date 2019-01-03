@@ -182,7 +182,7 @@ export default {
       axios
         .request({
           url: "/Discuss/vlist",
-          params: { type: 2, objid: this.courseId, page: page },
+          params: { type: 1, objid: this.courseId, page: page },
           method: "get"
         })
         .then(res => {
@@ -280,13 +280,13 @@ export default {
     }
   },
   mounted() {
-    const parttimeId = this.$route.params.id;
-    this.parttimeId = parttimeId;
+    const courseId = this.$route.params.courseid;
+    this.courseId = courseId;
     this.formLoading = true;
     axios
       .request({
         url: "/Discuss/vlist",
-        params: { type: 2, objid: parttimeId, page: this.curPage },
+        params: { type: 1, objid: courseId, page: this.curPage },
         method: "get"
       })
       .then(res => {

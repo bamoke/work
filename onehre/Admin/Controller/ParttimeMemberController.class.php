@@ -20,7 +20,7 @@ class ParttimeMemberController extends Auth {
     $ptid = I("get.ptid");
     $condition = array(
       "pt_id" =>$ptid,
-      "is_deleted"  =>0
+      "status"  =>1
     );
     $list = M("ParttimeMember")
     ->where($condition)
@@ -99,7 +99,7 @@ class ParttimeMemberController extends Auth {
       $this->ajaxReturn($backData);     
     }
     $id= I("get.id");
-    $result = M("ParttimeMember")->where(array('id'=>$id))->data(array("is_deleted"=>1))->save();
+    $result = M("ParttimeMember")->where(array('id'=>$id))->data(array("status"=>0))->save();
     if($result !== false) {
       $backData = array(
         'code'      => 200,
@@ -114,6 +114,39 @@ class ParttimeMemberController extends Auth {
     $this->ajaxReturn($backData);
   }
 
+
+   /**
+   * 设为管理员
+   */
+  public function set_manager(){
+    if(empty($_GET['parttimeid']) || empty($_GET['id'])) {
+      $backData = array(
+        "code"  => 10001,
+        "msg"   => "参数错误"
+      );  
+      $this->ajaxReturn($backData); 
+    }
+    $parttimeId = I("get.parttimeid");
+    $id = I("get.id");
+    $curModel = M("ParttimeMember");
+    $curModel->startTrans();
+    $updateAll = $curModel->where(array("pt_id"=>$parttimeId))->data("type=1")->save();
+    $updateOne = $curModel->where(array("id"=>$id))->data("type=2")->save();
+    if($updateAll !== false && $updateOne !== false){
+      $curModel->commit();
+      $backData = array(
+        "code"  =>200,
+        "msg"   =>'success'
+      );
+    }else {
+      $curModel->rollback();
+      $backData = array(
+        "code"  =>13001,
+        "msg"   =>'操作失败'
+      );
+    }
+    $this->ajaxReturn($backData);  
+  }
 
 
 

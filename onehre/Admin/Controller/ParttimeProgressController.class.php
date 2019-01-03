@@ -42,6 +42,104 @@ class ParttimeProgressController extends Auth {
   }
 
 
+  /**
+   * insert progress
+   */
+  public function doadd(){
+    if(IS_POST){
+     $postData = $this->requestData;
+     $curModel = M('ParttimeProgress');
+     $createResult = $curModel->create($postData);
+     if(!$createResult) {
+       $backData = array(
+         'code'      => 13001,
+         "msg"       => "数据创建错误"    
+       );
+       $this->ajaxReturn($backData);
+     }
+     
+     $insertResult = $curModel->add();
+     if(!$insertResult) {
+       $backData = array(
+         'code'      => 13002,
+         "msg"       => "数据保存错误"    
+       );
+       $this->ajaxReturn($backData);
+     }
+     $progressInfo = $curModel->where(array('id'=>$insertResult))->find();
+     $backData = array(
+       'code'      => 200,
+       "msg"       => "数据保存错误",
+       "data"      =>array(
+         "info"  =>$progressInfo
+       )    
+     );
+     $this->ajaxReturn($backData);
+
+    }
+  }
+
+    /**
+   * insert progress
+   */
+  public function update(){
+    if(IS_POST){
+     $postData = $this->requestData;
+     $curModel = M('ParttimeProgress');
+     $createResult = $curModel->create($postData);
+     if(!$createResult) {
+       $backData = array(
+         'code'      => 13001,
+         "msg"       => "数据创建错误"    
+       );
+       $this->ajaxReturn($backData);
+     }
+     
+     $updateResult = $curModel->save();
+     if($updateResult !== false) {
+      $backData = array(
+        'code'      => 200,
+        "msg"       => "数据保存错误"  
+      );
+     }else {
+       $backData = array(
+         'code'      => 13002,
+         "msg"       => "数据保存错误"    
+       );
+       $this->ajaxReturn($backData);
+     }
+
+     $this->ajaxReturn($backData);
+
+    }
+  }
+
+  public function delone(){
+    if(empty($_GET["id"])){
+      $backData = array(
+        'code'      => 10001,
+        "msg"       => "非法请求"    
+      );
+      $this->ajaxReturn($backData);     
+    }
+    $id = I("get.id");
+    $del = M("ParttimeProgress")->delete($id);
+    if($del !== false) {
+      $backData = array(
+        'code'      => 200,
+        "msg"       => "ok"    
+      );
+    }else {
+      $backData = array(
+        'code'      => 13001,
+        "msg"       => "操作失败"    
+      );
+    }
+    $this->ajaxReturn($backData);
+  }
+
+
+
   protected function _projectstage(){
     return array(
       array('name'=>"未开始","class"=>""),

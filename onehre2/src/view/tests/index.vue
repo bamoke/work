@@ -104,21 +104,13 @@ export default {
       this._toPage(queryData);
     },
     handleAdd() {
-      let queryData = {};
-      if (this.$route.params.courseid) {
-        queryData.courseid = this.$route.params.courseid;
-      }
-      this.$router.push({ name: "test_add", query: queryData });
+      this.$router.push({ name: "class_tests_add"});
     },
     handleEdit(params) {
       const id = params.row.id;
-      this.$router.push({ name: "survey_edit", params: { id } });
+      this.$router.push({ name: "test_edit", params: { testid:id } });
     },
     handleRelease(params) {},
-    handleView(params) {
-      const id = params.row.id;
-      this.$router.push({ name: "survey_detail", params: { id } });
-    },
  
     handleToPage(routeName,params){
       const testId = params.row.id

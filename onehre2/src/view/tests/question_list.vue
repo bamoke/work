@@ -105,11 +105,15 @@ export default {
     handleEdit(questionIndex){
       const testId = this.testId
       const curItem = this.questionList[questionIndex]
-      this.$router.push("test_question_edit",{params:})
+      this.$router.push({name:'test_question_edit',params:{questionid:curItem.id}})
     },
     handleDel(questionIndex){
       const curItem = this.questionList[questionIndex]
-      console.log(questionIndex)
+      getDataOne("/TestsQuestion/delone",{id:curItem.id}).then(res=>{
+        if(res){
+          this.questionList.splice(questionIndex,1)
+        }
+      })
     },
     showQuestionLib() {
       let curAllQuestionId = this.questionAllId.join(",");
@@ -134,9 +138,10 @@ export default {
       let selectedId = this.selectedLib.map(item => {
         return item.id;
       });
+
       saveData("/Tests/add_question", {
         testid: this.testId,
-        newquestion: selectedId.join(",")
+        newquestion: JSON.stringify(selectedId)
       }).then(res => {
         if (res) {
           this.questionList.push(...this.selectedLib);
@@ -184,6 +189,11 @@ export default {
 </script>
 
 <style>
+.question-item {
+  padding:12px 0;
+  margin-bottom:12rpx;
+  border-bottom:1px solid #eee;
+}
 .question-title {
   font-size: 14px;
   font-weight: bold;
@@ -195,8 +205,10 @@ export default {
 .answer-item .type {
   flex-shrink: 0;
   flex-grow: 0;
-  padding: 0 5px;
+  margin-right:10px;
+  padding: 5px;
   font-size: 12px;
+  line-height: 1;
 }
 .answer-item .correct {
   background: #19be6b;

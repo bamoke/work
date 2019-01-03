@@ -3,7 +3,14 @@ namespace Api\Controller;
 use Api\Common\Controller\BaseController;
 class IndexController extends BaseController {
     public function index(){
-        if(isset($_GET['fromid'])) {
+        $isCollected = true;
+        $isLike = true;
+        $condition = array(
+            "uid"   =>$this->uid
+        );
+        $info = M("Card")->where($condition)->find();
+
+        if(isset($_GET['fromid']) && $info && I("get.fromid") != $info['id']) {
             $fromId = I('get.fromid');
             $fromUid = M("Card")->where(array('id'=>$fromId))->getField("uid");
             if($fromUid > $this->uid){
@@ -22,12 +29,7 @@ class IndexController extends BaseController {
                 $insertReusult = M("MycardFolder")->data($data)->add();
             }
         }
-        $condition = array(
-            "uid"   =>$this->uid
-        );
-        $isCollected = true;
-        $isLike = true;
-        $info = M("Card")->where($condition)->find();
+
         if(!$info) {
             $backData = array(
                 "code"  =>200,

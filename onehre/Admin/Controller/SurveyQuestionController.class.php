@@ -23,7 +23,6 @@ class SurveyQuestionController extends Auth {
     );
     $surveyId = I('get.sid');
     $surveyInfo = M("Survey")->where("id=$surveyId")->find();
-    $questionList = array();
     $questionList = M("SurveyQuestion")
     ->where($questionCondition)
     ->order("sort,id")
@@ -36,10 +35,9 @@ class SurveyQuestionController extends Auth {
         $questionIdArr[] = $val['id']; 
       }
       $optionList = array();
-      $questionIdStr = implode(",",$questionIdArr);
-      $optionList = M("SurveyAnswer")->where(array('question_id'=>array('in',$questionIdStr)))->order("sort,id")->select();
+      $optionList = M("SurveyAnswer")->where(array('question_id'=>array('in',$questionIdArr)))->order("sort,id")->select();
+      $newQuestionList = array();
       if(count($optionList)){
-        $newQuestionList = array();
         foreach($questionList as $key=>$val){
           $option = array();
           foreach($optionList as $k=>$v) {
@@ -50,8 +48,16 @@ class SurveyQuestionController extends Auth {
           $newQuestionList[$key]['opt'] = $option;
           $newQuestionList[$key]['question'] = $val;
         }
-        $questionList = $newQuestionList;
+        
+      }else {
+        foreach($questionList as $key=>$val){
+          $newQuestionList[] = array(
+            "question"  =>$val,
+            "opt" =>array()
+          ); 
+        }
       }
+      $questionList = $newQuestionList;
     }
     $backData = array(
       'code'      => 200,
@@ -97,6 +103,7 @@ class SurveyQuestionController extends Auth {
   
 
   // 写入question
+  // 不知道给谁调用的？？可能无用的函数==2018-12-29
   public function insert(){
     if(!IS_POST){
       $backData = array(
@@ -173,6 +180,45 @@ class SurveyQuestionController extends Auth {
       $this->ajaxReturn($backData);
     }
   }
+
+
+      /**
+     * doadd
+     */
+
+     public function doadd(){
+       if(IS_POST){
+        $postData = $this->requestData;
+        $curModel = M('SurveyQuestion');
+        $createResult = $curModel->create($postData);
+        if(!$createResult) {
+          $backData = array(
+            'code'      => 13001,
+            "msg"       => "数据创建错误"    
+          );
+          $this->ajaxReturn($backData);
+        }
+        
+        $insertResult = $curModel->add();
+        if(!$insertResult) {
+          $backData = array(
+            'code'      => 13002,
+            "msg"       => "数据保存错误"    
+          );
+          $this->ajaxReturn($backData);
+        }
+        $questionInfo = $curModel->where(array('id'=>$insertResult))->find();
+        $backData = array(
+          'code'      => 200,
+          "msg"       => "数据保存错误",
+          "data"      =>array(
+            "info"  =>$questionInfo
+          )    
+        );
+        $this->ajaxReturn($backData);
+
+       }
+     }
   /**
    * update question and answer
    */

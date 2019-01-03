@@ -1,6 +1,6 @@
 import Main from '@/view/main'
 import parentView from '@/components/parent-view'
-
+const baseUrl = '/sysadmin/'
 /**
  * iview-admin中meta除了原生参数外可配置的参数:
  * meta: {
@@ -13,14 +13,14 @@ import parentView from '@/components/parent-view'
 
 export default [
   {
-    path: '/login',
+    path: baseUrl+'login',
     name: 'login',
     component: () => import('@/view/login/login.vue')
   },
   {
-    path: '/',
+    path: baseUrl,
     name: 'home',
-    redirect: '/home',
+    redirect: baseUrl+'home',
     component: Main,
     meta: {
       hideInMenu: true,
@@ -40,7 +40,7 @@ export default [
   },
   /***onehre */
   {
-    path: '/auth',
+    path: baseUrl+'auth',
     name: 'auth_manage',
     component: Main,
     meta: {
@@ -68,14 +68,15 @@ export default [
         path: 'rules',
         name: 'auth_rules',
         meta: {
-          title: '权限规则'
+          title: '权限规则',
+          hideInMenu: true,
         },
         component: () => import('@/view/auth/rules')
       }
     ]
   },
   {
-    path: '/teacher',
+    path: baseUrl+'teacher',
     name: 'teacher_manage',
     component: Main,
     meta: {
@@ -112,7 +113,7 @@ export default [
     ]
   },
   {
-    path: '/course',
+    path: baseUrl+'course',
     name: 'course_manage',
     component: Main,
     meta: {
@@ -160,7 +161,7 @@ export default [
             name: 'class_home',
             meta: {
               title: '班级管理',
-              hideInMenu: true
+              hideInMenu: false
             },
             component: () => import('@/view/class/index'),
           },
@@ -169,7 +170,7 @@ export default [
             name: 'class_member',
             meta: {
               title: '班级成员',
-              hideInMenu: true
+              hideInMenu: false
             },
             component: () => import('@/view/class/member')
           },
@@ -178,7 +179,7 @@ export default [
             name: 'class_notes',
             meta: {
               title: '课程笔记',
-              hideInMenu: true
+              hideInMenu: false
             },
             component: () => import('@/view/class/notes')
           },
@@ -187,7 +188,7 @@ export default [
             name: 'class_remark',
             meta: {
               title: '课程点评',
-              hideInMenu: true
+              hideInMenu: false
             },
             component: () => import('@/view/class/remark')
           },
@@ -201,8 +202,8 @@ export default [
             component: () => import('@/view/class/dynamic')
           },
           {
-            path: 'tests',
-            name: 'class_tests',
+            path: 'tests_list',
+            name: 'class_tests_list',
             meta: {
               title: '作业考试',
               hideInMenu: true
@@ -210,13 +211,22 @@ export default [
             component: () => import('@/view/tests/index')
           },
           {
+            path: 'tests_add',
+            name: 'class_tests_add',
+            meta: {
+              title: '添加试题',
+              hideInMenu: true
+            },
+            component: () => import('@/view/tests/add')
+          },
+          {
             path: 'discuss',
             name: 'class_discuss',
             meta: {
-              title: '讨论组',
-              hideInMenu: true
+              title: '班级讨论组',
+              hideInMenu: false
             },
-            component: () => import('@/view/discuss/index')
+            component: () => import('@/view/class/discuss')
           },
           {
             path: 'survey',
@@ -233,36 +243,48 @@ export default [
     ]
   },
   {
-    path: 'discuss_detail',
-    name: 'class_discuss_detail',
+    path: baseUrl+'discuss/:disid',
+    name: 'discuss',
     meta: {
       title: '讨论组详情',
       hideInMenu: true
     },
-    component: () => import('@/view/discuss/detail'),
-    children: [
-      {
-        path: 'member',
-        name: 'class_discuss_detail_member',
-        meta: {
-          title: '讨论组成员',
-          hideInMenu: true
-        },
-        component: () => import('@/view/discuss/member'),
+    component: Main,
+    children: [{
+      path: 'home',
+      name: 'discuss_home',
+      meta: {
+        title: '讨论组详情',
+        hideInMenu: false
       },
-      {
-        path: 'node',
-        name: 'class_discuss_detail_node',
-        meta: {
-          title: '讨论分栏',
-          hideInMenu: true
+      component: () => import('@/view/discuss/home'),
+      children: [
+        {
+          path: 'member',
+          name: 'discuss_member',
+          meta: {
+            title: '讨论组成员',
+            hideInMenu: false
+          },
+          component: () => import('@/view/discuss/member'),
         },
-        component: () => import('@/view/discuss/node'),
-      }
+        {
+          path: 'content',
+          name: 'discuss_content',
+          meta: {
+            title: '讨论内容',
+            hideInMenu: true
+          },
+          component: () => import('@/view/discuss/node')
+        }
+
+      ]
+    }
     ]
+
   },
   {
-    path: '/tests',
+    path: baseUrl+'tests/:testid',
     name: 'tests',
     component: Main,
     meta: {
@@ -272,25 +294,16 @@ export default [
     },
     children: [
       {
-        path: 'add',
-        name: 'test_add',
-        meta: {
-          title: '作业考试',
-          hideInMenu: true
-        },
-        component: () => import('@/view/tests/add')
-      },
-      {
-        path: 'edit/:testid',
+        path: 'edit',
         name: 'test_edit',
         meta: {
-          title: '作业考试',
+          title: '编辑试题',
           hideInMenu: true
         },
         component: () => import('@/view/tests/edit')
       },
       {
-        path: 'question/:testid',
+        path: 'question',
         name: 'test_question',
         meta: {
           title: '题目管理',
@@ -302,7 +315,7 @@ export default [
             path: 'list',
             name: 'test_question_list',
             meta: {
-              title: '添加题目',
+              title: '题目列表',
               hideInMenu: true
             },
             component: () => import('@/view/tests/question_list')
@@ -328,7 +341,7 @@ export default [
         ]
       },
       {
-        path: 'logs/:testid',
+        path: 'logs',
         name: 'test_logs',
         meta: {
           title: '测试记录',
@@ -340,7 +353,7 @@ export default [
   },
 
   {
-    path: '/article',
+    path: baseUrl+'article',
     name: 'article_manage',
     component: Main,
     meta: {
@@ -397,7 +410,7 @@ export default [
     ]
   },
   {
-    path: '/outsource',
+    path: baseUrl+'outsource',
     name: 'outsource_manage',
     component: Main,
     meta: {
@@ -436,7 +449,7 @@ export default [
     ]
   },
   {
-    path: '/parttime',
+    path: baseUrl+'parttime',
     name: 'parttime_manage',
     meta: {
       title: '兼职项目',
@@ -559,7 +572,7 @@ export default [
   /**====== */
 
   {
-    path: '/survey',
+    path: baseUrl+'survey',
     name: 'survey',
     meta: {
       title: '问卷管理',
@@ -620,11 +633,12 @@ export default [
 
 
   {
-    path: '/update',
+    path: baseUrl+'update',
     name: 'update',
     meta: {
       icon: 'upload',
-      title: '数据上传'
+      title: '数据上传',
+      hideInMenu: true
     },
     component: Main,
     children: [
@@ -651,17 +665,17 @@ export default [
 
 
   {
-    path: '/401',
+    path: baseUrl+'401',
     name: 'error_401',
     component: () => import('@/view/error-page/401.vue')
   },
   {
-    path: '/500',
+    path: baseUrl+'500',
     name: 'error_500',
     component: () => import('@/view/error-page/500.vue')
   },
   {
-    path: '*',
+    path: baseUrl+'*',
     name: 'error_404',
     component: () => import('@/view/error-page/404.vue')
   }

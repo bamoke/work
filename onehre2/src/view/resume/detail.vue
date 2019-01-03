@@ -6,7 +6,7 @@
         打印
       </Button>
         <div id="resume-view">
-      <table width="100%" border="0" class="base-info-table">
+      <table width="100%" border="0" class="base-info-table" style="border-bottom:1px solid #999;padding-bottom:24px;">
         <tr>
           <td width="10%">性别：</td>
           <td>{{baseInfo.sex}}</td>
@@ -27,8 +27,8 @@
         </tr>
       </table>
       <br>
-      <div class="bar">教育经历</div>
-      <table width="100%" border="0" class="">
+      <h3 class="bar">教育经历</h3>
+      <table width="100%" border="0" style="border-bottom:1px solid #999;padding-bottom:20px;">
           <tr v-for="(item,index) in eduInfo" v-bind:key="index">
             <td width="35%"><strong>{{item['school']}}</strong></td>
             <td width="30%">{{item['start_time']}}至{{item['end_time']}}</td>
@@ -37,8 +37,8 @@
           </tr>
       </table>
       <br>
-      <div class="bar">工作经历</div>
-      <table width="100%" border="0" class="">
+      <h3 class="bar">工作经历</h3>
+      <table width="100%" border="0" style="border-bottom:1px solid #999;padding-bottom:20px;">
           <template v-for="work in workInfo">
           <tr class="work-base" >
             <td width="40%"><strong>{{work['company']}}</strong></td>
@@ -51,8 +51,8 @@
           </template>
 
       </table>
-      <div class="fg"></div>
-      <div class="bar">自我介绍</div>
+      <br>
+      <h3 class="bar">自我介绍</h3>
       <div v-html="baseInfo['introduce']"></div>
     </div>
   </Card>
@@ -77,7 +77,7 @@
   },
   methods: {
     handlePrint() {
-      console.log("print");
+      window.print()
     }
   },
   mounted(){
@@ -88,6 +88,7 @@
           this.baseInfo = res.data.baseInfo
           this.eduInfo = res.data.eduInfo
           this.workInfo = res.data.workInfo
+          window.document.title = res.data.baseInfo.realname +"的简历"
       }
     })
   }

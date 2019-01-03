@@ -9,7 +9,7 @@
           <Icon type="compose" size="48" class="icon"></Icon>
           <span class="caption">课程笔记</span>
         </div>
-        <div v-on:click="showPage('class_tests')" data-to="class_tests" class="item">
+        <div v-on:click="showPage('class_tests_list')" data-to="class_tests" class="item">
           <Icon type="clock" size="48" class="icon"></Icon>
           <span class="caption">作业考试</span>
         </div>

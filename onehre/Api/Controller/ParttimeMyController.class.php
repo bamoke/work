@@ -62,7 +62,7 @@ class ParttimeMyController extends BaseController {
 
     $condition = array(
       "PM.uid" =>$this->uid,
-      "PM.is_deleted" =>0
+      "PM.status" =>1
     );
     $page = I("get.p",1);
     $pageSize = 20;
@@ -102,7 +102,8 @@ class ParttimeMyController extends BaseController {
     // 检查是否是项目成员
     $memberCondition = array(
       "pt_id" =>$parttimeId,
-      "uid"   =>$this->uid
+      "uid"   =>$this->uid,
+      "status"  =>1
     );
     $memberInfo = M("ParttimeMember")->where($memberCondition)->fetchSql(false)->find();
     if(!$memberInfo) {
@@ -170,7 +171,8 @@ class ParttimeMyController extends BaseController {
     $page = I("get.p/d",1);
     $pageSize=20;
     $condition = array(
-      "pt_id"  =>$parttimeId
+      "pt_id"  =>$parttimeId,
+      "status"  =>1
     );
     if(!empty($_GET['keywords'])){
       $condition["realname"] = array("like","%".I('get.keywords')."%");

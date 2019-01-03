@@ -13,24 +13,31 @@ class CardController extends BaseController {
 
 
     // 剔除我的好友的名片
+    $myUid = $this->uid;
     $myFriendUid = array($this->uid);
     $friendCondition = array(
-      "f_uid" =>$this->uid,
-      "s_uid" =>$this->uid,
+      "f_uid" =>$myUid,
+      "s_uid" =>$myUid,
       "_logic"  =>"OR"
     );
-    $myFriendList = M("MycardFolder")->field("IF(f_uid=".$this->uid.",s_uid,f_uid) as friend_id")->where($friendCondition)->select();
+    $myFriendList = M("MycardFolder")->field("IF(f_uid=".$myUid.",s_uid,f_uid) as friend_id")->where($friendCondition)->select();
     if(count($myFriendList)){
       foreach($myFriendList as $key=>$val) {
         $myFriendUid[] = $val['friend_id'];
       }
     }
-    $condition['C.uid'] = array('not in',implode(",",$myFriendUid));
+    $condition = array(
+      "C.uid" =>array('not in',implode(",",$myFriendUid))
+    );
+    if(!empty($_GET['keywords'])) {
+      $keywords = I("get.keywords");
+      $condition['C.realname'] = array('like',"%".$keywords."%");
+    }
     $total = M("Card")->alias("C")->where($condition)->fetchSql(false)->count();
     $cardList = M("Card")
     ->alias("C")
-    ->field("C.id,C.realname,C.avatar,C.company,C.partment,C.position,E.status as exchange_status")
-    ->join("__EXCHANGE__ E on E.to_uid = C.uid","LEFT")
+    ->field("C.id,C.realname,C.avatar,C.company,C.position,E.status as exchange_status")
+    ->join("__EXCHANGE__ E on E.from_uid=C.uid and E.to_uid = ".$myUid,"LEFT")
     ->where($condition)
     ->page($page,$pageSize)
     ->order("id desc")

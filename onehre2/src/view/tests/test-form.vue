@@ -117,8 +117,8 @@ export default {
     }
   },
   mounted() {
-    if(this.$route.query.courseid) {
-     this.formInfo.course_id=this.$route.query.courseid
+    if(this.$route.params.courseid) {
+     this.formInfo.course_id=this.$route.params.courseid
     }
     
   }

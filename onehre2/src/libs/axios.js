@@ -1,5 +1,6 @@
 import Axios from 'axios'
 import baseURL from '_conf/url'
+import {roorDir} from '_conf/base'
 import { Message } from 'iview'
 import Cookies from 'js-cookie'
 import { TOKEN_KEY } from '@/libs/util'
@@ -46,7 +47,7 @@ class httpRequest {
           if (data.code === 11001 || data.code === 11002) {
             Cookies.remove(TOKEN_KEY)
             Message.error(data.msg)
-            window.location.href = '/#/login'
+            window.location.href = roorDir + 'login'
           } else {
             if (data.msg) Message.error(data.msg)
           }

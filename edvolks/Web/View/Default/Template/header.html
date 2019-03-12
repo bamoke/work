@@ -1,0 +1,20 @@
+<div class="w-main head-top f-cb">
+    <a class="u-logo" href="{:U('Index/index')}">
+        <h1>The EdVolks Architecture Design Ltd.</h1>
+    </a>
+    <!--             <div class="u-language">
+                    <a href="index.html">ENG</a>
+                    <span class="fg">|</span>
+                    <a href="index-cn.html">中</a>
+                </div> -->
+    <div id="" class="navigation-btn {$btnStyle?$btnStyle:'btn-white'}"></div>
+    <div class="nav-masker"></div>
+    <ul class="m-nav s-text-light">
+        <foreach name="nav" item="list">
+            <li>
+                <a href="{$list['parent']['url']}">{$list['parent']['title']}</a>
+            </li>
+        </foreach>
+
+    </ul>
+</div>

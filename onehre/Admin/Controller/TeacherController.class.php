@@ -15,9 +15,10 @@ use Admin\Common\Auth;
     $page = empty($_GET["p"]) ? 1 : (int)$_GET["p"];
     $where = array();
     if(!empty($_GET['keywords'])){
-      $where['fullname'] = array("like","%".$_GET["keywords"]."%");
+      $searchKey = I("get.searchkey");
+      $where[$searchKey] = array("like","%".$_GET["keywords"]."%");
     }
-    $list = $mainModel->field("id,fullname,avatar,position,status,create_time")->where($where)->page($page,$pageSize)->fetchSql(false)->select();
+    $list = $mainModel->alias("T")->field("T.*,(select count(*) from o_course where teacher_id=T.id) as course_num")->where($where)->page($page,$pageSize)->fetchSql(false)->select();
     $total = $mainModel->where($where)->count();
     $backData = array(
       'code'      => 200,
@@ -88,7 +89,7 @@ use Admin\Common\Auth;
     }
     $id = $_GET['id'];
     $model = M("Teacher");
-    $info = $model->field("id,fullname,avatar,position,introduce,status")->where(array("id"=>$id))->find();
+    $info = $model->field("id,fullname,avatar,position,introduce,remarks,status")->where(array("id"=>$id))->find();
     if($info){
       $backData = array(
         'code'      => 200,
@@ -120,7 +121,7 @@ use Admin\Common\Auth;
     if($coursehasTotal > 0 ){
       $backData = array(
         'code'      => 13002,
-        "msg"       => "有课程关联此讲师，无法删除"    
+        "msg"       => "该讲师名下还有课程，无法删除"    
       );
       $this->ajaxReturn($backData);          
     }

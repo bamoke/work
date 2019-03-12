@@ -2,12 +2,12 @@
  * @Author: joy.wangxiangyin 
  * @Date: 2018-08-13 23:31:40 
  * @Last Modified by: joy.wangxiangyin
- * @Last Modified time: 2018-08-17 22:08:02
+ * @Last Modified time: 2019-03-07 01:29:58
  */
 <template>
   <div>
     <Card v-if="!isCompleted">
-      <div slot="title"></div>
+      <div slot="title">添加讲师</div>
       <Row :gutter="16">
         <i-col span="18">
           <TeacherForm @form-saved="handleSaved" @form-cancel="handleCancel"></TeacherForm>

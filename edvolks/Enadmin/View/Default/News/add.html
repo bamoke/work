@@ -1,0 +1,107 @@
+<link rel="stylesheet" href="__PUBLIC__/Js/plupload-2.3.6/js/jquery.plupload.queue/css/jquery.plupload.queue.css" type="text/css"
+    media="screen" />
+<style>
+.upload-img{
+width:100%;
+}
+.file-item {
+margin-bottom:10px;
+}
+.file-name {
+    margin-bottom:10px;
+}
+.color-box {
+    display: inline-block;
+    width:16px;
+    height: 16px
+}
+</style>
+<div class="panel">
+    <div class="panel-body">
+        <div class="u-page-title">
+            <span class="caption">Add article</span>
+        </div>
+        <form name="news-form" class="form form-horizontal" action="{:U('save',array('navid'=>$_GET['navid']))}">
+            <input type="hidden" name="cid" value="{$Think.get.cid}">
+            <div class="form-group">
+                <label class="control-label col-xs-2">
+                    <span class="text-danger">*</span>Title:</label>
+                <div class="col-xs-6">
+                    <input type="text" name="title" maxlength="120" class="form-control" value="" placeholder="">
+                </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">Show on home page:</label>
+                <div class="col-xs-7">
+                    <label class="radio-inline">
+                        <input type="radio" name="recommend" value="1" />Yes</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="recommend" value="0" />No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">From:</label>
+                <div class="col-xs-4">
+                    <input type="text" name="origin" class="form-control" value="">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-xs-2">Keywords:</label>
+                <div class="col-xs-6">
+                    <input type="text" name="keywords" class="form-control" value="" placeholder="关键词用','隔开">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">Description:</label>
+                <div class="col-xs-6">
+                    <textarea name="description" class="form-control"></textarea>
+                </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">Picture:</label>
+                <div class="col-xs-6">
+                    <input type="hidden" name="picture" id="js-upload-files-input" value="">
+                    <div id="upload-file-list">
+                    </div>
+                    <div>
+                        <span class="btn btn-info" id="js-show-uploader">Upload</span>
+                        <span>(width:710px;height:auto)</span>
+                    </div>
+                    <div class="modal fade" id="js-uploader-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div id="uploader" data-upload-url="{:U('Plupload/upload')}"></div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">Content:</label>
+                <div class="col-xs-6">
+                    <script id="editorContainer" name="content"></script>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-2 col-xs-offset-2">
+                    <button type="button" class="form-control btn-default" onclick="window.history.back()">Back</button>
+                </div>
+                <div class="col-xs-4">
+                    <button type="submit" class="form-control btn-info">Send</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

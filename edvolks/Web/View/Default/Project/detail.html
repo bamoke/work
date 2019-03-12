@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="keywords" content="Macao, Macau, Architecture, Interior Design, Design Firm, the EdVolks, the Volks, Eddie Ieong, Manuel Lam, Harvard, Architect, Macau Architecture Firm, Macao Interior Design Firm">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta name="description" content="{$baseInfo['site_name']} Projects {$info['title']}">
+    <link href="__WEB_ASSET__/css/global.css" rel="stylesheet" />
+    <link href="__WEB_ASSET__/css/swiper.min.css" rel="stylesheet" />
+    <link href="__WEB_ASSET__/css/main.css?v=5" rel="stylesheet" />
+    <title>Projects-{$info['title']}</title>
+
+</head>
+
+<body id="residence-body" class="dark-style">
+    <div class="g-hd" id="js-head">
+        <include file="Template/header" />
+        <div class="w-main">
+            <div class="u-head-fg"></div>
+        </div>
+    </div>
+
+    <div class="g-bd">
+        <div class="w-main">
+            <div class="residence-content main-content-wrap">
+                <foreach name="info['picture_arr']" item="pic">
+                    <p><img src="__UPLOAD__/plupload/{$pic}" alt="{$info['title']}"></p>
+                </foreach>
+            </div>
+            <div class="residence-foot">
+                <div class="left-info">- PROJECT DESCRIPTION : coming soon -</div>
+                <div class="right-info">
+                    <p><span>Category</span><span>{$info['category']}</span></p>
+                    <p><span>Area</span><span>{$info['area']}</span></p>
+                    <p><span>Location</span><span>{$info['location']}</span></p>
+                    <p><span>Status</span><span><eq name="info['status']" value="1">{$info['year']}-ongoing<else/>Completed in {$info['completed_year']}</eq></span></p>
+                    <p><span>Partners in Charge </span><span>{$info['charge']}</span></p>
+                    <p><span>Team</span><span>{$info['team']}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="g-ft">
+        <div class="w-main footer-style-3 s-line-dark">
+            <span class="copyright">&copy; All images and materials in this website are copyright protected and are the property of the EdVolks Architecture
+                Design Ltd.</span>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+<script src="__WEB_ASSET__/js/zepto.min.js"></script>
+<script src="__WEB_ASSET__/js/main.js"></script>

@@ -1,0 +1,105 @@
+@import '~iview/src/styles/index.less';
+
+@menu-dark-title: #001529;
+@menu-dark-active-bg: #000c17;
+@layout-sider-background: #001529;
+@light-grey-color :#9c9c9c;
+//reset 
+.ivu-btn-text:focus {box-shadow: none;}
+/**text skin***/
+.s-text-primary {color:@primary-color ;}
+.s-text-success {color:@success-color;}
+.s-text-error {color:@error-color;}
+.s-text-warning {color:@warning-color;}
+.s-text-info {color:@info-color;}
+.s-text-light-grey {color:@light-grey-color;}
+
+/***----funct----***/
+.pull-right {float:right!important;}
+
+
+/********/
+@menu-border-color:rgba(0,0,0,.4);
+.ivu-layout-sider {
+    overflow: auto;
+    .ivu-menu-submenu {
+        border-bottom:1px solid @menu-border-color;
+        .ivu-menu-item {
+            border-top:1px solid @menu-border-color;
+        } 
+    }
+    .side-menu-wrapper > .ivu-menu > .ivu-menu-item {
+        border-bottom:1px solid @menu-border-color;
+    }
+}
+.m-paging-wrap {
+    width:100%;
+    padding:20px 0;
+    text-align: center;
+}
+
+.m-upload-wrap {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+    .upload-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width:64px;
+    height:64px;
+    line-height: 60px;
+    text-align: center;
+    border:1px dashed #9c9c9c;
+    color:#9c9c9c;
+  }
+  .upload-btn:hover {
+    color:@primary-color;
+    border-color:@primary-color;
+    cursor: pointer;
+  }
+  .file-list {
+      display: inline-block;
+    //   flex-grow: 1;
+    .img-item {
+        display: inline-block;
+        position: relative;
+        margin-right:12px;
+        padding:2px;
+        box-sizing:border-box;
+        width:64px;
+        height:64px;
+        border:1px solid #9c9c9c;
+        // text-align: center;
+        vertical-align: middle;
+        .img-box {
+            width:100%;
+            height:100%;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            overflow: hidden;
+        }
+        .operation-box {
+            display: none;
+            position:absolute;
+            left:0;
+            top:0;
+            z-index:1;
+            width:100%;
+            height:100%;
+            background-color:rgba(0,0,0,.5);
+            .handel-btn {
+                cursor: pointer;
+                color:#fff;
+            }
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+    .img-item:hover {
+        .operation-box {display: flex;justify-content: center;align-items: center;}
+    }
+  }
+}

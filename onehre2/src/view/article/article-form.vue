@@ -116,7 +116,7 @@ export default {
       getDataOne(`Article/edit/id/${newValue}`).then(res => {
         this.formInfo = res.info;
         let imgName = res.info.thumb;
-        if (typeof imgName !== "undfined" && imgName !== "") {
+        if (imgName) {
           this.fileList = String.prototype.split.call(imgName, ",");
         }
       });

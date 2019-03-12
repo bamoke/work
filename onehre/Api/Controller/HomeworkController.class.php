@@ -35,10 +35,10 @@ class HomeworkController extends BaseController {
     $pageSize = 20;
     $condition = array(
       "T.course_id"  =>$courseId,
-      "T.type"      =>1,
+      "T.is_released"    =>1,
       "T.status"    =>1
     );
-    $total = M("Test")->alias("T")->where($condition)->count();
+    $total = M("Test")->alias("T")->where($condition)->fetchSql(false)->count();
     $list = M("Test")
     ->alias("T")
     ->field("T.*")

@@ -1,0 +1,40 @@
+{/*--conf--*/}
+<div class="panel">
+    <div class="panel-body">
+        <form class="form-horizontal" role="form" name="conf-form" action="{:U('save')}">
+            <div class="form-group">
+                <label class="col-lg-1 control-label">Address</label>
+                <div class="col-lg-6">
+                    <textarea name="addr" class="form-control" rows="2">{$info['addr']}</textarea>
+                </div>
+                <div class="col-lg-2 tips">Multiple addresses use';'separate</div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-1 control-label">Telephone</label>
+                <div class="col-lg-4">
+                    <input type="text" name="tel" value="{$info['tel']}" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-1 control-label">Fax</label>
+                <div class="col-lg-4">
+                    <input type="text" name="fax" value="{$info['fax']}" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-lg-1 control-label">Email</label>
+                <div class="col-lg-4">
+                    <textarea name="email" class="form-control" rows="2">{$info['email']}</textarea>
+                </div>
+                <div class="col-lg-2 tips">Multiple email use';'separate</div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-lg-offset-1 col-lg-4">
+                    <input type="submit" value="Send" class="btn btn-block btn-info" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

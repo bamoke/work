@@ -1,0 +1,38 @@
+<div class="panel">
+    <div class="panel-body">
+        <div class="u-page-title">
+            <span class="caption">List</span>
+            <a href="{:U('add',array('navid'=>$_GET['navid'],'cid'=>$_GET['cid']))}" class="btn btn-info">Add</a>
+        </div>
+        <table class="table js-table-list">
+            <thead>
+                <tr>
+                    <th>title</th>
+                    <th width="200">show on home page</th>
+                    <th width="200">create_time</th>
+                    <th width="200">operation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <foreach name="data" item="list">
+                    <tr>
+                        <td>{$list['title']}</td>
+                        <td>
+                            <if condition="$list['recommend'] eq 1">
+                                <span class="text-danger">Yse</span>
+                                <else/> No
+                            </if>
+                        </td>
+                        <td>{$list['create_time']}</td>
+                        <td class="operation-box">
+                            <a href="{:U('edit',array('navid'=>$_GET['navid'],'id'=>$list['id'],'cid'=>$list['cid']))}">Modify</a>
+                            <a href="javascript:" data-url="{:U('del',array('id'=>$list['id']))}" class="js-del-one">Delete</a>
+                        </td>
+                    </tr>
+                </foreach>
+
+            </tbody>
+        </table>
+        <div class="m-pagination">{$page}</div>
+    </div>
+</div>

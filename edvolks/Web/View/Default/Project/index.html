@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta name="keywords" content="{$baseInfo['keywords']}">
+    <meta name="description" content="">
+    <link href="__WEB_ASSET__/css/global.css" rel="stylesheet" />
+    <link href="__WEB_ASSET__/css/swiper.min.css" rel="stylesheet" />
+    <link href="__WEB_ASSET__/css/main.css?v=5" rel="stylesheet" />
+    <title>Projects</title>
+</head>
+
+<body id="project-body" class="dark-style">
+    <div class="g-hd" id="js-head">
+        <include file="Template/header" />
+        <div class="w-main">
+            <div class="u-head-fg"></div>
+        </div>
+    </div>
+
+    <div class="g-bd">
+        <div class="w-main">
+            <div class="project-content main-content-wrap f-cb">
+                <volist name="data" id="item" mod="4">
+                    <if condition="($mod eq 3) or ($mod eq 2)">
+                        <div class="item">
+                            <empty name="item['picture']">
+                                <a>
+                                <else/>
+                                <a href="{:U('detail',array('id'=>$item['id']))}">
+                            </empty>
+                                <div class="text-box {$item['class_name']}">
+                                    {$item['title']}
+                                    <br>{$item['location']}
+                                    <br>{$item['year']}<eq name="item['status']" value="1">-ongoing</eq>
+                                </div>
+                                <div class="img-box">
+                                    <img src="__UPLOAD__/thumb/{$item['thumb']}" alt="{$data['title']}">
+                                </div>
+
+                            </a>
+                        </div>
+                        <else />
+                        <div class="item">
+                                <empty name="item['picture']">
+                                        <a>
+                                        <else/>
+                                        <a href="{:U('detail',array('id'=>$item['id']))}">
+                                    </empty>
+                                <div class="img-box">
+                                    <img src="__UPLOAD__/thumb/{$item['thumb']}" alt="{$data['title']}">
+                                </div>
+                                <div class="text-box {$item['class_name']}">
+                                    {$item['title']}
+                                    <br>{$item['location']}
+                                    <br>{$item['year']}<eq name="item['status']" value="1">-ongoing</eq>
+                                </div>
+                            </a>
+                        </div>
+                    </if>
+
+                </volist>
+            </div>
+            <div class="m-pagination">{$page}</div>
+        </div>
+    </div>
+
+
+    <div class="g-ft">
+        <div class="w-main footer-style-3 s-line-dark">
+            <span class="copyright">&copy; All images and materials in this website are copyright protected and are the
+                property of the EdVolks Architecture
+                Design Ltd.</span>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+<script src="__WEB_ASSET__/js/zepto.min.js"></script>
+<script src="__WEB_ASSET__/js/main.js"></script>

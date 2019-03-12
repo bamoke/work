@@ -1,0 +1,40 @@
+<div class="panel">
+    <div class="panel-body">
+        <div class="u-page-title">
+            <span class="caption">List</span>
+            <a href="{:U('add',array('navid'=>$_GET['navid'],'cid'=>$_GET['cid']))}" class="btn btn-info">Add</a>
+        </div>
+        <table class="table js-table-list">
+            <thead>
+                <tr>
+                    <th width="120">thumb</th>
+                    <th>Title</th>
+                    <th width="100">show on home page</th>
+                    <th width="200">create time</th>
+                    <th width="200">operation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <volist name="data" id="list">
+                    <tr>
+                        <td><img width="120" src="__UPLOAD__/thumb/{$list['thumb']}" alt=""></td>
+                        <td>{$list['title']}</td>
+                        <td>
+                            <if condition="$list['recommend'] eq 1">
+                                <span class="text-danger">yes</span>
+                                <else/> no
+                            </if>
+                        </td>
+                        <td>{$list['create_time']}</td>
+                        <td class="operation-box">
+                            <a href="{:U('edit',array('navid'=>$_GET['navid'],'id'=>$list['id'],'cid'=>$list['cid']))}">modify</a>
+                            <a href="javascript:" data-url="{:U('del',array('id'=>$list['id']))}" class="js-del-one">delete</a>
+                        </td>
+                    </tr>
+                </volist>
+
+            </tbody>
+        </table>
+        <div class="m-pagination">{$page}</div>
+    </div>
+</div>

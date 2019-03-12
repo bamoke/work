@@ -2,7 +2,7 @@
  * @Author: joy.wangxiangyin 
  * @Date: 2018-08-13 23:35:44 
  * @Last Modified by: joy.wangxiangyin
- * @Last Modified time: 2018-08-19 09:15:35
+ * @Last Modified time: 2019-03-07 01:38:49
  */
 <template>
   <div>
@@ -27,6 +27,9 @@
             :autosize="{minRows: 2,maxRows: 5}" 
             placeholder="讲师职称或头衔"
             />
+        </FormItem>
+        <FormItem label="备注:">
+          <Input type="textarea" :autosize="{minRows: 2,maxRows: 5}" v-model="formInfo.remarks" placeholder="备注关键词,方便后续添加课程时的讲师查询;200字符以内" />
         </FormItem>
         <FormItem label="状态:">
           <i-switch 

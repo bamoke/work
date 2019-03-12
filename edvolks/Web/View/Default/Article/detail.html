@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta name="keywords" content="Macao, Macau, Architecture, Interior Design, Design Firm, the EdVolks, the Volks, Eddie Ieong, Manuel Lam, Harvard, Architect, Macau Architecture Firm, Macao Interior Design Firm">
+    <meta name="description" content="">
+    <link href="__WEB_ASSET__/css/global.css" rel="stylesheet" />
+    <link href="__WEB_ASSET__/css/swiper.min.css" rel="stylesheet" />
+    <link href="__WEB_ASSET__/css/main.css?v=5" rel="stylesheet" />
+    <title>{$siteTitle}</title>
+
+</head>
+
+<body id="news-body" class="dark-style">
+    <div class="g-hd" id="js-head">
+        <include file="Template/header" />
+        <div class="w-main">
+            <div class="u-head-fg line-black"></div>
+        </div>
+    </div>
+
+    <div class="g-bd">
+        <div class="w-main">
+            <div class="news-content f-cb main-content-wrap">
+                <div class="img-box">
+                    <foreach name="info['picture']" item="pic">
+                        <img src="__UPLOAD__/plupload/{$pic}" alt="{$info['title']}">
+                    </foreach>
+                </div>
+                <div class="text-box">
+                    <div class="type">/ NEWS /</div>
+                    <div class="time">{$info['date']}</div>
+                    <div class="description">
+                        {$info['title']}
+                    </div>
+                    <div class="fg"></div>
+                    <div class="detail">
+                        <p>Extract from {$info['origin']}</p>
+                        {$info['content']}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="g-ft">
+        <div class="w-main footer-style-3 s-line-dark">
+            <span class="copyright">&copy; All images and materials in this website are copyright protected and are the
+                property of the EdVolks Architecture
+                Design Ltd.</span>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+<script src="__WEB_ASSET__/js/zepto.min.js"></script>
+<script src="__WEB_ASSET__/js/main.js"></script>

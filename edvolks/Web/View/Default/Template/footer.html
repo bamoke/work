@@ -1,0 +1,42 @@
+<div id="footer">
+    <div class="container">
+        <div class="content-wrap clearfix">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="contact">
+                        <p>地址:{$baseInfo['addr']}</p>
+                        <p>电话:{$baseInfo['tel']}</p>
+                        <p>传真:{$baseInfo['fax']}</p>
+                        <p>邮箱:{$baseInfo['email']}</p>
+                    </div>
+                </div>
+                <div class="col-sm-3 hidden-xs">
+                    <div class="link clearfix ">
+                        <volist name="nav" id="vo">
+                            <a href="{$vo['url']}" target="_blank">{$vo['title']}</a>
+                            <!-- <span class="fg">|</span> -->
+                        </volist>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="other">
+                        <p>©2018 {$baseInfo['site_name']} All rights reserved </p>{$baseInfo['icp']}
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+</div>
+<div id="m-footer-bar">
+    <div class="container">
+        <div class="content-wrap clearfix">
+            <!-- <span class="pull-left">{$baseInfo['site_name']}</span> -->
+            <!-- <span class="pull-right">©2018 {$baseInfo['site_name']} All rights reserved {$baseInfo['icp']}</span> -->
+        </div>
+    </div>
+</div>

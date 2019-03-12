@@ -15,7 +15,7 @@
           <Icon type="plus-circled" size="18px"></Icon>
           添加课程
         </Button>
-        <Table border :columns="_customColumns" :data="tableData" :loading="formLoading"></Table>
+        <Table border :columns="_customColumns" :data="tableData" :loading="showTableLoading"></Table>
         <div class="m-paging-wrap">
           <Page :total="total" :current="curPage" :page-size="pageSize" @on-change="changePage" v-show="total > pageSize"></Page>
         </div>

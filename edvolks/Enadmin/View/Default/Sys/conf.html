@@ -1,0 +1,32 @@
+{/*--conf--*/}
+<div class="panel">
+    <div class="panel-body">
+        <form class="form-horizontal" role="form" name="conf-form" action="{:U('save_conf')}">
+            <div class="form-group">
+                <label for="sys-name" class="col-lg-2 control-label">Site name：</label>
+                <div class="col-lg-6">
+                    <input type="text" name="site_name" value="{$output['config']['site_name']}" class="form-control"
+                        id="sys-name" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">Keywords</label>
+                <div class="col-lg-6">
+                    <input type="text" name="keywords" value="{$output['config']['keywords']}" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">Site description</label>
+                <div class="col-lg-6">
+                    <textarea name="description" class="form-control">{$output['config']['description']}</textarea>
+                </div>
+            </div>
+ 
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-3">
+                    <input type="submit" value="Send" class="btn btn-block btn-info" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

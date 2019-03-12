@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" id="index-page">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta name="keywords" content="{$baseInfo['keywords']}">
+    <meta name="description" content="">
+		<link href="__WEB_ASSET__/css/global.css" rel="stylesheet" />
+		<link href="__WEB_ASSET__/css/swiper.min.css" rel="stylesheet" />
+		<link href="__WEB_ASSET__/css/main.css?v=5" rel="stylesheet" />
+    <title>{$baseInfo['site_name']}</title>
+
+</head>
+
+<body class="">
+    <div class="g-index-hd" id="js-head">
+        <include file="Template/header" />
+        <div class="w-main">
+            <div class="u-head-fg line-white"></div>
+        </div>
+    </div>
+
+    <div id="index-banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div id="slide-bg-1" class="slide-item-bg"></div>
+                    <div class="index-banner-text index-banner-news-text">
+                        <div class="w-main">
+                            <div class="type">/ NEWS /</div>
+                            <div class="middle-box">
+                                <span class="time">{$news['date']}</span>
+                                <a href="{:U('Article/detail',array('id'=>$news['id'],'cid'=>$news['cid']))}" class="u-index-more-btn">more</a>
+                            </div>
+                            <div class="description">{$news['title']}</div>
+                        </div>
+                    </div>
+                </div>
+                <volist name="projectList" id="project">
+                    <div class="swiper-slide">
+                        <div id="slide-bg-{$key+2}" class="slide-item-bg" style="background-image:url(__UPLOAD__/banner/{$project['banner']})"></div>
+                        <div class="index-banner-text">
+                            <div class="w-main index-banner-single-text">
+                                <div class="text-box">
+                                    <span>{$project['category']} {$project['year']} </span>
+                                    <span>{$project['title']}, {$project['location']}</span>
+                                </div>
+                                <a href="{:U('Project/detail',array('id'=>$project['id']))}" class="u-index-more-btn">more</a>
+                            </div>
+                        </div>
+                    </div>
+                </volist>
+            </div>
+            <!-- Add Pagination -->
+
+        </div>
+    </div>
+
+    <div class="index-ft">
+        <div class="w-main">
+            <span class="copyright">&copy; All images and materials in this website are copyright protected and are the property of the EdVolks Architecture
+                Design Ltd.</span>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+<script src="__WEB_ASSET__/js/swiper.min.js"></script>
+<script src="__WEB_ASSET__/js/zepto.min.js"></script>
+<script src="__WEB_ASSET__/js/main.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        // autoplay:5000,
+        speed: 1000,
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        onSlideChangeStart: function (o) {
+            var curIndex = o.activeIndex;
+            console.log(curIndex)
+            // $(".slide-item-bg").removeClass("slide-bg-enlarge").eq(curIndex).addClass("slide-bg-enlarge")
+        },
+        onSlideChangeEnd: function (o) {
+            var curIndex = o.activeIndex;
+            // $(".slide-item-bg").removeClass("slide-bg-enlarge").eq(curIndex).addClass("slide-bg-enlarge")
+
+        },
+
+    });
+
+</script>

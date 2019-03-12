@@ -1,0 +1,50 @@
+<div class="panel">
+    <div class="panel-body">
+        <div class="u-page-title">
+            <span class="caption">Add founder-member</span>
+        </div>
+        <form name="studio-form" class="form form-horizontal" action="{:U('save',array('navid'=>$_GET['navid']))}">
+            <input type="hidden" name="cid" value="{$Think.get.cid}">
+            <div class="form-group">
+                <label class="control-label col-xs-2">
+                    <span class="text-danger">*</span>English name:</label>
+                <div class="col-xs-4">
+                    <input type="text" name="en_name" class="form-control" value="" placeholder="">
+                </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">
+                <span class="text-danger">*</span>Chinese name:</label>
+                <div class="col-xs-4">
+                    <input type="text" name="cn_name" class="form-control" value="" placeholder="">
+                </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-xs-2"><span class="text-danger">*</span>Person's title:</label>
+                <div class="col-xs-6">
+                    <input type="text" name="position" class="form-control">
+                </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-xs-2">Introduce:</label>
+                <div class="col-xs-6">
+                    <script id="editorContainer" name="introduce"></script>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-2 col-xs-offset-2">
+                    <button type="button" class="form-control btn-default" onclick="window.history.back()">Back</button>
+                </div>
+                <div class="col-xs-4">
+                    <button type="submit" class="form-control btn-info">Send</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

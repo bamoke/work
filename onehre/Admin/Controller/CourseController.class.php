@@ -17,6 +17,9 @@ use Admin\Common\Auth;
       if(!empty($_GET['keywords'])){
         $where['title'] = array("like","%".$_GET["keywords"]."%");
       }
+      if(!empty($_GET['teacherid'])){
+        $where['teacher_id'] = I("get.teacherid/d");
+      }
       $list = $mainModel->field("id,type,title,status,create_time")->where($where)->page($page,$pageSize)->fetchSql(false)->select();
       $total = $mainModel->where($where)->count();
       $backData = array(

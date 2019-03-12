@@ -5,7 +5,8 @@ const tableMixin = {
     return {
       curPage: 1,
       total: 0,
-      pageSize: 15
+      pageSize: 15,
+      showTableLoading: true
     }
   },
   methods: {
@@ -22,6 +23,7 @@ const tableMixin = {
       var data = Object.assign(params, queryData)
       getTableList(apiUrl, data).then(res => {
         afterFunc(res)
+        this.showTableLoading = false
       })
     },
     _toPage(queryData) {

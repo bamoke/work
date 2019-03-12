@@ -1,0 +1,24 @@
+<div class="panel">
+    <div class="panel-body">
+        <table class="table">
+            <tr>
+                <th width="80">排序</th>
+                <th width="200">名称</th>
+                <th>英文名称</th>
+                <th width="120">首页导航</th>
+                <th width="200">操作</th>
+            </tr>
+            <foreach name="info" item="vo">
+            <tr>
+                <td ><input style="width:40px;" type="text" class="js-sort" value="{$vo['sort']}"></td>
+                <td>{$vo['title']}</td>
+                <td>{$vo['en_title']}</td>
+                <td><eq name="vo['is_nav']" value="1"><span class="text-success">是</span><else/>否</eq></td>
+                <td ><a href="{:U('main',array('id'=>$vo['id']))}">编辑</a></td>
+            </tr>
+        </foreach>
+        </table>
+    </div>
+</div>
+<!--modal-->
+

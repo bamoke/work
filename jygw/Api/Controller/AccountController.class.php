@@ -42,13 +42,12 @@ class AccountController extends Controller {
             );
             $this->ajaxReturn($backData);
         }
-
         //1.2 session manage
         $openid = $result['openid'];
         $sessionkey = $result['session_key'];
         $accessToken = $this->createSessionId();
         $sessionModel = M("Mysession");
-        $sessionInfo = $sessionModel->where(array("openid"=>$openid))->find();
+        $sessionInfo = $sessionModel->where(array("openid"=>$openid))->fetchSql(false)->find();
         if($sessionInfo){
             $updateData = array(
                 "token" =>$accessToken,

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0;">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>会员中心——修改头像</title>
+    <link rel="stylesheet" href="./js/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="./css/global.css?v=8">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <!-- header -->
+    <div class="g-top">
+        <img src="./images/logo.jpg" alt="" class="logo">
+        <div class="btn-box">
+            <a href="" class="search">搜索</a>
+            <a href="" class="user">用户</a>
+            <a href="" class="download">下载APP</a>
+        </div>
+    </div>
+    <!-- navigation -->
+    <div class="m-home-nav">
+        <span class="title">会员中心</span>
+        <a href="javascript:" class="cate" id="js-cate-btn">cate</a>
+    </div>
+
+    <div class="home-top-info">
+        <div class="welcome">
+            <img src="images/avatar01.jpg" class="avatar" alt="">
+            <p class="txt">欢迎您，苏醒</p>
+        </div>
+        <div class="sub-nav">
+            <a href="home_set.html" class="active"><span class="icon setting"></span><span class="name">账户设置</span></a>
+            <a href="home_article.html" class=""><span class="icon article"></span><span class="name">看过的文章</span></a>
+            <a href="" class=""><span class="icon video"></span><span class="name">看过的视频</span></a>
+            <a href="" class=""><span class="icon collection"></span><span class="name">收藏的文章</span></a>
+            <a href="" class=""><span class="icon collection"></span><span class="name">收藏的视频</span></a>
+        </div>
+    </div>
+    <!-- sub nav -->
+    <div id="js-cate-content" class="dynamic-nav" style="display: none">
+        <div class="index-nav">
+            <a href="" class="item">
+                <img src="./images/tubiao1.png" alt="" class="icon">
+                <p class="title">股票</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao2.png" alt="" class="icon">
+                <p class="title">期货</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao3.png" alt="" class="icon">
+                <p class="title">外汇</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao4.png" alt="" class="icon">
+                <p class="title">基金</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao5.png" alt="" class="icon">
+                <p class="title">黄金</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao6.png" alt="" class="icon">
+                <p class="title">白银</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao7.png" alt="" class="icon">
+                <p class="title">股指期货</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao8.png" alt="" class="icon">
+                <p class="title">交易心理</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao9.png" alt="" class="icon">
+                <p class="title">看盘心理</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao10.png" alt="" class="icon">
+                <p class="title">理财</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao11.png" alt="" class="icon">
+                <p class="title">爱财有道</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao12.png" alt="" class="icon">
+                <p class="title">资讯</p>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="home-main-wrap s-bg-light">
+        <div class="m-tab">
+            <a href="home_set.html" class="item">个人资料</a>
+            <a href="home_avatar.html" class="item active">修改头像</a>
+            <a href="home_password.html" class="item">修改密码</a>
+        </div>
+        <!-- form -->
+        <div class="home-form-wrap">
+            <form class="home-form home-avatar-form" name="" action="" method="POST">
+                <div class="form-group">
+                    <div class="form-lable"></div>
+                    <div class="form-control"><img src="" class="preview-img" id="js-avatar-preview"></div>
+                </div>
+                <div class="form-group">
+                    <div class="form-lable">上传头像</div>
+                    <div class="form-control choose-form-control">
+                        <div class="choose-btn-box">
+                            <span class="btn" id="js-avatar-choose">选择图片</span>
+                            <input type="file" name="file" id="js-avatar-input">
+                        </div>
+                        <input type="submit" value="确认上传" class="btn" id="js-avatar-upload-btn" style="display: none;"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- footer -->
+    <div class="g-footer">
+        <p>出版物经营许可证 沪 第U7818 号</p>
+        <p>广播电视节目制作经营许可证 （沪）字第3037 号</p>
+        <p>备案号：沪ICP备18042709号</p>
+        <p>Copyright &copy; 2018 All Rights Reserved</p>
+    </div>
+</body>
+
+</html>
+<script src="./js/zepto.min.js"></script>
+<script src="./js/flexible.js"></script>
+<script src="./js/main.js?v=3"></script>

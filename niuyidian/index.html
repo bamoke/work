@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0;">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="keywords" content="">
     <meta name="description" content="">
@@ -19,7 +19,7 @@
         <img src="./images/logo.jpg" alt="" class="logo">
         <div class="btn-box">
             <a href="" class="search">搜索</a>
-            <a href="" class="user">用户</a>
+            <a href="javascript:void(0)" class="user" id="js-login-btn">用户</a>
             <a href="" class="download">下载APP</a>
         </div>
     </div>
@@ -29,12 +29,13 @@
         <a href="">推荐</a>
         <a href="video.html">VIP课程</a>
         <a href="zhuanlan.html">牛人专栏</a>
-        <a href="javascript:" class="cate">cate</a>
+        <a href="javascript:" class="cate" id="js-cate-btn">cate</a>
     </div>
-    <!-- banner -->
-    <div class="m-main-banner">
-        <div>
-            <img src="./images/banner-01.jpg" alt="">
+    <!-- swiper banner by wang 2019-03-15-->
+    <div class="m-main-banner" id="js-swiper-banner">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url(images/banner-01.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(images/banner-02.jpg)"></div>
         </div>
     </div>
     <!-- sub nav -->
@@ -427,7 +428,9 @@
             <div class="index-text-list">
                 <a href="" class="item">
                     <div class="title">1.国内白银投资平台选择注意事项</div>
-                    <div class="desc">美国非农就业数据每个月第一周的周五，美国东部时间早上8:30，北京时间的晚上发布。非农就业数据是用来衡量劳动力市场强弱的。为什么要关注非农就业数据呢？因为在美国就业机会+就业率就等于经济实力。</div>
+                    <div class="desc">
+                        美国非农就业数据每个月第一周的周五，美国东部时间早上8:30，北京时间的晚上发布。非农就业数据是用来衡量劳动力市场强弱的。为什么要关注非农就业数据呢？因为在美国就业机会+就业率就等于经济实力。
+                    </div>
                     <div class="foot">
                         <div class="left-box">2019-02-02</div>
                         <div class="right-box">1200人已学</div>
@@ -435,7 +438,9 @@
                 </a>
                 <a href="" class="item">
                     <div class="title">2.国内白银投资平台选择注意事项</div>
-                    <div class="desc">美国非农就业数据每个月第一周的周五，美国东部时间早上8:30，北京时间的晚上发布。非农就业数据是用来衡量劳动力市场强弱的。为什么要关注非农就业数据呢？因为在美国就业机会+就业率就等于经济实力。</div>
+                    <div class="desc">
+                        美国非农就业数据每个月第一周的周五，美国东部时间早上8:30，北京时间的晚上发布。非农就业数据是用来衡量劳动力市场强弱的。为什么要关注非农就业数据呢？因为在美国就业机会+就业率就等于经济实力。
+                    </div>
                     <div class="foot">
                         <div class="left-box">2019-02-02</div>
                         <div class="right-box">1200人已学</div>
@@ -443,7 +448,9 @@
                 </a>
                 <a href="" class="item">
                     <div class="title">3.国内白银投资平台选择注意事项</div>
-                    <div class="desc">美国非农就业数据每个月第一周的周五，美国东部时间早上8:30，北京时间的晚上发布。非农就业数据是用来衡量劳动力市场强弱的。为什么要关注非农就业数据呢？因为在美国就业机会+就业率就等于经济实力。</div>
+                    <div class="desc">
+                        美国非农就业数据每个月第一周的周五，美国东部时间早上8:30，北京时间的晚上发布。非农就业数据是用来衡量劳动力市场强弱的。为什么要关注非农就业数据呢？因为在美国就业机会+就业率就等于经济实力。
+                    </div>
                     <div class="foot">
                         <div class="left-box">2019-02-02</div>
                         <div class="right-box">1200人已学</div>
@@ -451,7 +458,9 @@
                 </a>
                 <a href="" class="item">
                     <div class="title">4.国内白银投资平台选择注意事项</div>
-                    <div class="desc">美国非农就业数据每个月第一周的周五，美国东部时间早上8:30，北京时间的晚上发布。非农就业数据是用来衡量劳动力市场强弱的。为什么要关注非农就业数据呢？因为在美国就业机会+就业率就等于经济实力。</div>
+                    <div class="desc">
+                        美国非农就业数据每个月第一周的周五，美国东部时间早上8:30，北京时间的晚上发布。非农就业数据是用来衡量劳动力市场强弱的。为什么要关注非农就业数据呢？因为在美国就业机会+就业率就等于经济实力。
+                    </div>
                     <div class="foot">
                         <div class="left-box">2019-02-02</div>
                         <div class="right-box">1200人已学</div>
@@ -488,8 +497,131 @@
         <p>备案号：沪ICP备18042709号</p>
         <p>Copyright &copy; 2018 All Rights Reserved</p>
     </div>
+
+    <!-- 导航弹出 nav -->
+    <div id="js-cate-content" class="dynamic-nav" style="display: none">
+        <div class="index-nav">
+            <a href="" class="item">
+                <img src="./images/tubiao1.png" alt="" class="icon">
+                <p class="title">股票</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao2.png" alt="" class="icon">
+                <p class="title">期货</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao3.png" alt="" class="icon">
+                <p class="title">外汇</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao4.png" alt="" class="icon">
+                <p class="title">基金</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao5.png" alt="" class="icon">
+                <p class="title">黄金</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao6.png" alt="" class="icon">
+                <p class="title">白银</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao7.png" alt="" class="icon">
+                <p class="title">股指期货</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao8.png" alt="" class="icon">
+                <p class="title">交易心理</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao9.png" alt="" class="icon">
+                <p class="title">看盘心理</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao10.png" alt="" class="icon">
+                <p class="title">理财</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao11.png" alt="" class="icon">
+                <p class="title">爱财有道</p>
+            </a>
+            <a href="" class="item">
+                <img src="./images/tubiao12.png" alt="" class="icon">
+                <p class="title">资讯</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- 登录弹出窗 -->
+    <div id="js-login-box" class="m-dynamic-mask" style="display: none;">
+        <div class="m-login-wrap">
+            <div class="close-btn" id="js-close-login-btn"></div>
+            <div class="m-tab tab-bar" id="js-login-tab">
+                <div class="item active" onclick="switchTab('#js-login-tab','#js-login-tab-content',0)">快速登录</div>
+                <div class="item" onclick="switchTab('#js-login-tab','#js-login-tab-content',1)">账号登录</div>
+            </div>
+            <div class="content-wrap" id="js-login-tab-content">
+                <div class="tab-content js-tab-content">
+                    <form name="form-1" action="" class="m-login-form">
+                        <div class="form-group">
+                            <div class="form-lable icon icon-user"></div>
+                            <div class="form-control">
+                                <input type="text" id="js-old-password" name="" placeholder="请输入手机号码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-control">
+                                <input type="text" id="js-old-password" name="" placeholder="请输入短信验证码">
+                            </div>
+                            <div class="code-btn">获取短信验证码</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-lable icon icon-lock"></div>
+                            <div class="form-control"><input type="text" id="js-new-password" name="" placeholder="请输入密码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-lable icon icon-lock"></div>
+                            <div class="form-control"><input type="text" id="js-new-password-1" name=""
+                                    placeholder="请重复输入密码"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-control"><input type="submit" value="验证并登录" class="submit-btn"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="ft-tips">已有账号，请点击上方“账号登录”</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="tab-content js-tab-content" style="display: none">
+                    <form name="form-2" action="" class="m-login-form">
+                        <div class="form-group">
+                            <div class="form-lable icon icon-user"></div>
+                            <div class="form-control">
+                                <input type="text" id="js-old-password" name="" placeholder="请输入手机号码">
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <div class="form-lable icon icon-lock"></div>
+                            <div class="form-control"><input type="text" id="js-new-password" name="" placeholder="请输入密码">
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <div class="form-control"><input type="submit" value="登录" class="submit-btn"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 登录弹出窗 结束-->
+
 </body>
 
 </html>
+<script src="./js/zepto.min.js"></script>
+<script src="./js/swiper/swiper.min.js"></script>
 <script src="./js/flexible.js"></script>
-<script src="./js/main.js"></script>
+<script src="./js/main.js?v=3"></script>

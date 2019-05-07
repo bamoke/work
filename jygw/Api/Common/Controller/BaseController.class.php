@@ -18,6 +18,7 @@ use Think\Controller;
 class BaseController extends Controller
 {
     protected $uid;
+    protected $accountInfo;
     protected function _initialize(){
         $this->_checklogin();
         $this->uid = $this->fetchUid();
@@ -43,6 +44,8 @@ class BaseController extends Controller
             );
             $this->ajaxReturn($backData);          
         }
+        $accountInfo = M("Member")->where(array('id'=>$res["uid"]))->find();
+        $this->accountInfo = $accountInfo;
         
     }
 

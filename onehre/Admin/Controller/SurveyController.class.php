@@ -116,7 +116,7 @@ class SurveyController extends Auth {
   }
   
   
-  public function delone(){
+  public function deleteone(){
     if(empty($_GET["id"])){
       $backData = array(
         'code'      => 10001,
@@ -125,13 +125,32 @@ class SurveyController extends Auth {
       $this->ajaxReturn($backData);     
     }
     $id = I("get.id");
-    $del = M("Survey")->where(array("id"=>$id))->fetchSql(false)->save(array('is_deleted'=>1));
-    if($del !== false) {
+    $isReleased = M("Survey")->where(array("id"=>$id))->getField("is_released");
+
+    if($isReleased) {
+      $backData = array(
+        'code'      => 13001,
+        "msg"       => "已经过发布的问卷不可删除"    
+      );
+      $this->ajaxReturn($backData);       
+    }
+
+    $model = M();
+    $model->startTrans();
+    // delete option must be in first step
+    $delOptSql = "delete from __SURVEY_ANSWER__ where question_id in (select id from __SURVEY_QUESTION__ where s_id=$id)";
+    $delOpt = M()->execute($delOptSql);
+    $delSurvey = M("Survey")->delete($id);
+    $delQuestion = M("SurveyQuestion")->where(array("s_id"=>$id))->delete();
+
+    if($delSurvey !== false && $delQuestion !== false && $delOpt !== false) {
+      $model->commit();
       $backData = array(
         'code'      => 200,
         "msg"       => "ok"    
       );
     }else {
+      $model->rollback();
       $backData = array(
         'code'      => 13001,
         "msg"       => "操作失败"    
@@ -140,6 +159,95 @@ class SurveyController extends Auth {
     $this->ajaxReturn($backData);
   }
 
+  /**
+   * copy survey
+   */
+  public function docopy(){
+    if(empty($_GET['surveyid'])){
+      $backData = array(
+        'code'      => 10001,
+        "msg"       => "非法请求"    
+      );
+      $this->ajaxReturn($backData);        
+    }
+    $surveyId = I("get.surveyid/d");
+    $courseId = NULL;
+    if(!empty($_GET['courseid'])){
+      $courseId = I("get.courseid");
+    }
+
+    // 获取survey 信息
+    $surveyInfo = M("Survey")->field("title,description")->where(array("id"=>$surveyId))->find();
+    // question list
+    $questionList = M("SurveyQuestion")->field("id,type,ask")->where(array("s_id"=>$surveyId))->select();
+
+    $model = M();
+    $model->startTrans();
+    // insert survey
+    $insertSurveyData = array(
+      "type"  => $courseId ? 2 : 1,
+      "course_id" =>$courseId,
+      "title" => $surveyInfo['title']."的拷贝",
+      "description" =>$surveyInfo['description']
+    );
+    $inserSurveyId = M("Survey")->data($insertSurveyData)->add();
+    if($inserSurveyId === false) {
+      $model->rollback();
+      $backData = array(
+        'code'      => 13001,
+        "msg"       => "服务器错误"    
+      );
+      $this->ajaxReturn($backData);   
+    }
+    // insert question
+    $oldQuestionId = array();
+    $insertQuestionResult = true;
+    // 循环插入question and option
+    foreach($questionList as $key=>$val){
+      $questionTempData = array(
+        "s_id"  =>$inserSurveyId,
+        "type"  =>$val['type'],
+        "ask"   =>$val['ask']
+      );
+      $optData = M("SurveyAnswer")->field("content")->where(array("question_id"=>$val['id']))->select();
+      $insertQuestionId = M("SurveyQuestion")->add($questionTempData);
+      if(!$insertQuestionId) {
+        $insertQuestionResult = false;
+        break;
+      }
+      foreach($optData as $k=>$v){
+        $optData[$k]['question_id'] = $insertQuestionId;
+      }
+      $insertOptResult = M("SurveyAnswer")->addAll($optData);
+/*       if($insertOptResult === false) {
+        $insertQuestionResult = false;
+        break;
+      } */
+    }
+    if($inserSurveyId && $insertQuestionResult) {
+      $model->commit();
+      $surveyInfo = M("Survey")
+      ->field("id,title,date(create_time) as date,status,is_released")
+      ->where(array("id"=>$inserSurveyId))
+      ->find();
+      $backData = array(
+        'code'      => 200,
+        "msg"       => "success",
+        "data"      =>array(
+          "surveyInfo"  =>$surveyInfo
+        )    
+      );
+      $this->ajaxReturn($backData);   
+    }else {
+      $model->rollback();
+      $backData = array(
+        'code'      => 13001,
+        "msg"       => "服务器错误"    
+      );
+      $this->ajaxReturn($backData);   
+    }
+
+  }
 
 
 

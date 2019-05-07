@@ -2,11 +2,11 @@
   <div>
       <Form ref="surveyForm" :model="formInfo" :label-width="120" :rules="ruleForm" label-position="right">
         <FormItem label="问卷标题:" prop="title">
-            <Input v-model.trim="formInfo.title" placeholder="请输入问卷标题"/>
+            <Input v-model.trim="formInfo.title" :disabled="formInfo.is_released==1" placeholder="请输入问卷标题"/>
         </FormItem>
 
  
-        <FormItem label="发布状态">
+        <FormItem label="发布状态" v-if="formInfo.is_released==0">
           <RadioGroup v-model="formInfo.is_released">
             <Radio label="0">未发布</Radio>
             <Radio label="1">已发布</Radio>
@@ -24,7 +24,9 @@
             :cache="false" 
             :menus="editorMenus" 
             @on-change="handleEditorChanged"
+            v-if="formInfo.is_released==0"
             />
+          <div v-html="formInfo.description" v-else></div>
         </FormItem>
         <FormItem>
           <Row :gutter="16">

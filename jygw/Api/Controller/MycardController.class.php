@@ -91,15 +91,16 @@ class MycardController extends BaseController {
     $model = M("Card");
     // 1.1 check phone
     $phone = I("get.phone");
-    $phoneInfo = $model->where(array('phone'=>$phone))->find();
-    if(!$phoneInfo) {
+    $cardInfo = $model->where(array('phone'=>$phone))->find();
+    if(!$cardInfo) {
       $backData = array(
         "code"  => 13001,
         "msg"   => "没有此手机用户"
       );  
       $this->ajaxReturn($backData);  
-    } 
-    if($phoneInfo['uid']) {
+    }
+
+    if($cardInfo['uid']) {
       $backData = array(
         "code"  => 13002,
         "msg"   => "此手机号已经被绑定"
@@ -112,6 +113,16 @@ class MycardController extends BaseController {
       "phone" =>$phone
     );
     $updateResult = $model->where($condition)->fetchSql(false)->save();
+
+    // 1.3 update member type(2019-03-14)
+    $memberCondition = array(
+      "id"  =>$this->uid
+    );
+    $memberData = array(
+      "type"  =>$cardInfo['type']
+    );
+    $updateMember = M("Member")->where($memberCondition)->data($memberData)->save();
+
     if(!$updateResult) {
       $backData = array(
         "code"  => 13003,
@@ -141,6 +152,9 @@ class MycardController extends BaseController {
 
     // 1.1 update data
     $creatResult = $model->create();
+    if($model->avatar == "null") {
+      $model->avatar = NULL;
+    }
     if(!$creatResult){
       $backData = array(
         "code"  => 13002,

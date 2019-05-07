@@ -50,7 +50,7 @@
         </CheckboxGroup>
       </FormItem>
 
-      <FormItem label="加入题库：" v-if="formInfo.is_lib=='0' || operateType=='0'">
+      <FormItem label="加入题库：" >
         <i-switch v-model="formInfo.is_lib" true-value="1" false-value="0" size="large">
           <span slot="open">是</span>
           <span slot="close">否</span>

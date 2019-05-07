@@ -16,15 +16,26 @@ body {
 h1,h2,h3,h4,h5,h6,ul,p,ol,form,input {margin:0;padding:0;}
 li {list-style:none;}
 a,img {border:0;}
-a {text-decoration:none;color:#121212;}
+a {
+	text-decoration:none;
+	color:#121212;
+	-webkit-tap-highlight-color:rgba(255,0,0,0);/*去除链接选中框*/
+}
 a:hover {color:#366bcb;}
 a:active {color:#121212;}
 a:visited {color:#121212;}
 img {max-width: 100%;}
+input {
+	-webkit-appearance: none;
+	border-radius: 0;
+}
 
 /***base***/
 
 /***grid***/
+body {
+	padding-top:2.66rem;
+}
 .w-main {margin:0 auto;padding:0 .32rem;box-sizing:border-box;width:100%;overflow: hidden;}
 .g-wrap {box-sizing:border-box;margin:0 auto;width:100%;height:100%;}
 .g-card-pad {
@@ -48,11 +59,16 @@ img {max-width: 100%;}
 	font-size:11px;
 }
 .g-top {
+	position: fixed;
+	left:0;
+	top:0;
+	z-index:9;
 	display: -webkit-flex;
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
 	height:1.46rem;
+	background: #fff;
 }
 .g-top .logo {width:58%;flex-grow: 0;}
 .g-top .btn-box a {
@@ -86,7 +102,12 @@ img {max-width: 100%;}
 }
 
 .g-nav {
+	position: fixed;
+	left:0;
+	top:1.46rem;
+	z-index:9;
 	display: -webkit-flex;
+	width:100%;
 	height:1.2rem;
 	justify-content: space-between;
 	align-items: center;
@@ -108,6 +129,10 @@ img {max-width: 100%;}
 	text-indent: -999em;
 	background:url(images/yd_daohang.png) no-repeat center;
 	background-size:.6rem auto;
+	transition: transform .2s;
+}
+.g-nav .cate-active {
+	transform:rotate(-90deg)
 }
 
 .index-nav {
@@ -125,6 +150,20 @@ img {max-width: 100%;}
 	font-size:14px;
 }
 .index-nav .icon {width: .74rem;}
+.dynamic-nav,.m-dynamic-mask {
+	position: fixed;
+	left:0;
+	top:2.66rem;
+	right:0;
+	bottom:0;
+	z-index:999;
+	background-color:rgba(0,0,0,.8);
+}
+.dynamic-nav .index-nav .item {
+	width:33.33%;
+	color:#fff;
+}
+
 
 .m-index-column-list {
 	display: -webkit-flex;
@@ -197,6 +236,104 @@ img {max-width: 100%;}
 	background-size:cover;
 }
 
+.m-login-wrap {
+	position: absolute;
+	top:50%;
+	left:50%;
+	z-index:9999;
+	margin-top:-4.5rem;
+	margin-left:-40%;
+	width:80%;
+	height:9rem;
+	background-color:#fff;
+	box-sizing:border-box;
+	border-radius:4px;
+}
+.m-login-wrap .content-wrap {
+	padding:0 .8rem .8rem;
+}
+.m-login-wrap .close-btn {
+	position:absolute;
+	top:-.3rem;
+	right: -.3rem;
+	width:.6rem;
+	height:.6rem;
+	border-radius:50%;
+	background-color:#ccc;
+	background-image:url(images/cha.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: .4rem auto;
+	border:2px solid #fff;
+}
+
+.m-login-form .form-group {
+	display: flex;
+	align-items: center;
+	margin-top:.32rem;
+	font-size:12px;
+}
+.m-login-form .form-group .form-lable {
+	flex:none;
+	width:.8rem;
+	height:.8rem;
+	text-align: right;
+	background: #e3e3e3;
+}
+.m-login-form .form-group .icon {
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.m-login-form .form-group .icon-user {
+	background-size: .6rem auto;
+	background-image: url(images/bxs-group.png);
+}
+.m-login-form .form-group .icon-lock {
+	background-size: .48rem auto;
+	background-image: url(images/lock.png);
+}
+.m-login-form .form-group .form-control {
+	box-sizing: border-box;
+	flex: 1 1 100%;
+}
+.m-login-form .form-group input[type="text"]{
+	box-sizing: border-box;
+	padding:0 4px;
+	width:100%;
+	height:.8rem;
+	line-height: .8rem;
+	border:1px solid #e3e3e3;
+	overflow: hidden;
+	font-size:12px;
+}
+.m-login-form .form-group .code-btn {
+	flex:none;
+	width:50%;
+	height:.8rem;
+	line-height: .8rem;
+	text-align: center;
+	color:#fff;
+	background: #c30b00;
+	border:none;
+	white-space: nowrap;
+	font-size:12px;
+}
+.m-login-form .form-group .submit-btn {
+	display: block;
+	width:100%;
+	height:.8rem;
+	line-height: .8rem;
+	text-align: center;
+	color:#fff;
+	background: #c30b00;
+	border:none;
+	font-size:14px;
+}
+.m-login-form .form-group .ft-tips {
+	flex:none;
+	width:100%;
+	text-align: center;
+}
 /***skin**/
 .s-bg-dark {background-color:#333;color:#fff;}
 .s-bg-grey {background-color:#999;color:#fff;}
@@ -299,3 +436,10 @@ img {max-width: 100%;}
 	font-size:11px;
 }
 .m-text-img-list .foot .time {display: inline-block;vertical-align: middle;}
+
+.m-empty {
+	padding:1rem 0;
+	text-align: center;
+	color: #999;
+	font-size:14px;
+}

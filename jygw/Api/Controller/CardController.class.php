@@ -11,6 +11,17 @@ class CardController extends BaseController {
     $page = I("get.page/d",1);
     $pageSize = 20;
 
+    $accountInfo = $this->accountInfo;
+
+    // 查看是否已经创建名片；未创建名片不显示
+    $myCardInfo = M("Card")->where(array("uid"=>$this->uid))->find();
+    if(!$myCardInfo){
+      $backData = array(
+        "code"  => 10002,
+        "msg"   => "创建名片后可见"
+      );  
+      $this->ajaxReturn($backData); 
+    }
 
     // 剔除我的好友的名片
     $myUid = $this->uid;
@@ -27,7 +38,8 @@ class CardController extends BaseController {
       }
     }
     $condition = array(
-      "C.uid" =>array('not in',implode(",",$myFriendUid))
+      "C.uid" =>array('not in',implode(",",$myFriendUid)),
+      "C.type"=>$accountInfo['type']
     );
     if(!empty($_GET['keywords'])) {
       $keywords = I("get.keywords");
@@ -113,7 +125,7 @@ class CardController extends BaseController {
     }else {
       $cardInfo = M("Card")
       ->where("id=$cardId")
-      ->field('id,avatar,realname,sex,("交换名片后可见")as phone,("交换名片后可见")as email,company,partment,position,province,city')
+      ->field('id,avatar,realname,sex,("交换名片后可见")as phone,("交换名片后可见")as email,company,partment,position,province,city,interest')
       ->find();
     }
     // update view num

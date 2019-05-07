@@ -59,6 +59,7 @@ class SurveyQuestionController extends Auth {
       }
       $questionList = $newQuestionList;
     }
+    $surveyInfo['is_released'] = !!$surveyInfo['is_released'];
     $backData = array(
       'code'      => 200,
       "msg"       => "ok",
@@ -210,9 +211,12 @@ class SurveyQuestionController extends Auth {
         $questionInfo = $curModel->where(array('id'=>$insertResult))->find();
         $backData = array(
           'code'      => 200,
-          "msg"       => "数据保存错误",
+          "msg"       => "success",
           "data"      =>array(
-            "info"  =>$questionInfo
+            "info"  =>array(
+              "opt" =>array(),
+              "question"  =>$questionInfo
+            )
           )    
         );
         $this->ajaxReturn($backData);
@@ -269,7 +273,7 @@ class SurveyQuestionController extends Auth {
     
   }
   
-  public function delone(){
+  public function deleteone(){
     if(empty($_GET["id"])){
       $backData = array(
         'code'      => 10001,
@@ -278,13 +282,18 @@ class SurveyQuestionController extends Auth {
       $this->ajaxReturn($backData);     
     }
     $id = I("get.id");
-    $del = M("SurveyQuestion")->delete($id);
-    if($del !== false) {
+    $model = M();
+    $model->startTrans();
+    $delQuestion = M("SurveyQuestion")->delete($id);
+    $delAnswer = M("SurveyAnswer")->where(array("question_id"=>$id))->delete();
+    if($delQuestion !== false && $delAnswer !== false) {
+      $model->commit();
       $backData = array(
         'code'      => 200,
         "msg"       => "ok"    
       );
     }else {
+      $model->rollback();
       $backData = array(
         'code'      => 13001,
         "msg"       => "操作失败"    
@@ -293,7 +302,32 @@ class SurveyQuestionController extends Auth {
     $this->ajaxReturn($backData);
   }
 
+  // 重新排序
+  public function resort(){
+    $requestData = json_decode($this->requestData['data'],true);
+    $sql = 'UPDATE __SURVEY_QUESTION__ SET sort = CASE id';
+    $questionId = array();
+    foreach($requestData as $key=>$val){
+      array_push($questionId,$val['questionid']);
+      $sql .= ' WHEN '.$val["questionid"]. ' THEN '.$val['sort'];
+    } 
+    $sql .= ' END where id in ('.implode(",",$questionId).')';
 
+    $updateResult = M()->fetchSql(false)->execute($sql);
+    if($updateResult !== false){
+      $backData = array(
+        'code'      => 200,
+        "msg"       => "ok",
+        "info"      => "success"
+      );
+    }else {
+      $backData = array(
+        'code'      => 13002,
+        "msg"       => "服务器错误",        
+      );     
+    }
+    $this->ajaxReturn($backData);
+  }
 
 
 

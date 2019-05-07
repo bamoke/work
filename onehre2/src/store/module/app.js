@@ -5,7 +5,8 @@ export default {
     breadCrumbList: [],
     tagNavList: [],
     homeRoute: getHomeRoute(routers),
-    local: ''
+    local: '',
+    copySurvey: {}
   },
   getters: {
     menuList: (state, getters, rootState) => getMenuByRouter(routers, rootState.user.access)
@@ -29,6 +30,9 @@ export default {
     },
     setLocal (state, lang) {
       state.local = lang
+    },
+    setCopySurvey (stage, payload) {
+      stage.copySurvey = payload.data
     }
   }
 }

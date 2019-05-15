@@ -15,14 +15,15 @@ class WelfareController extends BaseController {
     $condition = array(
       "status"  =>1
     );
-    $fieldInfo = "id,title,thumb,grade,addr";
+    $orderType = I("get.type/d",1);
+    $thumbBase = "http://www.bamoke.com/jygw/Uploads/images/thumb/";
+    $fieldInfo = "id,title,recommend,concat('$thumbBase',thumb) as thumb,tags,grade,addr,(st_distance (point (longitude, latitude),point($customLng,$customLat) ) *111195) AS distance";
     $orderBy = "";
     switch($orderType) {
       case 1:
       $orderBy = "recommend desc,grade desc,id desc";
       break;
       case 2 :
-      $fieldInfo = $fieldInfo . ",(st_distance (point (longitude, latitude),point($customLng,$customLat) ) *111195) AS distance";
       $orderBy = "distance ,recommend desc,grade desc,id desc";
       break;
       case 3 :
@@ -35,8 +36,27 @@ class WelfareController extends BaseController {
     ->where($condition)
     ->page($page,$pageSize)
     ->order($orderBy)
+    ->fetchSql(false)
     ->select();
+
     // return;
+    if(count($list)){
+      foreach($list as $key=>$val){
+        $gradeRatio = intval($val['grade']/50*100);
+        $tags = explode(";",$val['tags']);
+        $distanceNum = intval($val['distance']);
+        $distance = "";
+        if($distanceNum > 1000) {
+          $distance = (ceil($distanceNum/100)/10) ."KM";
+        }else {
+          $distance = $distanceNum ."M";
+        }
+        $list[$key]["distance"] = $distance;
+        $list[$key]["tags"] = $tags;
+        $list[$key]["grade"] = number_format($val["grade"]/10,1);
+        $list[$key]["gradeRatio"] = $gradeRatio;
+      }
+    }
     $backData = array(
       "code"      =>200,
       "msg"       =>"ok",

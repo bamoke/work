@@ -38,6 +38,7 @@ require(['../Common/init'],function(){
 
         var isLoaded = true;
         var $curForm = $('form[name="studio-form"]')
+        var $introDUceForm = $('form[name="studio-introduce-form"]')
 
         /****表单提交***/
         $.validator.setDefaults({
@@ -53,7 +54,12 @@ require(['../Common/init'],function(){
                     dataType:"json",
                     success:function(res){
                         if(res.status){
-                            bs.tips(res.msg,'success',function(){window.location = res.jump});
+                            if(res.jump) {
+
+                                bs.tips(res.msg,'success',function(){window.location = res.jump});
+                            }else {
+                                alert(res.msg)
+                            }
                         }else {
                             bs.tips(res.msg,'warning');
 
@@ -75,6 +81,7 @@ require(['../Common/init'],function(){
             }
         });
 
+        $introDUceForm.validate({})
 
         $('.js-table-list').find('.js-del-one').click(function(){
 

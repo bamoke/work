@@ -84,7 +84,7 @@
 <div class="panel">
     <div class="panel-body">
         <div class="u-page-title">
-            <span class="caption">Add Project</span>
+            <span class="caption">Modify Project</span>
         </div>
         <form name="project-form" class="form form-horizontal" action="<?php echo U('update',array('navid'=>$_GET['navid'],'id'=>$_GET['id']));?>">
             <input type="hidden" name="cid" value="<?php echo ($_GET['cid']); ?>">
@@ -154,6 +154,12 @@
                 <label class="control-label col-xs-2">Keywords:</label>
                 <div class="col-xs-6">
                     <input type="text" name="keywords" class="form-control" value="<?php echo ($data['keywords']); ?>" placeholder="Keyword is separated by','">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">Sort:</label>
+                <div class="col-xs-1">
+                    <input type="number" name="sort" class="form-control" value="<?php echo ($data['sort']); ?>">
                 </div>
             </div>
             <div class="form-group">

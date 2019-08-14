@@ -71,6 +71,7 @@
                     <th width="120">thumb</th>
                     <th>Title</th>
                     <th width="100">show on home page</th>
+                    <th width="80">Sort</th>
                     <th width="200">create time</th>
                     <th width="200">operation</th>
                 </tr>
@@ -83,6 +84,7 @@
                             <?php if($list['recommend'] == 1): ?><span class="text-danger">yes</span>
                                 <?php else: ?> no<?php endif; ?>
                         </td>
+                        <td><?php echo ($list['sort']); ?></td>
                         <td><?php echo ($list['create_time']); ?></td>
                         <td class="operation-box">
                             <a href="<?php echo U('edit',array('navid'=>$_GET['navid'],'id'=>$list['id'],'cid'=>$list['cid']));?>">modify</a>

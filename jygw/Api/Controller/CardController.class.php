@@ -49,7 +49,7 @@ class CardController extends BaseController {
     $cardList = M("Card")
     ->alias("C")
     ->field("C.id,C.realname,C.avatar,C.company,C.position,E.status as exchange_status")
-    ->join("__EXCHANGE__ E on E.from_uid=C.uid and E.to_uid = ".$myUid,"LEFT")
+    ->join("__EXCHANGE__ E on ((E.from_uid=C.uid and E.to_uid = $myUid) or (E.to_uid=C.uid and E.from_uid = $myUid))","LEFT")
     ->where($condition)
     ->page($page,$pageSize)
     ->order("id desc")

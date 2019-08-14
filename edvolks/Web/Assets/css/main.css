@@ -448,8 +448,9 @@ height:100%;
 	display: none;
 }
 /*****/
-#slide-bg-1 {
-	background-image:url(../images/index-banner-1.jpg);
+#slide-bg-1-for-mobile {
+	/* background-image:url(../images/index-banner-1.jpg); */
+	display: none;
 }
 #news-list .item {
 	padding:20px 0;
@@ -801,7 +802,9 @@ height:100%;
 	}
  }
  @media screen and (max-width:560px){
-	#slide-bg-1 {
-		background-image:url(../images/index-banner-1-1.jpg);
+	#slide-bg-1-for-pc {display: none;}
+	#slide-bg-1-for-mobile {
+		display: block;
+		/* background-image:url(../images/index-banner-1-1.jpg); */
 	}
  }

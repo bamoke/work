@@ -17,27 +17,24 @@
 
 <body class="">
     <div class="g-index-hd" id="js-head">
-        
         <div class="w-main head-top f-cb">
-            <a class="u-logo" href="<?php echo U('Index/index');?>">
-                <h1>The EdVolks Architecture Design Ltd.</h1>
-            </a>
-            <!--             <div class="u-language">
+    <a class="u-logo" href="<?php echo U('Index/index');?>">
+        <h1>The EdVolks Architecture Design Ltd.</h1>
+    </a>
+    <!--             <div class="u-language">
                     <a href="index.html">ENG</a>
                     <span class="fg">|</span>
                     <a href="index-cn.html">中</a>
                 </div> -->
-            <div id="" class="navigation-btn btn-white"></div>
-            <div class="nav-masker"></div>
-						<ul class="m-nav s-text-light">
-								<?php if(is_array($nav)): foreach($nav as $key=>$list): ?><li>
-												<a href="<?php echo ($list['parent']['url']); ?>"><?php echo ($list['parent']['title']); ?></a>
-										</li><?php endforeach; endif; ?>
-						
-						</ul>
-        </div>
+    <div id="" class="navigation-btn <?php echo ($btnStyle?$btnStyle:'btn-white'); ?>"></div>
+    <div class="nav-masker"></div>
+    <ul class="m-nav s-text-light">
+        <?php if(is_array($nav)): foreach($nav as $key=>$list): ?><li>
+                <a href="<?php echo ($list['parent']['url']); ?>"><?php echo ($list['parent']['title']); ?></a>
+            </li><?php endforeach; endif; ?>
 
-
+    </ul>
+</div>
         <div class="w-main">
             <div class="u-head-fg line-white"></div>
         </div>
@@ -47,7 +44,8 @@
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div id="slide-bg-1" class="slide-item-bg"></div>
+                    <div id="slide-bg-1-for-pc" style="background-image:url(/edvolks/Uploads/banner/<?php echo ($banner['img']); ?>)" class="slide-item-bg"></div>
+                    <div id="slide-bg-1-for-mobile" style="background-image:url(/edvolks/Uploads/banner/<?php echo ($banner['small_img']); ?>)" class="slide-item-bg"></div>
                     <div class="index-banner-text index-banner-news-text">
                         <div class="w-main">
                             <div class="type">/ NEWS /</div>

@@ -5,29 +5,26 @@ class IndexController extends BaseController {
     public function index(){
         $bannerList = array(
             array(
+                "id"    =>2,
+                "img"   =>C("UPLOAD_BASE_URL")."/banner/index-banner-2.jpg?v=1",
+                "url"   =>"/pages/event/detail/index?id=4"
+            ),
+            array(
                 "id"    =>1,
-                "img"   =>"/static/images/banner-1.jpg",
+                "img"   =>C("UPLOAD_BASE_URL")."/banner/index-banner-1.jpg?v=1",
                 "url"   =>""
             )
         );
-        $articleList = array(
-            array(
-                "id"    =>1,
-                "title" =>"框架的核心是一个响应的数据绑定系统，可以让数据与视图非常简单地保持同步",
-                "thumb" =>"/static/images/banner-1.jpg",
-                "cateName"  =>"今日珠海",
-                "date"  =>"2019-05-02",
-                "click" =>"834"
-            ),
-            array(
-                "id"    =>2,
-                "title" =>"视图层就会做相应的更新",
-                "thumb" =>"/static/images/banner-1.jpg",
-                "cateName"  =>"金湾头条",
-                "date"  =>"2019-05-02",
-                "click" =>"443"
-            )
-        );
+        $thumbBase = C("OSS_BASE_URL")."/";
+        $articleList = M("Article")
+        ->field("A.id,A.title,CONCAT('$thumbBase',A.thumb) as thumb,DATE(A.create_time) as date,M.name as cateName,A.click")
+        ->alias("A")
+        ->join("__MAIN_CATE__ as M on M.id = A.cate_id")
+        ->where(array("A.status"=>1))
+        ->limit(5)
+        ->order("recommend desc,id desc")
+        ->fetchSql(false)
+        ->select();
         $backData = array(
             "code"  =>200,
             "msg"   =>"success",

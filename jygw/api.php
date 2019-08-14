@@ -31,4 +31,4 @@ define("ROOT","/jygw/");
 //define('APP_STATUS','home');
 
 //引入PHP框架文件
-require("../ThinkPHP/ThinkPHP.php");
+require("../../ThinkPHP/ThinkPHP.php");

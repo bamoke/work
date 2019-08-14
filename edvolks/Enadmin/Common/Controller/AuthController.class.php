@@ -136,7 +136,7 @@ class AuthController extends Controller
                             $url = U("Download/index",$routeParam);
                             break;
                             case "custom":
-                            $url = U(ucfirst($val['controller_name'])."/".$val['action_name'],$routeParam);
+                            $url = U(ucfirst($childVal['controller_name'])."/".$childVal['action_name'],$routeParam);
                             break;                            
                         }
                         $tempCate['children'][] = array(

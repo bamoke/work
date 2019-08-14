@@ -20,9 +20,9 @@ class ProjectController extends AuthController
         $Page->setConfig("prev","上一页");
         $show = $Page->show();
         $data = $dataModel
-            ->field("id,title,thumb,create_time,cid,recommend")
+            ->field("id,title,sort,thumb,create_time,cid,recommend")
             ->where("cid=".$cid)
-            ->order('recommend desc,id desc')
+            ->order('recommend desc,sort,id desc')
             ->limit($Page->firstRow.','.$Page->listRows)
             ->select();
         $output['script'] = "Content/main";

@@ -6,6 +6,66 @@ namespace Api\Controller;
 use Api\Common\Controller\BaseController;
 class MycardController extends BaseController {
 
+  public function index(){
+    $isCollected = true;
+    $isLike = true;
+    $condition = array(
+        "uid"   =>$this->uid
+    );
+    $info = M("Card")->where($condition)->find();
+
+    if(isset($_GET['fromid']) && $info && I("get.fromid") != $info['id']) {
+        $fromId = I('get.fromid');
+        $fromUid = M("Card")->where(array('id'=>$fromId))->getField("uid");
+        if($fromUid > $this->uid){
+            $firstUid = $this->uid;
+            $secondUid = $fromUid;
+        }else {
+            $firstUid = $fromUid;
+            $secondUid = $this->uid;
+        }
+        $data = array(
+            "f_uid" =>$firstUid,
+            "s_uid" =>$secondUid
+        );
+        $isExist = M("MycardFolder")->where($data)->count();
+        if(!$isExist) {
+            $insertReusult = M("MycardFolder")->data($data)->add();
+        }
+    }
+
+    if(!$info) {
+        $backData = array(
+            "code"  =>200,
+            "msg"   =>"success",
+            "data"  =>array(
+                "cardInfo"  =>array()
+            )
+        );
+        $this->ajaxReturn($backData);
+    }
+    $totalCondition = array(
+        "card_id"   =>$info['id']
+    );
+    $collectedTotal = M("Collection")->where($totalCondition)->count();
+    $likeTotal = M("Like")->where($totalCondition)->count();
+    $backData = array(
+        "code"  =>200,
+        "msg"   =>"success",
+        "data"  =>array(
+            "cardInfo"      =>$info,
+            "isCollected"   =>true,
+            "isLike"        =>true,
+            "collectedTotal"    =>$collectedTotal,
+            "likeTotal"     =>$likeTotal
+        )
+    );
+    $this->ajaxReturn($backData);
+  }
+
+  /**
+   * 
+   */
   public function vlist(){
     $page = I("get.page/d",1);
     $pageSize = 20;
@@ -38,8 +98,10 @@ class MycardController extends BaseController {
     );
     $this->ajaxReturn($backData);
   }
+
   /**
    * create
+   * 创建名片已经关闭，暂时都通过bind绑定名片(2019-05-16 by wang)
    * @condition
    * @page
    */
@@ -73,6 +135,7 @@ class MycardController extends BaseController {
     }
     $model->uid = $this->uid;
     $insertResult = $model->fetchSql(false)->add();
+
     if(!$insertResult) {
       $backData = array(
         "code"  => 13003,
@@ -87,6 +150,9 @@ class MycardController extends BaseController {
     $this->ajaxReturn($backData);  
   }
 
+  /**
+   * bind
+   */
   public function bind(){
     $model = M("Card");
     // 1.1 check phone

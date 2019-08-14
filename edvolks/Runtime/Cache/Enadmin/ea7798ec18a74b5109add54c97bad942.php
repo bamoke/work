@@ -116,9 +116,9 @@
                 <label class="control-label col-xs-2">Show on home page:</label>
                 <div class="col-xs-7">
                     <label class="radio-inline">
-                        <input type="radio" name="recommend" value="1" />yes</label>
+                        <input type="radio" class="js-recommend-radio" name="recommend" value="1" />yes</label>
                     <label class="radio-inline">
-                        <input type="radio" name="recommend" value="0" />no</label>
+                        <input type="radio" class="js-recommend-radio" name="recommend" value="0" />no</label>
                 </div>
             </div>
             <div id="js-banner-wrap" class="form-group" style="display: none;">
@@ -140,6 +140,12 @@
                 <label class="control-label col-xs-2">Keywords:</label>
                 <div class="col-xs-6">
                     <input type="text" name="keywords" class="form-control" value="" placeholder="Keyword is separated by','">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">Sort:</label>
+                <div class="col-xs-1">
+                    <input type="number" name="sort" class="form-control" value="<?php echo ($data['sort']); ?>">
                 </div>
             </div>
             <div class="form-group">

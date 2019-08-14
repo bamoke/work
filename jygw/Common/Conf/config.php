@@ -3,7 +3,7 @@ return array(
 	// template replace rule;only can set once
 	"TMPL_PARSE_STRING"	=>array(
         "__WEB_ASSET__"     =>__ROOT__."/jygw/Web/Assets",
-		"__UPLOAD__"        =>"http://b-xzh.oss-cn-shenzhen.aliyuncs.com/",
+		"__UPLOAD__"        =>"http://bmk-jygw.oss-cn-shenzhen.aliyuncs.com/",
 		// "__UPLOAD__"        =>__ROOT__."/Uploads",
 		"__ADMIN_ASSET__"   =>__ROOT__."/jygw/Admin/Assets"
 	),
@@ -23,6 +23,8 @@ return array(
     'DB_DEBUG'  => false, // 数据库调试模式 开启后可以记录SQL日志
 
     'SHOW_PAGE_TRACE'   =>false,//开启页面调试
-
+    "UPLOAD_BASE_URL"	=>"https://www.bamoke.com/jygw/Uploads",
+    	// OSS
+	"OSS_BASE_URL"	=>"https://bmk-jygw.oss-cn-shenzhen.aliyuncs.com"
 
 );

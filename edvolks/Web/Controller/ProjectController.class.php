@@ -21,7 +21,7 @@ class ProjectController extends WebController {
         ->field($listField)
         ->where($conditon)
         ->limit($Page->firstRow.",".$Page->listRows)
-        ->order("id asc")
+        ->order("sort,id desc")
         ->select();
 
         $this->assign("data",$mainList);

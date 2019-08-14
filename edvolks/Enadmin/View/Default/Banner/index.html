@@ -1,7 +1,7 @@
 <div class="panel panel-default">
 
     <div class="panel-heading">
-        <a href="{:U('add')}" class="btn btn-info">添加Banner</a>
+        <a href="{:U('add')}" class="btn btn-info">Add Banner</a>
     </div>
 
     <div class="panel-body">
@@ -9,11 +9,10 @@
         <table class="table js-table-list">
             <thead>
                 <tr>
-                    <th>缩略图</th>
-                    <th>展示位置</th>
-                    <th width="400">链接地址</th>
-                    <th width="80">显示</th>
-                    <th width="120">操作</th>
+                    <th>Thumbnail</th>
+                    <th width="400">Url</th>
+                    <th width="80">Status</th>
+                    <th width="120">Operation</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,17 +21,16 @@
                         <td>
                             <img class="u-banner-thumb" src="__UPLOAD__/banner/{$list['img']}">
                         </td>
-                        <td>{$cate[$list['position_key']]}</td>
                         <td>{$list['url']}</td>
                         <td>
                             <if condition="$list['status'] eq 1">
-                                <span class="text-success">正常</span>
-                                <else/> 隐藏
+                                <span class="text-success">Show</span>
+                                <else/> Hide
                             </if>
                         </td>
                         <td class="operation-box">
-                            <a href="{:U('edit',array('id'=>$list['id']))}">修改</a>
-                            <a href="javascript:" data-url="{:U('del',array('id'=>$list['id']))}" class="js-del-one">删除</a>
+                            <a href="{:U('edit',array('id'=>$list['id']))}">Modify</a>
+                            <a href="javascript:" data-url="{:U('del',array('id'=>$list['id']))}" class="js-del-one">Delete</a>
                         </td>
                     </tr>
                 </foreach>

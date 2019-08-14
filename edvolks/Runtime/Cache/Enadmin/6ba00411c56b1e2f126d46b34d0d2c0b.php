@@ -62,6 +62,34 @@
             <div class="panel">
     <div class="panel-body">
         <div class="u-page-title">
+            <span class="caption">Introduce</span>
+        </div>
+        <div class="m-introduce-form">
+            <form name="studio-introduce-form" class="form form-horizontal" action="<?php echo U('introduceupdate');?>">
+                <input type="hidden" name="id" value="<?php echo ($introduce['id']); ?>">
+                <div class="form-group">
+                    <label class="col-xs-2 control-label">The First paragraph:</label>
+                    <div class="col-xs-8">
+                        <textarea class="form-control" name="big_fonts" rows="5"><?php echo ($introduce["big_fonts"]); ?></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label">The Second:</label>
+                    <div class="col-xs-8">
+                        <textarea class="form-control" name="small_fonts" rows="5"><?php echo ($introduce["small_fonts"]); ?></textarea>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-xs-offset-2 col-xs-2">
+                        <button type="submit" class="form-control btn-info">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="u-page-title">
             <span class="caption">Founders</span>
             <a href="<?php echo U('add',array('navid'=>$_GET['navid'],'cid'=>$_GET['cid']));?>" class="btn btn-info">Add</a>
         </div>
@@ -76,8 +104,10 @@
                 <?php if(is_array($data)): foreach($data as $key=>$list): ?><tr>
                         <td><?php echo ($list['en_name']); ?></td>
                         <td class="operation-box">
-                            <a href="<?php echo U('edit',array('navid'=>$_GET['navid'],'id'=>$list['id'],'cid'=>$list['cid']));?>">Modify</a>
-                            <a href="javascript:" data-url="<?php echo U('del',array('id'=>$list['id']));?>" class="js-del-one">Delete</a>
+                            <a
+                                href="<?php echo U('edit',array('navid'=>$_GET['navid'],'id'=>$list['id'],'cid'=>$list['cid']));?>">Modify</a>
+                            <a href="javascript:" data-url="<?php echo U('del',array('id'=>$list['id']));?>"
+                                class="js-del-one">Delete</a>
                         </td>
                     </tr><?php endforeach; endif; ?>
 

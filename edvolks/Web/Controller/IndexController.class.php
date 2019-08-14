@@ -12,11 +12,17 @@ class IndexController extends WebController {
         $projectList = M("Project")
         ->field("id,title,category,location,year,banner")
         ->where(array('recommend'=>1))
-        ->order("id desc")
+        ->order("sort,id desc")
         ->limit(3)
+        ->select();
+        $bannerList = M("Banner")
+        ->where(array("status"=>1,"position_key"=>0))
+        ->order("sort,id desc")
+        ->limit(1)
         ->select();
         $this->assign("projectList",$projectList);
         $this->assign("news",$newsInfo[0]);
+        $this->assign("banner",$bannerList[0]);
         $this->assign("isIndex",1);
         $this->display();
     }

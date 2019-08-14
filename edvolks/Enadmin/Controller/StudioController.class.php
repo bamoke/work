@@ -25,10 +25,13 @@ class StudioController extends AuthController
             ->order('id desc')
             ->limit($Page->firstRow.','.$Page->listRows)
             ->select();
+
+        $introduce = M("StudioIntroduce")->limit(1)->select();    
         $output['script'] = CONTROLLER_NAME."/main";
         $this->assign('output',$output);    
         $this->assign('page',$show);
         $this->assign('data',$data);
+        $this->assign('introduce',$introduce[0]);
         $this->display();
 
     }
@@ -150,8 +153,28 @@ class StudioController extends AuthController
 
 
 
-
-
+    public function introduceupdate(){
+        if(IS_POST){
+            $model = M("StudioIntroduce");
+            $result = $model->create($_POST);
+            $backData = array();
+            if(!$result) {
+                $backData['status'] = 0;
+                $backData['msg'] = $model->getError();
+                return $this->ajaxReturn($backData);
+            }
+            $updateResult = $model->save();
+ 
+            if($updateResult !== false){
+                $backData['status'] = 1;
+                $backData['msg'] = "success";
+            }else {
+                $backData['status'] = 0;
+                $backData['msg'] = $model->getError();
+            }
+            $this->ajaxReturn($backData);
+        }
+    }
 
 
 

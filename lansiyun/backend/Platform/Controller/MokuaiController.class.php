@@ -42,6 +42,7 @@ class MokuaiController extends Auth {
           "id"      =>$val["id"],
           "pid"      =>$val["pid"],
           "title"   =>$val["name"],
+          "price"   =>$val["price"],
           "sort"   =>$val["sort"],
           "expand"  =>false,
           "status"   =>$val["status"],

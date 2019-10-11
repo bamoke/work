@@ -8,10 +8,15 @@
       label-position="right"
     >
       <FormItem label="模块名称:" prop="name">
-        <Input v-model.trim="formInfo.name" placeholder="请输入模块名称"/>
+        <Input v-model.trim="formInfo.name" placeholder="请输入模块名称" />
+      </FormItem>
+      <FormItem label="模块价格:" prop="price" v-if="pid !== 0">
+        <Input v-model.trim="formInfo.price" placeholder="请输入模块价格">
+          <span slot="append">每年</span>
+        </Input>
       </FormItem>
       <FormItem label="模块描述:" prop="description">
-        <Input v-model.trim="formInfo.description" type="textarea" :rows="2"/>
+        <Input v-model.trim="formInfo.description" type="textarea" :rows="2" />
       </FormItem>
       <FormItem label="排序:" prop="sort">
         <InputNumber :max="999" :min="1" v-model="formInfo.sort"></InputNumber>
@@ -64,7 +69,7 @@ export default {
       ruleForm: {
         name: [{ required: true, message: "请输入模块名称" }]
       },
-      formInfo: { status: "1",pid:0},
+      formInfo: { status: "1", pid: 0 }
     };
   },
   watch: {
@@ -78,13 +83,12 @@ export default {
           method: "get"
         })
         .then(res => {
-          this.formInfo = res.data.info
-
+          this.formInfo = res.data.info;
         });
     },
-    pid:function(newValue){
-      if(newValue) {
-        this.formInfo.pid = newValue
+    pid: function(newValue) {
+      if (newValue) {
+        this.formInfo.pid = newValue;
       }
     }
   },
@@ -103,7 +107,7 @@ export default {
               this.$Message.success("Success!");
               this.$emit("form-saved", res);
               this.submitIng = false;
-              this.formInfo = {status:"1"}
+              this.formInfo = { status: "1" };
             });
         } else {
           // this.$Message.error("Error!");
@@ -112,7 +116,7 @@ export default {
       });
     },
     handleCancel() {
-      this.$emit("form-cancel")
+      this.$emit("form-cancel");
     }
   },
   computed: {},

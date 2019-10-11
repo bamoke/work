@@ -16,14 +16,8 @@ export default {
   /**
    * @description api请求基础路径
    */
-  apiBaseUrl: {
-    dev: '/lansiyun/backend/platform.php',
-    pro: 'http://www.bamoke.com/jygw/admin.php'
-  },
-  webBaseUrl: {
-    dev: '/',
-    pro: '/jygw/admin_web/'
-  },
+  apiBaseUrl: process.env.NODE_ENV === 'development' ? '/lansiyun/backend/platform.php' : 'http://lsy.pykscloud.com/backend/platform.php',
+  webBaseUrl: process.env.NODE_ENV === 'development' ? '/' : '/platformadmin/',
   /**
    * @description 默认打开的首页的路由name值，默认为home
    */

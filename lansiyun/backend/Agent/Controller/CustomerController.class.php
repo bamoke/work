@@ -9,7 +9,7 @@ namespace Agent\Controller;
 use Agent\Common\Auth;
 class CustomerController extends Auth {
   public function vlist(){
-    $mainModel = M("CompanyInfo");
+    $mainModel = M("OrgInfo");
     $adminInfo = $this->userInfo;
     $pageSize = 15;
     $page = I("get.p/d",1);
@@ -21,8 +21,7 @@ class CustomerController extends Auth {
     }
     $list = $mainModel
     ->alias("INFO")
-    ->field("INFO.*,CONF.id as config_id")
-    ->join("__COMPANY_CONFIG__ as CONF on CONF.com_id = INFO.id","LEFT")
+    ->field("INFO.*")
     ->where($where)
     ->page($page,$pageSize)
     ->order("id desc")
@@ -66,7 +65,7 @@ class CustomerController extends Auth {
     $this->ajaxReturn($backData);
   }
 
-  // 文章编辑
+  // 
   public function edit(){
     if(empty($_GET['id'])) {
       $backData = array(
@@ -76,7 +75,7 @@ class CustomerController extends Auth {
       $this->ajaxReturn($backData);
     }
     $id = I("get.id");
-    $info = M("CompanyInfo")->where(array('id'=>$id))->find();
+    $info = M("OrgInfo")->where(array('id'=>$id))->find();
     if(!$info) {
       $backData = array(
         'code'      => 13001,
@@ -104,7 +103,7 @@ class CustomerController extends Auth {
       );
       $this->ajaxReturn($backData);
     }
-    $mainModel = M("CompanyInfo");
+    $mainModel = M("OrgInfo");
     $dataResult = $mainModel->create($this->requestData);
     if(!$dataResult) {
       $backData = array(
@@ -146,29 +145,7 @@ class CustomerController extends Auth {
   }
 
 
-  public function deleteone(){
-    if(empty($_GET['id'])){
-      $backData = array(
-        'code'      => 10001,
-        "msg"       => "非法请求"
-      );  
-      return $this->ajaxReturn($backData);  
-    }
-    $id= I("get.id");
-    $result = M("Article")->fetchSql(false)->delete($id);
-    if($result !== false){
-      $backData = array(
-        'code'      => 200,
-        "msg"       => "success"
-      );    
-    }else {
-      $backData = array(
-        'code'      => 13002,
-        "msg"       => "删除失败"
-      );  
-    }
-    $this->ajaxReturn($backData);   
-  }
+
 
 
 

@@ -3,9 +3,11 @@
 </style>
 
 <template>
-  <div class="login">
+  <div class="login" id="js-login-box">
     <div class="login-con">
-      <Card icon="log-in" :title="title" :bordered="false">
+      <div class="logo"></div>
+      <Card icon="log-in" :bordered="false">
+        <div class="log-title" slot="title">代理商登录</div>
         <div class="form-con">
           <login-form @on-success-valid="handleSubmit"></login-form>
           <p class="login-tip"></p>
@@ -17,6 +19,7 @@
 
 <script>
 import config from '@/config'
+import Wonder from '@/plugin/canvas-eff/point-line'
 import LoginForm from '_c/login-form'
 import { mapActions } from 'vuex'
 export default {
@@ -39,6 +42,16 @@ export default {
           })
       },reject=>{})
     }
+  },
+  mounted(){
+        new Wonder({
+        el: "#js-login-box",
+        dotsNumber: 100,
+        lineMaxLength: 300,
+        dotsAlpha: .5,
+        speed: 1.5,
+        clickWithDotsNumber: 5
+      })
   }
 }
 </script>

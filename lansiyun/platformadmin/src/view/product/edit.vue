@@ -1,7 +1,7 @@
 <template>
   <div>
     <Card v-if="!isCompleted">
-      <div slot="title"></div>
+      <div slot="title">产品编辑</div>
       <Row :gutter="16">
         <i-col span="18">
           <MainForm @form-saved="handleSaved" :id="id"></MainForm>

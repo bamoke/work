@@ -16,14 +16,8 @@ export default {
   /**
    * @description api请求基础路径
    */
-  apiBaseUrl: {
-    dev: '/jygw/admin.php',
-    pro: 'http://www.bamoke.com/jygw/admin.php'
-  },
-  webBaseUrl: {
-    dev: '/',
-    pro: '/jygw/admin_web/'
-  },
+  apiBaseUrl: '/jygw/admin.php',
+  webBaseUrl: process.env.NODE_ENV === 'development' ? '/' : '/jygw/admin_web/',
   /**
    * @description 默认打开的首页的路由name值，默认为home
    */

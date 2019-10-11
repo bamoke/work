@@ -1,7 +1,7 @@
 import Main from '@/components/main'
 import parentView from '@/components/parent-view'
 import config from '@/config'
-const webBaseUrl = process.env.NODE_ENV === 'development' ? config.webBaseUrl.dev : config.webBaseUrl.pro
+const webBaseUrl = config.webBaseUrl
 
 /**
  * iview-admin中meta除了原生参数外可配置的参数:
@@ -21,7 +21,7 @@ const webBaseUrl = process.env.NODE_ENV === 'development' ? config.webBaseUrl.de
 
 export default [
   {
-    path: '/login',
+    path: webBaseUrl + '/login',
     name: 'login',
     meta: {
       title: 'Login - 登录',
@@ -30,7 +30,7 @@ export default [
     component: () => import('@/view/login/login.vue')
   },
   {
-    path: '/',
+    path: webBaseUrl + '/',
     name: '_home',
     redirect: '/home',
     component: Main,
@@ -205,18 +205,9 @@ export default [
         component: () => import('@/view/card/list')
       },
       {
-        path: 'add',
-        name: 'event_add',
-        meta: {
-          hideInMenu: true,
-          title: '添加名片'
-        },
-        component: () => import('@/view/card/add')
-      },
-      {
         path: 'edit/:id',
         notCache: true,
-        name: 'event_edit',
+        name: 'card_edit',
         meta: {
           title: '编辑名片',
           hideInMenu: true
@@ -224,15 +215,159 @@ export default [
         component: () => import('@/view/card/edit')
       },
       {
-        path: 'enroll/:eventid',
-        name: 'event_enroll',
+        path: 'import',
+        name: 'card_import',
         meta: {
           hideInMenu: true,
           title: '导入名片'
         },
-        component: () => import('@/view/card/enroll')
+        component: () => import('@/view/card/import')
       }
 
+    ]
+  },
+  {
+    path: webBaseUrl + 'policy',
+    name: 'policy_manage',
+    component: Main,
+    meta: {
+      title: '人才政策',
+      icon: 'android-contacts'
+    },
+    children: [
+      {
+        path: 'list',
+        name: 'policy_list',
+        meta: {
+          title: '人才政策',
+          icon: 'android-menu'
+        },
+        component: () => import('@/view/policy/list')
+      },
+      {
+        path: 'add',
+        name: 'policy_add',
+        meta: {
+          hideInMenu: true,
+          title: '添加人才政策'
+        },
+        component: () => import('@/view/policy/add')
+      },
+      {
+        path: 'edit/:id',
+        name: 'policy_edit',
+        meta: {
+          hideInMenu: true,
+          title: '修改人才政策'
+        },
+        component: () => import('@/view/policy/edit')
+      }
+    ]
+  },
+  {
+    path: webBaseUrl + 'welfare',
+    name: 'welfare_manage',
+    component: Main,
+    meta: {
+      title: '周边福利',
+      icon: 'android-contacts'
+    },
+    children: [
+      {
+        path: 'list',
+        name: 'welfare_list',
+        meta: {
+          title: '周边福利',
+          icon: 'android-menu'
+        },
+        component: () => import('@/view/welfare/list')
+      },
+      {
+        path: 'add',
+        name: 'welfare_add',
+        meta: {
+          hideInMenu: true,
+          title: '添加商家'
+        },
+        component: () => import('@/view/welfare/add')
+      },
+      {
+        path: 'edit/:id',
+        notCache: true,
+        name: 'welfare_edit',
+        meta: {
+          title: '编辑商家',
+          hideInMenu: true
+        },
+        component: () => import('@/view/welfare/edit')
+      }
+    ]
+  },
+  {
+    path: webBaseUrl + 'talent',
+    name: 'talent_manage',
+    component: Main,
+    meta: {
+      title: '人才卡',
+      icon: 'android-contacts'
+    },
+    children: [
+      {
+        path: 'list',
+        name: 'talent_list',
+        meta: {
+          title: '人才卡',
+          icon: 'android-menu'
+        },
+        component: () => import('@/view/talent/list')
+      },
+      {
+        path: 'detail/:id',
+        name: 'talent_detail',
+        meta: {
+          hideInMenu: true,
+          title: '人才卡详情'
+        },
+        component: () => import('@/view/talent/detail')
+      }
+    ]
+  },
+  {
+    path: webBaseUrl + 'banner',
+    name: 'banner_manage',
+    component: Main,
+    meta: {
+      title: 'Banner',
+      icon: 'android-contacts'
+    },
+    children: [
+      {
+        path: 'list',
+        name: 'banner_list',
+        meta: {
+          title: 'Banner管理',
+          icon: 'android-menu'
+        },
+        component: () => import('@/view/banner/list')
+      },
+      {
+        path: 'add',
+        name: 'banner_add',
+        meta: {
+          hideInMenu: true,
+          title: 'Banner添加'
+        },
+        component: () => import('@/view/banner/add')
+      },
+      {
+        path: 'edit/:id',
+        name: 'banner_edit',
+        meta: {
+          hideInMenu: true,
+          title: 'Banner编辑'
+        },
+        component: () => import('@/view/banner/edit')
+      }
     ]
   },
   {

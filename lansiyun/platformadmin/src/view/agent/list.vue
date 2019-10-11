@@ -39,7 +39,7 @@ export default {
     return {
       columns: [
         { title: "名称", key: "name" },
-        { title: "级别", key: "level_name", width: 120 },
+        { title: "类别", key: "level_name", width: 120 },
         { title: "代理区域", key: "agent_area", width: 120 },
         { title: "状态", key: "status", width: 80 },
         { title: "到期日期", key: "contract_end", width: 150, sortable: true },

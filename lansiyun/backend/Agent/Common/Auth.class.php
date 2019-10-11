@@ -83,10 +83,25 @@ class Auth extends Controller
 
     /**
      * 获取用户信息
+     * 检测合同状态
      */
     protected function fetchUserInfo($uid){
         $info = M("AgentAdmin")->field("id,agent_id,realname,username")->where(array("id"=>$uid))->find();
         $this->userInfo = $info;
+        // 检测合同状态
+ /*        $agentConditon = array(
+            "id"    =>$info['agent_id']
+        );
+        $endDate = M("AgentInfo")
+        ->where($agentConditon)
+        ->getField("contract_end");
+        if(time() >= strtotime($endDate)) {
+            $backData = array(
+                "code"  =>13002,
+                "msg"   =>"合同已到期"
+            );
+            $this->ajaxReturn($backData);    
+        } */
     }
 
 

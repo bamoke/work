@@ -39,7 +39,7 @@ class MycardController extends BaseController {
             "code"  =>200,
             "msg"   =>"success",
             "data"  =>array(
-                "cardInfo"  =>array()
+                "cardInfo"  =>array("id"=>'')
             )
         );
         $this->ajaxReturn($backData);

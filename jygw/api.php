@@ -25,8 +25,7 @@ define("BIND_MODULE","Api");
 // define("BIND_CONTROLLER","Index");
 
 // 定义应用目录
-//define("ROOT","");
-define("ROOT","/jygw/");
+define('ROOT_DIR',dirname(__FILE__)."/");
 //define('APP_STATUS','online');
 //define('APP_STATUS','home');
 

@@ -25,7 +25,7 @@ class ArticleController extends BaseController {
     ->field($fieldInfo)
     ->where($condition)
     ->page($page,$pageSize)
-    ->order("recommend desc,id desc")
+    ->order("id desc")
     ->fetchSql(false)
     ->select();
 

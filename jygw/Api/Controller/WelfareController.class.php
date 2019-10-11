@@ -17,7 +17,11 @@ class WelfareController extends BaseController {
     );
     $orderType = I("get.type/d",1);
     $thumbBase = "http://www.bamoke.com/jygw/Uploads/images/thumb/";
-    $fieldInfo = "id,title,recommend,concat('$thumbBase',thumb) as thumb,tags,grade,addr,(st_distance (point (longitude, latitude),point($customLng,$customLat) ) *111195) AS distance";
+    if(!empty($_GET["lat"])) {
+      $fieldInfo = "*,concat('$thumbBase',thumb) as thumb,(st_distance (point (longitude, latitude),point($customLng,$customLat) ) *111195) AS distance";
+    }else {
+      $fieldInfo = "*,concat('$thumbBase',thumb) as thumb, '0' as distance";
+    }
     $orderBy = "";
     switch($orderType) {
       case 1:

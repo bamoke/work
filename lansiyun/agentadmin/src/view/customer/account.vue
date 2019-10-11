@@ -3,7 +3,8 @@
     <Card>
       <div slot="title">
         <Row :gutter="8">
-          <i-col span="8">
+          <i-col span="4">[{{orgInfo.title}}]账号管理</i-col>
+          <i-col span="6">
             <Input clearable placeholder="输入关键字搜索" class="search-input" v-model.trim="keywords" />
           </i-col>
           <i-col span="2">
@@ -14,6 +15,7 @@
         </Row>
       </div>
       <Button type="primary" slot="extra" icon="ios-add-circle" @click.prevent="handleAdd">添加账号</Button>
+       <Alert type="error" show-icon v-if="orgInfo.isexpired == 1">服务已到期，请及时续签合同</Alert>
       <Table border :columns="_customColumns" :data="tableData" :loading="tableLoading"></Table>
       <div class="m-paging-wrap">
         <Page
@@ -43,7 +45,7 @@
         <FormItem>
           <Row :gutter="16">
             <i-col span="8">
-              <Button type="primary" long @click="handleSaveAccount">保存</Button>
+              <Button type="primary" long @click="handleSaveAccount" :onloading="formSaveing">保存</Button>
             </i-col>
             <i-col span="8">
               <Button long @click="showAccountModal=false">取消</Button>
@@ -134,10 +136,12 @@ export default {
       ],
       tableDataApi: "CustomerAccount/vlist",
       tableData: [],
-      keywords: "",
+      orgInfo: {title:'',isExpired:false},
+      keywords: '',
       pageInfo: { page: 1, pageSize: 10, total: 0 },
       editRowIndex: null,
       showAccountModal: false,
+      formSaveing: false,
       accountDetail: {},
       accountFormRules: {
         username: [{ required: true, message: "请输入用户名" }],
@@ -211,6 +215,7 @@ export default {
     handleSaveAccount() {
       this.$refs["accountForm"].validate(valid => {
         if (valid) {
+          this.formSaveing = true
           axios
             .request({
               url: "CustomerAccount/save",
@@ -220,6 +225,9 @@ export default {
             .then(res => {
               this.tableData.push(res.data.info);
               this.showAccountModal = false;
+              this.formSaveing = false
+            },reject=>{
+              this.formSaveing = false
             });
         }
       });
@@ -229,12 +237,13 @@ export default {
       this.tableData = res.data.list;
       this.pageInfo = res.data.pageInfo;
       this.keywords = queryData.keywords;
+      this.orgInfo = res.data.orgInfo
     }
   },
   computed: {},
   mounted() {
     this._fetchData(this._finishedFetchData);
-    this.accountDetail.com_id = this.$route.params.comid;
+    this.accountDetail.org_id = this.$route.params.orgid;
   }
 };
 </script>

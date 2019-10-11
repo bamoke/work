@@ -4,27 +4,36 @@
  * @Date: 2018-10-11 22:16:59 
  * @Last Modified by: joy.wangxiangyin
  * @Last Modified time: 2018-10-11 22:48:12
- * 企业账号管理
+ * 服务商账号管理
  */
 namespace Agent\Controller;
 use Agent\Common\Auth;
 class CustomerAccountController extends Auth {
   public function vlist(){
-    $mainModel = M("CompanyAdmin");
+    if(empty($_GET['orgid'])) {
+      $backData = array(
+        'code'      => 10001,
+        "msg"       => "非法请求"    
+      );
+      $this->ajaxReturn($backData);
+    }
+    $orgId = I("get.orgid");
+    $orgInfo = M("OrgInfo")
+    ->field("id,title,IF(contract_end < CURRENT_DATE,1,0) as isExpired")
+    ->where("id=$orgId")
+    ->find();
+    $mainModel = M("OrgAdmin");
     $pageSize = 15;
     $page = I("get.p/d",1);
     $where = array(
-      "is_delete" =>0
+      "is_delete" =>0,
+      "org_id"    =>$orgId
     );
-    $comId = I("get.comid");
-    if(isset($_GET['comid'])) {
-      $where["com_id"]  = $comId;
-    }
     if(!empty($_GET['keywords'])){
       $where['username'] = array("like","%".I("get.keywords")."%");
     }
     $list = $mainModel
-    ->field("id,agent_id,com_id,username,superadmin,create_time,status")
+    ->field("id,username,superadmin,create_time,status")
     ->where($where)
     ->page($page,$pageSize)
     ->order("id desc")
@@ -41,6 +50,7 @@ class CustomerAccountController extends Auth {
       'code'      => 200,
       "msg"       => "ok",
       'data'      => array(
+          "orgInfo" =>$orgInfo,
           "list"  =>$list,
           "pageInfo"  =>$pageInfo
       )
@@ -59,7 +69,7 @@ class CustomerAccountController extends Auth {
       );
       $this->ajaxReturn($backData);
     }
-    $model = M("CompanyAdmin");
+    $model = M("OrgAdmin");
     $where = array(
       "id"  =>I("get.id")
     );
@@ -94,7 +104,7 @@ class CustomerAccountController extends Auth {
       );
       $this->ajaxReturn($backData);
     }
-    $model = M("CompanyAdmin");
+    $model = M("OrgAdmin");
     $where = array(
       "id"  =>I("get.id")
     );
@@ -131,7 +141,7 @@ class CustomerAccountController extends Auth {
     }
     $strs="QWERTYUIOPASDFGHJKLZXCVBNM1234567890qwertyuiopasdfghjklzxcvbnm";
     $newPassword=substr(str_shuffle($strs),mt_rand(0,strlen($strs)-9),8);
-    $model = M("CompanyAdmin");
+    $model = M("OrgAdmin");
     $where = array(
       "id"  =>I("get.id")
     );
@@ -167,19 +177,13 @@ class CustomerAccountController extends Auth {
       $this->ajaxReturn($backData);
     }
     $requestData = $this->requestData;
+    $orgId = $requestData['org_id'];
+    $mainModel = M("OrgAdmin");
 
-    $mainModel = M("CompanyAdmin");
-
-    // 查看是否已经开通服务
-    $configInfo = M("CompanyConfig")->where(array("com_id"=>$comId))->find();//服务配置信息
-    if(!$configInfo) {
-      $backData = array(
-        'code'      => 13003,
-        "msg"       => "还未开通服务",        
-      );  
-      $this->ajaxReturn($backData); 
-    }   
-    if($configInfo["product_end"] < time()) {
+    // 查看是否已经到期
+    $contracEndDate = M("OrgInfo")->where(array("id"=>$orgId))->fetchSql(false)->getField("contract_end");
+ 
+    if(strtotime($contracEndDate) < time()) {
       $backData = array(
         'code'      => 13001,
         "msg"       => "服务已到期，请先续费",        
@@ -187,23 +191,7 @@ class CustomerAccountController extends Auth {
       $this->ajaxReturn($backData); 
     }
 
-    // 检测是否超过最大账号数
-    $totalCondition = array(
-      "com_id"    =>$requestData["com_id"]
-    );
-    $curAccountTotal = $mainModel->where($totalCondition)->count();
-    if($configInfo["account_end"] < time()) {
-      $limitNum = 0;
-    }else {
-      $limitNum = $limitInfo["account_num"];
-    }
-    if(intval($curAccountTotal) >= intval($limitNum)) {
-      $backData = array(
-        'code'      => 13003,
-        "msg"       => "超出账号数限制",        
-      );  
-      $this->ajaxReturn($backData); 
-    }
+ 
 
     // 查找是否存在用户名
     $hasCondition = array(

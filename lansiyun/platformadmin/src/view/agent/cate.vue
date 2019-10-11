@@ -1,19 +1,19 @@
 <template>
   <Card>
     <Button type="primary" slot="title" @click.prevent="handleAdd">
-      <Icon type="plus-circled" size="18px"></Icon>添加级别
+      <Icon type="plus-circled" size="18px"></Icon>添加类别
     </Button>
     <Table :columns="_customColumns" :data="tableData" :loading="tableLoading"></Table>
     <Modal v-model="showModal" @on-ok="formSubmit">
       <p slot="header" style="text-align:left">
         <Icon type="ios-compose" size="18"></Icon>
-        <span>级别管理</span>
+        <span>类别管理</span>
       </p>
       <p slot="footer"></p>
       <Layout>
         <Form ref="cateForm" :model="cateDetail" :rules="formRules" :label-width="80">
           <FormItem label="名称:" prop="name">
-            <Input v-model="cateDetail.name" placeholder="请输入级别名称" />
+            <Input v-model="cateDetail.name" placeholder="请输入类别名称" />
           </FormItem>
           <FormItem label="价格:" prop="amount">
             <Input v-model="cateDetail.amount" :number="true" :maxlength="9" placeholder="请输入代理价格" style="width:200px">
@@ -55,7 +55,7 @@ export default {
   data() {
     return {
       columns: [
-        { title: "级别名称", key: "name", width: 250 },
+        { title: "类别名称", key: "name", width: 250 },
         { title: "代理价格", key: "amount", width: 250 },
         { title: "排序", key: "sort", width: 150 },
         { title: "状态", key: "status", width: 100 },

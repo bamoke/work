@@ -108,6 +108,10 @@ class MainController extends Controller
             $this->ajaxReturn($backData); 
         }
 
+        // 检测是否在合同期内
+        // do thing
+
+
         // insert or update session token
         $sessionModel = M("AgentSession");
         $newToken = md5(time().$uid);

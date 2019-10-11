@@ -21,8 +21,11 @@
       <FormItem label="模块配置:">
         <Tree :data="treeData" show-checkbox @on-check-change="handleGetModuleChecked"></Tree>
       </FormItem>
-      <FormItem label="账号数:" prop="account_num">
+      <FormItem label="初始账号数:" prop="account_num">
         <InputNumber :max="999" :min="1" v-model="formInfo.account_num"></InputNumber>
+      </FormItem>
+      <FormItem label="初始单据量(万):" prop="account_num">
+        <InputNumber :max="20" :min="1" v-model="formInfo.bill_num"></InputNumber>
       </FormItem>
 
       <FormItem label="排序:">
@@ -117,7 +120,7 @@ export default {
         .then(res => {
           this.formInfo = res.data.info;
           let curModule = res.data.info.module.split(",");
-          let newTreeData = this.treeData.slice(0)
+          let newTreeData = this.treeData.slice(0);
           this.treeData.forEach(item => {
             if (item.children.length > 0) {
               item.children.forEach(child => {
@@ -125,13 +128,12 @@ export default {
                   child.checked = true;
                 }
               });
-              
             }
             if (curModule.indexOf(item.id) >= 0) {
               item.checked = true;
             }
           });
-          this.treeData = newTreeData
+          this.treeData = newTreeData;
         });
     }
   },

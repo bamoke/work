@@ -1,7 +1,7 @@
 import Main from '@/components/main'
 import parentView from '@/components/parent-view'
 import config from '@/config'
-const webBaseUrl = process.env.NODE_ENV === 'development' ? config.webBaseUrl.dev : config.webBaseUrl.pro
+const webBaseUrl = config.webBaseUrl
 
 /**
  * iview-admin中meta除了原生参数外可配置的参数:
@@ -22,7 +22,7 @@ const webBaseUrl = process.env.NODE_ENV === 'development' ? config.webBaseUrl.de
 
 export default [
   {
-    path: '/login',
+    path: webBaseUrl + '/login',
     name: 'login',
     meta: {
       title: 'Login - 登录',
@@ -31,7 +31,7 @@ export default [
     component: () => import('@/view/login/login.vue')
   },
   {
-    path: '/',
+    path: webBaseUrl + '/',
     name: '_home',
     redirect: '/home',
     component: Main,
@@ -53,42 +53,7 @@ export default [
       }
     ]
   },
-  {
-    path: webBaseUrl + 'auth',
-    name: 'auth_manage',
-    component: Main,
-    meta: {
-      title: '权限管理',
-      icon: 'android-unlock'
-    },
-    children: [
-      {
-        path: 'user',
-        name: 'auth_user',
-        meta: {
-          title: '用户管理'
-        },
-        component: () => import('@/view/auth/user')
-      },
-      {
-        path: 'groups',
-        name: 'auth_group',
-        meta: {
-          title: '群组管理'
-        },
-        component: () => import('@/view/auth/groups')
-      },
-      {
-        path: 'rules',
-        name: 'auth_rules',
-        meta: {
-          title: '权限规则',
-          hideInMenu: true
-        },
-        component: () => import('@/view/auth/rules')
-      }
-    ]
-  },
+ 
   {
     path: webBaseUrl + 'account',
     name: 'account_manage',
@@ -99,8 +64,8 @@ export default [
     },
     children: [
       {
-        path: 'profile',
-        name: 'account_profile',
+        path: 'home',
+        name: 'account_home',
         meta: {
           title: '账号信息',
           icon: 'android-menu',
@@ -108,6 +73,7 @@ export default [
         },
         component: () => import('@/view/account/index')
       },
+
       {
         path: 'reset',
         name: 'account_reset',
@@ -117,6 +83,34 @@ export default [
           title: '修改密码'
         },
         component: () => import('@/view/account/reset')
+      }
+    ]
+  },
+  {
+    path: webBaseUrl + 'price',
+    name: 'price_manage',
+    component: Main,
+    meta: {
+      title: '价格管理',
+      icon: 'android-contacts'
+    },
+    children: [
+      {
+        path: 'product',
+        name: 'price_product',
+        meta: {
+          title: '产品价格',
+          icon: 'android-menu'
+        },
+        component: () => import('@/view/price/product')
+      },
+      {
+        path: 'module',
+        name: 'price_module',
+        meta: {
+          title: '模块价格'
+        },
+        component: () => import('@/view/price/mokuai')
       }
     ]
   },
@@ -202,7 +196,7 @@ export default [
         component: () => import('@/view/customer/edit')
       },
       {
-        path: 'account/:comid',
+        path: 'account/:orgid',
         notCache: true,
         name: 'customer_account',
         meta: {
@@ -212,7 +206,7 @@ export default [
         component: () => import('@/view/customer/account')
       },
       {
-        path: 'config/:comid',
+        path: 'config/:orgid',
         notCache: true,
         name: 'customer_config',
         meta: {

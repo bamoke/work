@@ -28,7 +28,31 @@
           </Col>
         </Row>
       </FormItem>
-
+      <FormItem label="业务开始日期" prop="contract_start">
+        <Row>
+          <Col span="6">
+            <DatePicker
+              type="date"
+              v-model="formInfo.contract_start"
+              :start-date="new Date()"
+              format="yyyy-MM-dd"
+            ></DatePicker>
+          </Col>
+        </Row>
+      </FormItem>
+      <FormItem label="业务到期日期" prop="contract_end">
+        <Row>
+          <Col span="6">
+            <DatePicker
+              type="date"
+              v-model="formInfo.contract_end"
+              :start-date="new Date()"
+              format="yyyy-MM-dd"
+              @on-change="valideEndDate"
+            ></DatePicker>
+          </Col>
+        </Row>
+      </FormItem>
 
       <div class="bar">
         <span class="caption">联系信息</span>
@@ -107,10 +131,11 @@ export default {
   },
   data() {
     return {
-
       submitIng: false,
       ruleForm: {
         title: [{ required: true, message: "请输入企业名称" }],
+        contract_start: [{ required: true, message: "请选择业务开始日期" }],
+        contract_end: [{ required: true, message: "请选择业务截至日期" }],
         contact: [{ required: true, message: "请填写联系人" }],
         phone: [{ required: true, message: "请填写联系电话" }],
         addr: [{ required: true, message: "请填写联系地址" }]
@@ -162,9 +187,7 @@ export default {
     }
   },
   computed: {},
-  mounted() {
-
-  }
+  mounted() {}
 };
 </script>
 <style>

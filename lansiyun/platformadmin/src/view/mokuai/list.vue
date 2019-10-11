@@ -2,7 +2,7 @@
   <div>
     <Card>
       <div slot="title">模块管理</div>
-      <Tree :data="treeData" :render="renderContent" style="width:400px;"></Tree>
+      <Tree :data="treeData" :render="renderContent" style="width:600px;"></Tree>
     </Card>
     <Modal v-model="showModal" title="添加模块">
       <MainForm
@@ -102,20 +102,27 @@ export default {
         });
         buttons.unshift(tempButton);
       }
-      return h("span", { style: { display: "inline-block", width: "100%" } }, [
-        h("span", { style: { display: "inline-block" } }, data.title),
-        h(
-          "span",
-          {
-            style: {
-              display: "inline-block",
-              textAlign: "right",
-              float: "right"
-            }
-          },
-          buttons
-        )
-      ]);
+      var contentNode = [h("span", { class: "tree-li-title" }, data.title)];
+      if (data.level === 2) {
+        contentNode.push(h("span", { class: ["tree-li-price"] }, `${data.price}元/年`));
+      }
+      return h(
+        "span",
+        { class: "tree-li" },
+        contentNode.concat([
+          h(
+            "span",
+            {
+              style: {
+                display: "inline-block",
+                textAlign: "right",
+                float: "right"
+              }
+            },
+            buttons
+          )
+        ])
+      );
     },
     addModule(root, node, data) {
       this.showModal = true;
@@ -181,3 +188,17 @@ export default {
   }
 };
 </script>
+
+<style>
+.tree-li {
+  display: inline-block;
+  width: 100%;
+}
+.tree-li-title {
+  display: inline-block;
+  width: 200px;
+}
+.tree-li-price {
+  font-weight: bold;
+}
+</style>

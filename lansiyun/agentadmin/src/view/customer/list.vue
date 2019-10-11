@@ -70,29 +70,14 @@ export default {
                     ghost: true,
                     to: {
                       name: "customer_account",
-                      params: { comid: params.row.id }
+                      params: { orgid: params.row.id }
                     }
                   },
                   style: { marginLeft: "10px" }
                 },
                 "账号管理"
-              ),
-              h(
-                "Button",
-                {
-                  props: {
-                    type: "primary",
-                    size: "small",
-                    ghost: true,
-                    to: {
-                      name: "customer_config",
-                      params: { comid: params.row.id }
-                    }
-                  },
-                  style: { marginLeft: "10px" }
-                },
-                "配置信息"
               )
+
             ]);
           }
         }

@@ -115,21 +115,17 @@ export default {
         enroll_start_date: [
           {
             required: true,
-            type: "string",
-            message: "请选择报名开始日期",
-            trigger: "change"
+            message: "请选择报名开始日期"
           }
         ],
         enroll_end_date: [
           {
             required: true,
-            type: "string",
-            message: "请选择报名截至日期",
-            trigger: "change"
+            message: "请选择报名截至日期"
           }
         ]
       },
-      formInfo: { status: "1", type: 2 },
+      formInfo: { status: "1", type: 2 , enroll_end_date:'', enroll_start_date: ''},
       thumbList: [],
       cateList: [],
       thumbUploadUrl: "/Uploads/save/f/thumb",
@@ -161,6 +157,7 @@ export default {
     },
     handleStartDateChange(e){
       this.formInfo.enroll_start_date = e
+      console.log(this.formInfo)
     },
     setFileList() {},
     handleFileChanged(data) {

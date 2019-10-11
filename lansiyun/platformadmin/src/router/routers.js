@@ -1,7 +1,7 @@
 import Main from '@/components/main'
 import parentView from '@/components/parent-view'
 import config from '@/config'
-const webBaseUrl = process.env.NODE_ENV === 'development' ? config.webBaseUrl.dev : config.webBaseUrl.pro
+const webBaseUrl = config.webBaseUrl
 
 /**
  * iview-admin中meta除了原生参数外可配置的参数:
@@ -21,7 +21,7 @@ const webBaseUrl = process.env.NODE_ENV === 'development' ? config.webBaseUrl.de
 
 export default [
   {
-    path: '/login',
+    path: webBaseUrl + '/login',
     name: 'login',
     meta: {
       title: 'Login - 登录',
@@ -30,9 +30,9 @@ export default [
     component: () => import('@/view/login/login.vue')
   },
   {
-    path: '/',
+    path: webBaseUrl,
     name: '_home',
-    redirect: '/home',
+    redirect: webBaseUrl + '/home',
     component: Main,
     meta: {
       hideInMenu: true,
@@ -129,7 +129,7 @@ export default [
         path: 'cate',
         name: 'agent_cate',
         meta: {
-          title: '代理商级别',
+          title: '代理商类别',
           icon: 'grid'
         },
         component: () => import('@/view/agent/cate')

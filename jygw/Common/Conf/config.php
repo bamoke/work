@@ -24,7 +24,12 @@ return array(
 
     'SHOW_PAGE_TRACE'   =>false,//开启页面调试
     "UPLOAD_BASE_URL"	=>"https://www.bamoke.com/jygw/Uploads",
-    	// OSS
-	"OSS_BASE_URL"	=>"https://bmk-jygw.oss-cn-shenzhen.aliyuncs.com"
+    
+    // OSS config
+	"OSS_ENDPOINT"		=>"oss-cn-shenzhen.aliyuncs.com",
+	"OSS_BUCKET"		=>"bmk-jygw",
+	"OSS_ACCESS_ID"		=>"LTAI95IEfCXiiAzB",
+	"OSS_ACCESS_KEY"	=>"WjxGGajMb4iM8YPJYVLHwCloUhUJSn",
+	"OSS_BASE_URL"	    =>"https://bmk-jygw.oss-cn-shenzhen.aliyuncs.com"
 
 );

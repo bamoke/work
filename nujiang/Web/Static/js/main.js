@@ -14,6 +14,16 @@ jQuery(document).ready(function(){
             }
             sY = eY;
         })
+
+        /** */
+        $(".m-tab-nav").find("a").click(function(){
+            var $contentWrap = $(".m-tab-content")
+            var index=$(this).data("index")
+            $(".m-tab-nav").find("a").removeClass("current")
+            $(this).addClass("current")
+            $contentWrap.find(".content-item").hide().eq(index).show();
+            
+        })
     })();
 
 		

@@ -949,19 +949,9 @@ button {cursor:pointer;}
     background: #1f2636;
 }
 
-.contactBox:hover #dituContent {
-    opacity: 1;
-}
 
-#dituContent {
-    height: 550px;
-    opacity: .2;
-    -webkit-transition: all .2s linear;
-    -moz-transition: all .2s linear;
-    -o-transition: all .2s linear;
-    transition: all .2s linear;
-    -ms-transition: all .2s linear;
-}
+
+
 
 .contactBox:after {
     position: absolute;
@@ -1995,4 +1985,76 @@ button {cursor:pointer;}
     margin:10px 0;
 }
 #job-detail td {width:25%}
+
+.m-tab-nav {
+    border-bottom:1px solid #eee;
+    text-align: center;
+}
+.m-tab-nav a {
+    display: inline-block;
+    margin-right:40px;
+    margin-bottom:-1px;
+    font-size:16px;
+    border-bottom:1px solid #eee;
+}
+.m-tab-nav .current {
+    border-bottom-color:#06c;
+    color:#06c;
+}
+.m-tab-content {
+    padding:20px 0;
+}
+.m-tab-content .content-item {
+    display: none;
+    min-height: 300px;
+}
+
+.contact-wrap {
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+.contact-wrap .contact-info {
+    width:55%;
+}
+.contact-wrap .map-wrap {
+    -webkit-flex: 0 0 40%;
+    flex: 0 0 40%;
+}
+.contact-wrap .map-wrap .contcat-map-content {
+    width:100%;
+    height:300px;
+}
+.contact-wrap .contact-row {
+    display: -webkit-flex;
+    width:100%;
+    -webkit-align-items: center;
+    align-items: center;
+    padding:10px 0;
+    border-bottom:1px solid #eee;
+}
+.contact-wrap .contact-row .icon {
+    -webkit-flex: 0 0 48px;
+    flex: 0 0 48px;
+    margin-right:20px;
+    display:block;
+    width:48px;
+    height:48px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:48px auto;
+}
+.contact-wrap .contact-row .icon-tel {
+    background-image: url("images/tel.jpg");
+}
+.contact-wrap .contact-row .icon-phone {
+    background-image: url("images/mobile.jpg");
+}
+.contact-wrap .contact-row .icon-email {
+    background-image: url("images/email.jpg");
+}
+
+.contact-wrap .contact-row .icon-addr {
+    background-image: url("images/address.jpg");
+}
 

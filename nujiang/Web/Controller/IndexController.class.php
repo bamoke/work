@@ -44,7 +44,11 @@ class IndexController extends BaseController {
      * 
      */
     public function about (){
-        $staffHome = M("Single")->find();
+        $staffHome = M("Single")->find(3);
+        $workSite = M("Single")->find(4);
+        $this->assign('staffHome',$staffHome);
+        $this->assign('workSite',$workSite);
+        $this->assign('curPage',"about");
         $this->display();
     }
 
@@ -53,7 +57,29 @@ class IndexController extends BaseController {
      */
 
     public function contact (){
+        $ygzjInfo = M("Contact")->find(1);
+        $gzzInfo = M("Contact")->find(2);
 
+        $initiCoordinate = array('113.583446','22.276822');
+        if($ygzjInfo["coordinate"]) {
+            $ygzjCoordinate = explode(",",$ygzjInfo["coordinate"]);
+            $ygzjInfo["lati"] = $ygzjCoordinate[0];
+            $ygzjInfo["longi"] = $ygzjCoordinate[1];
+        }else {
+            $ygzjInfo["lati"] = $initiCoordinate[0];
+            $ygzjInfo["longi"] = $initiCoordinate[1];
+        }
+
+        if($gzzInfo["coordinate"]) {
+            $gzzCoordinate = explode(",",$gzzInfo["coordinate"]);
+            $gzzInfo["lati"] = $gzzCoordinate[0];
+            $gzzInfo["longi"] = $gzzCoordinate[1];
+        }else {
+            $gzzInfo["lati"] = $initiCoordinate[0];
+            $gzzInfo["longi"] = $initiCoordinate[1];
+        }
+        $this->assign('ygzjInfo',$ygzjInfo);
+        $this->assign('gzzInfo',$gzzInfo);
         $this->assign('curPage',"contact");
         $this->display();
     }

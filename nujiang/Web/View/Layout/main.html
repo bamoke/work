@@ -1,0 +1,60 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <title>{$siteConfig['site_name']}</title>
+    <link href="__WEB_ASSET__/css/style.css?v=<php>echo time()</php>" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="__WEB_ASSET__/js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="__WEB_ASSET__/js/jquery.SuperSlide.js"></script>
+    <style type="text/css">
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .iw_poi_title {
+            color: #CC5522;
+            font-size: 14px;
+            font-weight: bold;
+            overflow: hidden;
+            padding-right: 13px;
+            white-space: nowrap
+        }
+
+        .iw_poi_content {
+            font: 12px arial, sans-serif;
+            overflow: visible;
+            padding-top: 4px;
+            white-space: -moz-pre-wrap;
+            word-wrap: break-word
+        }
+    </style>
+    <script type="text/javascript" src="__WEB_ASSET__/js/main.js"></script>
+
+
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <include file="Layout/header" />
+        <div class="pageMain">
+            {__REPLACE__}
+        </div>
+        <include file="Layout/footer" />
+    </div>
+
+</body>
+
+</html>

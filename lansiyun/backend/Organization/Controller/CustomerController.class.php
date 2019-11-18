@@ -147,7 +147,38 @@ class CustomerController extends Auth {
     $this->ajaxReturn($backData);
   }
 
-
+/**
+   * 修改状态
+   */
+  public function changestatus(){
+    if(empty($_GET['id'])){
+      $backData = array(
+        'code'      => 10001,
+        "msg"       => "非法请求"
+      );  
+      return $this->ajaxReturn($backData);  
+    }
+    $id= I("get.id");
+    $newStatus = I("get.status");
+    $updateData = array(
+      "status"  =>$newStatus,
+      "update_by" =>$this->userInfo["username"],
+      "update_time" => date("y-m-d H:i:s",time())
+    );
+    $updateResult = M("CompanyInfo")->where("id=$id")->save($updateData);
+    if($updateResult !== false){
+      $backData = array(
+        'code'      => 200,
+        "msg"       => "success"
+      );    
+    }else {
+      $backData = array(
+        'code'      => 13002,
+        "msg"       => "系统错误"
+      );  
+    }
+    $this->ajaxReturn($backData);  
+  }
 
 
 

@@ -1,0 +1,18 @@
+<div id="header">
+    <div class="k1120 clearfix">
+        <div id="menu">
+            <ul class="clearfix">
+                <li><a href="{:U('Index/index')}" class="nav_home <php>if($curPage == 'index') echo 'current'</php>"><span>首页</span></a></li>
+                <li><a href="{:U('Jobs/index')}" class="nav_pro <php>if($curPage == 'jobs') echo 'current'</php>"><span>岗位信息</span></a></li>
+                <li><a href="{:U('News/index',array('cid'=>8))}" class="nav_news <php>if($curPage == 'news' && $_GET['cid'] == 8) echo 'current'</php>"><span>工作动态</span></a></li>
+                <li><a href="{:U('News/index',array('cid'=>9))}" class="nav_news <php>if($curPage == 'news' && $_GET['cid'] == 9) echo 'current'</php>"><span>奖励政策</span></a></li>
+                <li><a href="{:U('News/index',array('cid'=>10))}" class="nav_news <php>if($curPage == 'news' && $_GET['cid'] == 10) echo 'current'</php>"><span>办事指南</span></a></li>
+                <li><a href="{:U('Single/index',array('id'=>1))}" class="nav_save <php>if($curPage == 'single' && $_GET['id'] == 1) echo 'current'</php>"><span>怒江风情</span></a></li>
+                <li><a href="{:U('Single/index',array('id'=>11))}" class="nav_save <php>if($curPage == 'single' && $_GET['id'] == 11) echo 'current'</php>"><span>珠海概况</span></a></li>
+                <li><a href="{:U('Index/about')}" class="nav_save <php>if($curPage == 'about') echo 'current'</php>"><span>关于我们</span></a></li>
+                <li><a href="{:U('Index/contact')}" class="nav_save <php>if($curPage == 'contact') echo 'current'</php>"><span>联系我们</span></a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>

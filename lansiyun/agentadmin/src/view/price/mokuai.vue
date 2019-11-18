@@ -1,5 +1,5 @@
 <template>
-  <Card title="模块价格设置">
+  <Card title="模块价格">
     <Table border :columns="columns" :data="tableData" :loading="tableLoading"></Table>
     <div class="m-paging-wrap">
       <Page
@@ -10,17 +10,6 @@
         v-show="pageInfo.total > pageInfo.pageSize"
       ></Page>
     </div>
-    <Modal v-model="showModal" :title="editForm.name">
-      <CellGroup>
-        <Cell title="系统价" :extra="editForm.old_price"></Cell>
-        <Cell title="销售价">
-          <Input type="number" v-model="editForm.new_price" slot="extra" />
-        </Cell>
-      </CellGroup>
-      <div slot="footer">
-        <Button type="info" long :loading="submitting" @click="doSave">确认</Button>
-      </div>
-    </Modal>
   </Card>
 </template>
 <script>
@@ -33,35 +22,16 @@ export default {
       columns: [
         { title: "模块类别", key: "catename", width: 120 },
         { title: "模块名称", key: "name", width: 250 },
-        { title: "系统价", key: "old_price", width: 150 },
         {
           title: "销售价",
           width: 150,
           render: (h, params) => {
-            var newPrice, className;
-            if (params.row.new_price) {
-              newPrice = params.row.new_price;
-              className = "s-text-error";
-            } else {
-              newPrice = "未设置";
-              className = "s-text-light";
-            }
-            return h("span", { class: className }, newPrice);
+            return h("span", { class: 's-text-error' }, params.row.price);
           }
         },
-        {
-          title: "操作",
-          render: (h, params) => {
-            return h(
-              "Button",
-              {
-                props: { type: "info", size: "small" },
-                on: { click: () => this.handleSetPrice(params.index) }
-              },
-              "设置价格"
-            );
-          }
-        }
+        { title: "销售数量", key: "sell_num", width: 150 },
+
+    
       ],
       tableLoading: true,
       tableData: [],

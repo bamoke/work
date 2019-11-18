@@ -2,6 +2,9 @@
 .idea/
 wxParse-master/
 lyb/
+btc/
+btc/index.php
+chongwu/
 ThinkPHP/
 zhmlife/Runtime/
 zhmlife/Uploads/
@@ -17,3 +20,5 @@ lansiyun/agentadmin/node_modules/
 lansiyun/platformadmim/node_modules/
 lansiyun/orgadmim/node_modules/
 lansiyun/backend/Runtime/
+nujiang/Admin/
+nujiang/Runtime/

@@ -89,19 +89,28 @@ class Auth extends Controller
         $info = M("AgentAdmin")->field("id,agent_id,realname,username")->where(array("id"=>$uid))->find();
         $this->userInfo = $info;
         // 检测合同状态
- /*        $agentConditon = array(
+
+        // 检测是否在合同期内
+        $agentCondition = array(
             "id"    =>$info['agent_id']
         );
-        $endDate = M("AgentInfo")
-        ->where($agentConditon)
-        ->getField("contract_end");
-        if(time() >= strtotime($endDate)) {
+        $agentInfo = M("AgentInfo")->field("status,contract_end")->where($agentCondition)->find();
+        if($agentInfo['status'] == 0) {
             $backData = array(
-                "code"  =>13002,
-                "msg"   =>"合同已到期"
+                "code"  =>204,
+                "msg"   =>"代理合同已被中止,请联系平台客服",
+                "info"  =>$agentInfo
             );
-            $this->ajaxReturn($backData);    
-        } */
+            $this->ajaxReturn($backData); 
+        }
+        if(strtotime($agentInfo['contract_end']) < time()) {
+            $backData = array(
+                "code"  =>205,
+                "msg"   =>"代理合同已到期,请联系平台客服",
+                "info"  =>$agentInfo
+            );
+            $this->ajaxReturn($backData); 
+        }
     }
 
 

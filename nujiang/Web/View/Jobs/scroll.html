@@ -1,0 +1,39 @@
+<div class="sub-banner" style="height: 100px;">
+  <div style="line-height:100px;text-align: center;font-size:48px;color:#fff;letter-spacing: 10px;">
+    珠海市对口怒江劳务协作岗位信息
+  </div>
+</div>
+<div class="g-main-page">
+  <div class="k1120">
+    <div id="js-scroll-wrap" class="jobs-list" style="font-size:{$scrollInfo['font_size']}px">
+      <div class="scroll-list">
+        <foreach name="jobsList" item="list">
+          <div class="item">
+            <p class="jobname">{$list['title']}</p>
+            <p class="company item-row">公司名称：{$list['company']}</p>
+            <p class="other-info item-row">薪资：{$list['wage']}</p>
+            <p class="other-info item-row">招聘人数：{$list['person_limit']}</p>
+            <p class="date item-row">招聘截至：{$list['end_date']}</p>
+            <div class="">
+              <p class="item-row">详细介绍：</p>
+              <div class="content">{$list['content']}</div>
+            </div>
+          </div>
+        </foreach>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  jQuery(document).ready(function () {
+    $("#header").hide();
+    jQuery("#js-scroll-wrap").slide({
+      mainCell: ".scroll-list",
+      autoPlay: true,
+      effect: "topLoop",
+      vis: 3,
+      interTime: {$scrollInfo['delay']},
+      delayTime: {$scrollInfo['speed']}
+    });
+  });
+</script>

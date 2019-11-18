@@ -1,6 +1,5 @@
 import Main from '@/view/main'
-import parentView from '@/components/parent-view'
-import {rootDir} from '_conf/base'
+import {baseUrl} from '_conf/base'
 
 /**
  * iview-admin中meta除了原生参数外可配置的参数:
@@ -14,14 +13,14 @@ import {rootDir} from '_conf/base'
 
 export default [
   {
-    path: rootDir+'login',
+    path: baseUrl+'login',
     name: 'login',
     component: () => import('@/view/login/login.vue')
   },
   {
-    path: rootDir,
+    path: baseUrl,
     name: 'home',
-    redirect: rootDir+'home',
+    redirect: baseUrl+'home',
     component: Main,
     meta: {
       hideInMenu: true,
@@ -41,7 +40,7 @@ export default [
   },
   /***onehre */
   {
-    path: rootDir+'auth',
+    path: baseUrl+'auth',
     name: 'auth_manage',
     component: Main,
     meta: {
@@ -77,7 +76,7 @@ export default [
     ]
   },
   {
-    path: rootDir+'teacher',
+    path: baseUrl+'teacher',
     name: 'teacher_manage',
     component: Main,
     meta: {
@@ -123,7 +122,7 @@ export default [
     ]
   },
   {
-    path: rootDir+'course',
+    path: baseUrl+'course',
     name: 'course_manage',
     component: Main,
     meta: {
@@ -253,7 +252,7 @@ export default [
     ]
   },
   {
-    path: rootDir+'discuss/:disid',
+    path: baseUrl+'discuss/:disid',
     name: 'discuss',
     meta: {
       title: '讨论组详情',
@@ -294,7 +293,7 @@ export default [
 
   },
   {
-    path: rootDir+'tests/:testid',
+    path: baseUrl+'tests/:testid',
     name: 'tests',
     component: Main,
     meta: {
@@ -363,7 +362,7 @@ export default [
   },
 
   {
-    path: rootDir+'article',
+    path: baseUrl+'article',
     name: 'article_manage',
     component: Main,
     meta: {
@@ -420,7 +419,7 @@ export default [
     ]
   },
   {
-    path: rootDir+'outsource',
+    path: baseUrl+'outsource',
     name: 'outsource_manage',
     component: Main,
     meta: {
@@ -459,7 +458,7 @@ export default [
     ]
   },
   {
-    path: rootDir+'parttime',
+    path: baseUrl+'parttime',
     name: 'parttime_manage',
     meta: {
       title: '兼职项目',
@@ -582,7 +581,7 @@ export default [
   /**====== */
 
   {
-    path: rootDir+'survey',
+    path: baseUrl+'survey',
     name: 'survey',
     meta: {
       title: '问卷管理',
@@ -643,7 +642,7 @@ export default [
 
 
   {
-    path: rootDir+'update',
+    path: baseUrl+'update',
     name: 'update',
     meta: {
       icon: 'upload',
@@ -675,17 +674,17 @@ export default [
 
 
   {
-    path: rootDir+'401',
+    path: baseUrl+'401',
     name: 'error_401',
     component: () => import('@/view/error-page/401.vue')
   },
   {
-    path: rootDir+'500',
+    path: baseUrl+'500',
     name: 'error_500',
     component: () => import('@/view/error-page/500.vue')
   },
   {
-    path: rootDir+'*',
+    path: baseUrl+'*',
     name: 'error_404',
     component: () => import('@/view/error-page/404.vue')
   }

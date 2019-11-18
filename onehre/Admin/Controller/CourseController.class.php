@@ -112,9 +112,11 @@ use Admin\Common\Auth;
       $id = (int)$mainModel->id;
       $result = $mainModel->where(array("id"=>$id))->save();
     }else {
-      $result = $mainModel->fetchSql(false)->add();
+      $result = $mainModel->fetchSql(true)->add();
       $id = $result;
     }
+    var_dump($result);
+    exit();
     if($result !== false){
       // $info = $mainModel->where(array("id"=>$id))->find();
       $backData = array(

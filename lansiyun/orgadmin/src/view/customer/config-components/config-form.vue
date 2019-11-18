@@ -37,7 +37,7 @@
           v-model="totalBillNum"
           :step="1"
           :min="0"
-          :max="10"
+          :max="20"
           style="width:300px;"
           show-input
           @on-change="checkBill"

@@ -1,0 +1,118 @@
+<div id="home">
+    <div class="banner" id="index-banner">
+
+    </div>
+</div>
+<div id="services" class="scrol-page">
+    <h2 class="title"><span>怒江人在珠海</span></h2>
+    <div class="index-main-content k1120">
+        <ul class="clearfix index-album-list">
+            <li><img src="__WEB_ASSET__/images/img-p1.jpg" alt=""></li>
+            <li><img src="__WEB_ASSET__/images/img-p2.jpg" alt=""></li>
+            <li><img src="__WEB_ASSET__/images/img-p3.jpg" alt=""></li>
+        </ul>
+    </div>
+</div>
+</div>
+<div id="index-about" class="scrol-page">
+    <h2 class="title"><span>怒江州基本州情</span></h2>
+
+    <div class="k1120 clearfix">
+        <div class="vidoe-box">
+            <a class="vidoe-item" href="{:U('video',array('id'=>2))}" target="_blank"><span class="play-btn"></span><img src="__WEB_ASSET__/images/video-pic-1.jpg"
+                    alt=""></a>
+            <a class="vidoe-item" href="{:U('video',array('id'=>2))}" target="_blank"><span class="play-btn"></span><img src="__WEB_ASSET__/images/video-pic-2.jpg"
+                    alt=""></a>
+        </div>
+        <div class="txt-box">
+            怒江州西邻缅甸，北靠西藏自治区，东连迪庆藏族自治州、大理白族自治州、丽江市，南接保山市，国土面积1.47万平方公里，辖4个县（市）、29个乡（镇）、255个村委会、17个社区，总人口54.4万人，是
+            “三江并流”世界自然遗产核心区、重要生态功能区、民族直过区、涉边涉藏区和少数民族聚居区，集“边疆、民族、贫困”为一体。
+
+            <br>（一）高山峡谷，交通滞后。全州98%以上的面积是高山峡谷，境内山高谷深、崎岖不平，最高海拔5128米，最低海拔为738米。山多、山大、山陡，“看天一条缝、看地一道沟，出门靠溜索、种地像攀岩”是这里的真实写照。由于长期欠投入，怒江交通基础设施非常滞后，全州无高速路、无机场、无铁路、无航运、无管道运输，道路等级低，高等级公路不足100公里。全州至今还有30%自然村未通公路，部分地区的群众出行靠走路、运输靠人背马驮。
+
+            <br>（二）涉边涉藏，民族和谐。全州国境线长450公里，占中缅边境线的22.3%。全州4县（市）中3个县（市）属边境县（市），2个县属涉藏工作县，是云南省唯一既沿边又涉藏的州市。境内居住着傈僳、怒、普米、独龙等民族，少数民族人口49.5万人，占总人口的93.6%。独龙族和怒族是怒江特有的民族，傈僳族和普米族主要居住在怒江。长期以来，怒江州多民族互相包容、和睦相处、和衷共济、和谐共存，从来没有发生过大的纷争。
+
+            <br>（三）资源禀赋，产业弱小。境内有极其丰富的水能资源，水资源总量达956亿立方米，水能资源蕴藏量达2000多万千瓦，可开发装机容量1800万千瓦。有极其丰富的矿产资源，有亚洲最大的铅锌矿床，铅、锌、铜、大理石等矿产种类多、储量大、品位高。有丰富独特的生物资源……
+
+        </div>
+    </div>
+</div>
+<div id="index-jobs" class="scrol-page">
+    <div class="k1120">
+        <h2 class="title"><span>岗位信息</span></h2>
+
+        <div class="index-jobs-list">
+                <foreach name="jobsList" item="job">
+                    <div class="item">
+                        <a href="{:U('Jobs/detail',array('id'=>$job['id']))}" class="jobname" target="_blank">{$job['title']}</a>
+                        <span class="company">{$job['company']}</span>
+                        <span class="other-info">{$job['wage']}</span>
+                        <span class="other-info">{$job['person_limit']}</span>
+                        <span class="date">{$job['create_time']}</span>
+                    </div>
+                </foreach>
+        </div>
+        <div class="tc moreBox"><a href="{:U('Jobs/index')}" class="moreBtn">查看更多岗位</a></div>
+    </div>
+</div>
+<div id="index-news" class="scrol-page">
+    <div class="k1120">
+        <h2 class="title"><span>工作动态</span></h2>
+
+        <div class="newsList">
+            <ul class="clearfix">
+                <foreach name="worknews" item="item">
+                    <li>
+                        <div class="newsListBox">
+                            <h4><a href="{:U('News/detail',array('id'=>$item['id']))}"
+                                    target="_blank">{$item['title']}</a></h4>
+
+                            <p class="newsViewText">{$item['description']}</p>
+
+                            <p class="newsViewFoot">
+                                <a href="{:U('News/detail',array('id'=>$item['id'],'cid'=>$item['cid']))}" target="_blank"
+                                    class="newsListView">查看详情</a>
+                            </p>
+                        </div>
+                    </li>
+                </foreach>
+            </ul>
+            <div class="tc moreBox"><a href="{:U('News/index',array('cid'=>8))}" target="_blank" class="moreBtn">查看更多新闻</a></div>
+        </div>
+    </div>
+</div>
+<div id="index-policy" class="scrol-page">
+    <div class="k1120">
+        <h2 class="title"><span>人才政策</span></h2>
+
+        <div class="newsList">
+            <ul class="clearfix">
+                <foreach name="policynews" item="item">
+                    <li>
+                        <div class="newsListBox">
+                            <h4><a href="{:U('News/detail',array('id'=>$item['id'],'cid'=>$item['cid']))}"
+                                    target="_blank">{$item['title']}</a></h4>
+
+                            <p class="newsViewText">{$item['description']}</p>
+
+                            <p class="newsViewFoot">
+                                <a href="{:U('News/detail',array('id'=>$item['id'],'cid'=>$item['cid']))}" target="_blank"
+                                    class="newsListView">查看详情</a>
+                            </p>
+                        </div>
+                    </li>
+                </foreach>
+            </ul>
+            <div class="tc moreBox"><a href="{:U('News/index',array('cid'=>9))}" target="_blank" class="moreBtn">查看更多新闻</a></div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script>
+    jQuery(document).ready(function () {
+        // jQuery("#index-banner").slide({mainCell: "ul", autoPlay: true, effect: "leftLoop",titCell:'.pagination i'});
+    });
+</script>

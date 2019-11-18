@@ -30,4 +30,4 @@ define("BUILD_DIR_SECURE",false);
 define("ROOT","/work/btc");
 
 //引入PHP框架文件
-require("../../ThinkPHP323/ThinkPHP.php");
+require("../ThinkPHP/ThinkPHP.php");

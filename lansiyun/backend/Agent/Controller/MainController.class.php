@@ -86,7 +86,7 @@ class MainController extends Controller
 
         $where['password']  = md5($postData['password']);
         $user = M("AgentAdmin")
-        ->field("id,username,realname,status")
+        ->field("id,agent_id,username,realname,status")
         ->where($where)
         ->fetchSql(false)
         ->find();
@@ -109,7 +109,26 @@ class MainController extends Controller
         }
 
         // 检测是否在合同期内
-        // do thing
+        $agentCondition = array(
+            "id"    =>$user['agent_id']
+        );
+        $agentInfo = M("AgentInfo")->field("status,contract_end")->where($agentCondition)->find();
+        if($agentInfo['status'] == 0) {
+            $backData = array(
+                "code"  =>204,
+                "msg"   =>"代理合同已被中止,请联系平台客服",
+                "info"  =>$agentInfo
+            );
+            $this->ajaxReturn($backData); 
+        }
+        if(strtotime($agentInfo['contract_end']) < time()) {
+            $backData = array(
+                "code"  =>205,
+                "msg"   =>"代理合同已到期,请联系平台客服",
+                "info"  =>$agentInfo
+            );
+            $this->ajaxReturn($backData); 
+        }
 
 
         // insert or update session token

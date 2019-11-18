@@ -1,7 +1,7 @@
 <template>
   <div>
     <Form
-      ref="articleForm"
+      ref="customerForm"
       :model="formInfo"
       :label-width="120"
       :rules="ruleForm"
@@ -10,7 +10,7 @@
       <div class="bar">
         <span class="caption">基本信息</span>
       </div>
-      <FormItem label="单位名称:" prop="title">
+      <FormItem label="客户名称:" prop="title">
         <Row>
           <Col span="14">
             <Input v-model.trim="formInfo.title" placeholder="请输入单位名称" />
@@ -84,7 +84,7 @@
             <Button
               type="primary"
               size="large"
-              @click="handleSubmit('articleForm')"
+              @click="handleSubmit('customerForm')"
               :loading="submitIng"
               long
             >提交</Button>

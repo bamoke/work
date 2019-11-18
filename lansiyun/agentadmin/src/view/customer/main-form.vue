@@ -10,10 +10,22 @@
       <div class="bar">
         <span class="caption">基本信息</span>
       </div>
-      <FormItem label="单位名称:" prop="title">
+      <FormItem label="客户名称:" prop="title">
         <Row>
           <Col span="14">
-            <Input v-model.trim="formInfo.title" placeholder="请输入单位名称" />
+            <Input v-model.trim="formInfo.title" placeholder="请输入单位名称或姓名" />
+          </Col>
+        </Row>
+      </FormItem>
+      <FormItem label="客户类型:" prop="type">
+        <Row>
+          <Col span="6">
+            <Select v-model="formInfo.type">
+              <Option value="" >请选择</Option>
+              <Option value="1">财务机构</Option>
+              <Option value="2">集团企业</Option>
+              <Option value="3" >个人代理</Option>
+            </Select>
           </Col>
         </Row>
       </FormItem>
@@ -133,7 +145,8 @@ export default {
     return {
       submitIng: false,
       ruleForm: {
-        title: [{ required: true, message: "请输入企业名称" }],
+        title: [{ required: true, message: "请输入客户名称" }],
+        type: [{ required: true, message: "请选择客户类型" }],
         contract_start: [{ required: true, message: "请选择业务开始日期" }],
         contract_end: [{ required: true, message: "请选择业务截至日期" }],
         contact: [{ required: true, message: "请填写联系人" }],

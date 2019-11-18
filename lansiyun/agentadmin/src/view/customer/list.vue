@@ -38,12 +38,24 @@ export default {
   data() {
     return {
       columns: [
-        { title: "企业名称", key: "title", width: 400 },
+        { title: "客户名称", key: "title", width: 300 },
+        { title: "客户类型", key: "type_txt", width: 100 },
         { title: "所在城市", key: "city", width: 120 },
+        {
+          title: "合同状态",
+          width: 100,
+          render: (h, params) => {
+            var statusText = params.row.status == 1 ? "正常" : "中止";
+            var statusStyle =
+              params.row.status == 1 ? "s-text-success" : "s-text-error";
+            return h("span", { class: statusStyle }, statusText);
+          }
+        },
         { title: "到期日期", key: "contract_end", width: 150, sortable: true },
         {
           title: "操作",
           render: (h, params) => {
+            var statusBtnTxt = params.row.status == 0 ? "激活合同" : "中止合同";
             return h("div", [
               h(
                 "Button",
@@ -67,6 +79,19 @@ export default {
                   props: {
                     type: "primary",
                     size: "small",
+                    ghost: true
+                  },
+                  style: { marginLeft: "10px" },
+                  on: { click: () => this.handleChangeStatus(params) }
+                },
+                statusBtnTxt
+              ),
+              h(
+                "Button",
+                {
+                  props: {
+                    type: "primary",
+                    size: "small",
                     ghost: true,
                     to: {
                       name: "customer_account",
@@ -77,7 +102,6 @@ export default {
                 },
                 "账号管理"
               )
-
             ]);
           }
         }
@@ -100,7 +124,24 @@ export default {
     handleAdd() {
       this.$router.push("add");
     },
-
+    handleChangeStatus(params) {
+      const index = params.index;
+      const id = params.row.id;
+      var newRow = Object.assign({}, params.row);
+      var newStatus = newRow.status == 1 ? 0 : 1;
+      const apiUrl = "Customer/changestatus";
+      axios
+        .request({
+          url: apiUrl,
+          params: { id, status: newStatus },
+          method: "get"
+        })
+        .then(res => {
+          newRow.status = newStatus;
+          this.$Message.success("操作成功");
+          this.$set(this.tableData, index, newRow);
+        });
+    },
     _finishedFetchData(res) {
       var queryData = this.$route.query;
       this.tableData = res.data.list;

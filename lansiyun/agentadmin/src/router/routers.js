@@ -91,7 +91,7 @@ export default [
     name: 'price_manage',
     component: Main,
     meta: {
-      title: '价格管理',
+      title: '平台价格',
       icon: 'android-contacts'
     },
     children: [

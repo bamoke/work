@@ -9,6 +9,11 @@ namespace Agent\Controller;
 use Agent\Common\Auth;
 class CustomerController extends Auth {
   public function vlist(){
+    $typeTxtArr = array(
+      "1" =>'财务机构',
+      "2" =>'集团企业',
+      "3" =>'个人代理'
+    );
     $mainModel = M("OrgInfo");
     $adminInfo = $this->userInfo;
     $pageSize = 15;
@@ -28,6 +33,11 @@ class CustomerController extends Auth {
     ->fetchSql(false)
     ->select();
     $total = $mainModel->alias("INFO")->where($where)->count();
+    if($total) {
+      foreach($list as $key=>$val) {
+        $list[$key]['type_txt'] = $typeTxtArr[$val['type']];
+      }
+    }
     $pageInfo = array(
       "page"  =>$page,
       "total" =>intval($total),
@@ -144,7 +154,38 @@ class CustomerController extends Auth {
     $this->ajaxReturn($backData);
   }
 
-
+ /**
+   * 修改状态
+   */
+  public function changestatus(){
+    if(empty($_GET['id'])){
+      $backData = array(
+        'code'      => 10001,
+        "msg"       => "非法请求"
+      );  
+      return $this->ajaxReturn($backData);  
+    }
+    $id= I("get.id");
+    $newStatus = I("get.status");
+    $updateData = array(
+      "status"  =>$newStatus,
+      "update_by" =>$this->userInfo["username"],
+      "update_time" => date("y-m-d H:i:s",time())
+    );
+    $updateResult = M("OrgInfo")->where("id=$id")->save($updateData);
+    if($updateResult !== false){
+      $backData = array(
+        'code'      => 200,
+        "msg"       => "success"
+      );    
+    }else {
+      $backData = array(
+        'code'      => 13002,
+        "msg"       => "系统错误"
+      );  
+    }
+    $this->ajaxReturn($backData);  
+  }
 
 
 

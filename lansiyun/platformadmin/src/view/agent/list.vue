@@ -41,12 +41,21 @@ export default {
         { title: "名称", key: "name" },
         { title: "类别", key: "level_name", width: 120 },
         { title: "代理区域", key: "agent_area", width: 120 },
-        { title: "状态", key: "status", width: 80 },
+        {
+          title: "合同状态",
+          width: 100,
+          render: (h, params) => {
+            var statusText = params.row.status == 1 ? "正常" : "中止";
+            var statusStyle = params.row.status == 1 ? "s-text-success" : "s-text-error";
+            return h("span", { class: statusStyle }, statusText);
+          }
+        },
         { title: "到期日期", key: "contract_end", width: 150, sortable: true },
         {
           title: "操作",
           width: 300,
           render: (h, params) => {
+            var statusBtnTxt = params.row.status == 0 ? "激活合同" : "中止合同";
             return h("div", [
               h(
                 "Button",
@@ -88,6 +97,19 @@ export default {
                   style: { marginLeft: "10px" }
                 },
                 "配置信息"
+              ),
+              h(
+                "Button",
+                {
+                  props: {
+                    type: "primary",
+                    size: "small",
+                    ghost: true
+                  },
+                  style: { marginLeft: "10px" },
+                  on: { click: () => this.handleChangeStatus(params) }
+                },
+                statusBtnTxt
               )
             ]);
           }
@@ -115,19 +137,23 @@ export default {
       const id = params.row.id;
       this.$router.push({ name: "agent_edit", params: { id } });
     },
-    handleDelete(params) {
+
+    handleChangeStatus(params) {
       const index = params.index;
       const id = params.row.id;
-      const apiUrl = "Agent/deleteone";
+      var newRow = Object.assign({}, params.row);
+      var newStatus = newRow.status == 1 ? 0 : 1;
+      const apiUrl = "Agent/changestatus";
       axios
         .request({
           url: apiUrl,
-          params: { id },
+          params: { id, status: newStatus },
           method: "get"
         })
         .then(res => {
-          this.$Message.success("删除成功");
-          this.tableData.splice(index, 1);
+          newRow.status = newStatus;
+          this.$Message.success("操作成功");
+          this.$set(this.tableData, index, newRow);
         });
     },
 

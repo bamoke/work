@@ -1,34 +1,19 @@
 <template>
-  <Card title="产品价格管理">
+  <Card title="产品价格">
     <div class="row">
       <div class="item" v-for="(item, index) of list" :key="index">
         <div class="name">{{item.title}}</div>
         <div class="desc s-text-light">{{item.description}}</div>
         <div class="price">
-          进货价(年)：
-          <span class="old-price">{{item.old_price}}</span>
+          价格：
+          <span class="sell-price">{{item.price}}</span>
         </div>
         <div class="price">
-          销售价(年)：
-          <span class="sell-price" v-if="item.new_price">{{item.new_price}}</span>
-          <span class="s-text-light" v-else>未设置</span>
-        </div>
-        <div class="btn-box">
-          <Button type="info" long @click="handleSetPrice(index)">设置价格</Button>
+          销售数量：
+          <span class="s-text-light">0</span>
         </div>
       </div>
     </div>
-    <Modal v-model="showModal" :title="editForm.title">
-      <CellGroup>
-        <Cell title="进货价" :extra="editForm.old_price"></Cell>
-        <Cell title="销售价">
-          <Input type="number" v-model="editForm.new_price" slot="extra" />
-        </Cell>
-      </CellGroup>
-      <div slot="footer">
-        <Button type="info" long :loading="submitting" @click="doSave">确认</Button>
-      </div>
-    </Modal>
   </Card>
 </template>
 <script>
@@ -46,33 +31,38 @@ export default {
   methods: {
     handleSetPrice(index) {
       var curItem = Object.assign({}, this.list[index]);
-      this.editIndex = index
+      this.editIndex = index;
       this.editForm = curItem;
       this.showModal = true;
       // console.log(this.editForm)
     },
     doSave() {
-      const newPrice = this.editForm.new_price
-      if(!newPrice) {
-        this.$Message.error("请输入销售价格")
-        return
+      const newPrice = this.editForm.new_price;
+      if (!newPrice) {
+        this.$Message.error("请输入销售价格");
+        return;
       }
-      this.submitting = true
-      axios.request({
-        url: 'Price/dosave',
-        data: {actype:1,...this.editForm},
-        method: 'post'
-      }).then(res=>{
-        this.submitting = false
-        this.showModal = false
-        if(res.data.priceid) {
-          this.editForm.price_id = res.data.priceid
-        }
-        this.$set(this.list,this.editIndex,this.editForm)
-      },reject=>{
-        this.submitting = false
-        this.showModal = false
-      })
+      this.submitting = true;
+      axios
+        .request({
+          url: "Price/dosave",
+          data: { actype: 1, ...this.editForm },
+          method: "post"
+        })
+        .then(
+          res => {
+            this.submitting = false;
+            this.showModal = false;
+            if (res.data.priceid) {
+              this.editForm.price_id = res.data.priceid;
+            }
+            this.$set(this.list, this.editIndex, this.editForm);
+          },
+          reject => {
+            this.submitting = false;
+            this.showModal = false;
+          }
+        );
     }
   },
   mounted() {

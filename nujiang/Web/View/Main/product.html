@@ -1,0 +1,31 @@
+<div class="sub-banner" style="background-image:url({$Think.UPLOAD}/images/{$outData.banner})"></div>
+<div class="content-wrap k1120">
+    <div class="sub-nav">
+        <foreach name="outData['cate']" item="vo">
+            <a class="<php>if($vo['id'] == $_GET['pid']) echo 'cur';</php>" href="{:U('index',array('pid'=>$vo['id']))}">{$vo['title']}</a>
+        </foreach>
+    </div>
+    <div class="pro-list-wrap">
+        <empty name="outData['proList']">
+            <else/>
+            <table width="100%" class="pro-list" cellspacing="0" cellpadding="0" border="0">
+                <foreach name="outData['proList']" item="list">
+                <tr>
+                    <td width="300"><a href="{:U('detail',array('id'=>$list['id']))}" class="name" target="_blank">{$list['name']}</a> </td>
+                    <td width="200">预期收益：<span class="sy"><i>{$list['ratio']}</i>%</span> </td>
+                    <td class="">封闭期限：{$list['close_limit']}天</td>
+                    <!--<td class="">截至日期：2017-07-06</td>-->
+                    <td class="">起投金额：￥{$list['start_amount']}</td>
+                    <td width="200"><a class="btn" href="{:U('detail',array('id'=>$list['id']))}" target="_blank">立即抢购</a> </td>
+                </tr>
+                </foreach>
+            </table>
+        </empty>
+
+
+<!--        <div class="m-paging">
+            <a href="#">首页</a>
+            <span class="cur">1</span><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">下一页</a><a href="#">尾页</a>
+        </div>-->
+    </div>
+</div>

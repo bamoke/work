@@ -1,0 +1,153 @@
+<div class="g-detail-page-wrap">
+    <div id="pro-detail" class="k1120">
+        <div class="top-info page-part-wrap clearfix">
+            <assign name="pro" value="$outData['proInfo']"/>
+            <empty name="pro['thumb']">
+                <img src="{$Think.UPLOAD}/thumb/default.jpg?v=2" class="thumbnail">
+                <else/>
+                <img src="{$Think.UPLOAD}/thumb/{$pro['thumb']}?v=1" class="thumbnail">
+            </empty>
+
+            <div class="fund-basic">
+                <div><span class="fund-title">{$pro['name']}</span></div>
+                <form id="order-form" action="{:U('Orders/create_order')}">
+                    <input type="hidden" name="pro_id" value="{$Think.get.id}">
+                    <input type="hidden" name="pro_name" value="{$pro['name']}">
+                <ul class="basic-list">
+                    <li>
+                        <span class="label label-b">预期年化收益率</span>
+                        <div class="value">
+                            <span class="u-ratio"><i>{$pro['ratio']}</i>%</span>
+                        </div>
+                        <strong class="hide coupon-tips" id="large_amount_tips"></strong>
+                    </li>
+                    <li class="single">
+                        <span class="label">封闭期</span>
+                        <div class="value">
+                            <span class="js-data-duration">{$pro['close_limit']}天</span>
+                        </div>
+                    </li>
+                    <li class="single">
+                        <span class="label">起购金额</span>
+                        <div class="value">
+                            <span class="js-data-buy_lower_limit">{$pro['start_amount']}</span>元
+                        </div>
+                    </li>
+                    <li class="single border"><span class="label">赎回方式</span><div class="value">{$pro['sh_way']}</div> </li>
+                    <li class="single f-gray" id="coupon_tips" style="padding:0;"></li>
+                    <li class="single">
+                        <span class="label label-input">买入金额</span>
+                        <div class="value">
+                            <!-- 输入时给input添加"highlight-input" -->
+                            <input class="input-text" id="input_amount" maxlength="10" name="amount" type="text" placeholder="请输入购买金额"> 元
+                            <!-- 错误提示 -->
+                            <span class="form-error js-input-error" id="input_amount_error">&nbsp;</span>
+                        </div>
+                    </li>
+                </ul>
+                </form>
+
+                <input type="checkbox" id="agree">
+                我已阅读并同意<a href="javascript:" onclick="showTab('1')">《投资风险提示书》</a>、<a href="javascript:" onclick="showTab('2')">《资产委托投资协议书》</a>
+                <div class="buy-btn">
+                    <a class="btn btn-org" href="javascript:" id="buy_now">买入</a>
+                    <a class="btn btn-gray hide" id="buy_btn_invalid" href="javascript:">已过期</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="detail-tab">
+            <div class="tab-nav">
+                <a class="cur" href="javascript:">产品详情</a>
+                <a href="javascript:">《投资风险提示书》</a>
+                <a href="javascript:">《资产委托投资协议书》</a>
+            </div>
+
+            <!--content-->
+            <div class="tab-content">
+                <div class="content-item">
+                    {$pro['content']}
+                </div>
+                <div class="content-item" style="display: none">{$outData['fxxys']['content']}</div>
+                <div class="content-item" style="display: none">{$outData['tzglxy']['content']}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function showTab(index){
+        var nav = $('.tab-nav').find("a");
+        var content = $('.content-item');
+        var top = $('.detail-tab')[0].offsetTop;
+        var i=window.scrollY;
+        var scroller = function(){
+            i=i+20;
+            if(i >= top){
+                clearInterval(timer);
+            }
+            window.scrollTo(0,i)
+        };
+        var timer = setInterval(scroller,10);
+        nav.eq(index).addClass("cur").siblings().removeClass('cur');
+        content.eq(index).show().siblings().hide();
+
+
+
+    }
+    $(function(){
+
+
+        $('.tab-nav').find("a").click(function(){
+            var index = $(this).index();
+            var $content = $('.content-item');
+            $(this).addClass("cur").siblings().removeClass('cur');
+            $content.eq(index).show().siblings().hide();
+        })
+
+        /*****/
+        $("#buy_now").click(function(){
+            var $form = $("#order-form");
+            var data = $form.serialize();
+            var isAgree = $("#agree").prop("checked");
+            var is_loaded = true;
+            var pattern = /^\+?[1-9][0-9]*$/;
+            var start_amount_limit = parseInt($(".js-data-buy_lower_limit").text());
+            var buy_amount = $("#input_amount").val();
+            if(!isAgree){
+                alert("请查看并同意下面的风险提示书及投资管理协议");
+                return false;
+            }else {
+                if(!pattern.test(buy_amount)){
+                    alert("请输入正确的购买金额");
+                    return false;
+                }
+                if(start_amount_limit > buy_amount){
+                    alert("起投金额必须达到"+start_amount_limit +"元");
+                    return false;
+                }
+
+                if(is_loaded){
+                    is_loaded = false;
+                    $.ajax({
+                        url:$form.prop('action'),
+                        data:data,
+                        type:'post',
+                        dataType:"json",
+                        success:function(res){
+                           if(!res.status){
+                               alert(res.msg);
+                           }else {
+                               window.location.href = res.jump;
+                           }
+                        },
+                        complete:function(){
+                            is_loaded = true;
+                        }
+                    })
+                }
+            }
+
+        })
+    })
+</script>

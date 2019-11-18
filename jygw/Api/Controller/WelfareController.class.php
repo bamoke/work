@@ -16,7 +16,7 @@ class WelfareController extends BaseController {
       "status"  =>1
     );
     $orderType = I("get.type/d",1);
-    $thumbBase = "http://www.bamoke.com/jygw/Uploads/images/thumb/";
+    $thumbBase = C("OSS_BASE_URL")."/thumb/";
     if(!empty($_GET["lat"])) {
       $fieldInfo = "*,concat('$thumbBase',thumb) as thumb,(st_distance (point (longitude, latitude),point($customLng,$customLat) ) *111195) AS distance";
     }else {

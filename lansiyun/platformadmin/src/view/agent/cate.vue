@@ -16,9 +16,18 @@
             <Input v-model="cateDetail.name" placeholder="请输入类别名称" />
           </FormItem>
           <FormItem label="价格:" prop="amount">
-            <Input v-model="cateDetail.amount" :number="true" :maxlength="9" placeholder="请输入代理价格" style="width:200px">
-            <span slot="append">/年</span>
+            <Input
+              v-model="cateDetail.amount"
+              :number="true"
+              :maxlength="9"
+              placeholder="请输入代理价格"
+              style="width:200px"
+            >
+              <span slot="append">/年</span>
             </Input>
+          </FormItem>
+          <FormItem label="提成比列:" prop="ratio">
+            <InputNumber :max="100" :min="0" v-model="cateDetail.ratio"></InputNumber>
           </FormItem>
           <FormItem label="描述:" prop="description">
             <Input v-model="cateDetail.description" type="textarea" :rows="4" placeholder="请输入描述" />
@@ -57,6 +66,7 @@ export default {
       columns: [
         { title: "类别名称", key: "name", width: 250 },
         { title: "代理价格", key: "amount", width: 250 },
+        { title: "提成比列", key: "ratio", width: 100 },
         { title: "排序", key: "sort", width: 150 },
         { title: "状态", key: "status", width: 100 },
         { title: "操作", key: "handle", button: ["edit", "delete"] }
@@ -72,7 +82,8 @@ export default {
         amount: [
           { required: true, message: "请填写代理价格" }
           // { type: "number", message: "价格必须是数字",trigger:"blur" }
-        ]
+        ],
+        ratio: [{ required: true, message: "请输入提成比列" }],
       }
     };
   },
@@ -85,8 +96,9 @@ export default {
     handleEdit(params) {
       this.acType = "edit";
       this.editRowIndex = params.index;
-      this.cateDetail = Object.assign({},params.row);
+      this.cateDetail = Object.assign({}, params.row);
       this.cateDetail.sort = parseInt(this.cateDetail.sort);
+      this.cateDetail.ratio = parseInt(this.cateDetail.ratio);
       this.showModal = true;
     },
     handleDelete(params) {
@@ -103,8 +115,7 @@ export default {
         });
     },
     formSubmit() {
-      this.$refs["cateForm"].validate(valid=> {
-
+      this.$refs["cateForm"].validate(valid => {
         if (valid) {
           axios
             .request({
@@ -116,7 +127,7 @@ export default {
               if (this.acType === "add") {
                 this.tableData.push(res.data.info);
               } else {
-                this.$set(this.tableData,this.editRowIndex,res.data.info)
+                this.$set(this.tableData, this.editRowIndex, res.data.info);
                 // this.tableData[this.editRowIndex] = res.data.info;
               }
               this.showModal = false;

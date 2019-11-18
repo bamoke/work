@@ -40,18 +40,14 @@ class CustomerConfigController extends Auth {
 
   /**产品列表 */
   public function product(){
-    $orgId = $this->userInfo['org_id'];
-    $agentId = M("OrgInfo")->where("id=$orgId")->getField("agent_id");
+
     $condition = array(
-      "A.type"  =>1,
-      "A.agent_id"  =>$agentId
+      "status"  =>1
     );
-    $productList = M("AgentPrice")
-    ->field("P.title,P.bill_num,P.account_num,A.id,A.price")
-    ->alias("A")
-    ->join("__PLATFORM_PRODUCT__ P on P.id = A.object_id")
+    $productList = M("PlatformProduct")
+    ->field("title,bill_num,account_num,id,price")
     ->where($condition)
-    ->order("A.price,A.id")
+    ->order("price,id")
     ->select();
     $backData = array(
       'code'      => 200,
@@ -160,12 +156,10 @@ class CustomerConfigController extends Auth {
     $agentId = M("OrgInfo")->where("id=$orgId")->getField("agent_id");
 
     // 计算费用金额(先转分)
-    $AgentProductCondition = array(
-      "object_id"   =>$requestData["product"],
-      "type"        =>1,
-      "agent_id"    =>$agentId
+    $productCondition = array(
+      "id"   =>$requestData["product"]
     );
-    $productPrice = M("AgentPrice")->where($AgentProductCondition)->getField("price");
+    $productPrice = M("PlatformProduct")->where($productCondition)->getField("price");
     $accountPrice = $this->accountPrice;
     $billPrice = $this->billPrice;
     $totalAmount = ($productPrice*100 + intval($requestData["account_num"]) * $accountPrice*100 + intval($requestData["bill_num"]) * $billPrice*100) * $year;
@@ -216,8 +210,7 @@ class CustomerConfigController extends Auth {
     // 平台产品购买数更新
     $updateProduct = M("PlatformProduct")->where(array("id"=>$requestData["product"]))->setInc("buy_num",1);
 
-    // 更新代理商产品购买数
-    $updateAgentProduct = M("AgentPrice")->where($AgentProductCondition)->setInc("buy_num",1);
+
 
     // Insert 配置信息
     $insertId = $mainModel->fetchSql(false)->add();
@@ -225,7 +218,7 @@ class CustomerConfigController extends Auth {
     // Insert Log
     $insertLog = $this->_capital_log();
 
-    if($insertId && $updateCompany && $updateProduct && $updateAgentProduct && $insertLog){
+    if($insertId && $updateCompany && $updateProduct &&  $insertLog){
       M()->commit();
       $backData = array(
         'code'      => 200,
@@ -680,13 +673,23 @@ class CustomerConfigController extends Auth {
    * 代理商收入记录
    * 平台收入记录
    */
-  protected function _capital_log(){
+  protected function _capital_log($billType){
     return true;
     // 订单
     $billData = array(
-      
+      "agent_id"  =>$agentId,
+      "org_id"    =>$orgId,
+      "bill_no"   =>$billNo,
+      "trade_no"  =>$tradeNo,
+      "channel_type"  =>$channelType,
+      "type"      =>$billType,
+      "goods_id"   =>$goodsId,
+      "amount"      =>$amount,
+      "create_time" =>time(),
+      "create_by"   =>$createBy,
+      "description" =>$description
     );
-    $insertBill = M("OrgBill")->add();
+    $insertBill = M("PlatformBill")->data($billData)->add();
 
     // 服务商支出记录
     $insertOrgLog = M("OrgCapitalLog")->add();

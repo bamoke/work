@@ -17,7 +17,7 @@ class AgentController extends Auth {
       $where['AI.name'] = array("like","%".$_GET["keywords"]."%");
     }
     $list = $mainModel
-    ->field("AI.*,AL.name as level_name")
+    ->field("AI.*,IF(AI.status=1,'正常','中止') as agent_status,AL.name as level_name")
     ->alias("AI")
     ->join("__AGENT_LEVEL__ as AL on AI.level=AL.id")
     ->where($where)
@@ -145,7 +145,7 @@ class AgentController extends Auth {
       return $this->ajaxReturn($backData);  
     }
     $id= I("get.id");
-    $result = M("Article")->fetchSql(false)->delete($id);
+/*     $result = M("Article")->fetchSql(false)->delete($id);
     if($result !== false){
       $backData = array(
         'code'      => 200,
@@ -157,9 +157,39 @@ class AgentController extends Auth {
         "msg"       => "删除失败"
       );  
     }
-    $this->ajaxReturn($backData);   
+    $this->ajaxReturn($backData);   */ 
   }
 
+  /**
+   * 修改状态
+   */
+  public function changestatus(){
+    if(empty($_GET['id'])){
+      $backData = array(
+        'code'      => 10001,
+        "msg"       => "非法请求"
+      );  
+      return $this->ajaxReturn($backData);  
+    }
+    $id= I("get.id");
+    $newStatus = I("get.status");
+    $updateData = array(
+      "status"  =>$newStatus
+    );
+    $updateResult = M("AgentInfo")->where("id=$id")->save($updateData);
+    if($updateResult !== false){
+      $backData = array(
+        'code'      => 200,
+        "msg"       => "success"
+      );    
+    }else {
+      $backData = array(
+        'code'      => 13002,
+        "msg"       => "系统错误"
+      );  
+    }
+    $this->ajaxReturn($backData);  
+  }
 
 
 

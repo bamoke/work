@@ -5,14 +5,14 @@
     <div class="page-part-wrap">
       <h1 class="job-title">{$jobInfo['title']}</h1>
       <div class="company">{$jobInfo['company']}</div>
-      <table class="job-other" width="100%">
-        <tr>
-          <td class="val">薪资待遇：{$jobInfo['wage']}</td>
-          <td class="val">招聘人数：{$jobInfo['person_limit']}</td>
-          <td class="val">截至日期：{$jobInfo['end_date']}</td>
-          <td class="val">发布日期：{$jobInfo['create_time']}</td>
-        </tr>
-      </table>
+      <div class="job-other" >
+
+          <span class="val">薪资待遇：{$jobInfo['wage']}</span>
+          <span class="val">招聘人数：{$jobInfo['person_limit']}</span>
+          <span class="val">截至日期：{$jobInfo['end_date']}</span>
+          <span class="val">发布日期：{$jobInfo['create_time']}</span>
+
+      </div>
       <div class="bar" style="margin-top:20px;padding:10px;line-height:1;background:#eee;font-weight: bold;">岗位介绍
       </div>
       <div class="job-content" style="padding:10px;">

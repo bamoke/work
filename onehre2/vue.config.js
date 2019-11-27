@@ -1,13 +1,13 @@
 const path = require('path')
-const fs = require('fs')
+// const fs = require('fs')
 
 const resolve = dir => {
   return path.join(__dirname, dir)
 }
 
-const env = process.env.NODE_ENV || 'development'
+/* const env = process.env.NODE_ENV || 'development'
 fs.writeFileSync(path.join(__dirname, './config/env.js'), `export default '${env}'
-`)
+`) */
 
 // 项目部署基础
 // 默认情况下，我们假设你的应用将被部署在域的根目录下,
@@ -16,7 +16,7 @@ fs.writeFileSync(path.join(__dirname, './config/env.js'), `export default '${env
 // 如果您的应用程序部署在子路径中，则需要在这指定子路径
 // 例如：https://www.foobar.com/my-app/
 // 需要将它改为'/my-app/'
-const BASE_URL = env ==='development' ? '/' : '/sysadmin/'
+const BASE_URL = process.env.NODE_ENV === 'development' ? '/' : '/sysadmin/'
 
 module.exports = {
   // Project deployment base
@@ -26,7 +26,7 @@ module.exports = {
   // sub-path here. For example, if your app is deployed at
   // https://www.foobar.com/my-app/
   // then change this to '/my-app/'
-  publicPath: BASE_URL,
+  baseUrl: BASE_URL,
   // tweak internal webpack configuration.
   // see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
   chainWebpack: config => {

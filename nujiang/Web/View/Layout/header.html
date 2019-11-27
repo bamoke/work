@@ -1,4 +1,6 @@
 <div id="header">
+    <div class="web-title">{$pageName}</div>
+    <div class="menu-btn" id="js-menu-btn"></div>
     <div class="k1120 clearfix">
         <div id="menu">
             <ul class="clearfix">
@@ -9,10 +11,11 @@
                 <li><a href="{:U('News/index',array('cid'=>10))}" class="nav_news <php>if($curPage == 'news' && $_GET['cid'] == 10) echo 'current'</php>"><span>办事指南</span></a></li>
                 <li><a href="{:U('Single/index',array('id'=>1))}" class="nav_save <php>if($curPage == 'single' && $_GET['id'] == 1) echo 'current'</php>"><span>怒江风情</span></a></li>
                 <li><a href="{:U('Single/index',array('id'=>11))}" class="nav_save <php>if($curPage == 'single' && $_GET['id'] == 11) echo 'current'</php>"><span>珠海概况</span></a></li>
-                <li><a href="{:U('Index/about')}" class="nav_save <php>if($curPage == 'about') echo 'current'</php>"><span>关于我们</span></a></li>
+                <li><a href="{:U('Index/about')}" class="nav_save <php>if($curPage == 'about') echo 'current'</php>"><span>机构简介</span></a></li>
                 <li><a href="{:U('Index/contact')}" class="nav_save <php>if($curPage == 'contact') echo 'current'</php>"><span>联系我们</span></a></li>
 
             </ul>
         </div>
     </div>
 </div>
+<div class="nav-masker" id="js-nav-masker"></div>

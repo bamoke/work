@@ -561,7 +561,12 @@ button {cursor:pointer;}
     overflow: hidden;
     color: #fff;
 }
-
+.web-title {
+    display: none;
+}
+.menu-btn {
+    display: none;
+}
 .view-tenth {
     position: relative;
     overflow: hidden;
@@ -781,11 +786,9 @@ button {cursor:pointer;}
 }
 
 .newsList h4 {
-    overflow: hidden;
     padding-bottom: 10px;
     border-bottom: 1px solid #eee;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+
 }
 
 .newsList h4 a {
@@ -798,6 +801,9 @@ button {cursor:pointer;}
     -o-transition: all .2s linear;
     transition: all .2s linear;
     -ms-transition: all .2s linear;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .newsList h4 a:hover {
@@ -1362,6 +1368,428 @@ button {cursor:pointer;}
     max-width: 100%;
 }
 
+
+
+#index-about {
+    background:#3a608d url(../images/index-about-bg.jpg) no-repeat center;
+    background-size:cover;
+    color:#fff;
+}
+
+#index-about .title {
+    color: #fff;
+}
+#index-about .title span:before {background:#fff;opacity: .6;}
+#index-about .title span::after {
+    border-color:#3a608d;
+    background:#fff;
+}
+#index-about .infoText {color:#fff;opacity: .6;}
+
+
+#index-news {
+    background:#eee;
+}
+#index-news .title span::after {
+    border-color:#eee;
+}
+.m-contact ul {padding:60px 0 10px;}
+.m-contact li {float:left;width:20%;text-align:center;}
+.m-contact a {color:#fff;}
+.m-contact p {padding-top:10px;font-size:14px;color:#fff!important;}
+
+.g-main-page {
+    min-height:600px;
+}
+
+
+.banner {
+    display: block;
+    width: 100%;
+    height:560px;
+    background-image:url("../images/index-banner.jpg");
+    background-position: bottom center;
+    background-repeat: no-repeat;
+}
+
+.index-album-list {
+    margin-top:60px;
+    margin-right:-50px;
+}
+.index-album-list li {
+    float: left;
+    margin-right:50px;
+    width:340px;
+    overflow: hidden;
+}
+.index-album-list li img {max-width: 100%;transition: all .2s;cursor: pointer;}
+.index-album-list li img:hover {
+    transform: scale(1.2)
+}
+
+#index-about .vidoe-box {
+    float: left;
+    width:340px;
+    margin-right:50px;
+}
+#index-about .vidoe-item {
+    display: block;
+    position: relative;
+    width:100%;
+    height: 200px;
+    background:#000;
+}
+#index-about .vidoe-item img {
+    max-width: 100%;
+    transition: all .2s ease-in-out 0;
+}
+#index-about .vidoe-item:hover {
+    cursor: pointer;
+}
+#index-about .vidoe-item:hover img {
+    opacity: .7;
+}
+#index-about .vidoe-item .play-btn {
+    position: absolute;
+    left:50%;
+    top:50%;
+    z-index: 1;
+    margin-top:-24px;
+    margin-left: -24px;
+    display: block;
+    width:48px;
+    height:48px;
+    background: url(../images/play.png) no-repeat center;
+    background-size: contain;
+    transition: all .2s ease-in-out 0;
+
+}
+#index-about .txt-box {
+    font-size: 16px;
+    line-height: 1.5;
+}
+.index-jobs-list .item {
+    padding:12px;
+    border-bottom:1px solid #eee;
+    font-size:16px;
+}
+.index-jobs-list .item a,.index-jobs-list .item span {
+    display: inline-block;
+}
+.index-jobs-list .item .jobname,.index-jobs-list .item .company {
+    width: 30%;
+}
+.index-jobs-list .item .jobname {
+    color:#0066cc;
+}
+.index-jobs-list .item .jobname:hover {
+    text-decoration: underline;
+}
+.index-jobs-list .item .other-info {
+    width:10%;
+}
+.index-jobs-list .item .date {
+    width:15%;
+}
+
+/****/
+.content-wrap {padding:40px 0;}
+.sub-nav {border-bottom:2px solid #ddd;text-align: center;}
+.sub-nav a {display: inline-block;margin-right:2px;padding:0 50px;height:40px;line-height:40px;background-color:#e8e8e8;color:#222;font-size:20px;}
+.sub-nav a.cur {color:#00a2d4;background-color:#d6eef6;}
+.sub-banner {width:100%;height:120px;background-color:#06c;background-position: center;background-repeat: no-repeat;}
+.sub-banner img {max-width:100%;}
+
+.m-paging {margin:40px 0;text-align: center;}
+.m-paging a,.m-paging span {display: inline-block;margin-right:10px;padding:0 18px;height:40px;line-height:40px;font-size:16px;}
+.m-paging a {border:1px solid #ddd;}
+.m-paging a:hover {border-color:#00a2d4;color:#00a2d4;}
+.m-paging .current {border:1px solid #00a2d4;color:#fff;background-color:#00a2d4;}
+
+
+.jobs-list .item {
+    padding:24px 0;
+    border-bottom:1px solid #eee;
+}
+.jobs-list .item .jobname {
+    display: block;
+    padding-bottom:12px;
+    font-size:1.2em;
+    font-weight: bold;
+}
+.jobs-list .item .content {
+    padding:12px;
+    font-size:.8em;
+    background:#f1f1f1;
+}
+.jobs-list .item-row {
+    padding-bottom:8px;
+}
+
+.m-news-list li {padding:16px 0;border-bottom:1px solid #ddd;}
+.m-news-list li:after {content:"";clear:both;display:block;visibility:hidden;}
+.m-news-list .title {font-size:18px;}
+.m-news-list .time {float:left;padding:0 10px;width:60px;height:80px;border:1px solid #ddd;text-align:center;}
+.m-news-list .time span {display: block;}
+.m-news-list .time .days {height:44px;line-height:44px;border-bottom:1px solid #ddd;font-size:22px;font-weight:bold;}
+.m-news-list .time .y-m {line-height:34px;font-size:16px;color:#9c9c9c;}
+.m-news-list .right-info {margin-left:140px;}
+.m-news-list .n-title {margin-bottom:14px;font-size:18px;font-weight: 400;color:#222;}
+
+/***详细页面***/
+.g-detail-page-wrap {
+    padding-bottom:40px;
+    background-color:#f6f6f6;
+    border:1px solid transparent;
+}
+.g-detail-page-wrap .page-part-wrap {
+    margin-top:20px;
+    border:1px solid #f0f0f0;
+    background-color:#fff;
+}
+
+/***产品详情**/
+#pro-detail .top-info {padding:30px;}
+#pro-detail .top-info .thumbnail {
+    float:left;
+    width:460px;
+    height:345px;
+}
+#pro-detail .fund-basic {float:right;width:520px;}
+#pro-detail .fund-basic .fund-title {
+    font-size: 28px;
+    font-weight: normal;
+    color: #404040;
+    display: inline-block;
+    vertical-align: middle;
+}
+#pro-detail .fund-basic .basic-list {padding-top:20px;}
+#pro-detail .fund-basic .basic-list li {
+    padding: 5px 0;
+    line-height: 32px;
+    font-size: 16px;
+    zoom: 1;
+}
+#pro-detail .fund-basic .basic-list li:after {
+    content:"";
+    display:block;
+    clear:both;
+    visibility:hidden;
+}
+#pro-detail .fund-basic .basic-list li .label{
+    float: left;
+    margin-right:10px;
+    color: #a0a0a0;
+    min-width: 84px;
+}
+#pro-detail .fund-basic .basic-list li.border {
+    margin-bottom: 8px;
+    padding-bottom: 10px;
+    border-bottom:1px solid #e0e0e0;
+}
+#pro-detail .fund-basic .u-ratio {font-size:28px;}
+.u-ratio {color:#ff6417;}
+#pro-detail .fund-basic .u-ratio i {font-style:normal;}
+#pro-detail .fund-basic .input-text {
+    margin-right:5px;
+    width:140px;
+    padding: 0 8px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #e5e5e5;
+    color:#333;
+    font-size:16px;
+}
+#pro-detail .fund-basic .buy-btn {padding-top:20px;}
+#pro-detail .fund-basic .btn{
+    display: inline-block;
+    min-width: 280px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 2px;
+    font-size: 26px;
+    color: #fff;
+    text-align: center;
+}
+#pro-detail .fund-basic .btn.btn-org {background-color:#ff6417;}
+#pro-detail .fund-basic .btn.btn-gray {background-color:#999;}
+#pro-detail .fund-basic .hide {display: none;}
+#pro-detail .detail-tab {margin-top:30px;border:1px solid #f0f0f0;background-color:#fff;}
+#pro-detail .detail-tab .tab-nav {height:58px;background-color:#efefef;}
+#pro-detail .detail-tab .tab-nav a{
+    float:left;
+    display: inline-block;
+    margin: 14px 0;
+    padding: 0 35px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    color: #404040;
+    border-right: 1px solid #e5e5e5;
+    vertical-align: top;
+}
+#pro-detail .detail-tab .tab-nav .cur{
+
+    margin:0 0 0 -1px;
+    height:55px;
+    line-height:55px;
+    color: #0063ce;
+    background-color:#fff;
+    border-top:3px solid #0063ce;
+    border-left:1px solid #e5e5e5;
+}
+#pro-detail .detail-tab .tab-content {padding:50px 20px;}
+
+/***news**/
+#news-detail .page-part-wrap {
+    padding:50px 120px;
+}
+#news-detail .news-title {color:#202020;font-size:28px;text-align:center;line-height: 1.5;}
+#news-detail .other-info {padding:20px  0 10px;text-align:center;color:#999;border-bottom:1px solid #e0e0e0;}
+#news-detail .other-info span {margin-right:24px;}
+#news-detail .content-wrap {min-height:400px;}
+
+/**/
+.job-table {
+    padding:24px 0;
+    min-height: 540px;
+}
+.job-table span{
+    display: inline-block;
+    padding:10px;
+    box-sizing: border-box;
+    /* border-bottom:1px solid #eee; */
+}
+
+.job-table .list:nth-child(2n) {
+    background:#f1f1f1;
+}
+.job-table .th span {
+    font-weight: bold;
+}
+.job-table .jobname {
+    width:18%;
+}
+.job-table .jobname a {
+    color:#06c;
+}
+.job-table .comname {
+    width:28%;
+}
+.job-table .other {
+    width:10%;
+}
+
+#job-detail .page-part-wrap {
+    padding:40px;
+}
+#job-detail .job-title {
+    font-size: 22px;
+    color:#000;
+}
+#job-detail .company {
+    font-size:16px;
+    margin:10px 0;
+}
+#job-detail .val {display:inline-block;width:25%}
+
+.m-tab-nav {
+    border-bottom:1px solid #eee;
+    text-align: center;
+}
+.m-tab-nav a {
+    display: inline-block;
+    margin-right:40px;
+    margin-bottom:-1px;
+    font-size:16px;
+    border-bottom:1px solid #eee;
+}
+.m-tab-nav .current {
+    border-bottom-color:#06c;
+    color:#06c;
+}
+.m-tab-content {
+    padding:20px 0;
+}
+.m-tab-content .content-item {
+    display: none;
+    min-height: 300px;
+}
+
+.contact-wrap {
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+.contact-wrap .contact-info {
+    width:55%;
+}
+.contact-wrap .map-wrap {
+    -webkit-flex: 0 0 40%;
+    flex: 0 0 40%;
+}
+.contact-wrap .map-wrap .contcat-map-content {
+    width:100%;
+    height:300px;
+}
+.contact-wrap .contact-row {
+    display: -webkit-flex;
+    width:100%;
+    -webkit-align-items: center;
+    align-items: center;
+    padding:10px 0;
+    border-bottom:1px solid #eee;
+}
+.contact-wrap .contact-row .icon {
+    -webkit-flex: 0 0 48px;
+    flex: 0 0 48px;
+    margin-right:20px;
+    display:block;
+    width:48px;
+    height:48px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:48px auto;
+}
+.contact-wrap .contact-row .icon-tel {
+    background-image: url("images/tel.jpg");
+}
+.contact-wrap .contact-row .icon-phone {
+    background-image: url("images/mobile.jpg");
+}
+.contact-wrap .contact-row .icon-email {
+    background-image: url("images/email.jpg");
+}
+
+.contact-wrap .contact-row .icon-addr {
+    background-image: url("images/address.jpg");
+}
+
+#index-album-wrap {
+    position: relative;
+}
+#index-album-wrap .arrow-btn {
+    position: absolute;
+    top:50%;
+    margin-top:-32px;
+    width:64px;
+    height:64px;
+    background:url("images/arrow.png") no-repeat center;
+    background-size:contain;
+    opacity: .3;
+    cursor: pointer;
+}
+#index-album-wrap .arrow-btn:hover {
+    opacity: .5;
+}
+#index-album-wrap .arrow-left-btn {
+    left:-64px;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+#index-album-wrap .arrow-right-btn {
+    right:-64px;
+}
 @media (max-width: 1024px) {
     .ad_2, .ad_3 {
         height: auto;
@@ -1599,8 +2027,9 @@ button {cursor:pointer;}
     }
 
     .newsViewText {
-        padding: 10px 0;
+        padding: 0 0 10px;
         height: auto;
+        text-align: left;
     }
 
     .ad_2 {
@@ -1675,386 +2104,209 @@ button {cursor:pointer;}
     .message {
         padding: 0 10px;
     }
+    /****/
+    .k1120 {
+        padding:0 12px;
+        box-sizing: border-box;
+        width:100%;
+    }
+    .scrol-page {
+        padding:24px 0;
+    }
+    #menu {
+        display: none;
+    }
+    .banner {
+        height:320px;
+        background-size:auto 320px;
+    }
+    .index-album-list {
+        margin-top:60px;
+        /* margin-right:-2%; */
+    }
+    .index-album-list li {
+        float: left;
+        margin-right:12px;
+        width:28%;
+        height: auto;
+        overflow: hidden;
+    }
+    #index-album-wrap .arrow-btn {display: none;}
+    .index-main-content {
+        padding:0 12px;
+        box-sizing: border-box;
+    }
+    #index-about .txt-box {
+        padding-top:12px;
+        font-size:12px;
+    }
+    #index-about .vidoe-box {
+        float: none;
+        width:100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    #index-about .vidoe-item {
+        width:45%;
+        height:auto;
+    }
+    #index-about .vidoe-item .play-btn {
+        margin-top:-16px;
+        margin-left:-16px;
+        width:32px;
+        height:32px;
+    }
+    .index-jobs-list .item {
+        font-size:12px;
+    }
+    .index-jobs-list .item .jobname {
+        display: block;
+        width:100%;
+        font-size:16px;
+    }
+    .index-jobs-list .item .company {
+        width: 50%;
+        font-size:12px;
+    }
+    .index-jobs-list .item span {
+        white-space: nowrap;
+    }
+    .newsListView {
+        display: none;
+    }
+    #job-detail .page-part-wrap {
+        padding:20px;
+    }
+    #job-detail .val {
+        width:50%;
+    }
+    .web-title {
+        display: block;
+        text-align: center;
+        font-size:24px;
+        color:#fff;
+        line-height: 70px;
+    }
+    .menu-btn {
+        display: block;
+        position: absolute;
+        top:50%;
+        right:12px;
+        z-index:1;
+        margin-top:-16px;
+        width:32px;
+        height:32px;
+        background:url(images/list-icon.png) no-repeat center;
+        background-size: contain;
+        -webkit-transition: all .2s;
+        transition: transform .2s;
+    }
+    .menu-on-show {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(90deg)
+    }
+    .sub-banner {
+        height: 70px;
+    }
+    .m-tab-nav {
+        padding-top:20px;
+    }
+    .contact-wrap {
+        display: block;
+    }
+    .contact-wrap .contact-info {
+        width:100%;
+    }
+    .map-wrap {
+        width:100%;
+    }
+    .m-news-list .time {
+        display: none;
+    }
+    .m-news-list .right-info {
+        margin-left:0;
+    }
+    #news-detail .page-part-wrap {
+        padding:20px 12px;
+    }
+    #news-detail .news-title {
+        font-size:18px;
+    }
+    #news-detail .other-info {
+        font-size:12px;
+    }
+    #menu li {
+        width:32%;
+        text-align: center;
+    }
+
+    .job-table {
+        padding:24px 0;
+        min-height: 540px;
+    }
+    .job-table .list {
+        padding:12px;
+    }
+    .job-table span{
+        display: inline-block;
+        padding:0;
+        font-size:12px;
+        /* border-bottom:1px solid #eee; */
+    }
+    
+    .job-table .list:nth-child(2n) {
+        background:#f1f1f1;
+    }
+    .job-table .th {
+        display: none;
+    }
+    .job-table .jobname {
+        display: block;
+        width:100%;
+        font-size:16px;
+    }
+    .job-table .jobname a {
+        color:#06c;
+    }
+    .job-table .comname {
+        display: block;
+        width:100%;
+    }
+    .job-table .other {
+        width:22%;
+        white-space: nowrap;
+    }
+    .video-wrap {
+        margin:0 -12px;
+        padding:40px 0;
+        background:#000;
+    }
+    .m-news-list .n-title {
+        font-size:16px;
+        color:#000;
+    }
+    .m-news-list .desc {
+        font-size:12px;
+        color:#9c9c9c;
+    }
+    .contact-wrap .contact-row .icon {
+        flex:0 0 32px;
+        width:32px;
+        height: 32px;
+        background-size: 32px auto;
+    }
 }
 
-#index-about {
-    background:#3a608d url(../images/index-about-bg.jpg) no-repeat center;
-    background-size:cover;
-    color:#fff;
-}
-
-#index-about .title {
-    color: #fff;
-}
-#index-about .title span:before {background:#fff;opacity: .6;}
-#index-about .title span::after {
-    border-color:#3a608d;
-    background:#fff;
-}
-#index-about .infoText {color:#fff;opacity: .6;}
-
-
-#index-news {
-    background:#eee;
-}
-#index-news .title span::after {
-    border-color:#eee;
-}
-.m-contact ul {padding:60px 0 10px;}
-.m-contact li {float:left;width:20%;text-align:center;}
-.m-contact a {color:#fff;}
-.m-contact p {padding-top:10px;font-size:14px;color:#fff!important;}
-
-.g-main-page {
-    min-height:600px;
-}
-
-
-.banner {
-    display: block;
-    width: 100%;
-    height:560px;
-    background-image:url("../images/index-banner.jpg");
-    background-position: bottom center;
-    background-repeat: no-repeat;
-}
-
-.index-album-list {
-    margin-top:60px;
-    margin-right:-50px;
-}
-.index-album-list li {
-    float: left;
-    margin-right:50px;
-    width:340px;
-    height: 200px;
-    overflow: hidden;
-}
-.index-album-list li img {max-width: 100%;transition: all .2s;cursor: pointer;}
-.index-album-list li img:hover {
-    transform: scale(1.2)
-}
-
-#index-about .vidoe-box {
-    float: left;
-    width:340px;
-    margin-right:50px;
-}
-#index-about .vidoe-item {
-    display: block;
-    position: relative;
-    width:100%;
-    height: 200px;
-    background:#000;
-}
-#index-about .vidoe-item img {
-    max-width: 100%;
-    transition: all .2s ease-in-out 0;
-}
-#index-about .vidoe-item:hover {
-    cursor: pointer;
-}
-#index-about .vidoe-item:hover img {
-    opacity: .7;
-}
-#index-about .vidoe-item .play-btn {
-    position: absolute;
-    left:50%;
-    top:50%;
-    z-index: 1;
-    margin-top:-24px;
-    margin-left: -24px;
-    display: block;
-    width:48px;
-    height:48px;
-    background: url(../images/play.png) no-repeat center;
-    background-size: contain;
-    transition: all .2s ease-in-out 0;
-
-}
-#index-about .txt-box {
-    font-size: 16px;
-    line-height: 1.5;
-}
-.index-jobs-list .item {
-    padding:12px;
-    border-bottom:1px solid #eee;
-    font-size:16px;
-}
-.index-jobs-list .item a,.index-jobs-list .item span {
-    display: inline-block;
-}
-.index-jobs-list .item .jobname,.index-jobs-list .item .company {
-    width: 30%;
-}
-.index-jobs-list .item .jobname {
-    color:#0066cc;
-}
-.index-jobs-list .item .jobname:hover {
-    text-decoration: underline;
-}
-.index-jobs-list .item .other-info {
-    width:10%;
-}
-.index-jobs-list .item .date {
-    width:15%;
-}
-
-/****/
-.content-wrap {padding:40px 0;}
-.sub-nav {border-bottom:2px solid #ddd;text-align: center;}
-.sub-nav a {display: inline-block;margin-right:2px;padding:0 50px;height:40px;line-height:40px;background-color:#e8e8e8;color:#222;font-size:20px;}
-.sub-nav a.cur {color:#00a2d4;background-color:#d6eef6;}
-.sub-banner {width:100%;height:120px;background-color:#06c;background-position: center;background-repeat: no-repeat;}
-.sub-banner img {max-width:100%;}
-
-.m-paging {margin:40px 0;text-align: center;}
-.m-paging a,.m-paging span {display: inline-block;margin-right:10px;padding:0 18px;height:40px;line-height:40px;font-size:16px;}
-.m-paging a {border:1px solid #ddd;}
-.m-paging a:hover {border-color:#00a2d4;color:#00a2d4;}
-.m-paging .current {border:1px solid #00a2d4;color:#fff;background-color:#00a2d4;}
-
-
-.jobs-list .item {
-    padding:24px 0;
-    border-bottom:1px solid #eee;
-}
-.jobs-list .item .jobname {
-    display: block;
-    padding-bottom:12px;
-    font-size:1.2em;
-    font-weight: bold;
-}
-.jobs-list .item .content {
-    padding:12px;
-    font-size:.8em;
-    background:#f1f1f1;
-}
-.jobs-list .item-row {
-    padding-bottom:8px;
-}
-
-.m-news-list li {padding:16px 0;border-bottom:1px solid #ddd;}
-.m-news-list li:after {content:"";clear:both;display:block;visibility:hidden;}
-.m-news-list .title {font-size:18px;}
-.m-news-list .time {float:left;padding:0 10px;width:60px;height:80px;border:1px solid #ddd;text-align:center;}
-.m-news-list .time span {display: block;}
-.m-news-list .time .days {height:44px;line-height:44px;border-bottom:1px solid #ddd;font-size:22px;font-weight:bold;}
-.m-news-list .time .y-m {line-height:34px;font-size:16px;color:#9c9c9c;}
-.m-news-list .right-info {margin-left:140px;}
-.m-news-list .n-title {margin-bottom:14px;font-size:18px;font-weight: 400;color:#222;}
-
-/***详细页面***/
-.g-detail-page-wrap {
-    padding-bottom:40px;
-    background-color:#f6f6f6;
-    border:1px solid transparent;
-}
-.g-detail-page-wrap .page-part-wrap {
-    margin-top:20px;
-    border:1px solid #f0f0f0;
-    background-color:#fff;
-}
-
-/***产品详情**/
-#pro-detail .top-info {padding:30px;}
-#pro-detail .top-info .thumbnail {
-    float:left;
-    width:460px;
-    height:345px;
-}
-#pro-detail .fund-basic {float:right;width:520px;}
-#pro-detail .fund-basic .fund-title {
-    font-size: 28px;
-    font-weight: normal;
-    color: #404040;
-    display: inline-block;
-    vertical-align: middle;
-}
-#pro-detail .fund-basic .basic-list {padding-top:20px;}
-#pro-detail .fund-basic .basic-list li {
-    padding: 5px 0;
-    line-height: 32px;
-    font-size: 16px;
-    zoom: 1;
-}
-#pro-detail .fund-basic .basic-list li:after {
-    content:"";
-    display:block;
-    clear:both;
-    visibility:hidden;
-}
-#pro-detail .fund-basic .basic-list li .label{
-    float: left;
-    margin-right:10px;
-    color: #a0a0a0;
-    min-width: 84px;
-}
-#pro-detail .fund-basic .basic-list li.border {
-    margin-bottom: 8px;
-    padding-bottom: 10px;
-    border-bottom:1px solid #e0e0e0;
-}
-#pro-detail .fund-basic .u-ratio {font-size:28px;}
-.u-ratio {color:#ff6417;}
-#pro-detail .fund-basic .u-ratio i {font-style:normal;}
-#pro-detail .fund-basic .input-text {
-    margin-right:5px;
-    width:140px;
-    padding: 0 8px;
-    height: 38px;
-    line-height: 38px;
-    border: 1px solid #e5e5e5;
-    color:#333;
-    font-size:16px;
-}
-#pro-detail .fund-basic .buy-btn {padding-top:20px;}
-#pro-detail .fund-basic .btn{
-    display: inline-block;
-    min-width: 280px;
-    height: 48px;
-    line-height: 48px;
-    border-radius: 2px;
-    font-size: 26px;
-    color: #fff;
-    text-align: center;
-}
-#pro-detail .fund-basic .btn.btn-org {background-color:#ff6417;}
-#pro-detail .fund-basic .btn.btn-gray {background-color:#999;}
-#pro-detail .fund-basic .hide {display: none;}
-#pro-detail .detail-tab {margin-top:30px;border:1px solid #f0f0f0;background-color:#fff;}
-#pro-detail .detail-tab .tab-nav {height:58px;background-color:#efefef;}
-#pro-detail .detail-tab .tab-nav a{
-    float:left;
-    display: inline-block;
-    margin: 14px 0;
-    padding: 0 35px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 16px;
-    color: #404040;
-    border-right: 1px solid #e5e5e5;
-    vertical-align: top;
-}
-#pro-detail .detail-tab .tab-nav .cur{
-
-    margin:0 0 0 -1px;
-    height:55px;
-    line-height:55px;
-    color: #0063ce;
-    background-color:#fff;
-    border-top:3px solid #0063ce;
-    border-left:1px solid #e5e5e5;
-}
-#pro-detail .detail-tab .tab-content {padding:50px 20px;}
-
-/***news**/
-#news-detail .page-part-wrap {
-    padding:50px 120px;
-}
-#news-detail .news-title {color:#202020;font-size:28px;text-align:center;line-height: 1.5;}
-#news-detail .other-info {padding:20px  0 10px;text-align:center;color:#999;border-bottom:1px solid #e0e0e0;}
-#news-detail .other-info span {margin-right:24px;}
-#news-detail .content-wrap {min-height:400px;}
-
-/**/
-.job-table {
-    padding:24px 0;
-    min-height: 540px;
-}
-.job-table th,.job-table td {
-    padding:10px;
-    /* border-bottom:1px solid #eee; */
-}
-.job-table td a {
-    font-weight: bold;
-}
-.job-table tr:nth-child(2n+1) td,.job-table th {
-    background:#f1f1f1;
-}
-
-#job-detail .page-part-wrap {
-    padding:40px;
-}
-#job-detail .job-title {
-    font-size: 22px;
-    color:#000;
-}
-#job-detail .company {
-    font-size:16px;
-    margin:10px 0;
-}
-#job-detail td {width:25%}
-
-.m-tab-nav {
-    border-bottom:1px solid #eee;
-    text-align: center;
-}
-.m-tab-nav a {
-    display: inline-block;
-    margin-right:40px;
-    margin-bottom:-1px;
-    font-size:16px;
-    border-bottom:1px solid #eee;
-}
-.m-tab-nav .current {
-    border-bottom-color:#06c;
-    color:#06c;
-}
-.m-tab-content {
-    padding:20px 0;
-}
-.m-tab-content .content-item {
+.nav-masker {
     display: none;
-    min-height: 300px;
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:99;
+    padding-top:12px;
+    background-color:rgba(0,0,0,.8);
+    /* opacity: 0; */
+    /* transition:opacity 5s ease-out; */
 }
-
-.contact-wrap {
-    display: -webkit-flex;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
-}
-.contact-wrap .contact-info {
-    width:55%;
-}
-.contact-wrap .map-wrap {
-    -webkit-flex: 0 0 40%;
-    flex: 0 0 40%;
-}
-.contact-wrap .map-wrap .contcat-map-content {
-    width:100%;
-    height:300px;
-}
-.contact-wrap .contact-row {
-    display: -webkit-flex;
-    width:100%;
-    -webkit-align-items: center;
-    align-items: center;
-    padding:10px 0;
-    border-bottom:1px solid #eee;
-}
-.contact-wrap .contact-row .icon {
-    -webkit-flex: 0 0 48px;
-    flex: 0 0 48px;
-    margin-right:20px;
-    display:block;
-    width:48px;
-    height:48px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size:48px auto;
-}
-.contact-wrap .contact-row .icon-tel {
-    background-image: url("images/tel.jpg");
-}
-.contact-wrap .contact-row .icon-phone {
-    background-image: url("images/mobile.jpg");
-}
-.contact-wrap .contact-row .icon-email {
-    background-image: url("images/email.jpg");
-}
-
-.contact-wrap .contact-row .icon-addr {
-    background-image: url("images/address.jpg");
-}
-

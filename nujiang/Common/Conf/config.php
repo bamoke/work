@@ -41,7 +41,7 @@ return array(
     "DB_PREFIX" =>"b_",
 
     // Trace
-    "SHOW_PAGE_TRACE"   =>true
+    // "SHOW_PAGE_TRACE"   =>true
 
 
 

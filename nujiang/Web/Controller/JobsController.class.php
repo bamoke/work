@@ -31,6 +31,8 @@ class JobsController extends BaseController
         $outData['page'] = $show;
         $this->assign('outData',$outData);
         $this->assign('jobsList',$jobsList);
+        $this->assign('pageName',"岗位信息");
+
         $this->display();
     }
 
@@ -63,6 +65,7 @@ class JobsController extends BaseController
         ->where($where)
         ->find();
         $this->assign('jobInfo',$jobInfo);
+        $this->assign('pageName',"职位详情");
         $this->display();
     }
 }

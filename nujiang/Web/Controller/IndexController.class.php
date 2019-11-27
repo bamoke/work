@@ -28,6 +28,7 @@ class IndexController extends BaseController {
         $this->assign('worknews',$workNews);
         $this->assign('policynews',$policyNews);
         $this->assign('jobsList',$jobs);
+        $this->assign('pageName',"首页");
         $this->display();
     }
     
@@ -37,6 +38,7 @@ class IndexController extends BaseController {
             "2"=>"http://eos-beijing-1.cmecloud.cn/tmp/vadio2.mp4"
         );
         $this->assign('videoUrl',$videoArr[$id]);
+        $this->assign('pageName',"视频");
         $this->display();
     }
 
@@ -49,6 +51,7 @@ class IndexController extends BaseController {
         $this->assign('staffHome',$staffHome);
         $this->assign('workSite',$workSite);
         $this->assign('curPage',"about");
+        $this->assign('pageName',"机构简介");
         $this->display();
     }
 
@@ -81,6 +84,7 @@ class IndexController extends BaseController {
         $this->assign('ygzjInfo',$ygzjInfo);
         $this->assign('gzzInfo',$gzzInfo);
         $this->assign('curPage',"contact");
+        $this->assign('pageName',"联系我们");
         $this->display();
     }
 

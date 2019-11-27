@@ -52,21 +52,21 @@
                         </div>
                     </div>
                     <div class="contact-row">
-                        <span class="icon icon-tel"></span>
+                        <span class="icon icon-phone"></span>
                         <div>
                             <p>联系手机号</p>
                             <p>{$gzzInfo['tel']}</p>
                         </div>
                     </div>
                     <div class="contact-row">
-                        <span class="icon icon-tel"></span>
+                        <span class="icon icon-email"></span>
                         <div>
                             <p>电子信箱</p>
                             <p>{$gzzInfo['email']}</p>
                         </div>
                     </div>
                     <div class="contact-row">
-                        <span class="icon icon-tel"></span>
+                        <span class="icon icon-addr"></span>
                         <div>
                             <p>联系地址</p>
                             <p>{$gzzInfo['addr']}</p>
@@ -83,25 +83,27 @@
 
 <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
 <script type="text/javascript">
-    
-    var map1 = new BMap.Map("ygzj-dituContent");            // 创建Map实例
-    var point1 = new BMap.Point({$ygzjInfo["lati"]},{$ygzjInfo["longi"]});
-    var marker1 = new BMap.Marker(point1);        // 创建标注    
-    map1.addOverlay(marker1); 
-    map1.centerAndZoom(point1,15);
-    map1.enableScrollWheelZoom(); //启用滚轮放大缩小
+    (function(){
 
-    //加载第二张地图
-    var map2 = new BMap.Map("gzz-dituContent");            // 创建Map实例
-    var point2 = new BMap.Point({$gzzInfo["lati"]},{$gzzInfo["longi"]});
-    var marker2 = new BMap.Marker(point2);        // 创建标注    
-    map2.centerAndZoom(point2,15);
-    map2.enableScrollWheelZoom();                  //启用滚轮放大缩小
-    map2.addOverlay(marker2); 
-    changeMapStyle('midnight')
-    function changeMapStyle(style){
-        map1.setMapStyle({style:style});
-        map2.setMapStyle({style:style});
-    }
+        var map1 = new BMap.Map("ygzj-dituContent");            // 创建Map实例
+        var point1 = new BMap.Point({$ygzjInfo["lati"]},{$ygzjInfo["longi"]});
+        var marker1 = new BMap.Marker(point1);        // 创建标注    
+        map1.addOverlay(marker1); 
+        map1.centerAndZoom(point1,15);
+        map1.enableScrollWheelZoom(); //启用滚轮放大缩小
+    
+        //加载第二张地图
+        var map2 = new BMap.Map("gzz-dituContent");            // 创建Map实例
+        var point2 = new BMap.Point({$gzzInfo["lati"]},{$gzzInfo["longi"]});
+        var marker2 = new BMap.Marker(point2);        // 创建标注    
+        map2.centerAndZoom(point2,15);
+        map2.enableScrollWheelZoom();                  //启用滚轮放大缩小
+        map2.addOverlay(marker2); 
+        // changeMapStyle('midnight')
+/*         function changeMapStyle(style){
+            map1.setMapStyle({style:style});
+            map2.setMapStyle({style:style});
+        } */
+    })()
 
 </script>

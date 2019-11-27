@@ -20,8 +20,7 @@ class NewsController extends BaseController
         if($cid !==null){
             $where['cid'] =$cid;
         }
-        $newsCate = M('Content_cate')->field('id,title')->where('pid=8 and status=1')->order('id asc')->select();
-
+        $newsCate = M('Content_cate')->field('id,title')->find($cid);
         $count = M("News")->where($where)->count();
         $Page = new \Think\Page($count,15);
         $Page->setConfig("next","下一页");
@@ -35,9 +34,9 @@ class NewsController extends BaseController
             ->limit($Page->firstRow.','.$Page->listRows)
             ->select();
         $outData['news'] = $newsList;
-        $outData['cate'] = $newsCate;
         $outData['page'] = $show;
         $this->assign('outData',$outData);
+        $this->assign('pageName',$newsCate["title"]);
         $this->display('Main/news');
     }
 
@@ -47,6 +46,7 @@ class NewsController extends BaseController
         $outData = array();
         $outData['news'] = $detail;
         $this->assign('outData',$outData);
+        $this->assign('pageName',"信息详情");
         $this->display('Main/news-detail');
     }
 

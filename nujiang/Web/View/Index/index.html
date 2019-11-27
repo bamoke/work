@@ -5,12 +5,17 @@
 </div>
 <div id="services" class="scrol-page">
     <h2 class="title"><span>怒江人在珠海</span></h2>
-    <div class="index-main-content k1120">
-        <ul class="clearfix index-album-list">
-            <li><img src="__WEB_ASSET__/images/img-p1.jpg" alt=""></li>
-            <li><img src="__WEB_ASSET__/images/img-p2.jpg" alt=""></li>
-            <li><img src="__WEB_ASSET__/images/img-p3.jpg" alt=""></li>
-        </ul>
+    <div class="index-main-content k1120" id="index-album-wrap">
+        <div class="arrow-btn arrow-left-btn"></div>
+        <div class="arrow-btn arrow-right-btn"></div>
+        <div style="overflow: hidden;">
+            <ul class="clearfix index-album-list">
+                <li><img src="__WEB_ASSET__/images/img-p1.jpg" alt=""></li>
+                <li><img src="__WEB_ASSET__/images/img-p2.jpg" alt=""></li>
+                <li><img src="__WEB_ASSET__/images/img-p3.jpg" alt=""></li>
+                <li><img src="__WEB_ASSET__/images/img-p1.jpg" alt=""></li>
+            </ul>
+        </div>
     </div>
 </div>
 </div>
@@ -19,9 +24,9 @@
 
     <div class="k1120 clearfix">
         <div class="vidoe-box">
-            <a class="vidoe-item" href="{:U('video',array('id'=>2))}" target="_blank"><span class="play-btn"></span><img src="__WEB_ASSET__/images/video-pic-1.jpg"
+            <a class="vidoe-item" href="{:U('video',array('id'=>2))}"><span class="play-btn"></span><img src="__WEB_ASSET__/images/video-pic-1.jpg"
                     alt=""></a>
-            <a class="vidoe-item" href="{:U('video',array('id'=>2))}" target="_blank"><span class="play-btn"></span><img src="__WEB_ASSET__/images/video-pic-2.jpg"
+            <a class="vidoe-item" href="{:U('video',array('id'=>2))}"><span class="play-btn"></span><img src="__WEB_ASSET__/images/video-pic-2.jpg"
                     alt=""></a>
         </div>
         <div class="txt-box">
@@ -77,13 +82,13 @@
                     </li>
                 </foreach>
             </ul>
-            <div class="tc moreBox"><a href="{:U('News/index',array('cid'=>8))}" target="_blank" class="moreBtn">查看更多新闻</a></div>
+            <div class="tc moreBox"><a href="{:U('News/index',array('cid'=>8))}" class="moreBtn">查看更多动态</a></div>
         </div>
     </div>
 </div>
 <div id="index-policy" class="scrol-page">
     <div class="k1120">
-        <h2 class="title"><span>人才政策</span></h2>
+        <h2 class="title"><span>奖励政策</span></h2>
 
         <div class="newsList">
             <ul class="clearfix">
@@ -103,7 +108,7 @@
                     </li>
                 </foreach>
             </ul>
-            <div class="tc moreBox"><a href="{:U('News/index',array('cid'=>9))}" target="_blank" class="moreBtn">查看更多新闻</a></div>
+            <div class="tc moreBox"><a href="{:U('News/index',array('cid'=>9))}" class="moreBtn">查看更多政策</a></div>
         </div>
     </div>
 

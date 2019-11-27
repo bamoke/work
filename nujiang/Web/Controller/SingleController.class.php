@@ -16,6 +16,7 @@ class SingleController extends BaseController
         $outData['banner'] = $banner['img'];
         $outData['info'] = $data;
         $this->assign('outData',$outData);
+        $this->assign('pageName',$data['title']);
         $this->display('Main/page');
     }
 }

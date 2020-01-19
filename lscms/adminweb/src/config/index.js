@@ -18,7 +18,7 @@ export default {
    */
   apiBaseUrl: process.env.NODE_ENV === 'development' ? '/lscms/backend/admin_api.php' : 'http://112.74.42.16/lscms/backend/admin_api.php',
   webBaseUrl: process.env.NODE_ENV === 'development' ? '/' : '/lscms/adminweb/',
-  uploadUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:802/lscms/backend/admin_api.php/Uploads' : 'http://www.pykscloud.com/lscms/backend/admin_api.php/Uploads/save',
+  uploadUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:802/lscms/backend/admin_api.php/Uploads' : 'http://www.pykscloud.com/lscms/backend/admin_api.php/Uploads',
   /**
    * @description 默认打开的首页的路由name值，默认为home
    */

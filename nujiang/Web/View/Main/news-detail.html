@@ -1,6 +1,6 @@
 <assign name="news" value="$outData['news']" />
 <div class="g-detail-page-wrap">
-    <div class="sub-banner" style=""></div>
+    <div class="sub-banner"></div>
 
     <div id="news-detail" class="k1120">
         <div class="page-part-wrap">
@@ -8,7 +8,7 @@
             <div class="other-info">
                 <span class="time">发布时间：{$news['create_time']}</span>
                 <span class="from">来源：{$news['origin']}</span>
-                <span class="click">点击量：1293</span>
+                <span class="click">点击量：{$news['click']}</span>
             </div>
             <div class="content-wrap">
                 {$news['content']}

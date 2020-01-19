@@ -62,6 +62,18 @@ class HeadhunterController extends Controller {
   }
 
 
+  public function contact(){
+    $info = M("HeadhunterContact")->find(1);
+    $backData = array(
+      "code"      =>200,
+      "msg"       =>"ok",
+      "data"    => array(
+        "info"  =>$info
+      )
+    );
+    $this->ajaxReturn($backData);
+  }
+
 
     /********************** */
 }

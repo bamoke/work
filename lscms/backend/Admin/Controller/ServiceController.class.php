@@ -3,7 +3,7 @@
  * @Author: joy.wangxiangyin 
  * @Date: 2018-08-12 12:38:00 
  * @Last Modified by: joy.wangxiangyin
- * @Last Modified time: 2018-08-13 00:21:33
+ * @Last Modified time: 2019-11-29 11:01:58
  */
 namespace Admin\Controller;
 use Admin\Common\Auth;
@@ -15,7 +15,7 @@ use Admin\Common\Auth;
     $page = empty($_GET["p"]) ? 1 : (int)$_GET["p"];
     $where = array();
     if(!empty($_GET['keywords'])){
-      $where['name'] = array("like","%".$_GET["keywords"]."%");
+      $where['title'] = array("like","%".$_GET["keywords"]."%");
     }
     $list = $mainModel->field("id,title,description,status,create_time")->where($where)->page($page,$pageSize)->fetchSql(false)->select();
     $total = $mainModel->where($where)->count();
@@ -36,6 +36,58 @@ use Admin\Common\Auth;
   }
 
   /**
+   * 
+   */
+  public function edit(){
+    if(empty($_GET["id"])){
+      $backData = array(
+        'code'      => 13000,
+        "msg"       => "非法请求"    
+      );
+      $this->ajaxReturn($backData);     
+    }
+    $id = I("get.id/d");
+    $info = M("Service")->find($id);
+    $thumbList = explode(";",$info['thumb']);
+    $newThumbList = array();
+    if(count($thumbList)) {
+      foreach($thumbList as $key=>$val){
+        if($val) {
+          $temp = array(
+            "name"  =>$val,
+            "url"   =>__ROOT__."/Uploads/images/".$val
+          );
+          array_push($newThumbList,$temp);
+        }
+      }
+    }
+    $iconList = explode(";",$info['icon']);
+    $newIconList = array();
+    if(count($iconList)) {
+      foreach($iconList as $key=>$val){
+        if($val) {
+          $temp = array(
+            "name"  =>$val,
+            "url"   =>__ROOT__."/Uploads/images/".$val
+          );
+          array_push($newIconList,$temp);
+        }
+      }
+    }
+    $backData = array(
+      "code"  =>200,
+      "msg"   =>"ok",
+      "data"  =>array(
+        "info"  =>$info,
+        "thumbList" =>$newThumbList,
+        "iconList"  =>$newIconList
+      )
+    );
+    $this->ajaxReturn($backData);
+
+  }
+
+  /**
    * save
    */
   public function save(){
@@ -46,25 +98,28 @@ use Admin\Common\Auth;
       );
       $this->ajaxReturn($backData);
     }else {
-      $mainModel = M("AdminGroups");
+      $mainModel = M("Service");
       $postData = $this->requestData;
       $data = array(
-        "name"  =>$postData["name"],
-        "description" => htmlspecialchars($postData["description"])
+        "title"  =>$postData["title"],
+        "description" => $postData["description"],
+        "thumb"   =>$postData["thumb"],
+        "icon"    =>$postData["icon"],
+        "content" =>$postData["content"],
+        "status"  =>$postData["status"]
       );
       if(isset($postData["id"])){
         $id = (int)$postData["id"];
         $result = $mainModel->where(array("id"=>$id))->data($data)->save();
       }else {
+ 
         $result = $mainModel->data($data)->add();
         $id = $result;
       }
       if($result !== false){
-        $info = $mainModel->field("id,name,description,create_time")->where(array("id"=>$id))->find();
         $backData = array(
           'code'      => 200,
-          "msg"       => "ok",
-          'info'      => $info
+          "msg"       => "Success",
         );
       }else {
         $backData = array(
@@ -87,21 +142,25 @@ use Admin\Common\Auth;
       );
       $this->ajaxReturn($backData);     
     }
-    $id = (int)$_GET["id"];
-    $userhasTotal = M("User")->where(array("group_id"=>$id))->count();
-    if($userhasTotal > 0 ){
+    $mainModel = M("Service");
+    $id = I("get.id/d");
+    $info = $mainModel->find($id);
+    $deleteResult = $mainModel->delete($id);
+    if($deleteResult !== false) {
+      $thumb = ROOT_DIR."/Uploads/images/".$info['thumb'];
+      $icon = ROOT_DIR."/Uploads/images/".$info['icon'];
+      @unlink($thumb);
+      @unlink($icon);
       $backData = array(
-        'code'      => 13002,
-        "msg"       => "有用户关联此用户组，无法删除"    
+        'code'      => 200,
+        "msg"       => "ok"    
       );
-      $this->ajaxReturn($backData);          
+    }else {
+      $backData = array(
+        'code'      => 13001,
+        "msg"       => "服务器错误"    
+      );
     }
-
-    $delete = M("AdminGroups")->delete($id);
-    $backData = array(
-      'code'      => 200,
-      "msg"       => "ok"    
-    );
     $this->ajaxReturn($backData);    
   }
   

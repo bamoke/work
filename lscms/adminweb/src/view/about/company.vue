@@ -61,7 +61,9 @@ export default {
       this.newContent = html;
     },
     handleSubmit(name) {
-      this.formInfo.content = this.newContent;
+      if(this.newContent){
+        this.formInfo.content = this.newContent;
+      }
       this.submitIng = true;
       if (this.formInfo.content != '') {
         axios

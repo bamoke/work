@@ -579,7 +579,55 @@ export default [
     ]
   },
   /**====== */
-
+  {
+    path: baseUrl+'headhunter',
+    name: 'headhunter_home',
+    meta: {
+      title: '猎头职位',
+      icon: 'briefcase'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'list',
+        name: 'headhunter_list',
+        meta: {
+          title: '职位列表',
+          icon: 'android-menu'
+        },
+        component: () => import('@/view/headhunter/list'),
+      },
+      {
+        path: 'contact',
+        name: 'headhunter_contact',
+        meta: {
+          title: '联系方式',
+          icon: 'android-menu'
+        },
+        component: () => import('@/view/headhunter/contact'),
+      },
+      {
+        path: 'add',
+        name: 'headhunter_add',
+        meta: {
+          title: '添加职位',
+          hideInMenu: true
+        },
+        component: () => import('@/view/headhunter/add'),
+      },
+      {
+        path: 'edit/:id',
+        notCache: true,
+        name: 'headhunter_edit',
+        meta: {
+          title: '编辑职位',
+          hideInMenu: true
+        },
+        component: () => import('@/view/headhunter/edit')
+      }
+ 
+    ]
+  },
   {
     path: baseUrl+'survey',
     name: 'survey',

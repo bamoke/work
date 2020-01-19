@@ -1,3 +1,5 @@
 <template>
-    <div>首页</div>
+    <Card>
+        首页
+    </Card>
 </template>

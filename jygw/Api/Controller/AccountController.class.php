@@ -33,7 +33,8 @@ class AccountController extends Controller {
         $Http = new \Org\Net\Http();
         $url = 'https://api.weixin.qq.com/sns/jscode2session?appid='.$APP_ID.'&secret='.$APP_SECRET.'&js_code='.$code.'&grant_type=authorization_code';
         $mpRresult = json_decode($Http->sendHttpRequest($url),true);
-        $result = $mpRresult["info"];
+        // var_dump($mpRresult);
+        $result = $mpRresult;
         if(!isset($result['openid'])){
             $backData = array(
                 "code" =>12001,

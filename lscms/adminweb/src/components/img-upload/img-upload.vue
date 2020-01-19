@@ -2,7 +2,7 @@
  * @Author: joy.wangxiangyin 
  * @Date: 2018-08-14 11:23:01 
  * @Last Modified by: joy.wangxiangyin
- * @Last Modified time: 2019-05-22 02:02:45
+ * @Last Modified time: 2019-11-29 11:05:43
  */
 <template>
   <div>
@@ -248,7 +248,7 @@ export default {
   overflow: hidden;
 }
 .img-box img {
-  max-width: 128px;
+  max-width: 64px;
 }
 .operation-box {
   display: none;

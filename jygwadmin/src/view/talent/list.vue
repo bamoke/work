@@ -13,7 +13,6 @@
           </i-col>
         </Row>
       </div>
-      <Button type="primary" slot="extra" icon="ios-add-circle" @click.prevent="handleAdd">添加商家</Button>
       <Table border :columns="_customColumns" :data="tableData" :loading="tableLoading"></Table>
       <div class="m-paging-wrap">
         <Page
@@ -38,16 +37,23 @@ export default {
   data() {
     return {
       columns: [
-        { title: "商家名称", key: "title" },
-
-
-        { title: "显示状态", key: "status", width: 120 },
-
-
-        { title: "地址", key: "addr", width: 200 },
-        { title: "操作", key: "handle", button: ["edit", "delete"], width: 200 }
+        { title: "人才卡号", key: "card_no", width:200 },
+        { title: "姓名", key: "realname", width:120 },
+        { title: "人才类型", key: "typename", width: 120 },
+        { title: "审核状态", key: "verifyname", width: 200 ,render:(h,params)=>{
+          // console.log(params)
+          return h("span",{class:'s-text-'+params.row.verifyname.style},params.row.verifyname.name)
+        }},
+        { title: "申请时间", key: "create_time", width: 200 },
+        { title: "操作", render:(h,params)=>{
+          return h("Button",{
+            props:{
+              to:{name:'talent_detail',params:{id:params.row.id}}
+            }
+          },'详情')
+        }}
       ],
-      tableDataApi: "Welfare/vlist",
+      tableDataApi: "Talent/vlist",
       tableData: [],
       keywords: "",
       pageInfo: { page: 1, pageSize: 10, total: 0 },

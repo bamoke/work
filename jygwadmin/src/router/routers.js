@@ -322,6 +322,15 @@ export default [
         component: () => import('@/view/talent/list')
       },
       {
+        path: 'log',
+        name: 'talent_log',
+        meta: {
+          title: '申请记录',
+          icon: 'android-menu'
+        },
+        component: () => import('@/view/talent/log')
+      },
+      {
         path: 'detail/:id',
         name: 'talent_detail',
         meta: {

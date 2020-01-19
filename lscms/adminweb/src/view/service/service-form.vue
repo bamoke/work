@@ -56,7 +56,7 @@
             <Button
               type="primary"
               size="large"
-              @click="handleSubmit('eventForm')"
+              @click="handleSubmit('serviceForm')"
               :loading="submitIng"
               long
             >提交</Button>
@@ -72,7 +72,7 @@ import Editor from "_c/editor";
 import ImgUpload from "_c/img-upload";
 import axios from "@/libs/api.request";
 export default {
-  name: "eventForm",
+  name: "serviceForm",
   components: { Editor, ImgUpload },
   props: {
     id: {
@@ -84,27 +84,14 @@ export default {
     return {
       submitIng: false,
       ruleForm: {
-        title: [{ required: true, message: "请输入活动标题" }],
-        event_time: [{ required: true, message: "请填写活动时间" }],
-        addr: [{ required: true, message: "请填写活动地点" }],
-        enroll_start_date: [
-          {
-            required: true,
-            message: "请选择报名开始日期"
-          }
-        ],
-        enroll_end_date: [
-          {
-            required: true,
-            message: "请选择报名截至日期"
-          }
-        ]
+        title: [{ required: true, message: "请输入项目名称" }]
+
       },
       formInfo: {
         status: "1",
-        type: 2,
-        enroll_end_date: "",
-        enroll_start_date: ""
+        description: '',
+        thumb: '',
+        icon: ''
       },
       thumbList: [],
       iconList: [],
@@ -127,18 +114,13 @@ export default {
         .then(res => {
           this.formInfo = res.data.info;
           this.thumbList = res.data.thumbList;
+          this.iconList = res.data.iconList;
           this.newContent = res.data.info.content;
         });
     }
   },
   methods: {
-    handleEndDateChange(e) {
-      this.formInfo.enroll_end_date = e;
-    },
-    handleStartDateChange(e) {
-      this.formInfo.enroll_start_date = e;
-      console.log(this.formInfo);
-    },
+ 
     setFileList() {},
     handleThumbChanged(data) {
       this.formInfo.thumb = data;
@@ -150,7 +132,9 @@ export default {
       this.newContent = html;
     },
     handleSubmit(name) {
-      this.formInfo.content = this.newContent;
+      if(this.newContent) {
+        this.formInfo.content = this.newContent;
+      }
       this.submitIng = true;
       this.$refs[name].validate(valid => {
         if (valid) {
@@ -166,7 +150,7 @@ export default {
               this.submitIng = false;
             });
         } else {
-          // this.$Message.error("Error!");
+          this.$Message.error("Error!");
           this.submitIng = false;
         }
       });

@@ -67,6 +67,18 @@ export default {
       const id = params.row.id;
       this.$router.push({ name: "service_edit", params: { id } });
     },
+    handleDelete(params){
+      const id = params.row.id;
+      const index = params.index
+      axios.request({
+        url: 'Service/deleteone',
+        params: {id},
+        method: 'get'
+      }).then(res=>{
+          this.$Message.success("删除成功");
+          this.tableData.splice(index, 1);
+      })
+    },
 
 
     _finishedFetchData(res) {

@@ -15,7 +15,7 @@ return array(
     'DB_DEBUG'  => false, // 数据库调试模式 开启后可以记录SQL日志
 
     'SHOW_PAGE_TRACE'   =>false,//开启页面调试
-    // "UPLOAD_BASE_URL"	=>"https://www.bamoke.com/jygw/Uploads",
+    "UPLOAD_BASE_URL"	=>"https://lscms.oss-cn-shenzhen.aliyuncs.com/images",
     	// OSS
 	// "OSS_BASE_URL"	=>"https://bmk-jygw.oss-cn-shenzhen.aliyuncs.com"
 );

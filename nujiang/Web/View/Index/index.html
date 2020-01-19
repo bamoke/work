@@ -3,6 +3,11 @@
 
     </div>
 </div>
+<div class="m-brand">
+    <div class="k1120 clearfix">
+        <img src="__WEB_ASSET__/images/index-brand.jpg" class="img" alt="">
+    </div>
+</div>
 <div id="services" class="scrol-page">
     <h2 class="title"><span>怒江人在珠海</span></h2>
     <div class="index-main-content k1120" id="index-album-wrap">
@@ -69,14 +74,12 @@
                 <foreach name="worknews" item="item">
                     <li>
                         <div class="newsListBox">
-                            <h4><a href="{:U('News/detail',array('id'=>$item['id']))}"
-                                    target="_blank">{$item['title']}</a></h4>
+                            <h4><a href="{$item['realurl']}" target="_blank">{$item['title']}</a></h4>
 
                             <p class="newsViewText">{$item['description']}</p>
 
                             <p class="newsViewFoot">
-                                <a href="{:U('News/detail',array('id'=>$item['id'],'cid'=>$item['cid']))}" target="_blank"
-                                    class="newsListView">查看详情</a>
+                                <a href="{$item['realurl']}" target="_blank" class="newsListView">查看详情</a>
                             </p>
                         </div>
                     </li>
@@ -95,14 +98,12 @@
                 <foreach name="policynews" item="item">
                     <li>
                         <div class="newsListBox">
-                            <h4><a href="{:U('News/detail',array('id'=>$item['id'],'cid'=>$item['cid']))}"
-                                    target="_blank">{$item['title']}</a></h4>
+                            <h4><a href="{$item['realurl']}" target="_blank">{$item['title']}</a></h4>
 
                             <p class="newsViewText">{$item['description']}</p>
 
                             <p class="newsViewFoot">
-                                <a href="{:U('News/detail',array('id'=>$item['id'],'cid'=>$item['cid']))}" target="_blank"
-                                    class="newsListView">查看详情</a>
+                                <a href="{$item['realurl']}" target="_blank" class="newsListView">查看详情</a>
                             </p>
                         </div>
                     </li>

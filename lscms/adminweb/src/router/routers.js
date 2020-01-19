@@ -165,16 +165,6 @@ export default [
     },
     children: [
       {
-        path: 'base',
-        name: 'contact_base',
-        meta: {
-          title: '基本信息',
-          // hideInMenu: true,
-          icon: 'android-menu'
-        },
-        component: () => import('@/view/contact/base')
-      },
-      {
         path: 'lists',
         name: 'contact_lists',
         meta: {

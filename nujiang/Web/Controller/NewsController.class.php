@@ -28,11 +28,20 @@ class NewsController extends BaseController
         $show = $Page->show();
 
         $newsList = M("News")
-            ->field("id,cid,description,title,EXTRACT(YEAR from create_time) as year,LPAD(EXTRACT(MONTH from create_time),2,0) as month,LPAD(EXTRACT(DAY from create_time),2,0) as day")
+            ->field("id,cid,description,title,external_link,EXTRACT(YEAR from create_time) as year,LPAD(EXTRACT(MONTH from create_time),2,0) as month,LPAD(EXTRACT(DAY from create_time),2,0) as day")
             ->where($where)
-            ->order('recommend desc,id desc')
+            ->order('recommend,id desc')
             ->limit($Page->firstRow.','.$Page->listRows)
             ->select();
+
+        foreach($newsList as $key=>$val) {
+            $url = U('News/detail',array('id'=>$val['id'],'cid'=>$val["cid"]));
+            if($val['external_link'] != '') {
+                $url = $val['external_link'];
+            }
+            $newsList[$key]["realurl"] = $url;
+        }   
+
         $outData['news'] = $newsList;
         $outData['page'] = $show;
         $this->assign('outData',$outData);
@@ -45,6 +54,7 @@ class NewsController extends BaseController
         $detail = M('News')->where('id='.$id)->find();
         $outData = array();
         $outData['news'] = $detail;
+        $update = M("News")->where(array("id"=>$id))->setInc("click");
         $this->assign('outData',$outData);
         $this->assign('pageName',"信息详情");
         $this->display('Main/news-detail');

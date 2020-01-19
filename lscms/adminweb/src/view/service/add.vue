@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Card>
+    <SuccessPage v-if="isCompleted"></SuccessPage>
+    <Card v-else>
       <div slot="title">添加服务项目</div>
       <Row :gutter="16">
         <i-col span="18">

@@ -29,7 +29,6 @@
         </Row>
       </FormItem>
 
-
       <div class="bar">
         <span class="caption">联系信息</span>
       </div>
@@ -96,76 +95,76 @@
 </template>
 
 <script>
-import axios from "@/libs/api.request";
+import axios from '@/libs/api.request'
 export default {
-  name: "customerForm",
+  name: 'customerForm',
   props: {
     id: {
       type: Number,
       default: null
     }
   },
-  data() {
+  data () {
     return {
 
       submitIng: false,
       ruleForm: {
-        title: [{ required: true, message: "请输入企业名称" }],
-        contact: [{ required: true, message: "请填写联系人" }],
-        phone: [{ required: true, message: "请填写联系电话" }],
-        addr: [{ required: true, message: "请填写联系地址" }]
+        title: [{ required: true, message: '请输入企业名称' }],
+        contact: [{ required: true, message: '请填写联系人' }],
+        phone: [{ required: true, message: '请填写联系电话' }],
+        addr: [{ required: true, message: '请填写联系地址' }]
       },
       formInfo: {}
-    };
+    }
   },
   watch: {
-    id: function(newValue) {
+    id: function (newValue) {
       if (!newValue) {
-        return;
+        return
       }
       axios
         .request({
           url: `Customer/edit/id/${newValue}`,
-          method: "get"
+          method: 'get'
         })
         .then(res => {
-          this.formInfo = res.data.info;
-        });
+          this.formInfo = res.data.info
+        })
     }
   },
   methods: {
     // 检测截至日期是否合法
-    valideEndDate(e) {},
-    handleSubmit(name) {
-      this.submitIng = true;
+    valideEndDate (e) {},
+    handleSubmit (name) {
+      this.submitIng = true
       this.$refs[name].validate(valid => {
         if (valid) {
           axios
             .request({
-              url: "Customer/save",
+              url: 'Customer/save',
               data: { ...this.formInfo },
-              method: "post"
+              method: 'post'
             })
             .then(res => {
-              this.$Message.success("Success!");
-              this.$emit("form-saved", res);
-              this.submitIng = false;
-            });
+              this.$Message.success('Success!')
+              this.$emit('form-saved', res)
+              this.submitIng = false
+            })
         } else {
           // this.$Message.error("Error!");
-          this.submitIng = false;
+          this.submitIng = false
         }
-      });
+      })
     },
-    handleCancel() {
-      closeCurPage(this);
+    handleCancel () {
+      closeCurPage(this)
     }
   },
   computed: {},
-  mounted() {
+  mounted () {
 
   }
-};
+}
 </script>
 <style>
 </style>

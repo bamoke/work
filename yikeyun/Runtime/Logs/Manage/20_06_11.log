@@ -1,0 +1,91 @@
+[ 2020-06-11T03:14:56+08:00 ] ::1 /yikeyun/admin.php/Manage/Main/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000878s ]
+
+[ 2020-06-11T03:15:07+08:00 ] ::1 /yikeyun/admin.php/Manage/Main/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000507s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000886s ]
+SQL: SHOW COLUMNS FROM `x_user` [ RunTime:0.0503s ]
+SQL: SELECT * FROM `x_user` WHERE `username` = 'admin' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0652s ]
+NOTIC: [8] Undefined index: issuper D:\work\yikeyun\Manage\Controller\MainController.class.php 第 78 行.
+
+[ 2020-06-11T03:43:54+08:00 ] ::1 /yikeyun/admin.php/Manage/Member/study_record/memberid/49/classid/4
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yikeyun.__Class__' doesn't exist
+
+[ 2020-06-11T03:44:18+08:00 ] ::1 /yikeyun/admin.php/Manage/Member/study_record/memberid/49/classid/4
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'SR.class_id' in 'on clause'
+
+[ 2020-06-11T03:52:16+08:00 ] ::1 /yikeyun/admin.php/Manage/Member/study_record/memberid/49/classid/4
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'C.name' in 'field list'
+
+[ 2020-06-11T03:52:29+08:00 ] ::1 /yikeyun/admin.php/Manage/Member/study_record/memberid/49/classid/4
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'SR.class_id' in 'on clause'
+
+[ 2020-06-11T03:56:48+08:00 ] ::1 /yikeyun/admin.php/Manage/Member/study_record/memberid/49/classid/4
+ERR: XML标签语法错误 : name='vo[progress]' value=100
+
+[ 2020-06-11T04:30:18+08:00 ] ::1 /yikeyun/admin.php/Manage/Member/study_record/memberid/91/classid/4
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'SR.sourse_id' in 'where clause'
+
+[ 2020-06-11T05:24:19+08:00 ] ::1 /yikeyun/admin.php/Manage/Member/index?keywords=186
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'M.phone' in 'where clause'
+
+[ 2020-06-11T05:27:11+08:00 ] ::1 /yikeyun/admin.php/Manage/Member/index?keywords=186
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'M.phone' in 'where clause'
+
+[ 2020-06-11T05:32:34+08:00 ] ::1 /yikeyun/admin.php/Manage/Member/index
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2020-06-11T05:32:39+08:00 ] ::1 /yikeyun/admin.php/Manage/Member/index
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2020-06-11T06:04:17+08:00 ] ::1 /yikeyun/admin.php/Manage/Teacher/index
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yikeyun.x_columnist' doesn't exist
+
+[ 2020-06-11T06:06:01+08:00 ] ::1 /yikeyun/admin.php/Manage/Member/study_record/classid/4
+ERR: 参数错误或者未定义:memberid
+
+[ 2020-06-11T06:09:03+08:00 ] ::1 /yikeyun/admin.php/Manage/Teacher/index
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yikeyun.x_columnist' doesn't exist
+
+[ 2020-06-11T06:20:05+08:00 ] ::1 /yikeyun/admin.php/Manage/Teacher/add
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yikeyun.x_org' doesn't exist
+
+[ 2020-06-11T06:24:48+08:00 ] ::1 /yikeyun/admin.php/Manage/Teacher/edit/id/2
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yikeyun.x_org' doesn't exist
+
+[ 2020-06-11T06:28:48+08:00 ] ::1 /yikeyun/admin.php/Manage/Teacher/a_update/id/2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001396s ]
+SQL: SHOW COLUMNS FROM `x_admin_rule` [ RunTime:0.0457s ]
+SQL: SELECT * FROM `x_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0516s ]
+SQL: SHOW COLUMNS FROM `x_teacher` [ RunTime:0.0502s ]
+SQL: UPDATE `x_teacher` SET `name`='刘星',`position`='工商管理硕士、实战型管理顾问，中国十大培训师，国际高级职业培训讲师、高级金融培训师，中国管理学会管理贡献奖获得者.',`introduce`='资料更新中' WHERE ( id = 2 ) [ RunTime:0.0511s ]
+
+[ 2020-06-11T06:30:48+08:00 ] ::1 /yikeyun/admin.php/Manage/User/save
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000887s ]
+SQL: SHOW COLUMNS FROM `x_admin_rule` [ RunTime:0.0495s ]
+SQL: SELECT * FROM `x_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0501s ]
+SQL: SHOW COLUMNS FROM `x_user` [ RunTime:0.0464s ]
+SQL: INSERT INTO `x_user` (`username`,`password`,`realname`) VALUES ('rstest','e6c7a93401761d6bf2526e7e72e05390','测试审核员') [ RunTime:0.0553s ]
+
+[ 2020-06-11T06:31:14+08:00 ] ::1 /yikeyun/admin.php/Manage/Main/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000596s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000992s ]
+SQL: SHOW COLUMNS FROM `x_user` [ RunTime:0.0518s ]
+SQL: SELECT * FROM `x_user` WHERE `username` = 'rstest' AND `password` = '953365731b8b76c78c1e7928ad380963' LIMIT 1   [ RunTime:0.0507s ]
+
+[ 2020-06-11T06:32:14+08:00 ] ::1 /yikeyun/admin.php/Manage/Main/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001045s ]
+SQL: SHOW COLUMNS FROM `x_user` [ RunTime:0.0541s ]
+SQL: SELECT * FROM `x_user` WHERE `username` = 'rstest' AND `password` = '89d99ca809461ef8776310cea92fd03e' LIMIT 1   [ RunTime:0.0540s ]
+NOTIC: [8] Undefined index: issuper D:\work\yikeyun\Manage\Controller\MainController.class.php 第 78 行.
+

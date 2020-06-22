@@ -1,0 +1,30 @@
+<div class="sub-banner"></div>
+<div class="k1120">
+  <div class="job-table">
+    <div class="th" cellpadding="0">
+      <span class="jobname">岗位名称</span>
+      <span class="comname">公司名称</span>
+      <span class="other">招聘人数</span>
+      <span class="other">薪资待遇</span>
+      <span class="other">招聘截至</span>
+      <span class="other">发布日期</span>
+      <span class="other">查看</span>
+    </div>
+    <volist name="jobsList" id="job">
+      <div class="list">
+        <span class="jobname"><a href="{:U('detail',array('id'=>$job['id']))}">{$job['title']}</a></span>
+        <span class="comname">{$job['company']}</span>
+        <span class="other">{$job['person_limit']}</span>
+        <span class="other">{$job['wage']}</span>
+        <span class="other">{$job['end_date']}</span>
+        <span class="other">{$job['create_time']}</span>
+        <span class="other"><a href="{:U('detail',array('id'=>$job['id']))}" target="_blank" class="newsListView">查看详情</a>
+        </span>
+      </div>
+    </volist>
+
+  </div>
+  <div class="m-paging">
+    {$outData['page']}
+  </div>
+</div>

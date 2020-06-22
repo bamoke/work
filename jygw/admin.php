@@ -19,10 +19,10 @@ define("APP_PATH","../jygw/");
 
 //设置是否生成目录安全文件
 define("BUILD_DIR_SECURE",false);
-
+          
 //生成模块并绑定,默认生成Home模块； (另有$_GET['m']方法绑定)
 define("BIND_MODULE","Admin");
-//$_GET['m']='Api';
+//$_GET['m']='Api';  
 
 //生成控制器并绑定，默认生成Index控制器； (另有$_GET['c']方法绑定)
 //define("BIND_CONTROLLER","Index");
@@ -32,4 +32,4 @@ define("BIND_MODULE","Admin");
 define('ROOT',dirname(__FILE__));
 //引入PHP框架文件
 require("../ThinkPHP/ThinkPHP.php"); // local
-// require("../../ThinkPHP/ThinkPHP.php");  // server
+// require("../../ThinkPHP/ThinkPHP.php");  // server     

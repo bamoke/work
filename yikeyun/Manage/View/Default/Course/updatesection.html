@@ -1,0 +1,49 @@
+<assign name="info" value="$output['info']"/>
+<div class="panel">
+    <div class="panel-body">
+        <div class="u-page-title">{$pageName}</div>
+        <form name="add-section-form" id="sectionForm" class="form form-horizontal" action="{:U('a_update_section')}">
+            <input type="hidden" name="id" value="{$Think.get.id}"/>
+            <input type="hidden" name="type" value="{$info['type']}" id="js-section-type" />
+
+            <div class="form-group">
+                <label class="control-label col-xs-2">章节名称:</label>
+                <div class="col-xs-5">
+                    <input type="text" name="title" class="form-control" value="{$info['title']}" placeholder="建议6-14个字符">
+                </div>
+                <div class="col-xs-3 tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">视频名称:</label>
+                <div class="col-xs-5">
+                    <input type="text" name="source" class="form-control" value="{$info['source']}">
+                </div>
+                <div class="col-xs-3 tips"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-xs-2"><span class="symbol">*</span>视频时长:</label>
+                <div class="col-xs-5">
+                    <input type="text" name="duration" class="form-control" value="{$info['duration']}" placeholder="必填；如:09:34">
+                </div>
+                <div class="col-xs-3 tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">是否免费:</label>
+                <div class="col-xs-4">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="isfree" value="1" <eq name="info['isfree']" value="1">checked</eq> > 是
+                    </label>
+                </div>
+                <div class="col-xs-3 tips"></div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-xs-offset-2 col-xs-1"><button type="button" class="form-control btn-default" onclick="window.history.back()">返回</button></div>
+                <div class="col-xs-2"><button type="submit" class="form-control btn-info">提交</button></div>
+
+            </div>
+        </form>
+    </div>
+</div>

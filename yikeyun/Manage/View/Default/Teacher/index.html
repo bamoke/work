@@ -1,0 +1,37 @@
+<div class="panel">
+    <div class="panel-body">
+        <empty name="output['list']">
+            {$emptyHtml}
+            <else/>
+            <table class="table table-bordered m-product-list" border="0" cellpadding="0" cellspacing="0">
+                <thead>
+                <tr>
+                    <th width="120">头像</th>
+                    <th width="200">姓名</th>
+                    <th>介绍</th>
+
+                    <th width="200">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <foreach name="output['list']" item="vo">
+                    <tr>
+                        <td><div class="avatar-box"><img src="{$vo['avatar']}" class="avatar" /></div> </td>
+                        <td>{$vo['name']}</td>
+                        <td>{$vo['position']}</td>
+                        <td><a href="{:U('edit',array('id'=>$vo['id']))}">修改</a> </td>
+                    </tr>
+                </foreach>
+
+                </tbody>
+            </table>
+        </empty>
+
+    </div>
+    <div class="panel-footer">
+        <div class="m-pagination">
+            {$output['paging']}
+        </div>
+    </div>
+</div>
+

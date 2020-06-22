@@ -29,143 +29,143 @@
 </template>
 
 <script>
-import axios from "@/libs/api.request";
-import tableMixin from "@/libs/table-mixin";
+import axios from '@/libs/api.request'
+import tableMixin from '@/libs/table-mixin'
 export default {
-  name: "",
+  name: '',
   mixins: [tableMixin],
   props: {},
-  data() {
+  data () {
     return {
       columns: [
-        { title: "企业名称", key: "title", width: 300 },
-        { title: "所在城市", key: "city", width: 120 },
+        { title: '企业名称', key: 'title', width: 300 },
+        { title: '所在城市', key: 'city', width: 120 },
         {
-          title: "服务状态",
+          title: '服务状态',
           width: 100,
           render: (h, params) => {
-            var statusText = params.row.status == 1 ? "正常" : "中止";
+            var statusText = params.row.status == 1 ? '正常' : '中止'
             var statusStyle =
-              params.row.status == 1 ? "s-text-success" : "s-text-error";
-            return h("span", { class: statusStyle }, statusText);
+              params.row.status == 1 ? 's-text-success' : 's-text-error'
+            return h('span', { class: statusStyle }, statusText)
           }
         },
-        { title: "到期日期", key: "contract_end", width: 150, sortable: true },
+        { title: '到期日期', key: 'contract_end', width: 150, sortable: true },
         {
-          title: "操作",
+          title: '操作',
           render: (h, params) => {
-            var statusBtnTxt = params.row.status == 0 ? "激活服务" : "中止服务";
-            return h("div", [
+            var statusBtnTxt = params.row.status == 0 ? '激活服务' : '中止服务'
+            return h('div', [
               h(
-                "Button",
+                'Button',
                 {
                   props: {
-                    type: "primary",
-                    size: "small",
+                    type: 'primary',
+                    size: 'small',
                     ghost: true,
                     to: {
-                      name: "customer_edit",
+                      name: 'customer_edit',
                       params: { id: params.row.id }
                     }
                   }
                 },
 
-                "编辑"
+                '编辑'
               ),
               h(
-                "Button",
+                'Button',
                 {
                   props: {
-                    type: "primary",
-                    size: "small",
+                    type: 'primary',
+                    size: 'small',
                     ghost: true
                   },
-                  style: { marginLeft: "10px" },
+                  style: { marginLeft: '10px' },
                   on: { click: () => this.handleChangeStatus(params) }
                 },
                 statusBtnTxt
               ),
               h(
-                "Button",
+                'Button',
                 {
                   props: {
-                    type: "primary",
-                    size: "small",
+                    type: 'primary',
+                    size: 'small',
                     ghost: true,
                     to: {
-                      name: "customer_account",
+                      name: 'customer_account',
                       params: { comid: params.row.id }
                     }
                   },
-                  style: { marginLeft: "10px" }
+                  style: { marginLeft: '10px' }
                 },
-                "账号管理"
+                '账号管理'
               ),
               h(
-                "Button",
+                'Button',
                 {
                   props: {
-                    type: "primary",
-                    size: "small",
+                    type: 'primary',
+                    size: 'small',
                     ghost: true,
                     to: {
-                      name: "customer_config",
+                      name: 'customer_config',
                       params: { comid: params.row.id }
                     }
                   },
-                  style: { marginLeft: "10px" }
+                  style: { marginLeft: '10px' }
                 },
-                "配置信息"
+                '配置信息'
               )
-            ]);
+            ])
           }
         }
       ],
-      tableDataApi: "Customer/vlist",
+      tableDataApi: 'Customer/vlist',
       tableData: [],
-      keywords: "",
+      keywords: '',
       pageInfo: {},
       editRowIndex: null
-    };
+    }
   },
   methods: {
-    handleSearch() {
-      let queryData = {};
-      if (this.keywords != "") {
-        queryData.keywords = this.keywords;
+    handleSearch () {
+      let queryData = {}
+      if (this.keywords != '') {
+        queryData.keywords = this.keywords
       }
-      this._toPage(queryData);
+      this._toPage(queryData)
     },
-    handleAdd() {
-      this.$router.push("add");
+    handleAdd () {
+      this.$router.push('add')
     },
-    handleChangeStatus(params) {
-      const index = params.index;
-      const id = params.row.id;
-      var newRow = Object.assign({}, params.row);
-      var newStatus = newRow.status == 1 ? 0 : 1;
-      const apiUrl = "Customer/changestatus";
+    handleChangeStatus (params) {
+      const index = params.index
+      const id = params.row.id
+      var newRow = Object.assign({}, params.row)
+      var newStatus = newRow.status == 1 ? 0 : 1
+      const apiUrl = 'Customer/changestatus'
       axios
         .request({
           url: apiUrl,
           params: { id, status: newStatus },
-          method: "get"
+          method: 'get'
         })
         .then(res => {
-          newRow.status = newStatus;
-          this.$Message.success("操作成功");
-          this.$set(this.tableData, index, newRow);
-        });
+          newRow.status = newStatus
+          this.$Message.success('操作成功')
+          this.$set(this.tableData, index, newRow)
+        })
     },
-    _finishedFetchData(res) {
-      var queryData = this.$route.query;
-      this.tableData = res.data.list;
-      this.pageInfo = res.data.pageInfo;
+    _finishedFetchData (res) {
+      // var queryData = this.$route.query
+      this.tableData = res.data.list
+      this.pageInfo = res.data.pageInfo
     }
   },
   computed: {},
-  mounted() {
-    this._fetchData(this._finishedFetchData);
+  mounted () {
+    this._fetchData(this._finishedFetchData)
   }
-};
+}
 </script>

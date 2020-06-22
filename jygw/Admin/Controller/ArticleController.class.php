@@ -11,7 +11,7 @@ class ArticleController extends Auth {
   public function vlist(){
     $pageSize = 15;
     $mainModel = M("Article");
-    $page = empty($_GET["p"]) ? 1 : (int)$_GET["p"];
+    $page = I("get.page/d",1);
     $where = array();
     if(!empty($_GET['keywords'])){
       $where['N.title'] = array("like","%".$_GET["keywords"]."%");
@@ -72,7 +72,7 @@ class ArticleController extends Auth {
     }
     $thumbList = explode(";",$info['thumb']);
     $newThumbList = array();
-    if(count($thumbList)) {
+    if($info['thumb']) {
       foreach($thumbList as $key=>$val){
         $temp = array(
           "name"  =>$val,

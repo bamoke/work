@@ -16,8 +16,8 @@ export default {
   /**
    * @description api请求基础路径
    */
-  apiBaseUrl: process.env.NODE_ENV === 'development' ? '/lansiyun/backend/org.php' : 'http://lsy.pykscloud.com/backend/org.php',
-  webBaseUrl: process.env.NODE_ENV === 'development' ? '/' : '/orgdmin/',
+  apiBaseUrl: process.env.NODE_ENV === 'development' ? '/lansiyun/backend/company.php' : 'http://lsy.pykscloud.com/backend/company.php',
+  webBaseUrl: process.env.NODE_ENV === 'development' ? '/' : '/comdmin/',
   /**
    * @description 默认打开的首页的路由name值，默认为home
    */

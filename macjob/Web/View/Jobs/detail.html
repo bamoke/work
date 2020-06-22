@@ -1,0 +1,32 @@
+<div class="g-detail-page-wrap">
+  <div class="sub-banner" style=""></div>
+
+  <div id="job-detail" class="k1120">
+    <div class="page-part-wrap">
+      <h1 class="job-title">{$jobInfo['title']}</h1>
+      <div class="company">{$jobInfo['company']}</div>
+      <div class="job-other" >
+
+          <span class="val">薪资待遇：{$jobInfo['wage']}</span>
+          <span class="val">招聘人数：{$jobInfo['person_limit']}</span>
+          <span class="val">截至日期：{$jobInfo['end_date']}</span>
+          <span class="val">发布日期：{$jobInfo['create_time']}</span>
+
+      </div>
+      <div class="bar" style="margin-top:20px;padding:10px;line-height:1;background:#eee;font-weight: bold;">岗位介绍
+      </div>
+      <div class="job-content" style="padding:10px;">
+        {$jobInfo['content']}
+      </div>
+      <div class="contact-info">
+        <div class="bar" style="margin-top:20px;padding:10px;line-height:1;background:#eee;font-weight: bold;">联系方式
+        </div>
+        <div style="padding:10px;">
+          <p>联系人：{$jobInfo['contact_person']}</p>
+          <p>联系电话：{$jobInfo['contact_phone']}</p>
+          <p>邮箱：{$jobInfo['contact_email']}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

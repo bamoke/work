@@ -6,4 +6,4 @@ return array(
 	"OSS_BUCKET"			=>"lansiyunplatform",
 	"OSS_ACCESS_ID"		=>"LTAIfsMWSLxCJB4U",
 	"OSS_ACCESS_KEY"	=>"TGdFsULBsWuL3QWPVsBy3UEzN03PII"
-);
+); 

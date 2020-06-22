@@ -1,10 +1,10 @@
 <style lang="less">
-  @import './login.less';
+@import "./login.less";
 </style>
 
 <template>
   <div class="login">
-    <div class="u-bland" title="">
+    <div class="u-bland" title>
       <a href="javascript:" class="img"></a>
     </div>
     <div class="login-con">
@@ -19,33 +19,33 @@
 </template>
 
 <script>
-import config from '@/config'
+// import config from "@/config";
 import LoginForm from '_c/login-form'
 import { mapActions } from 'vuex'
 export default {
   components: {
     LoginForm
   },
-  data(){
+  data () {
     return {
-      title: `欢迎登录`,
+      title: `欢迎登录`
     }
   },
   methods: {
-    ...mapActions([
-      'handleLogin'
-    ]),
+    ...mapActions(['handleLogin']),
     handleSubmit ({ userName, password }) {
-      this.handleLogin({ userName, password }).then(res => {
+      this.handleLogin({ userName, password }).then(
+        res => {
           this.$router.push({
             name: this.$config.homeName
           })
-      },reject=>{})
+        },
+        reject => {}
+      )
     }
   }
 }
 </script>
 
 <style>
-
 </style>

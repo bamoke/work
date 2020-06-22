@@ -55,7 +55,7 @@ export default [
   },
   {
     path: webBaseUrl + 'auth',
-    name: 'auth_manage',
+    name: 'auth_home',
     component: Main,
     meta: {
       title: '权限管理',
@@ -63,29 +63,20 @@ export default [
     },
     children: [
       {
-        path: 'user',
-        name: 'auth_user',
+        path: 'members',
+        name: 'auth_members',
         meta: {
           title: '用户管理'
         },
-        component: () => import('@/view/auth/user')
+        component: () => import('@/view/members/list')
       },
       {
         path: 'groups',
-        name: 'auth_group',
+        name: 'auth_role',
         meta: {
-          title: '群组管理'
+          title: '角色管理'
         },
-        component: () => import('@/view/auth/groups')
-      },
-      {
-        path: 'rules',
-        name: 'auth_rules',
-        meta: {
-          title: '权限规则',
-          hideInMenu: true
-        },
-        component: () => import('@/view/auth/rules')
+        component: () => import('@/view/role/list')
       }
     ]
   },

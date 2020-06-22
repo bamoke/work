@@ -54,176 +54,56 @@ export default [
     ]
   },
   {
-    path: webBaseUrl + 'auth',
-    name: 'auth_manage',
+    path: webBaseUrl + 'role',
+    name: 'role_manage',
     component: Main,
     meta: {
-      title: '权限管理',
-      icon: 'android-unlock'
+      title: '角色管理',
+      icon: 'md-options'
     },
     children: [
       {
-        path: 'user',
-        name: 'auth_user',
+        path: 'member',
+        name: 'role_member',
         meta: {
-          title: '用户管理'
-        },
-        component: () => import('@/view/auth/user')
-      },
-      {
-        path: 'groups',
-        name: 'auth_group',
-        meta: {
-          title: '群组管理'
-        },
-        component: () => import('@/view/auth/groups')
-      },
-      {
-        path: 'rules',
-        name: 'auth_rules',
-        meta: {
-          title: '权限规则',
+          title: '角色成员',
           hideInMenu: true
         },
-        component: () => import('@/view/auth/rules')
-      }
-    ]
-  },
-  {
-    path: webBaseUrl + 'account',
-    name: 'account_manage',
-    component: Main,
-    meta: {
-      title: '账号信息',
-      icon: 'android-contacts'
-    },
-    children: [
-      {
-        path: 'profile',
-        name: 'account_profile',
-        meta: {
-          title: '账号信息',
-          icon: 'android-menu',
-          hideInBread: true
-        },
-        component: () => import('@/view/account/index')
+        component: () => import('@/view/role/member')
       },
       {
-        path: 'reset',
-        name: 'account_reset',
+        path: 'privilege',
+        name: 'role_privilege',
         meta: {
-          hideInMenu: true,
-          hideTagNav: true,
-          title: '修改密码'
-        },
-        component: () => import('@/view/account/reset')
-      }
-    ]
-  },
-  {
-    path: webBaseUrl + 'finance',
-    name: 'finance_manage',
-    component: Main,
-    meta: {
-      title: '资金管理',
-      icon: 'android-contacts'
-    },
-    children: [
-      {
-        path: 'index',
-        name: 'finance_index',
-        meta: {
-          hideInBread: true,
-          title: '资金管理',
-          icon: 'android-menu'
-        },
-        component: () => import('@/view/finance/index')
-      },
-      {
-        path: 'list',
-        name: 'finance_list',
-        meta: {
-          hideInMenu: true,
-          title: '收支记录',
-          icon: 'android-menu'
-        },
-        component: () => import('@/view/finance/list')
-      },
-      {
-        path: 'detail/:id',
-        name: 'finance_detail',
-        meta: {
-          title: '收支详情',
+          title: '功能权限',
           hideInMenu: true
         },
-        component: () => import('@/view/finance/detail')
+        component: () => import('@/view/role/privilege')
       }
-
     ]
   },
   {
-    path: webBaseUrl + 'customer',
-    name: 'customer_manage',
+    path: webBaseUrl + 'members',
+    name: 'members_manage',
     component: Main,
     meta: {
-      title: '客户管理',
-      icon: 'android-contacts'
+      title: '成员管理',
+      hideInBread: true
     },
     children: [
       {
         path: 'list',
-        name: 'customer_list',
+        name: 'members_list',
         meta: {
-          hideInBread: true,
-          title: '客户管理',
-          // hideInMenu: true,
-          icon: 'android-menu'
+          title: '成员管理',
+          icon: 'md-person',
+          hideInMenu: false
         },
-        component: () => import('@/view/customer/list')
-      },
-      {
-        path: 'add',
-        name: 'customer_add',
-        meta: {
-          hideInMenu: true,
-          // hideInBread: false,
-          title: '添加客户'
-        },
-        component: () => import('@/view/customer/add')
-      },
-      {
-        path: 'edit/:id',
-        notCache: true,
-        name: 'customer_edit',
-        meta: {
-          title: '编辑客户',
-          hideInMenu: true
-        },
-        component: () => import('@/view/customer/edit')
-      },
-      {
-        path: 'account/:comid',
-        notCache: true,
-        name: 'customer_account',
-        meta: {
-          title: '账号管理',
-          hideInMenu: true
-        },
-        component: () => import('@/view/customer/account')
-      },
-      {
-        path: 'config/:comid',
-        notCache: true,
-        name: 'customer_config',
-        meta: {
-          title: '配置信息',
-          hideInMenu: true
-        },
-        component: () => import('@/view/customer/config')
+        component: () => import('@/view/members/list')
       }
-
     ]
   },
+
   {
     path: '/error_logger',
     name: 'error_logger',

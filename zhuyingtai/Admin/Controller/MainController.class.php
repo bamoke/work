@@ -16,7 +16,7 @@ class MainController extends Controller
 
     public $requestData;
     public function _initialize(){
-/*         header("Access-Control-Allow-Origin: *");
+         header("Access-Control-Allow-Origin: *");
         header('Access-Control-Allow-Methods:POST,GET,OPTIONS'); 
         header("Access-Control-Allow-Headers:Content-Type,accept,X-URL-PATH,x-access-token");
         if($_SERVER['REQUEST_METHOD'] != "OPTIONS") {
@@ -28,7 +28,7 @@ class MainController extends Controller
         }else {
             header("HTTP/1.0 204 Not Content");
             // exit;
-        } */
+        }
 
     }
     public function logout(){

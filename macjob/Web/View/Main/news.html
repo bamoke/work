@@ -1,0 +1,25 @@
+<div class="sub-banner"></div>
+<div class="content-wrap k1120">
+
+    <div class="pro-list-wrap">
+        <ul class="m-news-list">
+            <foreach name="outData['news']" item="list">
+                <li>
+                    <div class="time">
+                        <span class="days">{$list['day']}</span>
+                        <span class="y-m">{$list['year']}-{$list['month']}</span>
+                    </div>
+                    <div class="right-info">
+                        <h5 class="n-title"><a href="{$list['realurl']}" target="_blank">{$list['title']}</a> </h5>
+                        <p class="desc">{$list['description']}</p>
+                    </div>
+                </li>
+            </foreach>
+
+        </ul>
+
+        <div class="m-paging">
+            {$outData['page']}
+        </div>
+    </div>
+</div>

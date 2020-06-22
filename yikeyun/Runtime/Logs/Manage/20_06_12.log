@@ -1,0 +1,13 @@
+[ 2020-06-12T10:11:11+08:00 ] ::1 /yikeyun/admin.php/Manage/Main/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000782s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001437s ]
+SQL: SHOW COLUMNS FROM `x_user` [ RunTime:0.0524s ]
+SQL: SELECT * FROM `x_user` WHERE `username` = 'admin' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0518s ]
+NOTIC: [8] Undefined index: issuper D:\work\yikeyun\Manage\Controller\MainController.class.php 第 78 行.
+
+[ 2020-06-12T10:11:11+08:00 ] ::1 /yikeyun/admin.php/Manage/Main/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000597s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001102s ]
+

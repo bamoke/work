@@ -1,0 +1,103 @@
+<div class="panel">
+    <div class="panel-body">
+        <div class="u-page-title">{$pageName}</div>
+        <assign name="courseInfo" value="$output['courseInfo']"/>
+        <form name="add-form" class="form form-horizontal" action="{:U('a_update',array('id'=>$courseInfo['id']))}">
+            <div class="form-group">
+                <label class="control-label col-xs-2"><span class="symbol">*</span>课程类型:</label>
+                <div class="col-xs-2">
+                    <input type="text" name="" class="form-control" value="{$courseInfo['typename']}" readonly>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-xs-2"><span class="symbol">*</span>课程名称:</label>
+                <div class="col-xs-5">
+                    <input type="text" name="title" class="form-control" value="{$courseInfo['title']}" placeholder="建议6-14个字符">
+                </div>
+                <div class="col-xs-3 tips"></div>
+            </div>
+
+
+
+
+
+            <div class="form-group">
+                <label class="control-label col-xs-2"><span class="symbol">*</span>课程描述:</label>
+                <div class="col-xs-5">
+                    <input type="text" name="description" class="form-control" placeholder="建议25个字符以内" value="{$courseInfo['description']}">
+                </div>
+                <div class="col-xs-3 tips"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-xs-2"><span class="symbol">*</span>封面:</label>
+                <div class="col-xs-2">
+                    <div class="m-thumbnail-upload" id="js-thumb-upload-panel">
+                        <empty name="courseInfo['thumb']">
+                            <a href="javascript:" class="add-btn js-add-btn"></a>
+                            <div class="thumb-box hidden"><img class="thumb" style=""><span class="del-btn">删除</span> </div>
+                            <else/>
+                            <a href="javascript:" class="add-btn js-add-btn hidden"></a>
+                            <div class="thumb-box">
+                                <img class="thumb" src="{$courseInfo['thumb']}">
+                                <span class="del-btn">删除</span>
+                            </div>
+                            <input type="hidden" class="js-old-thumb" name="oldthumb" value="{$courseInfo['thumb']}">
+                        </empty>
+                        <input type="file" name="thumb" class="js-file-input" style="opacity: 0" >
+                    </div>
+                </div>
+                <div class="col-xs-3 tips">建议尺寸750px×300px</div>
+            </div>
+            <eq name="courseInfo['type']" value="2">
+                <div class="form-group">
+                    <label class="control-label col-xs-2"><span class="symbol">*</span>视频名称:</label>
+                    <div class="col-xs-5">
+                        <input type="text" name="source" class="form-control" value="{$courseInfo['source']}">
+                    </div>
+                    <div class="col-xs-3 tips"></div>
+                </div>                 
+                <div class="form-group">
+                    <label class="control-label col-xs-2"><span class="symbol">*</span>视频时长:</label>
+                    <div class="col-xs-2">
+                        <input type="text" name="duration" class="form-control" value="{$courseInfo['duration']}">
+                    </div>
+                    <div class="col-xs-3 tips"></div>
+                </div>               
+            </eq>
+            <div class="form-group">
+                <label class="control-label col-xs-2"><span class="symbol">*</span>总课时:</label>
+                <div class="col-xs-2">
+                    <input type="text" name="period" class="form-control" value="{$courseInfo['period']}" readonly >
+                </div>
+                <div class="col-xs-3 tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2"><span class="symbol">*</span>讲师:</label>
+                <div class="col-xs-2">
+                    <select name="teacher_id" class="form-control">
+                        <option value="">请选择讲师</option>
+                        <foreach name="output['teacherList']" item="v">
+                            <option value="{$v['id']}" <if condition="$v['id'] eq $courseInfo['teacher_id']">selected</if>>{$v['name']}</option>
+                        </foreach>
+                    </select>
+                </div>
+                <div class="col-xs-3 tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">课程介绍详情:</label>
+                <div class="col-xs-8">
+                    <script id="editorContainer" name="content">{$courseInfo['content']}</script>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-xs-offset-2 col-xs-1"><button type="button" class="form-control btn-default" onclick="window.history.back()">返回</button></div>
+                <div class="col-xs-2"><button type="submit" class="form-control btn-info">提交</button></div>
+
+            </div>
+        </form>
+    </div>
+</div>

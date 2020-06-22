@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <title>{$siteConfig['site_name']}-会员中心</title>
+    <link href="{$Think.const.MODULE_ASSET}css/style.css?v=<php>echo time()</php>" rel="stylesheet" type="text/css">
+    <link href="{$Think.const.MODULE_ASSET}css/member.css?v=<php>echo time()</php>" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="{$Think.const.MODULE_ASSET}js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="{$Think.const.MODULE_ASSET}js/member.js"></script>
+
+</head>
+<body>
+<div class="wrapper">
+    <include file="Layout/header"/>
+    <div class="pageMain">
+        <div class="k1120 clearfix">
+            <div class="left-menu" id="users_menu">
+                <ul>
+                    <li class="<if condition='$Think.const.ACTION_NAME eq "index"'>now</if>">
+                        <a class="" id="user_account" href="{:U('index')}"><span class="icon my_icon"></span>账户总览</a>
+                    </li>
+                    <li class="<if condition='$Think.const.ACTION_NAME eq "purchased"'>now</if>">
+                    <a class="" id="user_borrow_auto" href="{:U('purchased')}"><span class="icon tender_icon"></span>我的理财</a>
+                    </li>
+                    <li class="<if condition='$Think.const.ACTION_NAME eq "orders"'>now</if>">
+                    <a class="" id="user_borrow_change" href="{:U('orders')}"><span class="icon transfer_icon"></span>我的订单</a>
+                    </li>
+
+
+                    <li class="<if condition='$Think.const.ACTION_NAME eq "recharge"'>now</if>">
+                        <a class="" id="user_recharge" href="{:U('recharge',array('step'=>1))}"><span class="icon recharge_icon"></span>我要充值</a>
+                    </li>
+                    <li class="<if condition='$Think.const.ACTION_NAME eq "cash"'>now</if>">
+                    <a class="" id="user_cash" href="{:U('cash')}"><span class="icon cash_icon"></span>我要提现</a>
+                    </li>
+
+                    <!--
+                                        <li class="<if condition='$Think.const.ACTION_NAME eq "questionnaire"'>now</if>">
+                                            <a class="" id="user_packet" href="{:U('questionnaire')}"><span class="icon ticket_icon"></s风险评估</a>
+                                        </li>
+
+                                        <li class="<if condition='$Think.const.ACTION_NAME eq "invitation"'>now</if>">
+                                            <a class="" id="user_invite" href="{:U('invitation')}"><span class="icon invite_icon"></span>邀请好友</a>
+                                        </li>
+
+                                        <li class="<if condition='$Think.const.ACTION_NAME eq "userinfo"'>now</if>">
+                                            <a class="" id="user_rating" href="{:U('userinfo')}"><span class="icon count_icon"></span>账户管理</a>
+                                        </li>
+
+                                        <li class="<if condition='$Think.const.ACTION_NAME eq "message"'>now</if>">
+                                            <a class="" id="user_message" href="{:U('message')}"><span class="icon message_icon"></span>消息列表</a>
+                                        </li>-->
+
+
+
+                </ul>
+            </div>
+
+            <div class="right-content">
+                {__REPLACE__}
+            </div>
+        </div>
+
+
+    </div>
+    <include file="Layout/footer"/>
+</div>
+
+</body></html>
+

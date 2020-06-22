@@ -1,0 +1,23 @@
+<div class="sub-banner"></div>
+<div class="content-wrap">
+    <if condition="$_GET['id'] eq 1">
+        <div class="k1120">
+            <div class="m-about-video-list">
+                <div class="video-box">
+                    <video src="http://eos-beijing-1.cmecloud.cn/tmp/vadio2.mp4" controls=""></video>
+                </div>
+                <div class="video-box">
+                        <video src="http://eos-beijing-1.cmecloud.cn/tmp/vadio1.mp4" controls=""></video>
+                </div>
+            </div>
+        </div>
+        <div class="k1120">
+                {$outData['info']['content']}
+            </div>
+        <else />
+        <div class="k1120">
+            {$outData['info']['content']}
+        </div>
+    </if>
+
+</div>

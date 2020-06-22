@@ -1,0 +1,77 @@
+<div class="panel">
+    <div class="panel-heading clearfix">
+        <row>
+            <notempty name="Think.get.classid">
+                <div class="col-xs-4">
+                    <div class="panel-title">当前班级：{$output['className']}</div>
+                </div>
+                </notempty>
+            
+            <div class="col-xs-6">
+                <form class="form form-inline f-right" action="__SELF__">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="keywords" value="{$Think.get.keywords}" placeholder="请输入姓名或手机号">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-info">搜索</button>
+                    </div>
+                </form>
+            </div>
+        </row>
+
+
+    </div>
+    <div class="panel-body">
+        <empty name="output['list']">
+            {$emptyHtml}
+            <else/>
+            <table class="table table-bordered" border="0" cellpadding="0" cellspacing="0">
+                <thead>
+                <tr>
+                    <th width="200">头像</th>
+                    <th width="200">姓名</th>
+                    <th width="200">手机号</th>
+                    <th>班级名称</th>
+                    <th>报到状态</th>
+                    <th>总学习进度</th>
+                    <th>创建时间</th>
+                    <th width="180">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <foreach name="output['list']" item="vo">
+                    <tr>
+                        <td>
+                            <img src="{$vo.avatar|default='/Upload/avatar/default.jpg'}" class="avatar" width="48" height="48" style="border-radius:50%;"/>
+                        </td>
+                        <td>{$vo.realname}</td>
+                        <td>{$vo.mobile}</td>
+                        
+                        <td>{$vo['class_name']}</td>
+                        <?php if ($vo['member_id']){?>
+                        <td class="text-success"><i class="icon icon-ok-circle"></i>已报到</td>
+                        <?php }else {?>
+                        <td class="text-warning"><i class="icon icon-remove-circle"></i>未报到</td>
+                        <?php }?>
+                        <td>{$vo.progress}%</td>
+                        <td>{$vo['create_time']}</td>
+                        <td class="operation-box">
+                            <notempty name="vo['member_id']">
+                                <a href="{:U('study_record','memberid='.$vo['member_id'].'&classid='.$vo['class_id'])}" class="edit">学习记录</a>
+                            </notempty>
+                        </td>
+                    </tr>
+                </foreach>
+
+                </tbody>
+            </table>
+        </empty>
+
+    </div>
+    <div class="panel-footer">
+        <div class="m-pagination">
+            {$output['paging']}
+        </div>
+    </div>
+</div>
+

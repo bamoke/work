@@ -30,6 +30,7 @@ class NewsController extends Controller {
     ->field("id,title,thumb,date(create_time) as date,view_num")
     ->where($condition)
     ->page($page,$pageSize)
+    ->order("id desc")
     ->fetchSql(false)
     ->select();
 

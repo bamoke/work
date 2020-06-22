@@ -32,8 +32,7 @@ class AccountController extends Controller {
         $Http = new \Org\Net\Http();
         $url = 'https://api.weixin.qq.com/sns/jscode2session?appid='.$APP_ID.'&secret='.$APP_SECRET.'&js_code='.$code.'&grant_type=authorization_code';
         $mpRresult = json_decode($Http->sendHttpRequest($url),true);
-        $result = $mpRresult["info"];
-        if(!isset($result['openid'])){
+        if(!isset($mpRresult['openid'])){
             $backData = array(
                 "code" =>12001,
                 "msg"  =>'微信登陆连接失败',
@@ -43,8 +42,8 @@ class AccountController extends Controller {
         }
 
         //1.2 session manage
-        $openid = $result['openid'];
-        $sessionkey = $result['session_key'];
+        $openid = $mpRresult['openid'];
+        $sessionkey = $mpRresult['session_key'];
         $accessToken = $this->createSessionId();
         $sessionModel = M("Mysession");
         $sessionInfo = $sessionModel->where(array("openid"=>$openid))->find();

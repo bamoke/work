@@ -1,0 +1,69 @@
+<div class="panel">
+    <div class="panel-body">
+        <div  class="u-page-title"><span class="caption">文章修改</span> </div>
+        <form name="news-form" class="form form-horizontal" action="{:U('update',array('id'=>$data['id']))}">
+            <input type="hidden" name="type" value="{$Think.get.type}">
+            <input type="hidden" name="cid" value="{$Think.get.cid}">
+            <div class="form-group">
+                <label class="control-label col-xs-1"><span class="text-danger">*</span>新闻标题:</label>
+                <div class="col-xs-8">
+                    <input type="text" name="title" class="form-control" value="{$data['title']}">
+                </div>
+            </div>
+
+            <div class="form-group">
+                    <label class="control-label col-xs-1">是否推荐:</label>
+                    <div class="col-xs-7">
+                        <label class="radio-inline">
+                            <input type="radio" name="recommend" value="1" <eq name="data['recommend']" value="1">checked</eq> />是</label>
+                        <label class="radio-inline">
+                            <input type="radio" name="recommend" value="0" <eq name="data['recommend']" value="0">checked</eq>  />否</label>
+                    </div>
+                </div>
+            <div class="form-group">
+                <label class="control-label col-xs-1">显示状态:</label>
+                <div class="col-xs-8">
+                    <label class="radio-inline"><input type="radio" name="status" value="1" <if condition="$data['status'] eq 1">checked</if> />显示</label>
+                    <label class="radio-inline"><input type="radio" name="status" value="0" <if condition="$data['status'] eq 0">checked</if> />隐藏</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-1">来源:</label>
+                <div class="col-xs-8">
+                    <input type="text" name="origin" class="form-control" value="{$data['origin']}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-1">外部链接:</label>
+                <div class="col-xs-6">
+                    <textarea name="external_link" maxlength="500" class="form-control" placeholder="200字符以内">{$data['external_link']}</textarea>
+                </div>
+                <div class="col-xs-4">设置外部链接后可不用填写内容详情</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-1">关键词:</label>
+                <div class="col-xs-8">
+                    <input type="text" name="keywords" class="form-control" value="{$data['keywords']}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-1"><span class="text-danger">*</span>新闻描述:</label>
+                <div class="col-xs-8">
+                    <textarea name="description" maxlength="120" class="form-control">{$data['description']}</textarea>
+                </div>
+                <div class="col-xs-3 js-tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-1">内容详情:</label>
+                <div class="col-xs-8">
+                    <script id="editorContainer" name="content">{$data['content']}</script>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-2 col-xs-offset-1"><button type="button" class="form-control btn-default" onclick="window.history.back()">返回列表</button></div>
+                <div class="col-xs-4"><button type="submit" class="form-control btn-info">提交</button></div>
+
+            </div>
+        </form>
+    </div>
+</div>

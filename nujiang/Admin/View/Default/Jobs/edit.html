@@ -1,0 +1,104 @@
+<div class="panel">
+    <div class="panel-body">
+        <div class="u-page-title"><span class="caption">{$pageName}</span> </div>
+        <form name="jobs-form" class="form form-horizontal" action="{:U('do_update')}">
+            <input type="hidden" name="id" value="{$Think.get.id}">
+            <div class="form-group">
+                <label class="control-label col-xs-1"><span class="text-danger">*</span>岗位名称:</label>
+                <div class="col-xs-4">
+                    <input type="text" name="title" class="form-control" value="{$mainInfo['title']}">
+                </div>
+                <div class="col-xs-3 tips"></div>
+            </div>
+            <div class="form-group">
+                    <label class="control-label col-xs-1">岗位状态:</label>
+                    <div class="col-xs-3">
+                        <label class="radio-inline"><input type="radio" name="status" value="1" <eq name="mainInfo['status']" value="1">checked</eq> >正常</label>
+                        <label class="radio-inline"><input type="radio" name="status" value="0" <eq name="mainInfo['status']" value="0">checked</eq> >隐藏</label>
+                    </div>
+                    <div class="col-xs-3 tips"></div>
+                </div>
+            <div class="form-group">
+                <label class="control-label col-xs-1"><span class="text-danger">*</span>公司名称:</label>
+                <div class="col-xs-4">
+                    <input type="text" name="company" class="form-control" placeholder="24字符以内"
+                        value="{$mainInfo['company']}">
+                </div>
+                <div class="col-xs-3 tips"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-xs-1">薪资:</label>
+                <div class="col-xs-2">
+                    <input type="text" name="wage" class="form-control" placeholder="12字符以内" maxlength="12"
+                        value="{$mainInfo['wage']}">
+                </div>
+                <div class="col-xs-3 tips"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-xs-1"><span class="text-danger">*</span>招聘人数:</label>
+                <div class="col-xs-2">
+                    <input type="number" min="1" max="100" name="person_limit" id="person-limit-input"
+                        class="form-control" placeholder="招聘人数" value="{$mainInfo['person_limit']}" <eq
+                        name="mainInfo['person_limit']" value="0">disabled</eq> >
+
+                </div>
+                <div class="col-xs-1">
+                    <label class="control-label"><input type="checkbox" name="no_limit_person" id="js-person-unlimited"
+                            <eq name="mainInfo['person_limit']" value="0">checked</eq>>不限</label>
+                </div>
+                <div class="col-xs-3 tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-1"><span class="text-danger">*</span>招聘截至:</label>
+                <div class="col-xs-2">
+                    <div class="input-group date" id="datetimepicker">
+                        <input type="text" name="end_date" class="form-control" value="{$mainInfo['end_date']}">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-3 tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-1"><span class="text-danger">*</span>联系人:</label>
+                <div class="col-xs-3">
+                    <input type="text" name="contact_person" maxlength="12" class="form-control" placeholder="请输入联系人"
+                        value="{$mainInfo['contact_person']}">
+                </div>
+                <div class="col-xs-3 tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-1"><span class="text-danger">*</span>联系电话:</label>
+                <div class="col-xs-3">
+                    <input type="text" name="contact_phone" maxlength="24" class="form-control" placeholder="请输入联系电话"
+                        value="{$mainInfo['contact_phone']}">
+                </div>
+                <div class="col-xs-3 tips"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-1"><span class="text-danger">*</span>联系邮箱:</label>
+                <div class="col-xs-3">
+                    <input type="text" name="contact_email" maxlength="24" class="form-control" placeholder="请输入联系邮箱"
+                        value="{$mainInfo['contact_email']}">
+                </div>
+                <div class="col-xs-3 tips"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-xs-1">岗位描述:</label>
+                <div class="col-xs-8">
+                    <script id="editorContainer" name="content">{$mainInfo['content']}</script>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-2 col-xs-offset-1"><button type="button" class="form-control btn-default"
+                        onclick="window.history.back()">返回列表</button></div>
+                <div class="col-xs-4"><button type="submit" class="form-control btn-info">提交</button></div>
+
+            </div>
+        </form>
+    </div>
+</div>

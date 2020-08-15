@@ -44,7 +44,7 @@ class WelfareController extends Auth {
 
 
 
-  // 活动详情
+  // 商家详情
   public function edit(){
     if(empty($_GET['id'])) {
       $backData = array(
@@ -54,7 +54,7 @@ class WelfareController extends Auth {
       $this->ajaxReturn($backData);
     }
     $id = I("get.id");
-    $info = M("Event")
+    $info = M("Welfare")
     ->where(array('id'=>$id))
     ->find();
     if(!$info) {
@@ -97,7 +97,7 @@ class WelfareController extends Auth {
       );
       $this->ajaxReturn($backData);
     }
-    $mainModel = M("Event");
+    $mainModel = M("Welfare");
     $postData = $mainModel->create($this->requestData);
     if(!$postData) {
       $backData = array(
@@ -107,9 +107,13 @@ class WelfareController extends Auth {
       $this->ajaxReturn($backData);   
     }
 
+    // 修改前端传递的日期格式
+    $mainModel->start_date = date("Y-m-d",date_timestamp_get(date_create($mainModel->start_date)));
+    $mainModel->end_date = date("Y-m-d",date_timestamp_get(date_create($mainModel->end_date)));
+    
     // 过滤内容中的style标签
     $replacePattner = '/<(style.*?)>(.*?)<(\/style.*?)>/si';
-    $mainModel->content = preg_replace($replacePattner,'',$mainModel->content);
+    // $mainModel->content = preg_replace($replacePattner,'',$mainModel->content);
     if(isset($mainModel->id) && !is_null($mainModel->id)){
       $id = intval($mainModel->id);
       $result = $mainModel->where(array("id"=>$id))->fetchSql(false)->save();
@@ -143,7 +147,7 @@ class WelfareController extends Auth {
       return $this->ajaxReturn($backData);  
     }
     $id= I("get.id");
-    $result = M("Event")->fetchSql(false)->delete($id);
+    $result = M("Welfare")->fetchSql(false)->delete($id);
     if($result !== false){
       $backData = array(
         'code'      => 200,
@@ -157,8 +161,6 @@ class WelfareController extends Auth {
     }
     $this->ajaxReturn($backData);   
   }
-
-
 
 
 

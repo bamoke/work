@@ -51,7 +51,7 @@ class TalentController extends Auth {
   public function log(){
     $page = I("get.page/d",1);
     $pageSize = 15;
-    $mainModel = M("TalentCard");
+    $mainModel = M("TalentApply");
     $where = array();
     if(!empty($_GET['keywords'])){
       $where['realname'] = array("like","%".$_GET["keywords"]."%");
@@ -87,7 +87,7 @@ class TalentController extends Auth {
 
 
     /***
-   * 申请记录
+   * 人才卡列表
    */
   public function vlist(){
     $page = I("get.page/d",1);
@@ -106,6 +106,11 @@ class TalentController extends Auth {
     ->select();
     $total = $mainModel->where($where)->count();
 
+    if(count($list)) {
+      foreach($list as $key=>$val){
+        $list[$key]["typename"] = $this->talentType[$val["type"]];
+      }
+    }
 
 
     $backData = array(
@@ -124,8 +129,8 @@ class TalentController extends Auth {
   }
 
 
-  // 活动详情
-  public function edit(){
+  // 申请资料查看
+  public function apply_detail(){
     if(empty($_GET['id'])) {
       $backData = array(
         'code'      => 10001,
@@ -134,8 +139,11 @@ class TalentController extends Auth {
       $this->ajaxReturn($backData);
     }
     $id = I("get.id");
-    $info = M("Event")
-    ->where(array('id'=>$id))
+    $info = M("TalentApply")
+    ->alias("T")
+    ->field("T.*,IFNULL(A.realname,'人社人才系统') as verifyuser")
+    ->join("LEFT JOIN __ADMIN__ A on A.id=T.verify_user")
+    ->where(array('T.id'=>$id))
     ->find();
     if(!$info) {
       $backData = array(
@@ -144,25 +152,24 @@ class TalentController extends Auth {
       );
       $this->ajaxReturn($backData);
     }
-    $thumbList = explode(";",$info['thumb']);
+    $thumbList = explode(",",trim($info['papers_img'],","));
     $newThumbList = array();
     if(count($thumbList)) {
       foreach($thumbList as $key=>$val){
         if($val) {
-          $temp = array(
-            "name"  =>$val,
-            "url"   =>"http://".C("OSS_BUCKET").".".C("OSS_ENDPOINT")."/".$val
-          );
-          array_push($newThumbList,$temp);
+          $newThumbList[] = C("OSS_BASE_URL")."/".$val;
         }
       }
     }
+    //  计算赋值
+    $info["papers_list"] = $newThumbList;
+    $info["typename"] = $this->talentType[$info['type']];
+    $info["verifyname"] = $this->verifyName[$info['verify_status']];
     $backData = array(
       'code'      => 200,
       "msg"       => "success",
       "data"      =>array(
-        "info"      =>$info,
-        "thumbList" =>$newThumbList    
+        "info"      =>$info
       )
     );
     $this->ajaxReturn($backData);
@@ -214,25 +221,95 @@ class TalentController extends Auth {
   }
 
 
-  public function deleteone(){
-    if(empty($_GET['id'])){
+  /**
+   * 人才卡申请审核
+   */
+  public function verify(){
+
+    $requestData = $this->requestData;
+    if(empty($requestData['id'])){
       $backData = array(
         'code'      => 10001,
         "msg"       => "非法请求"
       );  
       return $this->ajaxReturn($backData);  
     }
-    $id= I("get.id");
-    $result = M("Event")->fetchSql(false)->delete($id);
-    if($result !== false){
+
+    if(($requestData['status']==2 || $requestData['status'] ==5) && empty($requestData['reason'])) {
+      $backData = array(
+        'code'      => 13001,
+        "msg"       => "请填写未通过原因"
+      );  
+      return $this->ajaxReturn($backData); 
+    }
+    $transModel = M();
+    $transModel->startTrans();
+
+    $updateData = array(
+      "verify_time" =>date("Y-m-d H:i:s",time()),
+      "verify_user" =>$this->uid,
+      "verify_status" =>$requestData['status'],
+      "reason"      =>$requestData["reason"]
+    );
+
+    if($requestData['status'] == 3) {
+      $updateData['verify_status']  =4;
+    }
+    if($requestData['status']== 3 || $requestData['status']== 6 ) {
+      $updateData['reason']  = '';
+    }
+
+
+    $applyWhere = array(
+      "id"  =>$requestData["id"]
+    );
+    $applyInfo = M("TalentApply")->where($applyWhere)->fetchSql(false)->find();
+    $result = M("TalentApply")->where($applyWhere)->fetchSql(false)->save($updateData);
+
+    $cardOperator = true;
+    // 查看是否已有人才卡
+    $existCardInfo = M("TalentCard")->field("id")->where(array('uid'=>$applyInfo["uid"]))->fetchSql(false)->find();
+    if($requestData['status'] == 6) {
+      $cardData = array(
+        "uid" =>$applyInfo["uid"],
+        "realname" =>$applyInfo["realname"],
+        "type" =>$applyInfo["type"],
+        "card_no" =>$requestData["card_no"],
+        "start_date" =>$requestData["start_date"],
+        "end_date" =>$requestData["end_date"],
+        "level" =>$requestData["level"]?$requestData["level"]:'',
+        "score" =>$requestData["score"]?$requestData["score"]:0,
+        "love" =>$requestData["love"]?$requestData["love"]:0,
+        "update_time" =>date("Y-m-d H:i:s",time())
+      );
+      if($existCardInfo) {
+        $cardOperator = M("TalentCard")->where(array("id"=>$existCardInfo["id"]))->data($cardData)->save();
+      }else {
+        $cardOperator = M("TalentCard")->data($cardData)->fetchSql(false)->add();
+      }
+    }
+    if($result !== false && $cardOperator !== false){
+      $transModel->commit();
+      $applyInfo = M("TalentApply")
+      ->alias("T")
+      ->field("T.*,A.realname as verifyuser")
+      ->join("LEFT JOIN __ADMIN__ A on A.id=T.verify_user")
+      ->where(array("T.id"=>$requestData["id"]))
+      ->find();
+      $applyInfo['typename'] = $this->talentType[$applyInfo['type']];
+      $applyInfo['verifyname'] = $this->verifyName[$applyInfo['verify_status']];
       $backData = array(
         'code'      => 200,
-        "msg"       => "success"
+        "msg"       => "success",
+        "data"      =>array(
+          "info"    =>$applyInfo
+        )
       );    
     }else {
+      $transModel->rollback();
       $backData = array(
         'code'      => 13002,
-        "msg"       => "删除失败"
+        "msg"       => "操作失败"
       );  
     }
     $this->ajaxReturn($backData);   

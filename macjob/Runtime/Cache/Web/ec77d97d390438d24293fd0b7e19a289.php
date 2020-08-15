@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>澳门劳务</title>
-    <meta name="description" content="澳门劳务">
+    <title>澳门招聘</title>
+    <meta name="description" content="澳门招聘,珠海市人力资源网澳门招聘专栏">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico in the root directory -->
     <link href="/macjob/Web/Static/images/favicon.ico" type="img/x-icon" rel="shortcut icon">
@@ -16,17 +16,50 @@
     <!-- <link rel="stylesheet" href="/macjob/Web/Static/css/style.css"> -->
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
-    <link rel="stylesheet" href="/macjob/Web/Static/css/plugins/plugins.min.css">
-    <link rel="stylesheet" href="/macjob/Web/Static/css/style.min.css">
+    <link rel="stylesheet" href="/macjob/Web/Static/css/plugins/plugins.min.css?v=1">
+    <link rel="stylesheet" href="/macjob/Web/Static/css/style.min.css?v=1">
     <!-- Modernizr JS -->
     <script src="/macjob/Web/Static/js/vendor/modernizr-3.10.0.min.js"></script>
+    <style>
+        .breadcrumb-section {
+            background-color:#002168;
+            color:#fff;
+        }
+        .breadcrumb-section .page-breadcrumb li a {
+            color:#fff;
+        }
+        .breadcrumb-section .page-breadcrumb-content h1 {
+            color:#fff;
+        }
+        .newsList {
+    padding: 0 10px;
+}
+
+.m-news-list li {padding:16px 0;border-bottom:1px solid #ddd;}
+.m-news-list li:after {content:"";clear:both;display:block;visibility:hidden;}
+.m-news-list .title {font-size:18px;}
+.m-news-list .time {float:left;padding:0 10px;width:100px;height:80px;border:1px solid #ddd;text-align:center;}
+.m-news-list .time span {display: block;}
+.m-news-list .time .days {height:44px;line-height:44px;border-bottom:1px solid #ddd;font-size:22px;font-weight:bold;}
+.m-news-list .time .y-m {line-height:34px;font-size:16px;color:#9c9c9c;}
+.m-news-list .right-info {margin-left:140px;}
+.m-news-list .n-title {margin-bottom:14px;font-size:20px;font-weight: 700;color:#222;}
+@media (max-width: 767px) {
+    .m-news-list .time {
+        display: none;
+    }
+    .m-news-list .right-info {
+        margin-left:0;
+    }
+}
+    </style>
 </head>
 
 <body class="template-color-1">
 
     <div id="main-wrapper">
                 <!--Header section start-->
-        <header class="header-absolute sb-border header-sticky d-none d-lg-block">
+        <div class="<?php echo ($pageName=='首页' ? 'header-absolute ':'black-logo-version sticky-white '); ?>sb-border header-sticky d-none d-lg-block">
             <div class="main-header">
                 <div class="container-fluid pl-50 pl-lg-15 pl-md-15 pr-0">
                     <div class="row align-items-center no-gutters">
@@ -34,7 +67,7 @@
                         <!--Logo start-->
                         <div class="col-xl-2 col-lg-2 col-12">
                             <div class="logo">
-                                <a href="index.html"><img src="assets/images/logo-white.png" alt=""></a>
+                                <a href="<?php echo U('Index/index');?>"><img src="/macjob/Web/Static/images/<?php echo ($pageName=='首页' ? 'logo-white':'logo'); ?>.png" alt=""></a>
                             </div>
                         </div>
                         <!--Logo end-->
@@ -43,20 +76,20 @@
                         <div class="col-xl-7 col-lg-7 col-12">
                             <nav class="main-menu">
                                 <ul>
-                                    <li><a href="index.html">首页</a>
+                                    <li><a href="<?php echo U('Index/index');?>">首页</a>
                                     </li>
-                                    <li><a href="job-listing.html">招聘职位</a>
+                                    <li><a href="<?php echo U('Jobs/index');?>">招聘职位</a>
                                     </li>
-                                    <li><a href="#">政策法规</a>
+                                    <li><a href="<?php echo U('News/index',array('cid'=>10));?>">政策法规</a>
                                     </li>
-                                    <li><a href="#">走进澳门</a>
-                                    <li><a href="#">最新动态</a>
+                                    <li><a href="<?php echo U('Index/index');?>">走进澳门</a>
+                                    <li><a href="<?php echo U('News/index',array('cid'=>8));?>">最新动态</a>
                                     </li>
-                                    <li><a href="#">赴澳须知</a>
+                                    <li><a href="<?php echo U('News/index',array('cid'=>9));?>">赴澳须知</a>
                                     </li>
-                                    <li><a href="#">人才培训</a>
+                                    <li><a href="<?php echo U('Single/index',array('id'=>12));?>">人才培训</a>
                                     </li>
-                                    <li><a href="#">关于我们</a>
+                                    <li><a href="<?php echo U('Single/index',array('id'=>1));?>">关于我们</a>
                                     </li>
 
                                 </ul>
@@ -68,7 +101,7 @@
 
                 </div>
             </div>
-        </header>
+        </div>
         <!--Header section end-->
 
         <!--Header Mobile section start-->
@@ -92,29 +125,12 @@
                                     </div>
                                     <div class="col-6 col-md-6">
                                         <div class="header-logo text-center">
-                                            <a href="index.html">
-                                                <img src="assets/images/logo-mobile.png" class="img-fluid" alt="">
+                                            <a href="<?php echo U(Index/index);?>">
+                                                <img src="/macjob/Web/Static/images/logo-mobile.png" class="img-fluid" alt="">
                                             </a>
                                         </div>
                                     </div>
                                     <div class="col-3 col-md-3">
-                                        <div class="mobile-navigation text-right">
-                                            <div class="header-icon-wrapper">
-                                                <ul class="icon-list justify-content-end">
-                                                    <li>
-                                                        <div class="header-cart-icon">
-                                                            <a href="#" class="header-search-toggle"><i class="lnr lnr-magnifier"></i></a>
-                                                        </div>
-                                                        <div class="header-search-form">
-                                                            <form action="#">
-                                                                <input type="text" placeholder="Type and hit enter">
-                                                                <button><i class="lnr lnr-magnifier"></i></button>
-                                                            </form>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -125,7 +141,45 @@
             </div>
         </header>
         <!--Header Mobile section end-->
-        <div class="pageMain">
+
+                <!-- Start Popup Menu -->
+                <div class="popup-mobile-manu popup-mobile-visiable">
+                    <div class="inner">
+                        <div class="mobileheader">
+                            <div class="logo">
+                                <a href="<?php echo U('Index/index');?>}">
+                                    <img src="/macjob/Web/Static/images/logo-mobile.png" alt="Multipurpose">
+                                </a>
+                            </div>
+                            <a class="mobile-close" href="#"></a>
+                        </div>
+                        <div class="menu-content">
+                            <ul class="menulist object-custom-menu">
+                                <li class="has-mega-menu"><a href="#"><span>Home</span></a>
+                                </li>
+        
+                                <li><a href="<?php echo U('Index/index');?>">首页</a>
+                                </li>
+                                <li><a href="<?php echo U('Jobs/index');?>">招聘职位</a>
+                                </li>
+                                <li><a href="<?php echo U('News/index',array('cid'=>10));?>">政策法规</a>
+                                </li>
+                                <li><a href="<?php echo U('Index/index');?>">走进澳门</a>
+                                <li><a href="<?php echo U('News/index',array('cid'=>8));?>">最新动态</a>
+                                </li>
+                                <li><a href="<?php echo U('News/index',array('cid'=>9));?>">赴澳须知</a>
+                                </li>
+                                <li><a href="<?php echo U('Single/index',array('id'=>12));?>">人才培训</a>
+                                </li>
+                                <li><a href="<?php echo U('Single/index',array('id'=>1));?>">关于我们</a>
+                                </li>
+        
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Popup Menu -->
                     <!--slider section start-->
         <div class="hero-section section position-relative">
             <!--Hero Item start-->
@@ -537,7 +591,7 @@
                     <div class="col-lg-12">
                         <div class="section-title-wrap mb-45">
                             <div class="section-title">
-                                <span> FROM OUR BLOG</span>
+                                <span> LATEST NEWS</span>
                                 <h3 class="title"> 最新动态</h3>
                             </div>
                             <!-- <div class="jetapo-link">
@@ -655,165 +709,6 @@
         </div>
         <!-- Blog Section End -->
 
-        <!-- Testimonial Section Start -->
-        <div class="testimonial-section section bg-image-proparty bg_image--2 pt-115 pt-lg-95 pt-md-75 pt-sm-55 pt-xs-45 pb-180 pb-lg-160 pb-md-140 pb-sm-60 pb-xs-30">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title-wrap mb-45">
-                            <div class="section-title">
-                                <span> OUR HAPPY CLIENTS</span>
-                                <h3 class="title"> 案例分享</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-slider row">
-
-                    <div class="col-lg-6">
-                        <!-- Single Testimonial Start -->
-                        <div class="single-testimonial">
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">
-                                    <img src="/macjob/Web/Static/images/testimonial/testimonial-1.jpg" alt="">
-                                </div>
-                                <div class="testimonial-meta">
-                                    <h5 class="name">刘小姐</h5>
-                                    <p class="text">
-                                        <span class="position">高级物流营运经理</span>
-                                        <span class="company theme-color">澳门**物流公司</span>
-                                    </p>
-                                </div>
-                                <span class="icon-quote theme-color">
-                                <i class="fas fa-quote-right"></i>
-                            </span>
-                            </div>
-                            <div class="testimonial-comment">
-                                <p>"求职之路所感大学三年,匆匆而过。现在却已踏上了求职之路,一路走来,虽是艰辛,但亦无 悔。在我的人生当中,我经历了. If you aren't sure, always go for Jopota Recruitment. Jopota Recruitment is the real deal!"</p>
-                            </div>
-                        </div>
-                        <!-- Single Testimonial End -->
-                    </div>
-
-                    <div class="col-lg-6">
-                        <!-- Single Testimonial Start -->
-                        <div class="single-testimonial">
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">
-                                    <img src="/macjob/Web/Static/images/testimonial/testimonial-2.jpg" alt="">
-                                </div>
-                                <div class="testimonial-meta">
-                                    <h5 class="name">陈先生</h5>
-                                    <p class="text">
-                                        <span class="position">总经理助理</span>
-                                    </p>
-                                </div>
-                                <span class="icon-quote theme-color">
-                                <i class="fas fa-quote-right"></i>
-                            </span>
-                            </div>
-                            <div class="testimonial-comment">
-                                <p>"北京名校研究僧毕业，毕业之后在国企做财务方面的培训，干了一年多之后，觉得这份工作没什么压力，也没什么前途，于是在这个平台投的简历，最后被录取了，在澳门干了差不多一年半，又跳槽去了一个各位梦寐以求的券商，感谢！"</p>
-                            </div>
-                        </div>
-                        <!-- Single Testimonial End -->
-                    </div>
-
-                    <div class="col-lg-6">
-                        <!-- Single Testimonial Start -->
-                        <div class="single-testimonial">
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">
-                                    <img src="/macjob/Web/Static/images/testimonial/testimonial-3.jpg" alt="">
-                                </div>
-                                <div class="testimonial-meta">
-                                    <h5 class="name">方小姐</h5>
-                                    <p class="text">
-                                        <span class="position">楼面经理</span>
-                                        <span class="company theme-color">永利</span>
-                                    </p>
-                                </div>
-                                <span class="icon-quote theme-color">
-                                <i class="fas fa-quote-right"></i>
-                            </span>
-                            </div>
-                            <div class="testimonial-comment">
-                                <p>"北京名校研究僧毕业，毕业之后在国企做财务方面的培训，干了一年多之后，觉得这份工作没什么压力，也没什么前途，于是在这个平台投的简历，最后被录取了，在澳门干了差不多一年半，又跳槽去了一个各位梦寐以求的券商，感谢！"</p>
-                            </div>
-                        </div>
-                        <!-- Single Testimonial End -->
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!-- Testimonial Section End -->
-
-        <!-- Funfact Section Start  -->
-        <div class="funfact-section section mt--60 pb-50 pb-sm-0 pb-xs-0">
-            <div class="container">
-                <div class="row no-gutters border-top-left">
-
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <!-- Single Funfact Start -->
-                        <div class="single-funfact">
-                            <div class="icon-img">
-                                <img src="/macjob/Web/Static/images/icons/candidates.png" alt="">
-                            </div>
-                            <div class="funfact-content">
-                                <span class="counter">87,360</span>
-                                <span class="text theme-color">求职者</span>
-                            </div>
-                        </div>
-                        <!-- Single Funfact End -->
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <!-- Single Funfact Start -->
-                        <div class="single-funfact">
-                            <div class="icon-img">
-                                <img src="/macjob/Web/Static/images/icons/total-jobs.png" alt="">
-                            </div>
-                            <div class="funfact-content">
-                                <span class="counter">20,258</span>
-                                <span class="text theme-color">职位总计</span>
-                            </div>
-                        </div>
-                        <!-- Single Funfact End -->
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <!-- Single Funfact Start -->
-                        <div class="single-funfact">
-                            <div class="icon-img">
-                                <img src="/macjob/Web/Static/images/icons/employers.png" alt="">
-                            </div>
-                            <div class="funfact-content">
-                                <span class="counter">8,650</span>
-                                <span class="text theme-color">招聘企业</span>
-                            </div>
-                        </div>
-                        <!-- Single Funfact End -->
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <!-- Single Funfact Start -->
-                        <div class="single-funfact">
-                            <div class="icon-img">
-                                <img src="/macjob/Web/Static/images/icons/job-applications.png" alt="">
-                            </div>
-                            <div class="funfact-content">
-                                <span class="counter">50,299</span>
-                                <span class="text theme-color">成功推荐</span>
-                            </div>
-                        </div>
-                        <!-- Single Funfact End -->
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        </div>
                 <!--Footer section start-->
         <footer class="footer-section section">
 
@@ -826,12 +721,12 @@
                     <div class="row no-gutters st-border pt-35 pb-35 align-items-center justify-content-between">
                         <div class="col-lg-6 col-md-6">
                             <div class="copyright">
-                                <p>&copy;2020 <a href="http://www.bootstrapmb.com">Jetapo</a>. All rights reserved.</p>
+                                <p>&copy;2020 <a href="http://www.zh-hr.com">www.zh-hr.com</a>. All rights reserved.</p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="footer-social">
-                                南方人才-珠海人力资源网
+                                珠海人力资源网
                                 <!-- <a href="#"><i class="fab fa-facebook-f"></i></a>
                                 <a href="#"><i class="fab fa-instagram"></i></a>
                                 <a href="#"><i class="fab fa-google"></i></a> -->

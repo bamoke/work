@@ -16,7 +16,7 @@ class AdviserController extends BaseController {
     $hasTalent =true;
     $talentId = null;
     $talentInfo = M("TalentCard")
-    ->field("id,end_date,verify_status")
+    ->field("id,end_date")
     ->where($talentCondition)
     ->fetchSql(false)
     ->find();
@@ -25,9 +25,6 @@ class AdviserController extends BaseController {
       $hasTalent = false;
     }else {
       $talentId = $talentInfo["id"];
-    }
-    if($talentInfo['verify_status'] != 6) {
-      $hasTalent = false;
     }
 
     if(strtotime($talentInfo['end_date']) < time()) {
@@ -42,6 +39,7 @@ class AdviserController extends BaseController {
     ->field("*,CONCAT('$thumbBase',thumb) as thumb")
     ->where($adviserCondition)
     ->order("sort,id")
+    ->fetchSql(false)
     ->select();
     $backData = array(
       "code"  =>200,

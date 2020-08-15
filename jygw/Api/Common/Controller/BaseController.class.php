@@ -54,4 +54,24 @@ class BaseController extends Controller
         $sessionResult = M("Mysession")->field("uid")->where(array("token"=>$token))->find();
         return $sessionResult["uid"];
     }
+
+    /**
+     * @return -1,人才卡已过期，0,非人才卡用户,1,2,3....人才类型
+     */
+    // 检测是否是人才卡用户
+    protected function is_talent_user(){
+        $condition = array(
+            "uid"   =>$this->uid
+        );
+        $talentInfo = M("TalentCard")
+        ->where($condition)
+        ->find();
+        if(!$talentInfo) {
+            return 0;
+        }
+        if(strtotime($talentInfo["end_date"]) <= time() ) {
+            return -1;
+        }
+         return $talentInfo["type"];
+    }
 }

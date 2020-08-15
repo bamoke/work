@@ -1,87 +1,234 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<?php if (!defined('THINK_PATH')) exit();?><html class="no-js" lang="zxx">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>澳门招聘</title>
+    <meta name="description" content="澳门招聘,珠海市人力资源网澳门招聘专栏">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico in the root directory -->
+    <link href="/macjob/Web/Static/images/favicon.ico" type="img/x-icon" rel="shortcut icon">
+    <!-- All css files are included here. -->
+    <link rel="stylesheet" href="/macjob/Web/Static/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="/macjob/Web/Static/css/vendor/iconfont.min.css">
+    <link rel="stylesheet" href="/macjob/Web/Static/css/vendor/helper.css">
+    <!-- <link rel="stylesheet" href="/macjob/Web/Static/css/plugins/plugins.css"> -->
+    <!-- <link rel="stylesheet" href="/macjob/Web/Static/css/style.css"> -->
 
-    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-
-    <title><?php echo ($siteConfig['site_name']); ?></title>
-    <link href="/nujiang/Web/Static/css/style.css?v=<?php echo time() ?>" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="/nujiang/Web/Static/js/jquery-1.9.1.js"></script>
-    <script type="text/javascript" src="/nujiang/Web/Static/js/jquery.SuperSlide.js"></script>
-    <style type="text/css">
-        html,
-        body {
-            margin: 0;
-            padding: 0;
+    <!-- Use the minified version files listed below for better performance and remove the files listed above -->
+    <link rel="stylesheet" href="/macjob/Web/Static/css/plugins/plugins.min.css">
+    <link rel="stylesheet" href="/macjob/Web/Static/css/style.min.css">
+    <!-- Modernizr JS -->
+    <script src="/macjob/Web/Static/js/vendor/modernizr-3.10.0.min.js"></script>
+    <style>
+        .breadcrumb-section {
+            background-color:#002168;
+            color:#fff;
         }
-
-        .iw_poi_title {
-            color: #CC5522;
-            font-size: 14px;
-            font-weight: bold;
-            overflow: hidden;
-            padding-right: 13px;
-            white-space: nowrap
+        .breadcrumb-section .page-breadcrumb li a {
+            color:#fff;
         }
-
-        .iw_poi_content {
-            font: 12px arial, sans-serif;
-            overflow: visible;
-            padding-top: 4px;
-            white-space: -moz-pre-wrap;
-            word-wrap: break-word
+        .breadcrumb-section .page-breadcrumb-content h1 {
+            color:#fff;
         }
+        .newsList {
+    padding: 0 10px;
+}
+
+.m-news-list li {padding:16px 0;border-bottom:1px solid #ddd;}
+.m-news-list li:after {content:"";clear:both;display:block;visibility:hidden;}
+.m-news-list .title {font-size:18px;}
+.m-news-list .time {float:left;padding:0 10px;width:100px;height:80px;border:1px solid #ddd;text-align:center;}
+.m-news-list .time span {display: block;}
+.m-news-list .time .days {height:44px;line-height:44px;border-bottom:1px solid #ddd;font-size:22px;font-weight:bold;}
+.m-news-list .time .y-m {line-height:34px;font-size:16px;color:#9c9c9c;}
+.m-news-list .right-info {margin-left:140px;}
+.m-news-list .n-title {margin-bottom:14px;font-size:20px;font-weight: 700;color:#222;}
+@media (max-width: 767px) {
+    .m-news-list .time {
+        display: none;
+    }
+    .m-news-list .right-info {
+        margin-left:0;
+    }
+}
     </style>
-    <script type="text/javascript" src="/nujiang/Web/Static/js/main.js"></script>
-
-
-
-
 </head>
 
-<body>
-    <div class="wrapper">
-        <div id="header">
-    <div class="k1120 clearfix">
-        <div id="menu">
-            <ul class="clearfix">
-                <li><a href="<?php echo U('Index/index');?>" class="nav_home <?php if($curPage == 'index') echo 'current' ?>"><span>首页</span></a></li>
-                <li><a href="<?php echo U('Jobs/index');?>" class="nav_pro <?php if($curPage == 'jobs') echo 'current' ?>"><span>岗位信息</span></a></li>
-                <li><a href="<?php echo U('News/index',array('cid'=>8));?>" class="nav_news <?php if($curPage == 'news' && $_GET['cid'] == 8) echo 'current' ?>"><span>工作动态</span></a></li>
-                <li><a href="<?php echo U('News/index',array('cid'=>9));?>" class="nav_news <?php if($curPage == 'news' && $_GET['cid'] == 9) echo 'current' ?>"><span>奖励政策</span></a></li>
-                <li><a href="<?php echo U('News/index',array('cid'=>10));?>" class="nav_news <?php if($curPage == 'news' && $_GET['cid'] == 10) echo 'current' ?>"><span>办事指南</span></a></li>
-                <li><a href="<?php echo U('Single/index',array('id'=>1));?>" class="nav_save <?php if($curPage == 'single' && $_GET['id'] == 1) echo 'current' ?>"><span>怒江风情</span></a></li>
-                <li><a href="<?php echo U('Single/index',array('id'=>11));?>" class="nav_save <?php if($curPage == 'single' && $_GET['id'] == 11) echo 'current' ?>"><span>珠海概况</span></a></li>
-                <li><a href="<?php echo U('Index/about');?>" class="nav_save <?php if($curPage == 'about') echo 'current' ?>"><span>关于我们</span></a></li>
-                <li><a href="<?php echo U('Index/contact');?>" class="nav_save <?php if($curPage == 'contact') echo 'current' ?>"><span>联系我们</span></a></li>
+<body class="template-color-1">
 
-            </ul>
+    <div id="main-wrapper">
+                <!--Header section start-->
+        <div class="<?php echo ($pageName=='首页' ? 'header-absolute ':'black-logo-version sticky-white '); ?>sb-border header-sticky d-none d-lg-block">
+            <div class="main-header">
+                <div class="container-fluid pl-50 pl-lg-15 pl-md-15 pr-0">
+                    <div class="row align-items-center no-gutters">
+
+                        <!--Logo start-->
+                        <div class="col-xl-2 col-lg-2 col-12">
+                            <div class="logo">
+                                <a href="<?php echo U('Index/index');?>"><img src="/macjob/Web/Static/images/logo-white.png" alt=""></a>
+                            </div>
+                        </div>
+                        <!--Logo end-->
+
+                        <!--Menu start-->
+                        <div class="col-xl-7 col-lg-7 col-12">
+                            <nav class="main-menu">
+                                <ul>
+                                    <li><a href="<?php echo U('Index/index');?>">首页</a>
+                                    </li>
+                                    <li><a href="<?php echo U('Jobs/index');?>">招聘职位</a>
+                                    </li>
+                                    <li><a href="<?php echo U('News/index',array('cid'=>10));?>">政策法规</a>
+                                    </li>
+                                    <li><a href="<?php echo U('Index/index');?>">走进澳门</a>
+                                    <li><a href="<?php echo U('News/index',array('cid'=>8));?>">最新动态</a>
+                                    </li>
+                                    <li><a href="<?php echo U('News/index',array('cid'=>9));?>">赴澳须知</a>
+                                    </li>
+                                    <li><a href="<?php echo U('Single/index',array('id'=>12));?>">人才培训</a>
+                                    </li>
+                                    <li><a href="<?php echo U('Single/index',array('id'=>1));?>">关于我们</a>
+                                    </li>
+
+                                </ul>
+                            </nav>
+                        </div>
+                        <!--Menu end-->
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--Header section end-->
+
+        <!--Header Mobile section start-->
+        <header class="header-mobile bg_color--2 d-block d-lg-none">
+            <div class="header-bottom menu-right">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="header-mobile-navigation d-block d-lg-none">
+                                <div class="row align-items-center">
+                                    <div class="col-3 col-md-3">
+                                        <div class="mobile-navigation text-right">
+                                            <div class="header-icon-wrapper">
+                                                <ul class="icon-list justify-content-start">
+                                                    <li class="popup-mobile-click">
+                                                        <a href="javascript:void(0)"><i class="lnr lnr-menu"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-6">
+                                        <div class="header-logo text-center">
+                                            <a href="<?php echo U(Index/index);?>">
+                                                <img src="/macjob/Web/Static/images/logo-mobile.png" class="img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 col-md-3">
+                                        <div class="mobile-navigation text-right">
+                                            <div class="header-icon-wrapper">
+                                                <ul class="icon-list justify-content-end">
+                                                    <li>
+                                                        <div class="header-cart-icon">
+                                                            <a href="#" class="header-search-toggle"><i class="lnr lnr-magnifier"></i></a>
+                                                        </div>
+                                                        <div class="header-search-form">
+                                                            <form action="#">
+                                                                <input type="text" placeholder="Type and hit enter">
+                                                                <button><i class="lnr lnr-magnifier"></i></button>
+                                                            </form>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <!--Header Mobile section end-->
+            <!-- Breadcrumb Section Start -->
+<div class="breadcrumb-section section bg_color--5 pt-60 pt-sm-50 pt-xs-40 pb-60 pb-sm-50 pb-xs-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-breadcrumb-content">
+                    <ul class="page-breadcrumb">
+                        <li><a href="<?php echo U('Index/index');?>">首页</a></li>
+                        <li><?php echo ($pageName); ?></li>
+                    </ul>
+                    <h1><?php echo ($pageName); ?></h1>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-        <div class="pageMain">
-            <div class="sub-banner"></div>
-<div class="content-wrap">
-    <?php if($_GET['id'] == 7): echo ($outData['info']['content']); ?>
-        <?php else: ?>
-        <div class="k1120">
-            <?php echo ($outData['info']['content']); ?>
-        </div><?php endif; ?>
-
-</div>
+<!-- Breadcrumb Section Start -->
+        <!-- About Content Section Start -->
+        <div class="about-content-section section">
+            <div class="container pt-40 pb-40">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="about-content">
+                            <?php echo ($outData['info']['content']); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="footer">
-    <p class="copyright">©2019 珠海市人力资源网 All rights reserved <?php echo ($siteConfig['icp']); ?></p>
-</div>
+        <!-- About Content Section End -->
+                <!--Footer section start-->
+        <footer class="footer-section section">
+
+            <!-- Footer Top Section Start -->
+            <!-- Footer Top Section End -->
+
+            <!--Footer bottom start-->
+            <div class="footer-bottom section fb-60">
+                <div class="container">
+                    <div class="row no-gutters st-border pt-35 pb-35 align-items-center justify-content-between">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="copyright">
+                                <p>&copy;2020 <a href="http://www.zh-hr.com">www.zh-hr.com</a>. All rights reserved.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="footer-social">
+                                珠海人力资源网
+                                <!-- <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-google"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Footer bottom end-->
+
+        </footer>
+        <!--Footer section end-->
     </div>
 
 </body>
 
 </html>
+<!-- All jquery file included here -->
+<script src="/macjob/Web/Static/js/vendor/jquery-3.5.0.min.js"></script>
+<script src="/macjob/Web/Static/js/vendor/jquery-migrate-3.1.0.min.js"></script>
+<script src="/macjob/Web/Static/js/vendor/bootstrap.bundle.min.js"></script>
+<!-- <script src="/macjob/Web/Static/js/plugins/plugins.js"></script> -->
+
+<!-- Use the minified version files listed below for better performance and remove the files listed above -->
+<script src="/macjob/Web/Static/js/plugins/plugins.min.js"></script>
+<script src="/macjob/Web/Static/js/main.js"></script>

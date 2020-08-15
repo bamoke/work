@@ -20,51 +20,37 @@ class TalentController extends BaseController {
     $condition = array(
       "uid" =>$this->uid
     );
-    // 先查申请表，如果产业类，通过api获取数据
-    $info  = null;
+
     $applyInfo = M("TalentApply")
     ->where($condition)
     ->fetchSql(false)
     ->find();
-    if($applyInfo["type"] == 1) {
-      $idCard = $applyInfo["papers_no"];
-      $cardInfo = $this->fetchTalentInfoApi($idCard);
-      if($cardInfo["code"] != 0) {
-        $backData = array(
-          "code"  => 13001,
-          "msg"   => "接口数据读取错误"
-        );  
-        $this->ajaxReturn($backData); 
-      }
-      if($cardInfo["msg"] == "查无此人") {
-        $backData = array(
-          "code"  => 13009,
-          "msg"   => "暂无数据"
-        );  
-        $this->ajaxReturn($backData); 
-      }
-      $info = $cardInfo["data"];
-      $info["type"] = 1;
-      $info["card_no"] = $info["seq"];
-      $info["end_date"] = date_format(date_create($info["enddate"]),"Y-m-d");
-    }else {
-      if($applyInfo['verify_status'] == 6) {
-        $info = M("TalentCard")
-        ->field("*,IF(end_date < CURDATE(),1,0) as expired")
-        ->where($condition)
-        ->fetchSql(false)
-        ->find();
-      }else {
-        $info = $applyInfo;
-      }
+
+    if(!$applyInfo) {
+      $backData = array(
+        "code"  =>200,
+        "msg"   =>'success',
+        "data"  =>array(
+          "info"  =>null
+        )
+      );
+      $this->ajaxReturn($backData);
     }
 
+    if($applyInfo['verify_status'] == 6) {
+      $info = M("TalentCard")
+      ->field("*,IF(end_date < CURDATE(),1,0) as expired")
+      ->where($condition)
+      ->fetchSql(false)
+      ->find();
+    }else {
+      $info = $applyInfo;
+    }
+    
 
     if($info['type']) {
       $info['type_txt'] = $this->talentType[$info['type']];
     }
-
-
 
     $backData = array(
       "code"  =>200,
@@ -74,6 +60,7 @@ class TalentController extends BaseController {
       )
     );
     $this->ajaxReturn($backData);
+
   }
   /**
    * 申请资料detail
@@ -112,10 +99,12 @@ class TalentController extends BaseController {
       );  
       $this->ajaxReturn($backData); 
     }
-
+    $talentType = I("post.talent_type");
+    $idCard = I("post.papers_no");
     $mainData = I("post.");
     $mainData["type"] = $mainData["talent_type"];
     $mainModel = M("TalentApply");
+
 
     // 检测是否已经申请过
     $condition = array(
@@ -125,6 +114,8 @@ class TalentController extends BaseController {
     ->where($condition)
     ->find();
 
+    $transModel = M();
+    $transModel->startTrans();
     if($applyInfo) {
       // 更新记录
       // 更新记录判断手机号和证件号是否存在
@@ -145,7 +136,7 @@ class TalentController extends BaseController {
         $this->ajaxReturn($backData);
       }
       // 状态判断，非产业类人才审核中不可修改数据
-      if(($applyInfo["verify_status"] != 2 && $applyInfo["verify_status"] != 5 && $applyInfo["type"] != 1)) {
+      if(($applyInfo["verify_status"] == 3 || $applyInfo["verify_status"] == 4 ) && $talentType != 1) {
         $backData = array(
           "code"  => 13001,
           "msg"   => "审核中数据不可修改"
@@ -154,10 +145,7 @@ class TalentController extends BaseController {
       }
       $mainData["verify_status"] = 1;
       $mainData["reason"] = "";
-      if($mainData["talent_type"] == 1) {
-        $mainData["verify_status"] = 4;
-      }
-      $result = $mainModel->where(array("uid"=>$this->uid))->data($mainData)->save();
+      $result = $mainModel->where(array("uid"=>$this->uid))->data($mainData)->fetchSql(false)->save();
 
     }else {
       // 插入记录
@@ -178,26 +166,70 @@ class TalentController extends BaseController {
         );  
         $this->ajaxReturn($backData);
       }
-      if($mainData["talent_type"] == 1) {
-        $mainData["verify_status"] = 4;
-      }
       $mainData["uid"]  = $this->uid;
       $result = $mainModel->data($mainData)->fetchSql(false)->add();
     }
 
 
-    if($result === false){
+    $hanleCardResult = true;
+    $updateApplyResult = true;
+    //  如果是产业人才调用接口查询结果
+    $updateData = array();
+    if($talentType == 1) {
+      $cardInfo = $this->fetchTalentInfoApi($idCard);
+      $updateData["verify_time"] = date("Y-m-d H:i:s",time());
+      if($cardInfo["code"] == 0) {
+        if($cardInfo["msg"] == "成功") {
+          // 人才查询成功，保存到本地人才卡数据库
+          $updateData["verify_status"] = 6;
+          $updateData["reason"] = "";
+
+          $oldCardInfo = M("TalentCard")->where(array("uid"=>$this->uid))->fetchSql(false)->find();
+
+          $newCardData = array(
+            "realname"  =>$cardInfo["data"]["name"],
+            "type"      =>$talentType,
+            "card_no"   =>$cardInfo["data"]["seq"],
+            "start_date"  =>date_format(date_create($cardInfo["data"]["startdate"]),"Y-m-d"),
+            "end_date"  =>date_format(date_create($cardInfo["data"]["enddate"]),"Y-m-d"),
+            "level"     =>$cardInfo["data"]["level"],
+            "score"     =>$cardInfo["data"]["score"],
+            "update_time" =>date("Y-m-d H:i:s",time())
+          );
+          if($oldCardInfo) {
+            $hanleCardResult = M("TalentCard")->where(array("uid"=>$this->uid))->fetchSql(false)->save($newCardData);
+          }else {
+            $newCardData["uid"] = $this->uid;
+            $hanleCardResult = M("TalentCard")->data($newCardData)->add();
+          }
+        }else {
+          $updateData["verify_status"] = 5;
+          $updateData["reason"] = "人才系统反馈：".$cardInfo["msg"];
+        }
+      }else {
+        $updateData["verify_status"] = 5;
+        $updateData["reason"] = "人才系统内部错误";
+      }
+      $updateApplyResult = M("TalentApply")->where(array("uid"=>$this->uid))->data($updateData)->save();
+    }
+
+
+    if($result !== false && $hanleCardResult !== false && $updateApplyResult){
+      $transModel->commit();
+      $backData = array(
+        "code"  => 200,
+        "msg"   => "success"
+      );  
+      $this->ajaxReturn($backData);
+    }else {
+      $transModel->rollback();
       $backData = array(
         "code"  => 13001,
         "msg"   => "数据保存错误"
       );  
       $this->ajaxReturn($backData); 
     }
-    $backData = array(
-      "code"  => 200,
-      "msg"   => "success"
-    );  
-    $this->ajaxReturn($backData); 
+ 
 
   }
 
@@ -230,7 +262,7 @@ class TalentController extends BaseController {
    * @idcard  身份证
    */
   protected function fetchTalentInfoApi($idcard) {
-    $aipUrl = "http://183.6.120.226:13283/jwrs/appController/TalentCard.json";
+    $aipUrl = "http://183.57.22.41:8080/appController/TalentCard.json";
     $curHttp = new \Org\Net\Http();
     $data = array(
       "idCard"  =>$idcard,

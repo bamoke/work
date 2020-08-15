@@ -8,40 +8,48 @@ class WelfareController extends BaseController {
    * @page
    */
   public function vlist(){
+    $uid = $this->uid;
     $page = I("get.page/d",1);
-    $pageSize = 20;
+    $pageSize = 10;
     $customLat = I("get.lat");
     $customLng = I("get.lng");
     $condition = array(
-      "status"  =>1
+      "W.status"  =>1
     );
     $orderType = I("get.type/d",1);
-    $thumbBase = C("OSS_BASE_URL")."/thumb/";
+    $thumbBase = C("OSS_BASE_URL")."/";
     if(!empty($_GET["lat"])) {
-      $fieldInfo = "*,concat('$thumbBase',thumb) as thumb,(st_distance (point (longitude, latitude),point($customLng,$customLat) ) *111195) AS distance";
+      $fieldInfo = "W.id,W.title,W.tags,concat('$thumbBase',W.thumb) as thumb,(st_distance (point (W.longitude, W.latitude),point($customLng,$customLat) ) * 111195) AS distance";
     }else {
-      $fieldInfo = "*,concat('$thumbBase',thumb) as thumb, '0' as distance";
+      $fieldInfo = "W.id,W.title,W.tags,concat('$thumbBase',W.thumb) as thumb, '0' as distance";
     }
+
+    $fieldInfo .= ", C.title as coupon_title,C.id as coupon_id,R.id as hascoupon";
     $orderBy = "";
     switch($orderType) {
       case 1:
-      $orderBy = "recommend desc,grade desc,id desc";
+      $orderBy = "W.recommend desc,W.grade desc,W.id desc";
       break;
       case 2 :
-      $orderBy = "distance ,recommend desc,grade desc,id desc";
+      $orderBy = "distance ,W.recommend desc,W.grade desc,W.id desc";
       break;
       case 3 :
-      $orderBy = "grade desc,recommend desc,id desc";
+      $orderBy = "W.grade desc,W.recommend desc,W.id desc";
       break;
     }
-    $total = M("Welfare")->where($condition)->count();
+    $total = M("Welfare")->alias("W")->where($condition)->count();
     $list = M("Welfare")
+    ->alias("W")
     ->field($fieldInfo)
+    ->join("__COUPON__ as C on C.b_id = W.id and C.status=1 and C.end_date >= CURDATE()")
+    ->join("left join __COUPON_RECORD__ as R on R.coupon_id = C.id and R.stage=0 and R.uid=$uid")
     ->where($condition)
     ->page($page,$pageSize)
     ->order($orderBy)
     ->fetchSql(false)
     ->select();
+    // var_dump($list);
+    // exit();
 
     // return;
     if(count($list)){
@@ -88,69 +96,29 @@ class WelfareController extends BaseController {
       );  
       $this->ajaxReturn($backData); 
     }
-    $cardId = I("get.id");
-    $cardUid = M("Card")->where(array('id'=>$cardId))->getField("uid");
-
-
-    // 1.2 是否已交换名片
-    $exchangeCondition = array(
-      "from_uid" =>$this->uid,
-      "to_uid" =>$cardUid
-    );
-    $exchangedStatus = M("Exchange")->where($exchangeCondition)->fetchSql(false)->getField("status");
- 
- 
-    $isLike=false;
-    $isCollected=false;
-    $likeTotal=0;
-    $collectedTotal=0;
-    if($exchangedStatus == 2) {
-         // 1.2 是否已收藏
-      $collectionCondition = array(
-        "uid" =>$this->uid,
-        "card_id" =>$cardId,
-        "status"  =>1
-      );
-      $isCollected = M("Collection")->where($collectionCondition)->count();
-
-      // 1.3 是否已点赞
-      $likeCondition = array(
-        "uid"     =>$this->uid,
-        "card_id" =>$cardId
-      );
-      $isLike = M("Like")->where($likeCondition)->count();
-
-      // 2.统计信息
-      $totalCondition = array(
-        "card_id" =>$cardId
-      );
-      // 2.1 收藏统计
-      $collectionTotal = M("Collection")->where($totalCondition)->where("status=1")->count();
-      // 2.2 like 统计
-      $likeTotal = M("Like")->where($totalCondition)->count();
-      $cardInfo = M("Card")->where(array('id'=>$cardId))->find();
+    $thumbBase = C("OSS_BASE_URL")."/";
+    $businessId = I("get.id/d");
+    $info = M("Welfare")->find($businessId);
+    $info["tags"] = explode(";",$info["tags"]);
+    if($info["thumb"]) {
+      $info["logo"] = $thumbBase.$info["thumb"];
     }else {
-      $cardInfo = M("Card")
-      ->where("id=$cardId")
-      ->field('id,avatar,realname,sex,("交换名片后可见")as phone,("交换名片后可见")as email,company,partment,position,province,city,interest')
-      ->find();
+      $info["logo"] ="/static/images/tab-news.png";
     }
-    // update view num
-    $updateResult = M("Card")->where(array("id"=>$cardId))->setInc('click');
     $backData = array(
       "code"  =>200,
       "msg"   =>'success',
       "data"  =>array(
-        "exchangeStatus"  =>$exchangedStatus,
-        "isCollected"     =>!!$isCollected,
-        "isLike"          =>!!$isLike,
-        "collectedTotal"  =>$collectionTotal,
-        "likeTotal"       =>$likeTotal,
-        "cardInfo"        =>$cardInfo
+          "info"  =>$info
       )
     );
     $this->ajaxReturn($backData);
   }
+
+  /**
+   * 
+   */
+  
 
   /***============== */
 }

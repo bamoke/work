@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>澳门劳务</title>
-    <meta name="description" content="澳门劳务">
+    <title>澳门招聘</title>
+    <meta name="description" content="澳门招聘,珠海市人力资源网澳门招聘专栏">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico in the root directory -->
     <link href="__WEB_ASSET__/images/favicon.ico" type="img/x-icon" rel="shortcut icon">
@@ -16,19 +16,50 @@
     <!-- <link rel="stylesheet" href="__WEB_ASSET__/css/style.css"> -->
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
-    <link rel="stylesheet" href="__WEB_ASSET__/css/plugins/plugins.min.css">
-    <link rel="stylesheet" href="__WEB_ASSET__/css/style.min.css">
+    <link rel="stylesheet" href="__WEB_ASSET__/css/plugins/plugins.min.css?v=1">
+    <link rel="stylesheet" href="__WEB_ASSET__/css/style.min.css?v=2">
     <!-- Modernizr JS -->
     <script src="__WEB_ASSET__/js/vendor/modernizr-3.10.0.min.js"></script>
+    <style>
+        .breadcrumb-section {
+            background-color:#002168;
+            color:#fff;
+        }
+        .breadcrumb-section .page-breadcrumb li a {
+            color:#fff;
+        }
+        .breadcrumb-section .page-breadcrumb-content h1 {
+            color:#fff;
+        }
+        .newsList {
+    padding: 0 10px;
+}
+
+.m-news-list li {padding:16px 0;border-bottom:1px solid #ddd;}
+.m-news-list li:after {content:"";clear:both;display:block;visibility:hidden;}
+.m-news-list .title {font-size:18px;}
+.m-news-list .time {float:left;padding:0 10px;width:100px;height:80px;border:1px solid #ddd;text-align:center;}
+.m-news-list .time span {display: block;}
+.m-news-list .time .days {height:44px;line-height:44px;border-bottom:1px solid #ddd;font-size:22px;font-weight:bold;}
+.m-news-list .time .y-m {line-height:34px;font-size:16px;color:#9c9c9c;}
+.m-news-list .right-info {margin-left:140px;}
+.m-news-list .n-title {margin-bottom:14px;font-size:20px;font-weight: 700;color:#222;}
+@media (max-width: 767px) {
+    .m-news-list .time {
+        display: none;
+    }
+    .m-news-list .right-info {
+        margin-left:0;
+    }
+}
+    </style>
 </head>
 
 <body class="template-color-1">
 
     <div id="main-wrapper">
         <include file="Layout/header" />
-        <div class="pageMain">
             {__REPLACE__}
-        </div>
         <include file="Layout/footer" />
     </div>
 

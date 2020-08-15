@@ -51,12 +51,17 @@ class NewsController extends BaseController
 
     /*********************/
     public function detail($id){
-        $detail = M('News')->where('id='.$id)->find();
+        $detail = M('News')
+        ->alias("N")
+        ->field("N.*,C.title as catename")
+        ->join("__CONTENT_CATE__ as C on C.id=N.cid")
+        ->where('N.id='.$id)
+        ->find();
         $outData = array();
         $outData['news'] = $detail;
         $update = M("News")->where(array("id"=>$id))->setInc("click");
         $this->assign('outData',$outData);
-        $this->assign('pageName',"信息详情");
+        $this->assign('pageName',$detail["catename"]);
         $this->display('Main/news-detail');
     }
 

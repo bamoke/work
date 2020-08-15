@@ -32,7 +32,6 @@ class JobsController extends BaseController
         $this->assign('outData',$outData);
         $this->assign('jobsList',$jobsList);
         $this->assign('pageName',"岗位信息");
-
         $this->display();
     }
 

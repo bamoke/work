@@ -274,32 +274,50 @@ export default [
     },
     children: [
       {
-        path: 'list',
-        name: 'welfare_list',
+        path: 'business',
+        name: 'business',
         meta: {
-          title: '周边福利',
+          title: '商家管理',
           icon: 'android-menu'
         },
-        component: () => import('@/view/welfare/list')
+        component: () => import('@/view/welfare/list'),
       },
       {
-        path: 'add',
-        name: 'welfare_add',
+        path: 'business/add',
+        name: 'business_add',
         meta: {
-          hideInMenu: true,
-          title: '添加商家'
+          title: '添加商家',
+          hideInMenu: true
         },
-        component: () => import('@/view/welfare/add')
+        component: ()=>import('@/view/welfare/add')
       },
       {
-        path: 'edit/:id',
+        path: 'business/edit/:id',
         notCache: true,
-        name: 'welfare_edit',
+        name: 'business_edit',
         meta: {
           title: '编辑商家',
           hideInMenu: true
         },
         component: () => import('@/view/welfare/edit')
+      },
+      {
+        path: 'coupon',
+        name: 'coupon',
+        meta: {
+          title: '优惠券',
+          icon: ''
+        },
+        component: ()=> import('@/view/coupon/list')
+      },
+      {
+        path: 'coupon/log',
+        name: 'coupon_log',
+        meta: {
+          title: '消费记录',
+          icon: ''
+        },
+        component: ()=> import('@/view/coupon/log')
       }
     ]
   },
@@ -331,13 +349,13 @@ export default [
         component: () => import('@/view/talent/log')
       },
       {
-        path: 'detail/:id',
-        name: 'talent_detail',
+        path: 'log/detail/:id',
+        name: 'talent_log_detail',
         meta: {
           hideInMenu: true,
-          title: '人才卡详情'
+          title: '申请资料详情'
         },
-        component: () => import('@/view/talent/detail')
+        component: () => import('@/view/talent/log-detail')
       }
     ]
   },

@@ -89,5 +89,29 @@ class PolicyController extends Controller {
     $this->ajaxReturn($backData);
   }
 
+  /**
+   * 类别
+   */
+  public function getcate(){
+    $condition = array(
+      "status"  =>1
+    );
+    $thumbBase = C("OSS_BASE_URL")."/thumb/";
+    $list = M("PolicyCate")
+    ->field("*,concat('$thumbBase',icon) as icon")
+    ->where($condition)
+    ->order("sort asc,id desc")
+    ->fetchSql(false)
+    ->select();
+    $backData = array(
+      "code"  =>200,
+      "msg"   =>'success',
+      "data"  =>array(
+        "list"  =>$list
+      )     
+    );
+    $this->ajaxReturn($backData);
+  }
+
   /***============== */
 }

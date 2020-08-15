@@ -321,7 +321,7 @@ export const showByAccess = (access, canViewAccess) => {
  * @description 根据name/params/query判断两个路由对象是否相等
  * @param {*} route1 路由对象
  * @param {*} route2 路由对象
- * 这个杂种写的代码，乱七八糟。修改为只判断name
+
  */
 export const routeEqual = (route1, route2) => {
 /*   const params1 = route1.params || {}

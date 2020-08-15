@@ -6,13 +6,13 @@ class IndexController extends Controller {
     public function index(){
         $bannerList = array(
             array(
-                "id"    =>3,
-                "img"   =>C("OSS_BASE_URL")."/banner/index-banner-3.jpg?v=1",
+                "id"    =>4,
+                "img"   =>C("OSS_BASE_URL")."/banner/index-banner-4.jpg?v=1",
                 "url"   =>""
             ),
             array(
-                "id"    =>1,
-                "img"   =>C("OSS_BASE_URL")."/banner/index-banner-1.jpg?v=1",
+                "id"    =>5,
+                "img"   =>C("OSS_BASE_URL")."/banner/index-banner-5.jpg?v=4",
                 "url"   =>""
             )
         );

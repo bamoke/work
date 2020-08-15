@@ -40,18 +40,12 @@ export default {
         { title: "人才卡号", key: "card_no", width:200 },
         { title: "姓名", key: "realname", width:120 },
         { title: "人才类型", key: "typename", width: 120 },
-        { title: "审核状态", key: "verifyname", width: 200 ,render:(h,params)=>{
-          // console.log(params)
-          return h("span",{class:'s-text-'+params.row.verifyname.style},params.row.verifyname.name)
-        }},
-        { title: "申请时间", key: "create_time", width: 200 },
-        { title: "操作", render:(h,params)=>{
-          return h("Button",{
-            props:{
-              to:{name:'talent_detail',params:{id:params.row.id}}
-            }
-          },'详情')
-        }}
+        { title: "人才级别", key: "level", width: 120 },
+        { title: "爱心值", key: "love", width: 120 },
+        { title: "积分", key: "score", width: 120 },
+        { title: "有效期至", key: "end_date", width: 200 },
+        { title: "申请时间", key: "create_time"},
+        { title: "更新时间", key: "update_time" },
       ],
       tableDataApi: "Talent/vlist",
       tableData: [],

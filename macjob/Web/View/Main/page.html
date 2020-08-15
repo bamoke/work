@@ -1,23 +1,30 @@
-<div class="sub-banner"></div>
-<div class="content-wrap">
-    <if condition="$_GET['id'] eq 1">
-        <div class="k1120">
-            <div class="m-about-video-list">
-                <div class="video-box">
-                    <video src="http://eos-beijing-1.cmecloud.cn/tmp/vadio2.mp4" controls=""></video>
-                </div>
-                <div class="video-box">
-                        <video src="http://eos-beijing-1.cmecloud.cn/tmp/vadio1.mp4" controls=""></video>
+<!-- Breadcrumb Section Start -->
+<div class="breadcrumb-section section bg_color--5 pt-60 pt-sm-50 pt-xs-40 pb-60 pb-sm-50 pb-xs-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-breadcrumb-content">
+                    <ul class="page-breadcrumb">
+                        <li><a href="{:U('Index/index')}">首页</a></li>
+                        <li>{$pageName}</li>
+                    </ul>
+                    <h1>{$pageName}</h1>
                 </div>
             </div>
         </div>
-        <div class="k1120">
-                {$outData['info']['content']}
-            </div>
-        <else />
-        <div class="k1120">
-            {$outData['info']['content']}
-        </div>
-    </if>
-
+    </div>
 </div>
+<!-- Breadcrumb Section Start -->
+        <!-- About Content Section Start -->
+        <div class="about-content-section section">
+            <div class="container pt-40 pb-40">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="about-content">
+                            {$outData['info']['content']}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About Content Section End -->

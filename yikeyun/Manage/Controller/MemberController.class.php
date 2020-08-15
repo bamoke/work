@@ -22,22 +22,24 @@ class MemberController extends AuthController
         $courseList = M("Course")->where(array("class_id"=>$classId))->getField("id",true);
         // var_dump($courseList);
         // exit();
-        $studentsList = M("ClassStudents")->field("id")->where(array("class_id"=>$classId))->select();
+        $studentsList = M("ClassStudents")->field("member_id")->where(array("class_id"=>$classId))->select();
         $newList = array();
         foreach($studentsList as $key=>$val) {
             $processTotal = M("MyCourse")
             ->where(array(
-                "member_id" =>$val["id"],
+                "member_id" =>$val["member_id"],
                 "course_id" =>array("in",$courseList)
             ))
             ->sum("progress");
+
+        if($val["member_id"]) {
             if($processTotal == null ) {
                 $processTotal = 0;
             }
             $update = M("ClassStudents")
             ->where(
                 array(
-                "member_id" =>$val["id"],
+                "member_id" =>$val["member_id"],
                 "class_id"  =>$classId
                 )
             )
@@ -46,10 +48,11 @@ class MemberController extends AuthController
             ))
             ->save();
             $newList[] =array(
-                "uid"   =>$val["id"],
+                "uid"   =>$val["member_id"],
                 "total" =>$processTotal,
                 "update"    =>$update
             );
+        }
         }
         var_dump($newList);
 

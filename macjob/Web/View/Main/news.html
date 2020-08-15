@@ -1,8 +1,25 @@
-<div class="sub-banner"></div>
-<div class="content-wrap k1120">
+<!-- Breadcrumb Section Start -->
+<div class="breadcrumb-section section bg_color--5 pt-60 pt-sm-50 pt-xs-40 pb-60 pb-sm-50 pb-xs-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-breadcrumb-content">
+                    <ul class="page-breadcrumb">
+                        <li><a href="{:U('Index/index')}">首页</a></li>
+                        <li>{$pageName}</li>
+                    </ul>
+                    <h1>{$pageName}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb Section Start -->
 
-    <div class="pro-list-wrap">
-        <ul class="m-news-list">
+<div class="blog-section section bg_color--5 pb-120 pb-lg-100 pb-md-80 pb-sm-60 pb-xs-50">
+    <div class="container">
+
+        <ul class="m-news-list blog-wrapper mt-40">
             <foreach name="outData['news']" item="list">
                 <li>
                     <div class="time">

@@ -1,5 +1,4 @@
 <template>
-  <div>
     <Card>
       <div slot="title">
         <Row :gutter="8">
@@ -25,63 +24,64 @@
         ></Page>
       </div>
     </Card>
-  </div>
+ 
 </template>
 
 <script>
-import axios from "@/libs/api.request";
-import tableMixin from "@/libs/table-mixin";
+import axios from '@/libs/api.request'
+import tableMixin from '@/libs/table-mixin'
 export default {
-  name: "",
+  name: '',
   mixins: [tableMixin],
   props: {},
-  data() {
+  data () {
     return {
       columns: [
-        { title: "商家名称", key: "title" },
+        { title: '商家名称', key: 'title' },
 
+        { title: '显示状态', key: 'status', width: 120 },
 
-        { title: "显示状态", key: "status", width: 120 },
-
-
-        { title: "地址", key: "addr", width: 200 },
-        { title: "操作", key: "handle", button: ["edit", "delete"], width: 200 }
+        { title: '地址', key: 'addr', width: 200 },
+        { title: '操作', key: 'handle', button: ['edit', 'delete'], width: 200 }
       ],
-      tableDataApi: "Welfare/vlist",
+      tableDataApi: 'Welfare/vlist',
       tableData: [],
-      keywords: "",
+      keywords: '',
       pageInfo: { page: 1, pageSize: 10, total: 0 },
       editRowIndex: null
-    };
+    }
   },
   methods: {
 
-    handleSearch() {
-      let queryData = {};
-      if (this.keywords != "") {
-        queryData.keywords = this.keywords;
+    handleSearch () {
+      let queryData = {}
+      if (this.keywords !== '') {
+        queryData.keywords = this.keywords
       }
-      this._toPage(queryData);
+      this._toPage(queryData)
     },
-    handleAdd() {
-      this.$router.push({ name: "event_add" });
+    handleAdd () {
+      this.$router.push({ name: 'business_add' })
     },
-    handleEdit(params) {
-      const id = params.row.id;
-      this.$router.push({ name: "event_edit", params: { id } });
+    handleEdit (params) {
+      const id = params.row.id
+      this.$router.push({ name: 'business_edit', params: { id } })
+    },
+    handleDelete () {
+
     },
 
-
-    _finishedFetchData(res) {
-      var queryData = this.$route.query;
-      this.tableData = res.data.list;
-      this.pageInfo = res.data.pageInfo;
-      this.keywords = queryData.keywords;
+    _finishedFetchData (res) {
+      var queryData = this.$route.query
+      this.tableData = res.data.list
+      this.pageInfo = res.data.pageInfo
+      this.keywords = queryData.keywords
     }
   },
   computed: {},
-  mounted() {
-    this._fetchData(this._finishedFetchData);
+  mounted () {
+    this._fetchData(this._finishedFetchData)
   }
-};
+}
+
 </script>

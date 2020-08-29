@@ -9,10 +9,11 @@ $(function () {
 
 
 
-    var $Form = $(document.forms["loginform"])
+    var $closureFrom = $("#closureFrom")
     var oOpt = {
         success:function(r){
             if(r.status){
+                alert("操作成功")
                 window.location.reload();
             }else {
                 window.alert(r.msg);
@@ -28,7 +29,7 @@ $(function () {
  * */
 
     //  登录表单验证
-    $Form.validate({
+    $closureFrom.validate({
         rules: {
             "code": { required: true }
         },
@@ -37,7 +38,7 @@ $(function () {
         },
         errorElement: "div",
         errorPlacement: function (err, elem) {
-            err.appendTo(elem.parents(".form-group"));
+            err.appendTo(elem.parents(".closure-form"));
         },
         submitHandler: function (form) {
             $(form).ajaxSubmit(oOpt)
@@ -46,11 +47,5 @@ $(function () {
     });
 
 
-    //    刷新验证码
-    $("#verifyCode").click(function () {
-        var oD = new Date()
-        var sUrl =$(this).data("src").replace(".html",'')
-            sUrl += "/t/" + oD.getTime();
-        this.src = sUrl;
-    });
+
 })

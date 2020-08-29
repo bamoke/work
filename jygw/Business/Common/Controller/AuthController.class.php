@@ -34,6 +34,15 @@ class AuthController extends Controller
             $this->redirect("Main/login");
             return false;
         } else {
+            $where = array(
+                "id"    =>session("bid")
+            );
+            $ossBase = C("OSS_BASE_URL")."/";
+            $businessInfo = M("Welfare")
+            ->field("id,title,start_date,end_date,create_time,CONCAT('$ossBase',thumb) as thumb")
+            ->where($where)
+            ->find();
+            $this->assign("businessInfo",$businessInfo);
             return true;
         }
     }
@@ -56,7 +65,7 @@ class AuthController extends Controller
      * @param string
     */
     protected function emptyHtml($tips="暂无相关数据！"){
-        $emptyHtml = '<div class="m-empty"><img src="'.MODULE_ASSET.'Images/rest.png"><p class="tips">'.$tips.'</p></div>';
+        $emptyHtml = '<div class="m-empty"><img src="'.C("MODULE_ASSET").'/images/rest.png"><p class="tips">'.$tips.'</p></div>';
         $this->assign("emptyHtml",$emptyHtml);
     }
 

@@ -1,0 +1,48 @@
+<div class="panel">
+  <div class="panel-body">
+    <empty name="list">
+      {$emptyHtml}
+      <else />
+      <table class="table table-bordered m-coupon-list" border="0" cellpadding="0" cellspacing="0">
+        <thead>
+          <tr>
+            <th width="">姓名</th>
+            <th width="">优惠券码</th>
+            <th width="80">面额</th>
+            <th width="">领取时间</th>
+            <th width="">到期日期</th>
+            <th width="">使用状态</th>
+            <th width="160">使用时间</th>
+          </tr>
+        </thead>
+        <tbody>
+          <foreach name="list" item="vo">
+            <tr>
+              <td>{$vo['username']}</td>
+              <td>{$vo['code']}</td>
+              <td><span class="text-danger title">{$vo['title']}</span></td>
+              <td>{$vo['create_time']}</td>
+              <td>{$vo['end_date']}</td>
+              
+              <td>
+                <eq name="vo['stage']" value="1">
+                  <span class="text-success">已使用</span>
+                  <else />
+                  <span class="">未使用</span>
+                </eq>
+              </td>
+              <td>{$vo['use_time']}</td>
+            </tr>
+          </foreach>
+
+        </tbody>
+      </table>
+    </empty>
+
+  </div>
+  <div class="panel-footer">
+    <div class="m-pagination">
+      {$paging}
+    </div>
+  </div>
+</div>

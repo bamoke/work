@@ -1,0 +1,49 @@
+<div class="panel">
+  <div class="panel-body">
+    <empty name="list">
+      {$emptyHtml}
+      <else />
+      <table class="table table-bordered m-coupon-list" border="0" cellpadding="0" cellspacing="0">
+        <thead>
+          <tr>
+            <th width="80">面额</th>
+            <th width="">使用说明</th>
+            <th width="">开始日期</th>
+            <th width="">结束日期</th>
+            <th width="">总数</th>
+            <th width="">已领取</th>
+            <th width="">状态</th>
+            <th width="160">创建时间</th>
+          </tr>
+        </thead>
+        <tbody>
+          <foreach name="list" item="vo">
+            <tr>
+              <td><span class="text-danger title">{$vo['title']}</span></td>
+              <td>{$vo['description']}</td>
+              <td>{$vo['start_date']}</td>
+              <td>{$vo['end_date']}</td>
+              <td>{$vo['num']}</td>
+              <td>{$vo['receive_num']}</td>
+              <td>
+                <eq name="vo['status']" value="1">
+                  <span class="text-success">正常</span>
+                  <else />
+                  <span class="text-warning">下架</span>
+                </eq>
+              </td>
+              <td>{$vo['create_time']}</td>
+            </tr>
+          </foreach>
+
+        </tbody>
+      </table>
+    </empty>
+
+  </div>
+  <div class="panel-footer">
+    <div class="m-pagination">
+      {$paging}
+    </div>
+  </div>
+</div>

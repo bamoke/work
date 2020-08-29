@@ -1,21 +1,13 @@
-<ul class="nav nav-tabs">
-    <li class="{$curAcName=='index'?'active':''}"><a href="{:U('index')}">优惠券核销</a></li>
-    <li class="{$curAcName=='coupon'?'active':''}"><a href="{:U('coupon')}">优惠券</a></li>
-    <li class="{$curAcName=='log'?'active':''}"><a href="{:U('log')}">核销记录</a></li>
-</ul>
-<div class="tab-content">
-    <div class="tab-pane fade in active" id="closure">
-        <div class="m-closure">
-            <form class="form-inline closure-form" role="form">
-                <div class="form-group">
-                    <label for="code">优惠券码：</label>
-                    <input type="text" name="code" class="form-control" placeholder="请输入优惠券码">
-                </div>
-                <button type="submit" class="btn btn-info">提交核销</button>
-            </form>
+
+<div class="m-closure">
+    <form id="closureFrom" class="form-inline closure-form" role="form" action="{:U('doclosure')}" method="post" onsubmit="return false">
+        <div class="form-group">
+            <label for="code">优惠券码：</label>
+            <input type="text" name="code" class="form-control" placeholder="请输入优惠券码">
         </div>
-    </div>
-    <div class="tab-pane fade" id="coupon">...</div>
-    <div class="tab-pane fade" id="log">...</div>
+        <button type="submit" class="btn btn-info">提交核销</button>
+    </form>
 </div>
+<script src="__PUBLIC__/Js/jquery.validate.min.js"></script>
+<script src="__PUBLIC__/Js/jquery.form.js"></script>
 <script src="__BUSINESS_ASSET__/js/main.js"></script>

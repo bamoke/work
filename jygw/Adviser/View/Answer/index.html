@@ -1,0 +1,37 @@
+
+<div class="panel panel-default">
+      <div class="panel-heading">我的回答</div>
+      <div class="panel-body">
+        
+        <empty name="answerList">
+            {$emptyHtml}
+            <else />
+            <div class="m-answer-list">
+                <foreach name="answerList" item="vo">
+                    <div class="item">
+                        <div class="info">
+                            <a class="title" href="{:U('detail',array('aid'=>$vo['id']))}"><strong>问：</strong>{$vo['question_title']}</a>
+                            <a href="{:U('detail',array('aid'=>$vo['id']))}" class="answer-content"><strong>答：</strong>{$vo['content']}</a>
+                            <div class="time">回答时间：{$vo['create_time']}</div>
+                        </div>
+                        <div class="other">
+                            <div class="unit">
+                                <p>满意</p>
+                                <p>{$vo['satisfaction_num']}</p>
+                            </div>
+                            <div class="unit">
+                                <p>没用</p>
+                                <p>{$vo['dissatisfaction_num']}</p>
+                            </div>
+                            <div class="unit">
+                                <p>感谢</p>
+                                <p>{$vo['think_num']}</p>
+                            </div>
+                        </div>
+                    </div>
+                </foreach>
+            </div>
+            <div class="m-pagination">{$page}</div>
+        </empty>
+      </div>
+</div>

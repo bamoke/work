@@ -46,6 +46,16 @@ class IndexController extends AuthController {
         $condition = array(
             "CL.b_id"  =>session("bid")
         );
+
+        $curStage = I("get.stage/d",-1);
+        if($curStage > -1) {
+            $condition["CL.stage"] =  $curStage;
+        }
+
+        $keyword = I("get.keyword","");
+        if($keyword) {
+            $condition["CL.code"] = array("like","%".$keyword."%");
+        }
                 // paging set
         $total = $mainModel->alias("CL")->where($condition)->count();
         $curPage = I("get.p/d",1);
@@ -68,6 +78,7 @@ class IndexController extends AuthController {
 
         $this->assign("list",$list);
         $this->assign("paging",$paging);
+        $this->assign("curStage",$curStage);
         $this->assign("curAcName","log");
         $this->display();
     }

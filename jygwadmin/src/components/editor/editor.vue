@@ -17,6 +17,11 @@ export default {
       type: String,
       default: ""
     },
+    initContent:{
+      type:String,
+      default:""
+    },
+
     /**
      * 绑定的值的类型, enum: ['html', 'text']
      */
@@ -48,11 +53,11 @@ export default {
   },
   computed: {
     editorId() {
-      return `editor${this._uid}`;
+      return `editor${this._uid}${this.id}`;
     }
   },
   watch: {
-    value: function(newValue) {
+    initContent: function(newValue) {
       if (this.valueType === "html") {
         this.editor.txt.html(newValue);
       } else {
@@ -67,7 +72,7 @@ export default {
   },
   mounted() {
     this.editor = new Editor(`#${this.editorId}`);
-
+    console.log(this.editorId)
     if (this.uploadUrl) {
       this.editor.customConfig.uploadImgServer = this.uploadUrl;
       this.editor.customConfig.uploadFileName = "img";
@@ -90,11 +95,9 @@ export default {
     this.editor.customConfig.zIndex = 99
     this.editor.customConfig.onchange = html => {
       let text = this.editor.txt.text();
-      if (this.cache) localStorage.editorCache = html;
-      // 每次触发change事件都上报事件，会产生光标变动，因为都是同一数据源，注释“input”事件上报,v-model数据双向绑定
-      // 通过on-change去设置内容
-      // this.$emit("input", this.valueType === "html" ? html : text);
-      this.$emit("on-change", html, text);
+      // if (this.cache) localStorage.editorCache = html;
+      this.$emit("input", this.valueType === "html" ? html : text);
+
     };
     this.editor.customConfig.onchangeTimeout = this.changeInterval;
     // create这个方法一定要在所有配置项之后调用

@@ -83,9 +83,9 @@ export default {
           {
             required: true,
             type: "integer",
-            max: 500,
+            max: 999999,
             min: 1,
-            message: "优惠金额必须是1-1000之间的整数"
+            message: "优惠金额必须是1-999999之间的整数"
           }
         ],
         description: [{ required: true, message: "请填写使用说明" }],

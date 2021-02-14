@@ -18,7 +18,7 @@ class ArticleController extends BaseController {
       $condition['cate_id'] = $cateId;
     }
     $thumbBase = C("OSS_BASE_URL")."/";
-    $fieldInfo = "id,title,recommend,concat('$thumbBase',thumb) as thumb,date(create_time) as date,click";
+    $fieldInfo = "id,title,recommend,concat('$thumbBase',thumb) as thumb,web_url,date(create_time) as date,click";
 
     $total = M("Article")->where($condition)->count();
     $list = M("Article")

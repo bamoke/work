@@ -3,7 +3,7 @@ namespace Api\Controller;
 use Api\Common\Controller\BaseController;
 class CouponController extends BaseController {
   /**
-   * card list
+   * 我的优惠券
    * @condition
    * @page
    */
@@ -60,79 +60,42 @@ class CouponController extends BaseController {
 
 
   /**
-   * detail
+   * 商家优惠券
    */
-  public function detail(){
-    if(empty($_GET['id'])) {
+  public function welfareCoupon(){
+    $uid = $this->uid;
+    if(empty($_GET['welfareid'])) {
       $backData = array(
         "code"  => 10002,
         "msg"   => "访问参数错误"
       );  
       $this->ajaxReturn($backData); 
     }
-    $cardId = I("get.id");
-    $cardUid = M("Card")->where(array('id'=>$cardId))->getField("uid");
-
-
-    // 1.2 是否已交换名片
-    $exchangeCondition = array(
-      "from_uid" =>$this->uid,
-      "to_uid" =>$cardUid
+    $welfareId = I("get.welfareid");
+    $where = array(
+      "C.status"  =>1,
+      "C.end_date" =>array("EGT",date("Y-m-d",time())),
+      "C.b_id"  =>$welfareId
     );
-    $exchangedStatus = M("Exchange")->where($exchangeCondition)->fetchSql(false)->getField("status");
- 
- 
-    $isLike=false;
-    $isCollected=false;
-    $likeTotal=0;
-    $collectedTotal=0;
-    if($exchangedStatus == 2) {
-         // 1.2 是否已收藏
-      $collectionCondition = array(
-        "uid" =>$this->uid,
-        "card_id" =>$cardId,
-        "status"  =>1
-      );
-      $isCollected = M("Collection")->where($collectionCondition)->count();
-
-      // 1.3 是否已点赞
-      $likeCondition = array(
-        "uid"     =>$this->uid,
-        "card_id" =>$cardId
-      );
-      $isLike = M("Like")->where($likeCondition)->count();
-
-      // 2.统计信息
-      $totalCondition = array(
-        "card_id" =>$cardId
-      );
-      // 2.1 收藏统计
-      $collectionTotal = M("Collection")->where($totalCondition)->where("status=1")->count();
-      // 2.2 like 统计
-      $likeTotal = M("Like")->where($totalCondition)->count();
-      $cardInfo = M("Card")->where(array('id'=>$cardId))->find();
-    }else {
-      $cardInfo = M("Card")
-      ->where("id=$cardId")
-      ->field('id,avatar,realname,sex,("交换名片后可见")as phone,("交换名片后可见")as email,company,partment,position,province,city,interest')
-      ->find();
-    }
-    // update view num
-    $updateResult = M("Card")->where(array("id"=>$cardId))->setInc('click');
+    $list = M("Coupon")
+    ->alias("C")
+    ->field("C.title as coupon_title,C.id as coupon_id,C.end_date,C.description,IF(R.id,1,0) as ishas,(C.num - C.receive_num) as surplus_num")
+    ->join("LEFT JOIN __COUPON_RECORD__ as R on R.coupon_id = C.id and R.stage=0 and R.uid=$uid")
+    ->where($where)
+    ->order("coupon_title,coupon_id")
+    ->fetchSql(false)
+    ->select();
     $backData = array(
-      "code"  =>200,
-      "msg"   =>'success',
-      "data"  =>array(
-        "exchangeStatus"  =>$exchangedStatus,
-        "isCollected"     =>!!$isCollected,
-        "isLike"          =>!!$isLike,
-        "collectedTotal"  =>$collectionTotal,
-        "likeTotal"       =>$likeTotal,
-        "cardInfo"        =>$cardInfo
+      "code"      =>200,
+      "msg"       =>"ok",
+      "data"      => array(
+        "list"  =>$list
       )
     );
     $this->ajaxReturn($backData);
   }
+
+
 
   /**
    * 领取优惠券

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0;">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>金英港湾人才顾问系统-用户登录</title>
+    <link rel="stylesheet" href="__PUBLIC__/Lib/bootstrap/css/bootstrap.min.css">
+    <link href="__MODULE_ASSET__/style/default.css?v={$debugTime}" rel="stylesheet">
+    <script src="__PUBLIC__/Js/jquery-1.10.1.min.js"></script>
+    <script src="__PUBLIC__/Js/point-line.js"></script>
+    <script src="__PUBLIC__/Js/jquery.validate.min.js"></script>
+    <script src="__PUBLIC__/Js/jquery.form.js"></script>
+    <script src="__MODULE_ASSET__/js/login.js"></script>
+</head>
+
+<body>
+    <body style="width:100%;height:100%;padding-top:0;">
+        <div id="login-background"></div>
+        <div class="login-form-wrap">
+            <h3 class="login-page-title text-center">金英港湾人才顾问系统V1.01</h3>
+            <!-- <h2 class="caption text-center">用户登录</h2> -->
+            <form name="loginform" role="form" action="{:U('dologin')}" method="post" id="login-form">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="text" name="username" class="form-control" placeholder="请输入用户名" value="" />
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input type="password" name="password" class="form-control" placeholder="请输入密码" value="" />
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-xs-7">
+                            <input type="text" name="code" class="form-control" placeholder="请输入验证码" />
+                        </div>
+                        <div class="col-xs-5 text-right">
+                            <img id="verifyCode" src="{:U('Main/code')}" data-src="{:U('Main/code')}" style="cursor: pointer" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-danger btn-block">登录</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</body>
+
+</html>

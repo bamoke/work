@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table tr:nth-child(2n+1) td {
+            background-color:#f8f8f8;
+        }
+        table td {
+            padding:6px;
+            border-left:1px solid #ddd;
+            border-bottom:1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <table width="1200">
+        <tr>
+            <th>ID</th>
+            <th>名称</th>
+            <th>id</th>
+            <th>参展企业数</th>
+            <th>已插入参展数</th>
+            <th>操作</th>
+        </tr>
+        <volist name="list" id="item">
+            <tr>
+                <td width="50">{$item["id"]}</td>
+                <td width="400">{$item['fair_name']}</td>
+                <td width="200">{$item['fair_id']}</td>
+                <td width="100">{$item['company_num']}</td>
+                <td width="120">{$item['joined_company_num']}</td>
+                <td>
+                    <empty name="item['fair_id']">
+                        <a href="{:U('add_fair',array('id'=>$item['id']))}" target="_blank">写入招聘会</a>
+                        <a href="{:U('update_id',array('id'=>$item['id']))}" target="_blank">更新ID</a>
+                        <else/>
+                        <a href="{:U('join_jobfair',array('id'=>$item['id']))}" target="_blank">参展企业</a>
+                    </empty>
+                        
+                </td>
+            </tr>
+        </volist>
+    </table>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<div class="panel panel-default" style="margin-bottom:24px;">
+    <div class="panel-body">
+        <div class="m-welcome-info">
+            <p>您好！<strong>{$userInfo["realname"]}</strong>，欢迎登录金英港湾人才顾问系统</p>
+            <p>上次登录：{$loginInfo["create_time"]|default="第一次登录"}</p>
+            <p>上次登录IP：{$loginInfo["ip"]|default="第一次登录"}</p>
+        </div>
+        <hr>
+        <div class="m-index-statistics">
+            <ul class="list-warp clearfix">
+                <li>
+                    <p class="title">回答问题总数</p>
+                    <p class="num">{$answerTotal}</p>
+                </li>
+                <li>
+                    <p class="title">满意总数</p>
+                    <p class="num">{$userStatisticInfo['satisfaction_num']}</p>
+                </li>
+                <li>
+                    <p class="title">感谢总数</p>
+                    <p class="num">{$userStatisticInfo['think_num']}</p>
+                </li>
+                <li>
+                    <p class="title">无用总数</p>
+                    <p class="num">{$userStatisticInfo['dissatisfaction_num']}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        未解决的提问
+    </div>
+    <div class="panel-body">
+        <empty name="questionList">
+            {$emptyHtml}
+            <else />
+            <div class="m-question-list">
+                <foreach name="questionList" item="vo">
+                    <div class="item">
+                        <div>
+                            <a class="title" href="{:U('Question/detail',array('id'=>$vo['id']))}}">{$vo['title']}</a>
+                            <div class="other-info">{$vo['create_time']}</div>
+                        </div>
+                        <div>
+
+                            <a class="btn btn-info btn-sm" href="{:U('Question/reply',array('qid'=>$vo['id']))}">
+                                <i class="glyphicon glyphicon-pencil"></i>写回答
+                            </a>
+                        </div>
+                    </div>
+                </foreach>
+
+                </table>
+        </empty>
+
+    </div>
+</div>

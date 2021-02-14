@@ -1,0 +1,42 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <eq name="questionInfo['stage']" value="1">
+            <span class="btn btn-success btn-sm">已解决</span>
+            <else/>
+            <span class="btn btn-danger btn-sm">未解决</span>
+        </eq>
+        {$questionInfo['title']}
+    </div>
+    <div class="panel-body">
+        <div class="m-question-info">
+            <div class="desc">{$questionInfo['content']}</div>
+        </div>
+    </div>
+    <div class="panel-footer" style="background-color: #fff;font-size: 12px;color:#999;">
+        <span class="">发布时间：{$questionInfo["create_time"]}</span>
+    </div>
+
+</div>
+<if condition="$questionInfo['stage'] eq 0">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            我来回答
+        </div>
+        <div class="panel-body">
+            <form action="{:U('doreply')}" method="post" id="replyForm">
+                <input type="hidden" name="qid" value="{$Think.get.qid}">
+                <div class="form-group">
+                    <textarea class="form-control" name="content" rows="10"></textarea>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-2 col-xs-offset-3">
+                        <button type="button" class="btn btn-default btn-block" onclick="javascript:window.history.back()">取消</button>
+                    </div>
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-info btn-block">提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</if>

@@ -3,7 +3,13 @@
         <row>
             <notempty name="Think.get.classid">
                 <div class="col-xs-4">
-                    <div class="panel-title">当前班级：{$output['className']}</div>
+                    <div class="panel-title">当前班级：<strong>{$output['className']}</strong></div>
+                </div>
+                <div class="col-xs-1">
+                    <assign name="classId" value="$Think.get.classid"/>
+                    <a id="js-refresh-btn" href="javascript:" data-url="{:U('refresh',array('classid'=>$classId))}" class="btn btn-info btn-block">
+                        <i class="icon icon-refresh"></i>刷新学习进度
+                    </a>
                 </div>
                 </notempty>
             
@@ -35,7 +41,7 @@
                     <th>报到状态</th>
                     <th>总学习进度</th>
                     <th>创建时间</th>
-                    <th width="180">操作</th>
+                    <th width="260">操作</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -58,6 +64,7 @@
                         <td class="operation-box">
                             <notempty name="vo['member_id']">
                                 <a href="{:U('study_record','memberid='.$vo['member_id'].'&classid='.$vo['class_id'])}" class="edit">学习记录</a>
+                                <a href="{:U('export_study_record','memberid='.$vo['member_id'].'&classid='.$vo['class_id'])}" class="edit">导出学习记录</a>
                             </notempty>
                         </td>
                     </tr>

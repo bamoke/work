@@ -32,9 +32,10 @@ class AdviserController extends BaseController {
     }
 
     $adviserCondition = array(
-      "status"  =>1
+      "status"  =>1,
+      "isdelete"=>0
     );
-    $thumbBase = "https://www.bamoke.com/jygw/Uploads/images/thumb/";
+    $thumbBase = C("OSS_BASE_URL")."/";
     $list = M("Adviser")
     ->field("*,CONCAT('$thumbBase',thumb) as thumb")
     ->where($adviserCondition)
@@ -47,6 +48,51 @@ class AdviserController extends BaseController {
       "data"  =>array(
         "list"  =>$list,
         "hasTalent" =>$hasTalent
+      )
+    );
+    $this->ajaxReturn($backData);
+  }
+
+  /**
+   * 顾问团成员
+   */
+  public function user(){
+
+    $spcialWhere =array();
+    if(!empty($_GET['cateid'])){
+      $cateId = I("get.cateid");
+      $spcialWhere['special'] =array("like","%,$cateId,%");
+      $spcialWhere['special'] =array("like","$cateId,%");
+      $spcialWhere['special'] =array("like","%,$cateId%");
+      $spcialWhere['special'] =$cateId;
+      $spcialWhere['_logic'] ="OR";
+    }
+    $where = array(
+      "status"  =>1,
+      "_complex"  =>$spcialWhere
+    );
+    $thumbBase = C("OSS_BASE_URL")."/";
+    $total = M("AdviserUser")->where($where)->count();
+    $page = I("get.page/d",1);
+    $pageSize = 15;
+    $list = M("AdviserUser")
+    ->alias("U")
+    ->where($where)
+    ->field("U.id,U.realname,U.description,IF(U.avatar,CONCAT('$thumbBase',U.avatar),CONCAT('$thumbBase','avatar/default_avatar.jpg')) as avatar,U.company,U.satisfaction_num,U.think_num,(select count(id) from x_adviser_answer where respondent=U.id) as answer_num")
+    ->fetchSql(false)
+    ->order("U.id")
+    ->page($page,$pageSize)
+    ->select();
+    $backData = array(
+      "code"  =>200,
+      "msg"   =>'success',
+      "data"  =>array(
+        "list"  =>$list,
+        "pageInfo" =>array(
+          "total"   =>intval($total),
+          "page"    =>$page,
+          "pageSize"  =>$pageSize
+        )
       )
     );
     $this->ajaxReturn($backData);

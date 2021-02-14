@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <title>金英港湾平台人才顾问系统</title>
+    <link rel="stylesheet" href="__PUBLIC__/Lib/bootstrap/css/bootstrap.min.css">
+    <link href="__MODULE_ASSET__/style/default.css" rel="stylesheet">
+    <script src="__PUBLIC__/Js/jquery-1.10.1.min.js"></script>
+    <script src="__PUBLIC__/Js/jquery.validate.min.js"></script>
+    <script src="__PUBLIC__/Js/jquery.form.js"></script>
+
+
+</head>
+
+<body>
+    <div class="g-wrap">
+        <include file="Layout/header" />
+        <div class="g-main-wrap clearfix">
+            <div class="m-side-bar">
+                <div class="user-info">
+                    <img src="{$userInfo['avatar']|default='__MODULE_ASSET__/images/default_avatar.jpg'}" alt="">
+                    <div class="user-name">{$userInfo['realname']}</div>
+                </div>
+                <div class="top-bar">
+                    <i class="glyphicon glyphicon-list"></i>全部菜单
+                </div>
+                <ul class="side-nav">
+                    <li class="title">
+                        <div>
+                            <i class="glyphicon glyphicon-user"></i>个人中心
+                        </div>
+                        <ul class="child">
+                            <li><a href="{:U('Index/index')}">主页</a></li>
+                            <li><a href="{:U('Userhome/profile')}">个人资料</a></li>
+                            <li><a href="{:U('Userhome/reset')}">修改密码</a></li>
+                        </ul>
+                    </li>
+                    <li class="title">
+                        <div>
+                            <i class="glyphicon glyphicon-question-sign"></i>问答中心
+                        </div>
+                        <ul class="child">
+                            <li><a href="{:U('Question/index')}">最新问题</a></li>
+                            <li><a href="{:U('Answer/index')}">我的回答</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="g-main-content">
+                {__CONTENT__}
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script src="__MODULE_ASSET__/js/main.js"></script>

@@ -17,7 +17,7 @@ class ArticleController extends Auth {
       $where['N.title'] = array("like","%".$_GET["keywords"]."%");
     }
     $list = $mainModel
-    ->field("N.id,N.cate_id,N.title,N.status,N.click,N.create_time,MC.name as catename")
+    ->field("N.id,N.is_en,N.cate_id,N.title,N.status,N.click,N.create_time,MC.name as catename")
     ->alias("N")
     ->join("__MAIN_CATE__ as MC on N.cate_id=MC.id")
     ->where($where)

@@ -67,7 +67,7 @@ export default {
           key: "stage",
           render: (h, params) => {
             let className = params.row.stage == 1 ? "s-text-success" : "";
-            let text = params.row.status == 1 ? "已使用" : "未使用";
+            let text = params.row.stage == 1 ? "已使用" : "未使用";
             return h("span", { class: className }, text);
           },
           width: 120
@@ -97,9 +97,6 @@ export default {
       }
       if (this.keywords != "") {
         queryData.keywords = this.keywords;
-      }
-      if (this.couponId) {
-        queryData.cid = this.couponId;
       }
       if (this.couponId) {
         queryData.cid = this.couponId;

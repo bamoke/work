@@ -19,7 +19,7 @@
     </Card>
   </div>
 </template>
-
+<Icon type="ios-checkmark-circle-outline" />
 <script>
 import axios from '@/libs/api.request'
 import tableMixin from "@/libs/table-mixin"
@@ -30,12 +30,25 @@ export default {
   data() {
     return {
       columns: [
-        { title: "标题", key: "title", width: 400 },
-        { title: "类别", key: "catename", width: 120 },
-        { title: "浏览量", key: "click", width: 80 },
+        { title: "标题", key: "title"},
+        { title: "有英文版", key: "is_en",width:120,render:(h,params)=>{
+          var iconType = 'ios-close-circle-outline'
+          var color="#9c9c9c";
+          if(params.row.is_en == 1) {
+            iconType = 'ios-checkmark-circle'
+            color = '#19be6b'
+          }
+          return h("Icon",{props:{
+            type:iconType,
+            size:18,
+            color
+          }})
+        }},
+        { title: "类别", key: "catename", width: 200 },
+        { title: "浏览量", key: "click", width: 120 },
         { title: "状态", key: "status", width: 80 },
         { title: "创建时间", key: "create_time", width: 150, sortable: true },
-        { title: "操作", key: "handle", button: ["edit",'delete'] }
+        { title: "操作", key: "handle", button: ["edit",'delete'],width:200 }
       ],
       tableDataApi: "Article/vlist",
       tableData: [],

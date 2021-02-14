@@ -24,7 +24,7 @@ class WelfareController extends BaseController {
       $fieldInfo = "W.id,W.title,W.tags,concat('$thumbBase',W.thumb) as thumb, '0' as distance";
     }
 
-    $fieldInfo .= ", C.title as coupon_title,C.id as coupon_id,R.id as hascoupon";
+    // $fieldInfo .= ", C.title as coupon_title,C.id as coupon_id,R.id as hascoupon";
     $orderBy = "";
     switch($orderType) {
       case 1:
@@ -41,17 +41,14 @@ class WelfareController extends BaseController {
     $list = M("Welfare")
     ->alias("W")
     ->field($fieldInfo)
-    ->join("__COUPON__ as C on C.b_id = W.id and C.status=1 and C.end_date >= CURDATE()")
-    ->join("left join __COUPON_RECORD__ as R on R.coupon_id = C.id and R.stage=0 and R.uid=$uid")
+    // ->join("__COUPON__ as C on C.b_id = W.id and C.status=1 and C.end_date >= CURDATE()")
+    // ->join("left join __COUPON_RECORD__ as R on R.coupon_id = C.id and R.stage=0 and R.uid=$uid")
     ->where($condition)
     ->page($page,$pageSize)
     ->order($orderBy)
     ->fetchSql(false)
     ->select();
-    // var_dump($list);
-    // exit();
 
-    // return;
     if(count($list)){
       foreach($list as $key=>$val){
         $gradeRatio = intval($val['grade']/50*100);

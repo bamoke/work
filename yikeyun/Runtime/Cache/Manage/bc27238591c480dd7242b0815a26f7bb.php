@@ -65,11 +65,17 @@
     <div class="panel-heading clearfix">
         <row>
             <?php if(!empty($_GET['classid'])): ?><div class="col-xs-4">
-                    <div class="panel-title">当前班级：<?php echo ($output['className']); ?></div>
+                    <div class="panel-title">当前班级：<strong><?php echo ($output['className']); ?></strong></div>
+                </div>
+                <div class="col-xs-1">
+                    <?php $classId = $_GET['classid']; ?>
+                    <a id="js-refresh-btn" href="javascript:" data-url="<?php echo U('refresh',array('classid'=>$classId));?>" class="btn btn-info btn-block">
+                        <i class="icon icon-refresh"></i>刷新学习进度
+                    </a>
                 </div><?php endif; ?>
             
             <div class="col-xs-6">
-                <form class="form form-inline f-right" action="/yikeyun/admin.php/Manage/Member/index?keywords=%E9%82%B1">
+                <form class="form form-inline f-right" action="/yikeyun/admin.php/Manage/Member/index/classid/4/p/3">
                     <div class="form-group">
                         <input type="text" class="form-control" name="keywords" value="<?php echo ($_GET['keywords']); ?>" placeholder="请输入姓名或手机号">
                     </div>
@@ -95,7 +101,7 @@
                     <th>报到状态</th>
                     <th>总学习进度</th>
                     <th>创建时间</th>
-                    <th width="180">操作</th>
+                    <th width="260">操作</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -115,7 +121,8 @@
                         <td><?php echo ($vo["progress"]); ?>%</td>
                         <td><?php echo ($vo['create_time']); ?></td>
                         <td class="operation-box">
-                            <?php if(!empty($vo['member_id'])): ?><a href="<?php echo U('study_record','memberid='.$vo['member_id'].'&classid='.$vo['class_id']);?>" class="edit">学习记录</a><?php endif; ?>
+                            <?php if(!empty($vo['member_id'])): ?><a href="<?php echo U('study_record','memberid='.$vo['member_id'].'&classid='.$vo['class_id']);?>" class="edit">学习记录</a>
+                                <a href="<?php echo U('export_study_record','memberid='.$vo['member_id'].'&classid='.$vo['class_id']);?>" class="edit">导出学习记录</a><?php endif; ?>
                         </td>
                     </tr><?php endforeach; endif; ?>
 

@@ -3,7 +3,7 @@ namespace Admin\Controller;
 use Think\Controller;
 class ExcelController extends Controller {
     public function index($f){
-        $file = ROOT . "\Uploads\\".$f;
+        $file = ROOT ."\Uploads\\".$f;
 
         vendor("PHPExcel.PHPExcel");
         // Vendor('PHPExcel.PHPExcel.IOFactory');

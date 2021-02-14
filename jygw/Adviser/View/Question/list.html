@@ -1,0 +1,42 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <ul class="nav nav-tabs">
+            <li class="{$curStage=='0'?'active':''}"><a href="{:U('index',array('stage'=>0))}">未解决</a></li>
+            <li class="{$curStage=='1'?'active':''}"><a href="{:U('index',array('stage'=>1))}">已解决</a></li>
+            <li class="{$curStage=='2'?'active':''}"><a href="{:U('index',array('stage'=>'2'))}">全部问题</a></li>
+        </ul>
+        <empty name="questionList">
+            {$emptyHtml}
+            <else />
+            <div class="m-question-list">
+                <foreach name="questionList" item="vo">
+                    <div class="item">
+                        <div class="stage">
+                            <eq name="vo['stage']" value="1">
+                                <span class="btn btn-success btn-sm">已解决</span>
+                                <else/>
+                                <span class="btn btn-danger btn-sm">未解决</span>
+                            </eq>
+                        </div>
+                        <div class="content">
+                            <a class="title"
+                                href="{:U('Question/reply',array('qid'=>$vo['id']))}">{$vo['title']}</a>
+                            <div class="other-info">{$vo['create_time']}</div>
+                        </div>
+                        <if condition="$vo['stage'] eq 0">
+                            <div class="operation">
+    
+                                <a class="btn btn-info btn-sm" href="{:U('Question/reply',array('qid'=>$vo['id']))}">
+                                    <i class="glyphicon glyphicon-pencil"></i>写回答
+                                </a>
+                            </div>
+                        </if>
+                    </div>
+                </foreach>
+
+            </div>
+            <div class="m-pagination">{$page}</div>
+        </empty>
+
+    </div>
+</div>

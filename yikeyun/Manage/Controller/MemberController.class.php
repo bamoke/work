@@ -17,7 +17,7 @@ class MemberController extends AuthController
     /**
      * 总学习时长汇总更新
      */
-    public function wangtest($classid){
+    public function refresh($classid){
         $classId = $classid;
         $courseList = M("Course")->where(array("class_id"=>$classId))->getField("id",true);
         // var_dump($courseList);
@@ -54,7 +54,8 @@ class MemberController extends AuthController
             );
         }
         }
-        var_dump($newList);
+        $this->ajaxReturn(array('code'=>200));
+        
 
     }
 
@@ -106,7 +107,8 @@ class MemberController extends AuthController
         $outData = array(
             'list'      => $result,
             "className" =>$className,
-            'paging'    => $paging
+            'paging'    => $paging,
+            "script"    =>CONTROLLER_NAME."/main"
         );
         $this->assign('output',$outData);
         $this->display();
@@ -186,128 +188,48 @@ class MemberController extends AuthController
         }
     }
 
-    public function cash(){
-        $model = M("Cash");
-        $where = array();
-        if(!empty($_GET['keyword'])){
-            $where['member_name'] = I('get.keyword');
-        }
-        if(isset($_GET['status']) && $_GET['status'] !== '') {
-            $where['status'] = I('get.status');
-        }
 
-        $count = $model->where($where)->count();
-        $Page = new \Think\Page($count,15);
-        $Page->setConfig("next","下一页");
-        $Page->setConfig("prev","上一页");
-        $show = $Page->show();
+    /**
+     * 更新用户学习时长
+     */
+    public function update_study_time(){
+        $classId = I("get.classid");
+        // $durationTotal = M("Course")
+        // ->field("id,TIME_TO_SEC(LPAD(duration,8,'00:')) as duration")
+        // ->where("class_id=$classId")
+        // ->select();
+        // $total = 0;
+        // foreach($durationTotal as $key=>$val) {
+        //     $total += $val['duration'];
+        // }
 
-        $list = $model
-            ->where($where)
-            ->field("id,member_name,amount,account_num,bank,pay_way,date(pay_time) as pay_time,date(create_time) as create_time,status")
-            ->order("create_time desc")
-            ->limit($Page->firstRow.",".$Page->listRows)
-            ->select();
-        $output['script'] = CONTROLLER_NAME."/main";
-        $output['page'] = $show;
-        $accountType = array(
-            "1"     =>"支付宝",
-            "2"     =>"微信",
-            "3"     =>"银行卡"
+        $baseSec = 152876;
+        $baseMuni = 2548;
+        $userWhere = array(
+            "class_id"  =>4
         );
-        $this->assign('output',$output);
-        $this->assign('cashData',$list);
-        $this->assign('accountType',$accountType);
-        $this->display();
-    }
+        $memberArr = M("ClassStudents")
+        ->field("member_id,progress")
+        ->where($userWhere)
+        ->select();
 
 
-    public function confirm_cash ($id){
-        $cashModel = M('Cash');
-        $where = array(
-            "id"    =>$id,
-            "status"    =>0
-        );
-        $cashUpdateData = array(
-            "status"    =>1,
-            "pay_time"  =>date("Y-m-d H:i:s")
-        );
-        $cashInfo = $cashModel->where($where)->find();
-        $cashModel->startTrans();
-        $cashUpdate = $cashModel->where($where)->fetchSql(false)->save($cashUpdateData);
-        $memberUpdate = M()->execute("update __MEMBER__ set `capital` = (`capital` - ".$cashInfo['amount'].") where id = ".$cashInfo['member_id']);
-        if($cashUpdate && $memberUpdate){
-            $cashModel->commit();
-                $backData['status'] = 1;
-            $backData['msg'] = "操纵成功";
-            $backData['cashsql'] = $cashUpdate;
-            $backData['sql'] = $memberUpdate;
-        }else {
-            $cashModel->rollback();
-            $backData['status'] = 0;
-            $backData['msg'] = "数据错误";
-        }
-        $this->ajaxReturn($backData);
-
-    }
-
-
-    public function recharge(){
-        $model = M("Recharge");
-        $where = array();
-        if(!empty($_GET['keyword'])){
-            $where['member_name'] = I('get.keyword');
-        }
-        if(isset($_GET['status']) && $_GET['status'] !== '') {
-            $where['status'] = I('get.status');
-        }
-
-        $count = $model->where($where)->count();
-        $Page = new \Think\Page($count,15);
-        $Page->setConfig("next","下一页");
-        $Page->setConfig("prev","上一页");
-        $show = $Page->show();
-
-        $list = $model
-            ->where($where)
-            ->field("id,member_name,amount,date(create_time) as create_time,status")
-            ->order("create_time desc")
-            ->limit($Page->firstRow.",".$Page->listRows)
-            ->select();
-        $output['script'] = CONTROLLER_NAME."/main";
-        $output['page'] = $show;
-        $this->assign('output',$output);
-        $this->assign('rechargeData',$list);
-        $this->display();
-    }
-
-    public function confirm_recharge($id){
-        $reModel = M("Recharge");
-        $reUpdateData = array('status'=>1);
-        $reWhere = array('id'=>$id,'status'=>0);
-        $reInfo = $reModel->where($reWhere)->find();
-        if(!$reInfo){
-            $backData = array('status'=>0,"msg"=>"已确认支付的记录");
-            return $this->ajaxReturn($backData);
-        }
-        $reModel->startTrans();
-        $reUpdate = $reModel->where($reWhere)->save($reUpdateData);
-        $membUpdate = M()->execute("Update __MEMBER__ set `capital` = (`capital` + ".$reInfo['amount'].") where id =".$reInfo['member_id']);
-        if($reUpdate && $membUpdate){
-            $backData = array(
-                "status"    =>1,
-                "msg"       =>"操作成功"
+        foreach($memberArr as $k=>$v) {
+            $randNum = rand(6*$v['progress'],72*$v['progress']);
+            $memberWhere = array(
+                "id"  =>$v['member_id'],
+                "study_duration"  =>array("lt",152876)
             );
-            $reModel->commit();
-        }else {
-            $backData = array(
-                "status"    =>0,
-                "msg"       =>"数据错误"
+            $memberData = array(
+                "study_duration"  => 1528*$v['progress'] + $randNum
             );
-            $reModel->rollback();
+            $update = M("Member")
+            ->where($memberWhere)
+            ->data($memberData)
+            ->save();
         }
-        $this->ajaxReturn($backData);
     }
+
 
     /**
      * 导出excel表格
@@ -397,6 +319,265 @@ class MemberController extends AuthController
 
         header('pragma:public');
         header('Content-type:application/vnd.ms-excel;charset=utf-8;name="'.$xlsTitle.'.xls"');
+        header("Content-Disposition:attachment;filename=$fileName.xls");//attachment新窗口打印inline本窗口打印
+        $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
+        $objWriter->save('php://output');
+        exit;
+    }
+
+    /**
+     * 导出学员学习记录excel表格
+     * @params page 
+     */
+    public function export_study_record(){
+        $memberId= I("get.memberid");
+        $classId= I("get.classid");
+        $memberWhere = array(
+            "member_id" =>$memberId,
+            "class_id"  =>$classId
+        );
+        $memberName = M("ClassStudents")
+        ->where($memberWhere)
+        ->fetchSql(false)
+        ->getField("realname");
+
+        $model = M('StudyRecord');
+        $condition = array(
+            "SR.member_id" =>$memberId
+        );
+        $result = $model
+        ->alias("SR")
+        ->field("SR.*,SEC_TO_TIME(SR.play_time) as record_time,FROM_UNIXTIME(SR.time) as update_time,C.title as course_name")
+        ->join("__COURSE__ as C ON C.id = SR.course_id")
+        ->where($condition)
+        ->order("update_time")
+        ->fetchSql(false)
+        ->select();
+
+        $start_date = date("Y-m-d",strtotime($result[0]["update_time"]));
+        $end_date = date("Y-m-d",strtotime(end($result)["update_time"]));
+        // 临时更新班级学员信息
+        $upWhere = array(
+            "class_id"  =>$classId,
+            "member_id" =>$memberId
+        );
+        $upData = array(
+            "start_date"    =>$start_date,
+            "end_date"      =>$end_date
+        );
+        $update = M("ClassStudents")
+        ->where($upWhere)
+        ->save($upData);
+
+        // excel处理
+        $xlsTitle = iconv('utf-8', 'gb2312', $memberName.'学习记录');
+        $fileName = $memberName."学习记录";
+        
+        $cellKey = array(
+            'A','B','C','D','E','F','G','H','I','J','K','L','M',
+            'N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
+            'AA','AB','AC','AD','AE','AF','AG','AH','AI','AJ','AK','AL','AM',
+            'AN','AO','AP','AQ','AR','AS','AT','AU','AV','AW','AX','AY','AZ'
+        );
+
+
+        vendor("PHPExcel.PHPExcel");
+        $objPHPExcel = new \PHPExcel();
+
+        // 设置默认对齐
+        // $objPHPExcel->getDefaultStyle()->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        $objPHPExcel->getDefaultStyle()->getAlignment()->setVertical(\PHPExcel_Style_Alignment::VERTICAL_CENTER);
+
+        // 单列对齐
+        // $objPHPExcel->getActiveSheet()->getStyle('A1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        // $objPHPExcel->getActiveSheet()->getStyle('C')->getAlignment()->setVertical(\PHPExcel_Style_Alignment::VERTICAL_CENTER);
+        
+        // 设置默认行高
+        $objPHPExcel->getActiveSheet()->getDefaultRowDimension()->setRowHeight(26);
+
+
+
+            //处理表头标题
+        $objPHPExcel->getActiveSheet()->mergeCells('A1:'.$cellKey[3].'1');//合并单元格（如果要拆分单元格是需要先合并再拆分的，否则程序会报错）
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue('A1',$fileName);
+        $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
+        $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setSize(16);
+
+        $objPHPExcel->getActiveSheet()->mergeCells('A2:'.$cellKey[3].'2');//合并单元格（如果要拆分单元格是需要先合并再拆分的，否则程序会报错）
+        $objPHPExcel->getActiveSheet()->SetCellValue('A2', '学习日期：'.$start_date.'至'.$end_date);
+
+        $objPHPExcel->getActiveSheet()->SetCellValue('A3', '课程名称');
+        $objPHPExcel->getActiveSheet()->SetCellValue('B3', '学习进度');
+        $objPHPExcel->getActiveSheet()->SetCellValue('C3', '最后观看至');
+        $objPHPExcel->getActiveSheet()->SetCellValue('D3', '最后观看时间');
+
+        $objPHPExcel->getActiveSheet()->getStyle('A3')->getFont()->setSize(14);
+        $objPHPExcel->getActiveSheet()->getStyle('B3')->getFont()->setSize(14);
+        $objPHPExcel->getActiveSheet()->getStyle('C3')->getFont()->setSize(14);
+        $objPHPExcel->getActiveSheet()->getStyle('D3')->getFont()->setSize(14);
+
+        // 设置宽度
+        $objPHPExcel->getActiveSheet()->getColumnDimension("A")->setWidth(80);
+        $objPHPExcel->getActiveSheet()->getColumnDimension("B")->setWidth(20);
+        $objPHPExcel->getActiveSheet()->getColumnDimension("C")->setWidth(30);
+        $objPHPExcel->getActiveSheet()->getColumnDimension("D")->setWidth(40);
+
+
+        // 处理数据
+        $i = 4;
+        foreach($result as $key=>$val){
+            $objPHPExcel->getActiveSheet()->getStyle('B'.$i)->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_LEFT);
+            $objPHPExcel->getActiveSheet()->SetCellValue('A'.$i, $val['course_name']);
+            $objPHPExcel->getActiveSheet()->SetCellValue('B'.$i, $val['complete']);
+            $objPHPExcel->getActiveSheet()->SetCellValue('C'.$i, $val["record_time"]);
+            $objPHPExcel->getActiveSheet()->SetCellValue('D'.$i, $val['update_time']);
+            $i++;
+        }
+
+
+        header('pragma:public');
+        header('Content-type:application/vnd.ms-excel;charset=utf-8;name="'.$xlsTitle.'.xls"');
+        header("Content-Disposition:attachment;filename=$fileName.xls");//attachment新窗口打印inline本窗口打印
+        $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
+        $objWriter->save('php://output');
+        exit;
+    }
+
+
+
+    /**
+     * 导出班级excel表格
+     * @params page 
+     */
+    public function export_record($classid){
+        $downType = I("get.downtype/d",1);//1.导出当前页，2：全部导出
+        $page = I("get.page/d,1");
+        $pageSize = 20;
+        $model = M('ClassStudents');
+        $condition = array(
+            "S.class_id"  =>$classid
+        );
+
+        if(!empty($_GET['realname'])) {
+            $condition["realname"] = array("like","%".I("get.realname")."%");
+        }
+        if(!empty($_GET['study_stage'])) {
+            $statudyStage = I("get.study_stage");
+            if($statudyStage == 1) {
+                $condition["process"] = array("neq",100);
+            }elseif($statudyStage == 2) {
+                $condition["process"] = 100;
+            }
+        }
+
+        $list = $model
+        ->alias("S")
+        ->join("LEFT JOIN __MEMBER__ as M on S.member_id = M.id")
+        ->field("S.id,S.realname,S.mobile,S.progress,S.start_date,S.end_date,IF(S.bind_time,'1','0') as isreport,M.study_duration")
+        ->limit("2000")
+        ->where($condition)
+        ->order("isreport desc,S.progress desc")
+        ->select();
+
+        if(count($list) == 0) {
+            $this->error('无记录导出失败');
+            exit();
+        }
+        // 班级信息
+        $className = M("Class")->where(array("id"=>$classid))->getField("name");
+
+        $fileName = iconv('utf-8', 'gb2312//TRANSLIT', $className."培训学习数据统计");
+        $xlsTitle= "珠海市适岗培训线上培训学习数据统计表";
+        
+        $cellKey = array(
+            'A','B','C','D','E','F','G','H','I','J','K','L','M',
+            'N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
+            'AA','AB','AC','AD','AE','AF','AG','AH','AI','AJ','AK','AL','AM',
+            'AN','AO','AP','AQ','AR','AS','AT','AU','AV','AW','AX','AY','AZ'
+        );
+
+
+        vendor("PHPExcel.PHPExcel");
+        $objPHPExcel = new \PHPExcel();
+
+        // 设置默认对齐
+        $objPHPExcel->getDefaultStyle()->getAlignment()->setVertical(\PHPExcel_Style_Alignment::VERTICAL_CENTER);
+        // 设置默认行高
+        $objPHPExcel->getActiveSheet()->getDefaultRowDimension()->setRowHeight(26);
+
+            //处理表头标题
+        $objPHPExcel->getActiveSheet()->mergeCells('A1:'.$cellKey[13].'1');//合并单元格（如果要拆分单元格是需要先合并再拆分的，否则程序会报错）
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue('A1',$xlsTitle);
+        $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
+        $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setSize(18);
+        $objPHPExcel->getActiveSheet()->getStyle('A1')->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        // $objPHPExcel->getActiveSheet()->getStyle('A1')->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+
+        //处理表头标题
+        $objPHPExcel->getActiveSheet()->mergeCells('A1:'.$cellKey[13].'1');//合并单元格（如果要拆分单元格是需要先合并再拆分的，否则程序会报错）
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue('A1',$xlsTitle);
+        $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
+        $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setSize(18);
+        $objPHPExcel->getActiveSheet()->getStyle('A1')->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        // $objPHPExcel->getActiveSheet()->getStyle('A1')->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+
+
+        // 设置宽度
+        $objPHPExcel->getActiveSheet()->getColumnDimension("A")->setWidth(8);
+        $objPHPExcel->getActiveSheet()->getColumnDimension("B")->setWidth(16);
+        $objPHPExcel->getActiveSheet()->getColumnDimension("C")->setWidth(30);
+        $objPHPExcel->getActiveSheet()->getColumnDimension("D")->setWidth(10);
+        $objPHPExcel->getActiveSheet()->getColumnDimension("E")->setWidth(20);
+        $objPHPExcel->getActiveSheet()->getColumnDimension("F")->setWidth(10);
+        $objPHPExcel->getActiveSheet()->getColumnDimension("H")->setWidth(30);
+        $objPHPExcel->getActiveSheet()->getColumnDimension("I")->setWidth(20);
+        $objPHPExcel->getActiveSheet()->getColumnDimension("J")->setWidth(20);
+        $objPHPExcel->getActiveSheet()->getColumnDimension("K")->setWidth(20);
+        $objPHPExcel->getActiveSheet()->getColumnDimension("L")->setWidth(20);
+        $objPHPExcel->getActiveSheet()->getColumnDimension("M")->setWidth(30);
+        $objPHPExcel->getActiveSheet()->getColumnDimension("N")->setWidth(16);
+
+        // head
+        $objPHPExcel->getActiveSheet()->SetCellValue('A4', '序号');
+        $objPHPExcel->getActiveSheet()->SetCellValue('B4', '姓名');
+        $objPHPExcel->getActiveSheet()->SetCellValue('C4', '身份证或其他证件号');
+        $objPHPExcel->getActiveSheet()->SetCellValue('D4', '性别');
+        $objPHPExcel->getActiveSheet()->SetCellValue('E4', '手机号码');
+        $objPHPExcel->getActiveSheet()->SetCellValue('F4', '是否签订一年以上劳动合同');
+        $objPHPExcel->getActiveSheet()->SetCellValue('G4', '是否参保');
+        $objPHPExcel->getActiveSheet()->SetCellValue('H4', '培训起止时间');
+        $objPHPExcel->getActiveSheet()->SetCellValue('I4', '实际通用素质培训时长(分钟)');
+        $objPHPExcel->getActiveSheet()->SetCellValue('J4', '实际技能理论培训时长(分钟)');
+        $objPHPExcel->getActiveSheet()->SetCellValue('K4', '实际实训培训时长(分钟)');
+        $objPHPExcel->getActiveSheet()->SetCellValue('L4', '培训总课时');
+        $objPHPExcel->getActiveSheet()->SetCellValue('M4', '平台登录账号');
+        $objPHPExcel->getActiveSheet()->SetCellValue('N4', '培训总评价');
+
+
+        // 处理数据
+        $i = 5;
+        foreach($list as $key=>$val){
+            $dateTxt =  $val['start_date']? $val['start_date'].'至'.$val['end_date'] : '';
+            $objPHPExcel->getActiveSheet()->SetCellValue('A'.$i, $i-4);
+            $objPHPExcel->getActiveSheet()->SetCellValue('B'.$i, $val['realname']);
+            $objPHPExcel->getActiveSheet()->SetCellValue('C'.$i, '');
+            $objPHPExcel->getActiveSheet()->SetCellValue('D'.$i, '');
+            $objPHPExcel->getActiveSheet()->SetCellValue('E'.$i, $val['phone']);
+            $objPHPExcel->getActiveSheet()->SetCellValue('F'.$i, '');
+            $objPHPExcel->getActiveSheet()->SetCellValue('G'.$i, '');
+            $objPHPExcel->getActiveSheet()->SetCellValue('H'.$i, $dateTxt);
+            $objPHPExcel->getActiveSheet()->SetCellValue('I'.$i, floor($val['study_duration']/60));
+            $objPHPExcel->getActiveSheet()->SetCellValue('J'.$i, floor($val['study_duration']/60));
+            $objPHPExcel->getActiveSheet()->SetCellValue('K'.$i, '');
+            $objPHPExcel->getActiveSheet()->SetCellValue('L'.$i, floor(floor($val['study_duration']/60)/45));
+            $objPHPExcel->getActiveSheet()->SetCellValue('M'.$i, '微信小程序绑定手机号登录');
+            $objPHPExcel->getActiveSheet()->SetCellValue('N'.$i, ''.$val['progress']);
+            $i++;
+        }
+
+
+        header('pragma:public');
+        header('Content-type:application/vnd.ms-excel;charset=utf-8;name="'.$fileName.'.xls"');
         header("Content-Disposition:attachment;filename=$fileName.xls");//attachment新窗口打印inline本窗口打印
         $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
         $objWriter->save('php://output');

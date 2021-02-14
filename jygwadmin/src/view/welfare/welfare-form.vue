@@ -78,11 +78,11 @@
       </FormItem>
       <FormItem label="商家简介:">
         <Editor
-          :value="formInfo.content"
+          v-model="formInfo.content"
           :cache="false"
           :menus="editorMenus"
           :upload-url="contentUploadUrl"
-          @on-change="handleEditorChange"
+          :init-content="initContent"
         />
       </FormItem>
       <FormItem>
@@ -160,7 +160,7 @@ export default {
       thumbUploadUrl: "/Uploads/save/f/thumb",
       thumbDeleteUrl: "/Uploads/delete",
       contentUploadUrl: "/jygw/admin.php/Uploads/save/f/images",
-      newEditorContent: ""
+      initContent: ""
     };
   },
   watch: {
@@ -176,14 +176,12 @@ export default {
         .then(res => {
           this.formInfo = res.data.info;
           this.thumbList = res.data.thumbList;
-          this.newEditorContent = res.data.info.content;
+          this.initContent = res.data.info.content;
         });
     }
   },
   methods: {
-    handleEditorChange(html, text) {
-      this.newEditorContent = html;
-    },
+
     handleEndDateChange(e) {
       //   this.formInfo.end_date = e
     },
@@ -195,11 +193,8 @@ export default {
     handleFileChanged(data) {
       this.formInfo.thumb = data;
     },
-    handleEditorChange(html, text) {
-      this.newContent = html;
-    },
+
     handleSubmit(name) {
-      this.formInfo.content = this.newContent;
       this.submitIng = true;
       this.$refs[name].validate(valid => {
         if (valid) {

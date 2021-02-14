@@ -57,10 +57,18 @@ export default [
     name: 'auth_manage',
     component: Main,
     meta: {
-      title: '权限管理',
+      title: '系统管理',
       icon: 'android-unlock'
     },
     children: [
+      {
+        path: 'rules',
+        name: 'auth_set',
+        meta: {
+          title: '系统设置',
+        },
+        component: () => import('@/view/auth/setting')
+      },
       {
         path: 'user',
         name: 'auth_user',
@@ -187,6 +195,102 @@ export default [
     ]
   },
   {
+    path: webBaseUrl + 'grants',
+    name: 'grants_home',
+    component: Main,
+    meta: {
+      title: '金英助学',
+      icon: 'android-contacts'
+    },
+    children: [
+      {
+        path: 'list',
+        name: 'grants_list',
+        meta: {
+          title: '助学项目',
+          icon: 'android-menu'
+        },
+        component: () => import('@/view/grants/list')
+      },
+      {
+        path: 'add',
+        name: 'grants_add',
+        meta: {
+          hideInMenu: true,
+          title: '新建活动'
+        },
+        component: () => import('@/view/grants/add')
+      },
+      {
+        path: 'edit/:id',
+        notCache: true,
+        name: 'grants_edit',
+        meta: {
+          title: '编辑项目',
+          hideInMenu: true
+        },
+        component: () => import('@/view/grants/edit')
+      },
+      {
+        path: 'apply',
+        name: 'grants_apply',
+        meta: {
+          title: '捐助申请'
+        },
+        component: () => import('@/view/grants/apply')
+      }
+
+    ]
+  },
+  {
+    path: webBaseUrl + 'choujiang',
+    name: 'choujiang_home',
+    component: Main,
+    meta: {
+      title: '抽奖活动',
+      icon: 'android-contacts'
+    },
+    children: [
+      {
+        path: 'list',
+        name: 'choujiang_list',
+        meta: {
+          title: '活动列表',
+          icon: 'android-menu'
+        },
+        component: () => import('@/view/choujiang/list')
+      },
+      {
+        path: 'add',
+        name: 'choujiang_add',
+        meta: {
+          hideInMenu: true,
+          title: '新建抽奖活动'
+        },
+        component: () => import('@/view/choujiang/add')
+      },
+      {
+        path: 'edit/:id',
+        notCache: true,
+        name: 'choujiang_edit',
+        meta: {
+          title: '编辑抽奖活动',
+          hideInMenu: true
+        },
+        component: () => import('@/view/choujiang/edit')
+      },
+      {
+        path: 'awarded',
+        name: 'choujiang_awarded',
+        meta: {
+          title: '获奖记录'
+        },
+        component: () => import('@/view/choujiang/awarded')
+      }
+
+    ]
+  },
+  {
     path: webBaseUrl + 'card',
     name: 'card_manage',
     component: Main,
@@ -224,6 +328,53 @@ export default [
         component: () => import('@/view/card/import')
       }
 
+    ]
+  },
+  {
+    path: webBaseUrl + 'adviser',
+    name: 'adviser_manage',
+    component: Main,
+    meta: {
+      title: '顾问管理',
+      icon: 'android-contacts'
+    },
+    children: [
+      {
+        path: 'question',
+        name: 'adviser_question',
+        meta: {
+          title: '问题列表',
+          icon: 'android-menu'
+        },
+        component: () => import('@/view/adviser/question')
+      },
+      {
+        path: 'question/detail/:id',
+        name: 'adviser_question_detail',
+        meta: {
+          hideInMenu: true,
+          title: '问题详情',
+          icon: 'android-menu'
+        },
+        component: () => import('@/view/adviser/question_detail')
+      },
+      {
+        path: 'cate',
+        name: 'adviser_cate',
+        meta: {
+          title: '顾问类别',
+          icon: 'android-menu'
+        },
+        component: () => import('@/view/adviser/cate')
+      },
+      {
+        path: 'user',
+        name: 'adviser_user',
+        meta: {
+          title: '顾问成员'
+        },
+        component: () => import('@/view/adviser/user')
+      }
     ]
   },
   {
@@ -289,7 +440,7 @@ export default [
           title: '添加商家',
           hideInMenu: true
         },
-        component: ()=>import('@/view/welfare/add')
+        component: () => import('@/view/welfare/add')
       },
       {
         path: 'business/edit/:id',
@@ -308,7 +459,7 @@ export default [
           title: '优惠券',
           icon: ''
         },
-        component: ()=> import('@/view/coupon/list')
+        component: () => import('@/view/coupon/list')
       },
       {
         path: 'coupon/log',
@@ -317,7 +468,7 @@ export default [
           title: '消费记录',
           icon: ''
         },
-        component: ()=> import('@/view/coupon/log')
+        component: () => import('@/view/coupon/log')
       }
     ]
   },
@@ -330,6 +481,15 @@ export default [
       icon: 'android-contacts'
     },
     children: [
+      {
+        path: 'pool',
+        name: 'talent_pool',
+        meta: {
+          title: '人才库',
+          icon: 'android-menu'
+        },
+        component: () => import('@/view/talent/pool')
+      },
       {
         path: 'list',
         name: 'talent_list',

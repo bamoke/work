@@ -12,8 +12,23 @@ class MycardController extends BaseController {
     $condition = array(
         "uid"   =>$this->uid
     );
-    $info = M("Card")->where($condition)->find();
+    $info = M("Card")
+    ->field("*,IF(type=1,'1','0') as shownav")
+    ->where($condition)
+    ->find();
 
+    if(!$info) {
+      $backData = array(
+          "code"  =>200,
+          "msg"   =>"success",
+          "data"  =>array(
+              "cardInfo"  =>array("id"=>'')
+          )
+      );
+      $this->ajaxReturn($backData);
+    }
+    
+    //
     if(isset($_GET['fromid']) && $info && I("get.fromid") != $info['id']) {
         $fromId = I('get.fromid');
         $fromUid = M("Card")->where(array('id'=>$fromId))->getField("uid");
@@ -34,16 +49,7 @@ class MycardController extends BaseController {
         }
     }
 
-    if(!$info) {
-        $backData = array(
-            "code"  =>200,
-            "msg"   =>"success",
-            "data"  =>array(
-                "cardInfo"  =>array("id"=>'')
-            )
-        );
-        $this->ajaxReturn($backData);
-    }
+
     $totalCondition = array(
         "card_id"   =>$info['id']
     );
@@ -152,44 +158,75 @@ class MycardController extends BaseController {
 
   /**
    * bind
+   * 增加人才卡用户类型 type:3,2020-10-01 by wang
    */
   public function bind(){
     $model = M("Card");
     // 1.1 check phone
     $phone = I("get.phone");
     $cardInfo = $model->where(array('phone'=>$phone))->find();
+
+    // 如果没有资料，判断是否是人才卡用户
     if(!$cardInfo) {
-      $backData = array(
-        "code"  => 13001,
-        "msg"   => "没有此手机用户"
-      );  
-      $this->ajaxReturn($backData);  
+      $talentAuth = new \Api\Common\Controller\TalentAuthController();
+      $talentInfo = $talentAuth->checkTalentInfo($this->uid,"array");
+      // var_dump($talentInfo);
+      // exit();
+      if(isset($talentInfo['code'])) {
+        $msg = $talentInfo["code"] == 13001 ? '没有此手机用户资料' : $talentInfo['msg'];
+        $backData = array(
+          "code"  => 13001,
+          "msg"   => $msg
+        );  
+        $this->ajaxReturn($backData);  
+      }
+      // 否则通过人才卡创建名片
+
+      $model->uid = $this->uid;
+      $insertData = array(
+        "type"  =>3,//人才卡用户type3
+        "phone" =>$phone,
+        "uid"   =>$this->uid,
+        "realname"=>$talentInfo["realname"]
+      );
+      $cardOperationResult = M("Card")->data($insertData)->fetchSql(false)->add();
+  
+      // 1.3 update member type(2019-03-14)
+      $memberCondition = array(
+        "id"  =>$this->uid
+      );
+      $memberData = array(
+        "type"  =>3
+      );
+      $updateMember = M("Member")->where($memberCondition)->data($memberData)->save();
+
+    }else {
+      if($cardInfo['uid']) {
+        $backData = array(
+          "code"  => 13002,
+          "msg"   => "此手机号已经被绑定"
+        );  
+        $this->ajaxReturn($backData);       
+      }
+      // 1.2 create data
+      $model->uid = $this->uid;
+      $condition = array(
+        "phone" =>$phone
+      );
+      $cardOperationResult = $model->where($condition)->fetchSql(false)->save();
+  
+      // 1.3 update member type(2019-03-14)
+      $memberCondition = array(
+        "id"  =>$this->uid
+      );
+      $memberData = array(
+        "type"  =>$cardInfo['type']
+      );
+      $updateMember = M("Member")->where($memberCondition)->data($memberData)->save();
     }
 
-    if($cardInfo['uid']) {
-      $backData = array(
-        "code"  => 13002,
-        "msg"   => "此手机号已经被绑定"
-      );  
-      $this->ajaxReturn($backData);       
-    }
-    // 1.2 create data
-    $model->uid = $this->uid;
-    $condition = array(
-      "phone" =>$phone
-    );
-    $updateResult = $model->where($condition)->fetchSql(false)->save();
 
-    // 1.3 update member type(2019-03-14)
-    $memberCondition = array(
-      "id"  =>$this->uid
-    );
-    $memberData = array(
-      "type"  =>$cardInfo['type']
-    );
-    $updateMember = M("Member")->where($memberCondition)->data($memberData)->save();
-
-    if(!$updateResult) {
+    if(!$cardOperationResult) {
       $backData = array(
         "code"  => 13003,
         "msg"   => "保存失败请稍后再试"
@@ -306,7 +343,10 @@ class MycardController extends BaseController {
     $cardCondition = array(
       "uid" =>$this->uid
     );
-    $cardInfo = M("Card")->where($cardCondition)->find();
+    $cardInfo = M("Card")
+    ->field("*,IF(sex='','未知',sex) as sex")
+    ->where($cardCondition)
+    ->find();
     $backData = array(
       "code"  => 200,
       "msg"   => "success",
@@ -315,6 +355,35 @@ class MycardController extends BaseController {
     $this->ajaxReturn($backData);  
   }
 
+
+  /**
+   * 更新头像
+   */
+  public function update_avatar($id,$img){
+    $cardCondition = array(
+      "id" =>$id
+    );
+    $data = array(
+      "avatar"  =>$img
+    );
+    $updateResult = M("Card")
+    ->data($data)
+    ->where($cardCondition)
+    ->save();
+    if($updateResult !== false) {
+      $backData = array(
+        "code"  => 200,
+        "msg"   => "success"
+      ); 
+    }else {
+      $backData = array(
+        "code"  => 13001,
+        "msg"   => "头像更新错误"
+      ); 
+    }
+ 
+    $this->ajaxReturn($backData);  
+  }
 
 
 }

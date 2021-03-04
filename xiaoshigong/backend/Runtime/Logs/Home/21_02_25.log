@@ -1,0 +1,321 @@
+[ 2021-02-25T08:12:35+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/Main/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001910s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002371s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002483s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_user` [ RunTime:0.0591s ]
+SQL: SELECT * FROM `xsg_admin_user` WHERE `username` = 'xsgadmin' LIMIT 1   [ RunTime:0.0494s ]
+SQL: SELECT `id`,`username`,`nickname`,`status` FROM `xsg_admin_user` WHERE `username` = 'xsgadmin' AND `password` = 'da9927a3153c7d8b4a43bcdde4894dea' LIMIT 1   [ RunTime:0.0580s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_session` [ RunTime:0.0551s ]
+NOTIC: [8] Undefined variable: uid D:\work\xiaoshigong\backend\Home\Controller\MainController.class.php 第 113 行.
+SQL: SELECT * FROM `xsg_admin_session` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0529s ]
+SQL: UPDATE `xsg_admin_session` SET `token`='634a5f328f44f8e3fa4fceefa4f74a36',`expires_time`='1614215554' WHERE `uid` = 1 [ RunTime:0.1098s ]
+
+[ 2021-02-25T08:12:35+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/Main/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000665s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_user` [ RunTime:0.0498s ]
+SQL: SELECT * FROM `xsg_admin_user` WHERE `username` = 'xsgadmin' LIMIT 1   [ RunTime:0.0523s ]
+SQL: SELECT `id`,`username`,`nickname`,`status` FROM `xsg_admin_user` WHERE `username` = 'xsgadmin' AND `password` = 'da9927a3153c7d8b4a43bcdde4894dea' LIMIT 1   [ RunTime:0.0538s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_session` [ RunTime:0.0549s ]
+NOTIC: [8] Undefined variable: uid D:\work\xiaoshigong\backend\Home\Controller\MainController.class.php 第 113 行.
+SQL: SELECT * FROM `xsg_admin_session` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0519s ]
+SQL: UPDATE `xsg_admin_session` SET `token`='be5b7cb415e9903c7c6e2bd798b7f78b',`expires_time`='1614215555' WHERE `uid` = 1 [ RunTime:0.0550s ]
+
+[ 2021-02-25T08:13:47+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/User/ulist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001584s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_session` [ RunTime:0.0645s ]
+SQL: SELECT `expires_time` FROM `xsg_admin_session` WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' LIMIT 1   [ RunTime:0.0551s ]
+SQL: UPDATE `xsg_admin_session` SET `expires_time`='1614215626' WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' [ RunTime:0.1022s ]
+SQL: SELECT `uid` FROM `xsg_admin_session` WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' LIMIT 1   [ RunTime:0.0629s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_user` [ RunTime:0.0566s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `xsg_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0549s ]
+NOTIC: [8] Undefined index: page D:\work\xiaoshigong\backend\Home\Controller\UserController.class.php 第 23 行.
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time,(select group_concat(name) from xsg_admin_role R where FIND_IN_SET(R.id,U.role_id)) as role_name FROM xsg_admin_user U LIMIT 0,15   [ RunTime:0.0527s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_role` [ RunTime:0.0546s ]
+SQL: SELECT * FROM `xsg_admin_role` WHERE ( status=1 )  [ RunTime:0.0601s ]
+SQL: SELECT COUNT(*) AS tp_count FROM xsg_admin_user U LIMIT 1   [ RunTime:0.0636s ]
+
+[ 2021-02-25T08:14:20+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/User/ulist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_session` [ RunTime:0.0479s ]
+SQL: SELECT `expires_time` FROM `xsg_admin_session` WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' LIMIT 1   [ RunTime:0.0494s ]
+SQL: UPDATE `xsg_admin_session` SET `expires_time`='1614215660' WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' [ RunTime:0.0504s ]
+SQL: SELECT `uid` FROM `xsg_admin_session` WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' LIMIT 1   [ RunTime:0.0561s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_user` [ RunTime:0.0500s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `xsg_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0532s ]
+NOTIC: [8] Undefined index: page D:\work\xiaoshigong\backend\Home\Controller\UserController.class.php 第 23 行.
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time,(select group_concat(name) from xsg_admin_role R where FIND_IN_SET(R.id,U.role_id)) as role_name FROM xsg_admin_user U LIMIT 0,15   [ RunTime:0.0531s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_role` [ RunTime:0.0493s ]
+SQL: SELECT * FROM `xsg_admin_role` WHERE ( status=1 )  [ RunTime:0.0514s ]
+SQL: SELECT COUNT(*) AS tp_count FROM xsg_admin_user U LIMIT 1   [ RunTime:0.0471s ]
+
+[ 2021-02-25T08:22:57+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/User/ulist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000462s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000605s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000641s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_session` [ RunTime:0.0465s ]
+SQL: SELECT `expires_time` FROM `xsg_admin_session` WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' LIMIT 1   [ RunTime:0.0489s ]
+SQL: UPDATE `xsg_admin_session` SET `expires_time`='1614216177' WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' [ RunTime:0.0499s ]
+SQL: SELECT `uid` FROM `xsg_admin_session` WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' LIMIT 1   [ RunTime:0.0468s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_user` [ RunTime:0.0485s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `xsg_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0483s ]
+NOTIC: [8] Undefined index: page D:\work\xiaoshigong\backend\Home\Controller\UserController.class.php 第 23 行.
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time,(select group_concat(name) from xsg_admin_role R where FIND_IN_SET(R.id,U.role_id)) as role_name FROM xsg_admin_user U LIMIT 0,15   [ RunTime:0.0478s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_role` [ RunTime:0.0516s ]
+SQL: SELECT * FROM `xsg_admin_role` WHERE ( status=1 )  [ RunTime:0.0498s ]
+SQL: SELECT COUNT(*) AS tp_count FROM xsg_admin_user U LIMIT 1   [ RunTime:0.0472s ]
+
+[ 2021-02-25T08:23:02+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/User/ulist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000686s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000825s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_session` [ RunTime:0.0620s ]
+SQL: SELECT `expires_time` FROM `xsg_admin_session` WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' LIMIT 1   [ RunTime:0.0637s ]
+SQL: UPDATE `xsg_admin_session` SET `expires_time`='1614216182' WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' [ RunTime:0.0612s ]
+SQL: SELECT `uid` FROM `xsg_admin_session` WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' LIMIT 1   [ RunTime:0.0608s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_user` [ RunTime:0.0565s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `xsg_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0541s ]
+NOTIC: [8] Undefined index: page D:\work\xiaoshigong\backend\Home\Controller\UserController.class.php 第 23 行.
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time,(select group_concat(name) from xsg_admin_role R where FIND_IN_SET(R.id,U.role_id)) as role_name FROM xsg_admin_user U LIMIT 0,15   [ RunTime:0.0553s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_role` [ RunTime:0.0571s ]
+SQL: SELECT * FROM `xsg_admin_role` WHERE ( status=1 )  [ RunTime:0.0856s ]
+SQL: SELECT COUNT(*) AS tp_count FROM xsg_admin_user U LIMIT 1   [ RunTime:0.0544s ]
+
+[ 2021-02-25T08:24:05+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/User/ulist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000668s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_session` [ RunTime:0.0563s ]
+SQL: SELECT `expires_time` FROM `xsg_admin_session` WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' LIMIT 1   [ RunTime:0.0620s ]
+SQL: UPDATE `xsg_admin_session` SET `expires_time`='1614216245' WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' [ RunTime:0.0574s ]
+SQL: SELECT `uid` FROM `xsg_admin_session` WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' LIMIT 1   [ RunTime:0.0590s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_user` [ RunTime:0.0563s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `xsg_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0654s ]
+NOTIC: [8] Undefined index: page D:\work\xiaoshigong\backend\Home\Controller\UserController.class.php 第 23 行.
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time,(select group_concat(name) from xsg_admin_role R where FIND_IN_SET(R.id,U.role_id)) as role_name FROM xsg_admin_user U LIMIT 0,15   [ RunTime:0.0550s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_role` [ RunTime:0.0571s ]
+SQL: SELECT * FROM `xsg_admin_role` WHERE ( status=1 )  [ RunTime:0.0797s ]
+SQL: SELECT COUNT(*) AS tp_count FROM xsg_admin_user U LIMIT 1   [ RunTime:0.0623s ]
+
+[ 2021-02-25T08:25:26+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/User/ulist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000634s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000669s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_session` [ RunTime:0.0487s ]
+SQL: SELECT `expires_time` FROM `xsg_admin_session` WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' LIMIT 1   [ RunTime:0.0474s ]
+SQL: UPDATE `xsg_admin_session` SET `expires_time`='1614216326' WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' [ RunTime:0.0507s ]
+SQL: SELECT `uid` FROM `xsg_admin_session` WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' LIMIT 1   [ RunTime:0.0543s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_user` [ RunTime:0.0495s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `xsg_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0476s ]
+NOTIC: [8] Undefined index: page D:\work\xiaoshigong\backend\Home\Controller\UserController.class.php 第 23 行.
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time,(select group_concat(name) from xsg_admin_role R where FIND_IN_SET(R.id,U.role_id)) as role_name FROM xsg_admin_user U LIMIT 0,15   [ RunTime:0.0471s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_role` [ RunTime:0.0486s ]
+SQL: SELECT * FROM `xsg_admin_role` WHERE ( status=1 )  [ RunTime:0.0453s ]
+SQL: SELECT COUNT(*) AS tp_count FROM xsg_admin_user U LIMIT 1   [ RunTime:0.0494s ]
+
+[ 2021-02-25T08:26:01+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/User/ulist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000596s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000631s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_session` [ RunTime:0.0568s ]
+SQL: SELECT `expires_time` FROM `xsg_admin_session` WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' LIMIT 1   [ RunTime:0.0542s ]
+SQL: UPDATE `xsg_admin_session` SET `expires_time`='1614216360' WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' [ RunTime:0.0584s ]
+SQL: SELECT `uid` FROM `xsg_admin_session` WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' LIMIT 1   [ RunTime:0.0536s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_user` [ RunTime:0.0558s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `xsg_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0538s ]
+NOTIC: [8] Undefined index: page D:\work\xiaoshigong\backend\Home\Controller\UserController.class.php 第 23 行.
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time,(select group_concat(name) from xsg_admin_role R where FIND_IN_SET(R.id,U.role_id)) as role_name FROM xsg_admin_user U LIMIT 0,15   [ RunTime:0.0752s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_role` [ RunTime:0.0751s ]
+SQL: SELECT * FROM `xsg_admin_role` WHERE ( status=1 )  [ RunTime:0.0572s ]
+SQL: SELECT COUNT(*) AS tp_count FROM xsg_admin_user U LIMIT 1   [ RunTime:0.0587s ]
+
+[ 2021-02-25T08:26:03+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/User/ulist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000763s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000709s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_session` [ RunTime:0.0535s ]
+SQL: SELECT `expires_time` FROM `xsg_admin_session` WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' LIMIT 1   [ RunTime:0.0489s ]
+SQL: UPDATE `xsg_admin_session` SET `expires_time`='1614216363' WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' [ RunTime:0.0563s ]
+SQL: SELECT `uid` FROM `xsg_admin_session` WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' LIMIT 1   [ RunTime:0.0522s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_user` [ RunTime:0.0532s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `xsg_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0478s ]
+NOTIC: [8] Undefined index: page D:\work\xiaoshigong\backend\Home\Controller\UserController.class.php 第 23 行.
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time,(select group_concat(name) from xsg_admin_role R where FIND_IN_SET(R.id,U.role_id)) as role_name FROM xsg_admin_user U LIMIT 0,15   [ RunTime:0.0516s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_role` [ RunTime:0.0502s ]
+SQL: SELECT * FROM `xsg_admin_role` WHERE ( status=1 )  [ RunTime:0.0478s ]
+SQL: SELECT COUNT(*) AS tp_count FROM xsg_admin_user U LIMIT 1   [ RunTime:0.0489s ]
+
+[ 2021-02-25T08:26:22+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/User/ulist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000595s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001017s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001082s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_session` [ RunTime:0.0515s ]
+SQL: SELECT `expires_time` FROM `xsg_admin_session` WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' LIMIT 1   [ RunTime:0.0522s ]
+SQL: UPDATE `xsg_admin_session` SET `expires_time`='1614216381' WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' [ RunTime:0.1327s ]
+SQL: SELECT `uid` FROM `xsg_admin_session` WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' LIMIT 1   [ RunTime:0.0575s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_user` [ RunTime:0.0483s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `xsg_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0860s ]
+NOTIC: [8] Undefined index: page D:\work\xiaoshigong\backend\Home\Controller\UserController.class.php 第 23 行.
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time,(select group_concat(name) from xsg_admin_role R where FIND_IN_SET(R.id,U.role_id)) as role_name FROM xsg_admin_user U LIMIT 0,15   [ RunTime:0.0565s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_role` [ RunTime:0.0977s ]
+SQL: SELECT * FROM `xsg_admin_role` WHERE ( status=1 )  [ RunTime:0.0843s ]
+SQL: SELECT COUNT(*) AS tp_count FROM xsg_admin_user U LIMIT 1   [ RunTime:0.0554s ]
+
+[ 2021-02-25T11:44:54+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/User/ulist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000569s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000712s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_session` [ RunTime:0.0515s ]
+SQL: SELECT `expires_time` FROM `xsg_admin_session` WHERE `token` = 'be5b7cb415e9903c7c6e2bd798b7f78b' LIMIT 1   [ RunTime:0.0587s ]
+
+[ 2021-02-25T11:45:04+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/Main/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000590s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_user` [ RunTime:0.0510s ]
+SQL: SELECT * FROM `xsg_admin_user` WHERE `username` = 'xsgadmin' LIMIT 1   [ RunTime:0.0494s ]
+SQL: SELECT `id`,`username`,`nickname`,`status` FROM `xsg_admin_user` WHERE `username` = 'xsgadmin' AND `password` = 'da9927a3153c7d8b4a43bcdde4894dea' LIMIT 1   [ RunTime:0.0812s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_session` [ RunTime:0.0488s ]
+NOTIC: [8] Undefined variable: uid D:\work\xiaoshigong\backend\Home\Controller\MainController.class.php 第 113 行.
+SQL: SELECT * FROM `xsg_admin_session` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0513s ]
+SQL: UPDATE `xsg_admin_session` SET `token`='c71179b158ecd8594b1a11e82de8d04f',`expires_time`='1614228304' WHERE `uid` = 1 [ RunTime:0.0508s ]
+
+[ 2021-02-25T11:49:58+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/User/ulist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000920s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002130s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002194s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_session` [ RunTime:0.0506s ]
+SQL: SELECT `expires_time` FROM `xsg_admin_session` WHERE `token` = 'c71179b158ecd8594b1a11e82de8d04f' LIMIT 1   [ RunTime:0.0523s ]
+SQL: UPDATE `xsg_admin_session` SET `expires_time`='1614228598' WHERE `token` = 'c71179b158ecd8594b1a11e82de8d04f' [ RunTime:0.0540s ]
+SQL: SELECT `uid` FROM `xsg_admin_session` WHERE `token` = 'c71179b158ecd8594b1a11e82de8d04f' LIMIT 1   [ RunTime:0.0599s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_user` [ RunTime:0.0513s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `xsg_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0541s ]
+NOTIC: [8] Undefined index: page D:\work\xiaoshigong\backend\Home\Controller\UserController.class.php 第 23 行.
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time,(select group_concat(name) from xsg_admin_role R where FIND_IN_SET(R.id,U.role_id)) as role_name FROM xsg_admin_user U LIMIT 0,15   [ RunTime:0.0520s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_role` [ RunTime:0.0530s ]
+SQL: SELECT * FROM `xsg_admin_role` WHERE ( status=1 )  [ RunTime:0.0504s ]
+SQL: SELECT COUNT(*) AS tp_count FROM xsg_admin_user U LIMIT 1   [ RunTime:0.0515s ]
+
+[ 2021-02-25T11:51:17+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/User/ulist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000627s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_session` [ RunTime:0.0460s ]
+SQL: SELECT `expires_time` FROM `xsg_admin_session` WHERE `token` = 'c71179b158ecd8594b1a11e82de8d04f' LIMIT 1   [ RunTime:0.0444s ]
+SQL: UPDATE `xsg_admin_session` SET `expires_time`='1614228677' WHERE `token` = 'c71179b158ecd8594b1a11e82de8d04f' [ RunTime:0.0795s ]
+SQL: SELECT `uid` FROM `xsg_admin_session` WHERE `token` = 'c71179b158ecd8594b1a11e82de8d04f' LIMIT 1   [ RunTime:0.1141s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_user` [ RunTime:0.0622s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `xsg_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0476s ]
+NOTIC: [8] Undefined index: page D:\work\xiaoshigong\backend\Home\Controller\UserController.class.php 第 23 行.
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time,(select group_concat(name) from xsg_admin_role R where FIND_IN_SET(R.id,U.role_id)) as role_name FROM xsg_admin_user U LIMIT 0,15   [ RunTime:0.0595s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_role` [ RunTime:0.0543s ]
+SQL: SELECT * FROM `xsg_admin_role` WHERE ( status=1 )  [ RunTime:0.0457s ]
+SQL: SELECT COUNT(*) AS tp_count FROM xsg_admin_user U LIMIT 1   [ RunTime:0.0902s ]
+
+[ 2021-02-25T11:53:34+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/User/ulist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000671s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_session` [ RunTime:0.0582s ]
+SQL: SELECT `expires_time` FROM `xsg_admin_session` WHERE `token` = 'c71179b158ecd8594b1a11e82de8d04f' LIMIT 1   [ RunTime:0.0514s ]
+SQL: UPDATE `xsg_admin_session` SET `expires_time`='1614228813' WHERE `token` = 'c71179b158ecd8594b1a11e82de8d04f' [ RunTime:0.1154s ]
+SQL: SELECT `uid` FROM `xsg_admin_session` WHERE `token` = 'c71179b158ecd8594b1a11e82de8d04f' LIMIT 1   [ RunTime:0.0591s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_user` [ RunTime:0.0647s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `xsg_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0643s ]
+NOTIC: [8] Undefined index: page D:\work\xiaoshigong\backend\Home\Controller\UserController.class.php 第 23 行.
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time,(select group_concat(name) from xsg_admin_role R where FIND_IN_SET(R.id,U.role_id)) as role_name FROM xsg_admin_user U LIMIT 0,15   [ RunTime:0.0681s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_role` [ RunTime:0.0703s ]
+SQL: SELECT * FROM `xsg_admin_role` WHERE ( status=1 )  [ RunTime:0.0524s ]
+SQL: SELECT COUNT(*) AS tp_count FROM xsg_admin_user U LIMIT 1   [ RunTime:0.0534s ]
+
+[ 2021-02-25T11:53:38+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/User/ulist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002015s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002078s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_session` [ RunTime:0.0492s ]
+SQL: SELECT `expires_time` FROM `xsg_admin_session` WHERE `token` = 'c71179b158ecd8594b1a11e82de8d04f' LIMIT 1   [ RunTime:0.0505s ]
+SQL: UPDATE `xsg_admin_session` SET `expires_time`='1614228817' WHERE `token` = 'c71179b158ecd8594b1a11e82de8d04f' [ RunTime:0.0521s ]
+SQL: SELECT `uid` FROM `xsg_admin_session` WHERE `token` = 'c71179b158ecd8594b1a11e82de8d04f' LIMIT 1   [ RunTime:0.0492s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_user` [ RunTime:0.0510s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `xsg_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0613s ]
+NOTIC: [8] Undefined index: page D:\work\xiaoshigong\backend\Home\Controller\UserController.class.php 第 23 行.
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time,(select group_concat(name) from xsg_admin_role R where FIND_IN_SET(R.id,U.role_id)) as role_name FROM xsg_admin_user U LIMIT 0,15   [ RunTime:0.0488s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_role` [ RunTime:0.0511s ]
+SQL: SELECT * FROM `xsg_admin_role` WHERE ( status=1 )  [ RunTime:0.0536s ]
+SQL: SELECT COUNT(*) AS tp_count FROM xsg_admin_user U LIMIT 1   [ RunTime:0.0533s ]
+
+[ 2021-02-25T11:59:40+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/User/ulist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000810s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_session` [ RunTime:0.0539s ]
+SQL: SELECT `expires_time` FROM `xsg_admin_session` WHERE `token` = 'c71179b158ecd8594b1a11e82de8d04f' LIMIT 1   [ RunTime:0.0533s ]
+SQL: UPDATE `xsg_admin_session` SET `expires_time`='1614229179' WHERE `token` = 'c71179b158ecd8594b1a11e82de8d04f' [ RunTime:0.0593s ]
+SQL: SELECT `uid` FROM `xsg_admin_session` WHERE `token` = 'c71179b158ecd8594b1a11e82de8d04f' LIMIT 1   [ RunTime:0.0502s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_user` [ RunTime:0.0600s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `xsg_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0501s ]
+NOTIC: [8] Undefined index: page D:\work\xiaoshigong\backend\Home\Controller\UserController.class.php 第 23 行.
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time,(select group_concat(name) from xsg_admin_role R where FIND_IN_SET(R.id,U.role_id)) as role_name FROM xsg_admin_user U LIMIT 0,15   [ RunTime:0.0524s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_role` [ RunTime:0.0522s ]
+SQL: SELECT * FROM `xsg_admin_role` WHERE ( status=1 )  [ RunTime:0.0518s ]
+SQL: SELECT COUNT(*) AS tp_count FROM xsg_admin_user U LIMIT 1   [ RunTime:0.0504s ]
+

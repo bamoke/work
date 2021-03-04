@@ -1,0 +1,61 @@
+[ 2021-02-19T22:47:43+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/Main/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000644s ]
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'xsgsql'@'223.73.235.189' (using password: YES)
+
+[ 2021-02-19T22:50:22+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/Main/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000708s ]
+ERR: SQLSTATE[HY000] [1044] Access denied for user 'remotesql'@'%' to database 'xiaoshigong'
+
+[ 2021-02-19T23:04:56+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/Main/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000806s ]
+ERR: SQLSTATE[HY000] [1044] Access denied for user 'remotesql'@'%' to database 'xiaoshigong'
+
+[ 2021-02-19T23:05:16+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/Main/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000602s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_user` [ RunTime:0.0716s ]
+SQL: SELECT * FROM `xsg_admin_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0499s ]
+
+[ 2021-02-19T23:09:39+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/Main/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000675s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_user` [ RunTime:0.0527s ]
+SQL: SELECT * FROM `xsg_admin_user` WHERE `username` = 'xsgadmin' LIMIT 1   [ RunTime:0.0534s ]
+SQL: SELECT `id`,`username`,`nickname`,`status` FROM `xsg_admin_user` WHERE `username` = 'xsgadmin' AND `password` = 'da9927a3153c7d8b4a43bcdde4894dea' LIMIT 1   [ RunTime:0.0569s ]
+SQL: SHOW COLUMNS FROM `xsg_admin_session` [ RunTime:0.0614s ]
+NOTIC: [8] Undefined variable: uid D:\work\xiaoshigong\backend\Home\Controller\MainController.class.php 第 113 行.
+SQL: SELECT * FROM `xsg_admin_session` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0535s ]
+SQL: INSERT INTO `xsg_admin_session` (`token`,`expires_time`,`uid`) VALUES ('4474b7ae288f5bd6646d60a3ee2453c0','1613750979','1') [ RunTime:0.0598s ]
+
+[ 2021-02-19T23:10:08+08:00 ] 127.0.0.1 /xiaoshigong/backend/index.php/get_drag_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000793s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000858s ]
+ERR: 无法加载控制器:Get_drag_list
+

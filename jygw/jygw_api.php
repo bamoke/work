@@ -1,4 +1,11 @@
 <?php
+/*
+ * @Author: Joy wang
+ * @Date: 2019-01-03 16:01:40
+ * @LastEditTime: 2021-04-20 00:57:24
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ */
 /**
  * Created by PhpStorm.
  * User: bamoke
@@ -8,7 +15,7 @@
 //php环境检测
 if(version_compare(PHP_VERSION,'5.3.0','<')) die('require PHP > 5.3.0 !');
 //设置开发模式；当前开启调试模式
-define("APP_DEBUG",false);
+define("APP_DEBUG",true);
 
 
 //定义应用目录

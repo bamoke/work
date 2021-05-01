@@ -1,4 +1,11 @@
 <?php
+/*
+ * @Author: Joy wang
+ * @Date: 2019-11-27 11:21:20
+ * @LastEditTime: 2021-04-20 01:31:13
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ */
 return array(
     'TMPL_PARSE_STRING'=>array(
         "__WEB_ASSET__"     =>BASE_URL."Web/Static",
@@ -23,21 +30,13 @@ return array(
     "LAYOUT_NAME"   =>"Layout/main",
 
     // DB setting
-/*    "DB_HOST"   =>"119.23.171.184",
-    "DB_PORT"   =>"3306",
-    "DB_NAME"   =>"btc",
-    "DB_TYPE"   =>"mysql",
-    "DB_USER"   =>"btc",
-    "DB_PWD"    =>"Btc123456",
-    "DB_PREFIX" =>"b_",*/
 
-    "DB_HOST"   =>"39.105.2.50",
+    "DB_HOST"   =>"localhost",
     "DB_PORT"   =>"3306",
     "DB_NAME"   =>"nujiang",
     "DB_TYPE"   =>"mysql",
-    "DB_USER"   =>"remotesql",
-    "DB_PWD"    =>"123456",
-    // "DB_PWD"    =>"bamoke2018***",
+    "DB_USER"   =>"root",
+    "DB_PWD"    =>"bamoke2018***",
     "DB_PREFIX" =>"b_",
 
     // Trace

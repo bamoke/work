@@ -44,7 +44,8 @@ class OrdersModel extends \Think\Model {
                     "status"  =>$status,
                     "status_name"  =>$val->单据状态,
                     "description"  =>$val->请购备注,
-                    "original" =>$val
+                    "original" =>$val,
+                    "total"     =>$val->合计金额
                 );
             }
         }
@@ -79,6 +80,7 @@ class OrdersModel extends \Think\Model {
             "status"  =>$status,
             "status_name"  =>$ybResult->单据状态,
             "description"  =>$ybResult->请购备注,
+            "total"     =>$ybResult->合计金额
         );
 
         $goods = array();

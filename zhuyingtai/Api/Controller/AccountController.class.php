@@ -44,7 +44,7 @@ class AccountController extends Controller {
         //1.2 session manage
         $openid = $mpRresult['openid'];
         $sessionkey = $mpRresult['session_key'];
-        $accessToken = $this->createSessionId();
+        $accessToken = $openid;
         $sessionModel = M("Mysession");
         $sessionInfo = $sessionModel->where(array("openid"=>$openid))->find();
         if($sessionInfo){

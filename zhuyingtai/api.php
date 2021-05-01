@@ -1,4 +1,11 @@
 <?php
+/*
+ * @Author: Joy wang
+ * @Date: 2019-03-12 09:28:45
+ * @LastEditTime: 2021-04-20 01:55:08
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ */
 /**
  * Created by PhpStorm.
  * User: joy.wangxiangyin
@@ -8,7 +15,7 @@
 
 
 //设置开发模式；当前开启调试模式
-//define("APP_DEBUG",true);
+define("APP_DEBUG",true);
 //define('STATIC_DEBUG',time());
 
 //定义应用名称,3.2可以不用定义

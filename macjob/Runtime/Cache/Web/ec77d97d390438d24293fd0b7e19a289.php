@@ -17,7 +17,7 @@
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
     <link rel="stylesheet" href="/macjob/Web/Static/css/plugins/plugins.min.css?v=1">
-    <link rel="stylesheet" href="/macjob/Web/Static/css/style.min.css?v=1">
+    <link rel="stylesheet" href="/macjob/Web/Static/css/style.min.css?v=2">
     <!-- Modernizr JS -->
     <script src="/macjob/Web/Static/js/vendor/modernizr-3.10.0.min.js"></script>
     <style>
@@ -155,9 +155,6 @@
                         </div>
                         <div class="menu-content">
                             <ul class="menulist object-custom-menu">
-                                <li class="has-mega-menu"><a href="#"><span>Home</span></a>
-                                </li>
-        
                                 <li><a href="<?php echo U('Index/index');?>">首页</a>
                                 </li>
                                 <li><a href="<?php echo U('Jobs/index');?>">招聘职位</a>

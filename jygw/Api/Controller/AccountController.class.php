@@ -46,7 +46,8 @@ class AccountController extends Controller {
         //1.2 session manage
         $openid = $result['openid'];
         $sessionkey = $result['session_key'];
-        $accessToken = $this->createSessionId();
+        // $accessToken = $this->createSessionId();
+        $accessToken = $result['openid'];
         $sessionModel = M("Mysession");
         $sessionInfo = $sessionModel->where(array("openid"=>$openid))->fetchSql(false)->find();
         if($sessionInfo){

@@ -1,4 +1,11 @@
 <?php
+/*
+ * @Author: Joy wang
+ * @Date: 2019-10-11 15:43:05
+ * @LastEditTime: 2021-04-20 01:32:50
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ */
 return array(
 	// template replace rule;only can set once
 	"TMPL_PARSE_STRING"	=>array(
@@ -11,12 +18,10 @@ return array(
 	//database settting
 	'DB_TYPE'   => 'mysql', // 数据库类型
     'DB_NAME'   => 'jygw', // 数据库名
-    'DB_HOST'   => '39.105.2.50', // 服务器地址
-    'DB_USER'   => 'remotesql', // 用户名
-    'DB_PWD'    => '123456', // 密码
-    // 'DB_HOST'   => 'localhost', // 服务器地址
-    // 'DB_USER'   => 'zhmlifesql', // 用户名
-    // 'DB_PWD'    => 'zhm!2#4%6&8', // 密码
+    'DB_HOST'   => 'localhost', // 服务器地址
+    'DB_USER'   => 'root', // 用户名
+    'DB_PWD'    => 'bamoke2018***', // 密码
+
     'DB_PORT'   => 3306, // 端口
     'DB_PREFIX' => 'x_', // 数据库表前缀
     'DB_CHARSET'=> 'utf8', // 字符集

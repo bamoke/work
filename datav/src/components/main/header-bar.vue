@@ -24,10 +24,9 @@
         <div class="bg">
           <img src="@/assets/images/nav-bg-line.png" alt="" srcset="" />
         </div>
-        <div class="effect">
-          <dv-decoration-3 style="width: 400px; height: 30px" />
-        </div>
-        <span class="brand-name">数字金湾政府数据深度分析系统</span>
+        <router-link to="/" class="brand-name">
+          数字金湾政府数据深度分析系统
+        </router-link>
       </div>
       <router-link to="/waishangtouzi" class="item link-item link-right">
         <div class="title">实际吸收外商投资</div>
@@ -46,7 +45,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      curNav: "",
+    };
+  },
+  mounted() {},
+};
 </script>
 
 <style scoped>
@@ -58,7 +64,7 @@ export default {};
   z-index: 999;
   box-sizing: border-box;
   padding: 0 24px;
-  height: .46875rem;
+  height: 0.46875rem;
   background-color: rgba(0, 10, 25, 0.8);
 }
 

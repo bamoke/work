@@ -27,7 +27,7 @@ var optMode = {
       {
         type: "pie",
         // roseType: 'area',
-        radius: ["0", "60%"],
+        radius: ["40%", "60%"],
         center: ["50%", "60%"],
         label: {
           show: true,
@@ -193,8 +193,7 @@ export default {
   },
   mounted() {
     this.chartInstance = this.$echarts.init(
-      document.getElementById(this.chartId),
-      this.$config.chartTheme
+      document.getElementById(this.chartId)
     );
   },
 };

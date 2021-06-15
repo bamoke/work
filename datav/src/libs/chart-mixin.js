@@ -8,6 +8,7 @@
 import * as Api from "@/api/index";
 import { ChartMonth, ChartYear, ChartCompareCounty, ChartCompareDomestic } from "@/components/bmk-chart"
 import EffectCircleCount3D from "@/components/effects/effect-circle-count-3d.vue";
+import echartTheme from "@/config/echarts-theme.js"
 
 const chartMixin = {
     components: {
@@ -51,21 +52,25 @@ const chartMixin = {
             this[chartDataName].mode = e
         },
         chartInit({
-            themeName = this.$config.chartTheme,
             chartObject = this.$echarts,
             chartName = [],
         }) {
             /**图表初始化 */
             var echartInstance = {};
+ 
+            // const echartThemName = this.$store.state.theme.echartTheme;
+            // chartObject.registerTheme(echartThemName, echartTheme[echartThemName]);
             chartName.forEach(function (item, index) {
                 echartInstance[item] = chartObject.init(
-                    document.getElementById(`chart-${item}`),
-                    themeName
+                    document.getElementById(`chart-${item}`),"macarons"
                 );
             });
 
             this.echartInstance = echartInstance;
         },
+    },
+    mounted () {
+
     },
 
 };

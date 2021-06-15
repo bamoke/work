@@ -6,8 +6,9 @@
  * @Description: In User Settings Edit
 -->
 <template>
-  <div style="width:100%;height:100%;">
-        <video
+  <div style="width: 100%; height: 100%">
+    <video
+      v-if="showBgVideo"
       x5-video-player-type="h5"
       playsinline=""
       webkitplaysinline="true"
@@ -41,17 +42,23 @@ export default {
   components: {
     HeadBar,
   },
+  data() {
+    return {
+      key: "value",
+    };
+  },
+  computed: {
+    showBgVideo() {
+      return this.$store.state.theme.showBgVideo;
+    },
+  },
   mounted() {},
 };
 </script>
 
 <style lang="less">
-
-
 *:before,
 *:after {
   box-sizing: border-box;
 }
-
-
 </style>

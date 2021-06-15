@@ -87,17 +87,23 @@ export default {
           ],
           series: [
             {
-              type: "pictorialBar",
-              barCategoryGap: "0%",
-              symbol:
-                "path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z",
-              symbolSize: ["80%", "100%"],
-
+              type: "bar",
             },
             {
-              type: "line",
+              type: "bar",
               yAxisIndex: 1,
             },
+            // {
+            //   type: "pictorialBar",
+            //   barCategoryGap: "0%",
+            //   symbol:
+            //     "path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z",
+            //   symbolSize: ["80%", "100%"],
+            // },
+            // {
+            //   type: "line",
+            //   yAxisIndex: 1,
+            // },
           ],
         });
       }
@@ -105,8 +111,7 @@ export default {
   },
   mounted() {
     this.chartInstance = this.$echarts.init(
-      document.getElementById("chart-compare-domestic"),
-      this.$config.chartTheme
+      document.getElementById("chart-compare-domestic")
     );
   },
 };

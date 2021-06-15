@@ -6,14 +6,15 @@
  * @Description: In User Settings Edit
  */
 import Vue from 'vue'
-import App from './App.vue'
+import App from './App-mobile.vue'
 import Config from "@/config"
-import dataV from '@jiaminghi/data-view'
-import router from './router'
-import ModuleCard from "@/components/main/module-card.vue"
+import router from '@/router'
+import ModuleCard from "@/components/main/module-card-mobile.vue"
 import Trend from "@/components/trend"
 import SwitchBtn from "@/components/switchbtn"
 import BcountUp from "@/components/count-up"
+
+import store from "@/store"
 
 
 
@@ -22,14 +23,17 @@ import 'view-design/dist/styles/iview.css';
 
 import 'echarts-gl';
 import echarts from '@/libs/echarts'
+import echartTheme from "@/config/echarts-theme.js"
+
 Vue.prototype.$echarts = echarts
+
+
 
 // 注入配置
 Vue.prototype.$config = Config
 
 
 
-Vue.use(dataV)
 // 自定义组件
 Vue.component('Trend', Trend);
 Vue.component('BcountUp', BcountUp);
@@ -57,5 +61,6 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')

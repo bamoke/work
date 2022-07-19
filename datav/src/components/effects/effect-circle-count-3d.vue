@@ -6,7 +6,11 @@
  * @Description: In User Settings Edit
 -->
 <template>
+<<<<<<< HEAD
+  <div class="wrap">
+=======
   <div class="effect-circle-wrap">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
     <div class="info-box">
       <div class="title">{{ data.area }}</div>
       <div class="count">
@@ -31,7 +35,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
+<<<<<<< HEAD
+.wrap {
+=======
 .effect-circle-wrap {
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
   display:flex;
   flex-direction: column;
   justify-content: flex-end;

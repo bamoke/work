@@ -6,6 +6,10 @@
  * @Description: In User Settings Edit
  */
 import * as echarts from 'echarts'
+<<<<<<< HEAD
+import config from "@/config"
+=======
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
 
 // 图表坐标轴线条颜色
 const axisLineColor = "rgba(255,255,255,.3)"
@@ -16,7 +20,11 @@ const axisLabelColor = "rgba(255,255,255,.8)"
 const legendTextColor = "rgba(255,255,255,.8)"
 
 
+<<<<<<< HEAD
+const themeList = {
+=======
 const echartsTheme = {
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
     walden: {
         "color": [
             "#3fb1e3",
@@ -911,7 +919,11 @@ const echartsTheme = {
     }
 }
 
+<<<<<<< HEAD
+echarts.registerTheme(config.chartTheme, themeList[config.chartTheme])
+=======
 echarts.registerTheme("macarons", echartsTheme["macarons"])
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
 
 
 

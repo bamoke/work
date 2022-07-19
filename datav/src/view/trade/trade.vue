@@ -7,7 +7,11 @@
 -->
 <template>
   <div class="content-wrap">
+<<<<<<< HEAD
+    <div class="row-side">
+=======
     <div class="row-side side-left">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
       <div class="transform-box">
         <ModuleCard title="外贸进出口近一年累计增速" class="item-wrap">
           <ChartMonth
@@ -39,7 +43,11 @@
       </div>
 
     </div>
+<<<<<<< HEAD
+    <div class="row-side">
+=======
     <div class="row-side side-right">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
       <div class="transform-box">
         <ModuleCard title="各区外贸进出口比较" class="item-wrap">
           <ChartCompareCounty

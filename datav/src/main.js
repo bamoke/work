@@ -6,16 +6,34 @@
  * @Description: In User Settings Edit
  */
 import Vue from 'vue'
+<<<<<<< HEAD
 import App from './App.vue'
 import Config from "@/config"
 import router from '@/router'
 import ModuleCard from "@/components/main/module-card.vue"
+=======
+<<<<<<< HEAD
+import App from './App.vue'
+import Config from "@/config"
+// import dataV from '@jiaminghi/data-view'
+import router from './router'
+import ModuleCard from "@/components/main/module-card.vue"
+=======
+import App from './App-mobile.vue'
+import Config from "@/config"
+import router from '@/router'
+import ModuleCard from "@/components/main/module-card-mobile.vue"
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
+>>>>>>> 23d6d38042cc57823cacef462cf8fdc01e79e502
 import Trend from "@/components/trend"
 import SwitchBtn from "@/components/switchbtn"
 import BcountUp from "@/components/count-up"
 
+<<<<<<< HEAD
+=======
 import store from "@/store"
 
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
 
 
 import { ButtonGroup, Button,Dropdown,DropdownMenu,DropdownItem, Table,Icon,Circle ,Row,Col,Carousel,CarouselItem,Spin,Message} from 'view-design';
@@ -23,6 +41,10 @@ import 'view-design/dist/styles/iview.css';
 
 import 'echarts-gl';
 import echarts from '@/libs/echarts'
+<<<<<<< HEAD
+Vue.prototype.$echarts = echarts
+
+=======
 import echartTheme from "@/config/echarts-theme.js"
 
 Vue.prototype.$echarts = echarts
@@ -30,6 +52,7 @@ Vue.prototype.$Message = Message
 
 
 
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
 // 注入配置
 Vue.prototype.$config = Config
 
@@ -64,6 +87,9 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+<<<<<<< HEAD
+=======
   store,
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
   render: h => h(App),
 }).$mount('#app')

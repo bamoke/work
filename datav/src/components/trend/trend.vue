@@ -8,7 +8,11 @@
 <template>
   <div style="display: inline-block">
     <div class="trend-wrap" :style="style">
+<<<<<<< HEAD
+      <span>{{ rate }}%</span>
+=======
       <span class="rate-num">{{ rate }}%</span>
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
       <Icon
         :type="rate >= 0 ? 'md-arrow-dropup' : 'md-arrow-dropdown'"
         class="trend-icon"
@@ -22,7 +26,11 @@ export default {
   props: {
     upColor: {
       type: String,
+<<<<<<< HEAD
+      default: "#f72268",
+=======
       default: "#fd653c",
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
     },
     downColor: {
       type: String,

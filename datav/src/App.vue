@@ -6,6 +6,10 @@
  * @Description: In User Settings Edit
 -->
 <template>
+<<<<<<< HEAD
+  <div id="app" :class="className">
+    <router-view style="height: 100%" />
+=======
   <div id="app" :class="[appTheme]">
     <div class="m-theme-box" style="display: none">
       <div class="theme-section">主题样式</div>
@@ -19,6 +23,7 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
     <router-view
       style="width: 1920px; height: 1080px"
       :style="{
@@ -29,16 +34,31 @@
       class="bigscreen-box"
       v-if="isRouterAlive"
     />
+=======
+    <router-view style="height: 100%; position: relative" />
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
+>>>>>>> 23d6d38042cc57823cacef462cf8fdc01e79e502
   </div>
 </template>
 
 <script>
 // import HeadBar from "./components/common/header-bar.vue";
+<<<<<<< HEAD
 import { get_sys_date } from "@/api/main.js";
 import "./theme-flat-light.less";
 import "./theme-flat-dark.less";
 
 import echartTheme from "@/config/echarts-theme.js";
+=======
+
+<<<<<<< HEAD
+=======
+import "./theme-flat-light.less";
+import "./theme-flat-dark.less";
+
+import echartTheme from "@/config/echarts-theme.js"
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
+>>>>>>> 23d6d38042cc57823cacef462cf8fdc01e79e502
 export default {
   name: "app",
   components: {},
@@ -49,10 +69,25 @@ export default {
   },
   data() {
     return {
+<<<<<<< HEAD
       zoomScale: 1,
       topOffset: 0,
       leftOffset: 0,
       isRouterAlive: false,
+=======
+<<<<<<< HEAD
+      theme: "default",
+    };
+  },
+  computed: {
+    className() {
+      return `theme-${this.theme}`;
+    },
+  },
+  mounted() {},
+=======
+      key: "",
+>>>>>>> 23d6d38042cc57823cacef462cf8fdc01e79e502
     };
   },
   computed: {
@@ -105,6 +140,7 @@ export default {
       this.isRouterAlive = true;
     });
   },
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
 };
 </script>
 
@@ -129,6 +165,7 @@ body {
   position: relative;
   text-align: center;
 
+<<<<<<< HEAD
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -137,6 +174,15 @@ body {
 .bigscreen-box {
   position: absolute;
   transform-origin: left top;
+=======
+<<<<<<< HEAD
+  width: 100%;
+  height: 100%;
+=======
+  width: 1920px;
+  height: 1080px;
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
+>>>>>>> 23d6d38042cc57823cacef462cf8fdc01e79e502
   overflow: hidden;
 }
 .l-row {
@@ -146,6 +192,8 @@ body {
 .l-row-bt {
   justify-content: space-between;
 }
+<<<<<<< HEAD
+=======
 .m-theme-box {
   position: fixed;
   top: 0;
@@ -185,11 +233,16 @@ body {
 .m-theme-box:hover {
   right: 0;
 }
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
 
 /**iview table */
 
 .ivu-table {
+<<<<<<< HEAD
+  color: rgba(255, 255, 255, .8) !important;
+=======
   color: rgba(255, 255, 255, 0.8) !important;
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
   background-color: transparent !important;
 }
 .ivu-table:before {
@@ -267,7 +320,11 @@ body {
   .content-wrap {
     position: absolute;
     left: 0;
+<<<<<<< HEAD
+    top:0;
+=======
     top: 0;
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
     z-index: 1;
     display: flex;
     justify-content: space-between;
@@ -278,7 +335,11 @@ body {
     height: 100%;
     overflow: hidden;
     .item-wrap {
+<<<<<<< HEAD
+      margin-bottom: 0.083333rem;
+=======
       margin-bottom: 16px;
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
     }
     .row-side {
       perspective: 3000px;
@@ -317,6 +378,7 @@ body {
       }
     }
   }
+<<<<<<< HEAD
 }
 // 中间底部内容区
 .m-middle-slider-wrap {
@@ -370,6 +432,70 @@ body {
     }
   }
 }
+=======
+
+<<<<<<< HEAD
+=======
+
+}
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
+  // 中间底部内容区
+  .m-middle-slider-wrap {
+    .slider-btn-bar {
+      display: flex;
+      // justify-content: space-between;
+      margin-bottom: 12px;
+      padding: 12px 0;
+      font-size: 18px;
+      color: #fff;
+      line-height: 1;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      .item {
+        position: relative;
+        margin-right: 24px;
+        padding: 0 12px;
+        height: 32px;
+        line-height: 32px;
+        background-color: rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+      }
+      .item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 12px;
+        height: 12px;
+        border-left: 2px solid rgba(255, 255, 255, 0.6);
+        border-top: 2px solid rgba(255, 255, 255, 0.6);
+      }
+      .item::after {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        right: 0;
+        bottom: 0;
+        border-right: 2px solid rgba(255, 255, 255, 0.6);
+        border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+      }
+      .current {
+        background-color: #2a3c54;
+        color: #1cfafc;
+      }
+      .current::before {
+        border-color: #1cfafc;
+      }
+      .current::after {
+        border-color: #1cfafc;
+      }
+    }
+  }
+<<<<<<< HEAD
+}
+=======
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
+>>>>>>> 23d6d38042cc57823cacef462cf8fdc01e79e502
 
 .theme-default .m-module-card-wrap {
   background-color: rgba(0, 0, 0, 0.2) !important;

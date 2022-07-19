@@ -8,16 +8,37 @@
 <template>
   <div class="content-wrap">
     <!--工业增加值-->
+<<<<<<< HEAD
+    <div class="row-side">
+      <div class="transform-box">
+        <ModuleCard title="规模以上工业增加值累计增长速度" class="item-wrap">
+=======
     <div class="row-side side-left">
       <div class="transform-box">
+<<<<<<< HEAD:datav/src/view/gongye/zongchanzhi.vue
         <ModuleCard title="规上工业增加值近一年累计增速" class="item-wrap">
+=======
+        <ModuleCard title="规上工业增加值累计增长速度" class="item-wrap">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
+>>>>>>> 23d6d38042cc57823cacef462cf8fdc01e79e502:datav/src/view/gongye/index.vue
           <ChartMonth
             :height="220"
             :title="leijizengzhangData.title"
             :chart-data="leijizengzhangData.data"
           ></ChartMonth>
         </ModuleCard>
+<<<<<<< HEAD:datav/src/view/gongye/zongchanzhi.vue
         <ModuleCard title="规上工业增加值近五年情况" class="item-wrap">
+=======
+<<<<<<< HEAD
+        <ModuleCard
+          title="近五年规模以上工业增加值及同比增长"
+          class="item-wrap"
+        >
+=======
+        <ModuleCard title="规上工业增加值及同比增长" class="item-wrap">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
+>>>>>>> 23d6d38042cc57823cacef462cf8fdc01e79e502:datav/src/view/gongye/index.vue
           <template v-slot:extra>
             <ButtonGroup size="small">
               <Button type="primary" @click="handleChangeYearMode('gross')"
@@ -39,9 +60,17 @@
               <Button type="primary" @click="handleChangeCompareCounty('gross')"
                 >总量</Button
               >
+<<<<<<< HEAD:datav/src/view/gongye/zongchanzhi.vue
               <Button @click="handleChangeCompareCounty('rise')"
                 >增速</Button
               >
+=======
+<<<<<<< HEAD
+              <Button @click="handleChangeCompareCounty('rise')">增长率</Button>
+=======
+              <Button @click="handleChangeCompareCounty('rise')">同比增长</Button>
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
+>>>>>>> 23d6d38042cc57823cacef462cf8fdc01e79e502:datav/src/view/gongye/index.vue
             </ButtonGroup>
           </template>
           <ChartCompareCounty
@@ -55,6 +84,74 @@
       <div class="bt-shadow"></div>
     </div>
 
+<<<<<<< HEAD:datav/src/view/gongye/zongchanzhi.vue
+=======
+<<<<<<< HEAD
+    <div class="side-row" style="display: none">
+      <ModuleCard title="规模以上工业增加值" class="item-wrap">
+        <template v-slot:extra>
+          <ButtonGroup shape="circle" size="small">
+            <Button
+              :type="echartChangeKey.zjzGs == 'month' ? 'primary' : ''"
+              @click="handleChangeZjzgs('month')"
+              >按月</Button
+            >
+            <Button
+              :type="echartChangeKey.zjzGs == 'year' ? 'primary' : ''"
+              @click="handleChangeZjzgs('year')"
+              >按年</Button
+            >
+          </ButtonGroup>
+        </template>
+        <div id="zjz-gs" style="width: 100%; height: 320px"></div>
+      </ModuleCard>
+
+      <ModuleCard
+        title="重点支柱产业工业增加值"
+        :total-info="zjzZzcyData.total"
+        class="item-wrap"
+      >
+        <template v-slot:extra>
+          <Dropdown
+            trigger="click"
+            style="margin-left: 20px"
+            @on-click="handleChangeZjzZzcy"
+          >
+            <Button type="primary" size="small">
+              {{ selectorText.zjlZzcy[echartChangeKey.zjzZzcy] }}
+              <Icon type="ios-arrow-down"></Icon>
+            </Button>
+            <DropdownMenu slot="list">
+              <DropdownItem name="zjz">增加值及增长率</DropdownItem>
+              <DropdownItem name="proportion">增加值比重</DropdownItem>
+              <DropdownItem name="comnum">企业数量</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </template>
+        <div id="zjz-zzcy" style="width: 100%; height: 320px"></div>
+      </ModuleCard>
+
+      <ModuleCard title="现代产业和规上民营工业企业增加值" class="item-wrap">
+        <div id="zjz-xdcy" style="width: 100%; height: 320px"></div>
+      </ModuleCard>
+
+      <ModuleCard title="规模以上工业分行业工业增加值" class="item-wrap">
+        <div id="zjz-hy" style="width: 100%">
+          <Table
+            size="small"
+            height="310"
+            stripe
+            :columns="zjzHyData.column"
+            :data="zjzHyData.data"
+          />
+        </div>
+      </ModuleCard>
+    </div>
+=======
+
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
+
+>>>>>>> 23d6d38042cc57823cacef462cf8fdc01e79e502:datav/src/view/gongye/index.vue
     <div class="row-big">
       <TownMap></TownMap>
       <div class="item-wrap">
@@ -79,12 +176,28 @@
           </router-link> -->
         </div>
       </div>
+<<<<<<< HEAD
+
+
+
+    </div>
+
+    <!-- 工业生产总值 -->
+    <div class="row-side">
+      <div class="transform-box">
+        <ModuleCard title="规模以上工业总产值累计增长速度" class="item-wrap">
+=======
     </div>
 
     <!-- 工业生产总值 -->
     <div class="row-side side-right">
       <div class="transform-box">
+<<<<<<< HEAD:datav/src/view/gongye/zongchanzhi.vue
         <ModuleCard title="规工业总产值近一年累计增速" class="item-wrap">
+=======
+        <ModuleCard title="规工业总产值累计增长速度" class="item-wrap">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
+>>>>>>> 23d6d38042cc57823cacef462cf8fdc01e79e502:datav/src/view/gongye/index.vue
           <ChartMonth
             chart-id="chart-leijizengzhangexpend"
             :height="200"
@@ -92,7 +205,23 @@
             :chart-data="leijizengzhangDataZcz.data"
           ></ChartMonth>
         </ModuleCard>
+<<<<<<< HEAD:datav/src/view/gongye/zongchanzhi.vue
         <ModuleCard title="规上工业总产值近五年情况" class="item-wrap">
+=======
+<<<<<<< HEAD
+        <ModuleCard
+          title="近五年规模以上工业总产值及同比增长"
+          class="item-wrap"
+        >
+          <template v-slot:extra>
+            <ButtonGroup size="small">
+              <Button type="primary" @click="handleChangeYearMode('gross')"
+                >总值</Button
+              >
+              <Button @click="handleChangeYearMode('rise')">增长率</Button>
+=======
+        <ModuleCard title="规上工业总产值及同比增长" class="item-wrap">
+>>>>>>> 23d6d38042cc57823cacef462cf8fdc01e79e502:datav/src/view/gongye/index.vue
           <template v-slot:extra>
             <ButtonGroup size="small">
               <Button
@@ -100,10 +229,15 @@
                 @click="handleChangeYearMode('gross', 'timelineYearDataZcz')"
                 >总值</Button
               >
+<<<<<<< HEAD:datav/src/view/gongye/zongchanzhi.vue
               <Button
                 @click="handleChangeYearMode('rise', 'timelineYearDataZcz')"
                 >增速</Button
               >
+=======
+              <Button @click="handleChangeYearMode('rise','timelineYearDataZcz')">增长率</Button>
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
+>>>>>>> 23d6d38042cc57823cacef462cf8fdc01e79e502:datav/src/view/gongye/index.vue
             </ButtonGroup>
           </template>
           <ChartYear
@@ -114,7 +248,11 @@
             :chart-data="timelineYearDataZcz.data"
           ></ChartYear>
         </ModuleCard>
+<<<<<<< HEAD
+        <ModuleCard title="规模以上工业经济效益" class="item-wrap">
+=======
         <ModuleCard title="规上工业经济效益" class="item-wrap">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
           <div class="jjxy-wrap">
             <div class="jjxy-item">
               <div class="section">营业收入<span class="sub">(万元)</span></div>
@@ -167,6 +305,10 @@
       </div>
       <div class="bt-shadow"></div>
     </div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
   </div>
 </template>
 
@@ -847,6 +989,29 @@ export default {
       };
     });
 
+<<<<<<< HEAD:datav/src/view/gongye/zongchanzhi.vue
+=======
+<<<<<<< HEAD
+    // 累计零时数据
+=======
+    // 累计临时数据
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
+    let source = [
+      ["product", "金湾区", "金湾直属", "开发区"],
+      ["2020年3月", -16.3, -17.2, -15.8],
+      ["4月", -11.3, -14.5, -9.5],
+      ["5月", -8.3, -13.3, -5.3],
+      ["6月", -6.3, -6.3, -6.3],
+      ["7月", -3.5, -2.8, -4.1],
+      ["8月", -2.3, 0.3, -4.2],
+      ["9月", -0.3, -3.1, -2.8],
+      ["10月", 1.7, 4.9, -0.6],
+      ["11月", 2.4, 4.8, 0.6],
+      ["12月", 1.5, 2.5, 0.7],
+      ["2月", 37.1, 43.0, 33.6],
+      ["3月", 27.8, 28.6, 27.1],
+    ];
+>>>>>>> 23d6d38042cc57823cacef462cf8fdc01e79e502:datav/src/view/gongye/index.vue
     /***按月 累计增长率*/
     Api.timeline.get_monthdata({ params: { cate: "规模以上工业增加值" } }).then((res) => {
       this.leijizengzhangData = {
@@ -901,6 +1066,105 @@ export default {
     /**生产总值图表实例配置 */
 
     /**用电量情况图表实例配置 */
+<<<<<<< HEAD
+    this.echartInstance.ydlqkChart.setOption({
+      textStyle: {
+        color: chartTextColor,
+      },
+      xAxis: {
+        type: "value",
+        boundaryGap: [0, 0.01],
+        position: "bottom",
+      },
+      tooltip: {},
+      yAxis: {
+        type: "category",
+        data: ["工业", "非工业", "规上工业"],
+        axisLabel: {
+          inside: false,
+        },
+      },
+      series: [
+        {
+          name: "同期数",
+          type: "bar",
+          data: [132757, 26205, 128032],
+          barWidth: 12,
+          label: {
+            show: true,
+            position: "right",
+            color: "#fff",
+          },
+          itemStyle: {
+            // borderRadius: [0, 6, 6, 0],
+            color: {
+              x: 0,
+              y: 1,
+              x2: 1,
+              y2: 0,
+              type: "linear",
+              global: false,
+              colorStops: [
+                {
+                  offset: 0,
+                  color: "#4646d9",
+                },
+                {
+                  offset: 1,
+                  color: "#4646d9",
+                },
+              ],
+            },
+          },
+        },
+      ],
+    });
+
+    //
+
+    this.echartInstance.nyxfChart.setOption({
+      title: {
+        text: "规上工业能源消费总量",
+      },
+      tooltip: {
+        trigger: "item",
+      },
+      textStyle: {
+        color: chartTextColor,
+      },
+      legend: {
+        data: ["同期数", "本期数"],
+        top: "bottom",
+        textStyle: {
+          color: chartTextColor,
+        },
+      },
+      xAxis: {
+        type: "value",
+        boundaryGap: [0, 0.01],
+      },
+      yAxis: {
+        type: "category",
+        data: ["全区", "金湾直属", "开发区"],
+        axisLabel: {
+          inside: false,
+        },
+      },
+      series: [
+        {
+          name: "同期数",
+          type: "bar",
+          data: [71.81, 8.71, 63.1],
+        },
+        {
+          name: "本期数",
+          type: "bar",
+          data: [99.71, 11.7, 88.01],
+        },
+      ],
+    });
+=======
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
   },
 };
 </script>

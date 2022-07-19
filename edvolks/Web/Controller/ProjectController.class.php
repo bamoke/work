@@ -13,7 +13,7 @@ class ProjectController extends WebController {
             "cid" =>$cid
         );
         $count = $newsModel->where($conditon)->count();
-        $Page = new \Think\Page($count,10);
+        $Page = new \Think\Page($count,12);
         $Page->setConfig("next","Next");
         $Page->setConfig("prev","Prev");
         $show = $Page->show();

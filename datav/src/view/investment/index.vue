@@ -7,7 +7,11 @@
 -->
 <template>
   <div class="content-wrap">
+<<<<<<< HEAD
+    <div class="row-side">
+=======
     <div class="row-side side-left">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
       <div class="transform-box">
         <ModuleCard title="固定资产投资近一年累计增速" class="item-wrap">
           <ChartMonth
@@ -16,7 +20,15 @@
             :chart-data="leijizengzhangData.data"
           ></ChartMonth>
         </ModuleCard>
+<<<<<<< HEAD
         <ModuleCard title="固定资产投资近五年情况" class="item-wrap">
+=======
+<<<<<<< HEAD
+        <ModuleCard title="近五年固定资产投资总额及增长率" class="item-wrap">
+=======
+        <ModuleCard title="固定资产投资总额及增长率" class="item-wrap">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
+>>>>>>> 23d6d38042cc57823cacef462cf8fdc01e79e502
           <template v-slot:extra>
             <ButtonGroup size="small">
               <Button type="primary" @click="handleChangeYearMode('gross')"
@@ -48,7 +60,11 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
+    <div class="row-side">
+=======
     <div class="row-side side-right">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
       <div class="transform-box">
         <ModuleCard title="全区固定资产投资比较" class="item-wrap">
           <template v-slot:extra>
@@ -149,6 +165,7 @@ export default {
       });
 
     /***按月 累计增长率 */
+<<<<<<< HEAD
     Api.timeline
       .get_monthdata({ params: { cate: "固定资产投资" } })
       .then((res) => {
@@ -159,6 +176,20 @@ export default {
           data: this.$formatTableToChart(res.data.list, res.data.columns),
         };
       });
+=======
+    Api.timeline.get_monthdata().then((res) => {
+      this.leijizengzhangData = {
+        title: {
+<<<<<<< HEAD
+          text: "2020年3-2021年3月",
+=======
+          text: "近一年",
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
+        },
+        data: res.data,
+      };
+    });
+>>>>>>> 23d6d38042cc57823cacef462cf8fdc01e79e502
 
     /*** 年度数据 */
     Api.timeline
@@ -166,7 +197,11 @@ export default {
       .then((res) => {
         this.timelineYearData = {
           title: {
+<<<<<<< HEAD
+            text: this.title,
+=======
             text: this.title || "近五年",
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
           },
           mode: "gross",
           data: this.$formatTableToChart(res.data.list, res.data.columns),
@@ -187,13 +222,21 @@ export default {
         tooltip: { trigger: "axis" },
         legend: {
           show: true,
+<<<<<<< HEAD
+          left: "center",
+=======
           left: "right",
+<<<<<<< HEAD
           top: "top",
         },
         grid: {
           left: 60,
           right: 40,
           bottom: 60,
+=======
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
+          //   top: "bottom",
+>>>>>>> 23d6d38042cc57823cacef462cf8fdc01e79e502
         },
 
         xAxis: {
@@ -207,6 +250,14 @@ export default {
         yAxis: [
           {
             type: "value",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            name: "投资总量(亿)",
+=======
+            name: "",
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
+>>>>>>> 23d6d38042cc57823cacef462cf8fdc01e79e502
             axisLabel: {
               formatter: function (value) {
                 return value;
@@ -216,6 +267,50 @@ export default {
               show: true,
             },
           },
+<<<<<<< HEAD
+=======
+        ],
+        series: [
+          {
+            type: "bar",
+            showBackground: true,
+          },
+          {
+            type: "bar",
+            showBackground: true,
+          },
+          {
+            type: "bar",
+            showBackground: true,
+          },
+        ],
+      });
+      this.echartInstance.baserise.setOption({
+        dataset: { source: chartRiseData },
+        title: {
+          text: "",
+          subtext: "",
+        },
+        tooltip: { trigger: "axis" },
+        legend: {
+          show: true,
+<<<<<<< HEAD
+          left: "center",
+=======
+          left: "right",
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
+          //   top: "bottom",
+        },
+        xAxis: {
+          type: "category",
+          axisLabel: {
+            formatter: function (value) {
+              return formatStringWrap(value, 4);
+            },
+          },
+        },
+        yAxis: [
+>>>>>>> 23d6d38042cc57823cacef462cf8fdc01e79e502
           {
             type: "value",
             axisLabel: {

@@ -30,6 +30,7 @@
         <div class="bg">
           <img src="@/assets/images/nav-bg-line.png" alt="" srcset="" />
         </div>
+<<<<<<< HEAD
         <a href="http://61.145.230.14:10801/screen/home" class="brand-name">
           数字金湾政府数据分析系统
         </a>
@@ -39,6 +40,18 @@
           <span class="month">{{ sysDataDate.month }}</span>
           <span class="subtext">月</span>
         </div>
+=======
+<<<<<<< HEAD
+        <div class="effect">
+          <dv-decoration-3 style="width: 400px; height: 30px" />
+        </div>
+        <span class="brand-name">数字金湾政府数据深度分析系统</span>
+=======
+        <router-link to="/" class="brand-name">
+          数字金湾政府数据深度分析系统
+        </router-link>
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
+>>>>>>> 23d6d38042cc57823cacef462cf8fdc01e79e502
       </div>
       <router-link
         :to="{ name: 'waishangtouzi' }"
@@ -63,6 +76,9 @@
 </template>
 
 <script>
+<<<<<<< HEAD
+export default {};
+=======
 export default {
   data() {
     return {
@@ -83,6 +99,7 @@ export default {
     }, 1000);
   },
 };
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
 </script>
 
 <style scoped>
@@ -94,7 +111,11 @@ export default {
   z-index: 999;
   box-sizing: border-box;
   padding: 0 24px;
+<<<<<<< HEAD
+  height: .46875rem;
+=======
   height: 0.46875rem;
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
   background-color: rgba(0, 10, 25, 0.8);
 }
 

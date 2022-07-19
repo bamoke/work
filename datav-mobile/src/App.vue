@@ -27,12 +27,9 @@
 </template>
 
 <script>
-// import HeadBar from "./components/common/header-bar.vue";
-
-// import "./theme-flat-light.less";
-// import "./theme-flat-dark.less";
-
 import echartTheme from "@/config/echarts-theme.js";
+import { get_sys_date, get_sys_nav } from "@/api/main.js";
+import Cookies from "js-cookie";
 export default {
   name: "app",
   provide() {
@@ -88,8 +85,6 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 #app {
-  padding-top: 0.291667rem;
-  padding-left: 0.666667rem;
   // font-family: "Avenir", Helvetica, Arial, sans-serif;
   width: 100%;
   height: 100%;
@@ -203,11 +198,21 @@ body {
   }
   // 主内容框架
   .content-wrap {
-    padding: 12px;
+    padding-top: 0.354167rem;
+    padding-left: 0.729167rem;
+    padding-bottom: 0.0625rem;
+    padding-right: 0.0625rem;
     box-sizing: border-box;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
     overflow-y: auto;
+    .m-content-row {
+      .item-wrap {
+        flex: 0 0 auto;
+        width: 49.25%;
+      }
+    }
     .item-wrap {
       margin-bottom: 12px;
     }
@@ -259,7 +264,7 @@ body {
 
   /** */
   .module-slider-wrap {
-    width:100%;
+    width: 100%;
     overflow: hidden;
     .module-slider-content {
       display: flex;
@@ -272,6 +277,10 @@ body {
         width: 50%;
         height: 100%;
         overflow-y: auto;
+        .tips {
+          color: #969696;
+          font-size: 11px;
+        }
       }
       .chart-box {
         flex: 0 0 auto;
@@ -305,6 +314,16 @@ body {
   .router-link-exact-active {
     background-color: rgba(0, 0, 0, 0.2);
     color: rgba(255, 255, 255, 1);
+  }
+}
+
+/************ */
+@media screen and (max-width :768px) {
+  .l-row {
+    flex-wrap: wrap;
+  }
+  .theme-default .content-wrap .m-content-row .item-wrap {
+    width:100%;
   }
 }
 </style>

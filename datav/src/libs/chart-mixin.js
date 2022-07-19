@@ -8,11 +8,12 @@
 import * as Api from "@/api/index";
 import { ChartMonth, ChartYear, ChartCompareCounty, ChartCompareDomestic } from "@/components/bmk-chart"
 import EffectCircleCount3D from "@/components/effects/effect-circle-count-3d.vue";
+import TownMap from "@/components/common/town-map.vue"
 import echartTheme from "@/config/echarts-theme.js"
 
 const chartMixin = {
     components: {
-        ChartMonth, ChartYear, ChartCompareCounty, ChartCompareDomestic,EffectCircleCount3D
+        ChartMonth, ChartYear, ChartCompareCounty, ChartCompareDomestic,EffectCircleCount3D,TownMap
     },
     data() {
         return {
@@ -27,7 +28,7 @@ const chartMixin = {
             Api.timeline.get_monthdata({ params: { cate: e } }).then((res) => {
                 this.leijizengzhangData = {
                     title: {
-                        text: "2020年3-2021年3月",
+                        text: "",
                     },
                     data: res.data,
                 };
@@ -58,11 +59,10 @@ const chartMixin = {
             /**图表初始化 */
             var echartInstance = {};
  
-            // const echartThemName = this.$store.state.theme.echartTheme;
-            // chartObject.registerTheme(echartThemName, echartTheme[echartThemName]);
+            const appTheme = this.$store.state.theme
             chartName.forEach(function (item, index) {
                 echartInstance[item] = chartObject.init(
-                    document.getElementById(`chart-${item}`),"macarons"
+                    document.getElementById(`chart-${item}`), appTheme.echartTheme
                 );
             });
 

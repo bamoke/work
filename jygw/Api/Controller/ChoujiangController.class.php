@@ -157,11 +157,13 @@ class ChoujiangController extends BaseController {
     // 奖品信息列表
     $awardConsition = array(
       "isdeleted" =>0,
-      "cid"       =>$choujiangId
+      "cid"       =>$choujiangId,
+      "_string" =>'received_num < num or num <0'
     );
     $awardInfo = M("ChoujiangAward")
     ->where($awardConsition)
     ->order("sort, id desc")
+    ->fetchSql(false)
     ->select();
 
 
@@ -188,6 +190,12 @@ class ChoujiangController extends BaseController {
     $awardRandomToal = array_column($awardInfo,'random_num');
     $gainAwardIndex = $this->get_rand($awardRandomToal);
     $gainAwardInfo = $awardInfo[$gainAwardIndex];
+
+
+    // 抽中没有的剩余的奖品
+    // if($gainAwardInfo['num'] > 1 && $gainAwardInfo['received_num'] >= $gainAwardInfo['num']) {
+
+    // }
     
 
     // 写入抽奖log

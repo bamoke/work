@@ -1,0 +1,2772 @@
+[ 2021-07-06T00:36:52+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=all
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001129s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001149s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0154s ]
+SQL: SELECT `title`,`measure`,jw_gross as gross,jw_rise as rise,`before_last_rise`,`two_year_rise` FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` IN ('地区生产总值','规模以上工业增加值','规模以上工业总产值','全社会固定资产投资','外贸进出口总额','实际吸收外商投资','社会消费品零售总额','一般公共预算收入','一般公共预算支出','珠海机场旅客吞吐量','珠海机场货邮吞吐量','高栏港港口吞吐量')  [ RunTime:0.0151s ]
+
+[ 2021-07-06T00:36:52+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_town
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001273s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001154s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001175s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0171s ]
+SQL: SELECT `title`,`measure`,`sz_gross`,`sz_rise`,`hq_gross`,`hq_rise`,`ns_gross`,`ns_rise`,`ps_gross`,`ps_rise` FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 ORDER BY id asc  [ RunTime:0.0245s ]
+
+[ 2021-07-06T00:36:52+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_county
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001151s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001177s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0160s ]
+SQL: SELECT distinct title,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5  [ RunTime:0.0177s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = 2021 AND `month` = 3 AND `title` = '地区生产总值'  [ RunTime:0.0148s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` <> '地区生产总值'  [ RunTime:0.0290s ]
+
+[ 2021-07-06T01:14:40+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000594s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0214s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0205s ]
+
+[ 2021-07-06T01:14:40+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000724s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0365s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0286s ]
+
+[ 2021-07-06T01:14:40+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000627s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0193s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '固定资产投资额'  [ RunTime:0.0154s ]
+
+[ 2021-07-06T01:14:41+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000611s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002351s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0190s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '固定资产投资额' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0186s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '固定资产投资额' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0221s ]
+
+[ 2021-07-06T01:14:41+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000664s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0178s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '固定资产投资' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0232s ]
+
+[ 2021-07-06T01:14:41+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0381s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '固定资产投资'  [ RunTime:0.0178s ]
+
+[ 2021-07-06T01:14:41+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate_total?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000581s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0256s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 5 AND `cate_key` = '2'  [ RunTime:0.0172s ]
+
+[ 2021-07-06T01:14:42+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%A4%96%E8%B4%B8%E8%BF%9B%E5%87%BA%E5%8F%A3%E6%80%BB%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000664s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000993s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001022s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0190s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '外贸进出口总额' LIMIT 1   [ RunTime:0.0158s ]
+
+[ 2021-07-06T01:14:43+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E5%A4%96%E8%B4%B8%E8%BF%9B%E5%87%BA%E5%8F%A3%E6%80%BB%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000663s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000710s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000730s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '外贸进出口总额' LIMIT 1   [ RunTime:0.0193s ]
+
+[ 2021-07-06T01:14:43+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E5%87%BA%E5%8F%A3%E6%80%BB%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000894s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000939s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0173s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '出口总额' LIMIT 1   [ RunTime:0.0177s ]
+
+[ 2021-07-06T01:14:43+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0147s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '固定资产投资额'  [ RunTime:0.0161s ]
+
+[ 2021-07-06T01:14:43+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000654s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0159s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '固定资产投资' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0172s ]
+
+[ 2021-07-06T01:14:43+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0255s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '固定资产投资额' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0276s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '固定资产投资额' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0207s ]
+
+[ 2021-07-06T01:14:43+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000605s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000622s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0231s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '固定资产投资'  [ RunTime:0.0269s ]
+
+[ 2021-07-06T01:14:44+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%AE%9E%E9%99%85%E5%90%B8%E6%94%B6%E5%A4%96%E5%95%86%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000601s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0285s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '实际吸收外商投资' LIMIT 1   [ RunTime:0.0211s ]
+
+[ 2021-07-06T01:14:45+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E5%AE%9E%E9%99%85%E5%90%B8%E6%94%B6%E5%A4%96%E5%95%86%E7%9B%B4%E6%8E%A5%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000528s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000709s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000731s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0186s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '实际吸收外商直接投资' LIMIT 1   [ RunTime:0.0305s ]
+
+[ 2021-07-06T01:14:45+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%AE%9E%E9%99%85%E5%90%B8%E6%94%B6%E5%A4%96%E5%95%86%E7%9B%B4%E6%8E%A5%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000550s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000627s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000649s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0242s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '实际吸收外商直接投资'  [ RunTime:0.0245s ]
+
+[ 2021-07-06T01:14:45+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%AE%9E%E9%99%85%E5%88%A9%E7%94%A8%E5%A4%96%E5%95%86%E7%9B%B4%E6%8E%A5%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000789s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000811s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0214s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '实际利用外商直接投资'  [ RunTime:0.0176s ]
+
+[ 2021-07-06T01:14:45+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%AE%9E%E9%99%85%E5%90%B8%E6%94%B6%E5%A4%96%E5%95%86%E7%9B%B4%E6%8E%A5%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000783s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0151s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '实际吸收外商直接投资' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0143s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '实际吸收外商直接投资' AND `data_date` = '2021-02-01' LIMIT 20   [ RunTime:0.0239s ]
+
+[ 2021-07-06T01:14:45+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%AE%9E%E9%99%85%E5%88%A9%E7%94%A8%E5%A4%96%E5%95%86%E7%9B%B4%E6%8E%A5%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000659s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0154s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '实际利用外商直接投资' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0224s ]
+
+[ 2021-07-06T01:14:46+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E7%A4%BE%E4%BC%9A%E6%B6%88%E8%B4%B9%E5%93%81%E9%9B%B6%E5%94%AE%E6%80%BB%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000688s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000874s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000899s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0182s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '社会消费品零售总额' LIMIT 1   [ RunTime:0.0286s ]
+
+[ 2021-07-06T01:14:46+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E7%A4%BE%E4%BC%9A%E6%B6%88%E8%B4%B9%E5%93%81%E9%9B%B6%E5%94%AE%E6%80%BB%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000684s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000704s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0242s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '社会消费品零售总额'  [ RunTime:0.0163s ]
+
+[ 2021-07-06T01:14:46+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E7%A4%BE%E4%BC%9A%E6%B6%88%E8%B4%B9%E5%93%81%E9%9B%B6%E5%94%AE%E6%80%BB%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000618s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000639s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0211s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '社会消费品零售总额' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0269s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '社会消费品零售总额' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0225s ]
+
+[ 2021-07-06T01:14:47+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E7%A4%BE%E4%BC%9A%E6%B6%88%E8%B4%B9%E5%93%81%E9%9B%B6%E5%94%AE%E6%80%BB%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000529s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000648s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0247s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '社会消费品零售总额' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0222s ]
+
+[ 2021-07-06T01:14:47+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E7%A4%BE%E4%BC%9A%E6%B6%88%E8%B4%B9%E5%93%81%E9%9B%B6%E5%94%AE%E6%80%BB%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000661s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0168s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '社会消费品零售总额'  [ RunTime:0.0208s ]
+
+[ 2021-07-06T04:57:16+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000690s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0143s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '固定资产投资额'  [ RunTime:0.0177s ]
+
+[ 2021-07-06T04:57:16+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000399s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000643s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0151s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '固定资产投资额' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0220s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '固定资产投资额' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0161s ]
+
+[ 2021-07-06T04:57:17+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E5%A4%96%E8%B4%B8%E8%BF%9B%E5%87%BA%E5%8F%A3%E6%80%BB%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000405s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000612s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000631s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0167s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '外贸进出口总额' LIMIT 1   [ RunTime:0.0159s ]
+
+[ 2021-07-06T04:57:17+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%A4%96%E8%B4%B8%E8%BF%9B%E5%87%BA%E5%8F%A3%E6%80%BB%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000621s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0153s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '外贸进出口总额' LIMIT 1   [ RunTime:0.0174s ]
+
+[ 2021-07-06T04:57:17+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E5%87%BA%E5%8F%A3%E6%80%BB%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000480s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0437s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '出口总额' LIMIT 1   [ RunTime:0.0523s ]
+
+[ 2021-07-06T04:57:17+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000729s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0161s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '固定资产投资' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0335s ]
+
+[ 2021-07-06T04:57:17+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001254s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0160s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '固定资产投资'  [ RunTime:0.0177s ]
+
+[ 2021-07-06T07:25:22+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001052s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0467s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0147s ]
+
+[ 2021-07-06T07:25:22+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000779s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000848s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0209s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0210s ]
+
+[ 2021-07-06T07:25:22+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000673s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0144s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '固定资产投资额'  [ RunTime:0.0179s ]
+
+[ 2021-07-06T07:25:22+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001138s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001168s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0232s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '固定资产投资'  [ RunTime:0.0182s ]
+
+[ 2021-07-06T07:25:22+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000695s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000723s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0226s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '固定资产投资额' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0181s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '固定资产投资额' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0435s ]
+
+[ 2021-07-06T07:25:23+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000478s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000744s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000767s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0171s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '固定资产投资' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0169s ]
+
+[ 2021-07-06T07:25:23+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate_total?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000526s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0212s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 5 AND `cate_key` = '2'  [ RunTime:0.0490s ]
+
+[ 2021-07-06T07:25:30+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000810s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001992s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002030s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0186s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '地区生产总值' LIMIT 1   [ RunTime:0.0173s ]
+
+[ 2021-07-06T07:25:30+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000539s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000928s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000980s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0156s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '地区生产总值'  [ RunTime:0.0153s ]
+
+[ 2021-07-06T07:25:30+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000801s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0154s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '地区生产总值' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0148s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '地区生产总值' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0218s ]
+
+[ 2021-07-06T07:25:30+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000569s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000689s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000711s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0193s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '地区生产总值' ORDER BY data_date asc LIMIT 4   [ RunTime:0.0205s ]
+
+[ 2021-07-06T07:25:31+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000676s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000699s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0140s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '地区生产总值'  [ RunTime:0.0133s ]
+
+[ 2021-07-06T07:25:33+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000681s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000704s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0243s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '规模以上工业增加值' LIMIT 1   [ RunTime:0.0179s ]
+
+[ 2021-07-06T07:25:33+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000615s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000633s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0194s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '规模以上工业增加值' LIMIT 1   [ RunTime:0.0188s ]
+
+[ 2021-07-06T07:25:33+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002167s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002210s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0194s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '规模以上工业增加值'  [ RunTime:0.0279s ]
+
+[ 2021-07-06T07:25:33+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001356s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000673s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000697s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0147s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '规模以上工业增加值' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0175s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '规模以上工业增加值' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0192s ]
+
+[ 2021-07-06T07:25:33+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000805s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0182s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '规模以上工业增加值'  [ RunTime:0.0177s ]
+
+[ 2021-07-06T07:25:34+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000685s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0205s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '规模以上工业增加值' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0189s ]
+
+[ 2021-07-06T07:25:34+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryPillar/get_data?cate=zjz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000627s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000835s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000864s ]
+SQL: SHOW COLUMNS FROM `datav_industry_pillar_zjz` [ RunTime:0.0149s ]
+SQL: SELECT `title`,`com_num`,CEIL(gross) as gross,`rise`,`proportion` FROM `datav_industry_pillar_zjz` WHERE `title` <> '合计' AND `year` = '2021' AND `month` = 5  [ RunTime:0.0135s ]
+
+[ 2021-07-06T07:25:34+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryXdmy/get_data?cate=zjz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000702s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000727s ]
+SQL: SHOW COLUMNS FROM `datav_industry_xdmy_zjz` [ RunTime:0.0192s ]
+SQL: SELECT `title`,`comnum`,CEIL(jw_gross) as gross,jw_rise as rise FROM `datav_industry_xdmy_zjz` WHERE `year` = '2021' AND `month` = 5  [ RunTime:0.0190s ]
+
+[ 2021-07-06T07:25:34+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryHangye/get_data?cate=zjz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000462s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000694s ]
+SQL: SHOW COLUMNS FROM `datav_industry_hangye_zjz` [ RunTime:0.0142s ]
+SQL: SELECT `title`,`comnum`,CEIL(jw_gross) as gross,jw_rise as rise FROM `datav_industry_hangye_zjz` WHERE `title` <> '合计' AND `year` = '2021' AND `month` = 5  [ RunTime:0.0170s ]
+
+[ 2021-07-06T07:26:15+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001733s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000956s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000989s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0238s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '地区生产总值' LIMIT 1   [ RunTime:0.0218s ]
+
+[ 2021-07-06T07:26:15+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000580s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000741s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0176s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '地区生产总值'  [ RunTime:0.0192s ]
+
+[ 2021-07-06T07:26:16+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000577s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000744s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000762s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0150s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '地区生产总值' ORDER BY data_date asc LIMIT 4   [ RunTime:0.0194s ]
+
+[ 2021-07-06T07:26:16+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000506s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0168s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '地区生产总值'  [ RunTime:0.0172s ]
+
+[ 2021-07-06T07:26:17+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000587s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0194s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '地区生产总值' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0165s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '地区生产总值' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0208s ]
+
+[ 2021-07-06T07:26:36+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000454s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000673s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0146s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0157s ]
+
+[ 2021-07-06T07:26:36+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000551s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0153s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '固定资产投资额'  [ RunTime:0.0235s ]
+
+[ 2021-07-06T07:26:36+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000549s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000567s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0175s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '固定资产投资' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0180s ]
+
+[ 2021-07-06T07:26:36+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000515s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0217s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0297s ]
+
+[ 2021-07-06T07:26:36+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000821s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000737s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000774s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0151s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '固定资产投资额' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0145s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '固定资产投资额' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0172s ]
+
+[ 2021-07-06T07:26:37+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000654s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000781s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0209s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '固定资产投资'  [ RunTime:0.0157s ]
+
+[ 2021-07-06T07:26:37+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate_total?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000588s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0194s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 5 AND `cate_key` = '2'  [ RunTime:0.0155s ]
+
+[ 2021-07-06T07:28:19+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000527s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0173s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0184s ]
+
+[ 2021-07-06T07:28:19+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000692s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000712s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0199s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0199s ]
+
+[ 2021-07-06T07:28:19+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000645s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0171s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '固定资产投资额'  [ RunTime:0.0168s ]
+
+[ 2021-07-06T07:28:20+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000903s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001265s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0206s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '固定资产投资额' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0139s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '固定资产投资额' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0163s ]
+
+[ 2021-07-06T07:28:20+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000766s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000791s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0192s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '固定资产投资' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0170s ]
+
+[ 2021-07-06T07:28:20+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000778s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000807s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0207s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '固定资产投资'  [ RunTime:0.0220s ]
+
+[ 2021-07-06T07:28:20+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate_total?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000614s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0185s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 5 AND `cate_key` = '2'  [ RunTime:0.0275s ]
+
+[ 2021-07-06T07:28:40+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001306s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0234s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0253s ]
+
+[ 2021-07-06T07:28:40+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001166s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000742s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000767s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0167s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0171s ]
+
+[ 2021-07-06T07:28:40+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000683s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000704s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0295s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '固定资产投资额'  [ RunTime:0.0168s ]
+
+[ 2021-07-06T07:28:41+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000611s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0225s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '固定资产投资'  [ RunTime:0.0207s ]
+
+[ 2021-07-06T07:28:41+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000518s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0182s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '固定资产投资额' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0289s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '固定资产投资额' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0487s ]
+
+[ 2021-07-06T07:28:41+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000602s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0162s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '固定资产投资' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0158s ]
+
+[ 2021-07-06T07:28:41+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate_total?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000601s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0149s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 5 AND `cate_key` = '2'  [ RunTime:0.0140s ]
+
+[ 2021-07-06T07:29:25+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001226s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001441s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001480s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0161s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0180s ]
+
+[ 2021-07-06T07:29:25+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000538s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0168s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0164s ]
+
+[ 2021-07-06T07:29:26+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000523s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0179s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '一般公共预算收入' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0171s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '一般公共预算收入' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0246s ]
+
+[ 2021-07-06T07:29:26+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000383s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000540s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0180s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '一般公共预算收入' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0155s ]
+
+[ 2021-07-06T07:29:26+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000623s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0187s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入'  [ RunTime:0.0199s ]
+
+[ 2021-07-06T07:29:26+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000705s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0177s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '一般公共预算收入'  [ RunTime:0.0167s ]
+
+[ 2021-07-06T07:29:26+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate_total?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000555s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0196s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 5 AND `cate_key` = '2'  [ RunTime:0.0149s ]
+
+[ 2021-07-06T07:31:01+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000665s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000687s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0166s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0202s ]
+
+[ 2021-07-06T07:31:01+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000610s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000628s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0375s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '一般公共预算收入' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0145s ]
+
+[ 2021-07-06T07:31:01+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0157s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '一般公共预算收入' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0202s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '一般公共预算收入' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0140s ]
+
+[ 2021-07-06T07:31:01+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000892s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0153s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '一般公共预算收入'  [ RunTime:0.0157s ]
+
+[ 2021-07-06T07:31:01+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000634s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004392s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004433s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0208s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入'  [ RunTime:0.0215s ]
+
+[ 2021-07-06T07:31:01+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005260s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000890s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000921s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0232s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0180s ]
+
+[ 2021-07-06T07:31:02+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate_total?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000671s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0163s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 5 AND `cate_key` = '2'  [ RunTime:0.0168s ]
+
+[ 2021-07-06T07:44:32+08:00 ] ::1 /datav-backend/admin.php/Upload/show.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000739s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000978s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000998s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 101 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000011s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000034s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039255s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039279s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.012963s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.012986s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.012671s ]
+INFO: [ app_end ] --END-- [ RunTime:0.012695s ]
+
+[ 2021-07-06T07:44:32+08:00 ] ::1 /datav-backend/admin.php/Upload/show.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000857s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001006s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001025s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 101 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000011s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000035s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006085s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006106s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000763s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000789s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000953s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000978s ]
+
+[ 2021-07-06T07:44:45+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000417s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000605s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000628s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 101 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_finance` [ RunTime:0.0217s ]
+SQL: INSERT INTO `datav_finance` (`year`,`month`,`create_by`,`data_date`,`title`,`measure`,`parent_name`,`gross`,`rise`) VALUES ('2021','2','1','2021-02-01','一般公共预算收入','万元','一级','91963','24.7'),('2021','2','1','2021-02-01','税收收入','万元','收入','89790','40.9'),('2021','2','1','2021-02-01','增值税','万元','税收收入','28709','13.6'),('2021','2','1','2021-02-01','营业税','万元','税收收入',null,null),('2021','2','1','2021-02-01','企业所得税','万元','税收收入','23726','16.1'),('2021','2','1','2021-02-01','个人所得税','万元','税收收入','2392','24.1'),('2021','2','1','2021-02-01','非税收入','万元','收入','2173','-78.3'),('2021','2','1','2021-02-01','一般公共预算支出','万元','一级','196141','70.7'),('2021','2','1','2021-02-01','一般公共服务','万元','支出','19676','132.7'),('2021','2','1','2021-02-01','公共安全','万元','支出','4148','26.7'),('2021','2','1','2021-02-01','教育','万元','支出','36939','14.7'),('2021','2','1','2021-02-01','科学技术','万元','支出','10134','-7551.5'),('2021','2','1','2021-02-01','社会保障和就业','万元','支出','14806','165.4'),('2021','2','1','2021-02-01','卫生健康','万元','支出','14687','7.1'),('2021','2','1','2021-02-01','节能环保','万元','支出','77568','77.1'),('2021','2','1','2021-02-01','城乡社区','万元','支出','7988','303') [ RunTime:0.0218s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001422s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001458s ]
+
+[ 2021-07-06T07:50:53+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000683s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0264s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入'  [ RunTime:0.0264s ]
+
+[ 2021-07-06T07:50:53+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000665s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0164s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0226s ]
+
+[ 2021-07-06T07:50:54+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000704s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000722s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0190s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '一般公共预算收入' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0170s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '一般公共预算收入' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0214s ]
+
+[ 2021-07-06T07:50:54+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000647s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0238s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '一般公共预算收入' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0214s ]
+
+[ 2021-07-06T07:50:54+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000682s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0239s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0265s ]
+
+[ 2021-07-06T07:50:54+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000816s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0234s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '一般公共预算收入'  [ RunTime:0.0180s ]
+
+[ 2021-07-06T07:50:54+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate_total?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000614s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0168s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 5 AND `cate_key` = '2'  [ RunTime:0.0194s ]
+
+[ 2021-07-06T07:52:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000641s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0179s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0205s ]
+
+[ 2021-07-06T07:52:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000711s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000737s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0371s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0214s ]
+
+[ 2021-07-06T07:52:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000387s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000577s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0181s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入'  [ RunTime:0.0164s ]
+
+[ 2021-07-06T07:52:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000624s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000646s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0485s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '一般公共预算收入' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0288s ]
+
+[ 2021-07-06T07:52:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002524s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0141s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '一般公共预算收入' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0172s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '一般公共预算收入' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0359s ]
+
+[ 2021-07-06T07:52:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000596s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0584s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '一般公共预算收入'  [ RunTime:0.0813s ]
+
+[ 2021-07-06T07:52:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate_total?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000607s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0233s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 5 AND `cate_key` = '2'  [ RunTime:0.0210s ]
+
+[ 2021-07-06T07:53:42+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000737s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000764s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0400s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0503s ]
+
+[ 2021-07-06T07:53:42+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000777s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000796s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0323s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0323s ]
+
+[ 2021-07-06T07:53:42+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000540s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0190s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入'  [ RunTime:0.0513s ]
+
+[ 2021-07-06T07:53:42+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000626s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0135s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '一般公共预算收入' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0389s ]
+
+[ 2021-07-06T07:53:42+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000632s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000651s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0173s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '一般公共预算收入'  [ RunTime:0.0152s ]
+
+[ 2021-07-06T07:53:44+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000682s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0135s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '一般公共预算收入' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0155s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '一般公共预算收入' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0138s ]
+
+[ 2021-07-06T07:53:44+08:00 ] 127.0.0.1 /datav-backend/admin.php/Finance/get_data?cate=%E7%A8%8E%E6%94%B6%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000494s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000510s ]
+SQL: SHOW COLUMNS FROM `datav_finance` [ RunTime:0.0154s ]
+SQL: SELECT `title`,`measure`,`gross`,`rise` FROM `datav_finance` WHERE `year` = '2021' AND `month` = 5 AND `parent_name` = '税收收入'  [ RunTime:0.0273s ]
+
+[ 2021-07-06T07:53:49+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000707s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0152s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0166s ]
+
+[ 2021-07-06T07:53:49+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0186s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入'  [ RunTime:0.0183s ]
+
+[ 2021-07-06T07:53:49+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000623s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0194s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '一般公共预算收入' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0252s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '一般公共预算收入' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0198s ]
+
+[ 2021-07-06T07:53:49+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000546s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0266s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '一般公共预算收入' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0151s ]
+
+[ 2021-07-06T07:53:50+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.019818s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.019842s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0185s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0187s ]
+
+[ 2021-07-06T07:53:50+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000854s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000888s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0225s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '一般公共预算收入'  [ RunTime:0.0136s ]
+
+[ 2021-07-06T07:53:50+08:00 ] 127.0.0.1 /datav-backend/admin.php/Finance/get_data?cate=%E7%A8%8E%E6%94%B6%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000589s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000849s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000878s ]
+SQL: SHOW COLUMNS FROM `datav_finance` [ RunTime:0.0202s ]
+SQL: SELECT `title`,`measure`,`gross`,`rise` FROM `datav_finance` WHERE `year` = '2021' AND `month` = 5 AND `parent_name` = '税收收入'  [ RunTime:0.0154s ]
+
+[ 2021-07-06T07:57:02+08:00 ] 127.0.0.1 /datav-backend/admin.php/Finance/get_data?cate=%E7%A8%8E%E6%94%B6%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000658s ]
+SQL: SHOW COLUMNS FROM `datav_finance` [ RunTime:0.0169s ]
+
+[ 2021-07-06T07:58:44+08:00 ] ::1 /datav-backend/admin.php/Upload/show.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000480s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000677s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 101 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000008s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000023s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004201s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004218s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000486s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000676s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000691s ]
+
+[ 2021-07-06T07:58:44+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000686s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 101 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_finance` [ RunTime:0.0170s ]
+SQL: INSERT INTO `datav_finance` (`year`,`month`,`create_by`,`data_date`,`title`,`measure`,`parent_name`,`gross`,`rise`) VALUES ('2021','3','1','2021-03-01','一般公共预算收入','万元','一级','114753','0.7'),('2021','3','1','2021-03-01','税收收入','万元','收入','10.2','18.1'),('2021','3','1','2021-03-01','增值税','万元','税收收入','31449','-20.9'),('2021','3','1','2021-03-01','营业税','万元','税收收入',null,null),('2021','3','1','2021-03-01','企业所得税','万元','税收收入','24153','12.8'),('2021','3','1','2021-03-01','个人所得税','万元','税收收入','3225','23.4'),('2021','3','1','2021-03-01','非税收入','万元','收入','12710','-53.8'),('2021','3','1','2021-03-01','一般公共预算支出','万元','一级','269647','50'),('2021','3','1','2021-03-01','一般公共服务','万元','支出','36519','89.2'),('2021','3','1','2021-03-01','公共安全','万元','支出','6015','41'),('2021','3','1','2021-03-01','教育','万元','支出','45303','17.9'),('2021','3','1','2021-03-01','科学技术','万元','支出','10641','387.5'),('2021','3','1','2021-03-01','社会保障和就业','万元','支出','21864','153'),('2021','3','1','2021-03-01','卫生健康','万元','支出','27996','13.7'),('2021','3','1','2021-03-01','节能环保','万元','支出','77879','31.7'),('2021','3','1','2021-03-01','城乡社区','万元','支出','22221','493.4') [ RunTime:0.0192s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001048s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001071s ]
+
+[ 2021-07-06T08:00:23+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000628s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 101 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_finance` [ RunTime:0.0192s ]
+SQL: INSERT INTO `datav_finance` (`year`,`month`,`create_by`,`data_date`,`title`,`measure`,`parent_name`,`gross`,`rise`) VALUES ('2021','4','1','2021-04-01','一般公共预算收入','万元','一级','159979','11.2'),('2021','4','1','2021-04-01','税收收入','万元','收入','146664','26.6'),('2021','4','1','2021-04-01','增值税','万元','税收收入','46973','-3.7'),('2021','4','1','2021-04-01','营业税','万元','税收收入',null,null),('2021','4','1','2021-04-01','企业所得税','万元','税收收入','39847','30.4'),('2021','4','1','2021-04-01','个人所得税','万元','税收收入','5147','53.8'),('2021','4','1','2021-04-01','非税收入','万元','收入','13315','-52.6'),('2021','4','1','2021-04-01','一般公共预算支出','万元','一级','342717','45.1'),('2021','4','1','2021-04-01','一般公共服务','万元','支出','46151','71.8'),('2021','4','1','2021-04-01','公共安全','万元','支出','8343','23.2'),('2021','4','1','2021-04-01','教育','万元','支出','62630','27.6'),('2021','4','1','2021-04-01','科学技术','万元','支出','15192','115.5'),('2021','4','1','2021-04-01','社会保障和就业','万元','支出','29968','86'),('2021','4','1','2021-04-01','卫生健康','万元','支出','34270','9.4'),('2021','4','1','2021-04-01','节能环保','万元','支出','78641','27'),('2021','4','1','2021-04-01','城乡社区','万元','支出','25865','213.7') [ RunTime:0.0312s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001019s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001041s ]
+
+[ 2021-07-06T08:01:37+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000656s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 101 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_finance` [ RunTime:0.0176s ]
+SQL: INSERT INTO `datav_finance` (`year`,`month`,`create_by`,`data_date`,`title`,`measure`,`parent_name`,`gross`,`rise`) VALUES ('2021','5','1','2021-05-01','一般公共预算收入','万元','一级','191434','10.1'),('2021','5','1','2021-05-01','税收收入','万元','收入','177603','22.5'),('2021','5','1','2021-05-01','增值税','万元','税收收入','60658','7.9'),('2021','5','1','2021-05-01','营业税','万元','税收收入',null,null),('2021','5','1','2021-05-01','企业所得税','万元','税收收入','46020','5.8'),('2021','5','1','2021-05-01','个人所得税','万元','税收收入','6149','57.5'),('2021','5','1','2021-05-01','非税收入','万元','收入','13831','-52.1'),('2021','5','1','2021-05-01','一般公共预算支出','万元','一级','415354','42.1'),('2021','5','1','2021-05-01','一般公共服务','万元','支出','50923','53'),('2021','5','1','2021-05-01','公共安全','万元','支出','10264','15.8'),('2021','5','1','2021-05-01','教育','万元','支出','70865','11.2'),('2021','5','1','2021-05-01','科学技术','万元','支出','25394','49.3'),('2021','5','1','2021-05-01','社会保障和就业','万元','支出','37056','68.4'),('2021','5','1','2021-05-01','卫生健康','万元','支出','43719','21.8'),('2021','5','1','2021-05-01','节能环保','万元','支出','78641','21.5'),('2021','5','1','2021-05-01','城乡社区','万元','支出','28088','142.4') [ RunTime:0.0245s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000865s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000887s ]
+
+[ 2021-07-06T08:02:00+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000607s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000575s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0185s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0188s ]
+
+[ 2021-07-06T08:02:00+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000641s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000691s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0165s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0231s ]
+
+[ 2021-07-06T08:02:00+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000645s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000945s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000979s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0145s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '一般公共预算收入' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0149s ]
+
+[ 2021-07-06T08:02:00+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000655s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000682s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0179s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '一般公共预算收入'  [ RunTime:0.0194s ]
+
+[ 2021-07-06T08:02:00+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000689s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000719s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0213s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '一般公共预算收入' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0172s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '一般公共预算收入' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0180s ]
+
+[ 2021-07-06T08:02:00+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002139s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002169s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0204s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入'  [ RunTime:0.0188s ]
+
+[ 2021-07-06T08:02:00+08:00 ] 127.0.0.1 /datav-backend/admin.php/Finance/get_data?cate=%E7%A8%8E%E6%94%B6%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000686s ]
+SQL: SHOW COLUMNS FROM `datav_finance` [ RunTime:0.0401s ]
+SQL: SELECT `title`,`measure`,`gross`,`rise` FROM `datav_finance` WHERE `year` = '2021' AND `month` = 5 AND `parent_name` = '税收收入'  [ RunTime:0.0202s ]
+
+[ 2021-07-06T08:03:50+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002171s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002408s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0198s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '一般公共预算收入' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0196s ]
+
+[ 2021-07-06T08:03:50+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000736s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001751s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0153s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入'  [ RunTime:0.0152s ]
+
+[ 2021-07-06T08:03:50+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000829s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000852s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0186s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0170s ]
+
+[ 2021-07-06T08:03:50+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000552s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001288s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0176s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '一般公共预算收入' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0163s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '一般公共预算收入' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0148s ]
+
+[ 2021-07-06T08:03:51+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000828s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000735s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000768s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0157s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '一般公共预算收入'  [ RunTime:0.0191s ]
+
+[ 2021-07-06T08:03:51+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002038s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000884s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000915s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0128s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0182s ]
+
+[ 2021-07-06T08:03:51+08:00 ] 127.0.0.1 /datav-backend/admin.php/Finance/get_data?cate=%E7%A8%8E%E6%94%B6%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000608s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+SQL: SHOW COLUMNS FROM `datav_finance` [ RunTime:0.0178s ]
+SQL: SELECT `title`,`measure`,`gross`,`rise` FROM `datav_finance` WHERE `year` = '2021' AND `month` = 5 AND `parent_name` = '税收收入'  [ RunTime:0.0346s ]
+
+[ 2021-07-06T08:04:39+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.5575s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入'  [ RunTime:0.0258s ]
+
+[ 2021-07-06T08:04:39+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000683s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0223s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0144s ]
+
+[ 2021-07-06T08:04:39+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001113s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0178s ]
+
+[ 2021-07-06T08:04:39+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000735s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000711s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000736s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0171s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '一般公共预算收入' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0163s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '一般公共预算收入' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0160s ]
+
+[ 2021-07-06T08:04:39+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000983s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001015s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0244s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '一般公共预算收入'  [ RunTime:0.0217s ]
+
+[ 2021-07-06T08:04:39+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000969s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001076s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001109s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0131s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '一般公共预算收入' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0144s ]
+
+[ 2021-07-06T08:04:39+08:00 ] 127.0.0.1 /datav-backend/admin.php/Finance/get_data?cate=%E7%A8%8E%E6%94%B6%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001087s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000681s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000705s ]
+SQL: SHOW COLUMNS FROM `datav_finance` [ RunTime:0.0206s ]
+SQL: SELECT `title`,`gross`,`rise` FROM `datav_finance` WHERE `year` = '2021' AND `month` = 5 AND `parent_name` = '税收收入'  [ RunTime:0.0173s ]
+
+[ 2021-07-06T08:56:06+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=all
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000801s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000824s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0144s ]
+SQL: SELECT `title`,`measure`,jw_gross as gross,jw_rise as rise,`before_last_rise`,`two_year_rise` FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` IN ('地区生产总值','规模以上工业增加值','规模以上工业总产值','全社会固定资产投资','外贸进出口总额','实际吸收外商投资','社会消费品零售总额','一般公共预算收入','一般公共预算支出','珠海机场旅客吞吐量','珠海机场货邮吞吐量','高栏港港口吞吐量')  [ RunTime:0.0156s ]
+
+[ 2021-07-06T08:56:06+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_town
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000598s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0142s ]
+SQL: SELECT `title`,`measure`,`sz_gross`,`sz_rise`,`hq_gross`,`hq_rise`,`ns_gross`,`ns_rise`,`ps_gross`,`ps_rise` FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 ORDER BY id asc  [ RunTime:0.0224s ]
+
+[ 2021-07-06T08:56:07+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_county
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001370s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0219s ]
+SQL: SELECT distinct title,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5  [ RunTime:0.0273s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = 2021 AND `month` = 3 AND `title` = '地区生产总值'  [ RunTime:0.0193s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` <> '地区生产总值'  [ RunTime:0.0188s ]
+
+[ 2021-07-06T09:00:34+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000546s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001762s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0266s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '一般公共预算收入' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0191s ]
+
+[ 2021-07-06T09:00:34+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000584s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001790s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001813s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0178s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0200s ]
+
+[ 2021-07-06T09:00:34+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000717s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000737s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0197s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '一般公共预算收入' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0169s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '一般公共预算收入' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0186s ]
+
+[ 2021-07-06T09:00:34+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002819s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000774s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000795s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0162s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '一般公共预算收入'  [ RunTime:0.0193s ]
+
+[ 2021-07-06T09:00:34+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000787s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000806s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0199s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0219s ]
+
+[ 2021-07-06T09:00:35+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000951s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000768s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0185s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入'  [ RunTime:0.0180s ]
+
+[ 2021-07-06T09:00:37+08:00 ] 127.0.0.1 /datav-backend/admin.php/Finance/get_data?cate=%E7%A8%8E%E6%94%B6%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000643s ]
+SQL: SHOW COLUMNS FROM `datav_finance` [ RunTime:0.0171s ]
+SQL: SELECT `title`,`gross`,`rise` FROM `datav_finance` WHERE `year` = '2021' AND `month` = 5 AND `parent_name` = '税收收入'  [ RunTime:0.0218s ]
+
+[ 2021-07-06T17:36:32+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000205s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001861s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001898s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0163s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0238s ]
+
+[ 2021-07-06T17:36:32+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000174s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003665s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001982s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002020s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0297s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入'  [ RunTime:0.0243s ]
+
+[ 2021-07-06T17:36:32+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000201s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003736s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001999s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002033s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0197s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '一般公共预算收入' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0148s ]
+
+[ 2021-07-06T17:36:33+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000213s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003444s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002073s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002113s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0190s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0171s ]
+
+[ 2021-07-06T17:36:33+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003813s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001864s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001909s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0221s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '一般公共预算收入'  [ RunTime:0.0204s ]
+
+[ 2021-07-06T17:36:34+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003527s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001919s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001958s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0187s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '一般公共预算收入' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0226s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '一般公共预算收入' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0189s ]
+
+[ 2021-07-06T17:36:34+08:00 ] 127.0.0.1 /datav-backend/admin.php/Finance/get_data?cate=%E7%A8%8E%E6%94%B6%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000570s ]
+SQL: SHOW COLUMNS FROM `datav_finance` [ RunTime:0.0178s ]
+SQL: SELECT `title`,`gross`,`rise` FROM `datav_finance` WHERE `year` = '2021' AND `month` = 5 AND `parent_name` = '税收收入'  [ RunTime:0.0384s ]
+
+[ 2021-07-06T17:38:44+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=all
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000576s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000784s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000803s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0201s ]
+SQL: SELECT `title`,`measure`,jw_gross as gross,jw_rise as rise,`before_last_rise`,`two_year_rise` FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` IN ('地区生产总值','规模以上工业增加值','规模以上工业总产值','全社会固定资产投资','外贸进出口总额','实际吸收外商投资','社会消费品零售总额','一般公共预算收入','一般公共预算支出','珠海机场旅客吞吐量','珠海机场货邮吞吐量','高栏港港口吞吐量')  [ RunTime:0.0191s ]
+
+[ 2021-07-06T17:38:44+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_town
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000576s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000929s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000951s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0214s ]
+SQL: SELECT `title`,`measure`,`sz_gross`,`sz_rise`,`hq_gross`,`hq_rise`,`ns_gross`,`ns_rise`,`ps_gross`,`ps_rise` FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 ORDER BY id asc  [ RunTime:0.0196s ]
+
+[ 2021-07-06T17:38:44+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_county
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000544s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001046s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0269s ]
+SQL: SELECT distinct title,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5  [ RunTime:0.0335s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = 2021 AND `month` = 3 AND `title` = '地区生产总值'  [ RunTime:0.0242s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` <> '地区生产总值'  [ RunTime:0.0224s ]
+
+[ 2021-07-06T17:38:45+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0162s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '地区生产总值' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0193s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '地区生产总值' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0171s ]
+
+[ 2021-07-06T17:38:45+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000526s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0209s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '地区生产总值' LIMIT 1   [ RunTime:0.0189s ]
+
+[ 2021-07-06T17:38:45+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000661s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000678s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0183s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '地区生产总值' ORDER BY data_date asc LIMIT 4   [ RunTime:0.0248s ]
+
+[ 2021-07-06T17:38:45+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000681s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000712s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0173s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '地区生产总值'  [ RunTime:0.0195s ]
+
+[ 2021-07-06T17:38:46+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000676s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000696s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0218s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '地区生产总值'  [ RunTime:0.0177s ]
+
+[ 2021-07-06T17:38:46+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=all
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000545s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000754s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0339s ]
+SQL: SELECT `title`,`measure`,jw_gross as gross,jw_rise as rise,`before_last_rise`,`two_year_rise` FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` IN ('地区生产总值','规模以上工业增加值','规模以上工业总产值','全社会固定资产投资','外贸进出口总额','实际吸收外商投资','社会消费品零售总额','一般公共预算收入','一般公共预算支出','珠海机场旅客吞吐量','珠海机场货邮吞吐量','高栏港港口吞吐量')  [ RunTime:0.0148s ]
+
+[ 2021-07-06T17:38:46+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_town
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000598s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0192s ]
+SQL: SELECT `title`,`measure`,`sz_gross`,`sz_rise`,`hq_gross`,`hq_rise`,`ns_gross`,`ns_rise`,`ps_gross`,`ps_rise` FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 ORDER BY id asc  [ RunTime:0.0292s ]
+
+[ 2021-07-06T17:38:46+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_county
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000583s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0175s ]
+SQL: SELECT distinct title,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5  [ RunTime:0.0175s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = 2021 AND `month` = 3 AND `title` = '地区生产总值'  [ RunTime:0.0199s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` <> '地区生产总值'  [ RunTime:0.0219s ]
+
+[ 2021-07-06T17:40:07+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000780s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000804s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0411s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '规模以上工业增加值' LIMIT 1   [ RunTime:0.0210s ]
+
+[ 2021-07-06T17:40:08+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000564s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000589s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.1129s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '规模以上工业增加值' LIMIT 1   [ RunTime:0.0425s ]
+
+[ 2021-07-06T17:40:08+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000534s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0222s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '规模以上工业增加值' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0188s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '规模以上工业增加值' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0335s ]
+
+[ 2021-07-06T17:40:08+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000505s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000522s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0270s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '规模以上工业增加值' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0311s ]
+
+[ 2021-07-06T17:40:08+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000771s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000790s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0953s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '规模以上工业增加值'  [ RunTime:0.0186s ]
+
+[ 2021-07-06T17:40:09+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000689s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000706s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0268s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '规模以上工业增加值'  [ RunTime:0.0583s ]
+
+[ 2021-07-06T17:40:09+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryPillar/get_data?cate=zjz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000585s ]
+SQL: SHOW COLUMNS FROM `datav_industry_pillar_zjz` [ RunTime:0.0269s ]
+SQL: SELECT `title`,`com_num`,CEIL(gross) as gross,`rise`,`proportion` FROM `datav_industry_pillar_zjz` WHERE `title` <> '合计' AND `year` = '2021' AND `month` = 5  [ RunTime:0.0266s ]
+
+[ 2021-07-06T17:40:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryXdmy/get_data?cate=zjz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000582s ]
+SQL: SHOW COLUMNS FROM `datav_industry_xdmy_zjz` [ RunTime:0.0254s ]
+SQL: SELECT `title`,`comnum`,CEIL(jw_gross) as gross,jw_rise as rise FROM `datav_industry_xdmy_zjz` WHERE `year` = '2021' AND `month` = 5  [ RunTime:0.0192s ]
+
+[ 2021-07-06T17:40:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryHangye/get_data?cate=zjz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000594s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000780s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000805s ]
+SQL: SHOW COLUMNS FROM `datav_industry_hangye_zjz` [ RunTime:0.0324s ]
+SQL: SELECT `title`,`comnum`,CEIL(jw_gross) as gross,jw_rise as rise FROM `datav_industry_hangye_zjz` WHERE `title` <> '合计' AND `year` = '2021' AND `month` = 5  [ RunTime:0.0202s ]
+
+[ 2021-07-06T17:40:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E6%80%BB%E4%BA%A7%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000983s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0198s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '规模以上工业总产值' LIMIT 1   [ RunTime:0.0207s ]
+
+[ 2021-07-06T17:40:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E6%80%BB%E4%BA%A7%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000965s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000984s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '规模以上工业总产值' LIMIT 1   [ RunTime:0.0287s ]
+
+[ 2021-07-06T17:40:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E6%80%BB%E4%BA%A7%E5%80%BC%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000682s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000786s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0434s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '规模以上工业总产值值'  [ RunTime:0.0319s ]
+NOTIC: [8] Undefined offset: 0 D:\work\datav-backend\Admin\Controller\EconomyController.class.php 第 95 行.
+
+[ 2021-07-06T17:40:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E6%80%BB%E4%BA%A7%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0156s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '规模以上工业总产值' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0156s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '规模以上工业总产值' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0179s ]
+
+[ 2021-07-06T17:40:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E6%80%BB%E4%BA%A7%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000568s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0156s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '规模以上工业总产值' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0165s ]
+
+[ 2021-07-06T17:40:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E6%80%BB%E4%BA%A7%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000549s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000565s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0203s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '规模以上工业总产值'  [ RunTime:0.0256s ]
+
+[ 2021-07-06T17:40:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryPillar/get_data?cate=zcz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000456s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000597s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000615s ]
+SQL: SHOW COLUMNS FROM `datav_industry_pillar_zcz` [ RunTime:0.0184s ]
+SQL: SELECT `title`,`com_num`,CEIL(gross) as gross,`rise`,`proportion` FROM `datav_industry_pillar_zcz` WHERE `title` <> '合计' AND `year` = '2021' AND `month` = 5  [ RunTime:0.0225s ]
+
+[ 2021-07-06T17:40:12+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryXdmy/get_data?cate=zcz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000417s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000541s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
+SQL: SHOW COLUMNS FROM `datav_industry_xdmy_zcz` [ RunTime:0.0182s ]
+SQL: SELECT `title`,`comnum`,CEIL(jw_gross) as gross,jw_rise as rise FROM `datav_industry_xdmy_zcz` WHERE `year` = '2021' AND `month` = 5  [ RunTime:0.0184s ]
+
+[ 2021-07-06T17:40:13+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryHangye/get_data?cate=zcz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000522s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000658s ]
+SQL: SHOW COLUMNS FROM `datav_industry_hangye_zcz` [ RunTime:0.0185s ]
+SQL: SELECT `title`,`comnum`,CEIL(jw_gross) as gross,jw_rise as rise FROM `datav_industry_hangye_zcz` WHERE `title` <> '合计' AND `year` = '2021' AND `month` = 5  [ RunTime:0.0226s ]
+
+[ 2021-07-06T17:40:35+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%B7%A5%E4%B8%9A%E7%94%A8%E7%94%B5%E9%87%8F
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000600s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0147s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '工业用电量'  [ RunTime:0.0184s ]
+
+[ 2021-07-06T17:40:35+08:00 ] 127.0.0.1 /datav-backend/admin.php/Nenghao/get_electric?cate=%E5%B7%A5%E4%B8%9A%E7%94%A8%E7%94%B5%E9%87%8F
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000496s ]
+SQL: SHOW COLUMNS FROM `datav_electric` [ RunTime:0.0190s ]
+SQL: SELECT `title`,`measure`,jw_gross as gross,jw_rise as rise FROM `datav_electric` WHERE `year` = '2021' AND `month` = 5 AND `title` = '工业用电量'  [ RunTime:0.0195s ]
+
+[ 2021-07-06T17:40:35+08:00 ] 127.0.0.1 /datav-backend/admin.php/Nenghao/get_gdp_nenghao?cate=%E8%A7%84%E4%B8%8A%E5%B7%A5%E4%B8%9A%E8%83%BD%E6%BA%90%E6%B6%88%E8%B4%B9%E6%80%BB%E9%87%8F
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000730s ]
+SQL: SHOW COLUMNS FROM `datav_gdp_nenghao` [ RunTime:0.0203s ]
+SQL: SELECT `title`,`measure`,`jw_gross`,`jw_prev_gross`,`jw_rise` FROM `datav_gdp_nenghao` WHERE `year` = '2021' AND `month` = 5 AND `title` = '规上工业能源消费总量'  [ RunTime:0.0280s ]
+
+[ 2021-07-06T17:40:36+08:00 ] 127.0.0.1 /datav-backend/admin.php/Nenghao/get_nengyuan_use
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000683s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000701s ]
+SQL: SHOW COLUMNS FROM `datav_nengyuan_use_swl` [ RunTime:0.0185s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise,`measure` FROM `datav_nengyuan_use_swl` WHERE `year` = '2021' AND `month` = 5 AND `title` <> '合计'  [ RunTime:0.0182s ]
+SQL: SHOW COLUMNS FROM `datav_nengyuan_use_bzl` [ RunTime:0.0184s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise,`measure` FROM `datav_nengyuan_use_bzl` WHERE `year` = '2021' AND `month` = 5 AND `title` <> '合计'  [ RunTime:0.0226s ]
+
+[ 2021-07-06T17:41:51+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000663s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0226s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0188s ]
+
+[ 2021-07-06T17:41:51+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000659s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0356s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0251s ]
+
+[ 2021-07-06T17:41:51+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000546s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000563s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0178s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '一般公共预算收入' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0192s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '一般公共预算收入' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0226s ]
+
+[ 2021-07-06T17:41:52+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000415s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000815s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0183s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入'  [ RunTime:0.5607s ]
+
+[ 2021-07-06T17:41:52+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000815s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0202s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '一般公共预算收入' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0206s ]
+
+[ 2021-07-06T17:41:52+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000674s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000670s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000687s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0164s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '一般公共预算收入'  [ RunTime:0.0239s ]
+
+[ 2021-07-06T17:41:52+08:00 ] 127.0.0.1 /datav-backend/admin.php/Finance/get_data?cate=%E7%A8%8E%E6%94%B6%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000546s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000562s ]
+SQL: SHOW COLUMNS FROM `datav_finance` [ RunTime:0.0230s ]
+SQL: SELECT `title`,`gross`,`rise` FROM `datav_finance` WHERE `year` = '2021' AND `month` = 5 AND `parent_name` = '税收收入'  [ RunTime:0.0344s ]
+
+[ 2021-07-06T18:02:09+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%B7%A5%E4%B8%9A%E7%94%A8%E7%94%B5%E9%87%8F
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000675s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0169s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '工业用电量'  [ RunTime:0.0175s ]
+
+[ 2021-07-06T18:02:09+08:00 ] 127.0.0.1 /datav-backend/admin.php/Nenghao/get_electric?cate=%E5%B7%A5%E4%B8%9A%E7%94%A8%E7%94%B5%E9%87%8F
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000705s ]
+SQL: SHOW COLUMNS FROM `datav_electric` [ RunTime:0.0190s ]
+SQL: SELECT `title`,`measure`,jw_gross as gross,jw_rise as rise FROM `datav_electric` WHERE `year` = '2021' AND `month` = 5 AND `title` = '工业用电量'  [ RunTime:0.0232s ]
+
+[ 2021-07-06T18:02:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/Nenghao/get_gdp_nenghao?cate=%E8%A7%84%E4%B8%8A%E5%B7%A5%E4%B8%9A%E8%83%BD%E6%BA%90%E6%B6%88%E8%B4%B9%E6%80%BB%E9%87%8F
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+SQL: SHOW COLUMNS FROM `datav_gdp_nenghao` [ RunTime:0.0326s ]
+SQL: SELECT `title`,`measure`,`jw_gross`,`jw_prev_gross`,`jw_rise` FROM `datav_gdp_nenghao` WHERE `year` = '2021' AND `month` = 5 AND `title` = '规上工业能源消费总量'  [ RunTime:0.0167s ]
+
+[ 2021-07-06T18:02:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/Nenghao/get_nengyuan_use
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000555s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000669s ]
+SQL: SHOW COLUMNS FROM `datav_nengyuan_use_swl` [ RunTime:0.0175s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise,`measure` FROM `datav_nengyuan_use_swl` WHERE `year` = '2021' AND `month` = 5 AND `title` <> '合计'  [ RunTime:0.0717s ]
+SQL: SHOW COLUMNS FROM `datav_nengyuan_use_bzl` [ RunTime:0.0266s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise,`measure` FROM `datav_nengyuan_use_bzl` WHERE `year` = '2021' AND `month` = 5 AND `title` <> '合计'  [ RunTime:0.0180s ]
+
+[ 2021-07-06T18:02:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E6%80%BB%E4%BA%A7%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000581s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0172s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '规模以上工业总产值' LIMIT 1   [ RunTime:0.0182s ]
+
+[ 2021-07-06T18:02:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E6%80%BB%E4%BA%A7%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000490s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000675s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0204s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '规模以上工业总产值' LIMIT 1   [ RunTime:0.0166s ]
+
+[ 2021-07-06T18:02:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E6%80%BB%E4%BA%A7%E5%80%BC%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000616s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000633s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0163s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '规模以上工业总产值值'  [ RunTime:0.0177s ]
+NOTIC: [8] Undefined offset: 0 D:\work\datav-backend\Admin\Controller\EconomyController.class.php 第 95 行.
+
+[ 2021-07-06T18:02:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E6%80%BB%E4%BA%A7%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000572s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0182s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '规模以上工业总产值' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0142s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '规模以上工业总产值' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0147s ]
+
+[ 2021-07-06T18:02:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E6%80%BB%E4%BA%A7%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0148s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '规模以上工业总产值' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0148s ]
+
+[ 2021-07-06T18:02:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E6%80%BB%E4%BA%A7%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000537s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0140s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '规模以上工业总产值'  [ RunTime:0.0246s ]
+
+[ 2021-07-06T18:02:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryPillar/get_data?cate=zcz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+SQL: SHOW COLUMNS FROM `datav_industry_pillar_zcz` [ RunTime:0.0148s ]
+SQL: SELECT `title`,`com_num`,CEIL(gross) as gross,`rise`,`proportion` FROM `datav_industry_pillar_zcz` WHERE `title` <> '合计' AND `year` = '2021' AND `month` = 5  [ RunTime:0.0162s ]
+
+[ 2021-07-06T18:02:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryXdmy/get_data?cate=zcz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000590s ]
+SQL: SHOW COLUMNS FROM `datav_industry_xdmy_zcz` [ RunTime:0.0174s ]
+SQL: SELECT `title`,`comnum`,CEIL(jw_gross) as gross,jw_rise as rise FROM `datav_industry_xdmy_zcz` WHERE `year` = '2021' AND `month` = 5  [ RunTime:0.0166s ]
+
+[ 2021-07-06T18:02:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryHangye/get_data?cate=zcz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000572s ]
+SQL: SHOW COLUMNS FROM `datav_industry_hangye_zcz` [ RunTime:0.0414s ]
+SQL: SELECT `title`,`comnum`,CEIL(jw_gross) as gross,jw_rise as rise FROM `datav_industry_hangye_zcz` WHERE `title` <> '合计' AND `year` = '2021' AND `month` = 5  [ RunTime:0.0203s ]
+
+[ 2021-07-06T18:02:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000585s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000601s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0177s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0177s ]
+
+[ 2021-07-06T18:02:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000563s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0169s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0189s ]
+
+[ 2021-07-06T18:02:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000387s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000989s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001008s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0196s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入'  [ RunTime:0.0160s ]
+
+[ 2021-07-06T18:02:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000564s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0267s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '一般公共预算收入' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0248s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '一般公共预算收入' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0205s ]
+
+[ 2021-07-06T18:02:12+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000579s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0201s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '一般公共预算收入' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0155s ]
+
+[ 2021-07-06T18:02:12+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000576s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0179s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '一般公共预算收入'  [ RunTime:0.0270s ]
+
+[ 2021-07-06T18:02:12+08:00 ] 127.0.0.1 /datav-backend/admin.php/Finance/get_data?cate=%E7%A8%8E%E6%94%B6%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000573s ]
+SQL: SHOW COLUMNS FROM `datav_finance` [ RunTime:0.0216s ]
+SQL: SELECT `title`,`gross`,`rise` FROM `datav_finance` WHERE `year` = '2021' AND `month` = 5 AND `parent_name` = '税收收入'  [ RunTime:0.0277s ]
+
+[ 2021-07-06T18:02:20+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001395s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0347s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '地区生产总值' LIMIT 1   [ RunTime:0.0175s ]
+
+[ 2021-07-06T18:02:20+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000527s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0170s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '地区生产总值'  [ RunTime:0.0178s ]
+
+[ 2021-07-06T18:02:20+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000359s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000526s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0232s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '地区生产总值' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0139s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '地区生产总值' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0129s ]
+
+[ 2021-07-06T18:02:20+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000513s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0145s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '地区生产总值'  [ RunTime:0.0488s ]
+
+[ 2021-07-06T18:02:21+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000564s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0157s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '地区生产总值' ORDER BY data_date asc LIMIT 4   [ RunTime:0.0203s ]
+
+[ 2021-07-06T18:03:55+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000538s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0218s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '规模以上工业增加值' LIMIT 1   [ RunTime:0.0160s ]
+
+[ 2021-07-06T18:03:55+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000359s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000748s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000768s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0157s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '规模以上工业增加值' LIMIT 1   [ RunTime:0.0145s ]
+
+[ 2021-07-06T18:03:55+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000519s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0156s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '规模以上工业增加值' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0243s ]
+
+[ 2021-07-06T18:03:55+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000638s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000729s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000746s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0163s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '规模以上工业增加值'  [ RunTime:0.0146s ]
+
+[ 2021-07-06T18:03:55+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000642s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0175s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '规模以上工业增加值' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0167s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '规模以上工业增加值' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0146s ]
+
+[ 2021-07-06T18:03:55+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000568s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0184s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '规模以上工业增加值'  [ RunTime:0.0237s ]
+
+[ 2021-07-06T18:03:56+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryPillar/get_data?cate=zjz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000619s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000638s ]
+SQL: SHOW COLUMNS FROM `datav_industry_pillar_zjz` [ RunTime:0.0180s ]
+SQL: SELECT `title`,`com_num`,CEIL(gross) as gross,`rise`,`proportion` FROM `datav_industry_pillar_zjz` WHERE `title` <> '合计' AND `year` = '2021' AND `month` = 5  [ RunTime:0.4816s ]
+
+[ 2021-07-06T18:03:56+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryXdmy/get_data?cate=zjz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000549s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000618s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000637s ]
+SQL: SHOW COLUMNS FROM `datav_industry_xdmy_zjz` [ RunTime:0.0226s ]
+SQL: SELECT `title`,`comnum`,CEIL(jw_gross) as gross,jw_rise as rise FROM `datav_industry_xdmy_zjz` WHERE `year` = '2021' AND `month` = 5  [ RunTime:0.0166s ]
+
+[ 2021-07-06T18:03:56+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryHangye/get_data?cate=zjz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000582s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000775s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000799s ]
+SQL: SHOW COLUMNS FROM `datav_industry_hangye_zjz` [ RunTime:0.0210s ]
+SQL: SELECT `title`,`comnum`,CEIL(jw_gross) as gross,jw_rise as rise FROM `datav_industry_hangye_zjz` WHERE `title` <> '合计' AND `year` = '2021' AND `month` = 5  [ RunTime:0.0249s ]
+
+[ 2021-07-06T18:04:21+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000462s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000673s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000690s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0142s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0176s ]
+
+[ 2021-07-06T18:04:21+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000660s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0177s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0233s ]
+
+[ 2021-07-06T18:04:22+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000655s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0174s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '固定资产投资额'  [ RunTime:0.0148s ]
+
+[ 2021-07-06T18:04:22+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000678s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000696s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0195s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '固定资产投资' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0145s ]
+
+[ 2021-07-06T18:04:22+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000681s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000698s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0183s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '固定资产投资'  [ RunTime:0.0169s ]
+
+[ 2021-07-06T18:04:22+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0167s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '固定资产投资额' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0218s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '固定资产投资额' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0141s ]
+
+[ 2021-07-06T18:04:22+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate_total?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000695s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000719s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0228s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 5 AND `cate_key` = '2'  [ RunTime:0.0180s ]
+
+[ 2021-07-06T21:50:36+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=all
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001664s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001091s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001111s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0181s ]
+SQL: SELECT `title`,`measure`,jw_gross as gross,jw_rise as rise,`before_last_rise`,`two_year_rise` FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` IN ('地区生产总值','规模以上工业增加值','规模以上工业总产值','全社会固定资产投资','外贸进出口总额','实际吸收外商投资','社会消费品零售总额','一般公共预算收入','一般公共预算支出','珠海机场旅客吞吐量','珠海机场货邮吞吐量','高栏港港口吞吐量')  [ RunTime:0.0219s ]
+
+[ 2021-07-06T21:50:36+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_county
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001765s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001058s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001076s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0714s ]
+SQL: SELECT distinct title,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5  [ RunTime:0.0160s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = 2021 AND `month` = 3 AND `title` = '地区生产总值'  [ RunTime:0.0227s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` <> '地区生产总值'  [ RunTime:0.0306s ]
+
+[ 2021-07-06T21:50:38+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000523s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0131s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0264s ]
+
+[ 2021-07-06T21:50:39+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000855s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000875s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0150s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '一般公共预算收入' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0241s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '一般公共预算收入' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0198s ]
+
+[ 2021-07-06T21:50:39+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000752s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0311s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '一般公共预算收入' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0327s ]
+
+[ 2021-07-06T21:50:40+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001864s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001446s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0150s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入'  [ RunTime:0.0216s ]
+
+[ 2021-07-06T21:50:40+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000710s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0175s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0223s ]
+
+[ 2021-07-06T21:50:40+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0150s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '一般公共预算收入'  [ RunTime:0.0383s ]
+
+[ 2021-07-06T21:50:41+08:00 ] 127.0.0.1 /datav-backend/admin.php/Finance/get_data?cate=%E7%A8%8E%E6%94%B6%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000589s ]
+SQL: SHOW COLUMNS FROM `datav_finance` [ RunTime:0.0260s ]
+SQL: SELECT `title`,`gross`,`rise` FROM `datav_finance` WHERE `year` = '2021' AND `month` = 5 AND `parent_name` = '税收收入'  [ RunTime:0.0716s ]
+
+[ 2021-07-06T21:51:13+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000997s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000775s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0276s ]
+SQL: SELECT * FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0191s ]
+
+[ 2021-07-06T21:51:13+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000910s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001159s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001194s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0158s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入' LIMIT 1   [ RunTime:0.0264s ]
+
+[ 2021-07-06T21:51:13+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000845s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000575s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0171s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-05-01' AND `title` = '一般公共预算收入' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0199s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '一般公共预算收入' AND `data_date` = '2021-04-01' LIMIT 20   [ RunTime:0.0184s ]
+
+[ 2021-07-06T21:51:13+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000747s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0168s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` = '一般公共预算收入'  [ RunTime:0.0144s ]
+
+[ 2021-07-06T21:51:13+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000699s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000718s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0146s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '一般公共预算收入'  [ RunTime:0.0194s ]
+
+[ 2021-07-06T21:51:13+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E4%B8%80%E8%88%AC%E5%85%AC%E5%85%B1%E9%A2%84%E7%AE%97%E6%94%B6%E5%85%A5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000787s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000700s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000719s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0197s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-05' AND `title` = '一般公共预算收入' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0263s ]
+
+[ 2021-07-06T21:51:13+08:00 ] 127.0.0.1 /datav-backend/admin.php/Finance/get_data?cate=income
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001986s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002064s ]
+SQL: SHOW COLUMNS FROM `datav_finance` [ RunTime:0.0151s ]
+SQL: SELECT `title`,`gross`,`rise` FROM `datav_finance` WHERE `year` = '2021' AND `month` = 5 AND `parent_name` = 'income'  [ RunTime:0.0141s ]
+

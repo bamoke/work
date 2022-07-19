@@ -7,8 +7,8 @@
  */
 import Main from '@/components/main/main'
 
-// import config from '@/config'
-const webBaseUrl = ""
+import config from '@/config'
+const webBaseUrl = config.webBaseUrl
 
 /**
  * iview-admin中meta除了原生参数外可配置的参数:
@@ -30,19 +30,11 @@ const webBaseUrl = ""
 export default [
   {
     path: webBaseUrl + '/',
-    name: 'home',
-    redirect: '/home',
+    name: 'index',
+    redirect:  webBaseUrl + '/home',
     component: Main,
     children: [
-      {
-        path: webBaseUrl + '/home',
-        name: 'home',
-        meta: {
-          title: '经济总览'
-        },
-        component: () => import('@/view/overview/index-mobile')
-        // component: () => import('@/view/index/index-3d-light')
-      },
+
       {
         path: webBaseUrl + '/gdp',
         name: 'gdp',
@@ -76,6 +68,22 @@ export default [
             component: () => import('@/view/zongzhi/components/hangye')
           },
           {
+            path: webBaseUrl + '/gdp_hangye_child',
+            name: 'gdp_hangye_child',
+            meta: {
+              title: '地区生产总值按行业详情'
+            },
+            component: () => import('@/view/zongzhi/components/hangye-child')
+          },
+          {
+            path: webBaseUrl + '/gdp_hangye_child_multiple',
+            name: 'gdp_hangye_child_multiple',
+            meta: {
+              title: '地区生产总值按行业详情多个'
+            },
+            component: () => import('@/view/zongzhi/components/hangye-child-multiple')
+          },
+          {
             path: webBaseUrl + '/gdp_sishang',
             name: 'gdp_sishang',
             meta: {
@@ -87,7 +95,7 @@ export default [
             path: webBaseUrl + '/gdp_monitor',
             name: 'gdp_monitor',
             meta: {
-              title: '监测数据报表'
+              title: '四上企业监测数据报表'
             },
             component: () => import('@/view/zongzhi/components/monitor')
           },
@@ -98,6 +106,14 @@ export default [
               title: '重点企业经营情况'
             },
             component: () => import('@/view/zongzhi/components/enterprises')
+          },
+          {
+            path: webBaseUrl + '/gdp_nongye',
+            name: 'gdp_nongye',
+            meta: {
+              title: '农业'
+            },
+            component: () => import('@/view/zongzhi/components/nongye')
           },
           {
             path: webBaseUrl + '/gdp_company_map',
@@ -156,19 +172,63 @@ export default [
       },
       {
         path: webBaseUrl + '/investment',
-        name: 'touzi',
+        name: 'investment_fixed',
         meta: {
           title: '固定资产投资'
         },
-        component: () => import('@/view/investment/index')
+        component: () => import('@/view/investment/index'),
+        children: [
+          {
+            path: webBaseUrl + '/investment_fixed_gross',
+            name: 'investment_fixed_gross',
+            meta: {
+              title: '固定资产投资'
+            },
+            component: () => import('@/view/investment/components/gross'),
+          },
+          {
+            path: webBaseUrl + '/investment_fixed_com',
+            name: 'investment_fixed_com',
+            meta: {
+              title: '项目投资情况'
+            },
+            component: () => import('@/view/investment/components/project'),
+          }
+        ]
       },
       {
-        path: webBaseUrl + '/trade',
-        name: 'trade',
+        path: webBaseUrl + '/business',
+        name: 'business',
         meta: {
           title: '商务指标'
         },
-        component: () => import('@/view/trade/trade')
+        component: () => import('@/view/business/index'),
+        children: [
+          {
+            path: webBaseUrl + '/business_waimao',
+            name: 'business_waimao',
+            meta: {
+              title: '外贸进出口'
+            },
+            component: () => import('@/view/business/components/waimao'),
+          },
+          {
+            path: webBaseUrl + '/business_waishang',
+            name: 'business_waishang',
+            meta: {
+              title: '实际吸收外商投资'
+            },
+            component: () => import('@/view/business/components/waishang'),
+          },
+          {
+            path: webBaseUrl + '/business_xiaofei',
+            name: 'business_xiaofei',
+            meta: {
+              title: '社会消费品零售总额'
+            },
+            component: () => import('@/view/business/components/xiaofei'),
+          }
+        ]
       },
       {
         path: webBaseUrl + '/finance',
@@ -176,7 +236,26 @@ export default [
         meta: {
           title: '财政指标'
         },
-        component: () => import('@/view/finance/finance')
+        component: () => import('@/view/finance/finance'),
+        children: [
+          {
+            path: webBaseUrl + '/finance_imcome',
+            name: 'finance_imcome',
+            meta: {
+              title: '一般公共预算收入'
+            },
+            component: () => import('@/view/finance/components/income'),
+          },
+          {
+            path: webBaseUrl + '/finance_expend',
+            name: 'finance_expend',
+            meta: {
+              title: '一般公共预算支出'
+            },
+            component: () => import('@/view/finance/components/expend'),
+          }
+
+        ]
       },
       {
         path: webBaseUrl + '/transport',
@@ -184,17 +263,90 @@ export default [
         meta: {
           title: '机场港口'
         },
-        component: () => import('@/view/transport/transport')
+        component: () => import('@/view/transport/transport'),
+        children: [
+          {
+            path: webBaseUrl + '/transport_airport',
+            name: 'transport_airport',
+            meta: {
+              title: '珠海机场'
+            },
+            component: () => import('@/view/transport/components/airport'),
+          },
+          {
+            path: webBaseUrl + '/transport_harbor',
+            name: 'transport_harbor',
+            meta: {
+              title: '高栏港'
+            },
+            component: () => import('@/view/transport/components/harbor'),
+          }
+
+        ]
       },
       {
-        path: webBaseUrl + '/transport',
-        name: 'transport',
+        path: webBaseUrl + '/nenghao',
+        name: 'nenghao',
         meta: {
           title: '能耗'
         },
-        component: () => import('@/view/transport/transport')
+        component: () => import('@/view/nenghao/nenghao'),
+        children: [
+          {
+            path: webBaseUrl + '/nenghao_all',
+            name: 'nenghao_all',
+            meta: {
+              title: '全社会用电量'
+            },
+            component: () => import('@/view/nenghao/components/electric'),
+          },
+          {
+            path: webBaseUrl + '/nenghao_use',
+            name: 'nenghao_use',
+            meta: {
+              title: '能源消费情况'
+            },
+            component: () => import('@/view/nenghao/components/nengyuan')
+          }
+
+        ]
       }
     ]
+  },
+  {
+    path: webBaseUrl + '/overview',
+    name: 'overview',
+    meta: {
+      title: '经济总览'
+    },
+    component: () => import('@/view/overview/index')
+    // component: () => import('@/view/index/index-3d-light')
+  },
+  {
+    path: webBaseUrl + '/login',
+    name: 'login',
+    meta: {
+      title: '登录'
+    },
+    component: () => import('@/view/main/login')
+    // component: () => import('@/view/index/index-3d-light')
+  },
+  {
+    path: webBaseUrl + '/home',
+    name: 'home',
+    meta: {
+      title: '首页'
+    },
+    component: () => import('@/view/main/index')
+    // component: () => import('@/view/index/index-3d-light')
+  },
+  {
+    path: webBaseUrl + '/gdp_company_map',
+    name: 'gdp_company_map',
+    meta: {
+      title: '重点企业经营情况地图'
+    },
+    component: () => import('@/view/zongzhi/components/enterprises-map')
   },
 
 

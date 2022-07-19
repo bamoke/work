@@ -7,104 +7,193 @@
 -->
 <template>
   <div class="content-wrap">
-    <div class="m-base-total item-wrap">
-      <div class="item item-gross">
-        <van-icon name="points" size="48" class="icon" />
-        <div class="info">
-          <div class="section">地区生产总值(亿元)</div>
-          <div class="val">837465</div>
-        </div>
-      </div>
-      <div class="item item-rise">
-        <van-icon name="chart-trending-o" size="48" class="icon" />
-        <div class="info">
-          <div class="section">同比增长</div>
-          <div class="val">120%</div>
-        </div>
-      </div>
-    </div>
+    <BmkTitleTotal :total="totalInfo.jw"></BmkTitleTotal>
 
     <div class="l-row l-row-bt m-content-row">
       <div class="item-wrap">
-        <ModuleCard title="各区地区生产总值比较">
+        <ModuleCard title="各镇规上工业总产值情况">
           <template v-slot:extra>
             <van-button
-              @click="handleChangeCompareCounty('rise')"
-              :type="compareCountyData.mode == 'rise' ? 'info' : 'default'"
+              @click="handleChangeChartMode('gross', 'townData')"
+              :type="chartModeBtnType('gross', 'townData')"
               size="mini"
-              >总量及增长率</van-button
+              >总量及增速</van-button
             >
             <van-button
-              :type="compareCountyData.mode == 'gross' ? 'info' : 'default'"
+              :type="townData.vmode == 'table' ? 'info' : 'default'"
+              icon="notes-o"
               size="mini"
-              @click="handleChangeCompareCounty('gross')"
-              >占全市比重</van-button
+              @click="handleChangeViewMode('table', 'townData')"
+              >表格模式</van-button
             >
           </template>
-          <ChartCompareCounty
-            :height="200"
-            :mode="compareCountyData.mode"
-            :title="compareCountyData.title"
-            :chart-data="compareCountyData.data"
-          ></ChartCompareCounty>
+          <ChartTown
+            :height="240"
+            :vmode="townData.vmode"
+            :cmode="townData.cmode"
+            :title="townData.title"
+            :mdata="townData.data"
+          ></ChartTown>
         </ModuleCard>
       </div>
-      <div class="item-wrap">
-        <ModuleCard title="国内部分区域地区生产总值比较">
+       <div class="item-wrap">
+        <ModuleCard title="国内部分区域规上工业总产值比较">
+          <template v-slot:extra>
+            <van-button
+              @click="handleChangeChartMode('gross', 'compareDomesticData')"
+              :type="chartModeBtnType('gross', 'compareDomesticData')"
+              size="mini"
+              >总量及增速</van-button
+            >
+            <van-button
+              :type="compareDomesticData.vmode == 'table' ? 'info' : 'default'"
+              icon="notes-o"
+              size="mini"
+              @click="handleChangeViewMode('table', 'compareDomesticData')"
+              >表格模式</van-button
+            >
+          </template>
           <ChartCompareDomestic
-            :height="200"
+            :height="240"
+            :vmode="compareDomesticData.vmode"
+            :cmode="compareDomesticData.cmode"
             :title="compareDomesticData.title"
-            :chart-data="compareDomesticData.data"
+            :mdata="compareDomesticData.data"
           ></ChartCompareDomestic>
         </ModuleCard>
       </div>
     </div>
+     <div class="item-wrap">
+        <ModuleCard title="重点支柱产业工业总产值">
+          <template v-slot:extra>
+            <van-button
+              @click="handleChangeChartMode('gross', 'zhizhuchanyeData')"
+              :type="chartModeBtnType('gross', 'zhizhuchanyeData')"
+              size="mini"
+              >总量及增速</van-button
+            >
+            <van-button
+              :type="chartModeBtnType('proportion', 'zhizhuchanyeData')"
+              size="mini"
+              @click="handleChangeChartMode('proportion', 'zhizhuchanyeData')"
+              >比重</van-button
+            >
+            <van-button
+              :type="zhizhuchanyeData.vmode == 'table' ? 'info' : 'default'"
+              icon="notes-o"
+              size="mini"
+              @click="handleChangeViewMode('table', 'zhizhuchanyeData')"
+              >表格模式</van-button
+            >
+          </template>
+          <ChartZdzzcy
+            :height="240"
+            :vmode="zhizhuchanyeData.vmode"
+            :cmode="zhizhuchanyeData.cmode"
+            :title="zhizhuchanyeData.title"
+            :mdata="zhizhuchanyeData.data"
+          ></ChartZdzzcy>
+        </ModuleCard>
+      </div>
 
     <div class="l-row l-row-bt m-content-row">
       <div class="item-wrap">
-        <ModuleCard title="近一年地区生产总值情况">
+        <ModuleCard title="近一年工业总产值情况">
           <template v-slot:extra>
             <van-button
-              @click="handleChangeTimelineMonth('gross')"
-              :type="timelineMonthData.mode == 'gross' ? 'info' : 'default'"
+              @click="handleChangeChartMode('rise', 'timelineMonthData')"
+              :type="chartModeBtnType('rise', 'timelineMonthData')"
               size="mini"
-              >总量</van-button
+              >累计增度</van-button
             >
             <van-button
-              :type="timelineMonthData.mode == 'rise' ? 'info' : 'default'"
+              :type="timelineMonthData.vmode == 'table' ? 'info' : 'default'"
               size="mini"
-              @click="handleChangeTimelineMonth('rise')"
-              >累计增长速度</van-button
+              icon="notes-o"
+              @click="handleChangeViewMode('table', 'timelineMonthData')"
+              >表格模式</van-button
             >
           </template>
 
           <ChartMonth
+            :height="260"
+            :vmode="timelineMonthData.vmode"
+            :cmode="timelineMonthData.cmode"
             :title="timelineMonthData.title"
-            :chart-data="timelineMonthData.data"
-            :height="200"
-            :mode="timelineMonthData.mode"
+            :mdata="timelineMonthData.data"
           ></ChartMonth>
         </ModuleCard>
       </div>
       <div class="item-wrap">
-        <ModuleCard title="近五年地区生产总值情况">
+        <ModuleCard title="近五年工业总产值情况">
           <template v-slot:extra>
             <van-button
-              type="info"
               size="mini"
-              @click="handleChangeYearMode('gross')"
+              :type="chartModeBtnType('gross', 'timelineYearData')"
+              @click="handleChangeChartMode('gross', 'timelineYearData')"
               >总量</van-button
             >
-            <van-button size="mini" @click="handleChangeYearMode('rise')"
-              >增长率</van-button
+            <van-button
+              size="mini"
+              :type="chartModeBtnType('rise', 'timelineYearData')"
+              @click="handleChangeChartMode('rise', 'timelineYearData')"
+              >增速</van-button
+            >
+            <van-button
+              :type="timelineYearData.vmode == 'table' ? 'info' : 'default'"
+              size="mini"
+              icon="notes-o"
+              @click="handleChangeViewMode('table', 'timelineYearData')"
+              >表格模式</van-button
             >
           </template>
           <ChartYear
-            :height="200"
-            :mode="timelineYearData.mode"
+            :height="260"
+            :vmode="timelineYearData.vmode"
+            :cmode="timelineYearData.cmode"
             :title="timelineYearData.title"
-            :chart-data="timelineYearData.data"
+            :mdata="timelineYearData.data"
           ></ChartYear>
+        </ModuleCard>
+      </div>
+    </div>
+
+    <div class="l-row l-row-bt m-content-row">
+      <div class="item-wrap">
+        <ModuleCard title="现代产业和规上民营企业">
+          <template v-slot:extra>
+            <van-button
+              @click="handleChangeChartMode('gross', 'mingyingData')"
+              :type="chartModeBtnType('gross', 'mingyingData')"
+              size="mini"
+              >总量及增速</van-button
+            >
+            <van-button
+              :type="mingyingData.vmode == 'table' ? 'info' : 'default'"
+              icon="notes-o"
+              size="mini"
+              @click="handleChangeViewMode('table', 'mingyingData')"
+              >表格模式</van-button
+            >
+          </template>
+          <ChartMingying
+            :height="240"
+            :vmode="mingyingData.vmode"
+            :cmode="mingyingData.cmode"
+            :title="mingyingData.title"
+            :mdata="mingyingData.data"
+          ></ChartMingying>
+        </ModuleCard>
+      </div>
+      <div class="item-wrap">
+        <ModuleCard title="规模以上工业总产值分行业情况">
+          <Table
+            size="small"
+            height="240"
+            stripe
+            :columns="hangyeTableColumn"
+            :data="hangyeTableData"
+          />
         </ModuleCard>
       </div>
     </div>
@@ -115,105 +204,154 @@
 import * as Api from "@/api/index";
 import { formatStringWrap } from "@/libs/tools.js";
 import chartMixin from "@/libs/chart-mixin.js";
-
+import BmkTable from "@/components/common/bmk-table.vue";
+import ChartZdzzcy from "./chart-zdzzcy.vue";
+import ChartMingying from "./chart-xdmy.vue";
 export default {
   mixins: [chartMixin],
-  components: {},
+  components: { BmkTable, ChartZdzzcy,ChartMingying },
   data() {
     return {
-      sliderIndex: 0,
       totalInfo: {
-        all: {
-          title: "金湾区",
-          num: 155.45,
-          measure: "亿元",
-          rise: 20.1,
-        },
-        zhishu: {
-          title: "金湾直属",
-          num: 73.18,
-          measure: "亿元",
-          rise: 25.4,
-        },
-        kaifaqu: {
-          title: "经济开发区",
-          num: 82.26,
-          measure: "亿元",
-          rise: 20.7,
+        jw: {
+          gross: 0,
+          rise: 0,
         },
       },
-      baseData: {},
-      echartInstance: {},
-      monitorTableList: [
-        "工业企业产值监测表",
-        "限额以上批发企业统计监测表",
-        "限额以上零售业企业统计监测表",
-        "限额以上住宿业企业统计监测表",
-        "限额以上餐饮业企业统计监测表",
-        "规模以上服务业企业统计监测表",
-        "建筑业企业产值统计监测表",
-        "房地产开发企业销售情况统计监测表",
-      ],
-      propertyTableList: [],
-      showModal: false,
-      modalTitle: "地区总产值按产业情况",
-      showChild: "",
+      hangyeTableColumn: [],
+      hangyeTableData: [],
+      zhizhuchanyeData: {},
+      mingyingData: {},
     };
   },
   methods: {
-    handleShowMonitor(tableName) {
-      this.$router.push({ name: "gdp_monitor", query: { table: tableName } });
-    },
-    openChild(title, moduleName) {
-      this.showModal = true;
-      this.modalTitle = title;
-      this.showChild = moduleName;
+    handleChangeZhizhuchanye(e, dataName) {
+      var chartDataName;
+      if (typeof dataName !== "undefined") {
+        chartDataName = dataName;
+      } else {
+        chartDataName = "zhizhuchanyeData";
+      }
+      this[chartDataName].mode = e;
     },
   },
   mounted() {
-    var chartName = [];
-    this.chartInit({ chartName });
 
-    /***指标对比 */
-    Api.jjzb.get_county().then((res) => {
-      this.compareCountyData = {
-        mode: "rise",
-        title: {},
-        data: res.data,
-      };
+    Api.base.get_total({ cate: "规模以上工业总产值" }).then((res) => {
+      this.totalInfo = res.data;
     });
+
+    /***各镇指标 */
+    Api.jjzb
+      .get_town({ params: { cate: "规模以上工业总产值" } })
+      .then((res) => {
+        this.townData = {
+          cmode: "gross",
+          vmode: "chart",
+          title: {},
+          data: {
+            tableColumn: res.data.columns,
+            tableData: res.data.list,
+          },
+        };
+      });
+
+    /***各区指标对比 */
+    Api.jjzb
+      .get_county({ params: { cate: "规模以上工业总产值值" } })
+      .then((res) => {
+        this.compareCountyData = {
+          cmode: "gross",
+          vmode: "chart",
+          title: {},
+          data: {
+            tableColumn: res.data.columns,
+            tableData: res.data.list,
+          },
+        };
+      });
 
     /*** 国内部分区域指标 */
-    Api.jjzb.get_domestic().then((res) => {
-      this.compareDomesticData = {
-        title: {
-          text: res.title,
-        },
-        data: res.data,
-      };
-    });
+    Api.jjzb
+      .get_domestic({ params: { cate: "规模以上工业总产值" } })
+      .then((res) => {
+        this.compareDomesticData = {
+          cmode: "gross",
+          vmode: "chart",
+          title: { text: res.data.title },
+          data: {
+            tableColumn: res.data.columns,
+            tableData: res.data.list,
+          },
+        };
+      });
 
-    /***按月 累计增长率 */
-    Api.timeline.get_monthdata({params:{cate:'gdp'}}).then((res) => {
-      this.timelineMonthData = {
-        title: {
-          text: "",
-        },
-        mode:"gross",
-        data: res.data,
-      };
-    });
+    /***按月 累计增速 */
+    Api.timeline
+      .get_monthdata({ params: { cate: "规模以上工业总产值" } })
+      .then((res) => {
+        this.timelineMonthData = {
+          cmode: "rise",
+          vmode: "chart",
+          title: { text: res.data.title },
+          data: {
+            tableColumn: res.data.columns,
+            tableData: res.data.list,
+          },
+        };
+      });
 
     /*** 年度数据 */
-    Api.timeline.get_yeardata({ params: { cate: "gdp" } }).then((res) => {
-      this.timelineYearData = {
+    Api.timeline
+      .get_yeardata({ params: { cate: "规模以上工业总产值" } })
+      .then((res) => {
+        this.timelineYearData = {
+          cmode: "gross",
+          vmode: "chart",
+          title: { text: res.data.title },
+          data: {
+            tableColumn: res.data.columns,
+            tableData: res.data.list,
+          },
+        };
+      });
+
+    /*** 重点支柱产业 */
+    Api.base.get_pillar({ params: { cate: "zcz" } }).then((res) => {
+      this.zhizhuchanyeData = {
         title: {
-          text: res.title,
+          text: res.data.title,
         },
-        mode: "gross",
-        data: res.data,
-        origin: res.data,
+        cmode: "gross",
+        vmode: "chart",
+        title: { text: res.data.title },
+        data: {
+          tableColumn: res.data.columns,
+          tableData: res.data.list,
+        },
       };
+    });
+
+    /*** 现代产业及民营企业 */
+    Api.base.get_industry_xdmy({ params: { cate: "zcz" } }).then((res) => {
+      this.mingyingData = {
+        title: {
+          text: res.data.title,
+        },
+        cmode: "gross",
+        vmode: "chart",
+        title: { text: res.data.title },
+        data: {
+          tableColumn: res.data.columns,
+          tableData: res.data.list,
+        },
+      };
+    });
+
+    // 按行业
+    Api.base.get_industry_hy({ params: { cate: "zcz" } }).then((res) => {
+      this.hangyeTableColumn = res.data.columns;
+      this.hangyeTableData = res.data.list;
     });
   },
 };

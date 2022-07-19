@@ -9,22 +9,14 @@
   <div class="content-wrap">
     <div class="row-side side-left">
       <div class="transform-box">
-        <ModuleCard title="累计增长速度" class="item-wrap">
-          <template v-slot:extra>
-            <ButtonGroup size="small">
-              <Button type="primary" @click="handleChangeRise('default')"
-                >外贸进出口</Button
-              >
-              <Button @click="handleChangeRise('dynamic')">外贸出口</Button>
-            </ButtonGroup>
-          </template>
+        <ModuleCard title="外贸进出口近一年累计增速" class="item-wrap">
           <ChartMonth
             :height="200"
             :title="leijizengzhangData.title"
             :chart-data="leijizengzhangData.data"
           ></ChartMonth>
         </ModuleCard>
-        <ModuleCard title="外贸进出口近五年总额及增长率" class="item-wrap">
+        <ModuleCard title="外贸进出口近五年情况" class="item-wrap">
           <ChartYear
             :height="500"
             :is-open="true"
@@ -37,12 +29,12 @@
       <div class="bt-shadow"></div>
     </div>
     <div class="row-big">
-      <div class="banner-box"></div>
+      <TownMap :total-info="townTotalInfo"></TownMap>
       <div class="item-wrap">
         <div class="l-row l-row-bt">
-          <EffectCircleCount3D :data="totalInfo.all"></EffectCircleCount3D>
-          <EffectCircleCount3D :data="totalInfo.zhishu"></EffectCircleCount3D>
-          <EffectCircleCount3D :data="totalInfo.kaifaqu"></EffectCircleCount3D>
+          <EffectCircleCount3D :data="totalInfo.jw"></EffectCircleCount3D>
+          <EffectCircleCount3D :data="totalInfo.zs"></EffectCircleCount3D>
+          <EffectCircleCount3D :data="totalInfo.kfq"></EffectCircleCount3D>
         </div>
       </div>
 
@@ -80,25 +72,26 @@ export default {
   data() {
     return {
       totalInfo: {
-        all: {
-          title:"金湾区",
-          num: 131.41,
-          measure: "亿元",
-          rise: 41.6,
+        jw: {
+          area:"金湾区",
+          gross: 0,
+          measure: "",
+          rise: '0',
         },
-        zhishu: {
-          title:"金湾直属",
-          num: 97.76,
-          measure: "亿元",
-          rise: 66.7,
+        zs: {
+          area:"金湾直属",
+          gross: 0,
+          measure: "",
+          rise: '0',
         },
-        kaifaqu: {
-          title:"开发区区",
-          num: 33.65,
-          measure: "亿元",
-          rise: -1.5,
+        kfq: {
+          area:"开发区",
+          num: 0,
+          measure: "",
+          rise: '0',
         },
       },
+      townTotalInfo:{}
     };
   },
   methods: {
@@ -114,41 +107,57 @@ export default {
     var chartName = [];
     this.chartInit({ chartName });
 
+    Api.base.get_total({ cate: "外贸进出口总额" }).then((res) => {
+      this.totalInfo = res.data;
+    });
+        // 各镇指标
+    Api.jjzb.get_town({params:{ cate: "外贸进出口总额" }}).then((res) => {
+      this.townTotalInfo = res.data
+    });
     /***指标对比 */
-    Api.jjzb.get_county().then((res) => {
+    Api.jjzb.get_county({ params: { cate: "外贸进出口总额" } }).then((res) => {
       this.compareCountyData = {
         mode: "gross",
         title: {},
-        data: res.data,
+        data: this.$formatTableToChart(res.data.list, res.data.columns),
       };
     });
 
     /*** 国内部分区域指标 */
-    Api.jjzb.get_domestic().then((res) => {
-        this.compareDomesticData = res
+    Api.jjzb.get_domestic({ params: { cate: "外贸进出口总额" } }).then((res) => {
+      this.compareDomesticData = {
+        title: {
+          text: res.data.title,
+        },
+        data: this.$formatTableToChart(res.data.list, res.data.columns),
+      };
     });
 
     /***按月 累计增长率 */
-    Api.timeline.get_monthdata().then((res) => {
-      this.leijizengzhangData = {
-        title: {
-          text: "2020年3-2021年3月",
-        },
-        data: res.data,
-      };
-    });
+    Api.timeline
+      .get_monthdata({ params: { cate: "外贸进出口" } })
+      .then((res) => {
+        this.leijizengzhangData = {
+          title: {
+            text: "",
+          },
+          data: this.$formatTableToChart(res.data.list, res.data.columns),
+        };
+      });
 
     /*** 年度数据 */
-    Api.timeline.get_yeardata().then((res) => {
-      this.timelineYearData = {
-        mode: "gross",
-        title: {
-          text: res.title,
-        },
-        data: res.data,
-        origin: res,
-      };
-    });
+    Api.timeline
+      .get_yeardata({ params: { cate: "外贸进出口" } })
+      .then((res) => {
+        this.timelineYearData = {
+          title: {
+            text: this.title || "",
+          },
+          mode: "gross",
+          data: this.$formatTableToChart(res.data.list, res.data.columns),
+          origin: this.$formatTableToChart(res.data.list, res.data.columns),
+        };
+      });
 
     
 

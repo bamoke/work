@@ -19,7 +19,6 @@
     </Card>
   </div>
 </template>
-<Icon type="ios-checkmark-circle-outline" />
 <script>
 import axios from '@/libs/api.request'
 import tableMixin from "@/libs/table-mixin"

@@ -13,142 +13,36 @@
     <div :class="[activeClass, 'module-slider-content']">
       <div class="chart-box" :id="chartId"></div>
       <div class="table-box">
-        <BmkTable :columns="tableColumn" :data="this.tableData" />
+        <Table
+          size="small"
+          :height="height"
+          stripe
+          :columns="tableColumn"
+          :data="tableData"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-var optMode = {
-  gross: {
-    xAxis: { type: "category" },
-    yAxis: [
-      {
-        type: "value",
-        axisLabel: {
-          formatter: "{value}" + "亿",
-        },
-        splitLine: {
-          show: true,
-        },
-      },
-    ],
-    series: [
-      {
-        type: "bar",
-        showBackground: true,
-        encode: {
-          x: 0,
-          y: 1,
-        },
-      },
-      {
-        type: "bar",
-        showBackground: true,
-        encode: {
-          x: 0,
-          y: 3,
-        },
-      },
-    ],
-  },
-  rise: {
-    xAxis: { type: "category" },
-    yAxis: [
-      {
-        type: "value",
-        axisLabel: {
-          formatter: "{value}" + "%",
-        },
-      },
-    ],
-    series: [
-      {
-        type: "line",
-        encode: {
-          x: 0,
-          y: 2,
-        },
-        markPoint: {
-          data: [
-            { type: "max", name: "最大值" },
-            { type: "min", name: "最小值" },
-          ],
-        },
-        areaStyle: {},
-      },
-      {
-        type: "line",
-
-        markPoint: {
-          data: [
-            { type: "max", name: "最大值" },
-            { type: "min", name: "最小值" },
-          ],
-        },
-        encode: {
-          x: 0,
-          y: 4,
-        },
-      },
-    ],
-  },
-};
+import tableChartMixin from "@/libs/table-chart-mixin.js";
 export default {
+  mixins: [tableChartMixin],
   props: {
     chartId: {
       type: String,
       default: "chart-timelineyear",
     },
-    height: {
-      type: Number,
-      default: 0,
-    },
-    isOpen: {
-      type: Boolean,
-      default: false,
-    },
-    mode: {
-      type: String,
-      default: "gross",
-    },
-    title: {
-      type: Object,
-      default: function () {
-        return {};
-      },
-    },
-
-    chartData: {
-      type: Array,
-      default: function () {
-        return [];
-      },
-    },
   },
   data() {
     return {
       chartInstance: null,
-      tableColumn: [],
-      tableData: [],
-      activeClass: "show-gross",
     };
   },
   methods: {
-    reDraw() {
-      var openOpt,
-        modeSeries = optMode[this.mode].series,
-        opt = {
-          dataset: { source: this.chartData },
-          title: this.title,
-          tooltip: { trigger: "axis" },
-          legend: {
-            show: true,
-            left: "right",
-            top: "top",
-          },
-        };
+    drawChart() {
+      var openOpt,optMode,opt;
       if (this.isOpen) {
         // 展开
         openOpt = {
@@ -248,53 +142,91 @@ export default {
         };
         opt = Object.assign(opt, openOpt);
       } else {
-        if (this.mode === "gross") {
-          modeSeries[0].name = this.chartData[0][1];
-          modeSeries[1].name = this.chartData[0][3];
-        } else {
-          modeSeries[0].name = this.chartData[0][2];
-          modeSeries[1].name = this.chartData[0][4];
-        }
-        opt = Object.assign(opt, {
-          xAxis: { type: "category" },
-          yAxis: optMode[this.mode].yAxis,
-          series: modeSeries,
-        });
+        optMode = {
+          gross: {
+            dataset: { source: this.chartData },
+            title: this.title,
+            tooltip: { trigger: "axis" },
+            legend: {
+              show: true,
+              left: "right",
+              top: "top",
+            },
+            xAxis: { type: "category" },
+            yAxis: [
+              {
+                type: "value",
+                splitLine: {
+                  show: true,
+                },
+              },
+            ],
+            series: [
+              {
+                type: "bar",
+                name:this.chartData[0][1],
+                showBackground: true,
+                encode: {
+                  x: 0,
+                  y: 1,
+                },
+              },
+              {
+                type: "bar",
+                name:this.chartData[0][3],
+                showBackground: true,
+                encode: {
+                  x: 0,
+                  y: 3,
+                },
+              },
+            ],
+          },
+          rise: {
+            dataset: { source: this.chartData },
+            title: this.title,
+            tooltip: { trigger: "axis" },
+            legend: {
+              show: true,
+              left: "right",
+              top: "top",
+            },
+            xAxis: { type: "category" },
+            yAxis: [
+              {
+                type: "value",
+                axisLabel: {
+                  formatter: "{value}" + "%",
+                },
+              },
+            ],
+            series: [
+              {
+                type: "line",
+                name:this.chartData[0][2],
+                encode: {
+                  x: 0,
+                  y: 2,
+                },
+              },
+              {
+                type: "line",
+                name:this.chartData[0][4],
+
+                encode: {
+                  x: 0,
+                  y: 4,
+                },
+              },
+            ],
+          },
+        };
+        opt = optMode[this.cmode]
       }
 
       this.chartInstance.clear();
       this.chartInstance.setOption(opt);
     },
-  },
-  watch: {
-    mode(newValue, oldValue) {
-      if (newValue) {
-        if (newValue == "table") {
-          this.activeClass = "show-table";
-        } else {
-          this.reDraw();
-          this.activeClass = "show-chart";
-        }
-      }
-    },
-    chartData(newValue, oldValue) {
-      var column
-      if (newValue) {
-        this.reDraw();
-        column = newValue.slice(0,1)
-        // column[0] = "年份"
-        this.tableColumn = column[0]
-        this.tableColumn[0] = "年份"
-        this.tableData = newValue.slice(1)
-      }
-    },
-  },
-  mounted() {
-    const appTheme = this.$store.state.theme;
-    this.chartInstance = this.$echarts.init(
-      document.getElementById(this.chartId),
-      appTheme.echartTheme
-    );
   },
 };
 </script>

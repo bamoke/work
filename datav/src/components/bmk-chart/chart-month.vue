@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { formatStringWrap } from "@/libs/tools.js";
 export default {
   props: {
     chartId: {
@@ -72,9 +73,8 @@ export default {
             type: "category",
             axisLabel: {
               fontSize: "12px",
-              rotate: -45,
               formatter: function (value) {
-                return value.substring(5);
+                return formatStringWrap(value, 4);
               },
             },
           },
@@ -89,14 +89,31 @@ export default {
               },
             },
           ],
-          series,
+          series: [
+            {
+              type: "line",
+              areaStyle: {},
+              label: {
+                show: true,
+                // position: "top",
+                // distance: 10,
+                fontWeight: "100",
+              },
+              encode: {
+                x: 0,
+                y: 2,
+                tooltip: [2],
+              },
+            },
+          ],
         });
       }
     },
   },
   mounted() {
     this.chartInstance = this.$echarts.init(
-      document.getElementById(this.chartId)
+      document.getElementById(this.chartId),
+      this.$config.chartTheme
     );
   },
 };

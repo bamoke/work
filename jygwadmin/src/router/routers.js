@@ -400,18 +400,28 @@ export default [
         name: 'policy_add',
         meta: {
           hideInMenu: true,
-          title: '添加人才政策'
+          title: '新建内容'
         },
         component: () => import('@/view/policy/add')
       },
       {
         path: 'edit/:id',
+        notCache: true,
         name: 'policy_edit',
         meta: {
-          hideInMenu: true,
-          title: '修改人才政策'
+          title: '编辑内容',
+          hideInMenu: true
         },
         component: () => import('@/view/policy/edit')
+      },
+      {
+        path: 'cate',
+        name: 'policy_cate',
+        meta: {
+          title: '政策类别',
+          icon: 'grid'
+        },
+        component: () => import('@/view/policy/cate')
       }
     ]
   },

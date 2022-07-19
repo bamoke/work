@@ -1,0 +1,622 @@
+[ 2021-09-03T01:29:30+08:00 ] ::1 /datav-backend/admin.php/Upload/show.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001005s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001034s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 106 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000011s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000035s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009195s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009223s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000587s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001138s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001158s ]
+
+[ 2021-09-03T01:29:30+08:00 ] ::1 /datav-backend/admin.php/Upload/show.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000589s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001995s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002022s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 106 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000010s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000033s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006891s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006917s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000670s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000700s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001588s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001637s ]
+
+[ 2021-09-03T01:30:20+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001383s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001440s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 106 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0144s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0146s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_table_date` WHERE `year` = '2021' AND `table_name` = 'datav_timeline_month' AND `month` = 7 LIMIT 1   [ RunTime:0.0166s ]
+SQL: INSERT INTO `datav_timeline_month` (`year`,`month`,`create_by`,`data_date`,`title`,`measure`,`jw_gross`,`jw_rise`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise`) VALUES ('2021','7','2','2021-07-01','地区生产总值','亿元','361.36','13.6','171.45','11.3','189.91','15.7'),('2021','7','2','2021-07-01','规模以上工业增加值','亿元','291.19','16.8','111.06','11.7','180.13','20.3'),('2021','7','2','2021-07-01','规模以上工业总产值','亿元','1227.94','18.5','453.83','10.5','774.1','24.1'),('2021','7','2','2021-07-01','固定资产投资','亿元','332.49','16.5','244.2','25.7','88.29','-3'),('2021','7','2','2021-07-01','外贸进出口','亿元',null,null,null,null,null,null),('2021','7','2','2021-07-01','外贸出口','亿元',null,null,null,null,null,null),('2021','7','2','2021-07-01','实际利用外商直接投资','万美元','5229','-12.5','2494','-48.4','2735','137.8'),('2021','7','2','2021-07-01','社会消费品零售总额','亿元','27.86','13.2','23.12','22','4.74','-16.2'),('2021','7','2','2021-07-01','一般公共预算收入','亿元','27.84','19.6',null,null,null,null),('2021','7','2','2021-07-01','一般公共预算支出','亿元','57.28','27.7',null,null,null,null) [ RunTime:0.0222s ]
+SQL: INSERT INTO `datav_table_date` (`create_by`,`table_name_cn`,`year`,`table_name`,`month`) VALUES ('2','主要经济指标时间系列（月）','2021','datav_timeline_month','7') [ RunTime:0.0160s ]
+
+[ 2021-09-03T01:30:26+08:00 ] ::1 /datav-backend/admin.php/Upload/show.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000399s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 106 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000010s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000031s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006244s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006269s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000434s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000609s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000622s ]
+
+[ 2021-09-03T01:32:35+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000674s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 106 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_timeline_transport` [ RunTime:0.0162s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0187s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_table_date` WHERE `year` = '2021' AND `table_name` = 'datav_timeline_transport' AND `month` = 7 LIMIT 1   [ RunTime:0.0161s ]
+SQL: INSERT INTO `datav_timeline_transport` (`year`,`month`,`create_by`,`data_date`,`title`,`measure`,`gross`,`rise`) VALUES ('2021','7','2','2021-07-01','珠海机场旅客吞吐量','万人次','543.08','79.9'),('2021','7','2','2021-07-01','珠海机场货邮吞吐量','万吨','2.58','28.7'),('2021','7','2','2021-07-01','高栏港港口吞吐量','万吨','7316','8.2'),('2021','7','2','2021-07-01','高栏港集装箱吞吐量','万TEU','116.8','45.2') [ RunTime:0.0189s ]
+SQL: INSERT INTO `datav_table_date` (`create_by`,`table_name_cn`,`year`,`table_name`,`month`) VALUES ('2','机场港口时间系列（月）','2021','datav_timeline_transport','7') [ RunTime:0.0401s ]
+
+[ 2021-09-03T01:32:36+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000665s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000682s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 106 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_timeline_transport` [ RunTime:0.0208s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0204s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_table_date` WHERE `year` = '2021' AND `table_name` = 'datav_timeline_transport' AND `month` = 7 LIMIT 1   [ RunTime:0.0201s ]
+
+[ 2021-09-03T01:34:22+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000619s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 106 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_whole_country` [ RunTime:0.0241s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0252s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_table_date` WHERE `year` = '2021' AND `table_name` = 'datav_whole_country' AND `month` = 7 LIMIT 1   [ RunTime:0.0205s ]
+ERR: SQLSTATE[HY000]: General error: 1366 Incorrect decimal value: '--　' for column 'city_gross' at row 4
+
+[ 2021-09-03T01:34:23+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000452s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000659s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 106 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_whole_country` [ RunTime:0.0223s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0228s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_table_date` WHERE `year` = '2021' AND `table_name` = 'datav_whole_country' AND `month` = 7 LIMIT 1   [ RunTime:0.0292s ]
+ERR: SQLSTATE[HY000]: General error: 1366 Incorrect decimal value: '--　' for column 'city_gross' at row 4
+
+[ 2021-09-03T01:34:52+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000676s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 106 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_whole_country` [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0201s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_table_date` WHERE `year` = '2021' AND `table_name` = 'datav_whole_country' AND `month` = 7 LIMIT 1   [ RunTime:0.0374s ]
+ERR: SQLSTATE[HY000]: General error: 1366 Incorrect decimal value: '--　' for column 'city_gross' at row 4
+
+[ 2021-09-03T01:42:00+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000571s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000728s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000756s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 106 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_whole_country` [ RunTime:0.0172s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0231s ]
+
+[ 2021-09-03T01:42:00+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001431s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001123s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001171s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 106 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_whole_country` [ RunTime:0.0155s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0170s ]
+
+[ 2021-09-03T01:43:56+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000657s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 106 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_whole_country` [ RunTime:0.0146s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0154s ]
+
+[ 2021-09-03T01:46:07+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000454s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003746s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 106 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_whole_country` [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0208s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_table_date` WHERE `year` = '2021' AND `table_name` = 'datav_whole_country' AND `month` = 7 LIMIT 1   [ RunTime:0.0137s ]
+ERR: SQLSTATE[HY000]: General error: 1366 Incorrect decimal value: '--　' for column 'city_gross' at row 4
+
+[ 2021-09-03T02:02:29+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000462s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000659s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 106 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_whole_country` [ RunTime:0.0511s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0187s ]
+
+[ 2021-09-03T02:06:21+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002047s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000684s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000706s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 106 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_whole_country` [ RunTime:0.0245s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0156s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_table_date` WHERE `year` = '2021' AND `table_name` = 'datav_whole_country' AND `month` = 7 LIMIT 1   [ RunTime:0.0343s ]
+ERR: SQLSTATE[HY000]: General error: 1366 Incorrect decimal value: '　' for column 'city_gross' at row 4
+
+[ 2021-09-03T02:16:47+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000774s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000733s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000756s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 106 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_whole_country` [ RunTime:0.0222s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0191s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_table_date` WHERE `year` = '2021' AND `table_name` = 'datav_whole_country' AND `month` = 7 LIMIT 1   [ RunTime:0.0197s ]
+SQL: INSERT INTO `datav_whole_country` (`year`,`month`,`create_by`,`data_date`,`title`,`parent_name`,`measure`,`country_gross`,`country_rise`,`province_gross`,`province_rise`,`city_gross`,`city_rise`) VALUES ('2021','7','2','2021-07-01','地区生产总值','一级','亿元','532167','12.7','57226','13','1841.47','12.9'),('2021','7','2','2021-07-01','规模以上工业增加值','一级','亿元',null,'14.4','20100','16','740.43','17.2'),('2021','7','2','2021-07-01','全社会固定资产投资','一级','亿元','302533','10.3',null,'13.7',null,'7.8'),('2021','7','2','2021-07-01','工业投资','全社会固定资产投资','亿元',null,null,null,'22.8',null,'12.9'),('2021','7','2','2021-07-01','装备制造业投资','工业投资','亿元',null,null,null,null,null,'37.3'),('2021','7','2','2021-07-01','工业技改投资','工业投资','亿元',null,null,null,null,null,'-2.9'),('2021','7','2','2021-07-01','房地产开发投资','全社会固定资产投资','亿元',null,'12.7',null,'8.4',null,'21.7'),('2021','7','2','2021-07-01','基础设施','全社会固定资产投资',null,null,'4.6',null,'3.9',null,'-12.6'),('2021','7','2','2021-07-01','社会消费品零售总额','一级','亿元','246829','20.7','25100','17.3','610.46','26.4'),('2021','7','2','2021-07-01','批发零售业销售额','一级','亿元',null,null,null,null,'3414.32','30.8'),('2021','7','2','2021-07-01','外贸进出口总额','一级','万元','213417','24.5','45000','20.5','1910.15','33.9'),('2021','7','2','2021-07-01','外贸出口','外贸进出口总额','万元','116626','24.5','27000','20.8','1057.08','29.5'),('2021','7','2','2021-07-01','外贸进口','外贸进出口总额','万元','96792','24.4','18000','20.1','853.07','39.9'),('2021','7','2','2021-07-01','实际吸收外商直接投资','一级','亿美元',null,null,null,null,'21.3','31.5'),('2021','7','2','2021-07-01','一般公共预算收入','一级','亿元','137716','20','8900','16.1','286.01','22.3'),('2021','7','2','2021-07-01','税收收入','一般公共预算收入','亿元','119112','20.9',null,null,'207.63','8.7'),('2021','7','2','2021-07-01','一般公共预算支出','一级','亿元','137928','3.3','10300','10.1','404.25','4.4'),('2021','7','2','2021-07-01','税务部门税收收入','一级','亿元',null,null,null,null,'738.18','4'),('2021','7','2','2021-07-01','中外资金融机构本外币各项存款余额','一级','亿元',null,null,null,null,'10383.67','10'),('2021','7','2','2021-07-01','境内住户存款','中外资金融机构本外币各项存款余额','亿元',null,null,null,null,'2412.01','11.8'),('2021','7','2','2021-07-01','中外资金融机构本外币各项贷款余额','一级','亿元',null,null,null,null,'8378.36','16.5'),('2021','7','2','2021-07-01','公路运输总周转量','一级','亿吨公里',null,null,null,null,'24.76','17.7'),('2021','7','2','2021-07-01','水上运输总周转量','一级','亿吨公里',null,null,null,null,'264.58','45.7'),('2021','7','2','2021-07-01','港口货物吞吐量','一级','万吨',null,null,null,'9.7','7991.92','7.7'),('2021','7','2','2021-07-01','港口集装箱吞吐量','一级','万标箱',null,null,null,null,'141.4','33.6'),('2021','7','2','2021-07-01','全社会用电量','一级','亿千瓦时',null,null,null,null,'124.59','17.7'),('2021','7','2','2021-07-01','工业用电量','全社会用电量','亿千瓦时',null,null,null,null,'69.57','17.9'),('2021','7','2','2021-07-01','居民消费价格指数','一级','%','100.6','0.6',null,null,'100.5','0.5') [ RunTime:0.0222s ]
+SQL: INSERT INTO `datav_table_date` (`create_by`,`table_name_cn`,`year`,`table_name`,`month`) VALUES ('2','国家、省、市主要经济指标','2021','datav_whole_country','7') [ RunTime:0.0235s ]
+
+[ 2021-09-03T02:22:31+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000683s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000703s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 106 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_finance` [ RunTime:0.0183s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0175s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_table_date` WHERE `year` = '2021' AND `table_name` = 'datav_finance' AND `month` = 7 LIMIT 1   [ RunTime:0.0173s ]
+SQL: INSERT INTO `datav_finance` (`year`,`month`,`create_by`,`data_date`,`title`,`measure`,`parent_name`,`gross`,`rise`) VALUES ('2021','7','2','2021-07-01','一般公共预算收入','万元','一级','278430','19.6'),('2021','7','2','2021-07-01','税收收入','万元','收入','259733','24.9'),('2021','7','2','2021-07-01','增值税','万元','税收收入','89549','11'),('2021','7','2','2021-07-01','营业税','万元','税收收入',null,null),('2021','7','2','2021-07-01','企业所得税','万元','税收收入','67405','17.8'),('2021','7','2','2021-07-01','个人所得税','万元','税收收入','8221','15.9'),('2021','7','2','2021-07-01','非税收入','万元','收入','18697','-24.7'),('2021','7','2','2021-07-01','一般公共预算支出','万元','一级','572797','27.7'),('2021','7','2','2021-07-01','一般公共服务','万元','支出','66337','9'),('2021','7','2','2021-07-01','公共安全','万元','支出','15586','31.7'),('2021','7','2','2021-07-01','教育','万元','支出','96612','5.4'),('2021','7','2','2021-07-01','科学技术','万元','支出','56940','163.6'),('2021','7','2','2021-07-01','社会保障和就业','万元','支出','45848','43.2'),('2021','7','2','2021-07-01','卫生健康','万元','支出','51471','-12.6'),('2021','7','2','2021-07-01','节能环保','万元','支出','78997','-18.1'),('2021','7','2','2021-07-01','城乡社区','万元','支出','42332','183.7') [ RunTime:0.0252s ]
+SQL: INSERT INTO `datav_table_date` (`create_by`,`table_name_cn`,`year`,`table_name`,`month`) VALUES ('2','一般公共预算收入和支出情况','2021','datav_finance','7') [ RunTime:0.0159s ]
+
+[ 2021-09-03T02:57:38+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_date
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000769s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000780s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000807s ]
+NOTIC: [8] Undefined index: HTTP_X_ACCESS_TOKEN D:\work\datav-backend\Admin\Common\AuthController.class.php 第 28 行.
+
+[ 2021-09-03T02:57:38+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_nav
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000914s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000912s ]
+NOTIC: [8] Undefined index: HTTP_X_ACCESS_TOKEN D:\work\datav-backend\Admin\Common\AuthController.class.php 第 28 行.
+
+[ 2021-09-03T02:57:45+08:00 ] 127.0.0.1 /datav-backend/admin.php/User/do_login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000451s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000592s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000612s ]
+
+[ 2021-09-03T02:57:47+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_date
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000413s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000546s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000564s ]
+NOTIC: [8] Undefined index: HTTP_X_ACCESS_DATE D:\work\datav-backend\Admin\Common\AuthController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `datav_sys_setting` [ RunTime:0.0178s ]
+SQL: SELECT `sys_date` FROM `datav_sys_setting` LIMIT 1   [ RunTime:0.0150s ]
+SQL: SELECT * FROM `datav_sys_setting` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0176s ]
+
+[ 2021-09-03T02:57:47+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_nav
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000342s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000565s ]
+NOTIC: [8] Undefined index: HTTP_X_ACCESS_DATE D:\work\datav-backend\Admin\Common\AuthController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `datav_sys_setting` [ RunTime:0.0207s ]
+SQL: SELECT `sys_date` FROM `datav_sys_setting` LIMIT 1   [ RunTime:0.0193s ]
+
+[ 2021-09-03T02:57:48+08:00 ] 127.0.0.1 /datav-backend/admin.php/EconomyIntroduce/get_data
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000478s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000541s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000562s ]
+SQL: SHOW COLUMNS FROM `datav_economy_introduce` [ RunTime:0.0148s ]
+SQL: SELECT * FROM `datav_economy_introduce` WHERE `year` = '2021' AND `month` = 6 LIMIT 1   [ RunTime:0.0174s ]
+
+[ 2021-09-03T02:57:48+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=all
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000507s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000525s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000544s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0183s ]
+SQL: SELECT `title`,`measure`,jw_gross as gross,jw_rise as rise,`before_last_rise`,`two_year_rise` FROM `datav_total` WHERE `year` = '2021' AND `month` = 6 AND `title` IN ('地区生产总值','规模以上工业增加值','规模以上工业总产值','全社会固定资产投资','外贸进出口总额','实际吸收外商投资','社会消费品零售总额','一般公共预算收入','一般公共预算支出','珠海机场旅客吞吐量','珠海机场货邮吞吐量','高栏港港口吞吐量')  [ RunTime:0.0181s ]
+
+[ 2021-09-03T02:57:49+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_town
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000868s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000891s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0224s ]
+SQL: SELECT `title`,`measure`,`sz_gross`,`sz_rise`,`hq_gross`,`hq_rise`,`ns_gross`,`ns_rise`,`ps_gross`,`ps_rise` FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 6 ORDER BY id asc  [ RunTime:0.0182s ]
+
+[ 2021-09-03T02:57:49+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_country
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001136s ]
+SQL: SHOW COLUMNS FROM `datav_whole_country` [ RunTime:0.0183s ]
+SQL: SELECT `title`,`measure`,IFNULL(country_gross,'--') as country_gross,`country_rise`,IFNULL(province_gross,'--') as province_gross,`province_rise`,IFNULL(city_gross,'--') as city_gross,`city_rise` FROM `datav_whole_country` WHERE `year` = '2021' AND `month` = 6 ORDER BY id asc  [ RunTime:0.0227s ]
+
+[ 2021-09-03T02:57:49+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_county
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000879s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001051s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0151s ]
+SQL: SELECT distinct title,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 6  [ RunTime:0.0178s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = 2021 AND `month` = 6 AND `title` = '地区生产总值'  [ RunTime:0.0209s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 6 AND `title` <> '地区生产总值'  [ RunTime:0.0246s ]
+
+[ 2021-09-03T02:57:56+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000556s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000674s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0201s ]
+SQL: SELECT CONCAT(title,'2021年1-6月') as title,IFNULL(jw_gross,'--') as jw_gross,IFNULL(jw_rise,'--') as jw_rise,IFNULL(zs_gross,'--') as zs_gross,IFNULL(zs_rise,'--') as zs_rise,IFNULL(kfq_gross,'--') as kfq_gross,IFNULL(kfq_rise,'--') as kfq_rise,`measure` FROM `datav_total` WHERE `year` = 2021 AND `month` = 6 AND `title` = '地区生产总值' LIMIT 1   [ RunTime:0.0178s ]
+
+[ 2021-09-03T02:57:56+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001319s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000572s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0175s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = 2021 AND `month` = 6 AND `title` = '地区生产总值'  [ RunTime:0.0174s ]
+
+[ 2021-09-03T02:57:56+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000527s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0192s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `year` = 2021 AND `month` = 3 AND `title` = '地区生产总值' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0212s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '地区生产总值' AND `data_date` = '2021-03-01' LIMIT 20   [ RunTime:0.0254s ]
+
+[ 2021-09-03T02:57:57+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000394s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000855s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000886s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0189s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-06' AND `title` = '地区生产总值' ORDER BY data_date asc  [ RunTime:0.0217s ]
+
+[ 2021-09-03T02:57:57+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000449s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000885s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000908s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0220s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '地区生产总值'  [ RunTime:0.0185s ]
+
+[ 2021-09-03T02:57:59+08:00 ] 127.0.0.1 /datav-backend/admin.php/GdpHangye/get_data?cate=%E6%8C%89%E4%BA%A7%E4%B8%9A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000630s ]
+SQL: SHOW COLUMNS FROM `datav_gdp_hangye` [ RunTime:0.0217s ]
+SQL: SELECT * FROM `datav_gdp_hangye` WHERE `year` = '2021' AND `month` = 6 AND `parent_name` = '按产业'  [ RunTime:0.0234s ]
+
+[ 2021-09-03T02:57:59+08:00 ] 127.0.0.1 /datav-backend/admin.php/GdpChanyeHistory/get_data
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001920s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000836s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000870s ]
+SQL: SHOW COLUMNS FROM `datav_gdp_chanye_history` [ RunTime:0.0176s ]
+SQL: SELECT `year`,`one_proportion`,`two_proportion`,`three_proportion` FROM `datav_gdp_chanye_history` WHERE `year` >= 2011 ORDER BY year asc LIMIT 10   [ RunTime:0.0180s ]
+
+[ 2021-09-03T02:58:01+08:00 ] 127.0.0.1 /datav-backend/admin.php/GdpHangye/get_data?cate=%E6%8C%89%E8%A1%8C%E4%B8%9A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000811s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+SQL: SHOW COLUMNS FROM `datav_gdp_hangye` [ RunTime:0.0188s ]
+SQL: SELECT * FROM `datav_gdp_hangye` WHERE `year` = '2021' AND `month` = 6 AND `parent_name` = '按行业'  [ RunTime:0.0268s ]
+
+[ 2021-09-03T02:59:56+08:00 ] 127.0.0.1 /datav-backend/admin.php/GdpHangye/get_child?cate=%E8%90%A5%E5%88%A9%E6%80%A7%E6%9C%8D%E5%8A%A1%E4%B8%9A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001111s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002685s ]
+SQL: SHOW COLUMNS FROM `datav_gdp_service_hangye` [ RunTime:0.0139s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise,`measure` FROM `datav_gdp_service_hangye` WHERE `year` = '2021' AND `month` = 6 AND `parent_name` = '营利性服务业'  [ RunTime:0.0234s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 6 AND `title` = '营利性服务业营业收入' LIMIT 1   [ RunTime:0.0161s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0182s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 6 AND `title` = '营利性服务业'  [ RunTime:0.0143s ]
+NOTIC: [8] Undefined offset: 0 D:\work\datav-backend\Admin\Model\EconomyCountyModel.class.php 第 34 行.
+SQL: SHOW COLUMNS FROM `datav_gdp_hangye` [ RunTime:0.0188s ]
+SQL: SELECT CONCAT(year,'年1-',month) as date,`gross`,`rise` FROM `datav_gdp_hangye` WHERE `data_date` >= '2020-06' AND `title` = '营利性服务业' ORDER BY data_date asc  [ RunTime:0.0158s ]
+
+[ 2021-09-03T03:06:01+08:00 ] 127.0.0.1 /datav-backend/admin.php/GdpHangye/get_data?cate=%E6%8C%89%E4%BA%A7%E4%B8%9A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000690s ]
+SQL: SHOW COLUMNS FROM `datav_gdp_hangye` [ RunTime:0.0164s ]
+SQL: SELECT * FROM `datav_gdp_hangye` WHERE `year` = '2021' AND `month` = 6 AND `parent_name` = '按产业'  [ RunTime:0.0195s ]
+
+[ 2021-09-03T03:06:01+08:00 ] 127.0.0.1 /datav-backend/admin.php/GdpChanyeHistory/get_data
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000539s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+SQL: SHOW COLUMNS FROM `datav_gdp_chanye_history` [ RunTime:0.0206s ]
+SQL: SELECT `year`,`one_proportion`,`two_proportion`,`three_proportion` FROM `datav_gdp_chanye_history` WHERE `year` >= 2011 ORDER BY year asc LIMIT 10   [ RunTime:0.0197s ]
+
+[ 2021-09-03T03:06:02+08:00 ] 127.0.0.1 /datav-backend/admin.php/GdpHangye/get_data?cate=%E6%8C%89%E8%A1%8C%E4%B8%9A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000400s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000529s ]
+SQL: SHOW COLUMNS FROM `datav_gdp_hangye` [ RunTime:0.0216s ]
+SQL: SELECT * FROM `datav_gdp_hangye` WHERE `year` = '2021' AND `month` = 6 AND `parent_name` = '按行业'  [ RunTime:0.0221s ]
+
+[ 2021-09-03T03:18:06+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000097s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001275s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002009s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0215s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 6 AND `title` = '规模以上工业增加值' LIMIT 1   [ RunTime:0.0160s ]
+
+[ 2021-09-03T03:18:06+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000532s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000978s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001013s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0186s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 6 AND `title` = '规模以上工业增加值'  [ RunTime:0.0159s ]
+
+[ 2021-09-03T03:18:06+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000526s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000749s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000782s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0151s ]
+SQL: SELECT `title`,IFNULL(jw_gross,'--') as jw_gross,IFNULL(jw_rise,'--') as jw_rise,IFNULL(zs_gross,'--') as zs_gross,IFNULL(zs_rise,'--') as zs_rise,IFNULL(kfq_gross,'--') as kfq_gross,IFNULL(kfq_rise,'--') as kfq_rise,`measure` FROM `datav_total` WHERE `year` = '2021' AND `month` = 6 AND `title` = '规模以上工业增加值' LIMIT 1   [ RunTime:0.0180s ]
+
+[ 2021-09-03T03:18:07+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000624s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000647s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0156s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-06-01' AND `title` = '规模以上工业增加值' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0163s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '规模以上工业增加值' AND `data_date` = '2021-05-01' LIMIT 20   [ RunTime:0.0195s ]
+
+[ 2021-09-03T03:18:07+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000575s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0143s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '规模以上工业增加值'  [ RunTime:0.0261s ]
+
+[ 2021-09-03T03:18:07+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000626s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0173s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-06' AND `title` = '规模以上工业增加值' ORDER BY data_date asc  [ RunTime:0.0157s ]
+
+[ 2021-09-03T03:18:07+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryPillar/get_data?cate=zjz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000587s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001683s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001717s ]
+SQL: SHOW COLUMNS FROM `datav_industry_pillar_zjz` [ RunTime:0.0143s ]
+SQL: SELECT `title`,`com_num`,CEIL(gross) as gross,`rise`,`proportion` FROM `datav_industry_pillar_zjz` WHERE ( `title` <> '合计' AND `title` <> '传统优势'  ) AND `year` = '2021' AND `month` = 6  [ RunTime:0.0215s ]
+
+[ 2021-09-03T03:18:07+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryXdmy/get_data?cate=zjz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000685s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000713s ]
+SQL: SHOW COLUMNS FROM `datav_industry_xdmy_zjz` [ RunTime:0.0146s ]
+SQL: SELECT `title`,`comnum`,CEIL(jw_gross) as gross,jw_rise as rise FROM `datav_industry_xdmy_zjz` WHERE `year` = '2021' AND `month` = 6  [ RunTime:0.0146s ]
+
+[ 2021-09-03T03:18:07+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryHangye/get_data?cate=zjz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000858s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000631s ]
+SQL: SHOW COLUMNS FROM `datav_industry_hangye_zjz` [ RunTime:0.0192s ]
+SQL: SELECT `title`,`comnum`,CEIL(jw_gross) as gross,jw_rise as rise FROM `datav_industry_hangye_zjz` WHERE `title` <> '合计' AND `year` = '2021' AND `month` = 6  [ RunTime:0.0173s ]
+

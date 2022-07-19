@@ -24,11 +24,11 @@ class YbApi
     protected $password;
     protected $token;
     public $ybInfo;
-    public function __construct($serverid='18006',$type='in'){
+    public function __construct($serverid='12241',$type='in'){
         if($type == "in"){
             $ybInfo = M("YbAccount")->where("serverid = '$serverid'")->fetchSql(false)->find();
             $this->serverId  = $serverid;
-            $this->apiBaseUrl ="http://lansi.iyunbiao.cn/".$serverid;
+            $this->apiBaseUrl ="http://www.iyunbiao.cn/".$serverid;
             $this->ybInfo = $ybInfo;
             $this->appName  = $ybInfo['appname'];
             $this->appKey   = $ybInfo['appkey'];

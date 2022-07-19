@@ -20,8 +20,8 @@ const resolve = dir => {
 // 需要将它改为'/my-app/'
 // iview-admin线上演示打包路径： https://file.iviewui.com/admin-dist/
 const BASE_URL = process.env.NODE_ENV === 'production'
-  ? ''
-  : ''
+  ? '/screen/'
+  : '/'
 
 module.exports = {
   // Project deployment base

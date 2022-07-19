@@ -33,8 +33,8 @@ export default {
       default: 16,
     },
     rate: {
-      type: Number,
-      default: 0,
+      type: String,
+      default: '--',
     },
     fill: {
       type: Boolean,

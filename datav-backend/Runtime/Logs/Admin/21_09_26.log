@@ -1,0 +1,82 @@
+[ 2021-09-26T11:56:06+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_date
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000847s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000874s ]
+NOTIC: [8] Undefined index: HTTP_X_ACCESS_DATE D:\work\datav-backend\Admin\Common\AuthController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `datav_sys_setting` [ RunTime:0.0296s ]
+SQL: SELECT `sys_date` FROM `datav_sys_setting` LIMIT 1   [ RunTime:0.0157s ]
+SQL: SELECT * FROM `datav_sys_setting` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0155s ]
+
+[ 2021-09-26T11:56:06+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_nav
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000485s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000944s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000965s ]
+NOTIC: [8] Undefined index: HTTP_X_ACCESS_DATE D:\work\datav-backend\Admin\Common\AuthController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `datav_sys_setting` [ RunTime:0.0135s ]
+SQL: SELECT `sys_date` FROM `datav_sys_setting` LIMIT 1   [ RunTime:0.0145s ]
+
+[ 2021-09-26T11:56:09+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=all
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000649s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0162s ]
+SQL: SELECT `title`,`measure`,jw_gross as gross,jw_rise as rise,`before_last_rise`,`two_year_rise` FROM `datav_total` WHERE `year` = '2021' AND `month` = 7 AND `title` IN ('地区生产总值','规模以上工业增加值','规模以上工业总产值','全社会固定资产投资','外贸进出口总额','实际吸收外商投资','社会消费品零售总额','一般公共预算收入','一般公共预算支出','珠海机场旅客吞吐量','珠海机场货邮吞吐量','高栏港港口吞吐量')  [ RunTime:0.0187s ]
+
+[ 2021-09-26T11:56:09+08:00 ] 127.0.0.1 /datav-backend/admin.php/EconomyIntroduce/get_data
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000456s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000642s ]
+SQL: SHOW COLUMNS FROM `datav_economy_introduce` [ RunTime:0.0149s ]
+SQL: SELECT * FROM `datav_economy_introduce` WHERE `year` = '2021' AND `month` = 7 LIMIT 1   [ RunTime:0.0261s ]
+
+[ 2021-09-26T11:56:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_county
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000449s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003017s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003043s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0206s ]
+SQL: SELECT distinct title,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 7  [ RunTime:0.0200s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = 2021 AND `month` = 6 AND `title` = '地区生产总值'  [ RunTime:0.0151s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 7 AND `title` <> '地区生产总值'  [ RunTime:0.0164s ]
+
+[ 2021-09-26T11:56:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_country
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001780s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001806s ]
+SQL: SHOW COLUMNS FROM `datav_whole_country` [ RunTime:0.0147s ]
+SQL: SELECT `title`,`measure`,IFNULL(country_gross,'--') as country_gross,`country_rise`,IFNULL(province_gross,'--') as province_gross,`province_rise`,IFNULL(city_gross,'--') as city_gross,`city_rise` FROM `datav_whole_country` WHERE `year` = '2021' AND `month` = 7 ORDER BY id asc  [ RunTime:0.0206s ]
+
+[ 2021-09-26T11:56:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_town
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000615s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000639s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0220s ]
+SQL: SELECT `title`,`measure`,`sz_gross`,`sz_rise`,`hq_gross`,`hq_rise`,`ns_gross`,`ns_rise`,`ps_gross`,`ps_rise` FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 7 ORDER BY id asc  [ RunTime:0.0406s ]
+

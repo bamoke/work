@@ -1,0 +1,102 @@
+[ 2021-09-16T09:51:53+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_date
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001621s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001075s ]
+NOTIC: [8] Undefined index: HTTP_X_ACCESS_DATE D:\work\datav-backend\Admin\Common\AuthController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `datav_sys_setting` [ RunTime:0.0178s ]
+SQL: SELECT `sys_date` FROM `datav_sys_setting` LIMIT 1   [ RunTime:0.0204s ]
+SQL: SELECT * FROM `datav_sys_setting` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0194s ]
+
+[ 2021-09-16T09:51:53+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000945s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001006s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0219s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 7 AND `title` = '规模以上工业增加值' LIMIT 1   [ RunTime:0.0271s ]
+
+[ 2021-09-16T09:51:54+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.034457s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002300s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0405s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 7 AND `title` = '规模以上工业增加值'  [ RunTime:0.0177s ]
+
+[ 2021-09-16T09:51:54+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001923s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000907s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000929s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0286s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-07-01' AND `title` = '规模以上工业增加值' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0336s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '规模以上工业增加值' AND `data_date` = '2021-06-01' LIMIT 20   [ RunTime:0.0191s ]
+
+[ 2021-09-16T09:51:54+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000939s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000972s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0185s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-07' AND `title` = '规模以上工业增加值' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0214s ]
+
+[ 2021-09-16T09:51:54+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000787s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000677s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000709s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0154s ]
+SQL: SELECT `title`,IFNULL(jw_gross,'--') as jw_gross,IFNULL(jw_rise,'--') as jw_rise,IFNULL(zs_gross,'--') as zs_gross,IFNULL(zs_rise,'--') as zs_rise,IFNULL(kfq_gross,'--') as kfq_gross,IFNULL(kfq_rise,'--') as kfq_rise,`measure` FROM `datav_total` WHERE `year` = '2021' AND `month` = 7 AND `title` = '规模以上工业增加值' LIMIT 1   [ RunTime:0.0246s ]
+
+[ 2021-09-16T09:51:54+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000528s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0205s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '规模以上工业增加值'  [ RunTime:0.0210s ]
+
+[ 2021-09-16T09:51:54+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryPillar/get_data?cate=zjz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001276s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001120s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001160s ]
+SQL: SHOW COLUMNS FROM `datav_industry_pillar_zjz` [ RunTime:0.0237s ]
+SQL: SELECT `title`,`com_num`,CEIL(gross) as gross,`rise`,`proportion` FROM `datav_industry_pillar_zjz` WHERE ( `title` <> '合计' AND `title` <> '传统优势'  ) AND `year` = '2021' AND `month` = 7  [ RunTime:0.0198s ]
+
+[ 2021-09-16T09:51:55+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryXdmy/get_data?cate=zjz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000451s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000890s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000926s ]
+SQL: SHOW COLUMNS FROM `datav_industry_xdmy_zjz` [ RunTime:0.0182s ]
+SQL: SELECT `title`,`comnum`,CEIL(jw_gross) as gross,jw_rise as rise FROM `datav_industry_xdmy_zjz` WHERE `year` = '2021' AND `month` = 7  [ RunTime:0.0179s ]
+

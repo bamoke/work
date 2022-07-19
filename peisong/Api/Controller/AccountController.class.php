@@ -13,7 +13,7 @@ class AccountController extends Controller
     }
 
     /**
-     * 手机号绑定
+     * 用户绑定
      */
     public function bind()
     {
@@ -308,10 +308,12 @@ class AccountController extends Controller
         }
         // 从云表获取用户信息
         $YB = new \Common\Common\YbApi();
+
         $YbResult = $YB->getone("车主供应商管理", $accountInfo["object_id"]);
+
         if (!isset($YbResult->objectId)) {
             $backData = array(
-                "code" => "12001",
+                "code" => "12002",
                 "msg" => "数据读取错误",
                 "test" => $YbResult,
             );

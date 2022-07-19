@@ -1,0 +1,236 @@
+<div class="blog-section section">
+    <div class="container pl-0 pr-0">
+        <div class="m-main-banner" id="js-swiper-banner">
+            <div class="swiper-wrapper">
+                <foreach name="banner" item="item">
+                    <IF condition="$item.url neq ''">
+                        <a href="{$item.url}" class="swiper-slide"
+                            style="background-image:url(__UPLOAD__/banner/{$item.img})">
+                        </a>
+                        <else />
+                        <div class="swiper-slide" style="background-image:url(__UPLOAD__/banner/{$item.img})">
+                        </div>
+                    </IF>
+                </foreach>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Job Section Start -->
+<div
+    class="job-section section bg-image-proparty bg_image--2 pt-115 pt-lg-95 pt-md-75 pt-sm-55 pt-xs-45 pb-120 pb-lg-100 pb-md-80 pb-sm-60 pb-xs-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title-wrap mb-45">
+                    <div class="section-title">
+                        <span>JOBS</span>
+                        <h3 class="title">最新职位</h3>
+                    </div>
+                    <!-- <div class="jetapo-tab-menu">
+                                <ul class="nav">
+                                    <li><a class="active show" data-toggle="tab" href="#fullTime"> Full Time </a></li>
+                                    <li><a data-toggle="tab" href="#partTime"> Part Time </a></li>
+                                    <li><a data-toggle="tab" href="#remote"> Remote </a></li>
+                                    <li><a data-toggle="tab" href="#freelancer"> Freelancer </a></li>
+                                    <li><a data-toggle="tab" href="#internship"> Internship </a></li>
+                                </ul>
+                            </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="tab-content">
+                    <div id="fullTime" class="tab-pane fade show active">
+                        <div class="row">
+                            <volist name="jobsList" id="job">
+                            <div class="col-lg-6 mb-30">
+                                <!-- Single Job Start  -->
+                                <div class="single-job">
+                                    <div class="info-top">
+                                        <div class="job-info">
+                                            <div class="job-info-inner">
+                                                <div class="job-info-top">
+                                                    <div class="title-name">
+                                                        <h3 class="job-title">
+                                                            <a href="{$job['realurl']}">{$job['title']}</a>
+                                                        </h3>
+                                                        <div class="employer-name">{$job['company']}</div>
+                                                    </div>
+                                                </div>
+                                                <div>薪资：<span class="job-salary">{$job['wage']}</span></div>
+                                                <div class="job-meta">
+                                                    <div class="job-location"><i class="lnr lnr-map-marker"></i>{$job['addr']}</div>
+
+                                                    <div class="job-type"><i class="lnr lnr-briefcase"></i>{$job['type']}</div>
+
+                                                    <div class="job-date"><i class="lnr lnr-clock"></i>{$job['date']}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Single Job End -->
+                            </div>
+                            </volist>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="all-link-button text-center mt-15">
+                    <a class="ht-btn lg-btn" href="{:U('Jobs/index')}">浏览更多招聘职位</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Job Section End -->
+
+<!-- Blog Section Start  -->
+<div class="blog-section section pt-115 pt-lg-95 pt-md-75 pt-sm-55 pt-xs-45 pb-90 pb-lg-70 pb-md-50 pb-sm-30 pb-xs-20">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title-wrap mb-45">
+                    <div class="section-title">
+                        <span> LATEST NEWS</span>
+                        <h3 class="title"> 人社动态</h3>
+                    </div>
+                    <!-- <div class="jetapo-link">
+                                <a href="#"> Browse All Articles <i class="lnr lnr-chevron-right"></i></a>
+                            </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <foreach name="worknews" item="item">
+                <div class="col-lg-4 col-md-6 mb-30">
+                    <!-- Single Blog Start -->
+                    <div class="single-blog">
+                        <div class="blog-image">
+                            <a href="{$item['realurl']}">
+                                <img src="__WEB_ASSET__/images/blog/blog1.jpg" alt="">
+                            </a>
+                            <!-- <div class="blog-cat">
+                                        <a href="#" rel="category tag">Job Skills</a>
+                                    </div> -->
+                        </div>
+                        <div class="blog-content">
+                            <h4 class="title">
+                                <a href="{$item['realurl']}">{$item['title']}</a>
+                            </h4>
+                            <div class="blog-meta">
+                                <p class="blog-author">
+                                    <i class="lnr lnr-user"></i>
+                                    <span class="text">来源:</span>
+                                    <span class="author">{$item['origin']}</span>
+                                </p>
+                                <p class="blog-date-post">
+                                    <i class="lnr lnr-clock"></i>{$item['date']}
+                                </p>
+                            </div>
+                            <p class="blog-desc">
+                                {$item['description']}
+                            </p>
+                            <a href="{$item['realurl']}" class="read-more">查看详情 <i class="lnr lnr-chevron-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- Single Blog End -->
+                </div>
+            </foreach>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+<!-- Blog Section End -->
+
+<!-- Blog Section Start  -->
+<div
+    class="blog-section section bg-image-proparty bg_image--2 pt-115 pt-lg-95 pt-md-75 pt-sm-55 pt-xs-45 pb-90 pb-lg-70 pb-md-50 pb-sm-30 pb-xs-20">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title-wrap mb-45">
+                    <div class="section-title">
+                        <span> LATEST NEWS</span>
+                        <h3 class="title"> 人社政策</h3>
+                    </div>
+                    <!-- <div class="jetapo-link">
+                                <a href="#"> Browse All Articles <i class="lnr lnr-chevron-right"></i></a>
+                            </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <foreach name="policynews" item="item">
+                <div class="col-lg-4 col-md-6 mb-30">
+                    <!-- Single Blog Start -->
+                    <div class="single-blog" style="background-color:#fff;">
+                        <div class="blog-content">
+                            <h4 class="title">
+                                <a href="{$item['realurl']}">{$item['title']}</a>
+                            </h4>
+                            <div class="blog-meta">
+
+                                <p class="blog-date-post">
+                                    <i class="lnr lnr-clock"></i>{$item['date']}
+                                </p>
+                            </div>
+                            <p class="blog-desc">
+                                {$item['description']}
+                            </p>
+                            <a href="{$item['realurl']}" class="read-more">查看详情 <i class="lnr lnr-chevron-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- Single Blog End -->
+                </div>
+            </foreach>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+<!-- Blog Section End -->
+
+<footer class="link-section section pt-35 pb-35">
+
+    <!--Footer bottom start-->
+    <div class="container">
+        <ul class="row link-box">
+            <li class="col-lg-2 mb-10"><a target="_blank"
+                    href="http://www.career.zju.edu.cn/jyxt/jyweb/webIndex.zf"><span>浙江大学</span></a></li>
+            <li class="col-lg-2 mb-10"><a target="_blank" href="http://jobs.xtu.edu.cn/"><span>湘潭大学</span></a></li>
+            <li class="col-lg-2 mb-10"><a target="_blank" href="http://www.cpu.edu.cn/"><span>中国药科大学</span></a></li>
+            <li class="col-lg-2 mb-10"><a target="_blank" href="http://www.gxust.edu.cn/"><span>桂林电子科技大学</span></a></li>
+            <li class="col-lg-2 mb-10"><a target="_blank" href="http://jy.hnust.edu.cn/"><span>湖南科技大学</span></a></li>
+            <li class="col-lg-2 mb-10"><a target="_blank" href="http://www.glut.edu.cn/"><span>桂林理工大学</span></a></li>
+            <li class="col-lg-2 mb-10"><a target="_blank" href="http://www.zmu.edu.cn/"><span>遵义医科大学</span></a></li>
+            <li class="col-lg-2 mb-10"><a href="http://www.gxust.edu.cn/" target="_blank"><span>广西科技大学</span></a></li>
+            <li class="col-lg-2 mb-10"><a href="http://jy.hnie.edu.cn/" target="_blank"><span>湖南工程学院</span></a></li>
+            <li class="col-lg-2 mb-10"><a href="http://www.zhuhai.gov.cn/" target="_blank"><span>珠海市政府</span></a></li>
+            <li class="col-lg-2 mb-10"><a href="http://job.jluzh.com" target="_blank"><span>吉林大学珠海学院就业网</span></a></li>
+            <li class="col-lg-2 mb-10"><a href="http://jyxxw.zhcpt.edu.cn/"
+                    target="_blank"><span>珠海市城市职业技术学院就业网</span></a></li>
+            <li class="col-lg-2 mb-10"><a href="http://www.zhac.net/xin/jiuye/Article_Show.asp?NID=104&amp;Type=1"
+                    target="_blank"><span>珠海艺术职业学院就业网</span></a></li>
+            <li class="col-lg-2 mb-10"><a href="http://gdit.jobsys.cn/unijob/index.php/web/Index/index"
+                    target="_blank"><span>广东科学技术职业学院就业网</span></a></li>
+        </ul>
+    </div>
+    <!--Footer bottom end-->
+
+</footer>

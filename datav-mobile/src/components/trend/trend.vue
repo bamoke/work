@@ -8,11 +8,11 @@
 <template>
   <div style="display: inline-block">
     <div class="trend-wrap" :style="style">
-      <span class="rate-num">{{ rate }}%</span>
-      <Icon
-        :type="rate >= 0 ? 'md-arrow-dropup' : 'md-arrow-dropdown'"
+      <van-icon
+        :name="rate >= 0 ? 'arrow-up' : 'arrow-down'"
         class="trend-icon"
       />
+      <span class="rate-num">{{ rate }}%</span>
     </div>
   </div>
 </template>
@@ -30,10 +30,10 @@ export default {
     },
     size: {
       type: Number,
-      default: 16,
+      default: 14,
     },
     rate: {
-      type: Number,
+      type: [String, Number],
       default: 0,
     },
     fill: {
@@ -66,13 +66,12 @@ export default {
 
 <style lang="less" scoped>
 .trend-wrap {
-  display: flex;
-  align-items: flex-end;
+  // display: flex;
+  // align-items: c;
   padding-left: 6px;
   .trend-icon {
-    width: 0.125rem;
-    height: 0.125rem;
-    font-size: 24px;
+    margin-right: 4px;
+    // font-size: 24px;
   }
 }
 </style>

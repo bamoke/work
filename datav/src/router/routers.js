@@ -7,8 +7,8 @@
  */
 import Main from '@/components/main/main'
 import Child from '@/components/main/child'
-// import config from '@/config'
-const webBaseUrl = ""
+import config from '@/config'
+const webBaseUrl = config.webBaseUrl
 
 /**
  * iview-admin中meta除了原生参数外可配置的参数:
@@ -31,7 +31,7 @@ export default [
   {
     path: webBaseUrl + '/',
     name: 'home',
-    redirect: '/home',
+    redirect: webBaseUrl + '/gdp',
     component: Main,
     meta: {
       hideInMenu: true,
@@ -39,35 +39,32 @@ export default [
     },
     children: [
       {
-        path: webBaseUrl + '/home',
-        name: 'home',
-        meta: {
-          title: '总览'
-        },
-        component: () => import('@/view/overview/index-mobile')
-        // component: () => import('@/view/index/index-3d-light')
-      },
-      {
         path: webBaseUrl + '/gdp',
         name: 'gdp',
         meta: {
           title: '地区生产总值'
         },
-        component: () => import('@/view/zongzhi/gdp-mobile')
-        // component: () => import('@/view/zongzhi/gdp')
+        component: () => import('@/view/zongzhi/gdp')
       },
       {
-        path: webBaseUrl + '/gongye',
-        name: 'gongye',
+        path: webBaseUrl + '/gongye_zjz',
+        name: 'gongye_zjz',
         meta: {
-          title: '工业经济'
+          title: '工业增加值'
         },
-        component: () => import('@/view/gongye/index-mobile')
-        // component: () => import('@/view/gongye/index')
+        component: () => import('@/view/gongye/zengjiazhi')
+      },
+      {
+        path: webBaseUrl + '/gongye_zcz',
+        name: 'gongye_zcz',
+        meta: {
+          title: '工业总产值'
+        },
+        component: () => import('@/view/gongye/zongchanzhi')
       },
       {
         path: webBaseUrl + '/investment',
-        name: 'touzi',
+        name: 'investment',
         meta: {
           title: '固定资产投资'
         },
@@ -103,8 +100,9 @@ export default [
         meta: {
           title: '一般公共预算'
         },
-        component: () => import('@/view/finance/finance')
+        component: () => import('@/view/finance/index')
       },
+
       {
         path: webBaseUrl + '/transport',
         name: 'transport',

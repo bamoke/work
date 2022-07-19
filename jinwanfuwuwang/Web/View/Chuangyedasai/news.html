@@ -1,0 +1,13 @@
+<div class="main-wrapper bg-white">
+    <div class="content-wrap">
+        <div class="news-box">
+            <foreach name="news" item="news">
+                <a href="{$news.url}" class="item" target="_blank">
+                    <i class="icon"></i>
+                    <div class="title">{$news.title}</div>
+                    <div class="date">{$news.date}</div>
+                </a>
+            </foreach>
+        </div>
+    </div>
+</div>

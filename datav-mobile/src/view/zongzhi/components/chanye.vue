@@ -7,22 +7,30 @@
 -->
 <template>
   <div class="content-wrap">
-    <ModuleCard title="地区生产总值按产业情况" style="min-height: 100%">
-      <div class="industry-wrap">
-        <div class="item">
-
-          <div id="chart-chanye-gross" style="height: 280px"></div>
-        </div>
-        <div class="item">
-
-          <div id="chart-chanye-proportion" style="height: 280px"></div>
-        </div>
-        <div class="item">
-
-          <div id="chart-chanye-gdp" style="height: 280px"></div>
-        </div>
+    <div class="l-row l-row-bt m-content-row">
+      <div class="item-wrap">
+        <ModuleCard title="一、二、三产业地区生产总值及同比">
+          <div id="chart-chanye-gross" style="height: 220px"></div>
+        </ModuleCard>
       </div>
-    </ModuleCard>
+      <div class="item-wrap">
+        <ModuleCard title="一、二、三产业拉动GDP增长(百分点)">
+          <div id="chart-chanye-gdp" style="height: 220px"></div>
+        </ModuleCard>
+      </div>
+    </div>
+    <div class="l-row l-row-bt m-content-row">
+      <div class="item-wrap">
+        <ModuleCard title="一、二、三产业比重">
+          <div id="chart-chanye-proportion" style="height: 220px"></div>
+        </ModuleCard>
+      </div>
+      <div class="item-wrap">
+        <ModuleCard title="历年一、二、三产业比重">
+          <div id="chart-chanye-history" style="height: 220px"></div>
+        </ModuleCard>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,22 +43,21 @@ export default {
       echartInstanceGross: null,
       echartInstanceProportion: null,
       echartInstanceGdp: null,
+      echartInstanceHistory: null,
+      chartHistoryData: [],
     };
   },
   methods: {
     nimabi() {
-      var newValue = this.chartData;
       this.echartInstanceGross.setOption({
-        dataset: { source: newValue.data },
+        dataset: { source: this.chartData },
         grid: {
-          top: 60,
+          top: 40,
           left: 60,
-          right: 60,
-          bottom: 20,
+          right: 40,
+          bottom: 40,
         },
-        title:{
-          text:"产业总量及同比"
-        },
+
         tooltip: { trigger: "axis" },
         legend: {
           show: true,
@@ -101,10 +108,8 @@ export default {
       // proportion bizhong
 
       this.echartInstanceProportion.setOption({
-        dataset: { source: newValue.data },
-        title:{
-          text:"各产业比重"
-        },
+        dataset: { source: this.chartData },
+
         tooltip: {
           trigger: "item",
         },
@@ -133,26 +138,23 @@ export default {
       //
 
       this.echartInstanceGdp.setOption({
-        dataset: { source: newValue.data },
+        dataset: { source: this.chartData },
         grid: {
-          top: 60,
+          top: 40,
           left: 40,
-          right: 60,
-          bottom: 20,
+          right: 40,
+          bottom: 40,
         },
-        tooltip: { trigger: "axis",  },
+        tooltip: { trigger: "axis" },
         legend: {
           show: true,
           left: "right",
           top: "top",
         },
-        title:{
-          text:"拉动GDP增长(百分点)"
-        },
+
         xAxis: {
           type: "category",
           axisLabel: {
-
             // rotate: -45,
             formatter: function (value) {
               return value;
@@ -181,7 +183,6 @@ export default {
             label: {
               show: true,
               position: "top",
-
             },
             encode: {
               x: 0,
@@ -190,6 +191,8 @@ export default {
           },
         ],
       });
+
+      // history
     },
   },
 
@@ -211,10 +214,66 @@ export default {
       appTheme.echartTheme
     );
 
+    this.echartInstanceHistory = echart.init(
+      document.getElementById("chart-chanye-history"),
+      appTheme.echartTheme
+    );
+
     ///
-    Api.base.get_sczz().then((res) => {
-      this.chartData = res.data.cy;
+    Api.base.get_gdp_hangye({ cate: "按产业" }).then((res) => {
+      this.chartData = res.data.list;
       this.nimabi();
+    });
+
+    Api.base.get_gdp_chanye_history().then((res) => {
+      this.echartInstanceHistory.setOption({
+        dataset: { source: res.data.list },
+        grid: {
+          top: 40,
+          left: 60,
+          right: 40,
+          bottom: 40,
+        },
+
+        tooltip: { trigger: "axis" },
+        legend: {
+          show: true,
+          left: "right",
+          top: "top",
+        },
+        xAxis: {
+          type: "category",
+          axisLabel: {
+            // rotate: -45,
+            formatter: function (value) {
+              return value;
+              // return formatStringWrap(value, 4);
+            },
+          },
+        },
+        yAxis: [
+          {
+            type: "value",
+            axisLabel: {
+              formatter: "{value}",
+            },
+            splitLine: {
+              show: true,
+            },
+          },
+        ],
+        series: [
+          {
+            type: "line",
+          },
+          {
+            type: "line",
+          },
+          {
+            type: "line",
+          },
+        ],
+      });
     });
   },
 };
@@ -228,7 +287,7 @@ export default {
   justify-content: space-between;
   color: #fff;
   .item {
-    flex:0 0 auto;
+    flex: 0 0 auto;
     margin-bottom: 24px;
     width: 49.75%;
     .section {

@@ -1,0 +1,26 @@
+[ 2021-07-23T09:36:37+08:00 ] ::1 /datav-backend/admin.php/KeyEnterprises/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001825s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002756s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002815s ]
+NOTIC: [8] Undefined index: HTTP_X_ACCESS_DATE D:\work\datav-backend\Admin\Common\AuthController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `datav_sys_setting` [ RunTime:0.0122s ]
+SQL: SELECT `sys_date` FROM `datav_sys_setting` LIMIT 1   [ RunTime:0.0128s ]
+SQL: SHOW COLUMNS FROM `datav_com_key` [ RunTime:0.0150s ]
+SQL: SELECT distinct comname,`lng`,`lat` FROM `datav_com_key` WHERE ( lng is null )  [ RunTime:0.0277s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000079s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.048753s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048809s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.012282s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.012324s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002792s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002842s ]
+

@@ -8,9 +8,9 @@
 <template>
   <div class="effect-circle-wrap">
     <div class="info-box">
-      <div class="title">{{ data.title }}</div>
+      <div class="title">{{ data.area }}</div>
       <div class="count">
-        <span class="num">{{ data.num }}</span><span class="measure">{{ data.measure }}</span>
+        <span class="num">{{ data.gross }}</span><span class="measure">{{ data.measure }}</span>
       </div>
       <div class="rise">同比<Trend :rate="data.rise" /></div>
     </div>
@@ -39,11 +39,12 @@ export default {
   width: 320px;
   height: 200px;
   color: #fff;
-  background-image:url(../../assets/icon/rotate-effect.png);
+  background-image:url(/bi/assets/icon/rotate-effect.png);
   background-position: center 80px ;
   background-repeat: no-repeat;
   .title {
       font-size: 18px;
+      font-weight: bold;
   }
     .num {
         font-size: 42px;

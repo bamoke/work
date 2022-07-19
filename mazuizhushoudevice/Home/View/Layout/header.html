@@ -1,0 +1,21 @@
+<div id="loadingProgress"></div>
+<div id="header" class="">
+    <div class="g-main-wrap">
+        <div class="title">金英港湾平台商家优惠券核销</div>
+        <div class="home-top clearfix">
+            <img src="{$businessInfo['thumb']}" alt="" srcset="" class="thumb">
+            <div class="right-info">
+                <p class="business-name">{$businessInfo["title"]}</p>
+                <p>合同有效期至：{$businessInfo['end_date']}</p>
+                <p>创建时间：{$businessInfo["create_time"]}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="g-main-wrap">
+    <ul class="nav nav-tabs">
+        <li class="{$curAcName=='index'?'active':''}"><a href="{:U('index')}">优惠券核销</a></li>
+        <li class="{$curAcName=='coupon'?'active':''}"><a href="{:U('coupon')}">优惠券</a></li>
+        <li class="{$curAcName=='log'?'active':''}"><a href="{:U('log')}">领券记录</a></li>
+    </ul>
+</div>

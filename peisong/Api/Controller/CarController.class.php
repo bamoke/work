@@ -47,7 +47,8 @@ class CarController extends Auth
                 "物品名称" => $val['title'],
                 "物品编码" => $val['code'],
                 "申购单位" => $val["unitname"],
-                "数量" => intval($val['buynum']),
+                "数量" => $val['buynum'],
+                "备注"      =>$val["remarks"],
                 "单价" => $val["price"],
                 "金额" => (intval($val['buynum']) * floatval($val["price"])),
 

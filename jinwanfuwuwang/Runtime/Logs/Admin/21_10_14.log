@@ -1,0 +1,1617 @@
+[ 2021-10-14T09:46:44+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000814s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000681s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000700s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0342s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0202s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000055s ]
+NOTIC: [8] Undefined variable: mainInfo D:\work\jinwanfuwuwang\Runtime\Cache\Admin\8ac865c0e5f5d3faeebda5b5bf74d3ce.php 第 116 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006862s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006881s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000554s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000800s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000825s ]
+
+[ 2021-10-14T09:47:33+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000654s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0161s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0285s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000114s ]
+NOTIC: [8] Undefined variable: mainInfo D:\work\jinwanfuwuwang\Runtime\Cache\Admin\8ac865c0e5f5d3faeebda5b5bf74d3ce.php 第 116 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014795s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014831s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001006s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001037s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001495s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001535s ]
+
+[ 2021-10-14T09:49:56+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/do_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000622s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000715s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000738s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0173s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0571s ]
+SQL: SHOW COLUMNS FROM `b_jobs` [ RunTime:0.0263s ]
+SQL: INSERT INTO `b_jobs` (`title`,`company`,`wage`,`addr`,`type`,`person_limit`,`end_date`,`link`,`contact_person`,`contact_phone`,`contact_email`,`content`) VALUES ('清洁工','珠海市贤择人力资源有限公司','50000-80000','香洲','全职','5','2021-10-15','','11','22','33','<p>eqweqw</p>') [ RunTime:0.0177s ]
+
+[ 2021-10-14T09:49:57+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000556s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0203s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0282s ]
+SQL: SHOW COLUMNS FROM `b_jobs` [ RunTime:0.0234s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_jobs` LIMIT 1   [ RunTime:0.0586s ]
+SQL: SELECT *,IF(person_limit = 0,'不限',person_limit) as person_limit FROM `b_jobs` LIMIT 0,15   [ RunTime:0.0291s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000112s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016117s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016163s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001028s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001311s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001340s ]
+
+[ 2021-10-14T09:50:01+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000817s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0256s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0264s ]
+SQL: SHOW COLUMNS FROM `b_jobs` [ RunTime:0.0314s ]
+SQL: SELECT * FROM `b_jobs` WHERE ( id =1 ) LIMIT 1   [ RunTime:0.0226s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000156s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018691s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018744s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001272s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001309s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001849s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001900s ]
+
+[ 2021-10-14T09:50:11+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/do_update
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000548s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001525s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001553s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0272s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0315s ]
+SQL: SHOW COLUMNS FROM `b_jobs` [ RunTime:0.0245s ]
+SQL: UPDATE `b_jobs` SET `id`='1',`title`='清洁工',`status`='1',`company`='珠海市贤择人力资源有限公司',`wage`='50000-80000',`addr`='香洲',`type`='兼职',`person_limit`='5',`end_date`='2021-10-15',`link`='',`contact_person`='11',`contact_phone`='22',`contact_email`='33',`content`='<p>eqweqw</p>' WHERE ( id=1 ) [ RunTime:0.0298s ]
+
+[ 2021-10-14T09:50:12+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000558s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000576s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0151s ]
+SQL: SHOW COLUMNS FROM `b_jobs` [ RunTime:0.0152s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_jobs` LIMIT 1   [ RunTime:0.0183s ]
+SQL: SELECT *,IF(person_limit = 0,'不限',person_limit) as person_limit FROM `b_jobs` LIMIT 0,15   [ RunTime:0.0151s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000091s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016930s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016967s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000778s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000800s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001075s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001099s ]
+
+[ 2021-10-14T09:50:15+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000643s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0155s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0493s ]
+SQL: SHOW COLUMNS FROM `b_jobs` [ RunTime:0.0149s ]
+SQL: SELECT * FROM `b_jobs` WHERE ( id =1 ) LIMIT 1   [ RunTime:0.0207s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000152s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017415s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017468s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001276s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001307s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001479s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001521s ]
+
+[ 2021-10-14T09:50:33+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000557s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0142s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `b_jobs` [ RunTime:0.0169s ]
+SQL: SELECT * FROM `b_jobs` WHERE ( id =1 ) LIMIT 1   [ RunTime:0.0171s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000155s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016783s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016835s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001158s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001196s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001372s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001412s ]
+
+[ 2021-10-14T09:51:53+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/do_update
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000710s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000749s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0177s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0195s ]
+SQL: SHOW COLUMNS FROM `b_jobs` [ RunTime:0.0179s ]
+SQL: UPDATE `b_jobs` SET `id`='1',`title`='清洁工',`status`='1',`company`='珠海市贤择人力资源有限公司',`wage`='50000-80000',`addr`='香洲',`type`='兼职',`person_limit`='5',`end_date`='2021-10-15',`link`='',`contact_person`='11',`contact_phone`='22',`contact_email`='334',`content`='<p>eqweqw4</p>' WHERE ( id=1 ) [ RunTime:0.0215s ]
+
+[ 2021-10-14T09:51:55+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0177s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0194s ]
+SQL: SHOW COLUMNS FROM `b_jobs` [ RunTime:0.0162s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_jobs` LIMIT 1   [ RunTime:0.0210s ]
+SQL: SELECT *,IF(person_limit = 0,'不限',person_limit) as person_limit FROM `b_jobs` LIMIT 0,15   [ RunTime:0.0168s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000081s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013770s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013816s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000866s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000891s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000999s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001023s ]
+
+[ 2021-10-14T09:51:57+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000444s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000655s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0232s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0439s ]
+SQL: SHOW COLUMNS FROM `b_jobs` [ RunTime:0.0189s ]
+SQL: SELECT * FROM `b_jobs` WHERE ( id =1 ) LIMIT 1   [ RunTime:0.0233s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012637s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012680s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000946s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000979s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001401s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001444s ]
+
+[ 2021-10-14T09:52:05+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/do_update
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000686s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0206s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0197s ]
+SQL: SHOW COLUMNS FROM `b_jobs` [ RunTime:0.0205s ]
+SQL: UPDATE `b_jobs` SET `id`='1',`title`='清洁工',`status`='1',`company`='珠海市贤择人力资源有限公司',`wage`='50000-80000',`addr`='香洲',`type`='全职',`person_limit`='5',`end_date`='2021-10-15',`link`='',`contact_person`='113',`contact_phone`='222',`contact_email`='334',`content`='<p>eqweqw4</p>' WHERE ( id=1 ) [ RunTime:0.0191s ]
+
+[ 2021-10-14T09:52:06+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000611s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0153s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0193s ]
+SQL: SHOW COLUMNS FROM `b_jobs` [ RunTime:0.0156s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_jobs` LIMIT 1   [ RunTime:0.0154s ]
+SQL: SELECT *,IF(person_limit = 0,'不限',person_limit) as person_limit FROM `b_jobs` LIMIT 0,15   [ RunTime:0.0232s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015637s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015683s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000984s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001400s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001430s ]
+
+[ 2021-10-14T09:52:13+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000690s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000738s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0230s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0246s ]
+SQL: SHOW COLUMNS FROM `b_jobs` [ RunTime:0.0273s ]
+SQL: SELECT * FROM `b_jobs` WHERE ( id =1 ) LIMIT 1   [ RunTime:0.0238s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000141s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016433s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016477s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001173s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001211s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002298s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002340s ]
+
+[ 2021-10-14T09:52:55+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/do_update
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000590s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000791s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000813s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0208s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0184s ]
+SQL: SHOW COLUMNS FROM `b_jobs` [ RunTime:0.0187s ]
+SQL: UPDATE `b_jobs` SET `id`='1',`title`='清洁工',`status`='1',`company`='珠海市贤择人力资源有限公司',`wage`='50000-80000',`addr`='香洲',`type`='兼职',`person_limit`='5',`end_date`='2021-10-15',`link`='',`contact_person`='113',`contact_phone`='222',`contact_email`='334',`content`='<p>eqweqw4</p>' WHERE ( id=1 ) [ RunTime:0.0219s ]
+
+[ 2021-10-14T09:52:56+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000572s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0190s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0183s ]
+SQL: SHOW COLUMNS FROM `b_jobs` [ RunTime:0.0164s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_jobs` LIMIT 1   [ RunTime:0.0185s ]
+SQL: SELECT *,IF(person_limit = 0,'不限',person_limit) as person_limit FROM `b_jobs` LIMIT 0,15   [ RunTime:0.0263s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000103s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015716s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015763s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001115s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001147s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001670s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001706s ]
+
+[ 2021-10-14T09:53:07+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0146s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `b_jobs` [ RunTime:0.2278s ]
+SQL: SELECT * FROM `b_jobs` WHERE ( id =1 ) LIMIT 1   [ RunTime:0.0177s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013510s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013555s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000973s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001545s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001590s ]
+
+[ 2021-10-14T09:53:07+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000413s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0182s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0167s ]
+SQL: SHOW COLUMNS FROM `b_jobs` [ RunTime:0.0236s ]
+SQL: SELECT * FROM `b_jobs` WHERE ( id =1 ) LIMIT 1   [ RunTime:0.0269s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008259s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008288s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000447s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000658s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000681s ]
+
+[ 2021-10-14T09:53:43+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001172s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000693s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0144s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0224s ]
+SQL: SHOW COLUMNS FROM `b_jobs` [ RunTime:0.0159s ]
+SQL: SELECT * FROM `b_jobs` WHERE ( id =1 ) LIMIT 1   [ RunTime:0.0210s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020423s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020473s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001237s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001410s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001860s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001910s ]
+
+[ 2021-10-14T09:54:21+08:00 ] ::1 /jinwanfuwuwang/admin.php/Jobs/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000763s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000702s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0278s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0510s ]
+SQL: SHOW COLUMNS FROM `b_jobs` [ RunTime:0.0332s ]
+SQL: SELECT * FROM `b_jobs` WHERE ( id =1 ) LIMIT 1   [ RunTime:0.0224s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000119s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013784s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013823s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001016s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001046s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001401s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001440s ]
+
+[ 2021-10-14T09:55:41+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000089s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000564s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0368s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0147s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0167s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0217s ]
+SQL: SELECT * FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0291s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000125s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038989s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039043s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001144s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001184s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001660s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001701s ]
+
+[ 2021-10-14T09:55:44+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/banner_edit/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000560s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000673s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0231s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0525s ]
+ERR: 非法操作:banner_edit
+
+[ 2021-10-14T09:55:46+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000597s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000617s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0222s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0156s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0212s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0352s ]
+SQL: SELECT * FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0477s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000060s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007599s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007623s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000680s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000911s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000931s ]
+
+[ 2021-10-14T09:55:49+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/banner_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000560s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000671s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0256s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0292s ]
+ERR: 非法操作:banner_add
+
+[ 2021-10-14T09:55:51+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000414s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000865s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000889s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0201s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0165s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0223s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0312s ]
+SQL: SELECT * FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0202s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000115s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016445s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016492s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001442s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001474s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001570s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001605s ]
+
+[ 2021-10-14T09:55:57+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000636s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000653s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0185s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0354s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0230s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0229s ]
+SQL: SELECT * FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0184s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000105s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014578s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014620s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000867s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000895s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001165s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001189s ]
+
+[ 2021-10-14T09:59:50+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000643s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.2346s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0204s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0229s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0235s ]
+SQL: SELECT * FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0237s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000110s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015813s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015854s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000938s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000968s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001322s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001351s ]
+
+[ 2021-10-14T10:06:54+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000490s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000756s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000772s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0175s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0217s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0526s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0197s ]
+SQL: SELECT * FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0192s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000075s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000119s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015361s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015415s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001521s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001559s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001478s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001507s ]
+
+[ 2021-10-14T10:06:55+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000506s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000789s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0161s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0274s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0175s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0200s ]
+SQL: SELECT * FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0276s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000089s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012545s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012587s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000964s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000993s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001376s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001407s ]
+
+[ 2021-10-14T10:07:53+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000636s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000653s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0233s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0196s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0202s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0317s ]
+SQL: SELECT * FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0164s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000045s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006238s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006258s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000521s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001115s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001131s ]
+
+[ 2021-10-14T10:08:20+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/banner_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001154s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001175s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0220s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0165s ]
+ERR: 非法操作:banner_add
+
+[ 2021-10-14T10:08:22+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000557s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000573s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0191s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0214s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0147s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0179s ]
+SQL: SELECT * FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0273s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000119s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015163s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015211s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001149s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001186s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001629s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001668s ]
+
+[ 2021-10-14T10:09:25+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000550s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000567s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0154s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0154s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0278s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0277s ]
+SQL: SELECT * FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0196s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000042s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005980s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000591s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000667s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000682s ]
+
+[ 2021-10-14T10:09:27+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000449s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0228s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0312s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018379s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018415s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000589s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000694s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000708s ]
+
+[ 2021-10-14T10:10:59+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000715s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000736s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0192s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0236s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0345s ]
+NOTIC: [2] Use of undefined constant ROOT_DIR - assumed 'ROOT_DIR' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Controller\BannerController.class.php 第 235 行.
+
+[ 2021-10-14T10:11:02+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000549s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0214s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0169s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0163s ]
+NOTIC: [2] Use of undefined constant ROOT_DIR - assumed 'ROOT_DIR' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Controller\BannerController.class.php 第 235 行.
+
+[ 2021-10-14T10:11:06+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0271s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0228s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0176s ]
+NOTIC: [2] Use of undefined constant ROOT_DIR - assumed 'ROOT_DIR' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Controller\BannerController.class.php 第 235 行.
+
+[ 2021-10-14T10:12:08+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000428s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000818s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000873s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0214s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0181s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0166s ]
+NOTIC: [2] Use of undefined constant ROOT - assumed 'ROOT' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Controller\BannerController.class.php 第 235 行.
+
+[ 2021-10-14T10:12:34+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000587s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0226s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0237s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0156s ]
+NOTIC: [2] Use of undefined constant ROOT - assumed 'ROOT' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Controller\BannerController.class.php 第 236 行.
+
+[ 2021-10-14T10:12:38+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000439s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000634s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0156s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0190s ]
+NOTIC: [2] Use of undefined constant ROOT - assumed 'ROOT' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Controller\BannerController.class.php 第 236 行.
+
+[ 2021-10-14T10:12:41+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0270s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0253s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0209s ]
+NOTIC: [2] Use of undefined constant ROOT - assumed 'ROOT' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Controller\BannerController.class.php 第 236 行.
+
+[ 2021-10-14T10:14:00+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000671s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0195s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0262s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0257s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `b_banner` (`position_key`,`sort`,`url`,`img`) VALUES ('1','0','','0cd3e6ff9bbc807da43dbf4acebb4088.jpg') [ RunTime:0.0215s ]
+
+[ 2021-10-14T10:14:01+08:00 ] ::1 /jinwanfuwuwang/admin.php/Sys/banner
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000449s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001906s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001934s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0184s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0190s ]
+ERR: 非法操作:banner
+
+[ 2021-10-14T10:14:09+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000708s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000757s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0161s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0171s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000054s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000087s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010435s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010474s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000939s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000969s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001255s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001286s ]
+
+[ 2021-10-14T10:14:12+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000702s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000721s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0348s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0217s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0261s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0345s ]
+SQL: SELECT * FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0212s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000043s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008457s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008490s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000507s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000693s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000707s ]
+
+[ 2021-10-14T10:14:12+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/0cd3e6ff9bbc807da43dbf4acebb4088.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+
+[ 2021-10-14T10:19:31+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000731s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000749s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0182s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0221s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0165s ]
+SQL: SELECT `id`,`description`,`url`,`status` FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0309s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+NOTIC: [8] Undefined index: img D:\work\jinwanfuwuwang\Runtime\Cache\Admin\ab8c5e95a9d4c87a817a1528fd669aee.php 第 86 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016146s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016187s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001006s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001035s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001364s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001390s ]
+
+[ 2021-10-14T10:19:39+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000462s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000680s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0228s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0255s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0146s ]
+SQL: SELECT * FROM `b_banner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0150s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000136s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016638s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016688s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001604s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001645s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001738s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001776s ]
+
+[ 2021-10-14T10:19:49+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/update
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000543s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000881s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000900s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0165s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0174s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0174s ]
+SQL: SELECT * FROM `b_banner` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0194s ]
+SQL: UPDATE `b_banner` SET `id`='1',`sort`='0',`status`='1',`description`='12323',`url`='' WHERE ( id=1 ) [ RunTime:0.0309s ]
+
+[ 2021-10-14T10:19:50+08:00 ] ::1 /jinwanfuwuwang/admin.php/Sys/banner
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000570s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0178s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0201s ]
+ERR: 非法操作:banner
+
+[ 2021-10-14T10:20:23+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0179s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0231s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0162s ]
+SQL: SELECT * FROM `b_banner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0219s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013777s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013821s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000767s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000794s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001385s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001422s ]
+
+[ 2021-10-14T10:20:47+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/update
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000605s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000734s ]
+ERR: SQLSTATE[HY000] [2002] �������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+
+
+[ 2021-10-14T10:20:48+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001356s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000699s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000720s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0168s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0176s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0304s ]
+SQL: SELECT * FROM `b_banner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0186s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000113s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016823s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016867s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001267s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001304s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001176s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001207s ]
+
+[ 2021-10-14T10:20:48+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001141s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001166s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0139s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0285s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0222s ]
+SQL: SELECT * FROM `b_banner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0216s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000116s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015461s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015508s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001235s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001270s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002427s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002472s ]
+
+[ 2021-10-14T10:20:50+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/update
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000685s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000584s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0183s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0187s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0211s ]
+SQL: SELECT * FROM `b_banner` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0225s ]
+SQL: UPDATE `b_banner` SET `id`='1',`sort`='0',`status`='1',`description`='12323',`url`='' WHERE ( id=1 ) [ RunTime:0.0230s ]
+
+[ 2021-10-14T10:20:52+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000612s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0196s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0149s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0233s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0148s ]
+SQL: SELECT `id`,`description`,`url`,`status` FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0178s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+NOTIC: [8] Undefined index: img D:\work\jinwanfuwuwang\Runtime\Cache\Admin\ab8c5e95a9d4c87a817a1528fd669aee.php 第 86 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014610s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014660s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001281s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001323s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001564s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001602s ]
+
+[ 2021-10-14T10:21:14+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000486s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000646s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0242s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0177s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0180s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0270s ]
+SQL: SELECT `id`,`description`,`url`,`status` FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0262s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+NOTIC: [8] Undefined index: img D:\work\jinwanfuwuwang\Runtime\Cache\Admin\ab8c5e95a9d4c87a817a1528fd669aee.php 第 86 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015657s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015699s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001161s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001195s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001624s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001660s ]
+
+[ 2021-10-14T10:45:17+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000666s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000683s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0285s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0425s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0174s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0170s ]
+SQL: SELECT `id`,`description`,`url`,`status` FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0254s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000058s ]
+NOTIC: [8] Undefined index: img D:\work\jinwanfuwuwang\Runtime\Cache\Admin\ab8c5e95a9d4c87a817a1528fd669aee.php 第 86 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008021s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008042s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000679s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000698s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000725s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000741s ]
+
+[ 2021-10-14T10:45:57+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000551s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000734s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000752s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0139s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0172s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0148s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0191s ]
+SQL: SELECT `id`,`description`,`url`,`status` FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0185s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000104s ]
+NOTIC: [8] Undefined index: img D:\work\jinwanfuwuwang\Runtime\Cache\Admin\ab8c5e95a9d4c87a817a1528fd669aee.php 第 86 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016022s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016063s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001174s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001208s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001535s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001569s ]
+
+[ 2021-10-14T10:47:40+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000661s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0264s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0313s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0198s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0217s ]
+SQL: SELECT `id`,`description`,`url`,`status`,CONCAT('/jinwanfuwuwang/Uploads/banner/',img) as img FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0221s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000112s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016464s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016525s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000963s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000992s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001319s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001349s ]
+
+[ 2021-10-14T10:48:01+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000742s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0183s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0204s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0210s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0228s ]
+SQL: SELECT `id`,`description`,`url`,`status`,CONCAT('/jinwanfuwuwang/Uploads/banner/',img) as img FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0180s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000093s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013809s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013849s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001069s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001099s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001469s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001502s ]
+
+[ 2021-10-14T10:48:09+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000451s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000640s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000657s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0178s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0183s ]
+SQL: SELECT * FROM `b_banner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0202s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000122s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015671s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015719s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001243s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001277s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001614s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001650s ]
+
+[ 2021-10-14T10:49:18+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000664s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0194s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0224s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0195s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0192s ]
+SQL: SELECT `id`,`description`,`url`,`status`,`img` FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0182s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016465s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016524s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001263s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001302s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001722s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001761s ]
+
+[ 2021-10-14T10:49:36+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000417s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000553s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0190s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0215s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0209s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0185s ]
+SQL: SELECT `id`,`description`,`url`,`status`,`img` FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0176s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000111s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014461s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014507s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001193s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001233s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002015s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002063s ]
+
+[ 2021-10-14T10:49:52+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000417s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000543s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000560s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0173s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0726s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0241s ]
+SQL: SELECT * FROM `b_banner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0177s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013033s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013080s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001244s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001281s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001422s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001459s ]
+
+[ 2021-10-14T10:50:04+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/update
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000623s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000639s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0348s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0314s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0185s ]
+SQL: SELECT * FROM `b_banner` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0302s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] unlink(D:\work\jinwanfuwuwang//Uploads/banner/): Is a directory D:\work\jinwanfuwuwang\Admin\Controller\BannerController.class.php 第 109 行.
+SQL: UPDATE `b_banner` SET `id`='1',`sort`='0',`status`='1',`description`='12323',`url`='',`img`='43434f309a0aca6204053188a2074d63.jpg' WHERE ( id=1 ) [ RunTime:0.0215s ]
+
+[ 2021-10-14T10:50:06+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000970s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000686s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0209s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0176s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0180s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0191s ]
+SQL: SELECT `id`,`description`,`url`,`status`,`img` FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0187s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000091s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016745s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016786s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001031s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001061s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001553s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001587s ]
+
+[ 2021-10-14T10:54:49+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000571s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000808s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0307s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0278s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0313s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0189s ]
+SQL: SELECT `id`,`description`,`url`,`status`,`img` FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0224s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000101s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014167s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014202s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000926s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000952s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001246s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001272s ]
+
+[ 2021-10-14T10:54:49+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000646s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000696s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0190s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0173s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0163s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0173s ]
+SQL: SELECT `id`,`description`,`url`,`status`,`img` FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0211s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000048s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005699s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005718s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000430s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000444s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000601s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000615s ]
+
+[ 2021-10-14T11:08:31+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000514s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000999s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001023s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0239s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0183s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0264s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0274s ]
+SQL: SELECT `id`,`description`,`url`,`status`,`img` FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0182s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014634s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014674s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001073s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001105s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001640s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001680s ]
+
+[ 2021-10-14T11:15:13+08:00 ] ::1 /jinwanfuwuwang/admin.php/Banner/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000439s ]
+NOTIC: [2] Use of undefined constant on - assumed 'on' (this will throw an Error in a future version of PHP) D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 4 行.
+NOTIC: [8] Undefined variable: Think D:\work\jinwanfuwuwang\Admin\Conf\config.php 第 9 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000731s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000751s ]
+SQL: SHOW COLUMNS FROM `b_admin_rule` [ RunTime:0.0171s ]
+SQL: SELECT * FROM `b_admin_rule` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id  [ RunTime:0.0189s ]
+SQL: SHOW COLUMNS FROM `b_banner` [ RunTime:0.0173s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `b_banner` WHERE `position_key` = 1 LIMIT 1   [ RunTime:0.0171s ]
+SQL: SELECT `id`,`description`,`url`,`status`,`img` FROM `b_banner` WHERE `position_key` = 1 ORDER BY sort,id desc LIMIT 0,15   [ RunTime:0.0170s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000090s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016107s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016159s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000993s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001338s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001364s ]
+

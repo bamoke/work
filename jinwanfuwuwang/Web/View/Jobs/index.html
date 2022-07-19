@@ -1,0 +1,141 @@
+        <!-- Breadcrumb Section Start -->
+        <div class="breadcrumb-section section bg_color--5 pt-60 pt-sm-50 pt-xs-40 pb-60 pb-sm-50 pb-xs-40">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <div class="page-breadcrumb-content">
+                          <ul class="page-breadcrumb">
+                              <li><a href="{:U('Index/index')}">首页</a></li>
+                              <li>{$pageName}</li>
+                          </ul>
+                          <h1>{$pageName}</h1>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Breadcrumb Section Start -->
+
+        <!-- Job Listing Section Start -->
+        <div class="job-listing-section section bg_color--5 pb-120 pb-lg-100 pb-md-80 pb-sm-60 pb-xs-50">
+          <div class="container pt-50">
+              <div class="row no-gutters">
+
+                  <div class="col-lg-12 order-lg-2 order-1">
+                      <div class="filter-form">
+                          <div class="result-sorting">
+                              <div class="total-result">
+                                  <span class="total">(22)</span>
+                                  职位列表
+                              </div>
+                              <div class="form-left">
+                                  <div class="sort-by">
+                                        浏览模式：
+                                  </div>
+                                  <div class="layout-switcher">
+                                      <ul class="nav">
+                                          <li><a class="active show" data-toggle="tab" href="#list"><i class="fa fa-list"></i></a></li>
+                                          <li><a data-toggle="tab" href="#grid"><i class="fa fa-th"></i></a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="tab-content">
+                          <div id="list" class="tab-pane fade show active">
+                              <div class="row">
+
+                                  <volist name="jobsList" id="job">
+                                  <div class="col-lg-12 mb-20">
+                                      <!-- Single Job Start  -->
+                                      <div class="single-job style-two">
+                                          <div class="info-top">
+                                              <div class="job-info">
+                                                <div class="job-info-inner">
+                                                    <div class="job-info-top">
+                                                        <div class="saveJob for-listing">
+                                                            <!-- <span class="featured-label">featured</span> -->
+                                                            <a class="save-job ml-20" href="#quick-view-modal-container"
+                                                                data-toggle="modal">
+                                                                <i class="far fa-heart"></i>
+                                                            </a>
+                                                        </div>
+                                                        <div class="title-name">
+                                                            <h3 class="job-title">
+                                                                <a href="{$job['realurl']}">{$job['title']}</a>
+                                                            </h3>
+                                                            <div class="employer-name">{$job['company']}</div>
+                                                        </div>
+                                                    </div>
+                                                    <span class="job-salary">{$job['wage']}</span>
+                                                    <div class="job-meta">
+                                                        <div class="job-location"><i class="lnr lnr-map-marker"></i>{$job['addr']}</div>
+    
+                                                        <div class="job-type"><i class="lnr lnr-briefcase"></i>{$job['type']}</div>
+    
+                                                        <div class="job-date"><i class="lnr lnr-clock"></i>{$job['date']}</div>
+                                                    </div>
+                                                </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <!-- Single Job End -->
+                                    </div>
+                                </volist>
+
+
+                              </div>
+                              <div class="row">
+                                  <div class="col-12">
+                                    {$outData['page']}
+                                  </div>
+                              </div>
+                          </div>
+                          <div id="grid" class="tab-pane fade">
+                              <div class="row">
+                                <volist name="jobsList" id="job">
+                                  <div class="col-md-6 mb-20">
+                                      <!-- Single Job Start  -->
+                                      <div class="single-job-grid-two">
+                                          <div class="job-info">
+                                              <div class="job-info-top">
+                                                  <div class="title-name">
+                                                      <h3 class="job-title">
+                                                          <a href="{$job['realurl']}">{$job['title']}</a>
+                                                      </h3>
+                                                      <div class="employer-name">{$job['company']}</div>
+                                                  </div>
+                                              </div>
+                                              <div class="job-meta-two">
+                                                  <div class="field-salary_from">
+                                                      <i class="gj-icon gj-icon-money"></i>
+                                                      {$job['wage']}
+                                                  </div>
+                                                  <div class="field-datetime"><i class="lnr lnr-clock"></i>{$job['date']}</div>
+                                                  <div class="field-map"><i class="lnr lnr-map-marker"></i>{$job['addr']}</div>
+                                              </div>
+                                              <div class="field-descriptions">
+                                                  <p>{$job['description']}</p>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <!-- Single Job End -->
+                                  </div>
+                                </volist>
+
+
+                              </div>
+                              <div class="row">
+                                  <div class="col-12">
+                                    {$outData['page']}
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+
+              </div>
+          </div>
+      </div>
+      <!-- Job Listing Section End -->

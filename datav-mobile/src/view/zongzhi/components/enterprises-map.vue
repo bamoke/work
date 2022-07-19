@@ -7,92 +7,61 @@
 -->
 <template>
   <div class="content-wrap">
-    <van-loading size="24px" vertical v-if="showLoading">加载中...</van-loading>
-    <ModuleCard title="重点企业经营情况" style="min-height: 100%">
-
-    <div class="map-wrap">
-      <div class="map-search-wrap" :class="{ active: !showLoading }">
-        <div class="item content">
+    
+    <PageCard title="重点企业经营情况" style="min-height: 100%">
+      <template v-slot:extra>
+        <van-button type="info" size="mini" block :to="{ name: 'gdp_company' }"
+          >返回表格模式</van-button
+        >
+      </template>
+      <van-loading size="24px" vertical v-if="showLoading">加载中...</van-loading>
+      <div class="map-wrap">
+        <div class="map-search-wrap" :class="{ active: !showLoading }">
           <div class="search-box">
-            <van-icon name="search" />
-            <!-- <Icon type="ios-search" :size="18" color="rgba(255,255,255,.8)" /> -->
-            <input
-              class="input"
-              maxlength="24"
-              v-model="keyword"
-              placeholder="搜素过滤"
-              type="text"
-            />
+            <div class="search-content">
+              <van-icon name="search" />
+              <!-- <Icon type="ios-search" :size="18" color="rgba(255,255,255,.8)" /> -->
+              <input
+                class="input"
+                maxlength="24"
+                v-model="keyword"
+                placeholder="请输入企业关键词筛选过滤"
+                type="text"
+              />
+            </div>
           </div>
           <div class="com-list">
             <div
               class="com-item"
+              :class="{ 'com-item-active': index == curCompanyIndex }"
               v-for="(item, index) in comList"
               :key="index"
               @click="handleSelect(index)"
             >
               <!-- <span>{{ index + 1 }}</span> -->
-              <span class="com-name">{{ item.title }}</span>
+              <span class="com-name">{{ item.comname }}</span>
             </div>
           </div>
         </div>
+        <div id="map"></div>
       </div>
-      <div id="map"></div>
-      <div
-        class="map-side right-side"
-        style="display: none"
-        :class="{ active: !showLoading }"
-      >
-        <div class="item">
-          <div class="section">企业经营情况</div>
-        </div>
-        <div class="item content">
-          <div class="company-info">
-            <div class="title">
-              <van-icon name="home-o" />{{ curCompany.title }}
-            </div>
-            <div class="company-item company-item-first">
-              <div class="item-section">所属行业</div>
-              <div class="item-value">{{ curCompany.industry }}</div>
-            </div>
-            <div class="company-item">
-              <div class="item-section">产值(万元)</div>
-              <div class="item-value">{{ curCompany.gross }}</div>
-              <div class="item-section">同比增长</div>
-              <div class="item-value">{{ curCompany.rise }}</div>
-            </div>
-            <div class="company-item">
-              <div class="item-section">用电量(万千瓦时)</div>
-              <div class="item-value">{{ curCompany.electric_gross }}</div>
-              <div class="item-section">同比增长</div>
-              <div class="item-value">{{ curCompany.electric_rise }}</div>
-            </div>
-            <div class="company-item">
-              <div class="item-section">增加值</div>
-              <div class="item-value">{{ curCompany.zjz_gross }}</div>
-              <div class="item-section">同比增长</div>
-              <div class="item-value">{{ curCompany.zjz_rise }}</div>
-            </div>
-            <div class="description">{{ curCompany.description }}</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </ModuleCard>
+    </PageCard>
   </div>
 </template>
 
 
 <script>
 import { loadBaiDuMap } from "@/libs/baidumap_gl";
-import * as enterprisesApi from "@/api/enterprises";
 
+import * as enterprisesApi from "@/api/enterprises";
+import PageCard from "@/components/main/page-card.vue";
 export default {
-  components: {},
+  components: { PageCard },
 
   data() {
     return {
       keyword: "",
+      curCompanyIndex: null,
       curCompany: {},
       comList: [],
       originData: [],
@@ -105,12 +74,12 @@ export default {
   watch: {
     keyword(newValue) {
       if (newValue === "") {
-        this.comList = [];
+        this.comList = this.originData;
         return;
       }
       var regex = new RegExp(newValue);
       var data = this.originData.filter(function (item) {
-        return regex.test(item.title);
+        return regex.test(item.comname);
       });
       this.comList = data;
     },
@@ -131,7 +100,7 @@ export default {
         this.myBMapGl = BMapGL;
         this.myMap = map;
 
-        map.centerAndZoom(new BMapGL.Point(113.279208, 21.999191), 12); // 初始化地图,设置中心点坐标和地图级别
+        map.centerAndZoom(new BMapGL.Point(113.279208, 21.999191), 13); // 初始化地图,设置中心点坐标和地图级别
         map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
         // map.setHeading(64.5);
         map.setTilt(60);
@@ -143,7 +112,7 @@ export default {
         var bd = new BMapGL.Boundary();
         bd.get("金湾区", function (rs) {
           // console.log('外轮廓：', rs.boundaries[0]);
-          console.log("内镂空：", rs.boundaries[1]);
+          // console.log("内镂空：", rs.boundaries[1]);
           var hole = new BMapGL.Polygon(rs.boundaries, {
             strokeColor: "#04d1fd",
             strokeStyle: "dashed",
@@ -170,8 +139,10 @@ export default {
         });
 
         // 数据获取
-        enterprisesApi.get_list().then((res) => {
-          this.originData = this.transformGeo(res.data);
+        enterprisesApi.get_list_by_map().then((res) => {
+          this.originData = this.comList = res.data.list;
+          this.transformGeo(res.data.list);
+          // this.originData = this.transformGeo(res.data);
           // this.originData = this.comList = this.transformGeo(res.data);
         });
       });
@@ -181,57 +152,77 @@ export default {
     transformGeo(comlist) {
       var BMapGL = this.myBMapGl;
       var map = this.myMap;
-      var myGeo = new BMapGL.Geocoder();
       var newList = comlist.slice();
       var showDetail = this.handleShowDetail;
 
       newList.forEach((element, index) => {
-        myGeo.getPoint(
-          element.addr,
-          function (point) {
-            var marker, label;
-            element.point = point;
+        var marker, label;
 
-            // 生成点
-            marker = new BMapGL.Marker(new BMapGL.Point(point.lng, point.lat));
-            map.addOverlay(marker);
+        // 生成点
+        marker = new BMapGL.Marker(new BMapGL.Point(element.lng, element.lat));
+        map.addOverlay(marker);
 
-            //添加点事件
-            marker.addEventListener("click", function (e) {
-              showDetail(index);
-            });
+        //添加点事件
+        marker.addEventListener("click", function (e) {
+          showDetail(index);
+        });
 
-            //
-            label = new BMapGL.Label(element.title);
-            marker.setLabel(label);
-          },
-          "珠海市"
-        );
+        //
+        // label = new BMapGL.Label(element.title);
+        // marker.setLabel(label);
       });
-      return newList;
     },
 
-    handleGoback() {
-      this.$router.back();
-    },
     handleSelect(index) {
       const item = this.comList[index];
       var BMapGL = this.myBMapGl;
-      var point = new BMapGL.Point(item.point.lng, item.point.lat);
+
+      var point = new BMapGL.Point(item.lng, item.lat);
       this.myMap.setCenter(point);
       this.myMap.setZoom(17);
       this.handleShowDetail(index);
+      this.curCompanyIndex = index;
     },
     handleShowDetail(index) {
+      var BMapGL = this.myBMapGl;
       const item = this.comList[index];
-      enterprisesApi.get_detail({ params: { id: item.id } }).then((res) => {
-        var companyInfo = res;
-        var zjzArr = companyInfo.zjzl.split("/");
-        // 临时
-        companyInfo.title = item.title;
-        companyInfo.zjz_gross = zjzArr[0];
-        companyInfo.zjz_rise = zjzArr[1];
+      this.curCompanyIndex = index;
+      var point = new BMapGL.Point(item.lng, item.lat);
+      enterprisesApi.get_detail(item.id).then((res) => {
+        var companyInfo = res.data.info;
         this.curCompany = companyInfo;
+
+        var opts = {
+          width: 400, // 信息窗口宽度
+          height: 240, // 信息窗口高度
+          title: companyInfo.comname, // 信息窗口标题
+          message: "",
+        };
+        var otherHtml = "";
+        if (res.data.otherName) {
+          otherHtml = `<div class="company-item">
+                <div class="item-section">${res.data.otherName}</div>
+                <div class="item-value long-item-value">${companyInfo.other}</div>
+              </div>`;
+        }
+        var html = `<div class="company-info">
+              <div class="company-item company-item-first">
+                <div class="item-section">${res.data.grossName}(${res.data.measure})</div>
+                <div class="item-value">${companyInfo.gross}</div>
+                <div class="item-section">同比增长</div>
+                <div class="item-value">${companyInfo.rise}</div>
+              </div>
+              <div class="company-item">
+                <div class="item-section">用电量(万千瓦时)</div>
+                <div class="item-value">${companyInfo.electric_gross}</div>
+                <div class="item-section">同比增长</div>
+                <div class="item-value">${companyInfo.electric_rise}</div>
+              </div>
+              ${otherHtml}
+              <div class="description">经营情况说明:${companyInfo.description}</div>
+            </div>`;
+        var infoWindow = new BMapGL.InfoWindow(html, opts); // 创建信息窗口对象
+        this.myMap.openInfoWindow(infoWindow, point); //开启信息窗口
       });
     },
   },
@@ -244,8 +235,58 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
+.BMap_bubble_pop {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 4px !important;
+}
+.BMap_bubble_title {
+  color: #000;
+  font-weight: bold;
+}
+.BMap_bubble_buttons > div {
+  color: #000 !important;
+}
+.company-info {
+  padding: 12px 0;
+  font-size: 12px;
+  .title {
+    margin-bottom: 24px;
+    // color: #fff;
+    font-size: 18px;
+  }
+  .company-item {
+    display: flex;
+    // justify-content: space-between;
+    line-height: 1;
 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    .item-section {
+      flex: 0 0 auto;
+      padding: 6px;
+      width: 22%;
+      border-left: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    .item-value {
+      flex: 0 0 auto;
+      padding: 6px;
+      width: 28%;
+      border-left: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    .long-item-value {
+      flex-grow: 1;
+    }
+  }
+  .company-item-first {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .description {
+    margin-top: 12px;
+    line-height: 1.5;
+    // background: rgba(0, 0, 0, 0.5);
+  }
+}
 .map-wrap {
   position: relative;
   width: 100%;
@@ -253,30 +294,63 @@ export default {
   .map-search-wrap {
     position: absolute;
     top: 0;
-    left:25%;
+    left: 0;
     z-index: 990;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 1.041667rem;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
-    .item {
-      margin-bottom: 12px;
-      padding: 12px;
-      // background-color: rgba(0, 0, 0, 0.6);
+    transform: translateX(-1.25rem);
+    opacity: 0;
+    transition: all 0.3s;
+    .search-box {
+      // padding-top: 0.0625rem;
+      .search-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 0.0625rem;
+        width: 100%;
+        height: 0.1875rem;
+        border-radius: 0.09375rem;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.7);
+        .input {
+          width: 100%;
+          height: 0.1875rem;
+          line-height: 0.1875rem;
+          border: none;
+          background-color: transparent;
+          outline: none;
+          color: #fff;
+        }
+        .input::placeholder {
+          color: rgba(255, 255, 255, 0.8);
+        }
+      }
     }
     .com-list {
       box-sizing: border-box;
-      height: 100%;
+      flex-grow: 1;
       overflow-y: auto;
-      background-color: rgba(0, 0, 0, 0.6);
+      color: rgba(255, 255, 255, 0.8);
+      .com-item-active {
+        //  background: rgba(0, 0, 0, 0.4);
+        background: #1989fa;
+        color: #fff;
+      }
       .com-item {
-        height: 36px;
-        line-height: 36px;
+        padding: 0 0.0625rem;
+        height: 0.1875rem;
+        line-height: 0.1875rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        font-size: 12px;
         cursor: pointer;
-        color: rgba(255, 255, 255, 0.8);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
       }
       .com-item:hover {
         background: rgba(0, 0, 0, 0.4);
@@ -310,86 +384,15 @@ export default {
       line-height: 1;
     }
   }
-  .left-side {
-    left: 0;
-    transform: translatex(-360px);
-    opacity: 0;
-    transition: all 0.3s;
-  }
-  .right-side {
-    right: 0;
-    transform: translatex(360px);
-    opacity: 0;
-    transition: all 0.3s;
-    .company-info {
-      color: rgba(255, 255, 255, 0.8);
-      .title {
-        margin-bottom: 24px;
-        color: #fff;
-        font-size: 18px;
-      }
-      .company-item {
-        display: flex;
-        // justify-content: space-between;
-        line-height: 1.2;
-        font-size: 14px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        .item-section {
-          flex: 0 0 auto;
-          padding: 12px 6px;
-          width: 22%;
-          border-left: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        .item-value {
-          flex: 0 0 auto;
-          padding: 12px 6px;
-          width: 28%;
-          border-left: 1px solid rgba(255, 255, 255, 0.3);
-        }
-      }
-      .company-item-first {
-        border-top: 1px solid rgba(255, 255, 255, 0.3);
-      }
-      .description {
-        margin-top: 12px;
-        padding: 12px;
-        line-height: 1.5;
-        background: rgba(0, 0, 0, 0.5);
-      }
-    }
-  }
+
   .active {
-    transform: translate(0px, 0px);
+    transform: translateX(0px);
     opacity: 1;
   }
 }
 #map {
   width: 100%;
-  height: 3.125rem;
-}
-.search-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 18px 0 6px;
-  width: 100%;
-  height: 32px;
-  border-radius: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  background-color: rgba(0, 0, 0, 0.7);
-  .input {
-    padding-left: 6px;
-    width: 100%;
-    height: 32px;
-    line-height: 32px;
-    border: none;
-    background-color: transparent;
-    outline: none;
-    color: #fff;
-  }
-  .input::placeholder {
-    color: rgba(255, 255, 255, 0.8);
-  }
+  height: 100%;
 }
 
 //***/

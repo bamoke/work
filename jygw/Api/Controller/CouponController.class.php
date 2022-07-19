@@ -80,7 +80,7 @@ class CouponController extends BaseController {
     $list = M("Coupon")
     ->alias("C")
     ->field("C.title as coupon_title,C.id as coupon_id,C.end_date,C.description,IF(R.id,1,0) as ishas,(C.num - C.receive_num) as surplus_num")
-    ->join("LEFT JOIN __COUPON_RECORD__ as R on R.coupon_id = C.id and R.stage=0 and R.uid=$uid")
+    ->join("LEFT JOIN __COUPON_RECORD__ as R on R.coupon_id = C.id and R.stage=0 and R.end_date >= CURDATE() and R.uid=$uid")
     ->where($where)
     ->order("coupon_title,coupon_id")
     ->fetchSql(false)
@@ -124,7 +124,8 @@ class CouponController extends BaseController {
     $existWhere = array(
       "coupon_id"   =>$couponId,
       "uid"         =>$this->uid,
-      "stage"       =>0
+      "stage"       =>0,
+      "end_date"    =>array("gt",date('Y-m-d',time()))
     );
     $exist = M("CouponRecord")->where($existWhere)->fetchSql(false)->count();
     if($exist) {
@@ -212,6 +213,14 @@ class CouponController extends BaseController {
     }
 
 
+  }
+  
+
+  /**
+   * 删除已过期的优惠券
+   */
+  public function delete_one(){
+    
   }
 
   protected function create_code($num) {

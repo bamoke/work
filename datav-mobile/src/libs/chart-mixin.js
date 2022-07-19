@@ -28,51 +28,23 @@ const chartMixin = {
 
     },
     methods: {
-        handleChangeCompareCounty(e, dataName) {
-            var chartDataName
-            if (typeof dataName !== 'undefined') {
-                chartDataName = dataName
-            } else {
-                chartDataName = "compareCountyData"
-            }
-            this[chartDataName].mode = e
+        handleChangeViewMode(e,dataName){
+            this[dataName].vmode = e
         },
-        handleChangeCompareDomestic(e, dataName) {
-            var chartDataName
-            if (typeof dataName !== 'undefined') {
-                chartDataName = dataName
-            } else {
-                chartDataName = "compareDomesticData"
-            }
-            this[chartDataName].mode = e
+
+        handleChangeChartMode(e,dataName){
+            this[dataName].cmode = e
+            this[dataName].vmode = "chart"
         },
-        handleChangeTown(e, dataName) {
-            var chartDataName
-            if (typeof dataName !== 'undefined') {
-                chartDataName = dataName
-            } else {
-                chartDataName = "townData"
+
+        chartModeBtnType(e,dataName){
+            if(this[dataName].vmode == "chart" && this[dataName].cmode == e) {
+                return "info"
+            }else {
+                return "default"
             }
-            this[chartDataName].mode = e
         },
-        handleChangeYearMode(e, dataName) {
-            var chartDataName
-            if (typeof dataName !== 'undefined') {
-                chartDataName = dataName
-            } else {
-                chartDataName = "timelineYearData"
-            }
-            this[chartDataName].mode = e
-        },
-        handleChangeTimelineMonth(e, dataName) {
-            var chartDataName
-            if (typeof dataName !== 'undefined') {
-                chartDataName = dataName
-            } else {
-                chartDataName = "timelineMonthData"
-            }
-            this[chartDataName].mode = e
-        },
+
         chartInit({
             chartObject = this.$echarts,
             chartName = [],

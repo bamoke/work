@@ -9,14 +9,14 @@
   <div class="content-wrap">
     <div class="row-side side-left">
       <div class="transform-box">
-        <ModuleCard title="累计增长速度" class="item-wrap">
+        <ModuleCard title="近一年累计增速" class="item-wrap">
           <ChartMonth
             :height="200"
             :title="leijizengzhangData.title"
             :chart-data="leijizengzhangData.data"
           ></ChartMonth>
         </ModuleCard>
-        <ModuleCard title="近五年总额及增长率" class="item-wrap">
+        <ModuleCard title="近五年情况" class="item-wrap">
           <ChartYear
             :height="500"
             :is-open="true"
@@ -28,12 +28,12 @@
       <div class="bt-shadow"></div>
     </div>
     <div class="row-big">
-      <div class="banner-box"></div>
+      <TownMap :total-info="townTotalInfo"></TownMap>
       <div class="item-wrap">
         <div class="l-row l-row-bt">
-          <EffectCircleCount3D :data="totalInfo.all"></EffectCircleCount3D>
-          <EffectCircleCount3D :data="totalInfo.zhishu"></EffectCircleCount3D>
-          <EffectCircleCount3D :data="totalInfo.kaifaqu"></EffectCircleCount3D>
+          <EffectCircleCount3D :data="totalInfo.jw"></EffectCircleCount3D>
+          <EffectCircleCount3D :data="totalInfo.zs"></EffectCircleCount3D>
+          <EffectCircleCount3D :data="totalInfo.kfq"></EffectCircleCount3D>
         </div>
       </div>
     </div>
@@ -70,25 +70,26 @@ export default {
   data() {
     return {
       totalInfo: {
-        all: {
-          title: "金湾区",
-          num: 2603,
-          measure: "万美元",
-          rise: 154.2,
+        jw: {
+          area: "金湾区",
+          gross: 0,
+          measure: "",
+          rise: '0',
         },
-        zhishu: {
-          title: "金湾直属",
+        zs: {
+          area: "金湾直属",
+          gross: 0,
+          measure: "",
+          rise: '0',
+        },
+        kfq: {
+          area: "开发区",
           num: 0,
-          measure: "万美元",
-          rise: -100,
-        },
-        kaifaqu: {
-          title: "开发区",
-          num: 2603,
-          measure: "万美元",
-          rise: 846.5,
+          measure: "",
+          rise: '0',
         },
       },
+      townTotalInfo: {},
     };
   },
   methods: {
@@ -98,43 +99,63 @@ export default {
     var chartName = [];
     this.chartInit({ chartName });
 
+    Api.base.get_total({ cate: "实际吸收外商投资" }).then((res) => {
+      var totalInfo = res.data
+      totalInfo.jw.gross = parseInt(totalInfo.jw.gross)
+      totalInfo.zs.gross = parseInt(totalInfo.zs.gross)
+      totalInfo.kfq.gross = parseInt(totalInfo.kfq.gross)
+      this.totalInfo = totalInfo;
+    });
+    // 各镇指标
+    Api.jjzb.get_town({params:{ cate: "实际吸收外商投资" }}).then((res) => {
+      this.townTotalInfo = res.data;
+    });
     /***指标对比 */
-    Api.jjzb.get_county().then((res) => {
+    Api.jjzb.get_county({ params: { cate: "实际吸收外商直接投资" } }).then((res) => {
       this.compareCountyData = {
         mode: "gross",
         title: {},
-        data: res.data,
+        data: this.$formatTableToChart(res.data.list, res.data.columns),
       };
     });
 
     /*** 国内部分区域指标 */
-    Api.jjzb.get_domestic().then((res) => {
-      this.compareDomesticData = {
-        mode: "gross",
-        title: {
-          text: res.title,
-        },
-        data: res.data,
-      };
-    });
+    Api.jjzb
+      .get_domestic({ params: { cate: "实际吸收外商直接投资" } })
+      .then((res) => {
+        this.compareDomesticData = {
+          title: {
+            text: res.data.title,
+          },
+          data: this.$formatTableToChart(res.data.list, res.data.columns),
+        };
+      });
 
     /***按月 累计增长率 */
-    Api.timeline.get_monthdata().then((res) => {
-      this.leijizengzhangData = {
-        title: { text: res.title },
-        data: res.data,
-      };
-    });
+    Api.timeline
+      .get_monthdata({ params: { cate: "实际利用外商直接投资" } })
+      .then((res) => {
+        this.leijizengzhangData = {
+          title: {
+            text: "",
+          },
+          data: this.$formatTableToChart(res.data.list, res.data.columns),
+        };
+      });
 
     /*** 年度数据 */
-    Api.timeline.get_yeardata().then((res) => {
-      this.timelineYearData = {
-        mode: "gross",
-        title: { text: res.title },
-        data: res.data,
-        origin: res,
-      };
-    });
+    Api.timeline
+      .get_yeardata({ params: { cate: "实际利用外商直接投资" } })
+      .then((res) => {
+        this.timelineYearData = {
+          title: {
+            text: this.title || "",
+          },
+          mode: "gross",
+          data: this.$formatTableToChart(res.data.list, res.data.columns),
+          origin: this.$formatTableToChart(res.data.list, res.data.columns),
+        };
+      });
   },
 };
 </script>

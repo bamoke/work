@@ -60,8 +60,7 @@ export default {
               fontSize: "12px",
               // rotate: -45,
               formatter: function (value) {
-                return value;
-                // return formatStringWrap(value, 4);
+                return formatStringWrap(value, 3);
               },
             },
           },
@@ -90,8 +89,14 @@ export default {
               type: "bar",
             },
             {
-              type: "bar",
+              type: "line",
               yAxisIndex: 1,
+              lineStyle: {
+                color: "#59fedd",
+              },
+              itemStyle: {
+                color: "#59fedd",
+              },
             },
             // {
             //   type: "pictorialBar",
@@ -111,7 +116,8 @@ export default {
   },
   mounted() {
     this.chartInstance = this.$echarts.init(
-      document.getElementById("chart-compare-domestic")
+      document.getElementById("chart-compare-domestic"),
+      this.$config.chartTheme
     );
   },
 };

@@ -9,16 +9,16 @@
   <div class="content-wrap">
     <div class="row-side side-left">
       <div class="transform-box">
-        <ModuleCard title="累计增长速度" class="item-wrap">
+        <ModuleCard title="社消零总额近一年累计增速" class="item-wrap">
           <ChartMonth
-            :height="200"
+            :height="240"
             :title="leijizengzhangData.title"
             :chart-data="leijizengzhangData.data"
           ></ChartMonth>
         </ModuleCard>
-        <ModuleCard title="近五年总额及增长率" class="item-wrap">
+        <ModuleCard title="社消零总额近五年情况" class="item-wrap">
           <ChartYear
-            :height="500"
+            :height="520"
             :is-open="true"
             :title="timelineYearData.title"
             :chart-data="timelineYearData.data"
@@ -28,12 +28,12 @@
       <div class="bt-shadow"></div>
     </div>
     <div class="row-big">
-      <div class="banner-box"></div>
+      <TownMap></TownMap>
       <div class="item-wrap">
         <div class="l-row l-row-bt">
-          <EffectCircleCount3D :data="totalInfo.all"></EffectCircleCount3D>
-          <EffectCircleCount3D :data="totalInfo.zhishu"></EffectCircleCount3D>
-          <EffectCircleCount3D :data="totalInfo.kaifaqu"></EffectCircleCount3D>
+          <EffectCircleCount3D :data="totalInfo.jw"></EffectCircleCount3D>
+          <EffectCircleCount3D :data="totalInfo.zs"></EffectCircleCount3D>
+          <EffectCircleCount3D :data="totalInfo.kfq"></EffectCircleCount3D>
         </div>
       </div>
     </div>
@@ -41,7 +41,7 @@
       <div class="transform-box">
         <ModuleCard title="各区社消零比较" class="item-wrap">
           <ChartCompareCounty
-            :height="500"
+            :height="520"
             :is-open="true"
             :title="compareCountyData.title"
             :chart-data="compareCountyData.data"
@@ -50,7 +50,7 @@
 
         <ModuleCard title="国内其他区域比较" class="item-wrap">
           <ChartCompareDomestic
-            :height="200"
+            :height="240"
             :title="compareDomesticData.title"
             :chart-data="compareDomesticData.data"
           ></ChartCompareDomestic>
@@ -70,25 +70,26 @@ export default {
   data() {
     return {
       totalInfo: {
-        all: {
-          title: "金湾区",
-          num: 12.19,
-          measure: "亿元",
-          rise: 25.4,
+        jw: {
+          area: "金湾区",
+          gross: 0,
+          measure: "",
+          rise: '0',
         },
-        zhishu: {
-          title: "金湾直属",
-          num: 9.9,
-          measure: "亿元",
-          rise: 33.6,
+        zs: {
+          area: "金湾直属",
+          gross: 0,
+          measure: "",
+          rise: '0',
         },
-        kaifaqu: {
-          title: "经济开发区",
-          num: 2.29,
-          measure: "亿元",
-          rise: -0.8,
+        kfq: {
+          area: "开发区",
+          num: 0,
+          measure: "",
+          rise: '0',
         },
       },
+      townTotalInfo: {},
     };
   },
   methods: {
@@ -98,47 +99,56 @@ export default {
     var chartName = [];
     this.chartInit({ chartName });
 
+    Api.base.get_total({ cate: "社会消费品零售总额" }).then((res) => {
+      this.totalInfo = res.data;
+    });
+
     /***指标对比 */
-    Api.jjzb.get_county().then((res) => {
+    Api.jjzb.get_county({ params: { cate: "社会消费品零售总额" } }).then((res) => {
       this.compareCountyData = {
         mode: "gross",
         title: {},
-        data: res.data,
+        data: this.$formatTableToChart(res.data.list, res.data.columns),
       };
     });
 
     /*** 国内部分区域指标 */
-    Api.jjzb.get_domestic().then((res) => {
-      this.compareDomesticData = {
-        mode: "gross",
-        title: {
-          text: res.title,
-        },
-        data: res.data,
-      };
-    });
+    Api.jjzb
+      .get_domestic({ params: { cate: "社会消费品零售总额" } })
+      .then((res) => {
+        this.compareDomesticData = {
+          title: {
+            text: res.data.title,
+          },
+          data: this.$formatTableToChart(res.data.list, res.data.columns),
+        };
+      });
 
     /***按月 累计增长率 */
-    Api.timeline.get_monthdata().then((res) => {
-      this.leijizengzhangData = {
-        title: {
-          text: "2020年3-2021年3月",
-        },
-        data: res.data,
-      };
-    });
+    Api.timeline
+      .get_monthdata({ params: { cate: "社会消费品零售总额" } })
+      .then((res) => {
+        this.leijizengzhangData = {
+          title: {
+            text: "",
+          },
+          data: this.$formatTableToChart(res.data.list, res.data.columns),
+        };
+      });
 
     /*** 年度数据 */
-    Api.timeline.get_yeardata().then((res) => {
-      this.timelineYearData = {
-        mode: "gross",
-        title: {
-          text: "2020年3-2021年3月",
-        },
-        data: res.data,
-        origin: res,
-      };
-    });
+    Api.timeline
+      .get_yeardata({ params: { cate: "社会消费品零售总额" } })
+      .then((res) => {
+        this.timelineYearData = {
+          title: {
+            text: this.title || "",
+          },
+          mode: "gross",
+          data: this.$formatTableToChart(res.data.list, res.data.columns),
+          origin: this.$formatTableToChart(res.data.list, res.data.columns),
+        };
+      });
   },
 };
 </script>

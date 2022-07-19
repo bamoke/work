@@ -9,12 +9,12 @@
 return array(
 	//'配置项'=>'配置值'
 	"DB_HOST"   =>"localhost",
-	// "DB_HOST"   =>"119.23.61.35",
+	// "DB_HOST"   =>"39.108.189.211",
     "DB_PORT"   =>"3306",
     "DB_NAME"   =>"bamoke",
 
     "DB_TYPE"   =>"mysql",
-    // "DB_USER"   =>"remotesql",
+//     "DB_USER"   =>"remotesql",
 //    "DB_PWD"    =>"123456",
    	"DB_USER"   =>"root",
 	"DB_PWD"    =>"bamoke2018***",

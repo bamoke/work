@@ -24,7 +24,7 @@ class SignupController extends Controller {
 
         $model = M("Signup");
 
-        $deadline = strtotime("2021-05-06 23:59:59");
+        $deadline = strtotime("2021-11-03 23:59:59");
 
         $curTime = time();
 
@@ -41,7 +41,7 @@ class SignupController extends Controller {
 
         $insertData = $_POST;
 
-        $insertData["mid"] = 1;
+        
 
         // 检测手机号是否存在
         $where = array(
@@ -103,11 +103,14 @@ class SignupController extends Controller {
         
         $Model = M("Signup");
         
+        $mid = 2;
         $page = I("get.page/d",1);
 
         $pageSize = 20;
 
-        $where = array ();
+        $where = array (
+            "mid"=>$mid
+        );
 
         $total = $Model->where($where)->count();
         
@@ -137,12 +140,16 @@ class SignupController extends Controller {
 
      public function download(){
 
+        $where = array(
+            "mid"=>2
+        );
         $list = M("Signup")
+        ->where($where)
         ->limit("10000")
         ->select();
          
-        $xlsTitle = iconv('utf-8', 'gb2312', "第10届华南卵巢癌高峰论坛报名人员名单");
-        $fileName = "第10届华南卵巢癌高峰论坛报名人员名单";
+        $xlsTitle = iconv('utf-8', 'gb2312', "第19届妇科恶性肿瘤规范化诊治及新进展学习班");
+        $fileName = "第19届妇科恶性肿瘤规范化诊治及新进展学习班";
         
         $cellKey = array(
             'A','B','C','D','E','F','G','H','I','J','K','L','M',
@@ -157,7 +164,7 @@ class SignupController extends Controller {
 
             //处理表头标题
         $objPHPExcel->getActiveSheet()->mergeCells('A1:H1');//合并单元格（如果要拆分单元格是需要先合并再拆分的，否则程序会报错）
-        $objPHPExcel->setActiveSheetIndex(0)->setCellValue('A1','第10届华南卵巢癌高峰论坛报名人员名单');
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue('A1','第19届妇科恶性肿瘤规范化诊治及新进展学习班');
         $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
         $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setSize(18);
 
@@ -168,8 +175,8 @@ class SignupController extends Controller {
         $objPHPExcel->getActiveSheet()->SetCellValue('D2', '职务');
         $objPHPExcel->getActiveSheet()->SetCellValue('E2', '职称');
         $objPHPExcel->getActiveSheet()->SetCellValue('F2', '手机号码');
-        $objPHPExcel->getActiveSheet()->SetCellValue('G2', '是否提供午餐');
-        $objPHPExcel->getActiveSheet()->SetCellValue('H2', '建议');
+        // $objPHPExcel->getActiveSheet()->SetCellValue('G2', '是否提供午餐');
+        $objPHPExcel->getActiveSheet()->SetCellValue('G2', '建议');
 
         // 处理数据
         $i = 3;
@@ -181,8 +188,8 @@ class SignupController extends Controller {
             $objPHPExcel->getActiveSheet()->SetCellValue('D'.$i, $val['position']);
             $objPHPExcel->getActiveSheet()->SetCellValue('E'.$i, $val['title']);
             $objPHPExcel->getActiveSheet()->SetCellValue('F'.$i, $val['phone']);
-            $objPHPExcel->getActiveSheet()->SetCellValue('G'.$i, $isLunchTxt);
-            $objPHPExcel->getActiveSheet()->SetCellValue('H'.$i, $val['feedback']);
+            // $objPHPExcel->getActiveSheet()->SetCellValue('G'.$i, $isLunchTxt);
+            $objPHPExcel->getActiveSheet()->SetCellValue('G'.$i, $val['feedback']);
             $i++;
         }
 

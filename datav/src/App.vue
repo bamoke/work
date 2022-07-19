@@ -7,7 +7,7 @@
 -->
 <template>
   <div id="app" :class="[appTheme]">
-    <div class="m-theme-box" style="display:none">
+    <div class="m-theme-box" style="display: none">
       <div class="theme-section">主题样式</div>
       <div class="theme-list">
         <div class="item" @click="handleChangeTheme('theme-default')">默认</div>
@@ -19,28 +19,44 @@
         </div>
       </div>
     </div>
-    <router-view style="height: 100%; position: relative" />
+    <router-view
+      style="width: 1920px; height: 1080px"
+      :style="{
+        transform: 'scale(' + zoomScale + ')',
+        top: topOffset + 'px',
+        left: leftOffset + 'px',
+      }"
+      class="bigscreen-box"
+      v-if="isRouterAlive"
+    />
   </div>
 </template>
 
 <script>
 // import HeadBar from "./components/common/header-bar.vue";
-
+import { get_sys_date } from "@/api/main.js";
 import "./theme-flat-light.less";
 import "./theme-flat-dark.less";
 
-import echartTheme from "@/config/echarts-theme.js"
+import echartTheme from "@/config/echarts-theme.js";
 export default {
   name: "app",
   components: {},
+  provide() {
+    return {
+      reload: this.reload,
+    };
+  },
   data() {
     return {
-      key: "",
+      zoomScale: 1,
+      topOffset: 0,
+      leftOffset: 0,
+      isRouterAlive: false,
     };
   },
   computed: {
     appTheme() {
-      console.log(this.$store.state.theme);
       return this.$store.state.theme.name;
     },
   },
@@ -48,14 +64,46 @@ export default {
     handleChangeTheme(name) {
       this.$store.commit("setTheme", name);
 
-      window.location.reload()
+      window.location.reload();
+    },
+    reload() {
+      this.isRouterAlive = false;
+      this.$nextTick(function () {
+        this.isRouterAlive = true;
+      });
+    },
+    winResize() {
+      var documentWidth = window.document.documentElement.clientWidth;
+      var documentHeight = window.document.documentElement.clientHeight;
+      var topOffset = 0;
+      var leftOffset = 0;
+      var zoomScale = 1;
+
+      if (documentWidth * 1080 > documentHeight * 1920) {
+        zoomScale = parseFloat(documentHeight / 1080);
+        leftOffset = (documentWidth - 1920 * zoomScale) / 2;
+      } else {
+        zoomScale = parseFloat(documentWidth / 1920);
+        topOffset = (documentHeight - 1080 * zoomScale) / 2;
+      }
+      this.zoomScale = zoomScale;
+      this.topOffset = topOffset;
+      this.leftOffset = leftOffset;
     },
   },
 
   mounted() {
-    // const echartThemName = this.$store.state.theme.echartTheme;
-    // this.$echarts.registerTheme(echartThemName, echartTheme[echartThemName]);
+    this.winResize();
+    window.onresize = () => {
+      return this.winResize();
+    };
 
+    get_sys_date().then((res) => {
+      this.$store.commit("setCurDate", new Date(res.data.end));
+      this.$store.commit("setMaxDate", new Date(res.data.end));
+      this.$store.commit("setMinDate", new Date(res.data.start));
+      this.isRouterAlive = true;
+    });
   },
 };
 </script>
@@ -64,10 +112,11 @@ export default {
 html {
   height: 100%;
   font-size: 192px;
+  background: #000;
 }
 body {
-  width: 1920px;
-  height: 1080px;
+  width: 100%;
+  height: 100%;
 }
 * {
   box-sizing: border-box;
@@ -77,10 +126,17 @@ body {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
   text-align: center;
 
-  width: 1920px;
-  height: 1080px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #000;
+}
+.bigscreen-box {
+  position: absolute;
+  transform-origin: left top;
   overflow: hidden;
 }
 .l-row {
@@ -155,6 +211,23 @@ body {
   background-color: rgba(3, 53, 129, 0.3) !important;
 }
 
+.ivu-spin-fix {
+  background: rgba(0, 0, 0, 0.6);
+}
+.demo-spin-icon-load {
+  animation: ani-demo-spin 1s linear infinite;
+}
+@keyframes ani-demo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 /*** */
 .ivu-row {
   width: 100%;
@@ -180,6 +253,9 @@ body {
     .nav .link-item {
       background-color: rgba(0, 0, 0, 0.2);
     }
+    .nav .router-link-exact-active {
+      background-color: rgba(30, 90, 255, 0.7);
+    }
   }
   //
   .main-bg {
@@ -201,10 +277,6 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-image: url(./assets/images/map-bg-3d-1.png);
-    background-position: center 200px;
-    background-repeat: no-repeat;
-    background-size: auto 560px;
     .item-wrap {
       margin-bottom: 16px;
     }
@@ -213,13 +285,10 @@ body {
       width: 29.25%;
     }
     .row-big {
-      position: absolute;
-      left: 25.5%;
-      top: 90px;
-      z-index: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      padding-top: 0.333333rem;
       width: 49%;
     }
     .m-child-nav-box {
@@ -229,8 +298,8 @@ body {
       .child-nav-item {
         margin-right: 12px;
         width: 240px;
-        height: 80px;
-        line-height: 80px;
+        height: 72px;
+        line-height: 72px;
         text-align: center;
         color: #fff;
         font-size: 18px;
@@ -238,67 +307,69 @@ body {
         background-image: url(./assets/images/child-nav-bg-2.png);
         background-repeat: no-repeat;
         background-position: center;
+        cursor: pointer;
+      }
+      .child-nav-item-active {
+        background-image: url(./assets/images/child-nav-bg-1.png);
       }
       .child-nav-item:hover {
         background-image: url(./assets/images/child-nav-bg-1.png);
       }
     }
   }
-
-
 }
-  // 中间底部内容区
-  .m-middle-slider-wrap {
-    .slider-btn-bar {
-      display: flex;
-      // justify-content: space-between;
-      margin-bottom: 12px;
-      padding: 12px 0;
-      font-size: 18px;
-      color: #fff;
-      line-height: 1;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-      .item {
-        position: relative;
-        margin-right: 24px;
-        padding: 0 12px;
-        height: 32px;
-        line-height: 32px;
-        background-color: rgba(0, 0, 0, 0.2);
-        cursor: pointer;
-      }
-      .item::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 12px;
-        height: 12px;
-        border-left: 2px solid rgba(255, 255, 255, 0.6);
-        border-top: 2px solid rgba(255, 255, 255, 0.6);
-      }
-      .item::after {
-        content: "";
-        position: absolute;
-        width: 12px;
-        height: 12px;
-        right: 0;
-        bottom: 0;
-        border-right: 2px solid rgba(255, 255, 255, 0.6);
-        border-bottom: 2px solid rgba(255, 255, 255, 0.6);
-      }
-      .current {
-        background-color: #2a3c54;
-        color: #1cfafc;
-      }
-      .current::before {
-        border-color: #1cfafc;
-      }
-      .current::after {
-        border-color: #1cfafc;
-      }
+// 中间底部内容区
+.m-middle-slider-wrap {
+  .slider-btn-bar {
+    display: flex;
+    // justify-content: space-between;
+    margin-bottom: 12px;
+    padding: 12px 0;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    .item {
+      position: relative;
+      margin-right: 24px;
+      padding: 0 12px;
+      height: 32px;
+      line-height: 32px;
+      background-color: rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+    .item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 12px;
+      height: 12px;
+      border-left: 2px solid rgba(255, 255, 255, 0.6);
+      border-top: 2px solid rgba(255, 255, 255, 0.6);
+    }
+    .item::after {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      right: 0;
+      bottom: 0;
+      border-right: 2px solid rgba(255, 255, 255, 0.6);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    }
+    .current {
+      background-color: #2a3c54;
+      color: #1cfafc;
+    }
+    .current::before {
+      border-color: #1cfafc;
+    }
+    .current::after {
+      border-color: #1cfafc;
     }
   }
+}
 
 .theme-default .m-module-card-wrap {
   background-color: rgba(0, 0, 0, 0.2) !important;

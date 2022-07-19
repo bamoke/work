@@ -176,7 +176,7 @@ class AdviserQuestionController extends Auth {
   public function detail($id){
     $questionId = $id;
     $questionInfo = M("AdviserQuestion")
-    ->field()
+
     ->find($questionId);
 
     $answerCondition = array(

@@ -1,0 +1,31 @@
+<!-- Breadcrumb Section Start -->
+<div class="breadcrumb-section section bg_color--5 pt-60 pt-sm-50 pt-xs-40 pb-60 pb-sm-50 pb-xs-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-breadcrumb-content">
+                    <ul class="page-breadcrumb">
+                        <li><a href="{:U('Index/index')}">首页</a></li>
+                        <li>{$pageName}</li>
+                    </ul>
+                    <h1>{$pageName}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb Section Start -->
+
+<div class="content-wrap k1120">
+    <div class="m-tab-nav">
+        <a href="javascript:" data-index="0" class="current">员工之家</a><a href="javascript:" data-index="1">劳务服务工作站</a>
+    </div>
+    <div class="m-tab-content">
+        <div class="content-item" style="display: block;">
+            {$staffHome['content']}
+        </div>
+        <div class="content-item">
+            {$workSite['content']}
+        </div>
+    </div>
+</div>

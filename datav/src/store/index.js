@@ -33,12 +33,27 @@ const getTheme = () => {
 
 const store = new Vuex.Store({
   state: {
-    theme: getTheme()
+    theme: getTheme(),
+    curDate: null,
+    minDate:null,
+    maxDate:null,
   },
   mutations: {
     setTheme(state, themeName) {
       state.theme = themeList[themeName]
       Cookies.set("theme", themeName)
+    },
+    setCurDate(state,date) {
+      state.curDate  = date
+    },
+    setMinDate(state,date) {
+      state.minDate  = date
+    },
+    setMaxDate(state,date) {
+      state.maxDate  = date
+    },
+    setCurParentNav(state,navName){
+      state.curParentNav  = navName
     }
   }
 })

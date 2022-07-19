@@ -7,5 +7,7 @@
  */
 
 export default {
-    chartTheme : "macarons"
+    chartTheme : "macarons",
+    // webBaseUrl:""
+    webBaseUrl:"/screen"
 } 

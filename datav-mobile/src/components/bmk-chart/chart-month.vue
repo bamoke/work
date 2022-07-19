@@ -13,7 +13,13 @@
     <div :class="[activeClass, 'module-slider-content']">
       <div class="chart-box" :id="chartId"></div>
       <div class="table-box">
-        <BmkTable :columns="tableColumn" :data="this.tableData" />
+        <Table
+          size="small"
+          :height="height"
+          stripe
+          :columns="tableColumn"
+          :data="tableData"
+        />
       </div>
     </div>
   </div>
@@ -21,50 +27,29 @@
 
 <script>
 import BmkTable from "@/components/common/bmk-table.vue";
+import tableChartMixin from "@/libs/table-chart-mixin.js";
 export default {
-  components: {
-    BmkTable,
-  },
+  mixins: [tableChartMixin],
   props: {
     chartId: {
       type: String,
       default: "chart-leijizengzhang",
     },
-    mode: {
-      type: String,
-      default: "rise",
-    },
-    height: {
-      type: Number,
-      default: 0,
-    },
-    title: {
-      type: Object,
-      default: function () {
-        return {};
-      },
-    },
-    chartData: {
-      type: Array,
-      default: function () {
-        return [];
-      },
-    },
   },
   data() {
     return {
       chartInstance: null,
-      tableColumn:["时间","总量(亿元)","同比(%)"],
-      tableData: [],
-      activeClass: "show-gross",
     };
   },
   methods: {
-    drawEchart() {
+    drawChart() {
       this.chartInstance.setOption({
         dataset: { source: this.chartData },
         title: this.title,
         tooltip: { trigger: "axis" },
+        grid: {
+          top: 20,
+        },
         legend: {
           show: true,
           left: "right",
@@ -74,7 +59,8 @@ export default {
           type: "category",
           axisLabel: {
             formatter: function (value) {
-              return value.substring(5);
+              return value
+              // return value.substring(5);
             },
           },
         },
@@ -109,56 +95,8 @@ export default {
       });
     },
   },
-  watch: {
-    mode(newValue) {
-      if (newValue) {
-        if (newValue == "table") {
-          this.activeClass = "show-table";
-        } else {
-          this.activeClass = "show-chart";
-        }
-      }
-    },
-    chartData(newValue, oldValue) {
-      var title = this.title;
-      var series = [];
-      var legendData = newValue[0].slice(1);
-      series = legendData.map((item, index) => {
-        if (index === 0) {
-          return {
-            type: "line",
-            areaStyle: {},
-          };
-        } else {
-          return {
-            type: "line",
-          };
-        }
-      });
-      if (newValue) {
-        this.drawEchart();
-        // table data
-        this.tableData = newValue.map((item, index) => {
-          return {
-            date: item[0],
-            jwq_gross: item[1],
-            jwq_rise: item[2],
-            // jwzs_gross: item[3],
-            // jwzs_rise: item[4],
-            // kfq_gross: item[5],
-            // kfq_rise: item[6],
-          };
-        });
-      }
-    },
-  },
-  mounted() {
-    const appTheme = this.$store.state.theme;
-    this.chartInstance = this.$echarts.init(
-      document.getElementById(this.chartId),
-      appTheme.echartTheme
-    );
-  },
+
+
 };
 </script>
 
@@ -183,10 +121,5 @@ export default {
   width: 50%;
   height: 100%;
 }
-.show-gross {
-  transform: translateX(0);
-}
-.show-rise {
-  transform: translateX(-50%);
-}
+
 </style>

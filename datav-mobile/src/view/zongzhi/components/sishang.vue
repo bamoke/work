@@ -1,146 +1,69 @@
 <template>
   <div class="content-wrap">
-    <ModuleCard title="四上企业" style="min-height: 100%">
+    <ModuleCard title="在库“四上”企业" style="min-height: 100%">
       <template v-slot:extra>
         <div class="tips">
-          <van-icon name="info-o" />点击数值查看企业统计情况
+          <van-icon name="info-o" />点击各镇数值查看企业情况
         </div>
       </template>
-      <div class="m-sishang-wrap" style="display: none">
-        <div class="item" v-for="(item, index) in data" :key="index">
-          <div></div>
-          <div class="title">{{ item.title }}</div>
-          <div class="num-box">
-            <span>企业数量:</span><span class="num">{{ item.num }}</span>
+
+      <div class="m-sishang-box">
+        <div class="item" v-for="(item, index) of list" :key="index">
+          <div class="cate-box">
+            <van-icon name="wap-nav" />
+            <span class="cate-name">{{ item.name }}</span>
+            <span class="cate-total">
+              (<span class="subtext">企业数:</span
+              ><span class="num">{{ item.total }}</span
+              >)
+            </span>
+          </div>
+          <div class="town-box">
+            <div
+              class="town-item"
+              v-for="(town, i) of item.town"
+              :key="i"
+              @click="handleGoCom(item.name, town.name)"
+            >
+              <div>
+                <span class="town-name">{{ town.name }}:</span>
+                <span class="town-total">{{ town.total }}</span>
+              </div>
+              <div class="viewmore">查看企业</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="m-table table-box">
-        <table border="0" cellpadding="0" cellspacing="0" class="m-table">
-          <tr>
-            <th>区/街镇</th>
-            <th>小计</th>
-            <th>工业</th>
-            <th>建筑业</th>
-            <th>批发零售业</th>
-            <th>住宿餐饮业</th>
-            <th>重点服务业</th>
-            <th>房地产业</th>
-          </tr>
-          <tr v-for="(item,index) in tableData" :key="index">
-            <td>{{item.title}}</td>
-            <td @click="handleGoCom(item.title,'')">{{item.total}}</td>
-            <td @click="handleGoCom(item.title,'gy')">{{item.gy}}</td>
-            <td @click="handleGoCom(item.title,'jzy')">{{item.jzy}}</td>
-            <td @click="handleGoCom(item.title,'pflsy')">{{item.pflsy}}</td>
-            <td @click="handleGoCom(item.title,'zscyy')">{{item.zscyy}}</td>
-            <td @click="handleGoCom(item.title,'zdfwy')">{{item.zdfwy}}</td>
-            <td @click="handleGoCom(item.title,'fdcy')">{{item.fdcy}}</td>
-          </tr>
-        </table>
       </div>
     </ModuleCard>
   </div>
 </template>
 
 <script>
+import * as sishangApi from "@/api/sishang.js";
 export default {
   data() {
     return {
-      total: 1010,
-      data: [
-        {
-          title: "工业",
-          num: 569,
-        },
-        {
-          title: "建筑业",
-          num: 42,
-        },
-        {
-          title: "批发零售业",
-          num: 141,
-        },
-        {
-          title: "住宿餐饮业",
-          num: 37,
-        },
-        {
-          title: "重点服务业",
-          num: 123,
-        },
-        {
-          title: "房地产业",
-          num: 93,
-        },
-      ],
-      tableData: [
-        {
-          title: "金湾区",
-          total: 1010,
-          gy: 527,
-          jzy: 43,
-          pflsy: 141,
-          zscyy: 37,
-          zdfwy: 123,
-          fdcy: 94,
-        },
-        {
-          title: "三灶",
-          total: 344,
-          gy: 12,
-          jzy: 124,
-          pflsy: 24,
-          zscyy: 15,
-          zdfwy: 62,
-          fdcy: 27,
-        },
-        {
-          title: "红旗",
-          total: 344,
-          gy: 12,
-          jzy: 124,
-          pflsy: 24,
-          zscyy: 15,
-          zdfwy: 42,
-          fdcy: 27,
-        },
-        {
-          title: "南水",
-          total: 344,
-          gy: 12,
-          jzy: 124,
-          pflsy: 24,
-          zscyy: 15,
-          zdfwy: 42,
-          fdcy: 34,
-        },
-        {
-          title: "平沙",
-          total: 344,
-          gy: 12,
-          jzy: 124,
-          pflsy: 24,
-          zscyy: 15,
-          zdfwy: 42,
-          fdcy: 29,
-        },
-      ],
+      list: [],
     };
   },
   methods: {
-    handleGoCom(area,trade) {
+    handleGoCom(cate, town) {
       this.$router.push({
-        name:"gdp_monitor",
-        query:{area,trade}
-      })
-    }
+        name: "gdp_monitor",
+        query: { cate, town },
+      });
+    },
+  },
+  mounted() {
+    sishangApi.get_total().then((res) => {
+      this.list = res.data.list;
+    });
   },
 };
 </script>
 
 <style lang="less" scoped>
-.m-sishang-wrap {
+.m-sishang-box {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -148,14 +71,63 @@ export default {
   .item {
     margin-bottom: 0.0625rem;
     padding: 0.0625rem;
-    width: 31%;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    // color:#696969;
-    .title {
-      font-weight: bold;
+    width: 48%;
+    // border: 1px solid rgba(0, 0, 0, 0.05);
+    background: #edf5fb;
+    // box-shadow: 0 2px 2px rgba(0,0,0,.1);
+    .cate-box {
+      display: flex;
+      // justify-content: space-between;
+      align-items: center;
+      // margin-bottom:.03125rem;
+      padding-bottom: 0.0625rem;
+      line-height: 1;
+      // border-bottom:1px solid #e8e8e8;
+      .cate-name {
+        margin:0 4px;
+        font-weight: bold;
+      }
+      .cate-total {
+        .num {
+          font-weight: bold;
+        }
+        .subtext {
+          color: #969696;
+          font-size: 11px;
+        }
+      }
     }
-    .num {
-      font-weight: bold;
+    .town-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      line-height: 1;
+      .town-item {
+        width: 25%;
+        padding-left: 0.0625rem;
+        // text-align: center;
+        border-left: 1px solid #e8e8e8;
+        color: #696969;
+        cursor: pointer;
+        .town-total {
+          margin-bottom: 6px;
+          font-weight: bold;
+        }
+        .viewmore {
+          margin-top: 0.03125rem;
+          font-size: 10px;
+          // color: #969696;
+          text-decoration: underline;
+        }
+
+      }
+      .town-item:first-child {
+        padding-left: 0;
+        border-left: none;
+      }
+      .town-item:hover {
+         color:#1989fa;
+      }
     }
   }
 }

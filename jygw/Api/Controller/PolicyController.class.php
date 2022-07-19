@@ -103,11 +103,23 @@ class PolicyController extends Controller {
     ->order("sort asc,id desc")
     ->fetchSql(false)
     ->select();
+
+    $parentList = ['zhuhai'=>"珠海市",'jinwan'=>"金湾区"];
+
+    $newList = array();
+    foreach($parentList as $pkey=>$parent) {
+      foreach($list as $key=>$val) {
+        if($val['parent_name'] == $parent) {
+          $newList[$pkey][] = $val;
+        }
+      }
+      
+    }
     $backData = array(
       "code"  =>200,
       "msg"   =>'success',
       "data"  =>array(
-        "list"  =>$list
+        "list"  =>$newList
       )     
     );
     $this->ajaxReturn($backData);

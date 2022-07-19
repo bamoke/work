@@ -1,5 +1,6 @@
 <?php
 namespace Api\Controller;
+use Api\Common\Controller\BaseController;
 class HomeController extends BaseController {
     public function index(){
         $condition = array(

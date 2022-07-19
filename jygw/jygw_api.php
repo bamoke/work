@@ -19,7 +19,7 @@ define("APP_DEBUG",true);
 
 
 //定义应用目录
-define("APP_PATH","./jygw/");
+define("APP_PATH","../jygw/");
 
 //设置是否生成目录安全文件
 define("BUILD_DIR_SECURE",false);

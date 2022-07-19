@@ -10,10 +10,16 @@
     class="module-slider-wrap"
     :style="{ height: height + 'px', width: '100%' }"
   >
-    <div :class="[activeClass,'module-slider-content']">
+    <div :class="[activeClass, 'module-slider-content']">
       <div class="chart-box" :id="chartId"></div>
       <div class="table-box">
-        <BmkTable :columns="tableColumn" :data="this.chartData" />
+        <Table
+          size="small"
+          :height="height"
+          stripe
+          :columns="tableColumn"
+          :data="tableData"
+        />
       </div>
     </div>
   </div>
@@ -21,9 +27,12 @@
 
 <script>
 var optMode = {
-  gross: {
+  proportion: {
     title: {
       text: "",
+    },
+    dataset: {
+      source: [],
     },
     legend: {
       left: "right",
@@ -49,17 +58,19 @@ var optMode = {
       },
     ],
   },
-  rise: {
+  gross: {
     title: {
       text: "",
     },
-
+    dataset: {
+      source: [],
+    },
     tooltip: { trigger: "axis" },
     legend: {
       show: true,
       left: "right",
       top: "top",
-      data: [{ name: "总量" }, { name: "同比增长" }],
+      // data: [{ name: "总量" }, { name: "同比增长" }],
     },
     grid: {
       right: 40,
@@ -73,7 +84,7 @@ var optMode = {
       {
         type: "value",
         axisLabel: {
-          formatter: "{value}亿",
+          formatter: "{value}",
         },
         splitLine: {
           show: true,
@@ -91,55 +102,32 @@ var optMode = {
     ],
     series: [
       {
-        name: "总量",
         type: "bar",
         showBackground: true,
       },
       {
-        name: "同比增长",
-        type: "bar",
+        type: "line",
         yAxisIndex: 1,
-        showBackground: true,
       },
     ],
   },
 };
-
+import tableChartMixin from "@/libs/table-chart-mixin.js";
 export default {
+  mixins: [tableChartMixin],
   props: {
     chartId: {
       type: String,
       default: "chart-compare-county",
     },
-    height: {
-      type: Number,
-      default: 0,
-    },
-    isOpen: {
-      type: Boolean,
-      default: false,
-    },
-    mode: {
-      type: String,
-      default: "rise",
-    },
-    chartData: {
-      type: Array,
-      default: function () {
-        return [];
-      },
-    },
   },
   data() {
     return {
-      activeClass: "show-chart",
-      tableColumn:["区域","总量","同比增长","占全市比重","增速位次"],
-      tableData: [],
       chartInstance: null,
     };
   },
   methods: {
-    reDraw() {
+    drawChart() {
       let option, openOpt;
 
       if (this.isOpen) {
@@ -192,44 +180,19 @@ export default {
           ],
         };
       } else {
-        option = optMode[this.mode];
-        option.dataset = {
-          source: this.chartData,
-        };
+        
+        option = optMode[this.cmode];
+        option.dataset.source = this.chartData;
+        option.title = this.title
       }
       this.chartInstance.clear();
       this.chartInstance.setOption(option);
     },
   },
-  watch: {
-    mode(newValue, oldValue) {
-      if (newValue) {
-        if (newValue == "table") {
-          this.activeClass = "show-table";
-          // this.drawEchart();
-        } else {
-          this.reDraw();
-          this.activeClass = "show-chart";
-        }
-      }
-    },
-    chartData(newValue, oldValue) {
-      if (newValue) {
-        this.reDraw();
-      }
-    },
-  },
-  mounted() {
-    const appTheme = this.$store.state.theme;
-    this.chartInstance = this.$echarts.init(
-      document.getElementById(this.chartId),
-      appTheme.echartTheme
-    );
-  },
+  watch: {},
+  mounted() {},
 };
 </script>
 
 <style lang="less" scoped>
-
-
 </style>

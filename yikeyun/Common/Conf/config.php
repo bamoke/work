@@ -14,7 +14,7 @@ return array(
 
 
 //    "DB_HOST"   =>"localhost",
-    "DB_HOST"   =>"39.105.2.50",
+    "DB_HOST"   =>"39.108.189.211",
     "DB_PORT"   =>"3306",
     "DB_NAME"   =>"yikeyun",
     "DB_TYPE"   =>"mysql",

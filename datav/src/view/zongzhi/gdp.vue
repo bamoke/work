@@ -10,14 +10,14 @@
     <div class="content-wrap">
       <div class="row-side side-left">
         <div class="transform-box">
-          <ModuleCard title="地区生产总值累计增长速度" class="item-wrap">
+          <ModuleCard title="地区生产总值近一年累计增速" class="item-wrap">
             <ChartMonth
               :title="leijizengzhangData.title"
               :chart-data="leijizengzhangData.data"
               :height="200"
             ></ChartMonth>
           </ModuleCard>
-          <ModuleCard title="地区生产总值及增长率" class="item-wrap">
+          <ModuleCard title="地区生产总值近五年情况" class="item-wrap">
             <template v-slot:extra>
               <ButtonGroup size="small">
                 <Button type="primary" @click="handleChangeYearMode('gross')"
@@ -33,17 +33,8 @@
               :chart-data="timelineYearData.data"
             ></ChartYear>
           </ModuleCard>
-          <ModuleCard title="本期企业统计监测表" class="item-wrap">
-            <div class="m-shujujiance">
-              <div
-                class="item"
-                @click="handleShowMonitor(item)"
-                v-for="(item, index) in monitorTableList"
-                :key="index"
-              >
-                {{ item }}
-              </div>
-            </div>
+          <ModuleCard title="一二三产业占比" class="item-wrap">
+            <div id="chart-changye-proportion" style="height: 240px"></div>
           </ModuleCard>
         </div>
         <div class="bt-shadow"></div>
@@ -51,24 +42,14 @@
 
       <!-- 中间 -->
       <div class="row-big">
-        <div class="banner-box"></div>
-        <div class="item-wrap">
-          <div class="l-row l-row-bt">
-            <EffectCircleCount3D :data="totalInfo.all"></EffectCircleCount3D>
-            <EffectCircleCount3D :data="totalInfo.zhishu"></EffectCircleCount3D>
-            <EffectCircleCount3D
-              :data="totalInfo.kaifaqu"
-            ></EffectCircleCount3D>
-          </div>
+        <TownMap></TownMap>
+        <div class="l-row l-row-bt">
+          <EffectCircleCount3D :data="totalInfo.jw"></EffectCircleCount3D>
+          <EffectCircleCount3D :data="totalInfo.zs"></EffectCircleCount3D>
+          <EffectCircleCount3D :data="totalInfo.kfq"></EffectCircleCount3D>
         </div>
         <div class="item-wrap">
           <div class="m-child-nav-box">
-            <router-link :to="{ name: 'gdp_chanye' }" class="child-nav-item">
-              <div class="nav-name">按产业情况</div>
-            </router-link>
-            <router-link :to="{ name: 'gdp_hangye' }" class="child-nav-item">
-              <div class="nav-name">按行业情况</div>
-            </router-link>
             <router-link :to="{ name: 'gdp_company' }" class="child-nav-item">
               <div class="nav-name">重点企业经营情况</div>
             </router-link>
@@ -107,16 +88,8 @@
               :chart-data="compareDomesticData.data"
             ></ChartCompareDomestic>
           </ModuleCard>
-          <ModuleCard title="房地产开发与经营" class="item-wrap">
-            <div class="m-shujujiance">
-              <div
-                class="item"
-                v-for="(item, index) in propertyTableList"
-                :key="index"
-              >
-                {{ item }}
-              </div>
-            </div>
+          <ModuleCard title="按行业总量及增速" class="item-wrap">
+            <div id="chart-hangye-gross" style="height: 240px"></div>
           </ModuleCard>
         </div>
         <div class="bt-shadow"></div>
@@ -137,39 +110,32 @@ export default {
   components: {},
   data() {
     return {
+      townTotalInfo: {},
       sliderIndex: 0,
       totalInfo: {
-        all: {
+        jw: {
           title: "金湾区",
-          num: 155.45,
+          gross: 155.45,
           measure: "亿元",
-          rise: 20.1,
+          rise: "0",
         },
-        zhishu: {
+        zs: {
           title: "金湾直属",
-          num: 73.18,
+          gross: 73.18,
           measure: "亿元",
-          rise: 25.4,
+          rise: "0",
         },
-        kaifaqu: {
+        kfq: {
           title: "经济开发区",
-          num: 82.26,
+          gross: 82.26,
           measure: "亿元",
-          rise: 20.7,
+          rise: "0",
         },
       },
+      chanyeProportionData: [],
       baseData: {},
       echartInstance: {},
-      monitorTableList: [
-        "工业企业产值监测表",
-        "限额以上批发企业统计监测表",
-        "限额以上零售业企业统计监测表",
-        "限额以上住宿业企业统计监测表",
-        "限额以上餐饮业企业统计监测表",
-        "规模以上服务业企业统计监测表",
-        "建筑业企业产值统计监测表",
-        "房地产开发企业销售情况统计监测表",
-      ],
+      monitorTableList: [],
       propertyTableList: [],
       showModal: false,
       modalTitle: "地区总产值按产业情况",
@@ -187,48 +153,149 @@ export default {
     },
   },
   mounted() {
-    var chartName = [];
+    var chartName = ["changye-proportion", "hangye-gross"];
     this.chartInit({ chartName });
 
+    Api.base.get_total({ cate: "地区生产总值" }).then((res) => {
+      this.totalInfo = res.data;
+    });
     /***指标对比 */
-    Api.jjzb.get_county().then((res) => {
+    Api.jjzb.get_county({ params: { cate: "地区生产总值" } }).then((res) => {
       this.compareCountyData = {
         mode: "gross",
         title: {},
-        data: res.data,
+        data: this.$formatTableToChart(res.data.list, res.data.columns),
       };
     });
 
     /*** 国内部分区域指标 */
-    Api.jjzb.get_domestic().then((res) => {
+    Api.jjzb.get_domestic({ params: { cate: "地区生产总值" } }).then((res) => {
       this.compareDomesticData = {
         title: {
-          text: res.title,
+          text: res.data.title,
         },
-        data: res.data,
+        data: this.$formatTableToChart(res.data.list, res.data.columns),
       };
     });
 
     /***按月 累计增长率 */
-    Api.timeline.get_monthdata().then((res) => {
-      this.leijizengzhangData = {
-        title: {
-          text: "2020年3-2021年3月",
-        },
-        data: res.data,
-      };
-    });
+    Api.timeline
+      .get_monthdata({ params: { cate: "地区生产总值" } })
+      .then((res) => {
+        this.leijizengzhangData = {
+          title: {
+            text: "",
+          },
+          data: this.$formatTableToChart(res.data.list, res.data.columns),
+        };
+      });
 
     /*** 年度数据 */
-    Api.timeline.get_yeardata({ params: { cate: "gdp" } }).then((res) => {
-      this.timelineYearData = {
-        title: {
-          text: res.title,
+    Api.timeline
+      .get_yeardata({ params: { cate: "地区生产总值" } })
+      .then((res) => {
+        this.timelineYearData = {
+          title: {
+            text: res.title,
+          },
+          mode: "gross",
+          data: this.$formatTableToChart(res.data.list, res.data.columns),
+          origin: res.data,
+        };
+      });
+
+    Api.base.get_gdp_hangye({ cate: "按产业" }).then((res) => {
+      this.echartInstance["changye-proportion"].setOption({
+        dataset: { source: res.data.list },
+        legend: {
+          show: true,
+          left: "right",
+          top: "top",
+          orient: "vertical",
         },
-        mode: "gross",
-        data: res.data,
-        origin: res.data,
-      };
+        tooltip: {
+          trigger: "item",
+        },
+
+        series: [
+          {
+            type: "pie",
+            radius: ["0", "65%"],
+            center: ["50%", "50%"],
+            label: {
+              show: true,
+              formatter: "{b}\n占比:{d}%",
+            },
+            labelLine: {
+              show: true,
+            },
+          },
+        ],
+      });
+    });
+
+    Api.base.get_gdp_hangye({ cate: "按行业" }).then((res) => {
+      this.echartInstance["hangye-gross"].setOption({
+        dataset: { source: res.data.list },
+        grid: {
+          top: 40,
+          left: 60,
+          right: 40,
+          bottom: 80,
+        },
+
+        tooltip: { trigger: "axis" },
+        legend: {
+          show: true,
+          left: "right",
+          top: "top",
+        },
+        xAxis: {
+          type: "category",
+          axisLabel: {
+            rotate: -45,
+            formatter: function (value) {
+              return value;
+              // return formatStringWrap(value, 4);
+            },
+          },
+        },
+        yAxis: [
+          {
+            type: "value",
+            axisLabel: {
+              formatter: "{value}",
+            },
+            splitLine: {
+              show: true,
+            },
+          },
+          {
+            type: "value",
+            axisLabel: {
+              formatter: "{value}" + "%",
+            },
+            splitLine: {
+              show: true,
+            },
+          },
+        ],
+        series: [
+          {
+            type: "bar",
+          },
+          {
+            type: "line",
+            yAxisIndex: 1,
+            lineStyle: {
+              color: "#59fedd",
+            },
+            itemStyle: {
+              color: "#59fedd",
+            },
+          },
+        ],
+      });
     });
   },
 };
@@ -239,7 +306,7 @@ export default {
 }
 
 .banner-box {
-  height: 660px;
+  height: 3.4375rem;
 }
 .item-wrap {
   margin-bottom: 0.083333rem;

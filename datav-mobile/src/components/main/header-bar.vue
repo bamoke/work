@@ -8,22 +8,34 @@
 <template>
   <div class="m-header-bar">
     <div class="brand-box">
-      <router-link to="/" class="brand-name"
+      <router-link :to="{ name: 'home' }" class="brand-name"
         >数字金湾政府数据分析系统</router-link
       >
       <div class="l-row l-row-bt bt">
         <div class="sub-name">经济统计</div>
         <div class="data-box" @click="showDatepicker = true">
-          <span class="month-text">{{ selectedDate }}</span>
+          <span class="month-text">{{ selectedDateText }}</span>
           <van-icon name="arrow-down" />
         </div>
       </div>
     </div>
     <div class="nav">
-      <router-link :to="realPath(item)" class="item link-item"  v-for="(item,index) in routerList[0].children" :key="index">
-        <div class="title">{{item.meta.title}}</div>
+      <router-link class="item link-item" :to="{ name: 'overview' }"
+        >经济总览</router-link
+      >
+      <router-link
+        :to="realPath(item)"
+        class="item link-item"
+        v-for="(item, index) in routerList[0].children"
+        :class="{ 'router-link-active': checkNav(item.name) }"
+        :key="index"
+      >
+        <div class="title">{{ item.meta.title }}</div>
       </router-link>
-      
+    </div>
+    <div class="setting">
+      <van-icon name="expand-o" />
+      <div @click="hanldleFullScreen">全屏切换</div>
     </div>
     <van-popup v-model="showDatepicker">
       <van-datetime-picker
@@ -42,27 +54,85 @@
 </template>
 
 <script>
-import routerList from "@/router/routers"
+import routerList from "@/router/routers";
+import { Toast } from "vant";
+import Cookies from "js-cookie";
+
 export default {
-  inject:['reload'],
+  inject: ["reload"],
   data() {
     return {
       routerList,
       showDatepicker: false,
       curNav: "",
-      minDate: new Date(2015, 0, 1),
-      maxDate: new Date(),
-      currentDate: null,
-      selectedDate: "",
+      fullScreen: false,
     };
   },
-  computed: {},
+  computed: {
+    minDate() {
+      return new Date(Cookies.get("minDate"));
+    },
+    maxDate() {
+      return new Date(Cookies.get("maxDate"));
+    },
+    currentDate: {
+      get() {
+        // return new Date("2021-07-28");
+        return new Date(Cookies.get('curDate'))
+      },
+      set(value) {
+        Cookies.set("curDate", value, { expires: 1 });
+      },
+    },
+    selectedDateText() {
+      var date = new Date(Cookies.get('curDate'));
+      var year = date.getFullYear();
+      var month = date.getMonth() + 1;
+      var newMonth = month > 9 ? `${month}月` : `0${month}月`;
+      return `${year}年${newMonth}`;
+    },
+  },
   methods: {
-    realPath(item){
-      if(item.children && item.children.length > 0 ) {
-        return item.children[0].path
-      }else {
-        return item.path
+    checkNav(navName) {
+      // console.log(navName)
+      var curnavName = this.$route.name;
+      if (curnavName.match(navName)) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    hanldleFullScreen() {
+      if (!this.fullScreen) {
+        this.fullScreen = true;
+        var element = document.documentElement;
+        if (element.requestFullscreen) {
+          element.requestFullscreen();
+        } else if (element.msRequestFullscreen) {
+          element.msRequestFullscreen();
+        } else if (element.mozRequestFullScreen) {
+          element.mozRequestFullScreen();
+        } else if (element.webkitRequestFullscreen) {
+          element.webkitRequestFullscreen();
+        }
+      } else {
+        this.fullScreen = false;
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        }
+      }
+    },
+    realPath(item) {
+      if (item.children && item.children.length > 0) {
+        return item.children[0].path;
+      } else {
+        return item.path;
       }
     },
 
@@ -70,35 +140,30 @@ export default {
       if (type === "year") {
         return `${val}年`;
       } else if (type === "month") {
+        if (val == 1) {
+          return;
+        }
         return `${val}月`;
       }
       return val;
     },
-    formatterSelectedDate(date) {
-      var year = date.getFullYear();
-      var month = date.getMonth() + 1;
-      var newMonth = month > 9 ? `${month}月` : `0${month}月`;
-      return `${year}年${newMonth}`
-    },
+
     handleSelectedDate(e) {
       var date = e;
+      var month = e.getMonth();
+      if (month == 0) {
+        Toast.fail("请选择有效月份");
+        return;
+      }
       this.showDatepicker = false;
-      this.currentDate = date;
-      this.$store.commit("setDate", date);
-      this.selectedDate = this.formatterSelectedDate(date);
+
+      Cookies.set("curDate", date, { expires: 1 });
 
       // 重载
-      this.reload()
+      this.reload();
     },
   },
-  mounted() {
-
-    this.currentDate = this.$store.state.date;
-
-    this.selectedDate = this.formatterSelectedDate(this.currentDate);
-
-    
-  },
+  mounted() {},
 };
 </script>
 
@@ -135,6 +200,16 @@ export default {
   .date-picker {
     width: 1.5625rem;
   }
+  .setting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 0.291667rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
 }
 
 .nav {
@@ -161,6 +236,11 @@ export default {
   }
   .router-link-active {
     background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+@media screen and (max-width:768px) {
+  .m-header-bar .setting {
+    display: none;
   }
 }
 </style>

@@ -18,6 +18,7 @@ export default {
    */
   apiBaseUrl: '/jygw/admin.php',
   webBaseUrl: process.env.NODE_ENV === 'development' ? '/' : '/jygw/admin_web/',
+  uploadBaseUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:802' : '',
   /**
    * @description 默认打开的首页的路由name值，默认为home
    */

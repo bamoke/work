@@ -90,6 +90,7 @@ class OrdersModel extends \Think\Model {
                 "title" =>$val->物品名称,
                 "sg_num"    =>$val->数量,
                 "ps_num"    =>$val->配送数量,
+                "remark"    =>$val->备注,
                 "price"     =>$val->采购单价?$val->采购单价:$val->单价,
                 "amount_total"     =>$val->采购金额?$val->采购金额:$val->金额
             );

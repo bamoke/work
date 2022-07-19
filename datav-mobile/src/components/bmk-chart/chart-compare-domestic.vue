@@ -13,7 +13,13 @@
     <div :class="[activeClass, 'module-slider-content']">
       <div class="chart-box" :id="chartId"></div>
       <div class="table-box">
-        <BmkTable :columns="tableColumn" :data="this.chartData" />
+        <Table
+          size="small"
+          :height="height"
+          stripe
+          :columns="tableColumn"
+          :data="tableData"
+        />
       </div>
     </div>
   </div>
@@ -21,58 +27,25 @@
 
 <script>
 import { formatStringWrap } from "@/libs/tools.js";
+import tableChartMixin from "@/libs/table-chart-mixin.js";
 export default {
+  mixins: [tableChartMixin],
   props: {
     chartId: {
       type: String,
       default: "chart-compare-domestic",
     },
-    mode: {
-      type: String,
-      default: "gross",
-    },
-    height: {
-      type: Number,
-      default: 0,
-    },
-    title: {
-      type: Object,
-      default: function () {
-        return {};
-      },
-    },
-    chartData: {
-      type: Array,
-      default: function () {
-        return [];
-      },
-    },
   },
   data() {
     return {
-      activeClass: "show-chart",
-      tableColumn: ["区域名称","总量","同比增长"],
       chartInstance: null,
     };
   },
-
-  watch: {
-    mode(newValue) {
-      if (newValue) {
-        if (newValue == "table") {
-          this.activeClass = "show-table";
-          // this.drawEchart();
-        } else {
-          this.activeClass = "show-chart";
-        }
-      }
-    },
-    chartData(newValue, oldValue) {
-      if (newValue) {
-        var title = this.title;
-        this.chartInstance.setOption({
-          dataset: { source: newValue },
-          title,
+  methods: {
+    drawChart() {
+      this.chartInstance.setOption({
+          dataset: { source: this.chartData },
+          title:this.title,
           grid: {
             right: 40,
             bottom: 30,
@@ -82,21 +55,19 @@ export default {
             show: true,
             left: "right",
             top: "top",
-            data: [{ name: "总量" }, { name: "同比增长" }],
+            // data: [{ name: "总量" }, { name: "同比增长" }],
           },
           xAxis: {
             type: "category",
             axisLabel: {
               // rotate: -45,
               formatter: function (value) {
-                return value;
-                // return formatStringWrap(value, 4);
+                return formatStringWrap(value, 4);
               },
             },
           },
           yAxis: [
             {
-              
               type: "value",
               axisLabel: {
                 formatter: "{value}",
@@ -106,7 +77,6 @@ export default {
               },
             },
             {
-              
               type: "value",
               axisLabel: {
                 formatter: "{value}" + "%",
@@ -118,12 +88,10 @@ export default {
           ],
           series: [
             {
-              name: "总量",
               type: "bar",
             },
             {
-              name: "同比增长",
-              type: "bar",
+              type: "line",
               yAxisIndex: 1,
             },
             // {
@@ -139,15 +107,15 @@ export default {
             // },
           ],
         });
-      }
-    },
+    }
+  },
+
+  watch: {
+
+
   },
   mounted() {
-    const appTheme = this.$store.state.theme;
-    this.chartInstance = this.$echarts.init(
-      document.getElementById(this.chartId),
-      appTheme.echartTheme
-    );
+
   },
 };
 </script>

@@ -1,0 +1,544 @@
+[ 2021-09-24T08:31:55+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/get_role_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001690s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001150s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001174s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0171s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = 'f1a6dd4d32a59653f19bf93896bcf964' LIMIT 1   [ RunTime:0.0253s ]
+
+[ 2021-09-24T08:31:55+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/getlist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001709s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001185s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001207s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0229s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = 'f1a6dd4d32a59653f19bf93896bcf964' LIMIT 1   [ RunTime:0.0234s ]
+
+[ 2021-09-24T08:32:06+08:00 ] 127.0.0.1 /datav-backend/manage.php/Main/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000602s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000803s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000826s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0273s ]
+SQL: SELECT * FROM `datav_admin_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0249s ]
+SQL: SELECT `id`,`username`,`nickname`,`status` FROM `datav_admin_user` WHERE `username` = 'admin' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0190s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0226s ]
+NOTIC: [8] Undefined variable: uid D:\work\datav-backend\Manage\Controller\MainController.class.php 第 113 行.
+SQL: SELECT * FROM `datav_admin_session` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0184s ]
+SQL: UPDATE `datav_admin_session` SET `token`='08a7c7cefb329475bc8fbc5430d69b0a',`expires_time`='1632447126' WHERE `uid` = 1 [ RunTime:0.0197s ]
+
+[ 2021-09-24T08:33:11+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/get_role_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000809s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0202s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0166s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632447191' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0256s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0161s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0195s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `datav_user_role` [ RunTime:0.0146s ]
+SQL: SELECT `id`,`name` FROM `datav_user_role` WHERE `status` = 1  [ RunTime:0.0193s ]
+
+[ 2021-09-24T08:33:11+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/getlist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000538s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000718s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000741s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0220s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0186s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632447191' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0177s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0209s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0231s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0156s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0327s ]
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time FROM datav_users U LIMIT 0,15   [ RunTime:0.0170s ]
+SQL: SELECT COUNT(*) AS tp_count FROM datav_users U LIMIT 1   [ RunTime:0.0157s ]
+
+[ 2021-09-24T08:33:14+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/get_detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000558s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000633s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0199s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0175s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632447193' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0232s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0235s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0213s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0165s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0199s ]
+SQL: SELECT `id`,`username`,`nickname`,`status`,`role_id` FROM `datav_users` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0164s ]
+
+[ 2021-09-24T08:33:24+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/get_role_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000734s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0212s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0163s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632447204' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0261s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0335s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0309s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0278s ]
+SQL: SHOW COLUMNS FROM `datav_user_role` [ RunTime:0.0233s ]
+SQL: SELECT `id`,`name` FROM `datav_user_role` WHERE `status` = 1  [ RunTime:0.0179s ]
+
+[ 2021-09-24T08:33:25+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/getlist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000621s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000646s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0942s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0197s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632447205' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0359s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0216s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0171s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0641s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0254s ]
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time FROM datav_users U LIMIT 0,15   [ RunTime:0.0211s ]
+SQL: SELECT COUNT(*) AS tp_count FROM datav_users U LIMIT 1   [ RunTime:0.0164s ]
+
+[ 2021-09-24T08:34:10+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/get_role_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000710s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000730s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0186s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0195s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632447250' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0314s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0162s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0540s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0146s ]
+SQL: SHOW COLUMNS FROM `datav_user_role` [ RunTime:0.0175s ]
+SQL: SELECT `id`,`name` FROM `datav_user_role` WHERE `status` = 1  [ RunTime:0.0290s ]
+
+[ 2021-09-24T08:34:12+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/get_detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000765s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000788s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0187s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0159s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632447252' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0205s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0176s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0178s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0179s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0230s ]
+SQL: SELECT `id`,`username`,`nickname`,`status`,`role_id` FROM `datav_users` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0175s ]
+
+[ 2021-09-24T08:56:28+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/get_role_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000669s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0184s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0202s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632448588' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0311s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0147s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0156s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0147s ]
+SQL: SHOW COLUMNS FROM `datav_user_role` [ RunTime:0.0148s ]
+SQL: SELECT `id`,`name` FROM `datav_user_role` WHERE `status` = 1  [ RunTime:0.0166s ]
+
+[ 2021-09-24T09:02:25+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/getlist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000812s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000838s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0500s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0167s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632448945' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0172s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0367s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0185s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0185s ]
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time FROM datav_users U LIMIT 0,15   [ RunTime:0.0163s ]
+SQL: SELECT COUNT(*) AS tp_count FROM datav_users U LIMIT 1   [ RunTime:0.0181s ]
+
+[ 2021-09-24T09:02:25+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/get_role_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000842s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000872s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0212s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0169s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632448945' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0173s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0186s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0162s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0410s ]
+SQL: SHOW COLUMNS FROM `datav_user_role` [ RunTime:0.0173s ]
+SQL: SELECT `id`,`name` FROM `datav_user_role` WHERE `status` = 1  [ RunTime:0.0213s ]
+
+[ 2021-09-24T09:02:27+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/get_detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000592s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000609s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0133s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0135s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632448947' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0207s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0146s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0142s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0131s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0137s ]
+SQL: SELECT `id`,`username`,`nickname`,`status`,`role_id` FROM `datav_users` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0139s ]
+
+[ 2021-09-24T09:06:34+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000667s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001019s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001046s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0225s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0197s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632449194' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0225s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0188s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0194s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0214s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0412s ]
+SQL: UPDATE `datav_users` SET `id`='1',`username`='test',`nickname`='测试员',`status`='1',`role_id`='1' WHERE `id` = 1 [ RunTime:0.0216s ]
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time FROM datav_users U WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0192s ]
+
+[ 2021-09-24T09:06:39+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/get_role_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000590s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004174s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004205s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0145s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0189s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632449199' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0155s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0143s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0224s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0227s ]
+SQL: SHOW COLUMNS FROM `datav_user_role` [ RunTime:0.0143s ]
+SQL: SELECT `id`,`name` FROM `datav_user_role` WHERE `status` = 1  [ RunTime:0.0148s ]
+
+[ 2021-09-24T09:06:40+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/getlist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000812s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000843s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0231s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0163s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632449199' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0242s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0145s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0144s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0151s ]
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time FROM datav_users U LIMIT 0,15   [ RunTime:0.0193s ]
+SQL: SELECT COUNT(*) AS tp_count FROM datav_users U LIMIT 1   [ RunTime:0.0204s ]
+
+[ 2021-09-24T09:28:01+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/get_detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000577s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000839s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000860s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0135s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0141s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632450481' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0179s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0148s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0160s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0461s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0169s ]
+SQL: SELECT `id`,`username`,`nickname`,`status`,`role_id` FROM `datav_users` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0179s ]
+
+[ 2021-09-24T09:28:12+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001024s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000639s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0190s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0162s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632450492' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0278s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0689s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0168s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0149s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0169s ]
+SQL: UPDATE `datav_users` SET `id`='1',`username`='test',`nickname`='测试员',`status`='1',`role_id`='2' WHERE `id` = 1 [ RunTime:0.0167s ]
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time FROM datav_users U WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0442s ]
+
+[ 2021-09-24T09:52:11+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/get_role_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000772s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0173s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0199s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632451931' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0174s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0148s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0150s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0144s ]
+SQL: SHOW COLUMNS FROM `datav_user_role` [ RunTime:0.0260s ]
+SQL: SELECT `id`,`name` FROM `datav_user_role` WHERE `status` = 1  [ RunTime:0.0144s ]
+
+[ 2021-09-24T09:53:21+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/get_role_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000670s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0356s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0164s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632452000' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0233s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0176s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0168s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0338s ]
+SQL: SHOW COLUMNS FROM `datav_user_role` [ RunTime:0.0167s ]
+SQL: SELECT `id`,`name` FROM `datav_user_role` WHERE `status` = 1  [ RunTime:0.0167s ]
+
+[ 2021-09-24T09:53:21+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/getlist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000918s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000944s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0181s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0189s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632452001' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0301s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0206s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0202s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0300s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0201s ]
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time FROM datav_users U LIMIT 0,15   [ RunTime:0.0177s ]
+SQL: SELECT COUNT(*) AS tp_count FROM datav_users U LIMIT 1   [ RunTime:0.0172s ]
+
+[ 2021-09-24T09:53:23+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/get_detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000417s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0161s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0165s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632452002' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0367s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0363s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0167s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0259s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0191s ]
+SQL: SELECT `id`,`username`,`nickname`,`status`,`role_id` FROM `datav_users` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0241s ]
+
+[ 2021-09-24T09:53:27+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000601s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0167s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0242s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632452007' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0191s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0246s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0168s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0287s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0174s ]
+SQL: UPDATE `datav_users` SET `id`='1',`username`='test',`nickname`='测试',`status`='1',`role_id`='2' WHERE `id` = 1 [ RunTime:0.0185s ]
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time FROM datav_users U WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0159s ]
+
+[ 2021-09-24T10:04:04+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/get_role_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000676s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0160s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0155s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632452644' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0161s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0161s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0201s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0149s ]
+SQL: SHOW COLUMNS FROM `datav_user_role` [ RunTime:0.0149s ]
+SQL: SELECT `id`,`name` FROM `datav_user_role` WHERE `status` = 1  [ RunTime:0.0183s ]
+
+[ 2021-09-24T10:04:04+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/getlist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000688s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000709s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0165s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0182s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632452644' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0180s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0169s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0195s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0281s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0179s ]
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time,(select group_concat(name) from datav_user_role R where FIND_IN_SET(R.id,U.role_id)) as role_name FROM datav_users U LIMIT 0,15   [ RunTime:0.0173s ]
+SQL: SELECT COUNT(*) AS tp_count FROM datav_users U LIMIT 1   [ RunTime:0.0186s ]
+
+[ 2021-09-24T10:04:11+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/get_detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000417s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000793s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000821s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0163s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0184s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632452651' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0188s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0191s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0556s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0156s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0279s ]
+SQL: SELECT `id`,`username`,`nickname`,`status`,`role_id` FROM `datav_users` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0160s ]
+
+[ 2021-09-24T10:04:17+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000576s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000675s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000696s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0186s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0223s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632452656' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0266s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0175s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0187s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0177s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0218s ]
+SQL: UPDATE `datav_users` SET `id`='1',`username`='test',`nickname`='测试',`status`='1',`role_id`='2,3,5' WHERE `id` = 1 [ RunTime:0.0189s ]
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time,(select group_concat(name) from datav_user_role R where FIND_IN_SET(R.id,U.role_id)) as role_name FROM datav_users U WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0466s ]
+
+[ 2021-09-24T10:04:21+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/get_role_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000765s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000790s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0207s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0214s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632452661' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0218s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0368s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0194s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0213s ]
+SQL: SHOW COLUMNS FROM `datav_user_role` [ RunTime:0.0225s ]
+SQL: SELECT `id`,`name` FROM `datav_user_role` WHERE `status` = 1  [ RunTime:0.0216s ]
+
+[ 2021-09-24T10:04:21+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/getlist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000592s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0275s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0285s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632452661' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0176s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0148s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0172s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0171s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0168s ]
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time,(select group_concat(name) from datav_user_role R where FIND_IN_SET(R.id,U.role_id)) as role_name FROM datav_users U LIMIT 0,15   [ RunTime:0.0170s ]
+SQL: SELECT COUNT(*) AS tp_count FROM datav_users U LIMIT 1   [ RunTime:0.0253s ]
+
+[ 2021-09-24T10:04:44+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/get_role_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000681s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000729s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0159s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0158s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632452684' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0217s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0265s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0207s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0162s ]
+SQL: SHOW COLUMNS FROM `datav_user_role` [ RunTime:0.0321s ]
+SQL: SELECT `id`,`name` FROM `datav_user_role` WHERE `status` = 1  [ RunTime:0.0188s ]
+
+[ 2021-09-24T10:04:45+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/getlist?p=1&k=&w=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000414s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000605s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000629s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0329s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0137s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632452684' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0172s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0213s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0229s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0158s ]
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time,(select group_concat(name) from datav_user_role R where FIND_IN_SET(R.id,U.role_id)) as role_name FROM datav_users U LIMIT 0,15   [ RunTime:0.0139s ]
+SQL: SELECT COUNT(*) AS tp_count FROM datav_users U LIMIT 1   [ RunTime:0.0137s ]
+
+[ 2021-09-24T10:04:49+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/get_detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000655s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000612s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000629s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0167s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0205s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632452689' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0184s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0185s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0193s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0383s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0201s ]
+SQL: SELECT `id`,`username`,`nickname`,`status`,`role_id` FROM `datav_users` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0214s ]
+
+[ 2021-09-24T10:05:00+08:00 ] 127.0.0.1 /datav-backend/manage.php/Users/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000848s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000872s ]
+SQL: SHOW COLUMNS FROM `datav_admin_session` [ RunTime:0.0395s ]
+SQL: SELECT `expires_time` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0160s ]
+SQL: UPDATE `datav_admin_session` SET `expires_time`='1632452699' WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' [ RunTime:0.0173s ]
+SQL: SELECT `uid` FROM `datav_admin_session` WHERE `token` = '08a7c7cefb329475bc8fbc5430d69b0a' LIMIT 1   [ RunTime:0.0159s ]
+SQL: SHOW COLUMNS FROM `datav_admin_user` [ RunTime:0.0218s ]
+SQL: SELECT `id`,`username`,`nickname` FROM `datav_admin_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0157s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0180s ]
+SQL: UPDATE `datav_users` SET `id`='1',`username`='test',`nickname`='测试',`status`='1',`role_id`='1' WHERE `id` = 1 [ RunTime:0.0282s ]
+SQL: SELECT U.id,U.username,U.nickname,U.role_id,U.status,U.create_time,(select group_concat(name) from datav_user_role R where FIND_IN_SET(R.id,U.role_id)) as role_name FROM datav_users U WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0171s ]
+

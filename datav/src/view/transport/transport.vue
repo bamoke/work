@@ -9,56 +9,79 @@
   <div class="content-wrap">
     <div class="row-side side-left">
       <div class="transform-box">
-        <ModuleCard title="高栏港吞吐量累计增长速度" class="item-wrap">
+        <ModuleCard title="高栏港近一年港口吞吐量累计增速" class="item-wrap">
           <ChartMonth
-            :height="300"
+            :height="320"
             :title="leijizengzhangData.title"
             :chart-data="leijizengzhangData.data"
           ></ChartMonth>
         </ModuleCard>
-        <ModuleCard title="高栏港近五年吞吐量及增长率" class="item-wrap">
-          <ChartYear
-            :is-open="true"
-            :height="500"
+        <ModuleCard title="高栏港近五年港口吞吐量情况" class="item-wrap">
+          <ChartTransportYear
+            :height="320"
             :title="timelineYearData.title"
             :chart-data="timelineYearData.data"
-          ></ChartYear>
+          ></ChartTransportYear>
         </ModuleCard>
       </div>
       <div class="bt-shadow"></div>
     </div>
     <div class="row-big">
-      <div class="banner-box"></div>
-      <ModuleCard title="" class="item-wrap">
+      <div style="height: 24px"></div>
+      <ModuleCard title="高栏港" class="item-wrap">
         <div class="m-jcgk-wrap">
           <div class="item">
-            <Icon type="md-plane" class="icon" />
+            <img
+              src="/bi/assets/icon/icon-gangkou.png"
+              class="icon"
+              alt=""
+              srcset=""
+            />
             <div class="info">
-              <div class="unit">
-                <div class="num">189.17</div>
-                <div class="">旅客吞吐量(万人次)</div>
-                <div class="l-row">同比<Trend :rate="50.7" /></div>
+              <div class="title">
+                货物吞吐量<span class="measure">(万吨)</span>
               </div>
-              <div class="unit">
-                <div class="num">0.99</div>
-                <div class="">货邮吞吐量(万吨)</div>
-                <div class="l-row">同比<Trend :rate="33.6" /></div>
-              </div>
+              <div class="num">{{ totalInfo.gk.gross }}</div>
+              <div class="l-row">同比<Trend :rate="totalInfo.gk.rise" /></div>
             </div>
           </div>
           <div class="item">
-            <Icon type="md-boat" class="icon" />
+            <img
+              src="/bi/assets/icon/icon-gangkou-jzx.png"
+              class="icon"
+              alt=""
+              srcset=""
+            />
             <div class="info">
-              <div class="unit">
-                <div class="num">2823</div>
-                <div class="">货物吞吐量(万吨)</div>
-                <div class="l-row">同比<Trend :rate="12.7" /></div>
+              <div class="title">
+                集装箱吞吐量<span class="measure">(万TEU)</span>
               </div>
-              <div class="unit">
-                <div class="num">35</div>
-                <div class="">集装箱吞吐量(万TEU)</div>
-                <div class="l-row">同比<Trend :rate="9.8" /></div>
+              <div class="num">{{ totalInfo.jzx.gross }}</div>
+              <div class="l-row">同比<Trend :rate="totalInfo.jzx.rise" /></div>
+            </div>
+          </div>
+        </div>
+      </ModuleCard>
+      <ModuleCard title="珠海机场" class="item-wrap">
+        <div class="m-jcgk-wrap">
+          <div class="item">
+            <img src="/bi/assets/icon/icon-jichang-lvke.png" alt="" />
+            <div class="info">
+              <div class="title">
+                旅客吞吐量<span class="measure">(万人次)</span>
               </div>
+              <div class="num">{{ totalInfo.jclk.gross }}</div>
+              <div class="l-row">同比<Trend :rate="totalInfo.jclk.rise" /></div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="/bi/assets/icon/icon-jichang-huoyou.png" alt="" />
+            <div class="info">
+              <div class="title">
+                货邮吞吐量<span class="measure">(万吨)</span>
+              </div>
+              <div class="num">{{ totalInfo.jchy.gross }}</div>
+              <div class="l-row">同比<Trend :rate="totalInfo.jchy.rise" /></div>
             </div>
           </div>
         </div>
@@ -80,23 +103,22 @@
     </div>
     <div class="row-side side-right">
       <div class="transform-box">
-        <ModuleCard title="珠海机场吞吐量累计增长速度" class="item-wrap">
+        <ModuleCard title="珠海机场近一年旅客吞吐量累计增速" class="item-wrap">
           <ChartMonth
             chart-id="chart-leijizengzhangairport"
-            :height="300"
+            :height="320"
             :title="leijizengzhangDataAirport.title"
             :chart-data="leijizengzhangDataAirport.data"
           ></ChartMonth>
         </ModuleCard>
 
-        <ModuleCard title="珠海机场五年吞吐量及增长率" class="item-wrap">
-          <ChartYear
+        <ModuleCard title="珠海机场近五年旅客吞吐量" class="item-wrap">
+          <ChartTransportYear
             chart-id="chart-timelineyearairport"
-            :is-open="true"
-            :height="500"
+            :height="320"
             :title="timelineYearDataAirport.title"
             :chart-data="timelineYearDataAirport.data"
-          ></ChartYear>
+          ></ChartTransportYear>
         </ModuleCard>
       </div>
       <div class="bt-shadow"></div>
@@ -108,25 +130,34 @@
 import * as Api from "@/api/index";
 import { formatStringWrap } from "@/libs/tools.js";
 import chartMixin from "@/libs/chart-mixin.js";
+import ChartTransportYear from "./chart-transport-year.vue";
 export default {
   mixins: [chartMixin],
+  components: {
+    ChartTransportYear,
+  },
   data() {
     return {
       totalInfo: {
-        all: {
-          num: 12.19,
-          measure: "亿元",
-          rise: 25.4,
+        jclk: {
+          gross: 0,
+          measure: "",
+          rise: "0",
         },
-        zhishu: {
-          num: 9.9,
-          measure: "亿元",
-          rise: 33.6,
+        jchy: {
+          gross: 0,
+          measure: "",
+          rise: "0",
         },
-        kaifaqu: {
-          num: 2.29,
-          measure: "亿元",
-          rise: -0.8,
+        gk: {
+          gross: 0,
+          measure: "",
+          rise: "0",
+        },
+        jzx: {
+          gross: 0,
+          measure: "",
+          rise: "0",
         },
       },
       leijizengzhangDataAirport: {},
@@ -140,11 +171,18 @@ export default {
     var chartName = ["cateportvalue", "cateportproportion"];
     this.chartInit({ chartName });
 
-    Api.base.get_gk_glg().then((res) => {
+    Api.base
+      .get_data_for_transport({ params: { cate: "transport" } })
+      .then((res) => {
+        this.totalInfo = res.data;
+      });
+
+    Api.base.get_gk_goods().then((res) => {
+      var goodsData = this.$formatTableToChart(res.data.list, res.data.columns);
       this.echartInstance.cateportvalue.setOption({
-        dataset: { source: res.data },
+        dataset: { source: goodsData },
         title: {
-          text: "货物分类总量及增长率",
+          text: "货物分类总量及增速",
         },
         legend: {
           show: true,
@@ -202,6 +240,12 @@ export default {
           {
             type: "line",
             yAxisIndex: 1,
+            lineStyle: {
+              color: "#59fedd",
+            },
+            itemStyle: {
+              color: "#59fedd",
+            },
             // showBackground: true,
           },
         ],
@@ -209,7 +253,7 @@ export default {
 
       //比重
       this.echartInstance.cateportproportion.setOption({
-        dataset: { source: res.data },
+        dataset: { source: goodsData },
         title: {
           text: "货物分类比重",
         },
@@ -243,13 +287,16 @@ export default {
     Api.timeline
       .get_monthdata({ params: { cate: "transport" } })
       .then((res) => {
-        let harbourChartData = res.harbour;
-        let airportChartData = res.airport;
+        let harbourChartData = res.data.gk;
+        let airportChartData = res.data.jclk;
         this.leijizengzhangData = {
           title: {
             text: harbourChartData.title,
           },
-          data: harbourChartData.data,
+          data: this.$formatTableToChart(
+            harbourChartData.list,
+            harbourChartData.columns
+          ),
         };
 
         // 机场数据月度数据
@@ -257,31 +304,42 @@ export default {
           title: {
             text: airportChartData.title,
           },
-          data: airportChartData.data,
+          data: this.$formatTableToChart(
+            airportChartData.list,
+            airportChartData.columns
+          ),
         };
       });
 
     /*** 年度数据 */
-    Api.timeline.get_yeardata({ params: { cate: "transport" } }).then((res) => {
-      let harbourChartData = res.harbour;
-      let airportChartData = res.airport;
-      this.timelineYearData = {
-        mode: "gross",
-        title: {
-          text: harbourChartData.title,
-        },
-        data: harbourChartData.data,
-      };
+    Api.timeline
+      .get_yeardata_transport({ params: { cate: "transport" } })
+      .then((res) => {
+        let harbourChartData = res.data.gk;
+        let airportChartData = res.data.jclk;
+        this.timelineYearData = {
+          mode: "gross",
+          title: {
+            text: "",
+          },
+          data: this.$formatTableToChart(
+            harbourChartData.list,
+            harbourChartData.columns
+          ),
+        };
 
-      // 机场
-      this.timelineYearDataAirport = {
-        mode: "gross",
-        title: {
-          text: airportChartData.title,
-        },
-        data: airportChartData.data,
-      };
-    });
+        // 机场
+        this.timelineYearDataAirport = {
+          mode: "gross",
+          title: {
+            text: "",
+          },
+          data: this.$formatTableToChart(
+            airportChartData.list,
+            airportChartData.columns
+          ),
+        };
+      });
   },
 };
 </script>
@@ -294,6 +352,7 @@ export default {
   height: 400px;
 }
 .row-big {
+  display: block !important;
 }
 .row-side {
 }
@@ -302,12 +361,14 @@ export default {
 .m-jcgk-wrap {
   display: flex;
   justify-content: space-between;
-  padding-top: 0.0625rem;
+  // padding: 24px 12px;
+  // background-color: rgba(30, 40, 70, 0.3);
+  // margin-bottom: 0.0625rem;
   .item {
     display: flex;
-    padding-bottom: 0.125rem;
+    padding-left: 0.0625rem;
+    width: 48%;
     // margin-bottom: 0.125rem;
-    width: 45%;
     // border-bottom: 1px solid rgba(180, 180, 180, 0.2);
     .icon {
       flex: 0 0 auto;
@@ -317,20 +378,22 @@ export default {
       color: #fff;
     }
     .info {
-      display: flex;
-      justify-content: space-between;
       flex-grow: 1;
       padding-left: 0.0625rem;
       text-align: left;
       color: #fff;
-      .unit {
-        width: 45%;
-        text-align: left;
-        .num {
-          font-size: 0.125rem;
-          color: #fff;
-          font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      .title {
+        font-weight: bold;
+        font-size: 18px;
+        .measure {
+          font-size: 12px;
+          font-weight: normal;
         }
+      }
+      .num {
+        font-size: 0.125rem;
+        color: #fff;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
       }
     }
   }
@@ -340,6 +403,6 @@ export default {
   }
 }
 .cate-port {
-  height: 300px;
+  height: 260px;
 }
 </style>

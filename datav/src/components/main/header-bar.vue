@@ -8,36 +8,54 @@
 <template>
   <div class="m-header-bar">
     <div class="nav">
-      <router-link to="/gdp" class="item link-item link-left">
+      <router-link :to="{ name: 'gdp' }" class="item link-item link-left">
         <div class="title">地区生产总值</div>
       </router-link>
-      <router-link to="/gongye" class="item link-item link-left">
-        <div class="title">工业经济</div>
+      <router-link
+        :to="{ name: 'gongye_zjz' }"
+        class="item link-item link-left"
+      >
+        <div class="title">工业指标</div>
       </router-link>
-      <router-link to="/investment" class="item link-item link-left">
+      <router-link
+        :to="{ name: 'investment' }"
+        class="item link-item link-left"
+      >
         <div class="title">固定资产投资</div>
       </router-link>
-      <router-link to="/trade" class="item link-item link-left">
+      <router-link :to="{ name: 'trade' }" class="item link-item link-left">
         <div class="title">外贸进出口</div>
       </router-link>
       <div class="item brand">
         <div class="bg">
           <img src="@/assets/images/nav-bg-line.png" alt="" srcset="" />
         </div>
-        <router-link to="/" class="brand-name">
-          数字金湾政府数据深度分析系统
-        </router-link>
+        <a href="http://61.145.230.14:10801/screen/home" class="brand-name">
+          数字金湾政府数据分析系统
+        </a>
+        <div class="date-box">
+          <span>数据所属：</span>
+          <span class="year">{{ sysDataDate.year }}年</span>
+          <span class="month">{{ sysDataDate.month }}</span>
+          <span class="subtext">月</span>
+        </div>
       </div>
-      <router-link to="/waishangtouzi" class="item link-item link-right">
+      <router-link
+        :to="{ name: 'waishangtouzi' }"
+        class="item link-item link-right"
+      >
         <div class="title">实际吸收外商投资</div>
       </router-link>
-      <router-link to="/retail" class="item link-item link-right">
+      <router-link :to="{ name: 'retail' }" class="item link-item link-right">
         <div class="title">社消零</div>
       </router-link>
-      <router-link to="/finance" class="item link-item link-right">
+      <router-link :to="{ name: 'finance' }" class="item link-item link-right">
         <div class="title">一般公共预算</div>
       </router-link>
-      <router-link to="/transport" class="item link-item link-right">
+      <router-link
+        :to="{ name: 'transport' }"
+        class="item link-item link-right"
+      >
         <div class="title">机场港口</div>
       </router-link>
     </div>
@@ -49,9 +67,21 @@ export default {
   data() {
     return {
       curNav: "",
+      sysDataDate: "",
     };
   },
-  mounted() {},
+  mounted() {
+    setTimeout(() => {
+      var currentDate = new Date(this.$store.state.curDate);
+      var year = currentDate.getFullYear();
+      var month = currentDate.getMonth() + 1;
+      var newMonth = month > 9 ? `${month}` : `0${month}`;
+      this.sysDataDate = {
+        year,
+        month: newMonth,
+      };
+    }, 1000);
+  },
 };
 </script>
 
@@ -110,6 +140,23 @@ export default {
 .nav .brand {
   position: relative;
 }
+.date-box {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  color: #fff;
+  line-height: 1;
+  font-size: 18px;
+}
+
+.date-box .month {
+  margin:0 6px;
+  font-size: 36px;
+  font-weight: bold;
+}
+.date-box .month .subtext {
+  font-weight: normal;
+}
 .nav .brand .brand-name {
   position: absolute;
   top: -5px;
@@ -120,6 +167,7 @@ export default {
   line-height: 78px;
   font-size: 36px;
   color: #fff;
+  overflow: hidden;
 }
 .effect {
   position: absolute;

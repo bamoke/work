@@ -19,7 +19,7 @@
         <div class="nav-name">工业经济效益</div>
       </router-link> -->
       <router-link :to="{ name: 'gongye_nenghao' }" class="child-nav-item">
-        <div class="nav-name">能源能耗</div>
+        <div class="nav-name">用电量及能耗</div>
       </router-link>
     </div>
     <router-view></router-view>

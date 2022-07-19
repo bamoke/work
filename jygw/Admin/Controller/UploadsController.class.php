@@ -19,7 +19,7 @@ class UploadsController extends Auth {
       $OssClient = new \OSS\OssClient(C("OSS_ACCESS_ID"),C("OSS_ACCESS_KEY"),C("OSS_ENDPOINT"));
       
       $file = $_FILES['img'];
-      $exts = array('jpg', 'gif', 'png', 'jpeg');
+      $exts = array('jpg', 'gif', 'png', 'jpeg','docx','pdf');
       $maxSize = 2097152;
       $curExts = end(explode(".",$file['name']));
       $curSize = $file['size'];
@@ -63,6 +63,59 @@ class UploadsController extends Auth {
     }
   }
 
+
+  public function save_file(){
+
+    $folder = I("get.f");
+    if($_FILES['file']['tmp_name']){
+      $fileSaveName = md5(time().$this->uid);
+      Vendor("AliOss.autoload");
+      $OssClient = new \OSS\OssClient(C("OSS_ACCESS_ID"),C("OSS_ACCESS_KEY"),C("OSS_ENDPOINT"));
+      
+      $file = $_FILES['file'];
+      $exts = array('docx','pdf');
+      $maxSize = 2097152;
+      $curExts = end(explode(".",$file['name']));
+      $curSize = $file['size'];
+      $object = 'file/'.$folder.'/'.$fileSaveName.".".$curExts;
+      // check extension and file size
+      if(!in_array($curExts,$exts)) {
+        $backData = array(
+          "errno" =>1,
+          "errorMsg"   =>"只支持jpg,gif,png,jpeg文件格式"
+        );
+        $this->ajaxReturn($backData); 
+      }
+      if($curSize > $maxSize) {
+        $backData = array(
+          "errno" =>1,
+          "errorMsg"   =>"文件大小在2M以内"
+        );
+        $this->ajaxReturn($backData); 
+      }
+
+      try{
+          $ossUpload = $OssClient->uploadFile(C('OSS_BUCKET'),$object,$file['tmp_name']);
+          $getOssObjUrl = $ossUpload['info']['url'];
+          $backData = array(
+            "code"  =>200,
+            "errno" =>0,
+            "data"=>array($getOssObjUrl),//完整url
+            "filename"=>$fileSaveName.".".$curExts //oss 文件名不包括目录
+          );
+          $this->ajaxReturn($backData);   
+      }catch(OssException $e){
+          // printf($e->getMessage() . "\n");
+          $backData = array(
+            "code"  =>13001,
+            "errno" =>1,
+            "msg"   =>$e->getMessage()
+          );
+          $this->ajaxReturn($backData); 
+      }
+
+    }
+  }
 
   public function delete(){
     if(empty($_GET['filename'])){

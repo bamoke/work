@@ -1,0 +1,2595 @@
+[ 2021-10-11T04:00:38+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001587s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002115s ]
+NOTIC: [8] Undefined index: HTTP_X_ACCESS_TOKEN D:\work\datav-backend\Admin\Common\AuthController.class.php 第 30 行.
+
+[ 2021-10-11T04:00:38+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002481s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002011s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002086s ]
+NOTIC: [8] Undefined index: HTTP_X_ACCESS_TOKEN D:\work\datav-backend\Admin\Common\AuthController.class.php 第 30 行.
+
+[ 2021-10-11T04:01:39+08:00 ] 127.0.0.1 /datav-backend/admin.php/User/do_login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000649s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0184s ]
+SQL: SELECT `id` FROM `datav_users` WHERE `username` = 'jsj_001' AND `password` = 'ad8f49389a5ac5b9b1e9c4cf7b1f8ee3' LIMIT 1   [ RunTime:0.0205s ]
+
+[ 2021-10-11T04:02:02+08:00 ] 127.0.0.1 /datav-backend/admin.php/User/do_login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000658s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000867s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000897s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.4200s ]
+SQL: SELECT `id` FROM `datav_users` WHERE `username` = 'jsj_001' AND `password` = 'ad8f49389a5ac5b9b1e9c4cf7b1f8ee3' LIMIT 1   [ RunTime:0.3403s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0412s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_user_session` WHERE `uid` = 5 LIMIT 1   [ RunTime:0.0948s ]
+SQL: INSERT INTO `datav_user_session` (`token`,`expires_time`,`uid`) VALUES ('9237b629f3bd606b28c3df88','1633939321','5') [ RunTime:0.5127s ]
+
+[ 2021-10-11T04:02:04+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_date
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000681s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000701s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0841s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0886s ]
+NOTIC: [8] Undefined index: HTTP_X_ACCESS_DATE D:\work\datav-backend\Admin\Common\AuthController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `datav_sys_setting` [ RunTime:0.0310s ]
+SQL: SELECT `sys_date` FROM `datav_sys_setting` LIMIT 1   [ RunTime:0.0562s ]
+SQL: SELECT * FROM `datav_sys_setting` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0442s ]
+
+[ 2021-10-11T04:02:07+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_nav
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000563s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000682s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.1525s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.1497s ]
+NOTIC: [8] Undefined index: HTTP_X_ACCESS_DATE D:\work\datav-backend\Admin\Common\AuthController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `datav_sys_setting` [ RunTime:0.1051s ]
+SQL: SELECT `sys_date` FROM `datav_sys_setting` LIMIT 1   [ RunTime:0.0884s ]
+
+[ 2021-10-11T04:02:12+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=all
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000485s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001300s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:1.0252s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.2611s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.1356s ]
+SQL: SELECT `title`,`measure`,jw_gross as gross,jw_rise as rise,`before_last_rise`,`two_year_rise` FROM `datav_total` WHERE `year` = '2021' AND `month` = 7 AND `title` IN ('地区生产总值','规模以上工业增加值','规模以上工业总产值','全社会固定资产投资','外贸进出口总额','实际吸收外商投资','社会消费品零售总额','一般公共预算收入','一般公共预算支出','珠海机场旅客吞吐量','珠海机场货邮吞吐量','高栏港港口吞吐量')  [ RunTime:0.0638s ]
+
+[ 2021-10-11T04:02:13+08:00 ] 127.0.0.1 /datav-backend/admin.php/EconomyIntroduce/get_data
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000812s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001192s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001226s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.1098s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.1924s ]
+SQL: SHOW COLUMNS FROM `datav_economy_introduce` [ RunTime:0.0505s ]
+SQL: SELECT * FROM `datav_economy_introduce` WHERE `year` = '2021' AND `month` = 7 LIMIT 1   [ RunTime:0.4200s ]
+
+[ 2021-10-11T04:02:17+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_country
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000580s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:1.0677s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.1329s ]
+SQL: SHOW COLUMNS FROM `datav_whole_country` [ RunTime:0.6323s ]
+SQL: SELECT `title`,`measure`,IFNULL(country_gross,'--') as country_gross,`country_rise`,IFNULL(province_gross,'--') as province_gross,`province_rise`,IFNULL(city_gross,'--') as city_gross,`city_rise` FROM `datav_whole_country` WHERE `year` = '2021' AND `month` = 7 ORDER BY id asc  [ RunTime:0.0636s ]
+
+[ 2021-10-11T04:02:20+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_town
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000582s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001248s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.5665s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.9836s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.3866s ]
+SQL: SELECT `title`,`measure`,`sz_gross`,`sz_rise`,`hq_gross`,`hq_rise`,`ns_gross`,`ns_rise`,`ps_gross`,`ps_rise` FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 7 ORDER BY id asc  [ RunTime:0.2182s ]
+
+[ 2021-10-11T04:02:23+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_county
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001170s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001220s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0396s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0171s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0541s ]
+SQL: SELECT distinct title,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 7  [ RunTime:0.0929s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = 2021 AND `month` = 6 AND `title` = '地区生产总值'  [ RunTime:0.3866s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 7 AND `title` <> '地区生产总值'  [ RunTime:0.6356s ]
+
+[ 2021-10-11T04:02:24+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000699s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.6558s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.4907s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0543s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 7 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0837s ]
+
+[ 2021-10-11T04:02:26+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000908s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001142s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001177s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0995s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0840s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0428s ]
+SQL: SELECT `title`,IFNULL(jw_gross,'--') as jw_gross,IFNULL(jw_rise,'--') as jw_rise,IFNULL(zs_gross,'--') as zs_gross,IFNULL(zs_rise,'--') as zs_rise,IFNULL(kfq_gross,'--') as kfq_gross,IFNULL(kfq_rise,'--') as kfq_rise,`measure` FROM `datav_total` WHERE `year` = '2021' AND `month` = 7 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.4184s ]
+
+[ 2021-10-11T04:02:27+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000579s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.6037s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.2753s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0452s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 7 AND `title` = '固定资产投资额'  [ RunTime:0.1285s ]
+
+[ 2021-10-11T04:02:29+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000579s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.4780s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0343s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0449s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-07-01' AND `title` = '固定资产投资额' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0770s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '固定资产投资额' AND `data_date` = '2021-06-01' LIMIT 20   [ RunTime:0.2052s ]
+
+[ 2021-10-11T04:02:30+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000626s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.1546s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0760s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0833s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-07' AND `title` = '固定资产投资' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0553s ]
+
+[ 2021-10-11T04:02:33+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000635s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000940s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000973s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.4304s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.6597s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.7043s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '固定资产投资'  [ RunTime:0.1637s ]
+
+[ 2021-10-11T04:02:35+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate_total?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000599s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0402s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0473s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.1312s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = '2'  [ RunTime:0.0408s ]
+
+[ 2021-10-11T04:02:38+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000701s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000758s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000784s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.1668s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.6591s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.4049s ]
+SQL: SELECT DISTINCT  `title` FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = 2  [ RunTime:0.1480s ]
+
+[ 2021-10-11T04:02:39+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000598s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000617s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0848s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.1737s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.1191s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.2938s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0429s ]
+
+[ 2021-10-11T04:02:52+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000574s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000673s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000698s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.1174s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.3660s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0888s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0798s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.2082s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 1   [ RunTime:0.0474s ]
+SQL: SELECT `comname`,`town`,`project_name`,`cate`,`gross`,`all_complete`,`year_complete`,`month_complete`,`land_cost`,`left_land_cost` FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 0,20   [ RunTime:0.1562s ]
+
+[ 2021-10-11T04:08:00+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E6%88%BF%E5%9C%B0%E4%BA%A7%E5%BC%80%E5%8F%91&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000677s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000694s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.1075s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.3248s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.2397s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.9334s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.2801s ]
+
+[ 2021-10-11T07:36:34+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000875s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000834s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000859s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0152s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0201s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0163s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0135s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0160s ]
+
+[ 2021-10-11T07:36:34+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000720s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000945s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0190s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0232s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0215s ]
+SQL: SELECT DISTINCT  `title` FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = 2  [ RunTime:0.0198s ]
+
+[ 2021-10-11T07:36:43+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E6%88%BF%E5%9C%B0%E4%BA%A7%E5%BC%80%E5%8F%91&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000595s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0118s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0121s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0163s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0131s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0169s ]
+
+[ 2021-10-11T07:36:46+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000829s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000857s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0193s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0172s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0215s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0371s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0190s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 1   [ RunTime:0.0451s ]
+SQL: SELECT `comname`,`town`,`project_name`,`cate`,`gross`,`all_complete`,`year_complete`,`month_complete`,`land_cost`,`left_land_cost` FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 0,20   [ RunTime:0.0178s ]
+
+[ 2021-10-11T07:38:34+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%B7%A5%E4%B8%9A&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000769s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000794s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0247s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0201s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0224s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0211s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0403s ]
+
+[ 2021-10-11T07:38:38+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000699s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0488s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0327s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0161s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0260s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0136s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 1   [ RunTime:0.0168s ]
+SQL: SELECT `comname`,`town`,`project_name`,`cate`,`gross`,`all_complete`,`year_complete`,`month_complete`,`land_cost`,`left_land_cost` FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 0,20   [ RunTime:0.0388s ]
+
+[ 2021-10-11T07:38:54+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E6%88%BF%E5%9C%B0%E4%BA%A7%E5%BC%80%E5%8F%91&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000522s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000609s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0171s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0178s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0195s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0192s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0296s ]
+
+[ 2021-10-11T07:39:07+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000557s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0220s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0165s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0203s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0184s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0166s ]
+
+[ 2021-10-11T07:39:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000554s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000665s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0186s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0340s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0183s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0178s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0191s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 1   [ RunTime:0.0157s ]
+SQL: SELECT `comname`,`town`,`project_name`,`cate`,`gross`,`all_complete`,`year_complete`,`month_complete`,`land_cost`,`left_land_cost` FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 0,20   [ RunTime:0.0193s ]
+
+[ 2021-10-11T07:39:43+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000620s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000982s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001013s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0210s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0143s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0141s ]
+SQL: SELECT `title`,IFNULL(jw_gross,'--') as jw_gross,IFNULL(jw_rise,'--') as jw_rise,IFNULL(zs_gross,'--') as zs_gross,IFNULL(zs_rise,'--') as zs_rise,IFNULL(kfq_gross,'--') as kfq_gross,IFNULL(kfq_rise,'--') as kfq_rise,`measure` FROM `datav_total` WHERE `year` = '2021' AND `month` = 7 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0216s ]
+
+[ 2021-10-11T07:39:44+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000747s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000890s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000916s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0238s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0209s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0266s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 7 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0207s ]
+
+[ 2021-10-11T07:39:44+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000824s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002003s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002056s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0154s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0250s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0191s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 7 AND `title` = '固定资产投资额'  [ RunTime:0.0152s ]
+
+[ 2021-10-11T07:39:44+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000667s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001075s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001104s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0191s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0166s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0179s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '固定资产投资'  [ RunTime:0.0215s ]
+
+[ 2021-10-11T07:39:44+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000663s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001432s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0205s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0163s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0148s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-07' AND `title` = '固定资产投资' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0130s ]
+
+[ 2021-10-11T07:39:44+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000637s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001405s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001430s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0231s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0145s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0154s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-07-01' AND `title` = '固定资产投资额' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0164s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '固定资产投资额' AND `data_date` = '2021-06-01' LIMIT 20   [ RunTime:0.0206s ]
+
+[ 2021-10-11T07:39:44+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate_total?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000880s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001180s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001217s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0184s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0157s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0164s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = '2'  [ RunTime:0.0149s ]
+
+[ 2021-10-11T07:39:52+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000554s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000773s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0205s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0141s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0175s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0156s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0232s ]
+
+[ 2021-10-11T07:39:52+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000564s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000755s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000777s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0177s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0152s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0169s ]
+SQL: SELECT DISTINCT  `title` FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = 2  [ RunTime:0.0131s ]
+
+[ 2021-10-11T07:40:04+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000788s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000932s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001116s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0136s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0270s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0199s ]
+SQL: SELECT `title`,IFNULL(jw_gross,'--') as jw_gross,IFNULL(jw_rise,'--') as jw_rise,IFNULL(zs_gross,'--') as zs_gross,IFNULL(zs_rise,'--') as zs_rise,IFNULL(kfq_gross,'--') as kfq_gross,IFNULL(kfq_rise,'--') as kfq_rise,`measure` FROM `datav_total` WHERE `year` = '2021' AND `month` = 7 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0146s ]
+
+[ 2021-10-11T07:40:05+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000545s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000756s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000782s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0188s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0351s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0224s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 7 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0240s ]
+
+[ 2021-10-11T07:40:05+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000544s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000731s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000753s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0147s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0162s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0162s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '固定资产投资'  [ RunTime:0.0153s ]
+
+[ 2021-10-11T07:40:05+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000745s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000771s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0198s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0182s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0192s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-07-01' AND `title` = '固定资产投资额' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0245s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '固定资产投资额' AND `data_date` = '2021-06-01' LIMIT 20   [ RunTime:0.0187s ]
+
+[ 2021-10-11T07:40:05+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000691s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001511s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0221s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0191s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0193s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-07' AND `title` = '固定资产投资' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0178s ]
+
+[ 2021-10-11T07:40:05+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000673s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0131s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0491s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.1746s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 7 AND `title` = '固定资产投资额'  [ RunTime:0.0155s ]
+
+[ 2021-10-11T07:40:06+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate_total?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000628s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001019s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001044s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.2129s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0804s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0990s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = '2'  [ RunTime:0.0291s ]
+
+[ 2021-10-11T07:43:45+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000694s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000784s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000822s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0178s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0149s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0155s ]
+SQL: SELECT CONCAT(title,'2021年1-6月') as title,IFNULL(jw_gross,'--') as jw_gross,IFNULL(jw_rise,'--') as jw_rise,IFNULL(zs_gross,'--') as zs_gross,IFNULL(zs_rise,'--') as zs_rise,IFNULL(kfq_gross,'--') as kfq_gross,IFNULL(kfq_rise,'--') as kfq_rise,`measure` FROM `datav_total` WHERE `year` = 2021 AND `month` = 6 AND `title` = '地区生产总值' LIMIT 1   [ RunTime:0.0174s ]
+
+[ 2021-10-11T07:43:45+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000819s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000800s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000825s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0210s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0201s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0244s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = 2021 AND `month` = 6 AND `title` = '地区生产总值'  [ RunTime:0.0211s ]
+
+[ 2021-10-11T07:43:46+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000781s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000929s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000955s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0144s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0176s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0272s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `year` = 2021 AND `month` = 6 AND `title` = '地区生产总值' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0145s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '地区生产总值' AND `data_date` = '2021-06-01' LIMIT 20   [ RunTime:0.0144s ]
+
+[ 2021-10-11T07:43:46+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000728s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000859s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000887s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0378s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0113s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0160s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-07' AND `title` = '地区生产总值' ORDER BY data_date asc LIMIT 4   [ RunTime:0.0235s ]
+
+[ 2021-10-11T07:43:46+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000695s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000919s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000942s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0189s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0171s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0191s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '地区生产总值'  [ RunTime:0.0178s ]
+
+[ 2021-10-11T07:43:47+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_total
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000504s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0248s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0257s ]
+SQL: SHOW COLUMNS FROM `datav_com_sishang` [ RunTime:0.0226s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_sishang` WHERE `year` = '2021' AND `month` = 7 LIMIT 1   [ RunTime:0.0209s ]
+SQL: SELECT count(*) as total,`cate`,`town` FROM `datav_com_sishang` WHERE `year` = '2021' AND `month` = 7 GROUP BY cate,town  [ RunTime:0.0221s ]
+SQL: SELECT DISTINCT  `cate` FROM `datav_com_sishang` WHERE `year` = '2021' AND `month` = 7  [ RunTime:0.0166s ]
+
+[ 2021-10-11T07:43:50+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_list?cate=%E6%89%B9%E5%8F%91%E4%B8%9A&town=%E5%8D%97%E6%B0%B4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000622s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0353s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0362s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0153s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0145s ]
+
+[ 2021-10-11T07:43:50+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000658s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000967s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001004s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0231s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0260s ]
+SQL: SHOW COLUMNS FROM `datav_com_sishang` [ RunTime:0.0217s ]
+SQL: SELECT DISTINCT  `cate` FROM `datav_com_sishang` WHERE `year` = '2021' AND `month` = 7  [ RunTime:0.0239s ]
+
+[ 2021-10-11T07:44:00+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_total
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001484s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0219s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0214s ]
+SQL: SHOW COLUMNS FROM `datav_com_sishang` [ RunTime:0.0215s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_sishang` WHERE `year` = '2021' AND `month` = 7 LIMIT 1   [ RunTime:0.0551s ]
+SQL: SELECT count(*) as total,`cate`,`town` FROM `datav_com_sishang` WHERE `year` = '2021' AND `month` = 7 GROUP BY cate,town  [ RunTime:0.0239s ]
+SQL: SELECT DISTINCT  `cate` FROM `datav_com_sishang` WHERE `year` = '2021' AND `month` = 7  [ RunTime:0.0209s ]
+
+[ 2021-10-11T07:44:03+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000520s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0149s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0208s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0213s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 7 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0167s ]
+
+[ 2021-10-11T07:44:03+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000518s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0165s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0143s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0238s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-07-01' AND `title` = '固定资产投资额' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0138s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '固定资产投资额' AND `data_date` = '2021-06-01' LIMIT 20   [ RunTime:0.0364s ]
+
+[ 2021-10-11T07:44:03+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000525s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000544s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0463s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0167s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0175s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 7 AND `title` = '固定资产投资额'  [ RunTime:0.0201s ]
+
+[ 2021-10-11T07:44:03+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000745s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0109s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0109s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0132s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-07' AND `title` = '固定资产投资' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0136s ]
+
+[ 2021-10-11T07:44:04+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0181s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.2312s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0173s ]
+SQL: SELECT `title`,IFNULL(jw_gross,'--') as jw_gross,IFNULL(jw_rise,'--') as jw_rise,IFNULL(zs_gross,'--') as zs_gross,IFNULL(zs_rise,'--') as zs_rise,IFNULL(kfq_gross,'--') as kfq_gross,IFNULL(kfq_rise,'--') as kfq_rise,`measure` FROM `datav_total` WHERE `year` = '2021' AND `month` = 7 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0263s ]
+
+[ 2021-10-11T07:44:04+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000666s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000682s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0110s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0477s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0279s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '固定资产投资'  [ RunTime:0.0170s ]
+
+[ 2021-10-11T07:44:04+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate_total?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000598s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000617s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0137s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0134s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0138s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = '2'  [ RunTime:0.0142s ]
+
+[ 2021-10-11T07:44:05+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000767s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000726s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0174s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0218s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0238s ]
+SQL: SELECT DISTINCT  `title` FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = 2  [ RunTime:0.0217s ]
+
+[ 2021-10-11T07:44:06+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000686s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000705s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0193s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0202s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0216s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0570s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0207s ]
+
+[ 2021-10-11T08:25:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000686s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0590s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0531s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0367s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-07' AND `title` = '固定资产投资' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0492s ]
+
+[ 2021-10-11T08:25:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000391s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0424s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0424s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0186s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 7 AND `title` = '固定资产投资额'  [ RunTime:0.0491s ]
+
+[ 2021-10-11T08:25:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000400s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000641s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0143s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0266s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0213s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '固定资产投资'  [ RunTime:0.0153s ]
+
+[ 2021-10-11T08:25:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000568s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000608s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000626s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0152s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0898s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.1154s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-07-01' AND `title` = '固定资产投资额' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0630s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '固定资产投资额' AND `data_date` = '2021-06-01' LIMIT 20   [ RunTime:0.0548s ]
+
+[ 2021-10-11T08:25:11+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0255s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0754s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0353s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 7 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0246s ]
+
+[ 2021-10-11T08:25:12+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0531s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.1486s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0816s ]
+SQL: SELECT `title`,IFNULL(jw_gross,'--') as jw_gross,IFNULL(jw_rise,'--') as jw_rise,IFNULL(zs_gross,'--') as zs_gross,IFNULL(zs_rise,'--') as zs_rise,IFNULL(kfq_gross,'--') as kfq_gross,IFNULL(kfq_rise,'--') as kfq_rise,`measure` FROM `datav_total` WHERE `year` = '2021' AND `month` = 7 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0205s ]
+
+[ 2021-10-11T08:25:13+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate_total?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000556s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000665s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000686s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0176s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.1209s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.1665s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = '2'  [ RunTime:0.0157s ]
+
+[ 2021-10-11T08:25:15+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000651s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000800s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.3692s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0457s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.2141s ]
+SQL: SELECT DISTINCT  `title` FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = 2  [ RunTime:0.0330s ]
+
+[ 2021-10-11T08:25:16+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000633s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000745s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0409s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0932s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0886s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0547s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0296s ]
+
+[ 2021-10-11T08:32:57+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000692s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000718s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0278s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0289s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0135s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0145s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0143s ]
+ERR: Call to undefined function Admin\Controller\get_default_town_for_touzi()
+
+[ 2021-10-11T08:32:57+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000549s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000674s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0168s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0227s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0200s ]
+SQL: SELECT DISTINCT  `title` FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = 2  [ RunTime:0.0188s ]
+
+[ 2021-10-11T08:35:43+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000852s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000733s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000760s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0239s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0301s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0209s ]
+SQL: SELECT `title`,IFNULL(jw_gross,'--') as jw_gross,IFNULL(jw_rise,'--') as jw_rise,IFNULL(zs_gross,'--') as zs_gross,IFNULL(zs_rise,'--') as zs_rise,IFNULL(kfq_gross,'--') as kfq_gross,IFNULL(kfq_rise,'--') as kfq_rise,`measure` FROM `datav_total` WHERE `year` = '2021' AND `month` = 7 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0338s ]
+
+[ 2021-10-11T08:35:43+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000737s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000704s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0158s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.1183s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0186s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 7 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.1521s ]
+
+[ 2021-10-11T08:35:44+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000623s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000643s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0290s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.1313s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0492s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 7 AND `title` = '固定资产投资额'  [ RunTime:0.0304s ]
+
+[ 2021-10-11T08:35:44+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000712s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001129s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001171s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0918s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0218s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0233s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-07-01' AND `title` = '固定资产投资额' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0270s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '固定资产投资额' AND `data_date` = '2021-06-01' LIMIT 20   [ RunTime:0.0188s ]
+
+[ 2021-10-11T08:35:44+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000550s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001003s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0157s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0264s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0247s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '固定资产投资'  [ RunTime:0.0152s ]
+
+[ 2021-10-11T08:35:45+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000562s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000966s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000993s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0403s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.1193s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0986s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-07' AND `title` = '固定资产投资' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0171s ]
+
+[ 2021-10-11T08:35:45+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate_total?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000709s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000730s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0636s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0318s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0368s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = '2'  [ RunTime:0.0481s ]
+
+[ 2021-10-11T08:35:46+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000619s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000665s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000684s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0695s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0577s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0368s ]
+SQL: SELECT DISTINCT  `title` FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = 2  [ RunTime:0.0203s ]
+
+[ 2021-10-11T08:35:46+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000665s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0201s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0172s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0195s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0214s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0363s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0254s ]
+NOTIC: [8] Undefined variable: town D:\work\datav-backend\Admin\Common\function.php 第 244 行.
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0197s ]
+
+[ 2021-10-11T08:37:00+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000560s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000595s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.3635s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0206s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0993s ]
+SQL: SELECT DISTINCT  `title` FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = 2  [ RunTime:0.0753s ]
+
+[ 2021-10-11T08:37:01+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000462s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000679s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000702s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0289s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.2719s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.1110s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0210s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0720s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0466s ]
+NOTIC: [8] Undefined variable: town D:\work\datav-backend\Admin\Common\function.php 第 244 行.
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0302s ]
+
+[ 2021-10-11T08:38:43+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000755s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000781s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0176s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0220s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0183s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0199s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0259s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0347s ]
+NOTIC: [8] Undefined variable: town D:\work\datav-backend\Admin\Common\function.php 第 245 行.
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0306s ]
+
+[ 2021-10-11T08:38:44+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000843s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000866s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0417s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0175s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0207s ]
+SQL: SELECT DISTINCT  `title` FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = 2  [ RunTime:0.0176s ]
+
+[ 2021-10-11T08:40:16+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000553s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000725s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000748s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0397s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0279s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0269s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0173s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0169s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0170s ]
+NOTIC: [8] Undefined variable: town D:\work\datav-backend\Admin\Common\function.php 第 243 行.
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0165s ]
+
+[ 2021-10-11T08:40:43+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000660s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0257s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0158s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0149s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0157s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0143s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0120s ]
+NOTIC: [8] Undefined variable: town D:\work\datav-backend\Admin\Common\function.php 第 243 行.
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0232s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 1   [ RunTime:0.0144s ]
+SQL: SELECT `comname`,`town`,`project_name`,`cate`,`gross`,`all_complete`,`year_complete`,`month_complete`,`land_cost`,`left_land_cost` FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 0,20   [ RunTime:0.0150s ]
+
+[ 2021-10-11T08:41:37+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000661s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000793s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000818s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0236s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0189s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0543s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0395s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.2095s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0651s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0979s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 1   [ RunTime:0.0175s ]
+SQL: SELECT `comname`,`town`,`project_name`,`cate`,`gross`,`all_complete`,`year_complete`,`month_complete`,`land_cost`,`left_land_cost` FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 0,20   [ RunTime:0.0151s ]
+
+[ 2021-10-11T08:41:38+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001638s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001045s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001075s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0212s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0657s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0844s ]
+SQL: SELECT DISTINCT  `title` FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = 2  [ RunTime:0.0416s ]
+
+[ 2021-10-11T08:41:54+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000622s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.2604s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0157s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0217s ]
+SQL: SELECT DISTINCT  `title` FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = 2  [ RunTime:0.0660s ]
+
+[ 2021-10-11T08:41:54+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000916s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000813s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000943s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0159s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0243s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0325s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0625s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0194s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0204s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0657s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 1   [ RunTime:0.0281s ]
+SQL: SELECT `comname`,`town`,`project_name`,`cate`,`gross`,`all_complete`,`year_complete`,`month_complete`,`land_cost`,`left_land_cost` FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 0,20   [ RunTime:0.0196s ]
+
+[ 2021-10-11T08:42:29+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E8%A3%85%E5%A4%87%E5%88%B6%E9%80%A0%E4%B8%9A&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001052s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000623s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000871s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0175s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0678s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0176s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0156s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0255s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0594s ]
+
+[ 2021-10-11T08:42:35+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000451s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000602s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0767s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0165s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0716s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0309s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0459s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0361s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 1   [ RunTime:0.0168s ]
+SQL: SELECT `comname`,`town`,`project_name`,`cate`,`gross`,`all_complete`,`year_complete`,`month_complete`,`land_cost`,`left_land_cost` FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 0,20   [ RunTime:0.0191s ]
+
+[ 2021-10-11T08:48:03+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000089s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000714s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000671s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0242s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0202s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0348s ]
+SQL: SELECT DISTINCT  `title` FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = 2  [ RunTime:0.0195s ]
+
+[ 2021-10-11T08:48:03+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000595s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000784s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0227s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0167s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0411s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0234s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0191s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0210s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0166s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 1   [ RunTime:0.0171s ]
+SQL: SELECT `comname`,`town`,`project_name`,`cate`,`gross`,`all_complete`,`year_complete`,`month_complete`,`land_cost`,`left_land_cost` FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 0,20   [ RunTime:0.0262s ]
+
+[ 2021-10-11T08:51:08+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000505s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000721s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000747s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0149s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0175s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0170s ]
+SQL: SELECT DISTINCT  `title` FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = 2  [ RunTime:0.0162s ]
+
+[ 2021-10-11T08:51:08+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000814s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0184s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0172s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0190s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0184s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0163s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0153s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0352s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 1   [ RunTime:0.0318s ]
+SQL: SELECT `comname`,`town`,`project_name`,`cate`,`gross`,`all_complete`,`year_complete`,`month_complete`,`land_cost`,`left_land_cost` FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 0,20   [ RunTime:0.0203s ]
+
+[ 2021-10-11T08:51:12+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000817s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000985s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001018s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0197s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0266s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0199s ]
+SQL: SELECT `title`,IFNULL(jw_gross,'--') as jw_gross,IFNULL(jw_rise,'--') as jw_rise,IFNULL(zs_gross,'--') as zs_gross,IFNULL(zs_rise,'--') as zs_rise,IFNULL(kfq_gross,'--') as kfq_gross,IFNULL(kfq_rise,'--') as kfq_rise,`measure` FROM `datav_total` WHERE `year` = '2021' AND `month` = 7 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0211s ]
+
+[ 2021-10-11T08:51:12+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001043s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001375s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001423s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0323s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0206s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0198s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 7 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0189s ]
+
+[ 2021-10-11T08:51:12+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000359s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000564s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0222s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0209s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0262s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 7 AND `title` = '固定资产投资额'  [ RunTime:0.0177s ]
+
+[ 2021-10-11T08:51:12+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000617s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0192s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0191s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0200s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-07-01' AND `title` = '固定资产投资额' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0270s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '固定资产投资额' AND `data_date` = '2021-06-01' LIMIT 20   [ RunTime:0.0200s ]
+
+[ 2021-10-11T08:51:12+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000383s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000585s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000602s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0207s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0144s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0212s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '固定资产投资'  [ RunTime:0.0176s ]
+
+[ 2021-10-11T08:51:13+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000681s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000698s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0236s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0297s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0204s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-07' AND `title` = '固定资产投资' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0276s ]
+
+[ 2021-10-11T08:51:13+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate_total?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000861s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001182s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001221s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0222s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0218s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0319s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = '2'  [ RunTime:0.0166s ]
+
+[ 2021-10-11T08:51:14+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000608s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0139s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0188s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0156s ]
+SQL: SELECT DISTINCT  `title` FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = 2  [ RunTime:0.0183s ]
+
+[ 2021-10-11T08:51:14+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000469s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000600s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0180s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0239s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0221s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0177s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0212s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0187s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0197s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 1   [ RunTime:0.0181s ]
+SQL: SELECT `comname`,`town`,`project_name`,`cate`,`gross`,`all_complete`,`year_complete`,`month_complete`,`land_cost`,`left_land_cost` FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 0,20   [ RunTime:0.0209s ]
+
+[ 2021-10-11T08:51:24+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000570s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0142s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0161s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0138s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0163s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0154s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0169s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 1   [ RunTime:0.0186s ]
+SQL: SELECT `comname`,`town`,`project_name`,`cate`,`gross`,`all_complete`,`year_complete`,`month_complete`,`land_cost`,`left_land_cost` FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 0,20   [ RunTime:0.0148s ]
+
+[ 2021-10-11T08:51:27+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%B7%A5%E4%B8%9A&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000639s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000811s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0206s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0257s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0215s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0203s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0203s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0313s ]
+
+[ 2021-10-11T08:51:30+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000428s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000564s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0204s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0200s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0171s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0188s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0179s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0186s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 1   [ RunTime:0.0168s ]
+SQL: SELECT `comname`,`town`,`project_name`,`cate`,`gross`,`all_complete`,`year_complete`,`month_complete`,`land_cost`,`left_land_cost` FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 0,20   [ RunTime:0.0275s ]
+
+[ 2021-10-11T08:52:13+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000990s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000598s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0137s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0201s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0442s ]
+SQL: SELECT DISTINCT  `title` FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = 2  [ RunTime:0.0191s ]
+
+[ 2021-10-11T08:52:14+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000879s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000918s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0180s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0223s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0149s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0167s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0287s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0145s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0156s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 1   [ RunTime:0.0211s ]
+SQL: SELECT `comname`,`town`,`project_name`,`cate`,`gross`,`all_complete`,`year_complete`,`month_complete`,`land_cost`,`left_land_cost` FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 0,20   [ RunTime:0.0653s ]
+
+[ 2021-10-11T08:52:24+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E6%88%BF%E5%9C%B0%E4%BA%A7%E5%BC%80%E5%8F%91&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000570s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0204s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0220s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0189s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0662s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0209s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0202s ]
+
+[ 2021-10-11T08:54:01+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000809s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0175s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0209s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0149s ]
+SQL: SELECT DISTINCT  `title` FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = 2  [ RunTime:0.0140s ]
+
+[ 2021-10-11T08:54:02+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000451s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000553s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0166s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0341s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0177s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0196s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0194s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0158s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0161s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 1   [ RunTime:0.0193s ]
+SQL: SELECT `comname`,`town`,`project_name`,`cate`,`gross`,`all_complete`,`year_complete`,`month_complete`,`land_cost`,`left_land_cost` FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 0,20   [ RunTime:0.0212s ]
+
+[ 2021-10-11T08:54:06+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000399s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000623s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0168s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0356s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0145s ]
+SQL: SELECT DISTINCT  `title` FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = 2  [ RunTime:0.0219s ]
+
+[ 2021-10-11T08:54:06+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001350s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000752s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0152s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0246s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0200s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0172s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0144s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0297s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 1   [ RunTime:0.0190s ]
+SQL: SELECT `comname`,`town`,`project_name`,`cate`,`gross`,`all_complete`,`year_complete`,`month_complete`,`land_cost`,`left_land_cost` FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 0,20   [ RunTime:0.0192s ]
+
+[ 2021-10-11T08:54:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E6%88%BF%E5%9C%B0%E4%BA%A7%E5%BC%80%E5%8F%91&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000556s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000609s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0186s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0152s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0216s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0198s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0246s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0370s ]
+
+[ 2021-10-11T08:54:24+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%B7%A5%E4%B8%9A&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000578s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0210s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0201s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0531s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0179s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0155s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0165s ]
+
+[ 2021-10-11T08:54:32+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001132s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001161s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0165s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0158s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0222s ]
+SQL: SELECT `title`,IFNULL(jw_gross,'--') as jw_gross,IFNULL(jw_rise,'--') as jw_rise,IFNULL(zs_gross,'--') as zs_gross,IFNULL(zs_rise,'--') as zs_rise,IFNULL(kfq_gross,'--') as kfq_gross,IFNULL(kfq_rise,'--') as kfq_rise,`measure` FROM `datav_total` WHERE `year` = '2021' AND `month` = 7 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0193s ]
+
+[ 2021-10-11T08:54:32+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E5%85%A8%E7%A4%BE%E4%BC%9A%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001017s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001049s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0194s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0209s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0274s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 7 AND `title` = '全社会固定资产投资' LIMIT 1   [ RunTime:0.0253s ]
+
+[ 2021-10-11T08:54:32+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000753s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000891s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000924s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0189s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0163s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0178s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 7 AND `title` = '固定资产投资额'  [ RunTime:0.0172s ]
+
+[ 2021-10-11T08:54:33+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000894s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001030s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0257s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0287s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0311s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-07' AND `title` = '固定资产投资' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0204s ]
+
+[ 2021-10-11T08:54:33+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84%E9%A2%9D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000698s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001185s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001212s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0170s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0143s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0189s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-07-01' AND `title` = '固定资产投资额' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0165s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '固定资产投资额' AND `data_date` = '2021-06-01' LIMIT 20   [ RunTime:0.0199s ]
+
+[ 2021-10-11T08:54:33+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%95%E8%B5%84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000659s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001241s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0250s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0222s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0328s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '固定资产投资'  [ RunTime:0.0258s ]
+
+[ 2021-10-11T08:54:33+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate_total?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000586s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0185s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0139s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0191s ]
+SQL: SELECT `title`,jw_gross as gross,jw_rise as rise FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = '2'  [ RunTime:0.0184s ]
+
+[ 2021-10-11T08:54:34+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_cate?cate=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000632s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000651s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0192s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0175s ]
+SQL: SHOW COLUMNS FROM `datav_investment_fixed` [ RunTime:0.0195s ]
+SQL: SELECT DISTINCT  `title` FROM `datav_investment_fixed` WHERE `year` = '2021' AND `month` = 7 AND `cate_key` = 2  [ RunTime:0.0153s ]
+
+[ 2021-10-11T08:54:34+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%85%A8%E9%83%A8%E7%B1%BB%E5%88%AB&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000608s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0147s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0205s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0233s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0235s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0191s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0164s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0197s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 1   [ RunTime:0.0170s ]
+SQL: SELECT `comname`,`town`,`project_name`,`cate`,`gross`,`all_complete`,`year_complete`,`month_complete`,`land_cost`,`left_land_cost` FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 0,20   [ RunTime:0.0187s ]
+
+[ 2021-10-11T08:54:40+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E8%A3%85%E5%A4%87%E5%88%B6%E9%80%A0%E4%B8%9A&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000581s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0193s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0141s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0149s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0200s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0190s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0140s ]
+
+[ 2021-10-11T08:54:44+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E6%89%80%E6%9C%89%E8%A1%97%E9%95%87&cate=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0206s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0171s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0157s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0187s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0162s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0178s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 1   [ RunTime:0.0167s ]
+SQL: SELECT `comname`,`town`,`project_name`,`cate`,`gross`,`all_complete`,`year_complete`,`month_complete`,`land_cost`,`left_land_cost` FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' LIMIT 0,20   [ RunTime:0.0203s ]
+
+[ 2021-10-11T08:54:50+08:00 ] 127.0.0.1 /datav-backend/admin.php/InvestmentFixed/get_com_list?town=%E4%B8%89%E7%81%B6&cate=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&keyword=&filter_type=gross&gross_val=&gross_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000557s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000573s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0194s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0216s ]
+SQL: SHOW COLUMNS FROM `datav_com_investment` [ RunTime:0.0219s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0316s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0187s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' AND `town` = '三灶' LIMIT 1   [ RunTime:0.0195s ]
+SQL: SELECT `comname`,`town`,`project_name`,`cate`,`gross`,`all_complete`,`year_complete`,`month_complete`,`land_cost`,`left_land_cost` FROM `datav_com_investment` WHERE `year` = '2021' AND `month` = 7 AND `cate` LIKE '%基础设施%' AND `town` = '三灶' LIMIT 0,20   [ RunTime:0.0156s ]
+
+[ 2021-10-11T08:54:58+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000769s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000696s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000725s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0147s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0308s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0156s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = 2021 AND `month` = 6 AND `title` = '地区生产总值'  [ RunTime:0.0177s ]
+
+[ 2021-10-11T08:54:58+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001706s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0292s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0158s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0178s ]
+SQL: SELECT CONCAT(title,'2021年1-6月') as title,IFNULL(jw_gross,'--') as jw_gross,IFNULL(jw_rise,'--') as jw_rise,IFNULL(zs_gross,'--') as zs_gross,IFNULL(zs_rise,'--') as zs_rise,IFNULL(kfq_gross,'--') as kfq_gross,IFNULL(kfq_rise,'--') as kfq_rise,`measure` FROM `datav_total` WHERE `year` = 2021 AND `month` = 6 AND `title` = '地区生产总值' LIMIT 1   [ RunTime:0.0181s ]
+
+[ 2021-10-11T08:54:58+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000845s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000779s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000805s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0136s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0179s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0182s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `year` = 2021 AND `month` = 6 AND `title` = '地区生产总值' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0153s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '地区生产总值' AND `data_date` = '2021-06-01' LIMIT 20   [ RunTime:0.0142s ]
+
+[ 2021-10-11T08:54:59+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000624s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000641s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0188s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0234s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0224s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-07' AND `title` = '地区生产总值' ORDER BY data_date asc LIMIT 4   [ RunTime:0.0198s ]
+
+[ 2021-10-11T08:54:59+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E5%9C%B0%E5%8C%BA%E7%94%9F%E4%BA%A7%E6%80%BB%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000768s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000787s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0226s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0153s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0157s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '地区生产总值'  [ RunTime:0.0136s ]
+
+[ 2021-10-11T08:55:00+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_total
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000415s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000577s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0215s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0233s ]
+SQL: SHOW COLUMNS FROM `datav_com_sishang` [ RunTime:0.0179s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_sishang` WHERE `year` = '2021' AND `month` = 7 LIMIT 1   [ RunTime:0.0202s ]
+SQL: SELECT count(*) as total,`cate`,`town` FROM `datav_com_sishang` WHERE `year` = '2021' AND `month` = 7 GROUP BY cate,town  [ RunTime:0.0251s ]
+SQL: SELECT DISTINCT  `cate` FROM `datav_com_sishang` WHERE `year` = '2021' AND `month` = 7  [ RunTime:0.0207s ]
+
+[ 2021-10-11T08:55:03+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_list?cate=%E6%89%B9%E5%8F%91%E4%B8%9A&town=%E5%B9%B3%E6%B2%99
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000585s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0220s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0158s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0213s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0172s ]
+
+[ 2021-10-11T08:55:03+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000485s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000675s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0197s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0179s ]
+SQL: SHOW COLUMNS FROM `datav_com_sishang` [ RunTime:0.0210s ]
+SQL: SELECT DISTINCT  `cate` FROM `datav_com_sishang` WHERE `year` = '2021' AND `month` = 7  [ RunTime:0.0191s ]
+
+[ 2021-10-11T08:55:22+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_list?cate=%E6%9C%8D%E5%8A%A1%E4%B8%9A&town=%E5%B9%B3%E6%B2%99&keyword=&gross_filter_type=cur_gross&gross_val=&gross_type=egt&rise_val=&rise_type=egt&electric_val=&electric_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000581s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000557s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000576s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0158s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0163s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0146s ]
+
+[ 2021-10-11T08:55:31+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_list?cate=%E6%88%BF%E5%9C%B0%E4%BA%A7&town=%E5%B9%B3%E6%B2%99&keyword=&gross_filter_type=cur_gross&gross_val=&gross_type=egt&rise_val=&rise_type=egt&electric_val=&electric_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000568s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0325s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0198s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0198s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0191s ]
+
+[ 2021-10-11T08:55:34+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_list?cate=%E5%B7%A5%E4%B8%9A&town=%E5%B9%B3%E6%B2%99&keyword=&gross_filter_type=cur_gross&gross_val=&gross_type=egt&rise_val=&rise_type=egt&electric_val=&electric_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000564s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0150s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0141s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0139s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0155s ]
+
+[ 2021-10-11T08:55:37+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_list?cate=%E5%BB%BA%E7%AD%91%E4%B8%9A&town=%E5%B9%B3%E6%B2%99&keyword=&gross_filter_type=cur_gross&gross_val=&gross_type=egt&rise_val=&rise_type=egt&electric_val=&electric_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000727s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000808s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000832s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0228s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0207s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0169s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0312s ]
+
+[ 2021-10-11T08:56:00+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_list?cate=%E5%BB%BA%E7%AD%91%E4%B8%9A&town=%E9%87%91%E6%B9%BE%E5%8C%BA&keyword=&gross_filter_type=cur_gross&gross_val=&gross_type=egt&rise_val=&rise_type=egt&electric_val=&electric_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000874s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000912s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0183s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0185s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0210s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0220s ]
+
+[ 2021-10-11T08:56:16+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_list?cate=%E6%88%BF%E5%9C%B0%E4%BA%A7&town=%E9%87%91%E6%B9%BE%E5%8C%BA&keyword=&gross_filter_type=cur_gross&gross_val=&gross_type=egt&rise_val=&rise_type=egt&electric_val=&electric_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000586s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0692s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0222s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0215s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0172s ]
+
+[ 2021-10-11T08:58:23+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_list?cate=%E6%89%B9%E5%8F%91%E4%B8%9A&town=%E5%B9%B3%E6%B2%99
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000514s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000738s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000761s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0132s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0141s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0155s ]
+
+[ 2021-10-11T08:58:23+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000858s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000813s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000848s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0192s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0197s ]
+SQL: SHOW COLUMNS FROM `datav_com_sishang` [ RunTime:0.0174s ]
+SQL: SELECT DISTINCT  `cate` FROM `datav_com_sishang` WHERE `year` = '2021' AND `month` = 7  [ RunTime:0.0190s ]
+
+[ 2021-10-11T08:59:14+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_list?cate=%E6%89%B9%E5%8F%91%E4%B8%9A&town=%E5%B9%B3%E6%B2%99
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000597s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000780s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000805s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0173s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0193s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0196s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0216s ]
+
+[ 2021-10-11T08:59:29+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_list?cate=%E5%BB%BA%E7%AD%91%E4%B8%9A&town=%E5%B9%B3%E6%B2%99&keyword=&gross_filter_type=cur_gross&gross_val=&gross_type=egt&rise_val=&rise_type=egt&electric_val=&electric_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001117s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001145s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0209s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0201s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0171s ]
+
+[ 2021-10-11T08:59:54+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_list?cate=%E5%BB%BA%E7%AD%91%E4%B8%9A&town=%E5%B9%B3%E6%B2%99&keyword=&gross_filter_type=cur_gross&gross_val=&gross_type=egt&rise_val=&rise_type=egt&electric_val=&electric_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000749s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0214s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0341s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0204s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0199s ]
+SQL: SHOW COLUMNS FROM `datav_com_sishang` [ RunTime:0.0222s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_sishang` WHERE `year` = '2021' AND `month` = 7 AND `cate` = '建筑业' AND `town` = '平沙' LIMIT 1   [ RunTime:0.0249s ]
+SQL: SELECT `comname`,`cate`,IFNULL(cur_gross,'--') as cur_gross,IFNULL(lj_gross,'--') as lj_gross,IFNULL(prev_year_gross,'--') as prev_year_gross,IFNULL(lj_rise,'--') as lj_rise,IFNULL(electric_gross,'--') as electric_gross,IFNULL(electric_rise,'--') as electric_rise,IFNULL(other,'--') as other FROM `datav_com_sishang` WHERE `year` = '2021' AND `month` = 7 AND `cate` = '建筑业' AND `town` = '平沙' LIMIT 0,20   [ RunTime:0.0228s ]
+SQL: SELECT SUM(cur_gross) as cur_gross,SUM(lj_gross) as lj_gross,SUM(prev_year_gross) as prev_year_gross,SUM(electric_gross) as electric_gross FROM `datav_com_sishang` WHERE `year` = '2021' AND `month` = 7 AND `cate` = '建筑业' AND `town` = '平沙'  [ RunTime:0.0265s ]
+
+[ 2021-10-11T09:01:13+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_list?cate=%E5%BB%BA%E7%AD%91%E4%B8%9A&town=%E5%B9%B3%E6%B2%99&keyword=&gross_filter_type=cur_gross&gross_val=&gross_type=egt&rise_val=&rise_type=egt&electric_val=&electric_type=egt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000663s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000781s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0140s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0151s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0166s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0173s ]
+SQL: SHOW COLUMNS FROM `datav_com_sishang` [ RunTime:0.0144s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_com_sishang` WHERE `year` = '2021' AND `month` = 7 AND `cate` = '建筑业' AND `town` = '平沙' LIMIT 1   [ RunTime:0.0203s ]
+SQL: SELECT `comname`,`cate`,IFNULL(cur_gross,'--') as cur_gross,IFNULL(lj_gross,'--') as lj_gross,IFNULL(prev_year_gross,'--') as prev_year_gross,IFNULL(lj_rise,'--') as lj_rise,IFNULL(electric_gross,'--') as electric_gross,IFNULL(electric_rise,'--') as electric_rise,IFNULL(other,'--') as other FROM `datav_com_sishang` WHERE `year` = '2021' AND `month` = 7 AND `cate` = '建筑业' AND `town` = '平沙' LIMIT 0,20   [ RunTime:0.0179s ]
+SQL: SELECT SUM(cur_gross) as cur_gross,SUM(lj_gross) as lj_gross,SUM(prev_year_gross) as prev_year_gross,SUM(electric_gross) as electric_gross FROM `datav_com_sishang` WHERE `year` = '2021' AND `month` = 7 AND `cate` = '建筑业' AND `town` = '平沙'  [ RunTime:0.0143s ]
+
+[ 2021-10-11T09:02:40+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_list?cate=%E6%89%B9%E5%8F%91%E4%B8%9A&town=%E5%B9%B3%E6%B2%99
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000623s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007367s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0148s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0147s ]
+SQL: SHOW COLUMNS FROM `datav_users` [ RunTime:0.0198s ]
+SQL: SELECT `role_id` FROM `datav_users` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0147s ]
+
+[ 2021-10-11T09:02:41+08:00 ] 127.0.0.1 /datav-backend/admin.php/Sishang/get_cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004267s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000698s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000723s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0199s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0194s ]
+SQL: SHOW COLUMNS FROM `datav_com_sishang` [ RunTime:0.0311s ]
+SQL: SELECT DISTINCT  `cate` FROM `datav_com_sishang` WHERE `year` = '2021' AND `month` = 7  [ RunTime:0.0197s ]
+
+[ 2021-10-11T09:03:28+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_date
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000649s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000755s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000779s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0138s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0125s ]
+SQL: SHOW COLUMNS FROM `datav_sys_setting` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `datav_sys_setting` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0150s ]
+
+[ 2021-10-11T09:03:28+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_nav
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000478s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000699s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000718s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0149s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0173s ]
+
+[ 2021-10-11T09:06:01+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_date
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001268s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0153s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0144s ]
+SQL: SHOW COLUMNS FROM `datav_sys_setting` [ RunTime:0.0173s ]
+SQL: SELECT * FROM `datav_sys_setting` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0157s ]
+
+[ 2021-10-11T09:06:01+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_nav
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000633s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000593s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0148s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0115s ]
+
+[ 2021-10-11T09:06:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_date
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000627s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001410s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001452s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0152s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0191s ]
+SQL: SHOW COLUMNS FROM `datav_sys_setting` [ RunTime:0.0237s ]
+SQL: SELECT * FROM `datav_sys_setting` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0184s ]
+
+[ 2021-10-11T09:06:10+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_nav
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001058s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001163s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0313s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0255s ]
+
+[ 2021-10-11T09:06:42+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=all
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000501s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001683s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001719s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0189s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0191s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0444s ]
+SQL: SELECT `title`,`measure`,jw_gross as gross,jw_rise as rise,`before_last_rise`,`two_year_rise` FROM `datav_total` WHERE `year` = '2021' AND `month` = 7 AND `title` IN ('地区生产总值','规模以上工业增加值','规模以上工业总产值','全社会固定资产投资','外贸进出口总额','实际吸收外商投资','社会消费品零售总额','一般公共预算收入','一般公共预算支出','珠海机场旅客吞吐量','珠海机场货邮吞吐量','高栏港港口吞吐量')  [ RunTime:0.0184s ]
+
+[ 2021-10-11T09:06:42+08:00 ] 127.0.0.1 /datav-backend/admin.php/EconomyIntroduce/get_data
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000501s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000665s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000686s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0175s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0161s ]
+SQL: SHOW COLUMNS FROM `datav_economy_introduce` [ RunTime:0.0148s ]
+SQL: SELECT * FROM `datav_economy_introduce` WHERE `year` = '2021' AND `month` = 7 LIMIT 1   [ RunTime:0.0197s ]
+
+[ 2021-10-11T09:06:42+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_town
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000597s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000698s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0158s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0239s ]
+SQL: SELECT `title`,`measure`,`sz_gross`,`sz_rise`,`hq_gross`,`hq_rise`,`ns_gross`,`ns_rise`,`ps_gross`,`ps_rise` FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 7 ORDER BY id asc  [ RunTime:0.0185s ]
+
+[ 2021-10-11T09:06:42+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_county
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000787s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0531s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0262s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0293s ]
+SQL: SELECT distinct title,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 7  [ RunTime:0.0228s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = 2021 AND `month` = 6 AND `title` = '地区生产总值'  [ RunTime:0.0197s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 7 AND `title` <> '地区生产总值'  [ RunTime:0.0346s ]
+
+[ 2021-10-11T09:06:42+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_country
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000777s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0258s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0290s ]
+SQL: SHOW COLUMNS FROM `datav_whole_country` [ RunTime:0.0185s ]
+SQL: SELECT `title`,`measure`,IFNULL(country_gross,'--') as country_gross,`country_rise`,IFNULL(province_gross,'--') as province_gross,`province_rise`,IFNULL(city_gross,'--') as city_gross,`city_rise` FROM `datav_whole_country` WHERE `year` = '2021' AND `month` = 7 ORDER BY id asc  [ RunTime:0.0340s ]
+
+[ 2021-10-11T09:06:46+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_town?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000594s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0139s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0159s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0159s ]
+SQL: SELECT * FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 7 AND `title` = '规模以上工业增加值' LIMIT 1   [ RunTime:0.0287s ]
+
+[ 2021-10-11T09:06:47+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000410s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009153s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009186s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0203s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0206s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0293s ]
+SQL: SELECT `title`,IFNULL(jw_gross,'--') as jw_gross,IFNULL(jw_rise,'--') as jw_rise,IFNULL(zs_gross,'--') as zs_gross,IFNULL(zs_rise,'--') as zs_rise,IFNULL(kfq_gross,'--') as kfq_gross,IFNULL(kfq_rise,'--') as kfq_rise,`measure` FROM `datav_total` WHERE `year` = '2021' AND `month` = 7 AND `title` = '规模以上工业增加值' LIMIT 1   [ RunTime:0.0259s ]
+
+[ 2021-10-11T09:06:47+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_county?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004153s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001513s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0188s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0492s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0219s ]
+SQL: SELECT `county`,`gross`,`rise`,`proportion`,`zs_ranking`,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 7 AND `title` = '规模以上工业增加值'  [ RunTime:0.0308s ]
+
+[ 2021-10-11T09:06:47+08:00 ] 127.0.0.1 /datav-backend/admin.php/Economy/get_domestic?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0310s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0199s ]
+SQL: SHOW COLUMNS FROM `datav_economy_domestic` [ RunTime:0.0271s ]
+SQL: SELECT `data_date`,`year`,`month` FROM `datav_economy_domestic` WHERE `data_date` <= '2021-07-01' AND `title` = '规模以上工业增加值' ORDER BY data_date desc LIMIT 1   [ RunTime:0.0763s ]
+SQL: SELECT `area`,`gross`,`rise` FROM `datav_economy_domestic` WHERE `title` = '规模以上工业增加值' AND `data_date` = '2021-06-01' LIMIT 20   [ RunTime:0.0760s ]
+
+[ 2021-10-11T09:06:47+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_monthdata?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005934s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005966s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0143s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0887s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_month` [ RunTime:0.0193s ]
+SQL: SELECT CONCAT(year,'-',month) as date,jw_gross as gross,jw_rise as rise FROM `datav_timeline_month` WHERE `data_date` >= '2020-07' AND `title` = '规模以上工业增加值' ORDER BY data_date asc LIMIT 12   [ RunTime:0.0342s ]
+
+[ 2021-10-11T09:06:48+08:00 ] 127.0.0.1 /datav-backend/admin.php/Timeline/get_yeardata?cate=%E8%A7%84%E6%A8%A1%E4%BB%A5%E4%B8%8A%E5%B7%A5%E4%B8%9A%E5%A2%9E%E5%8A%A0%E5%80%BC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000696s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000715s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0175s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0166s ]
+SQL: SHOW COLUMNS FROM `datav_timeline_year` [ RunTime:0.0171s ]
+SQL: SELECT `year`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise` FROM `datav_timeline_year` WHERE ( `year` >= '2016' AND `year` < '2021'  ) AND `title` = '规模以上工业增加值'  [ RunTime:0.0158s ]
+
+[ 2021-10-11T09:06:48+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryPillar/get_data?cate=zjz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000610s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000627s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0179s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0191s ]
+SQL: SHOW COLUMNS FROM `datav_industry_pillar_zjz` [ RunTime:0.0176s ]
+SQL: SELECT `title`,`com_num`,CEIL(gross) as gross,`rise`,`proportion` FROM `datav_industry_pillar_zjz` WHERE ( `title` <> '合计' AND `title` <> '传统优势'  ) AND `year` = '2021' AND `month` = 7  [ RunTime:0.0152s ]
+
+[ 2021-10-11T09:06:48+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryXdmy/get_data?cate=zjz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000575s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0187s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0178s ]
+SQL: SHOW COLUMNS FROM `datav_industry_xdmy_zjz` [ RunTime:0.0182s ]
+SQL: SELECT `title`,`comnum`,CEIL(jw_gross) as gross,jw_rise as rise FROM `datav_industry_xdmy_zjz` WHERE `year` = '2021' AND `month` = 7  [ RunTime:0.0181s ]
+
+[ 2021-10-11T09:06:48+08:00 ] 127.0.0.1 /datav-backend/admin.php/IndustryHangye/get_data?cate=zjz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000671s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0173s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0228s ]
+SQL: SHOW COLUMNS FROM `datav_industry_hangye_zjz` [ RunTime:0.0230s ]
+SQL: SELECT `title`,`comnum`,CEIL(jw_gross) as gross,jw_rise as rise FROM `datav_industry_hangye_zjz` WHERE `title` <> '合计' AND `year` = '2021' AND `month` = 7  [ RunTime:0.0214s ]
+
+[ 2021-10-11T09:07:34+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_nav
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000634s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0217s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0179s ]
+
+[ 2021-10-11T09:07:34+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_date
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000595s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0167s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0157s ]
+SQL: SHOW COLUMNS FROM `datav_sys_setting` [ RunTime:0.0183s ]
+SQL: SELECT * FROM `datav_sys_setting` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0166s ]
+
+[ 2021-10-11T09:11:30+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_date
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000567s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000864s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000902s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0146s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0151s ]
+SQL: SHOW COLUMNS FROM `datav_sys_setting` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `datav_sys_setting` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0159s ]
+
+[ 2021-10-11T09:11:30+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_nav
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000556s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001098s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001132s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0133s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0177s ]
+
+[ 2021-10-11T09:13:15+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_date
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000691s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0186s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0166s ]
+SQL: SHOW COLUMNS FROM `datav_sys_setting` [ RunTime:0.0172s ]
+SQL: SELECT * FROM `datav_sys_setting` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0165s ]
+
+[ 2021-10-11T09:13:15+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_nav
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000411s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000600s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0153s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0180s ]
+
+[ 2021-10-11T09:14:20+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_date
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000836s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000865s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0184s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0159s ]
+SQL: SHOW COLUMNS FROM `datav_sys_setting` [ RunTime:0.0210s ]
+SQL: SELECT * FROM `datav_sys_setting` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0200s ]
+
+[ 2021-10-11T09:14:21+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_nav
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000570s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0221s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0168s ]
+
+[ 2021-10-11T09:14:27+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_date
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000411s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000538s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0155s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0169s ]
+SQL: SHOW COLUMNS FROM `datav_sys_setting` [ RunTime:0.0186s ]
+SQL: SELECT * FROM `datav_sys_setting` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0256s ]
+
+[ 2021-10-11T09:14:27+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_nav
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001006s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0147s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0147s ]
+
+[ 2021-10-11T09:15:50+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_nav
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000677s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0192s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0210s ]
+
+[ 2021-10-11T09:15:50+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_date
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000841s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000812s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0174s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = '9237b629f3bd606b28c3df88' LIMIT 1   [ RunTime:0.0189s ]
+SQL: SHOW COLUMNS FROM `datav_sys_setting` [ RunTime:0.0206s ]
+SQL: SELECT * FROM `datav_sys_setting` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0208s ]
+
+[ 2021-10-11T09:15:59+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_date
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000642s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000792s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0600s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = 'null' LIMIT 1   [ RunTime:0.0203s ]
+
+[ 2021-10-11T09:16:00+08:00 ] 127.0.0.1 /datav-backend/admin.php/SysSetting/get_sys_nav
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000561s ]
+NOTIC: [8] Undefined variable: Think D:\work\datav-backend\Admin\Conf\config.php 第 4 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000787s ]
+SQL: SHOW COLUMNS FROM `datav_user_session` [ RunTime:0.0482s ]
+SQL: SELECT `uid` FROM `datav_user_session` WHERE `token` = 'null' LIMIT 1   [ RunTime:0.0155s ]
+

@@ -9,20 +9,20 @@
   <div class="content-wrap">
     <div class="row-side side-left">
       <div class="transform-box">
-        <ModuleCard title="固定资产投资总额累计增长速度" class="item-wrap">
+        <ModuleCard title="固定资产投资近一年累计增速" class="item-wrap">
           <ChartMonth
             :height="220"
             :title="leijizengzhangData.title"
             :chart-data="leijizengzhangData.data"
           ></ChartMonth>
         </ModuleCard>
-        <ModuleCard title="固定资产投资总额及增长率" class="item-wrap">
+        <ModuleCard title="固定资产投资近五年情况" class="item-wrap">
           <template v-slot:extra>
             <ButtonGroup size="small">
               <Button type="primary" @click="handleChangeYearMode('gross')"
                 >总额</Button
               >
-              <Button @click="handleChangeYearMode('rise')">增长率</Button>
+              <Button @click="handleChangeYearMode('rise')">增速</Button>
             </ButtonGroup>
           </template>
           <ChartYear
@@ -33,18 +33,18 @@
           ></ChartYear>
         </ModuleCard>
         <ModuleCard title="固定资产投资结构情况" class="item-wrap">
-          <div id="chart-basegross" class="chart-base"></div>
+          <div id="chart-cate" class="chart-base"></div>
         </ModuleCard>
       </div>
       <div class="bt-shadow"></div>
     </div>
     <div class="row-big">
-      <div class="banner-box"></div>
+      <TownMap :total-info="townTotalInfo"></TownMap>
       <div class="item-wrap">
         <div class="l-row l-row-bt">
-          <EffectCircleCount3D :data="totalInfo.all"></EffectCircleCount3D>
-          <EffectCircleCount3D :data="totalInfo.zhishu"></EffectCircleCount3D>
-          <EffectCircleCount3D :data="totalInfo.kaifaqu"></EffectCircleCount3D>
+          <EffectCircleCount3D :data="totalInfo.jw"></EffectCircleCount3D>
+          <EffectCircleCount3D :data="totalInfo.zs"></EffectCircleCount3D>
+          <EffectCircleCount3D :data="totalInfo.kfq"></EffectCircleCount3D>
         </div>
       </div>
     </div>
@@ -60,7 +60,8 @@
             </ButtonGroup>
           </template>
           <ChartCompareCounty
-            :height="220"
+            :height="516"
+            :is-open="true"
             :mode="compareCountyData.mode"
             :title="compareCountyData.title"
             :chart-data="compareCountyData.data"
@@ -72,9 +73,6 @@
             :title="compareDomesticData.title"
             :chart-data="compareDomesticData.data"
           ></ChartCompareDomestic>
-        </ModuleCard>
-        <ModuleCard title="固定资产投资增长率" class="item-wrap">
-          <div id="chart-baserise" class="chart-base"></div>
         </ModuleCard>
       </div>
       <div class="bt-shadow"></div>
@@ -90,123 +88,138 @@ export default {
   mixins: [chartMixin],
   data() {
     return {
+      townTotalInfo: {},
       totalInfo: {
-        all: {
+        jw: {
           title: "金湾区",
-          num: 131.41,
+          num: 0,
           measure: "亿元",
-          rise: 41.6,
+          rise: "0",
         },
-        zhishu: {
-          title: "直属区",
-          num: 97.76,
+        zs: {
+          title: "直属",
+          num: 0,
           measure: "亿元",
-          rise: 66.7,
+          rise: "0",
         },
-        kaifaqu: {
-          title: "经济开发区",
-          num: 33.65,
+        kfq: {
+          title: "开发区",
+          num: 0,
           measure: "亿元",
-          rise: -1.5,
+          rise: "0",
         },
       },
       key: "value",
     };
   },
-  methods: {
-    handleChangeCate(e) {
-      console.log(e);
-    },
-    handleChangeRise(e) {
-      console.log(e);
-    },
-    handleChangeYear(e) {
-      console.log(e);
-    },
-
-    handleShowMonitor(index) {
-      console.log(index);
-    },
-  },
+  methods: {},
   mounted() {
-    var chartName = ["basegross", "baserise"];
+    var chartName = ["cate"];
     this.chartInit({ chartName });
 
+    Api.base.get_total({ cate: "全社会固定资产投资" }).then((res) => {
+      this.totalInfo = res.data;
+    });
+    // 各镇指标
+    Api.jjzb
+      .get_town({ params: { cate: "全社会固定资产投资" } })
+      .then((res) => {
+        this.townTotalInfo = res.data;
+      });
+
     /***指标对比 */
-    Api.jjzb.get_county().then((res) => {
+    Api.jjzb.get_county({ params: { cate: "固定资产投资额" } }).then((res) => {
       this.compareCountyData = {
         mode: "gross",
         title: {},
-        data: res.data,
+        data: this.$formatTableToChart(res.data.list, res.data.columns),
       };
     });
 
     /*** 国内部分区域指标 */
-    Api.jjzb.get_domestic().then((res) => {
-      this.compareDomesticData = res;
-    });
+    Api.jjzb
+      .get_domestic({ params: { cate: "固定资产投资额" } })
+      .then((res) => {
+        this.compareDomesticData = {
+          title: {
+            text: res.data.title,
+          },
+          data: this.$formatTableToChart(res.data.list, res.data.columns),
+        };
+      });
 
     /***按月 累计增长率 */
-    Api.timeline.get_monthdata().then((res) => {
-      this.leijizengzhangData = {
-        title: {
-          text: "近一年",
-        },
-        data: res.data,
-      };
-    });
+    Api.timeline
+      .get_monthdata({ params: { cate: "固定资产投资" } })
+      .then((res) => {
+        this.leijizengzhangData = {
+          title: {
+            text: "近一年",
+          },
+          data: this.$formatTableToChart(res.data.list, res.data.columns),
+        };
+      });
 
     /*** 年度数据 */
     Api.timeline
-      .get_yeardata({ params: { cate: "investment" } })
+      .get_yeardata({ params: { cate: "固定资产投资" } })
       .then((res) => {
         this.timelineYearData = {
           title: {
             text: this.title || "近五年",
           },
-          mode:"gross",
-          data: res.data,
-          origin: res,
+          mode: "gross",
+          data: this.$formatTableToChart(res.data.list, res.data.columns),
+          origin: this.$formatTableToChart(res.data.list, res.data.columns),
         };
       });
 
-    // 各镇指标
-    Api.jjzb.get_town().then((res) => {
-      var chartData = res.data;
-      //   chartData.unshift(["pruduct", "总量", "增长"]);
-    });
-
     // 基本指标
-    Api.base.get_gdzctz().then((res) => {
-      var chartGrossData = res.data.gross;
-      var chartRiseData = res.data.rise;
-      this.echartInstance.basegross.setOption({
-        dataset: { source: chartGrossData },
+    /*** 按类别固定资产投资完成情况 */
+    Api.base.get_investment({ params: { cate: "2" } }).then((res) => {
+      var opt = {
         title: {
           text: "",
-          subtext: "",
+        },
+        dataset: {
+          source: this.$formatTableToChart(res.data.list, res.data.columns),
         },
         tooltip: { trigger: "axis" },
         legend: {
           show: true,
           left: "right",
-          //   top: "bottom",
+          top: "top",
         },
+        grid: {
+          left: 60,
+          right: 40,
+          bottom: 60,
+        },
+
         xAxis: {
           type: "category",
           axisLabel: {
-            // rotate: -45,
             formatter: function (value) {
-              return formatStringWrap(value, 4);
+              return formatStringWrap(value, 2);
             },
           },
         },
         yAxis: [
           {
             type: "value",
-            name: "",
             axisLabel: {
-              formatter: "{value}",
+              formatter: function (value) {
+                return value;
+              },
+            },
+            splitLine: {
+              show: true,
+            },
+          },
+          {
+            type: "value",
+            axisLabel: {
+              formatter: "{value}" + "%",
             },
             splitLine: {
               show: true,
@@ -219,60 +232,18 @@ export default {
             showBackground: true,
           },
           {
-            type: "bar",
-            showBackground: true,
-          },
-          {
-            type: "bar",
-            showBackground: true,
-          },
-        ],
-      });
-      this.echartInstance.baserise.setOption({
-        dataset: { source: chartRiseData },
-        title: {
-          text: "",
-          subtext: "",
-        },
-        tooltip: { trigger: "axis" },
-        legend: {
-          show: true,
-          left: "right",
-          //   top: "bottom",
-        },
-        xAxis: {
-          type: "category",
-          axisLabel: {
-            formatter: function (value) {
-              return formatStringWrap(value, 4);
+            type: "line",
+            yAxisIndex: 1,
+            lineStyle: {
+              color: "#59fedd",
             },
-          },
-        },
-        yAxis: [
-          {
-            type: "value",
-            name: "同比增长",
-            axisLabel: {
-              formatter: "{value}%",
-            },
-            splitLine: {
-              show: true,
+            itemStyle: {
+              color: "#59fedd",
             },
           },
         ],
-        series: [
-          {
-            type: "line",
-          },
-          {
-            type: "line",
-          },
-          {
-            type: "line",
-          },
-        ],
-      });
-      //////////////
+      };
+      this.echartInstance["cate"].setOption(opt);
     });
   },
 };

@@ -13,25 +13,18 @@
     <div :class="[activeClass, 'module-slider-content']">
       <div class="chart-box" :id="chartId"></div>
       <div class="table-box">
-        <div class="m-table">
-          <table border="0" cellpadding="0" cellspacing="0" class="m-table">
-            <tr>
-              <th v-for="(value, index) of tableColumn" :key="index">
-                {{ value }}
-              </th>
-            </tr>
-            <tr v-for="(item, index) of chartData" :key="index">
-              <td v-for="(val, j) of item" :key="j">
-                <div v-if="j === 1">
-                  <router-link :to="{ name: 'gongye_zdzzcy' }">
-                    {{ val }}<van-icon name="arrow" />
-                  </router-link>
-                </div>
-                <div v-else>{{ val }}</div>
-              </td>
-            </tr>
-          </table>
-        </div>
+        <Table
+          size="small"
+          :height="height"
+          stripe
+          :columns="tableColumn"
+          :data="tableData"
+          @on-row-click="toPillarCom"
+        >
+          <template slot-scope="{ row }" slot="view">
+            <strong><van-icon name="arrow" /></strong>
+          </template>
+        </Table>
       </div>
     </div>
   </div>
@@ -39,167 +32,52 @@
 
 <script>
 import { formatStringWrap } from "@/libs/tools.js";
-var optMode = {
-  proportion: {
-    title: {
-      text: "",
-    },
-    legend: {
-      show: false,
-      left: "right",
-      top: "top",
-      // orient: "vertical",
-    },
-    tooltip: {
-      trigger: "item",
-    },
-    series: [
-      {
-        type: "pie",
-        // roseType: 'area',
-        radius: ["35%", "50%"],
-        center: ["50%", "50%"],
-        label: {
-          show: true,
-          formatter: "{b}\n占比:{d}%",
-        },
-        labelLine: {
-          show: true,
-        },
-      },
-    ],
-  },
-  gross: {
-    title: {
-      text: "",
-    },
-
-    tooltip: { trigger: "axis" },
-    legend: {
-      show: true,
-      left: "right",
-      top: "top",
-      data: [{ name: "总量" }, { name: "同比增长" }],
-    },
-    grid: {
-      right: 40,
-      bottom: 60,
-    },
-
-    xAxis: {
-      type: "category",
-      axisLabel: {
-        formatter: function (value) {
-          return formatStringWrap(value, 2);
-        },
-      },
-    },
-    yAxis: [
-      {
-        type: "value",
-        axisLabel: {
-          formatter: "{value}亿",
-        },
-        splitLine: {
-          show: true,
-        },
-      },
-      {
-        type: "value",
-        axisLabel: {
-          formatter: "{value}" + "%",
-        },
-        splitLine: {
-          show: false,
-        },
-      },
-    ],
-    series: [
-      {
-        name: "总量",
-        type: "bar",
-        showBackground: true,
-        encode: {
-          x: 0,
-          y: 2,
-        },
-      },
-      {
-        name: "同比增长",
-        type: "bar",
-        yAxisIndex: 1,
-        showBackground: true,
-        encode: {
-          x: 0,
-          y: 3,
-        },
-      },
-    ],
-  },
-};
+import tableChartMixin from "@/libs/table-chart-mixin.js";
 
 export default {
+  mixins: [tableChartMixin],
   props: {
+    cate: {
+      type: String,
+      default: "工业增加值",
+    },
     chartId: {
       type: String,
       default: "chart-zdzzcy",
     },
-    height: {
-      type: Number,
-      default: 0,
-    },
-    isOpen: {
-      type: Boolean,
-      default: false,
-    },
-    mode: {
-      type: String,
-      default: "rise",
-    },
-    chartData: {
-      type: Array,
-      default: function () {
-        return [];
-      },
-    },
   },
   data() {
     return {
-      activeClass: "show-chart",
-      tableColumn: ["行业名称", "企业数量", "总量", "同比增长", "比重"],
-      tableData: [],
       chartInstance: null,
     };
   },
   methods: {
-    reDraw() {
-      let option, openOpt;
-
-      if (this.isOpen) {
-        option = {
+    toPillarCom(row,index){
+      var cate = row.title
+      this.$router.push({name:'gongye_zdzzcy',query:{cate}})
+    },
+    drawChart() {
+      var optMode = {
+        proportion: {
           title: {
             text: "",
           },
-          dataset: {
-            source: this.chartData,
-          },
-          grid: [{ top: "55%", right: 20 }],
+          dataset: { source: this.chartData },
           legend: {
+            show: false,
             left: "right",
             top: "top",
-            //   orient: "vertical",
+            // orient: "vertical",
           },
           tooltip: {
             trigger: "item",
           },
-          xAxis: { type: "value" },
-          yAxis: { type: "category" },
           series: [
             {
               type: "pie",
               // roseType: 'area',
-              radius: ["0", "35%"],
-              center: ["50%", "35%"],
+              radius: ["35%", "50%"],
+              center: ["50%", "50%"],
               label: {
                 show: true,
                 formatter: "{b}\n占比:{d}%",
@@ -208,56 +86,81 @@ export default {
                 show: true,
               },
             },
-            {
-              type: "bar",
-              // barWidth: 12,
-              showBackground: true,
-              // roseType: 'area',
-              label: {
-                show: true,
-                formatter: "{@[2]}%",
+          ],
+        },
+        gross: {
+          title: {
+            text: "",
+          },
+          dataset: { source: this.chartData },
+          tooltip: { trigger: "axis" },
+          legend: {
+            show: true,
+            left: "right",
+            top: "top",
+          },
+          grid: {
+            left: 60,
+            right: 40,
+            bottom: 60,
+          },
+
+          xAxis: {
+            type: "category",
+            axisLabel: {
+              formatter: function (value) {
+                return formatStringWrap(value, 2);
               },
-              // encode: {
-              //   x: 2, // 表示维度 2 映射到 x 轴。
-              //   y: 0,
-              // },
+            },
+          },
+          yAxis: [
+            {
+              type: "value",
+              name: "",
+              axisLabel: {
+                formatter: function (value) {
+                  return value ;
+                },
+              },
+              splitLine: {
+                show: true,
+              },
+            },
+            {
+              type: "value",
+              axisLabel: {
+                formatter: "{value}" + "%",
+              },
+              splitLine: {
+                show: true,
+              },
             },
           ],
-        };
-      } else {
-        option = optMode[this.mode];
-        option.dataset = {
-          source: this.chartData,
-        };
-      }
+          series: [
+            {
+              type: "bar",
+              name: this.chartData[0][2],
+              showBackground: true,
+              encode: {
+                x: 0,
+                y: 2,
+              },
+            },
+            {
+              type: "line",
+              name: this.chartData[0][3],
+              yAxisIndex: 1,
+              encode: {
+                x: 0,
+                y: 3,
+              },
+            },
+          ],
+        },
+      };
       this.chartInstance.clear();
-      this.chartInstance.setOption(option);
+      this.chartInstance.setOption(optMode[this.cmode]);
     },
-  },
-  watch: {
-    mode(newValue, oldValue) {
-      if (newValue) {
-        if (newValue == "table") {
-          this.activeClass = "show-table";
-          // this.drawEchart();
-        } else {
-          this.reDraw();
-          this.activeClass = "show-chart";
-        }
-      }
-    },
-    chartData(newValue, oldValue) {
-      if (newValue) {
-        this.reDraw();
-      }
-    },
-  },
-  mounted() {
-    const appTheme = this.$store.state.theme;
-    this.chartInstance = this.$echarts.init(
-      document.getElementById(this.chartId),
-      appTheme.echartTheme
-    );
   },
 };
 </script>

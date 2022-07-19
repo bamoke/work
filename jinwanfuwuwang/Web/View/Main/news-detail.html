@@ -1,0 +1,57 @@
+<!-- Breadcrumb Section Start -->
+<div class="breadcrumb-section section bg_color--5 pt-60 pt-sm-50 pt-xs-40 pb-60 pb-sm-50 pb-xs-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-breadcrumb-content">
+                    <ul class="page-breadcrumb">
+                        <li><a href="{:U('Index/index')}">首页</a></li>
+                        <li>{$pageName}</li>
+                    </ul>
+                    <h1>内容详情</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb Section Start -->
+<assign name="news" value="$outData['news']" />
+
+<!-- Blog Section Start -->
+<div
+    class="blog-section section pt-120 pt-lg-100 pt-md-80 pt-sm-60 pt-xs-50 pb-120 pb-lg-100 pb-md-80 pb-sm-60 pb-xs-50">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xl-8 col-lg-10 ml-auto mr-auto">
+                <div class="row">
+
+                    <div class="col-12">
+                        <!-- Single Blog Start -->
+                        <div class="single-blog-post mb-90 mb-xs-50">
+                            <!-- <div class="blog-image">
+                                <img src="__WEB_ASSET__/images/blog/blog4.jpg" alt="">
+                            </div> -->
+                            <h1>{$news['title']}</h1>
+                            <div class="blog-content">
+                                <ul class="post-meta">
+                                    <li><i class="lnr lnr-user"></i>{$news['origin']}</li>
+                                    <li><i class="lnr lnr-clock"></i>{$news['create_time']}</li>
+                                </ul>
+                            </div>
+                            <div>
+                                {$news['content']}
+                            </div>
+                        </div>
+                        <!-- Single Blog End -->
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Blog Section End -->

@@ -267,7 +267,7 @@ export default {
   },
   mounted() {
     this.chartInstance = this.$echarts.init(
-      document.getElementById(this.chartId)
+      document.getElementById(this.chartId),this.$config.chartTheme
     );
   },
 };

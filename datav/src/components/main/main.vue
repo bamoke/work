@@ -16,7 +16,7 @@
       height="1080"
       autoplay
       loop
-      src="/assets/bg-effects.mp4"
+      src="/bi/assets/bg-effects.mp4"
       poster=""
       x5-playsinline=""
       webkit-playsinline=""

@@ -13,11 +13,11 @@
     </Spin>
 
     <div class="map-side left-side" :class="{ active: !showLoading }">
-      <div class="item">
+      <div class="side-bar">
         <div class="section">重点企业目录</div>
       </div>
 
-      <div class="item content">
+      <div class="comlist-side">
         <div class="search-box">
           <Icon type="ios-search" :size="18" color="rgba(255,255,255,.8)" />
           <input
@@ -31,36 +31,37 @@
         <div class="com-list">
           <div
             class="com-item"
+            :class="{ active: curCompanyIndex == index }"
             v-for="(item, index) in comList"
             :key="index"
             @click="handleSelect(index)"
           >
             <!-- <span>{{ index + 1 }}</span> -->
-            <span class="com-name">{{ item.title }}</span>
+            <span class="com-name">{{ item.comname }}</span>
           </div>
         </div>
       </div>
     </div>
     <div id="map"></div>
     <div class="map-side right-side" :class="{ active: !showLoading }">
-      <div class="item">
+      <div class="side-bar">
         <div class="section">企业经营情况</div>
       </div>
-      <div class="item content">
+      <div class="side-content">
         <div class="company-info">
           <div class="title">
             <Icon
               type="md-speedometer"
               :size="24"
               color="rgba(255,255,255,1)"
-            />{{ curCompany.title }}
+            />{{ curCompany.comname }}
           </div>
           <div class="company-item company-item-first">
             <div class="item-section">所属行业</div>
             <div class="item-value">{{ curCompany.industry }}</div>
           </div>
           <div class="company-item">
-            <div class="item-section">产值(万元)</div>
+            <div class="item-section">{{ grossName }}({{ measure }})</div>
             <div class="item-value">{{ curCompany.gross }}</div>
             <div class="item-section">同比增长</div>
             <div class="item-value">{{ curCompany.rise }}</div>
@@ -72,16 +73,14 @@
             <div class="item-value">{{ curCompany.electric_rise }}</div>
           </div>
           <div class="company-item">
-            <div class="item-section">增加值</div>
-            <div class="item-value">{{ curCompany.zjz_gross }}</div>
-            <div class="item-section">同比增长</div>
-            <div class="item-value">{{ curCompany.zjz_rise }}</div>
+            <div class="item-section">{{ otherName }}</div>
+            <div class="item-value">{{ curCompany.other }}</div>
           </div>
-          <div class="description">{{ curCompany.description }}</div>
+          <div class="description">经营情况说明:{{ curCompany.description }}</div>
         </div>
       </div>
     </div>
-    <div class="control-box" :class="{active:!showLoading}">
+    <div class="control-box" :class="{ active: !showLoading }">
       <div class="back-btn" @click="handleGoback">返回</div>
     </div>
   </div>
@@ -98,6 +97,10 @@ export default {
   data() {
     return {
       keyword: "",
+      grossName: "",
+      measure: "",
+      otherName: "",
+      curCompanyIndex: null,
       curCompany: {},
       comList: [],
       originData: [],
@@ -109,9 +112,13 @@ export default {
 
   watch: {
     keyword(newValue) {
+      if (newValue === "") {
+        this.comList = this.originData;
+        return;
+      }
       var regex = new RegExp(newValue);
       var data = this.originData.filter(function (item) {
-        return regex.test(item.title);
+        return regex.test(item.comname);
       });
       this.comList = data;
     },
@@ -132,7 +139,7 @@ export default {
         this.myBMapGl = BMapGL;
         this.myMap = map;
 
-        map.centerAndZoom(new BMapGL.Point(113.279208, 21.999191), 14); // 初始化地图,设置中心点坐标和地图级别
+        map.centerAndZoom(new BMapGL.Point(113.279208, 21.999191), 13); // 初始化地图,设置中心点坐标和地图级别
         map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
         // map.setHeading(64.5);
         map.setTilt(60);
@@ -144,7 +151,7 @@ export default {
         var bd = new BMapGL.Boundary();
         bd.get("金湾区", function (rs) {
           // console.log('外轮廓：', rs.boundaries[0]);
-          console.log("内镂空：", rs.boundaries[1]);
+          // console.log("内镂空：", rs.boundaries[1]);
           var hole = new BMapGL.Polygon(rs.boundaries, {
             strokeColor: "#04d1fd",
             strokeStyle: "dashed",
@@ -171,8 +178,11 @@ export default {
         });
 
         // 数据获取
-        enterprisesApi.get_list().then((res) => {
-          this.originData = this.comList = this.transformGeo(res.data);
+        enterprisesApi.get_list_by_map().then((res) => {
+          this.originData = this.comList = res.data.list;
+          this.transformGeo(res.data.list);
+          // this.originData = this.transformGeo(res.data);
+          // this.originData = this.comList = this.transformGeo(res.data);
         });
       });
     },
@@ -181,34 +191,25 @@ export default {
     transformGeo(comlist) {
       var BMapGL = this.myBMapGl;
       var map = this.myMap;
-      var myGeo = new BMapGL.Geocoder();
       var newList = comlist.slice();
       var showDetail = this.handleShowDetail;
 
       newList.forEach((element, index) => {
-        myGeo.getPoint(
-          element.addr,
-          function (point) {
-            var marker, label;
-            element.point = point;
+        var marker, label;
 
-            // 生成点
-            marker = new BMapGL.Marker(new BMapGL.Point(point.lng, point.lat));
-            map.addOverlay(marker);
+        // 生成点
+        marker = new BMapGL.Marker(new BMapGL.Point(element.lng, element.lat));
+        map.addOverlay(marker);
 
-            //添加点事件
-            marker.addEventListener("click", function (e) {
-              showDetail(index);
-            });
+        //添加点事件
+        marker.addEventListener("click", function (e) {
+          showDetail(index);
+        });
 
-            //
-            label = new BMapGL.Label(element.title);
-            marker.setLabel(label);
-          },
-          "珠海市"
-        );
+        //
+        // label = new BMapGL.Label(element.title);
+        // marker.setLabel(label);
       });
-      return newList;
     },
 
     handleGoback() {
@@ -217,21 +218,29 @@ export default {
     handleSelect(index) {
       const item = this.comList[index];
       var BMapGL = this.myBMapGl;
-      var point = new BMapGL.Point(item.point.lng, item.point.lat);
+
+      var point = new BMapGL.Point(item.lng, item.lat);
       this.myMap.setCenter(point);
       this.myMap.setZoom(17);
       this.handleShowDetail(index);
+      this.curCompanyIndex = index;
     },
     handleShowDetail(index) {
       const item = this.comList[index];
-      enterprisesApi.get_detail({ params: { id: item.id } }).then((res) => {
-        var companyInfo = res;
-        var zjzArr = companyInfo.zjzl.split("/");
-        // 临时
-        companyInfo.title = item.title;
-        companyInfo.zjz_gross = zjzArr[0];
-        companyInfo.zjz_rise = zjzArr[1];
-        this.curCompany = companyInfo;
+      var point = new BMapGL.Point(item.lng, item.lat);
+      enterprisesApi.get_detail(item.id).then((res) => {
+        this.curCompany = res.data.info;
+        this.grossName = res.data.grossName;
+        this.otherName = res.data.otherName;
+        this.measure = res.data.measure;
+        var opts = {
+          width: 200, // 信息窗口宽度
+          height: 40, // 信息窗口高度
+          title: res.data.info.comname, // 信息窗口标题
+          message: "",
+        };
+        var infoWindow = new BMapGL.InfoWindow('',opts); // 创建信息窗口对象
+        this.myMap.openInfoWindow(infoWindow, point); //开启信息窗口
       });
     },
   },
@@ -259,21 +268,54 @@ export default {
     width: 360px;
     height: 90%;
     color: #fff;
-    .item {
+    .side-bar {
       margin-bottom: 12px;
       padding: 16px;
       background-color: rgba(0, 0, 0, 0.6);
+      .section {
+        flex: 0 0 auto;
+        font-size: 24px;
+        text-shadow: 0 2px 2px rgba(0, 0, 0, 0.7);
+        line-height: 1;
+      }
     }
-    .content {
+    .side-content {
       position: relative;
       flex-grow: 1;
       text-align: left;
+      padding: 16px;
+      background-color: rgba(0, 0, 0, 0.6);
     }
-    .section {
-      flex: 0 0 auto;
-      font-size: 24px;
-      text-shadow: 0 2px 2px rgba(0, 0, 0, 0.7);
-      line-height: 1;
+    .comlist-side {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 1;
+      width: 100%;
+      padding: 16px;
+      text-align: left;
+      background-color: rgba(0, 0, 0, 0.6);
+      .com-list {
+        box-sizing: border-box;
+        flex-shrink:1;
+        height: 100%;
+        overflow-y: auto;
+        .com-item {
+          padding: 0 12px;
+          height: 48px;
+          line-height: 48px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+          font-size: 16px;
+          cursor: pointer;
+          color: rgba(255, 255, 255, 0.8);
+        }
+        .com-item:hover {
+          background: rgba(0, 0, 0, 0.4);
+        }
+        .active {
+          background: #0066ff !important;
+          color: #fff;
+        }
+      }
     }
   }
   .left-side {
@@ -281,22 +323,6 @@ export default {
     transform: translatex(-360px);
     opacity: 0;
     transition: all 0.3s;
-    .com-list {
-      box-sizing: border-box;
-      height: 100%;
-      overflow-y: auto;
-      .com-item {
-        height: 48px;
-        line-height: 48px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        font-size: 16px;
-        cursor: pointer;
-        color: rgba(255, 255, 255, 0.8);
-      }
-      .com-item:hover {
-        background: rgba(0, 0, 0, 0.4);
-      }
-    }
   }
   .right-side {
     right: 0;
@@ -341,7 +367,7 @@ export default {
     }
   }
   .active {
-    transform: translate(0px,0px);
+    transform: translate(0px, 0px);
     opacity: 1;
   }
 }
@@ -353,7 +379,7 @@ export default {
   display: flex;
   align-items: center;
   padding: 0 18px 0 6px;
-  width: 320px;
+  width: 100%;
   height: 36px;
   border-radius: 18px;
   border: 1px solid rgba(0, 0, 0, 0.5);
@@ -397,15 +423,15 @@ export default {
   position: absolute;
   left: 50%;
   bottom: 5%;
-  z-index:990;
+  z-index: 990;
   margin-left: -160px;
-  width:320px;
+  width: 320px;
   opacity: 0;
-  transform: translate(0px,60px);
-  transition: all .3s;
+  transform: translate(0px, 60px);
+  transition: all 0.3s;
 }
 .back-btn {
-  background: rgba(0, 0, 0, .6);
+  background: rgba(0, 0, 0, 0.6);
   width: 320px;
   height: 48px;
   line-height: 48px;

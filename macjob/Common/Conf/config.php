@@ -23,15 +23,8 @@ return array(
     "LAYOUT_NAME"   =>"Layout/main",
 
     // DB setting
-/*    "DB_HOST"   =>"119.23.171.184",
-    "DB_PORT"   =>"3306",
-    "DB_NAME"   =>"btc",
-    "DB_TYPE"   =>"mysql",
-    "DB_USER"   =>"btc",
-    "DB_PWD"    =>"Btc123456",
-    "DB_PREFIX" =>"b_",*/
 
-    "DB_HOST"   =>"39.105.2.50",
+    "DB_HOST"   =>"39.108.189.211",
     "DB_PORT"   =>"3306",
     "DB_NAME"   =>"macjob",
     "DB_TYPE"   =>"mysql",

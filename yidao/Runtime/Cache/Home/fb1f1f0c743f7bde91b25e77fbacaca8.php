@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0;">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>第10届华南卵巢癌高峰论坛报名表</title>
+    <title>第19届妇科恶性肿瘤规范化诊治及新进展学习班——报名表</title>
     <style>
         html {
             font: 14px/1.5;
@@ -37,7 +37,7 @@
             padding-bottom: 48px;
             max-width: 1258px;
             background-color: #9c0001;
-            background-image: url(/yidao/Home/Static/images/banner.jpg);
+            /* background-image: url(/yidao/Home/Static/images/banner.jpg); */
             background-position: top center;
             background-repeat: no-repeat;
             background-size: contain;
@@ -254,19 +254,38 @@
             box-sizing: border-box;
             padding: 0 24px 0;
         }
+
         .invitation-img {
             width: 100%;
         }
+
         .invitation-btn {
             display: block;
-            margin-top:36px;
+            margin-top: 36px;
+            color: #9c0001;
+            text-align: center;
+            font-size: 16px;
+
+        }
+
+        .m-title {
+            padding: 24px 0;
+            font-size: 16px;
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+            line-height: 1.8;
         }
     </style>
 </head>
 
 <body>
     <div class="wrap">
-        <div class="banner"></div>
+        <div class="m-title">
+            第19届妇科恶性肿瘤规范化诊治及新进展学习班<br>
+            暨2021年广东省抗癌协会妇科肿瘤专业委员会学术年会
+
+        </div>
         <div class="main-content">
             <div class="content-wrap">
                 <div class="bar">
@@ -277,11 +296,16 @@
                     </div>
                 </div>
                 <div class="content" style="text-indent: 2em;font-size: 16px;line-height: 1.8;">
-                    2021年5月8日（星期六全天）在广州举办第10届华南卵巢癌高峰论坛，本届论坛将邀请国内外知名肿瘤专家，聚焦卵巢癌诊疗热点、疑点、难点问题，结合最新研究成果，从手术、化疗、靶向治疗、姑息治疗和临床研究等多维度进行探讨和交流。欢迎您的参与!
+                    由广东省抗癌协会主办，广东省抗癌协会妇科肿瘤专业委员会、中山大学肿瘤防治中心承办的“第19届妇科恶性肿瘤规范化诊治及新进展学习班暨2021年广东省抗癌协会妇科肿瘤专业委员会学术年会”定于2021年11月3-6日在广州举办。
+                    <p>本届学习班将邀请国内知名妇科肿瘤专家，针对妇科肿瘤诊疗的临床问题和研究热点，结合近年的研究进展，从手术、放疗、化疗、靶向治疗和临床研究等多维度进行专题讲座和讨论。</p>
+                    <p>本学习班为国家级医学继续教育项目的精品课程【2021-04-08-186（国），I类学分8分】。</p>
+                    <p>在此，诚挚邀请全国妇科同仁共聚一堂，碰撞思想，切磋学术。</p>
+
                 </div>
+
+                <a href="/yidao/Home/Static/images/invitation.pdf" class="invitation-btn">会议日程下载</a>
             </div>
         </div>
-        <a href="/yidao/Home/Static/images/invitation.pdf" class="invitation-btn"><img src="/yidao/Home/Static/images/invitation-img.jpg" class="invitation-img" alt=""></a>
         <div class="main-content">
             <div class="content-wrap m-form-box">
                 <div class="bar">
@@ -317,21 +341,22 @@
                                 placeholder="请填写您的手机号码">
                         </div>
                         <input type="hidden" name="type" value="1">
-                        <div class="form-item">
+                        <input type="hidden" name="mid" value="2">
+                        <!-- <div class="form-item">
                             <div class="form-label">中午就餐:</div>
                             <select name="lunch">
                                 <option value="">请选择是否需要中午就餐</option>
                                 <option value="1">是</option>
                                 <option value="0">否</option>
                             </select>
-                        </div>
-
+                        </div> -->
+                        <!-- 
                         <div class="form-item">
                             <div class="form-label" style="width:100%;">建议（非必填项）:</div>
-                        </div>
-                        <div class="form-item" style="padding:0">
+                        </div> -->
+                        <!-- <div class="form-item" style="padding:0">
                             <textarea class="u-textarea" name="feedback" id=""></textarea>
-                        </div>
+                        </div> -->
                         <div class="submit-btn-box">
                             <button type="submit" id="js-submit-btn">提交</button>
                         </div>
@@ -435,7 +460,7 @@
                 phone: { required: true, mobile: true },
                 position: { required: true },
                 title: { required: true },
-                lunch: { required: true },
+                // lunch: { required: true },
                 type: { required: true }
             },
             messages: {
@@ -444,7 +469,7 @@
                 phone: { required: '请填写您的手机号码' },
                 position: { required: '请填写您的职务' },
                 title: { required: '请填写您的职称' },
-                lunch: { required: '请选择是否需要午餐' },
+                // lunch: { required: '请选择是否需要午餐' },
                 type: { required: '请选择您的参会形式' }
             }
         });

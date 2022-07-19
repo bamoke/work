@@ -1,0 +1,524 @@
+[ 2021-07-09T00:29:50+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_town
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000142s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001716s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001390s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0201s ]
+SQL: SELECT `title`,`measure`,`sz_gross`,`sz_rise`,`hq_gross`,`hq_rise`,`ns_gross`,`ns_rise`,`ps_gross`,`ps_rise` FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 ORDER BY id asc  [ RunTime:0.0238s ]
+
+[ 2021-07-09T00:29:50+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=all
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000152s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001627s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001756s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001788s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0174s ]
+SQL: SELECT `title`,`measure`,jw_gross as gross,jw_rise as rise,`before_last_rise`,`two_year_rise` FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` IN ('地区生产总值','规模以上工业增加值','规模以上工业总产值','全社会固定资产投资','外贸进出口总额','实际吸收外商投资','社会消费品零售总额','一般公共预算收入','一般公共预算支出','珠海机场旅客吞吐量','珠海机场货邮吞吐量','高栏港港口吞吐量')  [ RunTime:0.0166s ]
+
+[ 2021-07-09T00:29:50+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_county
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000149s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001634s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001497s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001519s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0155s ]
+SQL: SELECT distinct title,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5  [ RunTime:0.0174s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = 2021 AND `month` = 3 AND `title` = '地区生产总值'  [ RunTime:0.0155s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` <> '地区生产总值'  [ RunTime:0.0206s ]
+
+[ 2021-07-09T15:42:46+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=all
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003122s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002111s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0161s ]
+SQL: SELECT `title`,`measure`,jw_gross as gross,jw_rise as rise,`before_last_rise`,`two_year_rise` FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` IN ('地区生产总值','规模以上工业增加值','规模以上工业总产值','全社会固定资产投资','外贸进出口总额','实际吸收外商投资','社会消费品零售总额','一般公共预算收入','一般公共预算支出','珠海机场旅客吞吐量','珠海机场货邮吞吐量','高栏港港口吞吐量')  [ RunTime:0.0178s ]
+
+[ 2021-07-09T15:42:46+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_town
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003238s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002091s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002119s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0266s ]
+SQL: SELECT `title`,`measure`,`sz_gross`,`sz_rise`,`hq_gross`,`hq_rise`,`ns_gross`,`ns_rise`,`ps_gross`,`ps_rise` FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 ORDER BY id asc  [ RunTime:0.0186s ]
+
+[ 2021-07-09T15:42:47+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_county
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003247s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001887s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001931s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0276s ]
+SQL: SELECT distinct title,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5  [ RunTime:0.0191s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = 2021 AND `month` = 3 AND `title` = '地区生产总值'  [ RunTime:0.0295s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` <> '地区生产总值'  [ RunTime:0.0256s ]
+
+[ 2021-07-09T16:48:02+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=all
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000686s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.2265s ]
+SQL: SELECT `title`,`measure`,jw_gross as gross,jw_rise as rise,`before_last_rise`,`two_year_rise` FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` IN ('地区生产总值','规模以上工业增加值','规模以上工业总产值','全社会固定资产投资','外贸进出口总额','实际吸收外商投资','社会消费品零售总额','一般公共预算收入','一般公共预算支出','珠海机场旅客吞吐量','珠海机场货邮吞吐量','高栏港港口吞吐量')  [ RunTime:0.0130s ]
+
+[ 2021-07-09T16:48:03+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_town
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000655s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0830s ]
+SQL: SELECT `title`,`measure`,`sz_gross`,`sz_rise`,`hq_gross`,`hq_rise`,`ns_gross`,`ns_rise`,`ps_gross`,`ps_rise` FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 ORDER BY id asc  [ RunTime:0.0348s ]
+
+[ 2021-07-09T16:48:03+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_county
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000634s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000651s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0166s ]
+SQL: SELECT distinct title,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5  [ RunTime:0.0170s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = 2021 AND `month` = 3 AND `title` = '地区生产总值'  [ RunTime:0.0349s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` <> '地区生产总值'  [ RunTime:0.0411s ]
+
+[ 2021-07-09T16:53:32+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_town
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000612s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000692s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000723s ]
+SQL: SHOW COLUMNS FROM `datav_economy_town` [ RunTime:0.0127s ]
+SQL: SELECT `title`,`measure`,`sz_gross`,`sz_rise`,`hq_gross`,`hq_rise`,`ns_gross`,`ns_rise`,`ps_gross`,`ps_rise` FROM `datav_economy_town` WHERE `year` = '2021' AND `month` = 5 ORDER BY id asc  [ RunTime:0.0178s ]
+
+[ 2021-07-09T16:53:33+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_data?cate=all
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000580s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000853s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000870s ]
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0189s ]
+SQL: SELECT `title`,`measure`,jw_gross as gross,jw_rise as rise,`before_last_rise`,`two_year_rise` FROM `datav_total` WHERE `year` = '2021' AND `month` = 5 AND `title` IN ('地区生产总值','规模以上工业增加值','规模以上工业总产值','全社会固定资产投资','外贸进出口总额','实际吸收外商投资','社会消费品零售总额','一般公共预算收入','一般公共预算支出','珠海机场旅客吞吐量','珠海机场货邮吞吐量','高栏港港口吞吐量')  [ RunTime:0.0572s ]
+
+[ 2021-07-09T16:53:33+08:00 ] 127.0.0.1 /datav-backend/admin.php/Total/get_all_by_county
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000552s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000795s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000813s ]
+SQL: SHOW COLUMNS FROM `datav_economy_county` [ RunTime:0.0190s ]
+SQL: SELECT distinct title,`measure` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5  [ RunTime:0.0222s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = 2021 AND `month` = 3 AND `title` = '地区生产总值'  [ RunTime:0.0227s ]
+SQL: SELECT `title`,`measure`,`county`,`gross`,`rise`,`proportion`,`zs_ranking` FROM `datav_economy_county` WHERE `year` = '2021' AND `month` = 5 AND `title` <> '地区生产总值'  [ RunTime:0.0203s ]
+
+[ 2021-07-09T17:55:30+08:00 ] ::1 /datav-backend/admin.php/Upload/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000414s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000710s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000727s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000010s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000030s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037360s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037386s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.013690s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.013713s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004400s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004426s ]
+
+[ 2021-07-09T17:55:39+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000740s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0164s ]
+
+[ 2021-07-09T17:58:39+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000696s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000717s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0234s ]
+
+[ 2021-07-09T17:58:48+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000528s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000707s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_timeline_transport` [ RunTime:0.0149s ]
+SQL: INSERT INTO `datav_timeline_transport` (`year`,`month`,`create_by`,`data_date`,`title`,`measure`,`gross`,`rise`) VALUES ('2021','5','1','2021-05-01','珠海机场旅客吞吐量','万人次','392.79','110.1'),('2021','5','1','2021-05-01','珠海机场货邮吞吐量','万吨','1.7','25.2'),('2021','5','1','2021-05-01','高栏港港口吞吐量','万吨','5218','12.6'),('2021','5','1','2021-05-01','高栏港集装箱吞吐量','万TEU','77.1','35.9') [ RunTime:0.0172s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001007s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001034s ]
+
+[ 2021-07-09T18:10:46+08:00 ] ::1 /datav-backend/admin.php/Upload/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000745s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000765s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 103 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000010s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000031s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004939s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004965s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000583s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000704s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000719s ]
+
+[ 2021-07-09T18:10:54+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000620s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 103 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0196s ]
+ERR: Too few arguments to function Admin\Common\BaseUploadModel::import_data(), 1 passed in D:\work\datav-backend\Admin\Controller\UploadController.class.php on line 95 and exactly 2 expected
+
+[ 2021-07-09T18:11:42+08:00 ] ::1 /datav-backend/admin.php/Upload/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000632s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000652s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 103 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000008s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000025s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003844s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003860s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000601s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000614s ]
+
+[ 2021-07-09T18:11:48+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000563s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 103 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0283s ]
+ERR: Too few arguments to function Admin\Common\BaseUploadModel::import_data(), 1 passed in D:\work\datav-backend\Admin\Controller\UploadController.class.php on line 95 and exactly 2 expected
+
+[ 2021-07-09T18:12:42+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 103 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0163s ]
+ERR: Too few arguments to function Admin\Common\BaseUploadModel::import_data(), 1 passed in D:\work\datav-backend\Admin\Controller\UploadController.class.php on line 95 and exactly 2 expected
+
+[ 2021-07-09T18:12:58+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000770s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 103 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.1089s ]
+
+[ 2021-07-09T18:13:42+08:00 ] ::1 /datav-backend/admin.php/Upload/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000732s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000753s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000009s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000027s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004393s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004410s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000731s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000746s ]
+
+[ 2021-07-09T18:13:48+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000655s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0178s ]
+
+[ 2021-07-09T18:20:51+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000651s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0175s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0160s ]
+
+[ 2021-07-09T18:38:21+08:00 ] ::1 /datav-backend/admin.php/Upload/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000725s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000743s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000009s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000025s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004353s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004370s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000501s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000515s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000685s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000698s ]
+
+[ 2021-07-09T18:38:26+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0167s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0264s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_table_date` WHERE `year` = '2020' AND `table_name` = 'datav_total' AND `month` = 12 LIMIT 1   [ RunTime:0.0295s ]
+NOTIC: [8] Undefined variable: tableDataIsExisted D:\work\datav-backend\Admin\Common\BaseUploadModel.class.php 第 35 行.
+SQL: INSERT INTO `datav_total` (`year`,`month`,`create_by`,`data_date`,`title`,`parent_name`,`measure`,`jw_gross`,`jw_rise`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise`,`before_last_rise`,`two_year_rise`) VALUES ('2020','12','2','2020-12-01','地区生产总值','一级','亿元','700.4','2.9','347.82','3.2','352.58','2.7',null,null),('2020','12','2','2020-12-01','规模以上工业增加值','一级','亿元','438.45','1.5','193.24','2.5','245.21','0.7',null,null),('2020','12','2','2020-12-01','规模以上工业总产值','一级','亿元','1826.45','-1.8','758.53','3.8','1067.92','-3.7',null,null),('2020','12','2','2020-12-01','全社会固定资产投资','一级','亿元','548.84','29.1','366.95','28.7','181.89','30',null,null),('2020','12','2','2020-12-01','外贸进出口总额','一级','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','外贸出口','外贸进出口总额','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','外贸进口','外贸进出口总额','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','实际吸收外商投资','一级','万美元','9333','-73.9','7503','-58.3','1830','-89.7',null,null),('2020','12','2','2020-12-01','社会消费品零售总额','一级','亿元','46.04','-5.6','36.26','-2.4','9.78','-15.7',null,null),('2020','12','2','2020-12-01','一般公共预算收入','一级','亿元','38.85','-14.1','21.06','-18.9','17.78','-7.7',null,null),('2020','12','2','2020-12-01','税收收入','一般公共预算收入','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','一般公共预算支出','一级','亿元','77.07','-15.1','52.49','-12','24.58','-21',null,null),('2020','12','2','2020-12-01','九项民生支出','一般公共预算支出','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','珠海机场旅客吞吐量','珠海机场','万人次','733.56','-40.3','733.56','-40.3',null,null,null,null),('2020','12','2','2020-12-01','珠海机场货邮吞吐量','珠海机场','万吨','3.84','-24.8','3.84','-24.8',null,null,null,null),('2020','12','2','2020-12-01','全市港口吞吐量','一级','万吨','13367','-3.4',null,null,'12135','-5.8',null,null),('2020','12','2','2020-12-01','集装箱吞吐量','全市港口吞吐量','万TEU','184','-28.1',null,null,'142','-32.7',null,null),('2020','12','2','2020-12-01','高栏港港口吞吐量','高栏港','万吨','12135','-5.8',null,null,'12135','-5.8',null,null),('2020','12','2','2020-12-01','高栏港集装箱吞吐量','高栏港','万TEU','142','-32.7',null,null,'142','-32.7',null,null) [ RunTime:0.0198s ]
+ERR: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value
+
+[ 2021-07-09T18:38:50+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000573s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0177s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0988s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_table_date` WHERE `year` = '2020' AND `table_name` = 'datav_total' AND `month` = 12 LIMIT 1   [ RunTime:0.0526s ]
+NOTIC: [8] Undefined variable: tableDataIsExisted D:\work\datav-backend\Admin\Common\BaseUploadModel.class.php 第 35 行.
+SQL: INSERT INTO `datav_total` (`year`,`month`,`create_by`,`data_date`,`title`,`parent_name`,`measure`,`jw_gross`,`jw_rise`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise`,`before_last_rise`,`two_year_rise`) VALUES ('2020','12','2','2020-12-01','地区生产总值','一级','亿元','700.4','2.9','347.82','3.2','352.58','2.7',null,null),('2020','12','2','2020-12-01','规模以上工业增加值','一级','亿元','438.45','1.5','193.24','2.5','245.21','0.7',null,null),('2020','12','2','2020-12-01','规模以上工业总产值','一级','亿元','1826.45','-1.8','758.53','3.8','1067.92','-3.7',null,null),('2020','12','2','2020-12-01','全社会固定资产投资','一级','亿元','548.84','29.1','366.95','28.7','181.89','30',null,null),('2020','12','2','2020-12-01','外贸进出口总额','一级','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','外贸出口','外贸进出口总额','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','外贸进口','外贸进出口总额','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','实际吸收外商投资','一级','万美元','9333','-73.9','7503','-58.3','1830','-89.7',null,null),('2020','12','2','2020-12-01','社会消费品零售总额','一级','亿元','46.04','-5.6','36.26','-2.4','9.78','-15.7',null,null),('2020','12','2','2020-12-01','一般公共预算收入','一级','亿元','38.85','-14.1','21.06','-18.9','17.78','-7.7',null,null),('2020','12','2','2020-12-01','税收收入','一般公共预算收入','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','一般公共预算支出','一级','亿元','77.07','-15.1','52.49','-12','24.58','-21',null,null),('2020','12','2','2020-12-01','九项民生支出','一般公共预算支出','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','珠海机场旅客吞吐量','珠海机场','万人次','733.56','-40.3','733.56','-40.3',null,null,null,null),('2020','12','2','2020-12-01','珠海机场货邮吞吐量','珠海机场','万吨','3.84','-24.8','3.84','-24.8',null,null,null,null),('2020','12','2','2020-12-01','全市港口吞吐量','一级','万吨','13367','-3.4',null,null,'12135','-5.8',null,null),('2020','12','2','2020-12-01','集装箱吞吐量','全市港口吞吐量','万TEU','184','-28.1',null,null,'142','-32.7',null,null),('2020','12','2','2020-12-01','高栏港港口吞吐量','高栏港','万吨','12135','-5.8',null,null,'12135','-5.8',null,null),('2020','12','2','2020-12-01','高栏港集装箱吞吐量','高栏港','万TEU','142','-32.7',null,null,'142','-32.7',null,null) [ RunTime:0.0244s ]
+ERR: SQLSTATE[HY000]: General error: 1364 Field 'create_by' doesn't have a default value
+
+[ 2021-07-09T18:39:42+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000583s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0163s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0204s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_table_date` WHERE `year` = '2020' AND `table_name` = 'datav_total' AND `month` = 12 LIMIT 1   [ RunTime:0.0217s ]
+NOTIC: [8] Undefined variable: tableDataIsExisted D:\work\datav-backend\Admin\Common\BaseUploadModel.class.php 第 35 行.
+SQL: INSERT INTO `datav_total` (`year`,`month`,`create_by`,`data_date`,`title`,`parent_name`,`measure`,`jw_gross`,`jw_rise`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise`,`before_last_rise`,`two_year_rise`) VALUES ('2020','12','2','2020-12-01','地区生产总值','一级','亿元','700.4','2.9','347.82','3.2','352.58','2.7',null,null),('2020','12','2','2020-12-01','规模以上工业增加值','一级','亿元','438.45','1.5','193.24','2.5','245.21','0.7',null,null),('2020','12','2','2020-12-01','规模以上工业总产值','一级','亿元','1826.45','-1.8','758.53','3.8','1067.92','-3.7',null,null),('2020','12','2','2020-12-01','全社会固定资产投资','一级','亿元','548.84','29.1','366.95','28.7','181.89','30',null,null),('2020','12','2','2020-12-01','外贸进出口总额','一级','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','外贸出口','外贸进出口总额','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','外贸进口','外贸进出口总额','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','实际吸收外商投资','一级','万美元','9333','-73.9','7503','-58.3','1830','-89.7',null,null),('2020','12','2','2020-12-01','社会消费品零售总额','一级','亿元','46.04','-5.6','36.26','-2.4','9.78','-15.7',null,null),('2020','12','2','2020-12-01','一般公共预算收入','一级','亿元','38.85','-14.1','21.06','-18.9','17.78','-7.7',null,null),('2020','12','2','2020-12-01','税收收入','一般公共预算收入','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','一般公共预算支出','一级','亿元','77.07','-15.1','52.49','-12','24.58','-21',null,null),('2020','12','2','2020-12-01','九项民生支出','一般公共预算支出','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','珠海机场旅客吞吐量','珠海机场','万人次','733.56','-40.3','733.56','-40.3',null,null,null,null),('2020','12','2','2020-12-01','珠海机场货邮吞吐量','珠海机场','万吨','3.84','-24.8','3.84','-24.8',null,null,null,null),('2020','12','2','2020-12-01','全市港口吞吐量','一级','万吨','13367','-3.4',null,null,'12135','-5.8',null,null),('2020','12','2','2020-12-01','集装箱吞吐量','全市港口吞吐量','万TEU','184','-28.1',null,null,'142','-32.7',null,null),('2020','12','2','2020-12-01','高栏港港口吞吐量','高栏港','万吨','12135','-5.8',null,null,'12135','-5.8',null,null),('2020','12','2','2020-12-01','高栏港集装箱吞吐量','高栏港','万TEU','142','-32.7',null,null,'142','-32.7',null,null) [ RunTime:0.0271s ]
+SQL: INSERT INTO `datav_table_date` (`create_by`,`year`,`table_name`,`month`) VALUES ('2','2020','datav_total','12') [ RunTime:0.0329s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002411s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002481s ]
+
+[ 2021-07-09T18:41:20+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000663s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0194s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0158s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_table_date` WHERE `year` = '2020' AND `table_name` = 'datav_total' AND `month` = 12 LIMIT 1   [ RunTime:0.0347s ]
+NOTIC: [8] Undefined variable: tableDataIsExisted D:\work\datav-backend\Admin\Common\BaseUploadModel.class.php 第 35 行.
+SQL: INSERT INTO `datav_total` (`year`,`month`,`create_by`,`data_date`,`title`,`parent_name`,`measure`,`jw_gross`,`jw_rise`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise`,`before_last_rise`,`two_year_rise`) VALUES ('2020','12','2','2020-12-01','地区生产总值','一级','亿元','700.4','2.9','347.82','3.2','352.58','2.7',null,null),('2020','12','2','2020-12-01','规模以上工业增加值','一级','亿元','438.45','1.5','193.24','2.5','245.21','0.7',null,null),('2020','12','2','2020-12-01','规模以上工业总产值','一级','亿元','1826.45','-1.8','758.53','3.8','1067.92','-3.7',null,null),('2020','12','2','2020-12-01','全社会固定资产投资','一级','亿元','548.84','29.1','366.95','28.7','181.89','30',null,null),('2020','12','2','2020-12-01','外贸进出口总额','一级','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','外贸出口','外贸进出口总额','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','外贸进口','外贸进出口总额','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','实际吸收外商投资','一级','万美元','9333','-73.9','7503','-58.3','1830','-89.7',null,null),('2020','12','2','2020-12-01','社会消费品零售总额','一级','亿元','46.04','-5.6','36.26','-2.4','9.78','-15.7',null,null),('2020','12','2','2020-12-01','一般公共预算收入','一级','亿元','38.85','-14.1','21.06','-18.9','17.78','-7.7',null,null),('2020','12','2','2020-12-01','税收收入','一般公共预算收入','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','一般公共预算支出','一级','亿元','77.07','-15.1','52.49','-12','24.58','-21',null,null),('2020','12','2','2020-12-01','九项民生支出','一般公共预算支出','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','珠海机场旅客吞吐量','珠海机场','万人次','733.56','-40.3','733.56','-40.3',null,null,null,null),('2020','12','2','2020-12-01','珠海机场货邮吞吐量','珠海机场','万吨','3.84','-24.8','3.84','-24.8',null,null,null,null),('2020','12','2','2020-12-01','全市港口吞吐量','一级','万吨','13367','-3.4',null,null,'12135','-5.8',null,null),('2020','12','2','2020-12-01','集装箱吞吐量','全市港口吞吐量','万TEU','184','-28.1',null,null,'142','-32.7',null,null),('2020','12','2','2020-12-01','高栏港港口吞吐量','高栏港','万吨','12135','-5.8',null,null,'12135','-5.8',null,null),('2020','12','2','2020-12-01','高栏港集装箱吞吐量','高栏港','万TEU','142','-32.7',null,null,'142','-32.7',null,null) [ RunTime:0.0184s ]
+SQL: INSERT INTO `datav_table_date` (`create_by`,`year`,`table_name`,`month`) VALUES ('2','2020','datav_total','12') [ RunTime:0.0147s ]
+
+[ 2021-07-09T18:44:57+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000686s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0156s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0230s ]
+
+[ 2021-07-09T18:45:40+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000557s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000575s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0402s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0295s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_table_date` WHERE `year` = '2020' AND `table_name` = 'datav_total' AND `month` = 12 LIMIT 1   [ RunTime:0.0944s ]
+NOTIC: [8] Undefined variable: tableDataIsExisted D:\work\datav-backend\Admin\Common\BaseUploadModel.class.php 第 37 行.
+SQL: INSERT INTO `datav_total` (`year`,`month`,`create_by`,`data_date`,`title`,`parent_name`,`measure`,`jw_gross`,`jw_rise`,`zs_gross`,`zs_rise`,`kfq_gross`,`kfq_rise`,`before_last_rise`,`two_year_rise`) VALUES ('2020','12','2','2020-12-01','地区生产总值','一级','亿元','700.4','2.9','347.82','3.2','352.58','2.7',null,null),('2020','12','2','2020-12-01','规模以上工业增加值','一级','亿元','438.45','1.5','193.24','2.5','245.21','0.7',null,null),('2020','12','2','2020-12-01','规模以上工业总产值','一级','亿元','1826.45','-1.8','758.53','3.8','1067.92','-3.7',null,null),('2020','12','2','2020-12-01','全社会固定资产投资','一级','亿元','548.84','29.1','366.95','28.7','181.89','30',null,null),('2020','12','2','2020-12-01','外贸进出口总额','一级','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','外贸出口','外贸进出口总额','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','外贸进口','外贸进出口总额','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','实际吸收外商投资','一级','万美元','9333','-73.9','7503','-58.3','1830','-89.7',null,null),('2020','12','2','2020-12-01','社会消费品零售总额','一级','亿元','46.04','-5.6','36.26','-2.4','9.78','-15.7',null,null),('2020','12','2','2020-12-01','一般公共预算收入','一级','亿元','38.85','-14.1','21.06','-18.9','17.78','-7.7',null,null),('2020','12','2','2020-12-01','税收收入','一般公共预算收入','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','一般公共预算支出','一级','亿元','77.07','-15.1','52.49','-12','24.58','-21',null,null),('2020','12','2','2020-12-01','九项民生支出','一般公共预算支出','亿元',null,null,null,null,null,null,null,null),('2020','12','2','2020-12-01','珠海机场旅客吞吐量','珠海机场','万人次','733.56','-40.3','733.56','-40.3',null,null,null,null),('2020','12','2','2020-12-01','珠海机场货邮吞吐量','珠海机场','万吨','3.84','-24.8','3.84','-24.8',null,null,null,null),('2020','12','2','2020-12-01','全市港口吞吐量','一级','万吨','13367','-3.4',null,null,'12135','-5.8',null,null),('2020','12','2','2020-12-01','集装箱吞吐量','全市港口吞吐量','万TEU','184','-28.1',null,null,'142','-32.7',null,null),('2020','12','2','2020-12-01','高栏港港口吞吐量','高栏港','万吨','12135','-5.8',null,null,'12135','-5.8',null,null),('2020','12','2','2020-12-01','高栏港集装箱吞吐量','高栏港','万TEU','142','-32.7',null,null,'142','-32.7',null,null) [ RunTime:0.0391s ]
+SQL: INSERT INTO `datav_table_date` (`create_by`,`year`,`table_name`,`month`) VALUES ('2','2020','datav_total','12') [ RunTime:0.0484s ]
+
+[ 2021-07-09T18:46:13+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000582s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0452s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0257s ]
+
+[ 2021-07-09T18:47:27+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000660s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0424s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0282s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_table_date` WHERE `year` = '2020' AND `table_name` = 'datav_total' AND `month` = 12 LIMIT 1   [ RunTime:0.0758s ]
+
+[ 2021-07-09T18:47:54+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000788s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000590s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0568s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0148s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_table_date` WHERE `year` = '2020' AND `table_name` = 'datav_total' AND `month` = 12 LIMIT 1   [ RunTime:0.0366s ]
+NOTIC: [8] Undefined variable: tableDataIsExisted D:\work\datav-backend\Admin\Common\BaseUploadModel.class.php 第 36 行.
+
+[ 2021-07-09T18:48:11+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000417s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000542s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000560s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0536s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0770s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_table_date` WHERE `year` = '2020' AND `table_name` = 'datav_total' AND `month` = 12 LIMIT 1   [ RunTime:0.0368s ]
+
+[ 2021-07-09T18:48:41+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000577s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.1026s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.1022s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_table_date` WHERE `year` = '2020' AND `table_name` = 'datav_total' AND `month` = 12 LIMIT 1   [ RunTime:0.1055s ]
+
+[ 2021-07-09T18:50:26+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000738s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000761s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0191s ]
+SQL: SHOW COLUMNS FROM `datav_table_date` [ RunTime:0.0225s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `datav_table_date` WHERE `year` = '2020' AND `table_name` = 'datav_total' AND `month` = 12 LIMIT 1   [ RunTime:0.0200s ]
+
+[ 2021-07-09T19:19:07+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0141s ]
+

@@ -18,9 +18,12 @@ return array(
 	//database settting
 	'DB_TYPE'   => 'mysql', // 数据库类型
     'DB_NAME'   => 'jygw', // 数据库名
-    'DB_HOST'   => 'localhost', // 服务器地址
-    'DB_USER'   => 'root', // 用户名
-    'DB_PWD'    => 'bamoke2018***', // 密码
+    'DB_HOST'   => '39.108.189.211', // 服务器地址
+    'DB_USER'   => 'remotesql', // 用户名
+    'DB_PWD'    => '123456', // 密码
+    // 'DB_HOST'   => 'localhost', // 服务器地址
+    // 'DB_USER'   => 'root', // 用户名
+    // 'DB_PWD'    => 'bamoke2018***', // 密码
 
     'DB_PORT'   => 3306, // 端口
     'DB_PREFIX' => 'x_', // 数据库表前缀
@@ -28,8 +31,10 @@ return array(
     'DB_DEBUG'  => false, // 数据库调试模式 开启后可以记录SQL日志
 
     'SHOW_PAGE_TRACE'   =>true,//开启页面调试
-    "UPLOAD_BASE_URL"	=>"https://www.bamoke.com/jygw/Uploads",
+    "UPLOAD_BASE_URL"	=>"https://bmk-jygw.oss-cn-shenzhen.aliyuncs.com",
+    // "UPLOAD_BASE_URL"	=>"https://www.bamoke.com/jygw/Uploads",
     
+    // 
     // OSS config
 	"OSS_ENDPOINT"		=>"oss-cn-shenzhen.aliyuncs.com",
 	"OSS_BUCKET"		=>"bmk-jygw",

@@ -12,12 +12,12 @@ class IndexController extends Controller {
         $bannerList = array(
             array(
                 "id"    =>4,
-                "img"   =>C("OSS_BASE_URL")."/banner/index-banner-4.jpg?v=1",
+                "img"   =>C("OSS_BASE_URL")."/banner/index-banner-4.jpg?v=2",
                 "url"   =>""
             ),
             array(
                 "id"    =>5,
-                "img"   =>C("OSS_BASE_URL")."/banner/index-banner-5.jpg?v=4",
+                "img"   =>C("OSS_BASE_URL")."/banner/index-banner-5.jpg?v=2",
                 "url"   =>""
             )
         );

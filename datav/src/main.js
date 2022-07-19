@@ -6,10 +6,10 @@
  * @Description: In User Settings Edit
  */
 import Vue from 'vue'
-import App from './App-mobile.vue'
+import App from './App.vue'
 import Config from "@/config"
 import router from '@/router'
-import ModuleCard from "@/components/main/module-card-mobile.vue"
+import ModuleCard from "@/components/main/module-card.vue"
 import Trend from "@/components/trend"
 import SwitchBtn from "@/components/switchbtn"
 import BcountUp from "@/components/count-up"
@@ -18,7 +18,7 @@ import store from "@/store"
 
 
 
-import { ButtonGroup, Button,Dropdown,DropdownMenu,DropdownItem, Table,Icon,Circle ,Row,Col,Carousel,CarouselItem,Spin} from 'view-design';
+import { ButtonGroup, Button,Dropdown,DropdownMenu,DropdownItem, Table,Icon,Circle ,Row,Col,Carousel,CarouselItem,Spin,Message} from 'view-design';
 import 'view-design/dist/styles/iview.css';
 
 import 'echarts-gl';
@@ -26,6 +26,7 @@ import echarts from '@/libs/echarts'
 import echartTheme from "@/config/echarts-theme.js"
 
 Vue.prototype.$echarts = echarts
+Vue.prototype.$Message = Message
 
 
 
@@ -35,6 +36,8 @@ Vue.prototype.$config = Config
 
 
 // 自定义组件
+import tableDataToChart from "@/libs/tabletochart.js";
+Vue.use(tableDataToChart)
 Vue.component('Trend', Trend);
 Vue.component('BcountUp', BcountUp);
 Vue.component('SwitchBtn', SwitchBtn);

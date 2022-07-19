@@ -1,7 +1,8 @@
 <?php
 namespace Api\Controller;
+use Think\Controller;
 use Api\Common\Controller\BaseController;
-class TalentController extends BaseController {
+class TalentController extends Controller {
   /**
    * 人才卡
    * @condition
@@ -59,12 +60,43 @@ class TalentController extends BaseController {
       $this->ajaxReturn($backData);
     }
 
+    $idCard = $applyInfo["papers_no"];
     if($applyInfo['verify_status'] == 6) {
+      if($applyInfo['type'] == 1) {
+        $cardInfo = $this->fetchTalentInfoApi($applyInfo['papers_no'],1);
+        $updateWhere = array(
+          "uid" =>$this->uid
+        );
+        if($cardInfo["data"]["level"]) {
+          $newCardData = array(
+            "card_no"   =>$cardInfo["data"]["seq"] ? $cardInfo["data"]["seq"] : $idCard,
+            "start_date"  =>date_format(date_create($cardInfo["data"]["startdate"]),"Y-m-d"),
+            "end_date"  =>date_format(date_create($cardInfo["data"]["enddate"]),"Y-m-d"),
+            "level"     =>$cardInfo["data"]["level"],
+            "score"     =>$cardInfo["data"]["score"],
+            "update_time" =>date("Y-m-d H:i:s",time())
+          );
+          $updateResult = M("TalentCard")->where(array("uid"=>$this->uid))->fetchSql(false)->save($newCardData);
+        }else {
+          $backData = array(
+            "code"  =>13001,
+            "msg"   =>'暂无此人才信息',
+            "data"  =>array(
+              "info"  =>null,
+            )
+          );
+          $this->ajaxReturn($backData);
+        }
+
+
+      }
+      
       $info = M("TalentCard")
       ->field("*,IF(end_date < CURDATE(),1,0) as expired")
       ->where($condition)
       ->fetchSql(false)
       ->find();
+      
     }else {
       $info = $applyInfo;
     }
@@ -129,9 +161,10 @@ class TalentController extends BaseController {
       $this->ajaxReturn($backData); 
     }
     $talentType = I("post.talent_type");
-    $idCard = I("post.papers_no");
+    $idCard = trim(I("post.papers_no"));
     $mainData = I("post.");
     $mainData["type"] = $talentType;
+    $mainData["papers_no"] = $idCard;
     $mainModel = M("TalentApply");
 
 
@@ -148,8 +181,8 @@ class TalentController extends BaseController {
     if($applyInfo) {
       // 更新记录
       // 更新记录判断手机号和证件号是否存在
-      // $phoneExist = $mainModel->where(array("phone"=>$mainData['phone'],"uid"=>array('neq',$this->uid)))->count();
-      $phoneExist = 0; // 临时去掉手机验证
+      $phoneExist = $mainModel->where(array("phone"=>$mainData['phone'],"uid"=>array('neq',$this->uid)))->count();
+      // $phoneExist = 0; // 临时去掉手机验证
       $paperExist = $mainModel->where(array("papers_no"=>$mainData["papers_no"],"uid"=>array('neq',$this->uid)))->count();
       if($phoneExist) {
         $backData = array(
@@ -205,13 +238,18 @@ class TalentController extends BaseController {
     $hanleCardResult = true;
     $updateApplyResult = true;
     
-    //  如果是产业人才调用接口查询结果
+    //  人才信息查询结果
     $updateData = array();
 
     $cardInfo = $this->fetchTalentInfoApi($idCard,$talentType);
+
+
+
+
+
     $updateData["verify_time"] = date("Y-m-d H:i:s",time());
-    if($cardInfo["code"] == 0) {
-      if($cardInfo["msg"] == "成功") {
+    if($cardInfo["code"] == 200) {
+      if($cardInfo["data"]) {
         // 人才查询成功，保存到本地人才卡数据库
         $updateData["verify_status"] = 6;
         $updateData["reason"] = "";
@@ -221,7 +259,7 @@ class TalentController extends BaseController {
         $newCardData = array(
           "realname"  =>$cardInfo["data"]["name"],
           "type"      =>$talentType,
-          "card_no"   =>$cardInfo["data"]["seq"],
+          "card_no"   =>$cardInfo["data"]["seq"] ? $cardInfo["data"]["seq"] : $idCard,
           "start_date"  =>date_format(date_create($cardInfo["data"]["startdate"]),"Y-m-d"),
           "end_date"  =>date_format(date_create($cardInfo["data"]["enddate"]),"Y-m-d"),
           "level"     =>$cardInfo["data"]["level"],
@@ -244,7 +282,7 @@ class TalentController extends BaseController {
         }
       }else {
         $updateData["verify_status"] = 5;
-        $updateData["reason"] = "人才系统反馈：".$cardInfo["msg"];
+        $updateData["reason"] = "暂无人才卡数据";
       }
     }else {
       $updateData["verify_status"] = 5;
@@ -299,20 +337,50 @@ class TalentController extends BaseController {
     $this->ajaxReturn($backData);
   }
 
+  public function mytest(){
+    $idCard = I("get.idcard");
+    $result = $this->fetchTalentInfoApi($idCard);
+    var_dump($result);
+  }
+
   /**
    * 获取产业人才类接口
    * @idcard  身份证
    */
   protected function fetchTalentInfoApi($idCard,$talentType=1) {
     if($talentType==1) {
-      $aipUrl = "http://183.57.22.41:8080/appController/TalentCard.json";
+      // $aipUrl = "http://183.57.22.41:8080/appController/TalentCard.json";
+      $aipUrl = "https://jwqzdl.jinwan.gov.cn:4449/fczj-service/api/v1/talentCard/info.json";//生产
+      // $year = idate("Y");
+
+      //  年份参数为手动调整 2022-01-06 by wang
+      $year = 2021;
+      // $aipUrl = "http://183.57.22.46:9081/fczj-service/api/v1/talentCard/info.json";//测试
+      $aipUrl .= "?cardNumber=".$idCard."&year=".$year;
       $curHttp = new \Org\Net\Http();
       $data = array(
-        "idCard"  =>$idCard,
-        "license" =>"mc-license"
+        "cardNumber"  =>$idCard,
       );
-      $resp = $curHttp->sendHttpRequest($aipUrl,"post",$data);
-      return json_decode($resp,true);
+ 
+
+      $GateWay = new \Api\Common\Controller\TalentGateWay();
+      $gateWayHeader = $GateWay->getHeader();
+
+
+      
+      $resResult = $curHttp->sendHttpRequest($aipUrl,"post",$data,$gateWayHeader);
+
+
+      // var_dump($resResult);
+      // exit();
+
+      $resp =  json_decode($resResult,true);
+      if($resp['data']) {
+        $resp['data']['startdate'] = date("Y-m-d",($resp['data']['startdate'] /1000));
+        $resp['data']['enddate'] = date("Y-m-d",($resp['data']['enddate'] /1000));
+      }
+      return $resp;
+
     }else{
       $where = array(
         "paper_no"  =>$idCard
@@ -323,7 +391,7 @@ class TalentController extends BaseController {
       if($info !== false) {
         if($info){
           $backInfo =array(
-            "code" => 0,
+            "code" => 200,
             "msg" =>"成功",
             "data"  =>array(
               "name"  =>$info['realname'],
@@ -337,7 +405,7 @@ class TalentController extends BaseController {
         }else {
           $backInfo =array(
             
-            "code" => 0,
+            "code" => 200,
             "msg" =>"人才库没有您的资料"
           );
         }

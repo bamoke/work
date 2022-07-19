@@ -17,7 +17,7 @@
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
     <link rel="stylesheet" href="/macjob/Web/Static/css/plugins/plugins.min.css?v=1">
-    <link rel="stylesheet" href="/macjob/Web/Static/css/style.min.css?v=2">
+    <link rel="stylesheet" href="/macjob/Web/Static/css/style.css?v=2">
     <!-- Modernizr JS -->
     <script src="/macjob/Web/Static/js/vendor/modernizr-3.10.0.min.js"></script>
     <style>
@@ -58,155 +58,114 @@
 <body class="template-color-1">
 
     <div id="main-wrapper">
-                <!--Header section start-->
-        <div class="<?php echo ($pageName=='首页' ? 'header-absolute ':'black-logo-version sticky-white '); ?>sb-border header-sticky d-none d-lg-block">
-            <div class="main-header">
-                <div class="container-fluid pl-50 pl-lg-15 pl-md-15 pr-0">
-                    <div class="row align-items-center no-gutters">
+        <!--Header section start-->
+<div
+    class="<?php echo ($pageName=='首页' ? 'header-absolute ':'black-logo-version sticky-white '); ?>sb-border header-sticky d-none d-lg-block">
+    <div class="main-header">
+        <div class="container-fluid pl-50 pl-lg-15 pl-md-15 pr-0">
+            <div class="row align-items-center no-gutters">
 
-                        <!--Logo start-->
-                        <div class="col-xl-2 col-lg-2 col-12">
-                            <div class="logo">
-                                <a href="<?php echo U('Index/index');?>"><img src="/macjob/Web/Static/images/<?php echo ($pageName=='首页' ? 'logo-white':'logo'); ?>.png" alt=""></a>
-                            </div>
-                        </div>
-                        <!--Logo end-->
-
-                        <!--Menu start-->
-                        <div class="col-xl-7 col-lg-7 col-12">
-                            <nav class="main-menu">
-                                <ul>
-                                    <li><a href="<?php echo U('Index/index');?>">首页</a>
-                                    </li>
-                                    <li><a href="<?php echo U('Jobs/index');?>">招聘职位</a>
-                                    </li>
-                                    <li><a href="<?php echo U('News/index',array('cid'=>10));?>">政策法规</a>
-                                    </li>
-                                    <li><a href="<?php echo U('Index/index');?>">走进澳门</a>
-                                    <li><a href="<?php echo U('News/index',array('cid'=>8));?>">最新动态</a>
-                                    </li>
-                                    <li><a href="<?php echo U('News/index',array('cid'=>9));?>">赴澳须知</a>
-                                    </li>
-                                    <li><a href="<?php echo U('Single/index',array('id'=>12));?>">人才培训</a>
-                                    </li>
-                                    <li><a href="<?php echo U('Single/index',array('id'=>1));?>">关于我们</a>
-                                    </li>
-
-                                </ul>
-                            </nav>
-                        </div>
-                        <!--Menu end-->
-
+                <!--Logo start-->
+                <div class="col-xl-2 col-lg-2 col-12">
+                    <div class="logo">
+                        <a href="<?php echo U('Index/index');?>"><img
+                                src="/macjob/Web/Static/images/<?php echo ($pageName=='首页' ? 'logo-white':'logo'); ?>.png" alt=""></a>
                     </div>
-
                 </div>
-            </div>
-        </div>
-        <!--Header section end-->
+                <!--Logo end-->
 
-        <!--Header Mobile section start-->
-        <header class="header-mobile bg_color--2 d-block d-lg-none">
-            <div class="header-bottom menu-right">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="header-mobile-navigation d-block d-lg-none">
-                                <div class="row align-items-center">
-                                    <div class="col-3 col-md-3">
-                                        <div class="mobile-navigation text-right">
-                                            <div class="header-icon-wrapper">
-                                                <ul class="icon-list justify-content-start">
-                                                    <li class="popup-mobile-click">
-                                                        <a href="javascript:void(0)"><i class="lnr lnr-menu"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-6">
-                                        <div class="header-logo text-center">
-                                            <a href="<?php echo U(Index/index);?>">
-                                                <img src="/macjob/Web/Static/images/logo-mobile.png" class="img-fluid" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-3 col-md-3">
+                <!--Menu start-->
+                <div class="col-xl-7 col-lg-7 col-12">
+                    <nav class="main-menu">
+                        <ul>
+                            <li><a href="<?php echo U('Index/index');?>">首页</a></li>
+                            <li><a href="<?php echo U('Jobs/index');?>">招聘职位</a></li>
+                            <li><a href="<?php echo U('Index/index');?>">现场招聘</a></li>
+                            <li><a href="<?php echo U('News/index',array('cid'=>8));?>">人社动态</a></li>
+                            <li><a href="<?php echo U('News/index',array('cid'=>10));?>">人社政策</a></li>
+                            <li><a href="<?php echo U('News/index',array('cid'=>9));?>">校园频道</a></li>
+                            <li><a href="<?php echo U('Single/index',array('id'=>12));?>">人才补贴</a></li>
+                            <li><a href="<?php echo U('Single/index',array('id'=>1));?>">关于我们</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+                <!--Menu end-->
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--Header section end-->
+
+<!--Header Mobile section start-->
+<header class="header-mobile bg_color--2 d-block d-lg-none">
+    <div class="header-bottom menu-right">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header-mobile-navigation d-block d-lg-none">
+                        <div class="row align-items-center">
+                            <div class="col-3 col-md-3">
+                                <div class="mobile-navigation text-right">
+                                    <div class="header-icon-wrapper">
+                                        <ul class="icon-list justify-content-start">
+                                            <li class="popup-mobile-click">
+                                                <a href="javascript:void(0)"><i class="lnr lnr-menu"></i></a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </header>
-        <!--Header Mobile section end-->
-
-                <!-- Start Popup Menu -->
-                <div class="popup-mobile-manu popup-mobile-visiable">
-                    <div class="inner">
-                        <div class="mobileheader">
-                            <div class="logo">
-                                <a href="<?php echo U('Index/index');?>}">
-                                    <img src="/macjob/Web/Static/images/logo-mobile.png" alt="Multipurpose">
-                                </a>
-                            </div>
-                            <a class="mobile-close" href="#"></a>
-                        </div>
-                        <div class="menu-content">
-                            <ul class="menulist object-custom-menu">
-                                <li><a href="<?php echo U('Index/index');?>">首页</a>
-                                </li>
-                                <li><a href="<?php echo U('Jobs/index');?>">招聘职位</a>
-                                </li>
-                                <li><a href="<?php echo U('News/index',array('cid'=>10));?>">政策法规</a>
-                                </li>
-                                <li><a href="<?php echo U('Index/index');?>">走进澳门</a>
-                                <li><a href="<?php echo U('News/index',array('cid'=>8));?>">最新动态</a>
-                                </li>
-                                <li><a href="<?php echo U('News/index',array('cid'=>9));?>">赴澳须知</a>
-                                </li>
-                                <li><a href="<?php echo U('Single/index',array('id'=>12));?>">人才培训</a>
-                                </li>
-                                <li><a href="<?php echo U('Single/index',array('id'=>1));?>">关于我们</a>
-                                </li>
-        
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Popup Menu -->
-                    <!--slider section start-->
-        <div class="hero-section section position-relative">
-            <!--Hero Item start-->
-            <div class="hero-item bg_image--1">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-
-                            <!--Hero Content start-->
-                            <div class="hero-content-2 left">
-                                <h2 class="title">珠海人力资源网-澳门招聘</h2>
-                                <h3 class="sub-title">做专业的澳门劳务平台</h3>
-
-                                <div class="job-search-wrap mt-60 mt-md-70 mt-sm-50 mt-xs-30">
-                                    <p>“珠海人力资源网·澳门招聘”栏目是由珠海市珠光集团控股有限公司的属下企业珠海市南方人力资源服务有限公司与珠海国际（澳门）职业介绍所有限公司合力打造的具有唯一、正规化及国企性质的免费澳门招聘品牌栏目。</p>
-                                    <P>“珠海人力资源网·澳门招聘”栏目将始终以维护澳门经济繁荣与稳定和为澳门雇主输送优秀对口人才为宗旨，依法依规发布各类输澳劳务岗位，为促进两地劳务合作持续健康发展，推动珠澳合作迈向更宽领域、更深层次、更高水平做出不懈努力。</P>
-                                    <p><a class="ht-btn lg-btn" href="">我要揾工</a></p>
+                            <div class="col-6 col-md-6">
+                                <div class="header-logo text-center">
+                                    <a href="<?php echo U(Index/index);?>">
+                                        <img src="/macjob/Web/Static/images/logo-mobile.png" class="img-fluid" alt="">
+                                    </a>
                                 </div>
-
                             </div>
-                            <!--Hero Content end-->
-
+                            <div class="col-3 col-md-3">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--Hero Item end-->
-        </div>
-        <!--slider section end-->
 
+        </div>
+    </div>
+</header>
+<!--Header Mobile section end-->
+
+<!-- Start Popup Menu -->
+<div class="popup-mobile-manu popup-mobile-visiable">
+    <div class="inner">
+        <div class="mobileheader">
+            <div class="logo">
+                <a href="<?php echo U('Index/index');?>}">
+                    <img src="/macjob/Web/Static/images/logo-mobile.png" alt="Multipurpose">
+                </a>
+            </div>
+            <a class="mobile-close" href="#"></a>
+        </div>
+        <div class="menu-content">
+            <ul class="menulist object-custom-menu">
+                <li><a href="<?php echo U('Index/index');?>">首页</a></li>
+                <li><a href="<?php echo U('Jobs/index');?>">招聘职位</a></li>
+                <li><a href="<?php echo U('Index/index');?>">现场招聘</a></li>
+                <li><a href="<?php echo U('News/index',array('cid'=>8));?>">人社动态</a></li>
+                <li><a href="<?php echo U('News/index',array('cid'=>10));?>">人社政策</a></li>
+                <li><a href="<?php echo U('News/index',array('cid'=>9));?>">校园频道</a></li>
+                <li><a href="<?php echo U('Single/index',array('id'=>12));?>">人才补贴</a></li>
+                <li><a href="<?php echo U('Single/index',array('id'=>1));?>">关于我们</a></li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- End Popup Menu -->
+            
 
 
         <!-- Job Location Section Start -->

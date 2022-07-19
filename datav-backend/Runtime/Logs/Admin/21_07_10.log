@@ -1,0 +1,11 @@
+[ 2021-07-10T00:04:19+08:00 ] ::1 /datav-backend/admin.php/Upload/upload.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000449s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000662s ]
+NOTIC: [2] Declaration of Admin\Controller\UploadController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\work\datav-backend\Admin\Controller\UploadController.class.php 第 102 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\work\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `datav_total` [ RunTime:0.0155s ]
+

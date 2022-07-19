@@ -20,6 +20,7 @@
 
 <script>
 import { formatStringWrap } from "@/libs/tools.js";
+import * as Api from "@/api/index";
 export default {
   mounted() {
     let zjzChartInstance = this.$echarts.init(
@@ -32,26 +33,16 @@ export default {
       this.$config.chartTheme
     );
 
-    const data = [
-      ["product", "金湾区", "金湾直属", "开发区"],
-      ["先进制造业", 2828991, 992345, 1836646],
-      ["装备制造业", 1187043, 745449, 441595],
-      ["先进装备制造业", 627222, 301770, 325452],
-      ["高技术", 783252, 720789, 62463],
-      ["新材料", 974337, 327043, 647294],
-      ["规上民营工业企业", 1764384, 1033107, 731277],
-    ];
-
     let options = {
       legend: {
         left: "center",
         top: "top",
         //   orient: "vertical",
       },
-      tooltip: {},
+      tooltip: { trigger: "axis" },
       dataset: {
         // 提供一份数据。
-        source: data,
+        source: [],
       },
       xAxis: [
         {
@@ -59,9 +50,9 @@ export default {
           axisLabel: {
             inside: false,
             // rotate: -45,
-            formatter:function(value){
-               return formatStringWrap(value,4)
-            }
+            formatter: function (value) {
+              return formatStringWrap(value, 4);
+            },
           },
         },
       ],
@@ -71,41 +62,164 @@ export default {
           axisLabel: {
             inside: false,
             formatter: function (v) {
-              return v / 10000 + "亿";
+              return v;
+            },
+          },
+        },
+        {
+          type: "value",
+          axisLabel: {
+            inside: false,
+            formatter: function (v) {
+              return v + "%";
             },
           },
         },
       ],
-
-      series: [
-        {
-          name: "金湾区",
-          type: "bar",
-          stack: "",
-          emphasis: {
-            focus: "series",
-          },
-        },
-        {
-          name: "金湾直属",
-          type: "bar",
-          stack: "",
-          emphasis: {
-            focus: "series",
-          },
-        },
-        {
-          name: "开发区",
-          type: "bar",
-          stack: "",
-          emphasis: {
-            focus: "series",
-          },
-        },
-      ],
+      series: [],
     };
-    zjzChartInstance.setOption(options);
-    zczChartInstance.setOption(options);
+
+    Api.base.get_industry_xdmy({ params: { cate: "all" } }).then((res) => {
+      let zjzChartData = this.$formatTableToChart(
+        res.data.zjz.list,
+        res.data.zjz.columns
+      );
+      let zczChartData = this.$formatTableToChart(
+        res.data.zcz.list,
+        res.data.zcz.columns
+      );
+      let zjzOpt = {
+        legend: {
+          left: "center",
+          top: "top",
+          //   orient: "vertical",
+        },
+        tooltip: { trigger: "axis" },
+        dataset: {
+          // 提供一份数据。
+          source: zjzChartData,
+        },
+        xAxis: [
+          {
+            type: "category",
+            axisLabel: {
+              inside: false,
+              // rotate: -45,
+              formatter: function (value) {
+                return formatStringWrap(value, 4);
+              },
+            },
+          },
+        ],
+        yAxis: [
+          {
+            type: "value",
+            axisLabel: {
+              inside: false,
+              formatter: function (v) {
+                return v;
+              },
+            },
+          },
+          {
+            type: "value",
+            axisLabel: {
+              inside: false,
+              formatter: function (v) {
+                return v + "%";
+              },
+            },
+          },
+        ],
+        series: [
+          {
+            type: "bar",
+            name: zjzChartData[0][2],
+            showBackground: true,
+            encode: {
+              x: 0,
+              y: 2,
+            },
+          },
+          {
+            type: "line",
+            name: zjzChartData[0][3],
+            yAxisIndex: 1,
+            encode: {
+              x: 0,
+              y: 3,
+            },
+          },
+        ],
+      };
+
+      let zczOpt = {
+        legend: {
+          left: "center",
+          top: "top",
+          //   orient: "vertical",
+        },
+        tooltip: { trigger: "axis" },
+        dataset: {
+          // 提供一份数据。
+          source: zczChartData,
+        },
+        xAxis: [
+          {
+            type: "category",
+            axisLabel: {
+              inside: false,
+              // rotate: -45,
+              formatter: function (value) {
+                return formatStringWrap(value, 4);
+              },
+            },
+          },
+        ],
+        yAxis: [
+          {
+            type: "value",
+            axisLabel: {
+              inside: false,
+              formatter: function (v) {
+                return v;
+              },
+            },
+          },
+          {
+            type: "value",
+            axisLabel: {
+              inside: false,
+              formatter: function (v) {
+                return v + "%";
+              },
+            },
+          },
+        ],
+        series: [
+          {
+            type: "bar",
+            name: zczChartData[0][2],
+            showBackground: true,
+            encode: {
+              x: 0,
+              y: 2,
+            },
+          },
+          {
+            type: "line",
+            name: zczChartData[0][3],
+            yAxisIndex: 1,
+            encode: {
+              x: 0,
+              y: 3,
+            },
+          },
+        ],
+      };
+      zjzChartInstance.setOption(zjzOpt);
+      zczChartInstance.setOption(zczOpt);
+    });
   },
 };
 </script>

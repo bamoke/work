@@ -16,8 +16,8 @@
     <!-- <link rel="stylesheet" href="/macjob/Web/Static/css/style.css"> -->
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
-    <link rel="stylesheet" href="/macjob/Web/Static/css/plugins/plugins.min.css">
-    <link rel="stylesheet" href="/macjob/Web/Static/css/style.min.css">
+    <link rel="stylesheet" href="/macjob/Web/Static/css/plugins/plugins.min.css?v=1">
+    <link rel="stylesheet" href="/macjob/Web/Static/css/style.min.css?v=2">
     <!-- Modernizr JS -->
     <script src="/macjob/Web/Static/js/vendor/modernizr-3.10.0.min.js"></script>
     <style>
@@ -67,7 +67,7 @@
                         <!--Logo start-->
                         <div class="col-xl-2 col-lg-2 col-12">
                             <div class="logo">
-                                <a href="<?php echo U('Index/index');?>"><img src="/macjob/Web/Static/images/logo-white.png" alt=""></a>
+                                <a href="<?php echo U('Index/index');?>"><img src="/macjob/Web/Static/images/<?php echo ($pageName=='首页' ? 'logo-white':'logo'); ?>.png" alt=""></a>
                             </div>
                         </div>
                         <!--Logo end-->
@@ -131,23 +131,6 @@
                                         </div>
                                     </div>
                                     <div class="col-3 col-md-3">
-                                        <div class="mobile-navigation text-right">
-                                            <div class="header-icon-wrapper">
-                                                <ul class="icon-list justify-content-end">
-                                                    <li>
-                                                        <div class="header-cart-icon">
-                                                            <a href="#" class="header-search-toggle"><i class="lnr lnr-magnifier"></i></a>
-                                                        </div>
-                                                        <div class="header-search-form">
-                                                            <form action="#">
-                                                                <input type="text" placeholder="Type and hit enter">
-                                                                <button><i class="lnr lnr-magnifier"></i></button>
-                                                            </form>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -158,6 +141,42 @@
             </div>
         </header>
         <!--Header Mobile section end-->
+
+                <!-- Start Popup Menu -->
+                <div class="popup-mobile-manu popup-mobile-visiable">
+                    <div class="inner">
+                        <div class="mobileheader">
+                            <div class="logo">
+                                <a href="<?php echo U('Index/index');?>}">
+                                    <img src="/macjob/Web/Static/images/logo-mobile.png" alt="Multipurpose">
+                                </a>
+                            </div>
+                            <a class="mobile-close" href="#"></a>
+                        </div>
+                        <div class="menu-content">
+                            <ul class="menulist object-custom-menu">
+                                <li><a href="<?php echo U('Index/index');?>">首页</a>
+                                </li>
+                                <li><a href="<?php echo U('Jobs/index');?>">招聘职位</a>
+                                </li>
+                                <li><a href="<?php echo U('News/index',array('cid'=>10));?>">政策法规</a>
+                                </li>
+                                <li><a href="<?php echo U('Index/index');?>">走进澳门</a>
+                                <li><a href="<?php echo U('News/index',array('cid'=>8));?>">最新动态</a>
+                                </li>
+                                <li><a href="<?php echo U('News/index',array('cid'=>9));?>">赴澳须知</a>
+                                </li>
+                                <li><a href="<?php echo U('Single/index',array('id'=>12));?>">人才培训</a>
+                                </li>
+                                <li><a href="<?php echo U('Single/index',array('id'=>1));?>">关于我们</a>
+                                </li>
+        
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Popup Menu -->
             <!-- Breadcrumb Section Start -->
 <div class="breadcrumb-section section bg_color--5 pt-60 pt-sm-50 pt-xs-40 pb-60 pb-sm-50 pb-xs-40">
     <div class="container">

@@ -39,25 +39,25 @@ export default {
 </script>
 
 <style lang="less">
-::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-  background-color: transparent;
-}
+// ::-webkit-scrollbar {
+//   width: 12px;
+//   height: 12px;
+//   background-color: transparent;
+// }
 
-/*定义滚动条轨道 内阴影+圆角*/
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  background-color: #040d2e;
-}
+// /*定义滚动条轨道 内阴影+圆角*/
+// ::-webkit-scrollbar-track {
+//   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+//   border-radius: 10px;
+//   background-color: #040d2e;
+// }
 
-/*定义滑块 内阴影+圆角*/
-::-webkit-scrollbar-thumb {
-  border-radius: 6px;
-  -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 5);
-  background-color: #4695ee;
-}
+// /*定义滑块 内阴影+圆角*/
+// ::-webkit-scrollbar-thumb {
+//   border-radius: 6px;
+//   -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 5);
+//   background-color: #4695ee;
+// }
 
 .modal-wrap {
   position: fixed;
@@ -71,7 +71,7 @@ export default {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
-  background-image: url(../../assets/images/child-bg.jpg);
+  background-image: url(/demo2/assets/img/theme-defualt-bg.jpg);
   background-size: cover;
   .modal-title {
     margin-bottom: 12px;

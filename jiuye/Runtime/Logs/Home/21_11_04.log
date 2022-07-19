@@ -1,0 +1,53 @@
+[ 2021-11-04T19:18:44+08:00 ] ::1 /jiuye/
+NOTIC: [2] mkdir(): File exists D:\work\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+NOTIC: [2] mkdir(): File exists D:\work\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+NOTIC: [2] mkdir(): File exists D:\work\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+NOTIC: [2] mkdir(): File exists D:\work\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+NOTIC: [2] mkdir(): File exists D:\work\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+NOTIC: [2] mkdir(): File exists D:\work\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+NOTIC: [2] mkdir(): File exists D:\work\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000664s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000008s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000025s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004303s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004322s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000486s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000671s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000685s ]
+
+[ 2021-11-04T19:18:44+08:00 ] ::1 /jiuye/
+NOTIC: [2] mkdir(): File exists D:\work\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+NOTIC: [2] mkdir(): File exists D:\work\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+NOTIC: [2] mkdir(): File exists D:\work\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+NOTIC: [2] mkdir(): File exists D:\work\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+NOTIC: [2] mkdir(): File exists D:\work\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+NOTIC: [2] mkdir(): File exists D:\work\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+NOTIC: [2] mkdir(): File exists D:\work\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+NOTIC: [2] mkdir(): File exists D:\work\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+NOTIC: [2] mkdir(): File exists D:\work\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000036s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000645s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001031s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001060s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000603s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000740s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000754s ]
+

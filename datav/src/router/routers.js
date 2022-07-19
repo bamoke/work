@@ -44,7 +44,12 @@ export default [
         meta: {
           title: '总览'
         },
+<<<<<<< HEAD
         component: () => import('@/view/index/index-3d-light')
+=======
+        component: () => import('@/view/overview/index-mobile')
+        // component: () => import('@/view/index/index-3d-light')
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
       },
       {
         path: webBaseUrl + '/gdp',
@@ -52,7 +57,12 @@ export default [
         meta: {
           title: '地区生产总值'
         },
+<<<<<<< HEAD
         component: () => import('@/view/zongzhi/gdp')
+=======
+        component: () => import('@/view/zongzhi/gdp-mobile')
+        // component: () => import('@/view/zongzhi/gdp')
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
       },
       {
         path: webBaseUrl + '/gongye',
@@ -60,7 +70,12 @@ export default [
         meta: {
           title: '工业经济'
         },
+<<<<<<< HEAD
         component: () => import('@/view/gongye/index')
+=======
+        component: () => import('@/view/gongye/index-mobile')
+        // component: () => import('@/view/gongye/index')
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
       },
       {
         path: webBaseUrl + '/investment',

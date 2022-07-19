@@ -8,19 +8,29 @@
 <template>
   <div class="content-wrap">
     <!--工业增加值-->
+<<<<<<< HEAD
     <div class="row-side">
       <div class="transform-box">
         <ModuleCard title="规模以上工业增加值累计增长速度" class="item-wrap">
+=======
+    <div class="row-side side-left">
+      <div class="transform-box">
+        <ModuleCard title="规上工业增加值累计增长速度" class="item-wrap">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
           <ChartMonth
             :height="220"
             :title="leijizengzhangData.title"
             :chart-data="leijizengzhangData.data"
           ></ChartMonth>
         </ModuleCard>
+<<<<<<< HEAD
         <ModuleCard
           title="近五年规模以上工业增加值及同比增长"
           class="item-wrap"
         >
+=======
+        <ModuleCard title="规上工业增加值及同比增长" class="item-wrap">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
           <template v-slot:extra>
             <ButtonGroup size="small">
               <Button type="primary" @click="handleChangeYearMode('gross')"
@@ -42,7 +52,11 @@
               <Button type="primary" @click="handleChangeCompareCounty('gross')"
                 >总量</Button
               >
+<<<<<<< HEAD
               <Button @click="handleChangeCompareCounty('rise')">增长率</Button>
+=======
+              <Button @click="handleChangeCompareCounty('rise')">同比增长</Button>
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
             </ButtonGroup>
           </template>
           <ChartCompareCounty
@@ -56,6 +70,7 @@
       <div class="bt-shadow"></div>
     </div>
 
+<<<<<<< HEAD
     <div class="side-row" style="display: none">
       <ModuleCard title="规模以上工业增加值" class="item-wrap">
         <template v-slot:extra>
@@ -116,6 +131,9 @@
         </div>
       </ModuleCard>
     </div>
+=======
+
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
 
     <div class="row-big">
       <div class="banner-box"></div>
@@ -141,6 +159,7 @@
           </router-link>
         </div>
       </div>
+<<<<<<< HEAD
 
 
 
@@ -150,6 +169,14 @@
     <div class="row-side">
       <div class="transform-box">
         <ModuleCard title="规模以上工业总产值累计增长速度" class="item-wrap">
+=======
+    </div>
+
+    <!-- 工业生产总值 -->
+    <div class="row-side side-right">
+      <div class="transform-box">
+        <ModuleCard title="规工业总产值累计增长速度" class="item-wrap">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
           <ChartMonth
             chart-id="chart-leijizengzhangexpend"
             :height="200"
@@ -157,6 +184,7 @@
             :chart-data="leijizengzhangDataZcz.data"
           ></ChartMonth>
         </ModuleCard>
+<<<<<<< HEAD
         <ModuleCard
           title="近五年规模以上工业总产值及同比增长"
           class="item-wrap"
@@ -167,6 +195,15 @@
                 >总值</Button
               >
               <Button @click="handleChangeYearMode('rise')">增长率</Button>
+=======
+        <ModuleCard title="规上工业总产值及同比增长" class="item-wrap">
+          <template v-slot:extra>
+            <ButtonGroup size="small">
+              <Button type="primary" @click="handleChangeYearMode('gross','timelineYearDataZcz')"
+                >总值</Button
+              >
+              <Button @click="handleChangeYearMode('rise','timelineYearDataZcz')">增长率</Button>
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
             </ButtonGroup>
           </template>
           <ChartYear
@@ -177,7 +214,11 @@
             :chart-data="timelineYearDataZcz.data"
           ></ChartYear>
         </ModuleCard>
+<<<<<<< HEAD
         <ModuleCard title="规模以上工业经济效益" class="item-wrap">
+=======
+        <ModuleCard title="规上工业经济效益" class="item-wrap">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
           <div class="jjxy-wrap">
             <div class="jjxy-item">
               <div class="section">营业收入<span class="sub">(万元)</span></div>
@@ -230,7 +271,10 @@
       </div>
       <div class="bt-shadow"></div>
     </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
   </div>
 </template>
 
@@ -1027,7 +1071,11 @@ export default {
       };
     });
 
+<<<<<<< HEAD
     // 累计零时数据
+=======
+    // 累计临时数据
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
     let source = [
       ["product", "金湾区", "金湾直属", "开发区"],
       ["2020年3月", -16.3, -17.2, -15.8],
@@ -1094,6 +1142,7 @@ export default {
     /**生产总值图表实例配置 */
 
     /**用电量情况图表实例配置 */
+<<<<<<< HEAD
     this.echartInstance.ydlqkChart.setOption({
       textStyle: {
         color: chartTextColor,
@@ -1190,6 +1239,8 @@ export default {
         },
       ],
     });
+=======
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
   },
 };
 </script>

@@ -7,7 +7,11 @@
 -->
 <template>
   <div class="content-wrap">
+<<<<<<< HEAD
     <div class="row-side">
+=======
+    <div class="row-side side-left">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
       <div class="transform-box">
         <ModuleCard title="各区一般公共预算收入比较" class="item-wrap">
           <template v-slot:extra>
@@ -78,7 +82,11 @@
     </div>
 
     <!-- side -->
+<<<<<<< HEAD
     <div class="row-side">
+=======
+    <div class="row-side side-right">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
       <div class="transform-box">
         <ModuleCard title="各区一般公共预算支出比较" class="item-wrap">
           <template v-slot:extra>
@@ -257,7 +265,11 @@ export default {
 
 <style lang="less" scoped>
 .banner-box {
+<<<<<<< HEAD
   height: 660px;
+=======
+  height: 680px;
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
 }
 .base-height {
   height: 160px;

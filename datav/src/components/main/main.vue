@@ -6,8 +6,14 @@
  * @Description: In User Settings Edit
 -->
 <template>
+<<<<<<< HEAD
   <div style="width:100%;height:100%;">
         <video
+=======
+  <div style="width: 100%; height: 100%">
+    <video
+      v-if="showBgVideo"
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
       x5-video-player-type="h5"
       playsinline=""
       webkitplaysinline="true"
@@ -41,17 +47,36 @@ export default {
   components: {
     HeadBar,
   },
+<<<<<<< HEAD
+=======
+  data() {
+    return {
+      key: "value",
+    };
+  },
+  computed: {
+    showBgVideo() {
+      return this.$store.state.theme.showBgVideo;
+    },
+  },
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
   mounted() {},
 };
 </script>
 
 <style lang="less">
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
 *:before,
 *:after {
   box-sizing: border-box;
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
 </style>

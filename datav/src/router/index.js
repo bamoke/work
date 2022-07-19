@@ -7,7 +7,11 @@
  */
 import Vue from 'vue'
 import Router from 'vue-router'
+<<<<<<< HEAD
 import routes from './routers'
+=======
+import routes from './routers-mobile'
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
 // import store from '@/store'
 // import iView from 'iview'
 // import { setToken, getToken, canTurnTo, setTitle } from '@/libs/util'

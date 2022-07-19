@@ -6,19 +6,44 @@
  * @Description: In User Settings Edit
 -->
 <template>
+<<<<<<< HEAD
   <div id="app" :class="className">
     <router-view style="height: 100%" />
+=======
+  <div id="app" :class="[appTheme]">
+    <div class="m-theme-box" style="display:none">
+      <div class="theme-section">主题样式</div>
+      <div class="theme-list">
+        <div class="item" @click="handleChangeTheme('theme-default')">默认</div>
+        <div class="item" @click="handleChangeTheme('theme-flat-light')">
+          扁平浅色
+        </div>
+        <div class="item" @click="handleChangeTheme('theme-flat-dark')">
+          扁平深色
+        </div>
+      </div>
+    </div>
+    <router-view style="height: 100%; position: relative" />
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
   </div>
 </template>
 
 <script>
 // import HeadBar from "./components/common/header-bar.vue";
 
+<<<<<<< HEAD
+=======
+import "./theme-flat-light.less";
+import "./theme-flat-dark.less";
+
+import echartTheme from "@/config/echarts-theme.js"
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
 export default {
   name: "app",
   components: {},
   data() {
     return {
+<<<<<<< HEAD
       theme: "default",
     };
   },
@@ -28,6 +53,30 @@ export default {
     },
   },
   mounted() {},
+=======
+      key: "",
+    };
+  },
+  computed: {
+    appTheme() {
+      console.log(this.$store.state.theme);
+      return this.$store.state.theme.name;
+    },
+  },
+  methods: {
+    handleChangeTheme(name) {
+      this.$store.commit("setTheme", name);
+
+      window.location.reload()
+    },
+  },
+
+  mounted() {
+    // const echartThemName = this.$store.state.theme.echartTheme;
+    // this.$echarts.registerTheme(echartThemName, echartTheme[echartThemName]);
+
+  },
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
 };
 </script>
 
@@ -50,8 +99,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 
+<<<<<<< HEAD
   width: 100%;
   height: 100%;
+=======
+  width: 1920px;
+  height: 1080px;
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
   overflow: hidden;
 }
 .l-row {
@@ -61,11 +115,57 @@ body {
 .l-row-bt {
   justify-content: space-between;
 }
+<<<<<<< HEAD
+=======
+.m-theme-box {
+  position: fixed;
+  top: 0;
+  right: -100px;
+  z-index: 9999;
+  display: flex;
+  width: 120px;
+  font-size: 12px;
+  transition: all 0.2s;
+  .theme-section {
+    flex: 0 0 auto;
+    padding: 6px 4px;
+    width: 24px;
+    color: #fff;
+    background-color: royalblue;
+
+    cursor: pointer;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .theme-list {
+    flex: 1 1 auto;
+  }
+  .item {
+    flex: 0 1 auto;
+    padding: 4px 12px;
+    text-align: left;
+    // background-color: rgba(0, 0, 0, 0.2);
+    background-color: royalblue;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    cursor: pointer;
+  }
+  .item:hover {
+    opacity: 0.8;
+  }
+}
+.m-theme-box:hover {
+  right: 0;
+}
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
 
 /**iview table */
 
 .ivu-table {
+<<<<<<< HEAD
   color: rgba(255, 255, 255, .8) !important;
+=======
+  color: rgba(255, 255, 255, 0.8) !important;
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
   background-color: transparent !important;
 }
 .ivu-table:before {
@@ -123,7 +223,11 @@ body {
   .content-wrap {
     position: absolute;
     left: 0;
+<<<<<<< HEAD
     top:0;
+=======
+    top: 0;
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
     z-index: 1;
     display: flex;
     justify-content: space-between;
@@ -138,7 +242,11 @@ body {
     background-repeat: no-repeat;
     background-size: auto 560px;
     .item-wrap {
+<<<<<<< HEAD
       margin-bottom: 0.083333rem;
+=======
+      margin-bottom: 16px;
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
     }
     .row-side {
       perspective: 3000px;
@@ -177,6 +285,11 @@ body {
     }
   }
 
+<<<<<<< HEAD
+=======
+
+}
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
   // 中间底部内容区
   .m-middle-slider-wrap {
     .slider-btn-bar {
@@ -229,7 +342,10 @@ body {
       }
     }
   }
+<<<<<<< HEAD
 }
+=======
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
 
 .theme-default .m-module-card-wrap {
   background-color: rgba(0, 0, 0, 0.2) !important;

@@ -8,7 +8,11 @@
 <template>
   <div style="width: 100%; height: 100%">
     <div class="content-wrap">
+<<<<<<< HEAD
       <div class="row-side">
+=======
+      <div class="row-side side-left">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
         <div class="transform-box">
           <ModuleCard title="地区生产总值累计增长速度" class="item-wrap">
             <ChartMonth
@@ -17,7 +21,11 @@
               :height="200"
             ></ChartMonth>
           </ModuleCard>
+<<<<<<< HEAD
           <ModuleCard title="近五年地区生产总值及增长率" class="item-wrap">
+=======
+          <ModuleCard title="地区生产总值及增长率" class="item-wrap">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
             <template v-slot:extra>
               <ButtonGroup size="small">
                 <Button type="primary" @click="handleChangeYearMode('gross')"
@@ -77,7 +85,11 @@
       </div>
 
       <!-- side -->
+<<<<<<< HEAD
       <div class="row-side">
+=======
+      <div class="row-side side-right">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
         <div class="transform-box">
           <ModuleCard title="各区地区生产总值比较" class="item-wrap">
             <template v-slot:extra>

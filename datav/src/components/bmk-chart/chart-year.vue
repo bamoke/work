@@ -267,8 +267,12 @@ export default {
   },
   mounted() {
     this.chartInstance = this.$echarts.init(
+<<<<<<< HEAD
       document.getElementById(this.chartId),
       this.$config.chartTheme
+=======
+      document.getElementById(this.chartId)
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
     );
   },
 };

@@ -1,0 +1,161 @@
+.theme-flat-light {
+    color: #fff;
+    // background-color:#000;
+    background-image: url("./assets/images/index-3d-light-bg.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // header bar
+    .m-header-bar {
+      background-color: transparent !important;
+      .nav {
+        margin:0 120px;
+        .link-left {
+          transform: none;
+          border-left: none;
+          .title {
+            transform: none;
+          }
+        }
+        .link-right {
+          transform: none;
+          border-right: none;
+          .title {
+            transform: none;
+          }
+        }
+        .link-item {
+          color:#a2b1cc;
+          width: auto;
+          background-color:transparent;
+        }
+        .link-item:hover {
+          background: transparent;
+        }
+        .router-link-active {
+          color:#fff;
+        }
+        .brand {
+            flex: 0 0 auto;
+            width:640px;
+            position: inherit;
+            .bg {
+              display: none;
+            }
+            .brand-name {
+              position: inherit;
+              text-shadow: 0 2px 4px rgba(0,0,0,.3);
+            }
+          }
+        }
+      }
+    //
+    .main-bg {
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+
+    // 主内容框架
+    .content-wrap {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      padding: 12px;
+      padding-top: 120px;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-image: url(./assets/images/map-bg-3d-1.png);
+      background-position: center 200px;
+      background-repeat: no-repeat;
+      background-size: auto 560px;
+      .item-wrap {
+        margin-bottom: 16px;
+      }
+      .row-side {
+        perspective: 3000px;
+        width: 24.25%;
+      }
+      .row-big {
+        position: absolute;
+        left: 25.5%;
+        top: 90px;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 49%;
+      }
+      .m-child-nav-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .child-nav-item {
+          margin-right: 12px;
+          width: 240px;
+          height: 80px;
+          line-height: 80px;
+          text-align: center;
+          color: #fff;
+          font-size: 18px;
+          text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+          background-image: url(./assets/images/child-nav-bg-2.png);
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        .child-nav-item:hover {
+          background-image: url(./assets/images/child-nav-bg-1.png);
+        }
+      }
+    }
+}
+
+.theme-flat-light .row-side .bt-shadow {
+    display: none;
+  }
+  .theme-flat-light .side-left {
+    padding-left:78px;
+  }
+  .theme-flat-light .side-right {
+    padding-right:78px;
+  }
+
+
+
+/***card**/
+.theme-flat-light .m-module-card-wrap {
+    background-color: rgba(255, 255, 255, .1) !important;
+    color: #fff !important;
+  }
+  .theme-flat-light .m-module-card-wrap .corner {
+    display: none;
+    border-color: rgba(255, 255, 255, 0);
+  }
+  .theme-flat-light .m-module-card-wrap .corner-top-right {
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+  }
+  .theme-flat-light .m-module-card-wrap .corner-top-left {
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+  }
+  .theme-flat-light .m-module-card-wrap .corner-bottom-right {
+    border-left-color: transparent;
+    border-top-color: transparent;
+  }
+  .theme-flat-light .m-module-card-wrap .corner-bottom-left {
+    border-right-color: transparent;
+    border-top-color: transparent;
+  }
+  .theme-flat-light .m-module-card-wrap .bar {
+    background-color: #3661c4;
+  }
+
+  .theme-flat-light .effect-circle-wrap .num {
+    color:#ffe683;
+  }

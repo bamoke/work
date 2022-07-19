@@ -87,6 +87,7 @@ export default {
           ],
           series: [
             {
+<<<<<<< HEAD
               type: "pictorialBar",
               barCategoryGap: "0%",
               symbol:
@@ -98,6 +99,25 @@ export default {
               type: "line",
               yAxisIndex: 1,
             },
+=======
+              type: "bar",
+            },
+            {
+              type: "bar",
+              yAxisIndex: 1,
+            },
+            // {
+            //   type: "pictorialBar",
+            //   barCategoryGap: "0%",
+            //   symbol:
+            //     "path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z",
+            //   symbolSize: ["80%", "100%"],
+            // },
+            // {
+            //   type: "line",
+            //   yAxisIndex: 1,
+            // },
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
           ],
         });
       }
@@ -105,8 +125,12 @@ export default {
   },
   mounted() {
     this.chartInstance = this.$echarts.init(
+<<<<<<< HEAD
       document.getElementById("chart-compare-domestic"),
       this.$config.chartTheme
+=======
+      document.getElementById("chart-compare-domestic")
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
     );
   },
 };

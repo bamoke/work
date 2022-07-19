@@ -8,6 +8,10 @@
 import * as Api from "@/api/index";
 import { ChartMonth, ChartYear, ChartCompareCounty, ChartCompareDomestic } from "@/components/bmk-chart"
 import EffectCircleCount3D from "@/components/effects/effect-circle-count-3d.vue";
+<<<<<<< HEAD
+=======
+import echartTheme from "@/config/echarts-theme.js"
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
 
 const chartMixin = {
     components: {
@@ -51,22 +55,40 @@ const chartMixin = {
             this[chartDataName].mode = e
         },
         chartInit({
+<<<<<<< HEAD
             themeName = this.$config.chartTheme,
+=======
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
             chartObject = this.$echarts,
             chartName = [],
         }) {
             /**图表初始化 */
             var echartInstance = {};
+<<<<<<< HEAD
             chartName.forEach(function (item, index) {
                 echartInstance[item] = chartObject.init(
                     document.getElementById(`chart-${item}`),
                     themeName
+=======
+ 
+            // const echartThemName = this.$store.state.theme.echartTheme;
+            // chartObject.registerTheme(echartThemName, echartTheme[echartThemName]);
+            chartName.forEach(function (item, index) {
+                echartInstance[item] = chartObject.init(
+                    document.getElementById(`chart-${item}`),"macarons"
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
                 );
             });
 
             this.echartInstance = echartInstance;
         },
     },
+<<<<<<< HEAD
+=======
+    mounted () {
+
+    },
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
 
 };
 

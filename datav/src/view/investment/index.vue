@@ -7,7 +7,11 @@
 -->
 <template>
   <div class="content-wrap">
+<<<<<<< HEAD
     <div class="row-side">
+=======
+    <div class="row-side side-left">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
       <div class="transform-box">
         <ModuleCard title="固定资产投资总额累计增长速度" class="item-wrap">
           <ChartMonth
@@ -16,7 +20,11 @@
             :chart-data="leijizengzhangData.data"
           ></ChartMonth>
         </ModuleCard>
+<<<<<<< HEAD
         <ModuleCard title="近五年固定资产投资总额及增长率" class="item-wrap">
+=======
+        <ModuleCard title="固定资产投资总额及增长率" class="item-wrap">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
           <template v-slot:extra>
             <ButtonGroup size="small">
               <Button type="primary" @click="handleChangeYearMode('gross')"
@@ -48,7 +56,11 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
     <div class="row-side">
+=======
+    <div class="row-side side-right">
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
       <div class="transform-box">
         <ModuleCard title="全区固定资产投资比较" class="item-wrap">
           <template v-slot:extra>
@@ -150,7 +162,11 @@ export default {
     Api.timeline.get_monthdata().then((res) => {
       this.leijizengzhangData = {
         title: {
+<<<<<<< HEAD
           text: "2020年3-2021年3月",
+=======
+          text: "近一年",
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
         },
         data: res.data,
       };
@@ -162,7 +178,11 @@ export default {
       .then((res) => {
         this.timelineYearData = {
           title: {
+<<<<<<< HEAD
             text: this.title,
+=======
+            text: this.title || "近五年",
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
           },
           mode:"gross",
           data: res.data,
@@ -189,7 +209,11 @@ export default {
         tooltip: { trigger: "axis" },
         legend: {
           show: true,
+<<<<<<< HEAD
           left: "center",
+=======
+          left: "right",
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
           //   top: "bottom",
         },
         xAxis: {
@@ -204,7 +228,11 @@ export default {
         yAxis: [
           {
             type: "value",
+<<<<<<< HEAD
             name: "投资总量(亿)",
+=======
+            name: "",
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
             axisLabel: {
               formatter: "{value}",
             },
@@ -237,7 +265,11 @@ export default {
         tooltip: { trigger: "axis" },
         legend: {
           show: true,
+<<<<<<< HEAD
           left: "center",
+=======
+          left: "right",
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
           //   top: "bottom",
         },
         xAxis: {

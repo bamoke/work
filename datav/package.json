@@ -12,10 +12,19 @@
     "core-js": "^2.6.5",
     "echarts": "^5.1.1",
     "echarts-gl": "^2.0.4",
+<<<<<<< HEAD
     "view-design": "^4.5.0",
     "vue": "^2.6.10",
     "vue-baidu-map": "^0.21.22",
     "vue-router": "^3.5.1"
+=======
+    "js-cookie": "^2.2.1",
+    "view-design": "^4.5.0",
+    "vue": "^2.6.10",
+    "vue-baidu-map": "^0.21.22",
+    "vue-router": "^3.5.1",
+    "vuex": "^3.6.2"
+>>>>>>> 4a8416d5a402a0593e6c550c40b432131615f3e3
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.1",
